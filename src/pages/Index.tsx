@@ -1,4 +1,3 @@
-
 import { MapPin, Globe, Languages, Music, Book, Coffee, Camera, Utensils, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -252,10 +251,10 @@ const Index = () => {
         <section className="py-20 bg-gradient-to-r from-brand-teal to-brand-orange">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to experience local expertise?
+              准备好体验本地专家服务了吗？
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              Join thousands of travelers and locals connecting through personalized services around the world.
+              加入数千名旅行者和当地人，通过Guidew连接个性化服务。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-white text-brand-teal hover:bg-white/90">

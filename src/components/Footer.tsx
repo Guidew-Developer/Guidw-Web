@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { 
   Facebook, 
@@ -18,7 +17,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link to="/" className="inline-block">
-              <span className="text-2xl font-bold gradient-text">LocalXpert</span>
+              <span className="text-2xl font-bold gradient-text">Guidew</span>
             </Link>
             <p className="mt-3 text-gray-600 text-sm">
               Connecting you with local expertise, on demand, wherever you are in the world.
