@@ -1,0 +1,28 @@
+
+{
+  "nav": {
+    "discover": "גלה",
+    "howItWorks": "איך זה עובד",
+    "becomeExpert": "הפוך למומחה"
+  },
+  "search": {
+    "placeholder": "חפש שירותים, מומחים או מיקומים..."
+  },
+  "filter": {
+    "title": "סנן",
+    "categories": {
+      "all": "הכל",
+      "cityGuide": "מדריך עיר",
+      "translation": "תרגום",
+      "cultural": "חוויה תרבותית",
+      "skills": "הוראת מיומנויות",
+      "food": "חוויה קולינרית",
+      "photography": "צילום"
+    }
+  },
+  "common": {
+    "loading": "טוען...",
+    "error": "אירעה שגיאה",
+    "retry": "נסה שוב"
+  }
+}

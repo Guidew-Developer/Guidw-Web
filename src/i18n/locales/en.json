@@ -1,0 +1,28 @@
+
+{
+  "nav": {
+    "discover": "Discover",
+    "howItWorks": "How It Works",
+    "becomeExpert": "Become an Expert"
+  },
+  "search": {
+    "placeholder": "Search services, experts, or locations..."
+  },
+  "filter": {
+    "title": "Filter",
+    "categories": {
+      "all": "All",
+      "cityGuide": "City Guide",
+      "translation": "Translation",
+      "cultural": "Cultural Experience",
+      "skills": "Skills Teaching",
+      "food": "Food Experience",
+      "photography": "Photography"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry"
+  }
+}

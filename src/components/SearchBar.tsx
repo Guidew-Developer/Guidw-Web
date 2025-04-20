@@ -2,6 +2,7 @@
 import React from 'react';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
+import { useTranslation } from 'react-i18next';
 
 interface SearchBarProps {
   value: string;
@@ -9,12 +10,14 @@ interface SearchBarProps {
 }
 
 const SearchBar = ({ value, onChange }: SearchBarProps) => {
+  const { t } = useTranslation();
+  
   return (
     <div className="relative">
       <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
       <Input
         type="text"
-        placeholder="搜索服务、专家或地点..."
+        placeholder={t('search.placeholder')}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="pl-10 w-full"

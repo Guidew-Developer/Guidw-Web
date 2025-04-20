@@ -1,0 +1,28 @@
+
+{
+  "nav": {
+    "discover": "Découvrir",
+    "howItWorks": "Comment ça Marche",
+    "becomeExpert": "Devenir Expert"
+  },
+  "search": {
+    "placeholder": "Rechercher des services, experts ou lieux..."
+  },
+  "filter": {
+    "title": "Filtrer",
+    "categories": {
+      "all": "Tous",
+      "cityGuide": "Guide de Ville",
+      "translation": "Traduction",
+      "cultural": "Expérience Culturelle",
+      "skills": "Enseignement",
+      "food": "Expérience Culinaire",
+      "photography": "Photographie"
+    }
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer"
+  }
+}
