@@ -28,8 +28,13 @@ i18n
     },
     detection: {
       order: ['localStorage', 'navigator'],
-      caches: ['localStorage']
+      caches: ['localStorage'],
+      lookupLocalStorage: 'i18nextLng'
     }
   });
 
+// Initialize HTML dir attribute for RTL languages
+document.documentElement.dir = i18n.language === 'he' ? 'rtl' : 'ltr';
+
 export default i18n;
+
