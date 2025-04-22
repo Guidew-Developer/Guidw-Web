@@ -3,9 +3,12 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, Clock, User } from 'lucide-react';
+import { Calendar, MapPin, Clock, User, Star } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const ServiceDetail: React.FC = () => {
+  const { t } = useTranslation();
+  
   // TODO: Replace with actual service data from backend/props
   const service = {
     title: "东京城市隐藏宝地之旅",
@@ -64,17 +67,17 @@ const ServiceDetail: React.FC = () => {
               </div>
               <div className="flex items-center">
                 <User className="h-5 w-5 mr-2 text-brand-teal" />
-                <span>个人或小组</span>
+                <span>{t('serviceDetail.groupSize')}</span>
               </div>
             </div>
 
             <div className="flex items-center mb-6">
               <span className="text-3xl font-bold mr-4 text-brand-teal">¥{service.price}</span>
-              <span className="text-gray-500">每人</span>
+              <span className="text-gray-500">{t('serviceDetail.pricePerHour')}</span>
             </div>
 
             <Button className="w-full bg-brand-teal hover:bg-brand-teal/90 text-white">
-              立即预订
+              {t('serviceDetail.bookNow')}
             </Button>
           </div>
         </div>
@@ -84,5 +87,4 @@ const ServiceDetail: React.FC = () => {
   );
 };
 
-import { Star } from 'lucide-react';
 export default ServiceDetail;

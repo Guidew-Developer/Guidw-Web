@@ -1,3 +1,4 @@
+
 {
   "nav": {
     "discover": "Discover",
@@ -23,6 +24,113 @@
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",
-    "retry": "Retry"
+    "retry": "Retry",
+    "signIn": "Sign in",
+    "joinNow": "Join now",
+    "featured": "Featured",
+    "topPicks": "Top Picks",
+    "explore": "Explore",
+    "learnMore": "Learn more",
+    "availableNow": "Available now"
+  },
+  "home": {
+    "hero": {
+      "title": "Connect with Local Expertise",
+      "subtitle": "Discover unique experiences and services from local experts worldwide"
+    },
+    "categories": {
+      "title": "What kind of help do you need?",
+      "subtitle": "From city guides and language assistance to specialized skills and local experiences, find experts in any field, anywhere"
+    },
+    "featured": {
+      "title": "Featured Services",
+      "subtitle": "Explore our most popular services from top-rated local experts around the world"
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Connect with local expertise in just a few simple steps",
+      "steps": {
+        "discover": {
+          "title": "Discover",
+          "description": "Browse services and experts in your destination or current location"
+        },
+        "book": {
+          "title": "Book",
+          "description": "Choose your preferred time and date, then book instantly"
+        },
+        "experience": {
+          "title": "Experience",
+          "description": "Meet your local expert and enjoy a personalized experience"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to experience local expertise?",
+      "subtitle": "Join thousands of travelers and locals connecting through Guidew",
+      "findExpert": "Find an Expert",
+      "becomeExpert": "Become an Expert"
+    }
+  },
+  "discover": {
+    "title": "Discover Services",
+    "categoryTitles": {
+      "cityGuide": "Local City Guide",
+      "translation": "Translation Services",
+      "cultural": "Cultural Experiences",
+      "skillTeaching": "Skill Teaching",
+      "foodExperience": "Food Experiences",
+      "photography": "Photography Services"
+    }
+  },
+  "howItWorks": {
+    "title": "How Guidew Works",
+    "subtitle": "Connect with local experts in three simple steps",
+    "steps": {
+      "discover": {
+        "title": "Discover",
+        "description": "Browse and search for local expert services"
+      },
+      "book": {
+        "title": "Book",
+        "description": "Choose your preferred time and expert"
+      },
+      "experience": {
+        "title": "Experience",
+        "description": "Enjoy personalized local services"
+      }
+    }
+  },
+  "becomeExpert": {
+    "title": "Become a Guidew Expert",
+    "subtitle": "Share your skills and provide unique local experiences to users worldwide",
+    "features": {
+      "flexible": {
+        "title": "Flexible Work",
+        "description": "Provide services according to your schedule and comfort"
+      },
+      "global": {
+        "title": "Global Connections",
+        "description": "Share your skills with people from around the world"
+      },
+      "income": {
+        "title": "Extra Income",
+        "description": "Get paid for sharing your expertise"
+      }
+    },
+    "cta": "Start Registration"
+  },
+  "serviceDetail": {
+    "pricePerHour": "per hour",
+    "groupSize": "Individual or Small Group",
+    "bookNow": "Book Now"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Page Not Found",
+    "description": "We couldn't find the page you're looking for. The expertise you're seeking might be elsewhere.",
+    "actions": {
+      "home": "Return Home",
+      "discover": "Discover Services"
+    }
   }
 }

@@ -1,3 +1,4 @@
+
 {
   "nav": {
     "discover": "发现",
@@ -23,6 +24,113 @@
   "common": {
     "loading": "加载中...",
     "error": "发生错误",
-    "retry": "重试"
+    "retry": "重试",
+    "signIn": "登录",
+    "joinNow": "立即加入",
+    "featured": "精选",
+    "topPicks": "热门推荐",
+    "explore": "探索",
+    "learnMore": "了解更多",
+    "availableNow": "立即可用"
+  },
+  "home": {
+    "hero": {
+      "title": "连接本地专业人士",
+      "subtitle": "发现来自世界各地本地专家的独特体验和服务"
+    },
+    "categories": {
+      "title": "需要什么帮助？",
+      "subtitle": "从城市向导和语言协助到专业技能和本地体验，在任何地方找到各个领域的专家"
+    },
+    "featured": {
+      "title": "精选服务",
+      "subtitle": "探索来自全球顶级本地专家的最受欢迎服务"
+    },
+    "howItWorks": {
+      "title": "使用方法",
+      "subtitle": "通过简单的步骤连接本地专业人士",
+      "steps": {
+        "discover": {
+          "title": "发现",
+          "description": "浏览目的地或当前位置的服务和专家"
+        },
+        "book": {
+          "title": "预订",
+          "description": "选择您喜欢的时间和日期，即时预订"
+        },
+        "experience": {
+          "title": "体验",
+          "description": "与本地专家见面，享受个性化体验"
+        }
+      }
+    },
+    "cta": {
+      "title": "准备体验本地专业服务了吗？",
+      "subtitle": "加入数千名通过Guidew连接的旅行者和当地人",
+      "findExpert": "寻找专家",
+      "becomeExpert": "成为专家"
+    }
+  },
+  "discover": {
+    "title": "发现服务",
+    "categoryTitles": {
+      "cityGuide": "本地城市向导",
+      "translation": "翻译服务",
+      "cultural": "文化体验",
+      "skillTeaching": "技能教学",
+      "foodExperience": "美食体验",
+      "photography": "摄影服务"
+    }
+  },
+  "howItWorks": {
+    "title": "Guidew如何运作",
+    "subtitle": "通过三个简单步骤连接本地专家",
+    "steps": {
+      "discover": {
+        "title": "发现",
+        "description": "浏览并搜索本地专家服务"
+      },
+      "book": {
+        "title": "预订",
+        "description": "选择您喜欢的时间和专家"
+      },
+      "experience": {
+        "title": "体验",
+        "description": "享受个性化的本地服务"
+      }
+    }
+  },
+  "becomeExpert": {
+    "title": "成为Guidew专家",
+    "subtitle": "与全球用户分享您的技能，提供独特的本地体验",
+    "features": {
+      "flexible": {
+        "title": "灵活工作",
+        "description": "按照您的时间和舒适度提供服务"
+      },
+      "global": {
+        "title": "全球连接",
+        "description": "与来自世界各地的人分享您的技能"
+      },
+      "income": {
+        "title": "额外收入",
+        "description": "通过分享您的专业知识获得报酬"
+      }
+    },
+    "cta": "开始注册"
+  },
+  "serviceDetail": {
+    "pricePerHour": "每小时",
+    "groupSize": "个人或小组",
+    "bookNow": "立即预订"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "页面未找到",
+    "description": "我们找不到您要找的页面。您寻找的专业服务可能在别处。",
+    "actions": {
+      "home": "返回首页",
+      "discover": "发现服务"
+    }
   }
 }
