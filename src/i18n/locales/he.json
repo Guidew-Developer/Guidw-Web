@@ -1,9 +1,9 @@
-
 {
   "nav": {
     "discover": "גלה",
     "howItWorks": "איך זה עובד",
-    "becomeExpert": "הפוך למומחה"
+    "becomeExpert": "הפוך למומחה",
+    "downloadApp": "הורד את האפליקציה"
   },
   "search": {
     "placeholder": "חפש שירותים, מומחים או מיקומים..."

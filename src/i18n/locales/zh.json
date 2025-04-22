@@ -1,9 +1,9 @@
-
 {
   "nav": {
     "discover": "发现",
     "howItWorks": "使用指南",
-    "becomeExpert": "成为专家"
+    "becomeExpert": "成为专家",
+    "downloadApp": "下载应用"
   },
   "search": {
     "placeholder": "搜索服务、专家或地点..."

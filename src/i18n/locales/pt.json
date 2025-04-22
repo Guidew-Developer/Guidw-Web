@@ -1,9 +1,9 @@
-
 {
   "nav": {
     "discover": "Descobrir",
     "howItWorks": "Como Funciona",
-    "becomeExpert": "Torne-se um Especialista"
+    "becomeExpert": "Torne-se um Especialista",
+    "downloadApp": "Baixar App"
   },
   "search": {
     "placeholder": "Pesquisar serviços, especialistas ou locais..."
