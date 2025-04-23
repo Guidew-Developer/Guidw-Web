@@ -24,7 +24,23 @@
       "events": "Events",
       "home": "Home",
       "skillteaching": "Skill Teaching",
-      "foodexperience": "Food Experience"
+      "foodexperience": "Food Experience",
+      "professional": "Professional Skills",
+      "culturalexchange": "Cultural Exchange",
+      "health": "Health & Wellness",
+      "petcare": "Pet Care",
+      "childcare": "Childcare",
+      "homeorg": "Home Organization",
+      "shopping": "Personal Shopping",
+      "techsupport": "Tech Support",
+      "financial": "Financial Advisory",
+      "legal": "Legal Consultation",
+      "artcraft": "Art & Craft",
+      "musicdance": "Music & Dance",
+      "gardening": "Gardening",
+      "fitness": "Fitness Training",
+      "cooking": "Cooking Classes",
+      "photovideo": "Photography & Video"
     }
   },
   "common": {
@@ -90,7 +106,23 @@
       "photography": "Photography Services",
       "emergency": "Emergency Services",
       "events": "Event Planning",
-      "home": "Home Services"
+      "home": "Home Services",
+      "professional": "Professional Skill Enhancement",
+      "culturalExchange": "Cultural Exchange & Immersion",
+      "health": "Health & Wellness",
+      "petCare": "Pet Care Services",
+      "childcare": "Childcare & Babysitting",
+      "homeOrg": "Home Organization",
+      "shopping": "Personal Shopping & Styling",
+      "techSupport": "Tech Support & Repair",
+      "financial": "Financial Advisory",
+      "legal": "Legal Consultation",
+      "artCraft": "Art & Craft Workshops",
+      "musicDance": "Music & Dance Lessons",
+      "gardening": "Gardening & Landscaping",
+      "fitness": "Personal Fitness Training",
+      "cooking": "Cooking & Culinary Classes",
+      "photoVideo": "Photography & Videography"
     }
   },
   "howItWorks": {
@@ -203,6 +235,70 @@
     "travel": {
       "title": "Personalized Travel",
       "description": "Experience unique, tailored adventures with local experts"
+    },
+    "professional": {
+      "title": "Professional Skill Enhancement",
+      "description": "Advance your career with professional training from local experts"
+    },
+    "culturalExchange": {
+      "title": "Cultural Exchange & Immersion",
+      "description": "Immerse yourself in diverse cultures and traditions"
+    },
+    "health": {
+      "title": "Health & Wellness",
+      "description": "Access personalized health and wellness services"
+    },
+    "petCare": {
+      "title": "Pet Care Services",
+      "description": "Professional care for your pets when you need it"
+    },
+    "childcare": {
+      "title": "Childcare & Babysitting",
+      "description": "Reliable care for your children, available on demand"
+    },
+    "homeOrg": {
+      "title": "Home Organization",
+      "description": "Professional help to declutter and optimize your living space"
+    },
+    "shopping": {
+      "title": "Personal Shopping & Styling",
+      "description": "Enhance your style with personalized shopping assistance"
+    },
+    "techSupport": {
+      "title": "Tech Support & Repair",
+      "description": "Immediate solutions for your tech problems and devices"
+    },
+    "financial": {
+      "title": "Financial Advisory",
+      "description": "Personalized financial advice and investment strategies"
+    },
+    "legal": {
+      "title": "Legal Consultation",
+      "description": "Professional legal advice when you need it most"
+    },
+    "artCraft": {
+      "title": "Art & Craft Workshops",
+      "description": "Express your creativity through art and craft workshops"
+    },
+    "musicDance": {
+      "title": "Music & Dance Lessons",
+      "description": "Learn music or dance skills from experienced instructors"
+    },
+    "gardening": {
+      "title": "Gardening & Landscaping",
+      "description": "Professional gardening and landscaping for your outdoor spaces"
+    },
+    "fitness": {
+      "title": "Personal Fitness Training",
+      "description": "Achieve your fitness goals with personalized training"
+    },
+    "cooking": {
+      "title": "Cooking & Culinary Classes",
+      "description": "Learn cooking skills and explore diverse cuisines"
+    },
+    "photoVideo": {
+      "title": "Photography & Videography",
+      "description": "Professional capture of your important moments and events"
     }
   }
 }

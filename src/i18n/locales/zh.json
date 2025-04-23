@@ -24,7 +24,23 @@
       "events": "活动策划",
       "home": "家居服务",
       "skillteaching": "技能教学",
-      "foodexperience": "美食体验"
+      "foodexperience": "美食体验",
+      "professional": "专业技能提升",
+      "culturalexchange": "文化交流",
+      "health": "健康与养生",
+      "petcare": "宠物护理",
+      "childcare": "儿童照顾",
+      "homeorg": "家居整理",
+      "shopping": "个人购物与造型",
+      "techsupport": "技术支持",
+      "financial": "金融咨询",
+      "legal": "法律咨询",
+      "artcraft": "艺术与手工",
+      "musicdance": "音乐与舞蹈",
+      "gardening": "园艺与景观",
+      "fitness": "个人健身",
+      "cooking": "烹饪课程",
+      "photovideo": "摄影与视频"
     }
   },
   "common": {
@@ -90,7 +106,23 @@
       "photography": "摄影服务",
       "emergency": "紧急服务",
       "events": "活动策划",
-      "home": "家居服务"
+      "home": "家居服务",
+      "professional": "专业技能提升",
+      "culturalExchange": "文化交流与融入",
+      "health": "健康与养生",
+      "petCare": "宠物护理",
+      "childcare": "儿童照顾",
+      "homeOrg": "家居整理",
+      "shopping": "个人购物与造型",
+      "techSupport": "技术支持",
+      "financial": "金融咨询",
+      "legal": "法律咨询",
+      "artCraft": "艺术与手工",
+      "musicDance": "音乐与舞蹈",
+      "gardening": "园艺与景观",
+      "fitness": "个人健身",
+      "cooking": "烹饪课程",
+      "photoVideo": "摄影与视频"
     }
   },
   "howItWorks": {
@@ -203,6 +235,70 @@
     "travel": {
       "title": "个性化旅行",
       "description": "与本地专家一起体验独特、定制的冒险之旅"
+    },
+    "professional": {
+      "title": "专业技能提升",
+      "description": "通过本地专家提升您的职业技能和事业发展"
+    },
+    "culturalExchange": {
+      "title": "文化交流与融入",
+      "description": "深入体验不同文化和传统的丰富多彩"
+    },
+    "health": {
+      "title": "健康与养生",
+      "description": "获得个性化的健康与养生服务"
+    },
+    "petCare": {
+      "title": "宠物护理",
+      "description": "为您的宠物提供专业的照顾和服务"
+    },
+    "childcare": {
+      "title": "儿童照顾",
+      "description": "为您的孩子提供可靠的照顾和教育服务"
+    },
+    "homeOrg": {
+      "title": "家居整理",
+      "description": "让专业人士帮您整理和优化您的生活空间"
+    },
+    "shopping": {
+      "title": "个人购物与造型",
+      "description": "通过个性化购物和造型服务提升您的形象"
+    },
+    "techSupport": {
+      "title": "技术支持",
+      "description": "解决您的技术问题和设备维修需求"
+    },
+    "financial": {
+      "title": "金融咨询",
+      "description": "获得个性化的金融建议和投资策略"
+    },
+    "legal": {
+      "title": "法律咨询",
+      "description": "在需要时获得专业的法律建议和帮助"
+    },
+    "artCraft": {
+      "title": "艺术与手工",
+      "description": "参与艺术和手工工作坊，发挥您的创造力"
+    },
+    "musicDance": {
+      "title": "音乐与舞蹈",
+      "description": "学习音乐或舞蹈技能，享受艺术表达的乐趣"
+    },
+    "gardening": {
+      "title": "园艺与景观",
+      "description": "为您的户外空间提供专业的园艺和景观服务"
+    },
+    "fitness": {
+      "title": "个人健身",
+      "description": "通过个性化的健身训练提升您的体能水平"
+    },
+    "cooking": {
+      "title": "烹饪课程",
+      "description": "学习烹饪技巧和探索不同的美食文化"
+    },
+    "photoVideo": {
+      "title": "摄影与视频",
+      "description": "捕捉您的重要时刻和活动的专业服务"
     }
   }
 }

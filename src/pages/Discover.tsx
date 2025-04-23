@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { useTranslation } from 'react-i18next';
 import DownloadApp from '@/components/DownloadApp';
 
-// Sample services data based on the business use cases
+// Sample services data (we'll keep the existing services and add a few new ones for the new categories)
 const sampleServices = [
   // Use Case 1: Immediate Local Guiding Service
   {
@@ -157,6 +157,108 @@ const sampleServices = [
       avatar: "https://randomuser.me/api/portraits/women/59.jpg"
     },
     imageSrc: "https://images.unsplash.com/photo-1498654896293-37aacf113fd9"
+  },
+  
+  // Use Case 8: Professional Skill Enhancement
+  {
+    id: "10",
+    title: "Business Strategy Workshop",
+    description: "Learn essential business strategy skills from a seasoned executive. Perfect for entrepreneurs and mid-career professionals looking to advance.",
+    category: "Professional Skills",
+    price: 75,
+    rating: 4.8,
+    location: "San Francisco, USA",
+    provider: {
+      id: "p10",
+      name: "Jonathan L.",
+      avatar: "https://randomuser.me/api/portraits/men/76.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1521737711867-e3b97375f902"
+  },
+  
+  // Use Case 9: Cultural Exchange and Immersion
+  {
+    id: "11",
+    title: "Traditional Tea Ceremony",
+    description: "Experience an authentic Japanese tea ceremony with a master practitioner. Learn about the philosophy, rituals, and cultural significance.",
+    category: "Cultural Exchange",
+    price: 45,
+    rating: 4.9,
+    location: "Kyoto, Japan",
+    provider: {
+      id: "p11",
+      name: "Yuki T.",
+      avatar: "https://randomuser.me/api/portraits/women/67.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1576091160399-112ba8633047"
+  },
+  
+  // Use Case 10: Health and Wellness
+  {
+    id: "12",
+    title: "Meditation & Stress Relief",
+    description: "Immediate stress relief through guided meditation and mindfulness techniques. Perfect for busy professionals.",
+    category: "Health & Wellness",
+    price: 40,
+    rating: 4.7,
+    location: "Los Angeles, USA",
+    provider: {
+      id: "p12",
+      name: "Anna S.",
+      avatar: "https://randomuser.me/api/portraits/women/25.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1506126613408-eca07ce68773"
+  },
+  
+  // Use Case 11: Pet Care
+  {
+    id: "13",
+    title: "Emergency Pet Care",
+    description: "Immediate pet sitting and care when you need it most. Experienced pet care professional available within the hour.",
+    category: "Pet Care",
+    price: 35,
+    rating: 4.8,
+    location: "Chicago, USA",
+    provider: {
+      id: "p13",
+      name: "Robert M.",
+      avatar: "https://randomuser.me/api/portraits/men/42.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1552053831-71594a27632d"
+  },
+  
+  // Use Case 12: Childcare
+  {
+    id: "14",
+    title: "Last-Minute Babysitting",
+    description: "Certified childcare professional available for last-minute babysitting. Background checked and experienced with all age groups.",
+    category: "Childcare",
+    price: 45,
+    rating: 4.9,
+    location: "Boston, USA",
+    provider: {
+      id: "p14",
+      name: "Jessica W.",
+      avatar: "https://randomuser.me/api/portraits/women/37.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1560884328-3ed97526ab3c"
+  },
+  
+  // Use Case 13: Home Organization
+  {
+    id: "15",
+    title: "Home Decluttering Session",
+    description: "Transform your living space with professional decluttering and organization. See immediate results in just a few hours.",
+    category: "Home Organization",
+    price: 55,
+    rating: 4.7,
+    location: "Seattle, USA",
+    provider: {
+      id: "p15",
+      name: "Emily K.",
+      avatar: "https://randomuser.me/api/portraits/women/19.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1594194003472-8431a9db1818"
   }
 ];
 
@@ -169,7 +271,15 @@ const serviceCategories = [
   { id: "emergency", name: "Emergency" },
   { id: "events", name: "Events" },
   { id: "home", name: "Home" },
-  { id: "food-experience", name: "Food Experience" }
+  { id: "food-experience", name: "Food Experience" },
+  { id: "professional-skills", name: "Professional Skills" },
+  { id: "cultural-exchange", name: "Cultural Exchange" },
+  { id: "health-wellness", name: "Health & Wellness" },
+  { id: "pet-care", name: "Pet Care" },
+  { id: "childcare", name: "Childcare" },
+  { id: "home-organization", name: "Home Organization" },
+  { id: "personal-shopping", name: "Personal Shopping" },
+  { id: "tech-support", name: "Tech Support" }
 ];
 
 const Discover: React.FC = () => {
@@ -194,7 +304,7 @@ const Discover: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold mb-4 text-center">{t('discover.title')}</h1>
           <p className="text-center text-gray-600 mb-8">
-            {t('discover.subtitle', 'Find the perfect local service for any need, available right now')}
+            {t('discover.subtitle')}
           </p>
           
           <div className="space-y-6">
@@ -226,7 +336,7 @@ const Discover: React.FC = () => {
             ) : (
               <div className="text-center py-10">
                 <p className="text-gray-500">
-                  {t('discover.noResults', 'No services found. Try adjusting your search.')}
+                  {t('discover.noResults')}
                 </p>
               </div>
             )}
