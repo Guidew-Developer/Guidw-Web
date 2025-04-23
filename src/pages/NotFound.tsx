@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { MapPinOff } from "lucide-react";
+import { MapPinOff, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const NotFound = () => {
@@ -26,7 +26,7 @@ const NotFound = () => {
         <h1 className="text-6xl font-bold text-gray-800 mb-4">{t('notFound.title')}</h1>
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">{t('notFound.subtitle')}</h2>
         <p className="text-gray-600 mb-8">{t('notFound.description')}</p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <Button 
             className="bg-brand-teal hover:bg-brand-teal/90 text-white"
             onClick={() => navigate("/")}
@@ -39,6 +39,19 @@ const NotFound = () => {
             onClick={() => navigate("/discover")}
           >
             {t('notFound.actions.discover')}
+          </Button>
+        </div>
+        
+        {/* Added download app suggestion */}
+        <div className="mt-12 pt-8 border-t">
+          <p className="text-gray-600 mb-4">{t('download.subtitle')}</p>
+          <Button 
+            variant="outline" 
+            className="flex items-center gap-2"
+            onClick={() => navigate("/")}
+          >
+            <Phone className="h-4 w-4" />
+            {t('download.getApp')}
           </Button>
         </div>
       </div>

@@ -18,7 +18,13 @@
       "cultural": "文化体验",
       "skills": "技能教学",
       "food": "美食探索",
-      "photography": "摄影服务"
+      "photography": "摄影服务",
+      "localguide": "本地向导",
+      "emergency": "紧急服务",
+      "events": "活动策划",
+      "home": "家居服务",
+      "skillteaching": "技能教学",
+      "foodexperience": "美食体验"
     }
   },
   "common": {
@@ -73,13 +79,18 @@
   },
   "discover": {
     "title": "发现服务",
+    "subtitle": "为任何需求找到完美的本地服务，立即可用",
+    "noResults": "未找到服务。尝试调整搜索条件。",
     "categoryTitles": {
       "cityGuide": "本地城市向导",
       "translation": "翻译服务",
       "cultural": "文化体验",
       "skillTeaching": "技能教学",
       "foodExperience": "美食体验",
-      "photography": "摄影服务"
+      "photography": "摄影服务",
+      "emergency": "紧急服务",
+      "events": "活动策划",
+      "home": "家居服务"
     }
   },
   "howItWorks": {
@@ -120,9 +131,27 @@
     "cta": "开始注册"
   },
   "serviceDetail": {
+    "availableNow": "立即可用",
+    "description": "描述",
+    "includes": "包含内容",
+    "languages": "语言",
+    "reviews": "评价",
+    "experience": "经验",
+    "responseTime": "响应时间",
+    "messageProvider": "联系服务提供者",
+    "selectDate": "选择日期",
+    "selectTime": "选择时间",
+    "bookNow": "立即预订",
+    "requestNow": "立即请求",
+    "secureBooking": "安全预订和支付",
     "pricePerHour": "每小时",
     "groupSize": "个人或小组",
-    "bookNow": "立即预订"
+    "verified": "已验证",
+    "tabs": {
+      "details": "详情",
+      "reviews": "评价",
+      "provider": "服务提供者"
+    }
   },
   "notFound": {
     "title": "404",
@@ -131,6 +160,49 @@
     "actions": {
       "home": "返回首页",
       "discover": "发现服务"
+    }
+  },
+  "download": {
+    "title": "下载Guidew应用",
+    "subtitle": "随时随地访问本地专业服务",
+    "getApp": "获取应用",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "features": {
+      "instant": "即时预订",
+      "personalized": "个性化体验",
+      "secure": "安全支付",
+      "chat": "实时聊天"
+    }
+  },
+  "useCase": {
+    "localGuide": {
+      "title": "即时本地向导",
+      "description": "即刻连接本地向导，获取个性化城市之旅"
+    },
+    "translation": {
+      "title": "按需翻译服务",
+      "description": "在需要时获得实时语言协助"
+    },
+    "skillsLearning": {
+      "title": "技能学习",
+      "description": "按照自己的节奏向本地专家学习新技能"
+    },
+    "emergency": {
+      "title": "紧急援助",
+      "description": "在最需要的时候快速获得帮助"
+    },
+    "events": {
+      "title": "活动策划",
+      "description": "寻找专家策划和执行您的完美活动"
+    },
+    "home": {
+      "title": "家居服务",
+      "description": "获得家居维护和改进的即时帮助"
+    },
+    "travel": {
+      "title": "个性化旅行",
+      "description": "与本地专家一起体验独特、定制的冒险之旅"
     }
   }
 }

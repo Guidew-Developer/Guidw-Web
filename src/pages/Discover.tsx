@@ -1,70 +1,188 @@
-
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SearchBar from '@/components/SearchBar';
 import FilterSection from '@/components/FilterSection';
 import ServiceCard from '@/components/ServiceCard';
+import { Badge } from '@/components/ui/badge';
+import { useTranslation } from 'react-i18next';
+import DownloadApp from '@/components/DownloadApp';
 
-// 示例服务数据
+// Sample services data based on the business use cases
 const sampleServices = [
+  // Use Case 1: Immediate Local Guiding Service
   {
     id: "1",
-    title: "东京隐藏景点探索之旅",
-    description: "发现游客罕至的东京秘境，体验地道的日本文化。适合想要深入了解东京的旅行者。",
-    category: "城市向导",
+    title: "Tokyo Hidden Gems Tour",
+    description: "Discover the secret spots and local favorites that most tourists never see. Perfect for your first day in the city.",
+    category: "Local Guide",
     price: 40,
     rating: 4.9,
-    location: "东京, 日本",
+    location: "Tokyo, Japan",
     provider: {
       id: "p1",
-      name: "佐藤浩",
+      name: "Hiroshi K.",
       avatar: "https://randomuser.me/api/portraits/men/32.jpg"
     },
     imageSrc: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26"
   },
   {
     id: "2",
-    title: "商务会议翻译服务",
-    description: "专业的商务会议翻译服务，确保您与国际伙伴的顺畅沟通。",
-    category: "翻译服务",
-    price: 60,
+    title: "Barcelona Street Art Walk",
+    description: "Explore Barcelona's vibrant street art scene with a local artist who knows all the best spots and stories behind the artwork.",
+    category: "Local Guide",
+    price: 35,
     rating: 4.8,
-    location: "上海, 中国",
+    location: "Barcelona, Spain",
     provider: {
       id: "p2",
-      name: "李梅",
+      name: "Carlos M.",
+      avatar: "https://randomuser.me/api/portraits/men/22.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1558746636-283b1d39d0e0"
+  },
+  
+  // Use Case 2: On-Demand Language Translation
+  {
+    id: "3",
+    title: "Business Meeting Translation",
+    description: "Professional translation for your important business meetings. I'll help ensure clear communication with your international partners.",
+    category: "Translation",
+    price: 60,
+    rating: 4.8,
+    location: "Shanghai, China",
+    provider: {
+      id: "p3",
+      name: "Li Wei",
       avatar: "https://randomuser.me/api/portraits/women/44.jpg"
     },
     imageSrc: "https://images.unsplash.com/photo-1551836022-d5d88e9218df"
   },
   {
-    id: "3",
-    title: "韩式料理制作体验",
-    description: "学习制作正宗的韩式料理，从食材选择到最终摆盘的完整体验。",
-    category: "美食探索",
-    price: 45,
+    id: "4",
+    title: "Medical Appointment Translator",
+    description: "Accompany you to medical appointments and provide accurate translation to ensure you understand everything about your health.",
+    category: "Translation",
+    price: 55,
     rating: 4.7,
-    location: "首尔, 韩国",
+    location: "Paris, France",
     provider: {
-      id: "p3",
-      name: "金智秀",
-      avatar: "https://randomuser.me/api/portraits/women/22.jpg"
+      id: "p4",
+      name: "Sophie L.",
+      avatar: "https://randomuser.me/api/portraits/women/29.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+  },
+  
+  // Use Case 3: Skill-Based Personal Development
+  {
+    id: "5",
+    title: "Japanese Pottery Workshop",
+    description: "Learn the traditional art of Japanese pottery in this hands-on workshop. Perfect for beginners looking to develop artistic skills.",
+    category: "Skill Teaching",
+    price: 45,
+    rating: 4.9,
+    location: "Kyoto, Japan",
+    provider: {
+      id: "p5",
+      name: "Akira T.",
+      avatar: "https://randomuser.me/api/portraits/men/67.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261"
+  },
+  
+  // Use Case 4: Emergency Assistance
+  {
+    id: "6",
+    title: "Emergency Tech Support",
+    description: "Immediate assistance with tech problems, from phone issues to laptop emergencies. Available 24/7 for urgent situations.",
+    category: "Emergency",
+    price: 50,
+    rating: 4.6,
+    location: "New York, USA",
+    provider: {
+      id: "p6",
+      name: "Mike R.",
+      avatar: "https://randomuser.me/api/portraits/men/52.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+  },
+  
+  // Use Case 5: Event Planning
+  {
+    id: "7",
+    title: "Last-Minute Event Planning",
+    description: "Urgent event planning services for corporate meetings, birthdays, or special occasions. I'll handle everything on short notice.",
+    category: "Events",
+    price: 75,
+    rating: 4.8,
+    location: "London, UK",
+    provider: {
+      id: "p7",
+      name: "Emma B.",
+      avatar: "https://randomuser.me/api/portraits/women/33.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1511795409834-c954f0b11126"
+  },
+  
+  // Use Case 6: Home Improvement
+  {
+    id: "8",
+    title: "Emergency Plumbing Repair",
+    description: "Immediate plumbing assistance for leaks, clogs, and other urgent home issues. Available within 30 minutes.",
+    category: "Home",
+    price: 65,
+    rating: 4.7,
+    location: "Berlin, Germany",
+    provider: {
+      id: "p8",
+      name: "Thomas M.",
+      avatar: "https://randomuser.me/api/portraits/men/41.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1574359435415-e51f9a3d8e33"
+  },
+  
+  // Use Case 7: Personalized Travel
+  {
+    id: "9",
+    title: "Authentic Food Tour",
+    description: "Experience the local cuisine with a food enthusiast who knows all the hidden gems. Customized to your taste preferences.",
+    category: "Food Experience",
+    price: 55,
+    rating: 4.9,
+    location: "Bangkok, Thailand",
+    provider: {
+      id: "p9",
+      name: "Supaporn J.",
+      avatar: "https://randomuser.me/api/portraits/women/59.jpg"
     },
     imageSrc: "https://images.unsplash.com/photo-1498654896293-37aacf113fd9"
   }
 ];
 
+// Define all service categories
+const serviceCategories = [
+  { id: "all", name: "All" },
+  { id: "local-guide", name: "Local Guide" },
+  { id: "translation", name: "Translation" },
+  { id: "skill-teaching", name: "Skill Teaching" },
+  { id: "emergency", name: "Emergency" },
+  { id: "events", name: "Events" },
+  { id: "home", name: "Home" },
+  { id: "food-experience", name: "Food Experience" }
+];
+
 const Discover: React.FC = () => {
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('全部');
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   const filteredServices = sampleServices.filter(service => {
     const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          service.location.toLowerCase().includes(searchQuery.toLowerCase());
     
-    const matchesCategory = selectedCategory === '全部' || service.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'All' || service.category === selectedCategory;
     
     return matchesSearch && matchesCategory;
   });
@@ -73,24 +191,51 @@ const Discover: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow container mx-auto px-4 py-8">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8 text-center">发现服务</h1>
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-4xl font-bold mb-4 text-center">{t('discover.title')}</h1>
+          <p className="text-center text-gray-600 mb-8">
+            {t('discover.subtitle', 'Find the perfect local service for any need, available right now')}
+          </p>
           
           <div className="space-y-6">
             <SearchBar value={searchQuery} onChange={setSearchQuery} />
-            <FilterSection 
-              selectedCategory={selectedCategory}
-              onCategoryChange={setSelectedCategory}
-            />
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredServices.map((service) => (
-                <ServiceCard key={service.id} {...service} />
+            <div className="flex flex-wrap gap-2 mb-6 justify-center">
+              {serviceCategories.map((category) => (
+                <Badge 
+                  key={category.id}
+                  variant={selectedCategory === category.name ? "default" : "outline"}
+                  className={`px-3 py-1 cursor-pointer ${
+                    selectedCategory === category.name 
+                      ? "bg-brand-teal hover:bg-brand-teal/90" 
+                      : "hover:bg-gray-100"
+                  }`}
+                  onClick={() => setSelectedCategory(category.name)}
+                >
+                  {t(`filter.categories.${category.id.replace('-', '')}`, category.name)}
+                </Badge>
               ))}
             </div>
+            
+            {filteredServices.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredServices.map((service) => (
+                  <ServiceCard key={service.id} {...service} />
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-10">
+                <p className="text-gray-500">
+                  {t('discover.noResults', 'No services found. Try adjusting your search.')}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </main>
+      
+      <DownloadApp />
+      
       <Footer />
     </div>
   );

@@ -18,7 +18,13 @@
       "cultural": "Cultural Experience",
       "skills": "Skills Teaching",
       "food": "Food Experience",
-      "photography": "Photography"
+      "photography": "Photography",
+      "localguide": "Local Guide",
+      "emergency": "Emergency",
+      "events": "Events",
+      "home": "Home",
+      "skillteaching": "Skill Teaching",
+      "foodexperience": "Food Experience"
     }
   },
   "common": {
@@ -73,13 +79,18 @@
   },
   "discover": {
     "title": "Discover Services",
+    "subtitle": "Find the perfect local service for any need, available right now",
+    "noResults": "No services found. Try adjusting your search.",
     "categoryTitles": {
       "cityGuide": "Local City Guide",
       "translation": "Translation Services",
       "cultural": "Cultural Experiences",
       "skillTeaching": "Skill Teaching",
       "foodExperience": "Food Experiences",
-      "photography": "Photography Services"
+      "photography": "Photography Services",
+      "emergency": "Emergency Services",
+      "events": "Event Planning",
+      "home": "Home Services"
     }
   },
   "howItWorks": {
@@ -120,9 +131,27 @@
     "cta": "Start Registration"
   },
   "serviceDetail": {
+    "availableNow": "Available Now",
+    "description": "Description",
+    "includes": "What's Included",
+    "languages": "Languages",
+    "reviews": "Reviews",
+    "experience": "Experience",
+    "responseTime": "Response Time",
+    "messageProvider": "Message Provider",
+    "selectDate": "Select Date",
+    "selectTime": "Select Time",
+    "bookNow": "Book Now",
+    "requestNow": "Request Now",
+    "secureBooking": "Secure booking and payment",
     "pricePerHour": "per hour",
     "groupSize": "Individual or Small Group",
-    "bookNow": "Book Now"
+    "verified": "Verified",
+    "tabs": {
+      "details": "Details",
+      "reviews": "Reviews",
+      "provider": "Provider"
+    }
   },
   "notFound": {
     "title": "404",
@@ -131,6 +160,49 @@
     "actions": {
       "home": "Return Home",
       "discover": "Discover Services"
+    }
+  },
+  "download": {
+    "title": "Download the Guidew App",
+    "subtitle": "Access local expertise on the go",
+    "getApp": "Get the App",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "features": {
+      "instant": "Instant booking",
+      "personalized": "Personalized experiences",
+      "secure": "Secure payments",
+      "chat": "Real-time chat"
+    }
+  },
+  "useCase": {
+    "localGuide": {
+      "title": "Immediate Local Guiding",
+      "description": "Connect with local guides instantly for personalized city tours"
+    },
+    "translation": {
+      "title": "On-Demand Translation",
+      "description": "Get real-time language assistance whenever you need it"
+    },
+    "skillsLearning": {
+      "title": "Skill-Based Learning",
+      "description": "Learn new skills from local experts on your schedule"
+    },
+    "emergency": {
+      "title": "Emergency Assistance",
+      "description": "Get help fast when you need it most"
+    },
+    "events": {
+      "title": "Event Planning",
+      "description": "Find experts to plan and execute your perfect event"
+    },
+    "home": {
+      "title": "Home Services",
+      "description": "Get immediate help with home maintenance and improvements"
+    },
+    "travel": {
+      "title": "Personalized Travel",
+      "description": "Experience unique, tailored adventures with local experts"
     }
   }
 }
