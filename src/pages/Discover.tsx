@@ -259,6 +259,113 @@ const sampleServices = [
       avatar: "https://randomuser.me/api/portraits/women/19.jpg"
     },
     imageSrc: "https://images.unsplash.com/photo-1594194003472-8431a9db1818"
+  },
+  
+  // Additional Use Cases
+  {
+    id: "16",
+    title: "Mandarin-English Language Exchange",
+    description: "Practice your Mandarin or English with a native speaker in a comfortable setting. Perfect for travelers and international students.",
+    category: "Language Exchange",
+    price: 30,
+    rating: 4.9,
+    location: "Beijing, China",
+    provider: {
+      id: "p16",
+      name: "Wei Lin",
+      avatar: "https://randomuser.me/api/portraits/women/55.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1634128221889-82ed6efebfc3"
+  },
+  {
+    id: "17",
+    title: "Math & Science Home Tutoring",
+    description: "Expert tutoring for high school and college students in mathematics and sciences. Personalized approach to help you excel.",
+    category: "Home Tutoring",
+    price: 45,
+    rating: 4.8,
+    location: "Boston, USA",
+    provider: {
+      id: "p17",
+      name: "Emily Chen",
+      avatar: "https://randomuser.me/api/portraits/women/47.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+  },
+  {
+    id: "18",
+    title: "Compassionate Senior Companionship",
+    description: "Caring companionship and assistance for seniors, including conversation, light meal preparation, and accompaniment to appointments.",
+    category: "Senior Care",
+    price: 35,
+    rating: 4.9,
+    location: "Toronto, Canada",
+    provider: {
+      id: "p18",
+      name: "Sarah Johnson",
+      avatar: "https://randomuser.me/api/portraits/women/62.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1581578731548-c64695cc6952"
+  },
+  {
+    id: "19",
+    title: "VR Travel Experience",
+    description: "Experience famous landmarks and destinations from the comfort of your location with top-of-the-line VR equipment and guided narration.",
+    category: "VR Experience",
+    price: 40,
+    rating: 4.7,
+    location: "San Francisco, USA",
+    provider: {
+      id: "p19",
+      name: "Alex Rivera",
+      avatar: "https://randomuser.me/api/portraits/men/28.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac"
+  },
+  {
+    id: "20",
+    title: "Sustainable Living Consultation",
+    description: "Practical advice on reducing your carbon footprint, sustainable home practices, and eco-friendly product recommendations.",
+    category: "Environmental Consulting",
+    price: 50,
+    rating: 4.8,
+    location: "Portland, USA",
+    provider: {
+      id: "p20",
+      name: "Morgan Green",
+      avatar: "https://randomuser.me/api/portraits/women/15.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09"
+  },
+  {
+    id: "21",
+    title: "Immediate Mental Health Support",
+    description: "Professional counseling for stress, anxiety, and other mental health concerns with a licensed therapist in a comfortable setting.",
+    category: "Mental Health",
+    price: 65,
+    rating: 4.9,
+    location: "Melbourne, Australia",
+    provider: {
+      id: "p21",
+      name: "Dr. James Wilson",
+      avatar: "https://randomuser.me/api/portraits/men/57.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56"
+  },
+  {
+    id: "22",
+    title: "Interior Design Quick Consultation",
+    description: "Get immediate design advice for your home or office space, including furniture arrangement, color schemes, and decor recommendations.",
+    category: "Interior Design",
+    price: 55,
+    rating: 4.7,
+    location: "Milan, Italy",
+    provider: {
+      id: "p22",
+      name: "Sofia Bianchi",
+      avatar: "https://randomuser.me/api/portraits/women/23.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace"
   }
 ];
 
@@ -279,7 +386,30 @@ const serviceCategories = [
   { id: "childcare", name: "Childcare" },
   { id: "home-organization", name: "Home Organization" },
   { id: "personal-shopping", name: "Personal Shopping" },
-  { id: "tech-support", name: "Tech Support" }
+  { id: "tech-support", name: "Tech Support" },
+  { id: "financial-advisory", name: "Financial Advisory" },
+  { id: "legal-consultation", name: "Legal Consultation" },
+  { id: "art-craft", name: "Art & Craft" },
+  { id: "music-dance", name: "Music & Dance" },
+  { id: "gardening", name: "Gardening" },
+  { id: "fitness", name: "Fitness" },
+  { id: "cooking", name: "Cooking" },
+  { id: "photography-video", name: "Photography & Video" },
+  { id: "language-exchange", name: "Language Exchange" },
+  { id: "home-tutoring", name: "Home Tutoring" },
+  { id: "senior-care", name: "Senior Care" },
+  { id: "vr-experience", name: "VR Experience" },
+  { id: "environmental-consulting", name: "Environmental Consulting" },
+  { id: "mental-health", name: "Mental Health" },
+  { id: "interior-design", name: "Interior Design" },
+  { id: "event-entertainment", name: "Event Entertainment" },
+  { id: "gift-services", name: "Gift Services" },
+  { id: "travel-planning", name: "Travel Planning" },
+  { id: "nutrition-planning", name: "Nutrition Planning" },
+  { id: "travel-photography", name: "Travel Photography" },
+  { id: "wedding-planning", name: "Wedding Planning" },
+  { id: "corporate-training", name: "Corporate Training" },
+  { id: "home-staging", name: "Home Staging" }
 ];
 
 const Discover: React.FC = () => {

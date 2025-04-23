@@ -1,4 +1,3 @@
-
 {
   "nav": {
     "discover": "发现",
@@ -40,7 +39,22 @@
       "gardening": "园艺与景观",
       "fitness": "个人健身",
       "cooking": "烹饪课程",
-      "photovideo": "摄影与视频"
+      "photovideo": "摄影与视频",
+      "languageexchange": "语言交流",
+      "hometutoring": "家庭教育",
+      "seniorcare": "老年人照护",
+      "vrexperience": "虚拟现实体验",
+      "environmental": "环保咨询",
+      "mentalhealth": "心理健康",
+      "interiordesign": "室内设计",
+      "eventent": "活动娱乐",
+      "giftservices": "个性化礼品",
+      "travelplanning": "旅行规划",
+      "nutritionplanning": "营养规划",
+      "travelphotography": "旅行摄影",
+      "weddingplanning": "婚礼策划",
+      "corporatetraining": "企业培训",
+      "homestaging": "房屋整理展示"
     }
   },
   "common": {
@@ -122,7 +136,22 @@
       "gardening": "园艺与景观",
       "fitness": "个人健身",
       "cooking": "烹饪课程",
-      "photoVideo": "摄影与视频"
+      "photoVideo": "摄影与视频",
+      "languageExchange": "语言交流项目",
+      "homeTutoring": "家庭教育服务",
+      "seniorCare": "老年人照护与陪伴",
+      "vrExperience": "虚拟现实体验",
+      "environmentalConsulting": "环保与可持续发展咨询",
+      "mentalHealth": "心理健康与咨询",
+      "interiorDesign": "室内设计与装饰",
+      "eventEntertainment": "活动娱乐服务",
+      "giftServices": "个性化礼品与纪念品服务",
+      "travelPlanning": "个性化旅行行程规划",
+      "nutritionPlanning": "个性化营养与饮食规划",
+      "travelPhotography": "个性化旅行摄影",
+      "weddingPlanning": "个性化婚礼策划",
+      "corporateTraining": "个性化企业培训",
+      "homeStaging": "个性化房屋整理展示"
     }
   },
   "howItWorks": {
@@ -299,6 +328,66 @@
     "photoVideo": {
       "title": "摄影与视频",
       "description": "捕捉您的重要时刻和活动的专业服务"
+    },
+    "languageExchange": {
+      "title": "语言交流项目",
+      "description": "立即与母语人士连接，进行语言练习和文化交流"
+    },
+    "homeTutoring": {
+      "title": "家庭教育服务",
+      "description": "在家中获得即时的学术支持和个性化教育"
+    },
+    "seniorCare": {
+      "title": "老年人照护与陪伴",
+      "description": "为老年人提供即时照护和陪伴服务，提升他们的生活质量"
+    },
+    "vrExperience": {
+      "title": "虚拟现实体验",
+      "description": "沉浸在独特的虚拟现实体验中，用于娱乐和教育"
+    },
+    "environmentalConsulting": {
+      "title": "环保与可持续发展咨询",
+      "description": "获取关于在家庭或企业中实施可持续做法的专业建议"
+    },
+    "mentalHealth": {
+      "title": "心理健康与咨询",
+      "description": "在需要时从合格的专业人士那里获得即时心理健康支持"
+    },
+    "interiorDesign": {
+      "title": "室内设计与装饰",
+      "description": "通过个性化的室内设计和装饰服务改变您的生活空间"
+    },
+    "eventEntertainment": {
+      "title": "活动娱乐服务",
+      "description": "为您的活动寻找即时的娱乐解决方案，创造难忘的体验"
+    },
+    "giftServices": {
+      "title": "个性化礼品与纪念品服务",
+      "description": "通过即时服务为任何场合创建独特的个性化礼品"
+    },
+    "travelPlanning": {
+      "title": "个性化旅行行程规划",
+      "description": "获得专业协助，通过个性化行程规划您的完美旅行"
+    },
+    "nutritionPlanning": {
+      "title": "个性化营养与饮食规划",
+      "description": "接收定制的营养和饮食计划，实现您的健康和保健目标"
+    },
+    "travelPhotography": {
+      "title": "个性化旅行摄影",
+      "description": "通过按需提供的专业摄影服务捕捉您的旅行记忆"
+    },
+    "weddingPlanning": {
+      "title": "个性化婚礼策划",
+      "description": "通过专业婚礼策划师的即时协助，打造您梦想中的婚礼"
+    },
+    "corporateTraining": {
+      "title": "个性化企业培训",
+      "description": "通过按需提供的定制企业培训计划提升您团队的技能"
+    },
+    "homeStaging": {
+      "title": "个性化房屋整理展示",
+      "description": "通过专业的房屋整理展示服务提高您房产的吸引力和价值"
     }
   }
 }

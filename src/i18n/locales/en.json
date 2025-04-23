@@ -1,4 +1,3 @@
-
 {
   "nav": {
     "discover": "Discover",
@@ -40,7 +39,22 @@
       "gardening": "Gardening",
       "fitness": "Fitness Training",
       "cooking": "Cooking Classes",
-      "photovideo": "Photography & Video"
+      "photovideo": "Photography & Video",
+      "languageexchange": "Language Exchange",
+      "hometutoring": "Home Tutoring",
+      "seniorcare": "Senior Care",
+      "vrexperience": "VR Experience",
+      "environmental": "Environmental Consulting",
+      "mentalhealth": "Mental Health",
+      "interiordesign": "Interior Design",
+      "eventent": "Event Entertainment",
+      "giftservices": "Gift Services",
+      "travelplanning": "Travel Planning",
+      "nutritionplanning": "Nutrition Planning",
+      "travelphotography": "Travel Photography",
+      "weddingplanning": "Wedding Planning",
+      "corporatetraining": "Corporate Training",
+      "homestaging": "Home Staging"
     }
   },
   "common": {
@@ -122,7 +136,22 @@
       "gardening": "Gardening & Landscaping",
       "fitness": "Personal Fitness Training",
       "cooking": "Cooking & Culinary Classes",
-      "photoVideo": "Photography & Videography"
+      "photoVideo": "Photography & Videography",
+      "languageExchange": "Language Exchange Programs",
+      "homeTutoring": "Home Tutoring Services",
+      "seniorCare": "Senior Care & Companionship",
+      "vrExperience": "Virtual Reality Experiences",
+      "environmentalConsulting": "Environmental & Sustainability Consulting",
+      "mentalHealth": "Mental Health & Counseling",
+      "interiordesign": "Interior Design & Decoration",
+      "eventEntertainment": "Event Entertainment",
+      "giftServices": "Personalized Gift & Souvenir Services",
+      "travelPlanning": "Personalized Travel Itinerary Planning",
+      "nutritionPlanning": "Personalized Nutrition & Diet Planning",
+      "travelPhotography": "Personalized Travel Photography",
+      "weddingPlanning": "Personalized Wedding Planning",
+      "corporateTraining": "Personalized Corporate Training",
+      "homestaging": "Home Staging"
     }
   },
   "howItWorks": {
@@ -299,6 +328,66 @@
     "photoVideo": {
       "title": "Photography & Videography",
       "description": "Professional capture of your important moments and events"
+    },
+    "languageExchange": {
+      "title": "Language Exchange Programs",
+      "description": "Connect with native speakers for immediate language practice and cultural exchange"
+    },
+    "homeTutoring": {
+      "title": "Home Tutoring Services",
+      "description": "Get immediate academic support and personalized education in the comfort of your home"
+    },
+    "seniorCare": {
+      "title": "Senior Care & Companionship",
+      "description": "Find immediate care and companionship services for seniors to enhance their well-being"
+    },
+    "vrExperience": {
+      "title": "Virtual Reality Experiences",
+      "description": "Immerse yourself in unique and engaging virtual reality experiences for entertainment and education"
+    },
+    "environmentalConsulting": {
+      "title": "Environmental & Sustainability Consulting",
+      "description": "Get expert advice on implementing sustainable practices in your home or business"
+    },
+    "mentalHealth": {
+      "title": "Mental Health & Counseling",
+      "description": "Access immediate mental health support from qualified professionals when you need it most"
+    },
+    "interiordesign": {
+      "title": "Interior Design & Decoration",
+      "description": "Transform your living space with personalized interior design and decoration services"
+    },
+    "eventEntertainment": {
+      "title": "Event Entertainment",
+      "description": "Find immediate entertainment solutions for your events to create memorable experiences"
+    },
+    "giftServices": {
+      "title": "Personalized Gift & Souvenir Services",
+      "description": "Create unique and personalized gifts for any occasion with immediate service"
+    },
+    "travelPlanning": {
+      "title": "Personalized Travel Itinerary Planning",
+      "description": "Get expert assistance in planning your perfect trip with personalized itineraries"
+    },
+    "nutritionPlanning": {
+      "title": "Personalized Nutrition & Diet Planning",
+      "description": "Receive tailored nutrition and diet plans to achieve your health and wellness goals"
+    },
+    "travelPhotography": {
+      "title": "Personalized Travel Photography",
+      "description": "Capture your travel memories with professional photography services available on demand"
+    },
+    "weddingPlanning": {
+      "title": "Personalized Wedding Planning",
+      "description": "Create your dream wedding with immediate assistance from professional wedding planners"
+    },
+    "corporateTraining": {
+      "title": "Personalized Corporate Training",
+      "description": "Enhance your team's skills with tailored corporate training programs available on demand"
+    },
+    "homestaging": {
+      "title": "Personalized Home Staging",
+      "description": "Increase your property's appeal and value with professional home staging services"
     }
   }
 }
