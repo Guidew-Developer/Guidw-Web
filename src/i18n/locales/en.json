@@ -54,7 +54,17 @@
       "travelphotography": "Travel Photography",
       "weddingplanning": "Wedding Planning",
       "corporatetraining": "Corporate Training",
-      "homestaging": "Home Staging"
+      "homestaging": "Home Staging",
+      "wellnessretreats": "Wellness Retreats",
+      "artworkshops": "Art Workshops",
+      "languagelearning": "Language Learning",
+      "careercounseling": "Career Counseling",
+      "financialplanning": "Financial Planning",
+      "homeautomation": "Home Automation",
+      "pettraining": "Pet Training",
+      "childeducation": "Child Education",
+      "homesecurity": "Home Security",
+      "eventcatering": "Event Catering"
     }
   },
   "common": {
@@ -151,7 +161,17 @@
       "travelPhotography": "Personalized Travel Photography",
       "weddingPlanning": "Personalized Wedding Planning",
       "corporateTraining": "Personalized Corporate Training",
-      "homestaging": "Home Staging"
+      "homestaging": "Home Staging",
+      "wellnessretreats": "Wellness Retreats",
+      "artworkshops": "Art Workshops",
+      "languagelearning": "Language Learning",
+      "careercounseling": "Career Counseling",
+      "financialplanning": "Financial Planning",
+      "homeautomation": "Home Automation",
+      "pettraining": "Pet Training",
+      "childeducation": "Child Education",
+      "homesecurity": "Home Security",
+      "eventcatering": "Event Catering"
     }
   },
   "howItWorks": {
@@ -388,6 +408,46 @@
     "homestaging": {
       "title": "Personalized Home Staging",
       "description": "Increase your property's appeal and value with professional home staging services"
+    },
+    "wellnessRetreats": {
+      "title": "Personalized Fitness & Wellness Retreats",
+      "description": "Experience tailored wellness and fitness retreats designed to rejuvenate your mind and body"
+    },
+    "artWorkshops": {
+      "title": "Personalized Art & Craft Workshops",
+      "description": "Develop your creative skills through immediate and personalized art and craft workshops"
+    },
+    "languageLearning": {
+      "title": "Personalized Language Learning",
+      "description": "Learn new languages effectively with personalized sessions tailored to your specific needs and learning style"
+    },
+    "careerCounseling": {
+      "title": "Career Counseling Services",
+      "description": "Receive immediate guidance on your career path from experienced professionals"
+    },
+    "financialPlanning": {
+      "title": "Financial Planning Services",
+      "description": "Get personalized financial advice to help you achieve your financial goals and secure your future"
+    },
+    "homeAutomation": {
+      "title": "Home Automation Services",
+      "description": "Transform your home with smart technology solutions customized to your lifestyle and preferences"
+    },
+    "petTraining": {
+      "title": "Personalized Pet Training",
+      "description": "Work with experienced trainers to address your pet's specific behavioral needs and training goals"
+    },
+    "childEducation": {
+      "title": "Child Education Services",
+      "description": "Provide your children with tailored educational support to help them excel academically"
+    },
+    "homeSecurity": {
+      "title": "Home Security Services",
+      "description": "Protect your home and family with personalized security solutions designed for your specific needs"
+    },
+    "eventCatering": {
+      "title": "Event Catering Services",
+      "description": "Create memorable dining experiences for your events with customized menus and professional service"
     }
   }
 }

@@ -366,6 +366,173 @@ const sampleServices = [
       avatar: "https://randomuser.me/api/portraits/women/23.jpg"
     },
     imageSrc: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace"
+  },
+  
+  // Adding new services for use cases 39-50
+  {
+    id: "39",
+    title: "3-Day Mountain Yoga & Meditation Retreat",
+    description: "Escape the city and rejuvenate with a personalized yoga and meditation retreat in the mountains. All meals, accommodation, and wellness activities included.",
+    category: "Wellness Retreats",
+    price: 180,
+    rating: 4.8,
+    location: "Boulder, USA",
+    provider: {
+      id: "p39",
+      name: "Emma W.",
+      avatar: "https://randomuser.me/api/portraits/women/26.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1545389336-cf090694435e"
+  },
+  {
+    id: "40",
+    title: "Personalized Pottery Workshop",
+    description: "Learn pottery techniques in a one-on-one session tailored to your skill level. Create your own ceramic pieces from start to finish with expert guidance.",
+    category: "Art Workshops",
+    price: 65,
+    rating: 4.9,
+    location: "Portland, USA",
+    provider: {
+      id: "p40",
+      name: "Marcus L.",
+      avatar: "https://randomuser.me/api/portraits/men/36.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a"
+  },
+  {
+    id: "41",
+    title: "Conversational Spanish Immersion",
+    description: "Rapid Spanish language acquisition through personalized conversational practice. Perfect for travelers or professionals needing quick language skills.",
+    category: "Language Learning",
+    price: 45,
+    rating: 4.7,
+    location: "Madrid, Spain",
+    provider: {
+      id: "p41",
+      name: "Carmen R.",
+      avatar: "https://randomuser.me/api/portraits/women/39.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1551704831-2a4451a3e1e1"
+  },
+  {
+    id: "42",
+    title: "Career Transition Strategy Session",
+    description: "Get immediate guidance on changing careers with a personalized action plan. Includes skills assessment, resume review, and interview preparation.",
+    category: "Career Counseling",
+    price: 90,
+    rating: 4.8,
+    location: "Chicago, USA",
+    provider: {
+      id: "p42",
+      name: "Robert H.",
+      avatar: "https://randomuser.me/api/portraits/men/45.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
+  },
+  {
+    id: "43",
+    title: "Emergency Budget & Debt Reduction Plan",
+    description: "Get immediate financial guidance with a personalized budget and debt reduction strategy. Perfect for sudden financial changes or emergencies.",
+    category: "Financial Planning",
+    price: 75,
+    rating: 4.6,
+    location: "New York, USA",
+    provider: {
+      id: "p43",
+      name: "Sarah K.",
+      avatar: "https://randomuser.me/api/portraits/women/43.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1579621970590-9d624316904b"
+  },
+  {
+    id: "44",
+    title: "Smart Home Setup & Integration",
+    description: "Get your smart home devices set up and integrated in one session. From voice assistants to lighting, security, and entertainment systems.",
+    category: "Home Automation",
+    price: 85,
+    rating: 4.7,
+    location: "Seattle, USA",
+    provider: {
+      id: "p44",
+      name: "Eric T.",
+      avatar: "https://randomuser.me/api/portraits/men/49.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1558002038-1055e2ff8a59"
+  },
+  {
+    id: "45",
+    title: "Custom Europe Trip Planning",
+    description: "Get a personalized European travel itinerary designed around your interests, budget and timeline. Includes accommodations, transportation, and activities.",
+    category: "Travel Planning",
+    price: 60,
+    rating: 4.9,
+    location: "London, UK",
+    provider: {
+      id: "p45",
+      name: "Victoria M.",
+      avatar: "https://randomuser.me/api/portraits/women/51.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1491557345352-5929e343eb89"
+  },
+  {
+    id: "46",
+    title: "Dog Behavior Problem Solving",
+    description: "Address specific behavioral issues with your dog through personalized training techniques. Effective for aggression, anxiety, or obedience problems.",
+    category: "Pet Training",
+    price: 65,
+    rating: 4.8,
+    location: "Austin, USA",
+    provider: {
+      id: "p46",
+      name: "Daniel R.",
+      avatar: "https://randomuser.me/api/portraits/men/53.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1534361960057-19889db9621e"
+  },
+  {
+    id: "47",
+    title: "Math & Science Tutoring For Kids",
+    description: "Personalized math and science tutoring for elementary and middle school students. Homework help, test preparation, and concept reinforcement.",
+    category: "Child Education",
+    price: 50,
+    rating: 4.9,
+    location: "Boston, USA",
+    provider: {
+      id: "p47",
+      name: "Jessica T.",
+      avatar: "https://randomuser.me/api/portraits/women/55.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+  },
+  {
+    id: "48",
+    title: "Home Security Assessment & Implementation",
+    description: "Get immediate expert assessment of your home security needs and same-day implementation of recommended security measures.",
+    category: "Home Security",
+    price: 95,
+    rating: 4.7,
+    location: "San Diego, USA",
+    provider: {
+      id: "p48",
+      name: "Michael S.",
+      avatar: "https://randomuser.me/api/portraits/men/57.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1558959356-2d5b6cdc6bdc"
+  },
+  {
+    id: "50",
+    title: "Last-Minute Event Catering",
+    description: "Emergency catering services for unexpected events or last-minute gatherings. Custom menu planning and professional service with minimal notice.",
+    category: "Event Catering",
+    price: 120,
+    rating: 4.8,
+    location: "Miami, USA",
+    provider: {
+      id: "p50",
+      name: "Chef Antonio",
+      avatar: "https://randomuser.me/api/portraits/men/60.jpg"
+    },
+    imageSrc: "https://images.unsplash.com/photo-1555244162-803834f70033"
   }
 ];
 
@@ -409,7 +576,18 @@ const serviceCategories = [
   { id: "travel-photography", name: "Travel Photography" },
   { id: "wedding-planning", name: "Wedding Planning" },
   { id: "corporate-training", name: "Corporate Training" },
-  { id: "home-staging", name: "Home Staging" }
+  { id: "home-staging", name: "Home Staging" },
+  // New categories
+  { id: "wellness-retreats", name: "Wellness Retreats" },
+  { id: "art-workshops", name: "Art Workshops" },
+  { id: "language-learning", name: "Language Learning" },
+  { id: "career-counseling", name: "Career Counseling" },
+  { id: "financial-planning", name: "Financial Planning" },
+  { id: "home-automation", name: "Home Automation" },
+  { id: "pet-training", name: "Pet Training" },
+  { id: "child-education", name: "Child Education" },
+  { id: "home-security", name: "Home Security" },
+  { id: "event-catering", name: "Event Catering" }
 ];
 
 const Discover: React.FC = () => {

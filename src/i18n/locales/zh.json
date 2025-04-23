@@ -54,7 +54,17 @@
       "travelphotography": "旅行摄影",
       "weddingplanning": "婚礼策划",
       "corporatetraining": "企业培训",
-      "homestaging": "房屋整理展示"
+      "homestaging": "房屋整理展示",
+      "wellnessretreats": "健康养生度假",
+      "artworkshops": "艺术工作坊",
+      "languagelearning": "语言学习",
+      "careercounseling": "职业咨询",
+      "financialplanning": "财务规划",
+      "homeautomation": "家居自动化",
+      "pettraining": "宠物训练",
+      "childeducation": "儿童教育",
+      "homesecurity": "家庭安全",
+      "eventcatering": "活动餐饮"
     }
   },
   "common": {
@@ -143,7 +153,7 @@
       "vrExperience": "虚拟现实体验",
       "environmentalConsulting": "环保与可持续发展咨询",
       "mentalHealth": "心理健康与咨询",
-      "interiorDesign": "室内设计与装饰",
+      "interiordesign": "室内设计与装饰",
       "eventEntertainment": "活动娱乐服务",
       "giftServices": "个性化礼品与纪念品服务",
       "travelPlanning": "个性化旅行行程规划",
@@ -151,7 +161,17 @@
       "travelPhotography": "个性化旅行摄影",
       "weddingPlanning": "个性化婚礼策划",
       "corporateTraining": "个性化企业培训",
-      "homeStaging": "个性化房屋整理展示"
+      "homeStaging": "个性化房屋整理展示",
+      "wellnessretreats": "健康养生度假",
+      "artworkshops": "艺术工作坊",
+      "languagelearning": "语言学习",
+      "careercounseling": "职业咨询",
+      "financialplanning": "财务规划",
+      "homeautomation": "家居自动化",
+      "pettraining": "宠物训练",
+      "childeducation": "儿童教育",
+      "homesecurity": "家庭安全",
+      "eventcatering": "活动餐饮"
     }
   },
   "howItWorks": {
@@ -388,6 +408,46 @@
     "homeStaging": {
       "title": "个性化房屋整理展示",
       "description": "通过专业的房屋整理展示服务提高您房产的吸引力和价值"
+    },
+    "wellnessRetreats": {
+      "title": "个性化健康养生度假",
+      "description": "体验为您量身定制的健康养生度假，焕发身心活力"
+    },
+    "artWorkshops": {
+      "title": "个性化艺术工作坊",
+      "description": "通过即时和个性化的艺术工作坊，发展您的创意技能"
+    },
+    "languageLearning": {
+      "title": "个性化语言学习",
+      "description": "通过根据您特定需求和学习风格量身定制的课程，有效学习新语言"
+    },
+    "careerCounseling": {
+      "title": "职业咨询服务",
+      "description": "从经验丰富的专业人士那里获得关于职业发展的即时指导"
+    },
+    "financialPlanning": {
+      "title": "财务规划服务",
+      "description": "获取个性化财务建议，帮助您实现财务目标并确保未来安全"
+    },
+    "homeAutomation": {
+      "title": "家居自动化服务",
+      "description": "使用根据您的生活方式和偏好定制的智能技术解决方案改造您的家"
+    },
+    "petTraining": {
+      "title": "个性化宠物训练",
+      "description": "与经验丰富的训练师合作，解决您宠物的特定行为需求和训练目标"
+    },
+    "childEducation": {
+      "title": "儿童教育服务",
+      "description": "为您的孩子提供量身定制的教育支持，帮助他们在学业上取得优异成绩"
+    },
+    "homeSecurity": {
+      "title": "家庭安全服务",
+      "description": "通过为您特定需求设计的个性化安全解决方案，保护您的家庭和家人"
+    },
+    "eventCatering": {
+      "title": "活动餐饮服务",
+      "description": "通过定制菜单和专业服务，为您的活动创造难忘的用餐体验"
     }
   }
 }
