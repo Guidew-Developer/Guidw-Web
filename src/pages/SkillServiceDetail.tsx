@@ -8,64 +8,18 @@ import { Button } from "@/components/ui/button";
 import { Star, MapPin, Clock, User, Calendar, Shield, MessageCircle } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import DownloadApp from "@/components/DownloadApp";
-
-const skillServiceData: Record<string, any> = {
-  "1": {
-    title: "全栈开发技能提升",
-    description: "涵盖前端、后端、DevOps。1对1实战带教，项目实例演练，辅导职业生涯规划。",
-    mode: "线下/线上可选",
-    location: "上海、北京、深圳",
-    price: 300,
-    priceUnit: "每小时",
-    timeRange: "周一至周五 18:00-22:00，周末 10:00-18:00",
-    highlights: ["实战项目带教", "名企工程师辅导", "可定制学习内容", "技术路线规划"],
-    images: [
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c"
-    ],
-    provider: {
-      name: "张老师",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-      rating: 4.9,
-      certifications: ["阿里云专家认证", "微软MVP"],
-      verified: true
-    },
-    rating: 4.9,
-    reviews: [
-      {
-        user: "小李",
-        avatar: "https://randomuser.me/api/portraits/women/22.jpg",
-        rating: 5,
-        date: "2024-03-21",
-        content: "非常用心的讲解，全流程项目实操，对我找工作帮助很大。"
-      },
-      {
-        user: "王同学",
-        avatar: "https://randomuser.me/api/portraits/men/54.jpg",
-        rating: 4,
-        date: "2024-04-11",
-        content: "针对需求定制，让我零基础也能快速上手。"
-      }
-    ],
-    faq: [
-      { q: "可远程服务吗？", a: "支持上海、北京、深圳线下，其他城市远程视频。" },
-      { q: "每节课是多长时间？", a: "每节60分钟，可根据学员需求灵活调整。"}
-    ]
-  },
-  // 以相同结构继续为其他服务添加如"2": { ... }, "3": { ... }
-};
+import { skillServiceData } from "@/constants/skillServiceData";
 
 const SkillServiceDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const service = skillServiceData[id || "1"];
+  const service = skillServiceData[id || "39"];
 
   if (!service) {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1 container mx-auto px-4 py-16 text-center">
-          <div className="text-2xl font-bold mb-4 text-red-500">未找到该服务详情</div>
+          <div className="text-2xl font-bold mb-4 text-red-500">未找到该技能服务详情</div>
         </main>
         <Footer />
       </div>
@@ -88,7 +42,7 @@ const SkillServiceDetail = () => {
               <span className="flex items-center"><MapPin className="w-4 h-4 mr-1" />{service.location}</span>
               <span className="flex items-center"><Clock className="w-4 h-4 mr-1" />{service.timeRange}</span>
               <span className="flex items-center"><User className="w-4 h-4 mr-1" />服务方式：{service.mode}</span>
-              <span className="flex items-center text-amber-500"><Star className="h-4 w-4 mr-1" fill="currentColor" />{service.rating}</span>
+              <span className="flex items-center text-amber-500"><Star className="h-4 w-4 mr-1" fill="currentColor" />{service.provider.rating}</span>
             </div>
           </div>
 
@@ -227,4 +181,3 @@ const SkillServiceDetail = () => {
 };
 
 export default SkillServiceDetail;
-

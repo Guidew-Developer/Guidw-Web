@@ -1,7 +1,7 @@
-
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { StarIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface ServiceCardProps {
   id: string;
@@ -30,6 +30,13 @@ const ServiceCard = ({
   provider,
   imageSrc,
 }: ServiceCardProps) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    const isSkillService = id >= "39" && id <= "50";
+    navigate(isSkillService ? `/skill-service/${id}` : `/service/${id}`);
+  };
+
   return (
     <Card className="overflow-hidden transition-all duration-300 hover:shadow-md cursor-pointer h-full flex flex-col">
       <div className="relative h-48 overflow-hidden">
