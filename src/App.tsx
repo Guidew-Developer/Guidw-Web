@@ -11,6 +11,9 @@ import BecomeExpert from "./pages/BecomeExpert";
 import ServiceDetail from "./pages/ServiceDetail";
 import SkillServiceDetail from "./pages/SkillServiceDetail";
 import NotFound from "./pages/NotFound";
+import Auth from "./pages/Auth";
+import UserApp from "./pages/UserApp";
+import ProviderApp from "./pages/ProviderApp";
 import './i18n/config';
 
 const queryClient = new QueryClient();
@@ -28,6 +31,9 @@ const App = () => (
           <Route path="/become-expert" element={<BecomeExpert />} />
           <Route path="/service/:id" element={<ServiceDetail />} />
           <Route path="/skill-service/:id" element={<SkillServiceDetail />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/app" element={<UserApp />} />
+          <Route path="/provider" element={<ProviderApp />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
