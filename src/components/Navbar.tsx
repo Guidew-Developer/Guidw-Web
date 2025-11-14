@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -8,6 +8,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   return (
@@ -42,10 +43,15 @@ const Navbar = () => {
                 Download App
               </Button>
               <LanguageSwitcher />
-              <Button variant="outline" className="border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white">
+              <Button
+                variant="outline"
+                className="border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white"
+                onClick={() => navigate("/auth")}
+              >
                 Sign in
               </Button>
-              <Button className="bg-brand-teal hover:bg-brand-teal/90 text-white">
+              <Button className="bg-brand-teal hover:bg-brand-teal/90 text-white" onClick={() => navigate("/auth")}
+              >
                 Join now
               </Button>
             </div>
@@ -103,12 +109,17 @@ const Navbar = () => {
           <div className="pt-4 pb-3 border-t border-gray-200">
             <div className="flex items-center px-5">
               <div className="flex-shrink-0">
-                <Button className="w-full mb-2 bg-brand-teal hover:bg-brand-teal/90 text-white">
+                <Button className="w-full mb-2 bg-brand-teal hover:bg-brand-teal/90 text-white" onClick={() => navigate("/auth")}
+                >
                   Sign in
                 </Button>
               </div>
               <div className="ml-3">
-                <Button variant="outline" className="w-full border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white">
+                <Button
+                  variant="outline"
+                  className="w-full border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white"
+                  onClick={() => navigate("/auth")}
+                >
                   Join now
                 </Button>
               </div>
