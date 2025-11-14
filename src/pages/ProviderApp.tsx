@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
@@ -15,6 +15,9 @@ import AvailabilityEditor from "@/components/dashboard/AvailabilityEditor";
 import ProviderProfileForm from "@/components/dashboard/ProviderProfileForm";
 import ReviewPanel from "@/components/dashboard/ReviewPanel";
 import { useGuidew } from "@/state/GuidewProvider";
+import VerificationStatusCard from "@/components/dashboard/VerificationStatusCard";
+import { haversineDistanceKm } from "@/utils/geo";
+import ReviewHistory from "@/components/dashboard/ReviewHistory";
 
 const ProviderApp = () => {
   const {
@@ -35,7 +38,10 @@ const ProviderApp = () => {
     recomputeAchievements,
     setProviderAutoAccept,
     updateProviderAvailability,
-    upsertProviderProfile
+    upsertProviderProfile,
+    reportUserNoShow,
+    generateItinerarySuggestion,
+    requestVerification
   } = useGuidew();
 
   const currentUser = users.find(user => user.id === currentUserId);
@@ -48,6 +54,40 @@ const ProviderApp = () => {
   const completed = providerOrders.filter(order => order.status === "awaiting-review" || order.status === "completed");
   const [selectedOrderId, setSelectedOrderId] = useState<string | undefined>(activeOrder?.id);
   const orderForChat = providerOrders.find(order => order.id === selectedOrderId) ?? activeOrder;
+  const travelReminderRef = useRef<string | null>(null);
+  const rangeReminderRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!providerProfile) return;
+    const sortedUpcoming = [...upcoming].sort(
+      (a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime()
+    );
+    const next = sortedUpcoming[0];
+    if (!next) return;
+
+    const minutesUntilStart = (new Date(next.startTime).getTime() - Date.now()) / (1000 * 60);
+    const leaveBuffer = next.travel.estimatedTravelMinutes + 15;
+    if (
+      minutesUntilStart > 0 &&
+      minutesUntilStart <= leaveBuffer &&
+      travelReminderRef.current !== next.id
+    ) {
+      toast.warning(`Time to head out for your ${new Date(next.startTime).toLocaleTimeString()} service`, {
+        description: `Allow ${next.travel.estimatedTravelMinutes} minutes of travel to ${next.location.address}.`
+      });
+      travelReminderRef.current = next.id;
+    }
+
+    if (providerProfile.vip) {
+      const distance = haversineDistanceKm(providerProfile.location, next.location);
+      if (distance > providerProfile.travelRadiusKm && rangeReminderRef.current !== next.id) {
+        toast(`Upcoming service exceeds your configured travel radius`, {
+          description: `Distance ${distance.toFixed(1)} km vs radius ${providerProfile.travelRadiusKm} km.`
+        });
+        rangeReminderRef.current = next.id;
+      }
+    }
+  }, [upcoming, providerProfile]);
 
   if (!currentUser || !providerProfile) {
     return <Navigate to="/auth" replace />;
@@ -70,6 +110,16 @@ const ProviderApp = () => {
     refreshWallets();
     recomputeAchievements(currentUser.id);
     toast.success("Service completed. Earnings will clear after 7 days.");
+  };
+
+  const handleUserNoShow = (orderId: string) => {
+    const outcome = reportUserNoShow(orderId);
+    if (outcome.success) {
+      toast.success(outcome.message);
+      refreshWallets();
+    } else {
+      toast.error(outcome.message);
+    }
   };
 
   const selectedCompletedOrder = completed.find(order => order.id === selectedOrderId) ?? completed[0];
@@ -124,6 +174,9 @@ const ProviderApp = () => {
                 submitItinerary(orderId, itinerary);
                 toast.success("Itinerary shared with the traveler.");
               }}
+              onGenerateItinerary={generateItinerarySuggestion}
+              onReportUserNoShow={handleUserNoShow}
+              isVip={currentUser.vip.active}
             />
           </div>
 
@@ -165,6 +218,13 @@ const ProviderApp = () => {
               toast.success("Availability updated");
             }}
           />
+          <VerificationStatusCard
+            levels={currentUser.verifiedLevels}
+            onRequestLevel={level => {
+              requestVerification(currentUser.id, level);
+              toast.success(`Verification request for ${level} submitted.`);
+            }}
+          />
           <ReviewPanel
             order={selectedCompletedOrder}
             onSubmit={review => {
@@ -181,6 +241,13 @@ const ProviderApp = () => {
               addTip(selectedCompletedOrder.id, amount);
               toast.success("Tip recorded for reporting.");
             }}
+          />
+          <ReviewHistory
+            orders={providerOrders}
+            users={users}
+            services={services}
+            providerProfiles={providerProfiles}
+            role="provider"
           />
         </TabsContent>
 

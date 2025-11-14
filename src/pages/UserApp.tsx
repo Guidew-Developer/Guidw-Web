@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -13,8 +13,12 @@ import WalletSummary from "@/components/dashboard/WalletSummary";
 import AchievementsPanel from "@/components/dashboard/AchievementsPanel";
 import ReviewPanel from "@/components/dashboard/ReviewPanel";
 import ThirdPartySuggestions from "@/components/dashboard/ThirdPartySuggestions";
+import ProviderFilters, { ProviderFilterState } from "@/components/dashboard/ProviderFilters";
+import ReviewHistory from "@/components/dashboard/ReviewHistory";
+import OrderActionsCard from "@/components/dashboard/OrderActionsCard";
 import { useGuidew } from "@/state/GuidewProvider";
 import type { ProviderProfile } from "@/types/guidew";
+import { estimateTravelWindow, haversineDistanceKm } from "@/utils/geo";
 
 const UserApp = () => {
   const {
@@ -31,13 +35,22 @@ const UserApp = () => {
     upgradeVip,
     downgradeVip,
     refreshWallets,
-    recomputeAchievements
+    recomputeAchievements,
+    cancelOrder,
+    reportProviderNoShow
   } = useGuidew();
 
   const currentUser = users.find(user => user.id === currentUserId);
   const [selectedProviderId, setSelectedProviderId] = useState<string | undefined>();
   const [recommendedProviders, setRecommendedProviders] = useState<ProviderProfile[]>([]);
   const [selectedOrderId, setSelectedOrderId] = useState<string | undefined>();
+  const [filters, setFilters] = useState<ProviderFilterState>({
+    tags: [],
+    languages: [],
+    vipOnly: false,
+    autoAcceptOnly: false,
+    minRating: 0
+  });
 
   const userOrders = useMemo(
     () => orders.filter(order => order.userId === currentUser?.id).sort((a, b) => new Date(b.startTime).getTime() - new Date(a.startTime).getTime()),
@@ -53,7 +66,92 @@ const UserApp = () => {
     return <Navigate to="/auth" replace />;
   }
 
-  const availableProviders = providerProfiles.filter(provider => provider.location.city === currentUser.lastKnownLocation.city);
+  const userLocation = currentUser.lastKnownLocation;
+
+  const timeStringToMinutes = (value: string) => {
+    const [hours, minutes] = value.split(":").map(Number);
+    return hours * 60 + minutes;
+  };
+
+  const matchesAvailability = (provider: ProviderProfile, startTime: string, durationHours: number) => {
+    if (!provider.availability.length) return true;
+    const start = new Date(startTime);
+    const end = new Date(start.getTime() + durationHours * 60 * 60 * 1000);
+    const day = start.getDay();
+    const startMinutes = start.getHours() * 60 + start.getMinutes();
+    const endMinutes = end.getHours() * 60 + end.getMinutes();
+
+    return provider.availability.some(slot => {
+      if (slot.day !== day) return false;
+      const slotStart = timeStringToMinutes(slot.start);
+      const slotEnd = timeStringToMinutes(slot.end);
+      return slotStart <= startMinutes && slotEnd >= endMinutes;
+    });
+  };
+
+  const hasProviderConflict = (providerId: string, startTime: string, durationHours: number) => {
+    const start = new Date(startTime);
+    const end = new Date(start.getTime() + durationHours * 60 * 60 * 1000);
+    return orders.some(order => {
+      if (order.providerId !== providerId) return false;
+      if (order.status === "cancelled") return false;
+      const orderStart = new Date(order.startTime);
+      const orderEnd = new Date(orderStart.getTime() + order.durationHours * 60 * 60 * 1000);
+      return start < orderEnd && end > orderStart;
+    });
+  };
+
+  const providerCanServe = (provider: ProviderProfile, startTime: string, durationHours: number) => {
+    if (provider.location.city !== userLocation.city) return false;
+    if (!matchesAvailability(provider, startTime, durationHours)) return false;
+    if (hasProviderConflict(provider.id, startTime, durationHours)) return false;
+    const distance = haversineDistanceKm(provider.location, userLocation);
+    if (distance > provider.travelRadiusKm) return false;
+    const travelWindow = estimateTravelWindow(provider.location, userLocation, startTime);
+    return travelWindow.canArriveOnTime;
+  };
+
+  const providersInCity = useMemo(
+    () => providerProfiles.filter(provider => provider.location.city === userLocation.city),
+    [providerProfiles, userLocation.city]
+  );
+
+  const filteredProviders = useMemo(
+    () =>
+      providersInCity.filter(provider => {
+        if (filters.tags.length && !filters.tags.every(tag => provider.tags.includes(tag))) {
+          return false;
+        }
+        if (filters.languages.length && !filters.languages.every(language => provider.languages.includes(language))) {
+          return false;
+        }
+        if (filters.vipOnly && !provider.vip) {
+          return false;
+        }
+        if (filters.autoAcceptOnly && !provider.autoAccept) {
+          return false;
+        }
+        if (provider.rating < filters.minRating) {
+          return false;
+        }
+        const distance = haversineDistanceKm(provider.location, userLocation);
+        return distance <= provider.travelRadiusKm;
+      }),
+    [providersInCity, filters, userLocation.lat, userLocation.lng]
+  );
+
+  useEffect(() => {
+    if (!selectedProviderId && filteredProviders.length) {
+      setSelectedProviderId(filteredProviders[0].id);
+    }
+    if (selectedProviderId && !filteredProviders.some(provider => provider.id === selectedProviderId)) {
+      setSelectedProviderId(filteredProviders[0]?.id);
+    }
+  }, [filteredProviders, selectedProviderId]);
+
+  useEffect(() => {
+    setRecommendedProviders(prev => prev.filter(provider => filteredProviders.some(item => item.id === provider.id)));
+  }, [filteredProviders]);
 
   const handleSubmitRequest = ({
     serviceId,
@@ -70,13 +168,18 @@ const UserApp = () => {
     address: string;
     requiresItinerary: boolean;
   }) => {
+    const provider = providerProfiles.find(item => item.id === providerId);
+    if (!provider || !providerCanServe(provider, startTime, durationHours)) {
+      toast.error("Selected provider is unavailable for the requested slot.");
+      return;
+    }
     const order = createOrder({
       userId: currentUser.id,
       providerId,
       serviceId,
       startTime,
       durationHours,
-      location: { address, lat: currentUser.lastKnownLocation.lat, lng: currentUser.lastKnownLocation.lng },
+      location: { address, lat: userLocation.lat, lng: userLocation.lng },
       requiresItinerary
     });
     if (!order) {
@@ -87,9 +190,10 @@ const UserApp = () => {
     recomputeAchievements(currentUser.id);
   };
 
-  const handleAiSuggest = (query: string) => {
+  const handleAiSuggest = (query: string, options: { startTime: string; durationHours: number }) => {
     const keywords = query.toLowerCase().split(/\s+/);
-    const matched = providerProfiles
+    const matched = filteredProviders
+      .filter(provider => providerCanServe(provider, options.startTime, options.durationHours))
       .map(provider => ({
         provider,
         score: keywords.filter(keyword => provider.tags.some(tag => tag.includes(keyword))).length +
@@ -104,6 +208,26 @@ const UserApp = () => {
     return matched;
   };
 
+  const handleCancelOrder = (orderId: string, mutual = false) => {
+    const result = cancelOrder(orderId, "user", mutual ? { mutual: true } : undefined);
+    if (result.success) {
+      toast.success(result.message);
+      refreshWallets();
+    } else {
+      toast.error(result.message);
+    }
+  };
+
+  const handleReportProviderNoShow = (orderId: string) => {
+    const result = reportProviderNoShow(orderId);
+    if (result.success) {
+      toast.success(result.message);
+      refreshWallets();
+    } else {
+      toast.error(result.message);
+    }
+  };
+
   const handleToggleVip = () => {
     if (currentUser.vip.active) {
       downgradeVip(currentUser.id);
@@ -115,6 +239,7 @@ const UserApp = () => {
   };
 
   const selectedCompletedOrder = completed.find(order => order.id === selectedOrderId) ?? completed[0];
+  const selectedUpcomingOrder = upcoming.find(order => order.id === selectedOrderId) ?? upcoming[0];
 
   return (
     <div className="min-h-screen bg-brand-lightGray/60 p-6 space-y-6">
@@ -141,19 +266,21 @@ const UserApp = () => {
 
         <TabsContent value="explore" className="space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <ProviderMap providers={availableProviders} selectedProviderId={selectedProviderId} onSelect={setSelectedProviderId} />
+            <ProviderMap providers={filteredProviders} selectedProviderId={selectedProviderId} onSelect={setSelectedProviderId} />
             <ProviderList
-              providers={availableProviders}
+              providers={filteredProviders}
               services={services}
               onSelect={setSelectedProviderId}
               activeProviderId={selectedProviderId}
-              userLocation={{ lat: currentUser.lastKnownLocation.lat, lng: currentUser.lastKnownLocation.lng }}
+              userLocation={{ lat: userLocation.lat, lng: userLocation.lng }}
             />
           </div>
 
+          <ProviderFilters providers={providersInCity} value={filters} onChange={setFilters} />
+
           <ServiceRequestForm
-            services={services.filter(service => availableProviders.some(provider => provider.id === service.providerId))}
-            providers={availableProviders}
+            services={services.filter(service => filteredProviders.some(provider => provider.id === service.providerId))}
+            providers={filteredProviders}
             onSubmit={handleSubmitRequest}
             aiSuggest={currentUser.vip.active ? handleAiSuggest : undefined}
             recommendedProviders={recommendedProviders}
@@ -181,23 +308,39 @@ const UserApp = () => {
           </div>
         </TabsContent>
 
-        <TabsContent value="schedule">
+        <TabsContent value="schedule" className="space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <UpcomingOrders orders={upcoming} onSelectOrder={setSelectedOrderId} selectedOrderId={selectedOrderId} />
-            <ReviewPanel
-              order={selectedCompletedOrder}
-              onSubmit={review => {
-                if (!selectedCompletedOrder) return;
-                submitReview(selectedCompletedOrder.id, { userDecision: review.decision, userComment: review.comment }, "user");
-                toast.success("Review submitted. We'll publish once the provider also reviews you.");
-              }}
-              onTip={amount => {
-                if (!selectedCompletedOrder) return;
-                addTip(selectedCompletedOrder.id, amount);
-                toast.success(`Tip of $${amount} added.`);
-              }}
-            />
+            <div className="space-y-6">
+              <ReviewPanel
+                order={selectedCompletedOrder}
+                onSubmit={review => {
+                  if (!selectedCompletedOrder) return;
+                  submitReview(selectedCompletedOrder.id, { userDecision: review.decision, userComment: review.comment }, "user");
+                  toast.success("Review submitted. We'll publish once the provider also reviews you.");
+                }}
+                onTip={amount => {
+                  if (!selectedCompletedOrder) return;
+                  addTip(selectedCompletedOrder.id, amount);
+                  toast.success(`Tip of $${amount} added.`);
+                }}
+              />
+              <OrderActionsCard
+                order={selectedUpcomingOrder}
+                onCancel={() => selectedUpcomingOrder && handleCancelOrder(selectedUpcomingOrder.id)}
+                onMutualCancel={() => selectedUpcomingOrder && handleCancelOrder(selectedUpcomingOrder.id, true)}
+                onReportProviderNoShow={() => selectedUpcomingOrder && handleReportProviderNoShow(selectedUpcomingOrder.id)}
+              />
+            </div>
           </div>
+
+          <ReviewHistory
+            orders={userOrders}
+            users={users}
+            services={services}
+            providerProfiles={providerProfiles}
+            role="user"
+          />
         </TabsContent>
 
         <TabsContent value="wallet">
