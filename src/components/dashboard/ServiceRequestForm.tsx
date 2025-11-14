@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,7 +19,7 @@ interface ServiceRequestFormProps {
     address: string;
     requiresItinerary: boolean;
   }) => void;
-  aiSuggest?: (query: string) => ProviderProfile[];
+  aiSuggest?: (query: string, options: { startTime: string; durationHours: number }) => ProviderProfile[];
   recommendedProviders: ProviderProfile[];
   onSelectProvider: (providerId: string) => void;
   activeOrder?: OrderRecord;
@@ -41,6 +41,18 @@ const ServiceRequestForm = ({
   const [address, setAddress] = useState("Sky Tower, Auckland");
   const [requiresItinerary, setRequiresItinerary] = useState(true);
   const [aiQuery, setAiQuery] = useState("I need a translator for a business meeting tomorrow afternoon in Wellington.");
+
+  useEffect(() => {
+    if (services.length && !services.some(service => service.id === serviceId)) {
+      setServiceId(services[0].id);
+    }
+  }, [services, serviceId]);
+
+  useEffect(() => {
+    if (providers.length && !providers.some(provider => provider.id === providerId)) {
+      setProviderId(providers[0].id);
+    }
+  }, [providers, providerId]);
 
   return (
     <Card>
@@ -130,7 +142,11 @@ const ServiceRequestForm = ({
           <div className="space-y-2">
             <Label>Describe your need (AI concierge)</Label>
             <Textarea value={aiQuery} onChange={event => setAiQuery(event.target.value)} rows={4} />
-            <Button type="button" variant="outline" onClick={() => aiSuggest(aiQuery)}>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => aiSuggest(aiQuery, { startTime, durationHours: duration })}
+            >
               Generate recommended experts
             </Button>
             {recommendedProviders.length > 0 && (

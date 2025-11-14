@@ -10,11 +10,60 @@ import type {
   ServiceOffering,
   UserRole
 } from "@/types/guidew";
-import { estimateTravelWindow } from "@/utils/geo";
+import { estimateTravelWindow, haversineDistanceKm } from "@/utils/geo";
 import { evaluateAchievements } from "@/utils/achievements";
 import { createId } from "@/utils/id";
+import { generateItineraryPlan } from "@/utils/itinerary";
 
 const STORAGE_KEY = "guidew-state-v1";
+
+const HOURS_IN_MS = 60 * 60 * 1000;
+
+const timeStringToMinutes = (value: string) => {
+  const [hours, minutes] = value.split(":").map(Number);
+  return hours * 60 + minutes;
+};
+
+const isWithinAvailability = (
+  availability: ProviderProfile["availability"],
+  startTimeIso: string,
+  durationHours: number
+) => {
+  if (!availability.length) return true;
+  const start = new Date(startTimeIso);
+  const end = new Date(start.getTime() + durationHours * HOURS_IN_MS);
+  const day = start.getDay();
+  const startMinutes = start.getHours() * 60 + start.getMinutes();
+  const endMinutes = end.getHours() * 60 + end.getMinutes();
+
+  return availability.some(slot => {
+    if (slot.day !== day) return false;
+    const slotStart = timeStringToMinutes(slot.start);
+    const slotEnd = timeStringToMinutes(slot.end);
+    return slotStart <= startMinutes && slotEnd >= endMinutes;
+  });
+};
+
+const hasScheduleConflict = (
+  orders: OrderRecord[],
+  providerId: string,
+  startTimeIso: string,
+  durationHours: number,
+  excludeOrderId?: string
+) => {
+  const start = new Date(startTimeIso);
+  const end = new Date(start.getTime() + durationHours * HOURS_IN_MS);
+
+  return orders.some(order => {
+    if (order.providerId !== providerId) return false;
+    if (order.id === excludeOrderId) return false;
+    if (order.status === "cancelled") return false;
+
+    const orderStart = new Date(order.startTime);
+    const orderEnd = new Date(orderStart.getTime() + order.durationHours * HOURS_IN_MS);
+    return start < orderEnd && end > orderStart;
+  });
+};
 
 const defaultUsers: BaseUser[] = [
   {
@@ -204,7 +253,9 @@ interface GuidewContextValue extends GuidewState {
   startOrder: (orderId: string) => void;
   submitItinerary: (orderId: string, itinerary: string) => void;
   completeOrder: (orderId: string) => void;
-  cancelOrder: (orderId: string, actor: "user" | "provider") => CancellationResult;
+  cancelOrder: (orderId: string, actor: "user" | "provider", options?: { mutual?: boolean }) => CancellationResult;
+  reportProviderNoShow: (orderId: string) => CancellationResult;
+  reportUserNoShow: (orderId: string) => CancellationResult;
   addChat: (message: { orderId: string; senderId: string; content: string }) => void;
   addTip: (orderId: string, amount: number) => void;
   submitReview: (orderId: string, review: Partial<OrderReview>, actor: "user" | "provider") => void;
@@ -214,6 +265,9 @@ interface GuidewContextValue extends GuidewState {
   recomputeAchievements: (userId: string) => void;
   setProviderAutoAccept: (providerId: string, autoAccept: boolean) => void;
   updateProviderAvailability: (providerId: string, availability: ProviderProfile["availability"]) => void;
+  setProviderTravelRadius: (providerId: string, radius: number) => void;
+  requestVerification: (userId: string, level: string) => void;
+  generateItinerarySuggestion: (orderId: string) => string | undefined;
 }
 
 interface CancellationResult {
@@ -314,7 +368,24 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
 
     if (!user || !provider || !service) return undefined;
 
+    if (!isWithinAvailability(provider.availability, startTime, durationHours)) {
+      return undefined;
+    }
+
+    if (hasScheduleConflict(state.orders, provider.id, startTime, durationHours)) {
+      return undefined;
+    }
+
+    const distanceKm = haversineDistanceKm(provider.location, location);
+    if (distanceKm > provider.travelRadiusKm) {
+      return undefined;
+    }
+
     const travel = estimateTravelWindow(provider.location, location, startTime);
+    if (!travel.canArriveOnTime) {
+      return undefined;
+    }
+
     const basePrice = service.hourlyRate * Math.max(service.minHours, durationHours);
     const platformFee = basePrice * 0.15;
     const userFee = user.vip.active ? 0 : basePrice * 0.05;
@@ -343,6 +414,12 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
           timestamp: new Date().toISOString(),
           type: "created",
           description: `Order created by ${user.name}`
+        },
+        {
+          id: createId("timeline"),
+          timestamp: new Date().toISOString(),
+          type: "payment-authorized",
+          description: "Payment authorised via Stripe"
         }
       ]
     };
@@ -459,33 +536,52 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
-  const cancelOrder: GuidewContextValue["cancelOrder"] = (orderId, actor) => {
+  const cancelOrder: GuidewContextValue["cancelOrder"] = (orderId, actor, options) => {
     const order = state.orders.find(o => o.id === orderId);
     if (!order) return { success: false, message: "Order not found" };
+    if (order.status === "cancelled") {
+      return { success: false, message: "Order already cancelled", outcome: order.cancellation };
+    }
 
     const now = new Date();
     const start = new Date(order.startTime);
     const minutesUntilStart = (start.getTime() - now.getTime()) / (1000 * 60);
+
+    const providerProfile = state.providerProfiles.find(profile => profile.id === order.providerId);
+    const providerUser = providerProfile
+      ? state.users.find(user => user.id === providerProfile.userId)
+      : undefined;
+    const traveler = state.users.find(user => user.id === order.userId);
+
+    if (!traveler) {
+      return { success: false, message: "Traveler missing" };
+    }
+
     let userRefund = 0;
     let providerPayout = 0;
     let platformFee = 0;
     let providerPenaltyPoints = 0;
     let reason = "";
 
-    if (minutesUntilStart > 180) {
+    if (options?.mutual && minutesUntilStart <= 180 && minutesUntilStart >= 0) {
+      userRefund = order.basePrice * 0.85 + order.userFee;
+      providerPayout = 0;
+      platformFee = order.basePrice * 0.15;
+      reason = "Mutual cancellation within 3 hours";
+    } else if (minutesUntilStart > 180) {
       userRefund = order.basePrice + order.userFee;
       providerPayout = 0;
       platformFee = 0;
       reason = "Cancelled more than 3 hours in advance";
     } else if (minutesUntilStart > 60) {
-      userRefund = order.basePrice * 0.5;
+      userRefund = order.basePrice * 0.5 + order.userFee;
       providerPayout = order.basePrice * 0.25;
       platformFee = order.basePrice * 0.15;
       reason = "Cancelled 1-3 hours before start";
       providerPenaltyPoints = actor === "provider" ? 1 : 0;
     } else if (minutesUntilStart > 0) {
       userRefund = 0;
-      providerPayout = order.basePrice * 0.85;
+      providerPayout = actor === "provider" ? 0 : order.basePrice * 0.85;
       platformFee = order.basePrice * 0.15;
       reason = "Cancelled less than 1 hour before start";
       providerPenaltyPoints = actor === "provider" ? 2 : 0;
@@ -515,38 +611,181 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
           id: createId("timeline"),
           timestamp: new Date().toISOString(),
           type: "cancelled",
-          description: `${actor} cancelled the service`
+          description: `${options?.mutual ? "Both parties" : actor} cancelled the service`
         }
       ]
     };
 
     dispatch({ type: "UPSERT_ORDER", payload: updated });
 
-    const providerProfile = state.providerProfiles.find(profile => profile.id === order.providerId);
+    const updatedUsers = state.users.map(existing => {
+      if (existing.id === traveler.id && userRefund > 0) {
+        return {
+          ...existing,
+          wallet: {
+            ...existing.wallet,
+            balance: existing.wallet.balance + userRefund,
+            lastUpdated: new Date().toISOString()
+          }
+        };
+      }
+
+      if (providerUser && existing.id === providerUser.id && providerPayout > 0) {
+        return {
+          ...existing,
+          wallet: {
+            ...existing.wallet,
+            balance: existing.wallet.balance + providerPayout,
+            lastUpdated: new Date().toISOString()
+          }
+        };
+      }
+
+      return existing;
+    });
+
+    dispatch({ type: "UPSERT_USERS", payload: updatedUsers });
+
     if (providerProfile) {
       dispatch({
         type: "UPSERT_PROVIDER",
         payload: {
           ...providerProfile,
-          penaltyPoints: (providerProfile.penaltyPoints ?? 0) + providerPenaltyPoints
+          penaltyPoints: (providerProfile.penaltyPoints ?? 0) + providerPenaltyPoints,
+          activeOrderId: providerProfile.activeOrderId === orderId ? undefined : providerProfile.activeOrderId
         }
       });
-
-      const providerUser = state.users.find(user => user.id === providerProfile.userId);
-      if (providerUser) {
-        const updatedProvider: BaseUser = {
-          ...providerUser,
-          wallet: {
-            ...providerUser.wallet,
-            balance: providerUser.wallet.balance + providerPayout,
-            lastUpdated: new Date().toISOString()
-          }
-        };
-        dispatch({ type: "UPDATE_USER", payload: updatedProvider });
-      }
     }
 
     return { success: true, message: reason, outcome: cancellation };
+  };
+
+  const reportProviderNoShow: GuidewContextValue["reportProviderNoShow"] = orderId => {
+    const order = state.orders.find(o => o.id === orderId);
+    if (!order) return { success: false, message: "Order not found" };
+    const traveler = state.users.find(user => user.id === order.userId);
+    const providerProfile = state.providerProfiles.find(profile => profile.id === order.providerId);
+    if (!traveler || !providerProfile) return { success: false, message: "Participants missing" };
+
+    const refund = order.basePrice + order.userFee;
+
+    const updatedOrder: OrderRecord = {
+      ...order,
+      status: "cancelled",
+      cancellation: {
+        userRefund: refund,
+        providerPayout: 0,
+        platformFee: 0,
+        providerPenaltyPoints: 6,
+        reason: "Provider did not attend the service"
+      },
+      timeline: [
+        ...order.timeline,
+        {
+          id: createId("timeline"),
+          timestamp: new Date().toISOString(),
+          type: "cancelled",
+          description: "Provider no-show reported"
+        }
+      ]
+    };
+
+    dispatch({ type: "UPSERT_ORDER", payload: updatedOrder });
+
+    const updatedUsers = state.users.map(existing => {
+      if (existing.id === traveler.id) {
+        return {
+          ...existing,
+          wallet: {
+            ...existing.wallet,
+            balance: existing.wallet.balance + refund,
+            lastUpdated: new Date().toISOString()
+          }
+        };
+      }
+      return existing;
+    });
+
+    dispatch({ type: "UPSERT_USERS", payload: updatedUsers });
+
+    dispatch({
+      type: "UPSERT_PROVIDER",
+      payload: {
+        ...providerProfile,
+        activeOrderId: providerProfile.activeOrderId === orderId ? undefined : providerProfile.activeOrderId,
+        penaltyPoints: (providerProfile.penaltyPoints ?? 0) + 6
+      }
+    });
+
+    return {
+      success: true,
+      message: "Provider marked as no-show. Full refund issued.",
+      outcome: updatedOrder.cancellation
+    };
+  };
+
+  const reportUserNoShow: GuidewContextValue["reportUserNoShow"] = orderId => {
+    const order = state.orders.find(o => o.id === orderId);
+    if (!order) return { success: false, message: "Order not found" };
+    const providerProfile = state.providerProfiles.find(profile => profile.id === order.providerId);
+    if (!providerProfile) return { success: false, message: "Provider profile missing" };
+    const providerUser = state.users.find(user => user.id === providerProfile.userId);
+    if (!providerUser) return { success: false, message: "Provider account missing" };
+
+    const payout = order.basePrice * 0.85;
+
+    const updatedOrder: OrderRecord = {
+      ...order,
+      status: "cancelled",
+      cancellation: {
+        userRefund: 0,
+        providerPayout: payout,
+        platformFee: order.basePrice * 0.15,
+        providerPenaltyPoints: 0,
+        reason: "Traveler did not show up"
+      },
+      timeline: [
+        ...order.timeline,
+        {
+          id: createId("timeline"),
+          timestamp: new Date().toISOString(),
+          type: "cancelled",
+          description: "Traveler no-show recorded"
+        }
+      ]
+    };
+
+    dispatch({ type: "UPSERT_ORDER", payload: updatedOrder });
+
+    const updatedUsers = state.users.map(existing => {
+      if (existing.id === providerUser.id) {
+        return {
+          ...existing,
+          wallet: {
+            ...existing.wallet,
+            balance: existing.wallet.balance + payout,
+            lastUpdated: new Date().toISOString()
+          }
+        };
+      }
+      return existing;
+    });
+
+    dispatch({ type: "UPSERT_USERS", payload: updatedUsers });
+
+    dispatch({
+      type: "UPSERT_PROVIDER",
+      payload: {
+        ...providerProfile,
+        activeOrderId: providerProfile.activeOrderId === orderId ? undefined : providerProfile.activeOrderId
+      }
+    });
+
+    return {
+      success: true,
+      message: "Traveler marked as no-show. Provider compensated.",
+      outcome: updatedOrder.cancellation
+    };
   };
 
   const addChat: GuidewContextValue["addChat"] = ({ orderId, senderId, content }) => {
@@ -691,6 +930,32 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
     dispatch({ type: "UPDATE_USER", payload: updated });
   };
 
+  const requestVerification: GuidewContextValue["requestVerification"] = (userId, level) => {
+    const user = state.users.find(u => u.id === userId);
+    if (!user) return;
+    if (user.verifiedLevels.includes(level)) return;
+    const updated: BaseUser = {
+      ...user,
+      verifiedLevels: [...user.verifiedLevels, level]
+    };
+    dispatch({ type: "UPDATE_USER", payload: updated });
+  };
+
+  const setProviderTravelRadius: GuidewContextValue["setProviderTravelRadius"] = (providerId, radius) => {
+    const provider = state.providerProfiles.find(profile => profile.id === providerId);
+    if (!provider) return;
+    dispatch({ type: "UPSERT_PROVIDER", payload: { ...provider, travelRadiusKm: radius } });
+  };
+
+  const generateItinerarySuggestion: GuidewContextValue["generateItinerarySuggestion"] = orderId => {
+    const order = state.orders.find(item => item.id === orderId);
+    if (!order) return undefined;
+    const service = state.services.find(item => item.id === order.serviceId);
+    const provider = state.providerProfiles.find(item => item.id === order.providerId);
+    if (!service || !provider) return undefined;
+    return generateItineraryPlan({ order, service, provider });
+  };
+
   const value = useMemo<GuidewContextValue>(
     () => ({
       ...state,
@@ -706,6 +971,8 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
       submitItinerary,
       completeOrder,
       cancelOrder,
+      reportProviderNoShow,
+      reportUserNoShow,
       addChat,
       addTip,
       submitReview,
@@ -713,6 +980,8 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
       downgradeVip,
       refreshWallets,
       recomputeAchievements,
+      requestVerification,
+      generateItinerarySuggestion,
       setProviderAutoAccept: (providerId, autoAccept) => {
         const provider = state.providerProfiles.find(profile => profile.id === providerId);
         if (!provider) return;
@@ -722,7 +991,8 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
         const provider = state.providerProfiles.find(profile => profile.id === providerId);
         if (!provider) return;
         dispatch({ type: "UPSERT_PROVIDER", payload: { ...provider, availability } });
-      }
+      },
+      setProviderTravelRadius
     }),
     [state]
   );
