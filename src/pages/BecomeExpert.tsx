@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -61,9 +62,11 @@ const BecomeExpert: React.FC = () => {
         </section>
 
         <section className="text-center">
-          <Button className="bg-brand-teal hover:bg-brand-teal/90 text-white px-8 py-3 text-lg">
-            开始注册
-          </Button>
+          <Link to="/auth">
+            <Button className="bg-brand-teal hover:bg-brand-teal/90 text-white px-8 py-3 text-lg">
+              开始注册
+            </Button>
+          </Link>
         </section>
       </main>
       <Footer />

@@ -1,4 +1,5 @@
-import { MapPin, Globe, Languages, Music, Book, Coffee, Camera, Utensils, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { MapPin, Globe, Languages, Music, Book, Coffee, Camera, Utensils, ChevronRight, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
@@ -7,6 +8,7 @@ import HeroSection from "@/components/HeroSection";
 import CategoryCard from "@/components/CategoryCard";
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
+import { Link } from "react-router-dom";
 
 // Sample data for services
 const featuredServices = [
@@ -60,37 +62,63 @@ const featuredServices = [
 // Sample testimonials
 const testimonials = [
   {
-    content: "Finding a local guide in Paris completely transformed our experience. Our guide took us to hidden spots no tourist would ever find, and helped us navigate like locals. This service is a game-changer for travelers!",
+    content:
+      "第一次踏上奥克兰，我一个朋友都没有。Guidew 的专家不仅带我夜访地下爵士俱乐部，还介绍我加入了当地 Bachata 社团。两周后我在派对上用毛利语问候每个人，大家都以为我是土生土长的新西兰人。",
     author: {
-      name: "Sarah Johnson",
-      title: "Traveled to Paris, France",
+      name: "Lily West",
+      title: "来自伦敦 · 周末舞者",
       avatar: "https://randomuser.me/api/portraits/women/68.jpg"
     }
   },
   {
-    content: "As someone who travels for business frequently, having instant access to translators has made my meetings so much more productive. I can focus on my work instead of struggling with the language barrier.",
+    content:
+      "我搬到惠灵顿创办游戏工作室，社交圈一片空白。Guidew 帮我找到了专属翻译兼 City Buddy——白天教我 Kiwi 式英语和商务礼仪，晚上直接把我带进最潮的科技创业聚会，第二天就接到了第一笔合作。",
     author: {
-      name: "Michael Chen",
-      title: "Business Executive",
+      name: "Mateo Rivera",
+      title: "来自墨西哥 · 创业者",
       avatar: "https://randomuser.me/api/portraits/men/54.jpg"
     }
   },
   {
-    content: "I wanted to learn pottery during my vacation in Kyoto, and LocalXpert connected me with an amazing artisan. It was the highlight of my trip and I came home with a new skill and handmade souvenirs.",
+    content:
+      "在皇后镇滑雪季，我通过 Guidew 认识了一位热爱毛利文化的滑雪教练。她带我拜访了隐秘的部落工坊，教我用本地口音介绍自己，还推荐了驼羊牧场里的即兴舞蹈 Jam。那一刻我知道，我真正找到了新西兰的灵魂。",
     author: {
-      name: "Emma Rodriguez",
-      title: "Art Enthusiast",
+      name: "Ava Nguyen",
+      title: "来自越南 · 冒险爱好者",
       avatar: "https://randomuser.me/api/portraits/women/29.jpg"
     }
   }
 ];
 
 const Index = () => {
+  const [showNotice, setShowNotice] = useState(true);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main className="flex-grow">
+        {showNotice && (
+          <div className="bg-white border-b border-amber-200/70">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-sm text-brand-darkBlue">
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5">
+                  <AlertTriangle className="h-6 w-6 text-brand-orange" />
+                </div>
+                <p>
+                  当前网站仍处于研发与评估阶段，仅用于演示。请勿注册、支付或依据页面信息做实际决策，所有数据均为模拟内容，敬请谅解。
+                </p>
+              </div>
+              <button
+                onClick={() => setShowNotice(false)}
+                className="text-xs font-semibold uppercase tracking-wide text-brand-teal hover:underline"
+              >
+                我已了解
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* Hero Section */}
         <HeroSection />
         
@@ -139,9 +167,11 @@ const Index = () => {
             </div>
             
             <div className="mt-10 text-center">
-              <Button variant="outline" className="group">
-                View all categories <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <Link to="/discover" className="inline-block">
+                <Button variant="outline" className="group">
+                  View all categories <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -166,9 +196,11 @@ const Index = () => {
             </div>
             
             <div className="mt-12 text-center">
-              <Button className="bg-brand-teal hover:bg-brand-teal/90">
-                Explore all services
-              </Button>
+              <Link to="/discover" className="inline-block">
+                <Button className="bg-brand-teal hover:bg-brand-teal/90">
+                  Explore all services
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -219,9 +251,11 @@ const Index = () => {
             </div>
             
             <div className="mt-12 text-center">
-              <Button variant="outline" className="border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white">
-                Learn more about the process
-              </Button>
+              <Link to="/how-it-works" className="inline-block">
+                <Button variant="outline" className="border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white">
+                  Learn more about the process
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -248,7 +282,7 @@ const Index = () => {
         </section>
         
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-brand-teal to-brand-orange">
+        <section className="py-20 bg-gradient-to-r from-brand-teal via-brand-gold to-brand-orange">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               准备好体验本地专家服务了吗？
@@ -257,12 +291,19 @@ const Index = () => {
               加入数千名旅行者和当地人，通过Guidew连接个性化服务。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-white text-brand-teal hover:bg-white/90">
-                Find an Expert
-              </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white/20">
-                Become an Expert
-              </Button>
+              <Link to="/discover" className="inline-flex justify-center">
+                <Button className="bg-white text-brand-teal hover:bg-white/90">
+                  Find an Expert
+                </Button>
+              </Link>
+              <Link to="/become-expert" className="inline-flex justify-center">
+                <Button
+                  variant="outline"
+                  className="border-white text-white bg-transparent hover:bg-white hover:text-brand-teal"
+                >
+                  Become an Expert
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

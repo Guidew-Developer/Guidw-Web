@@ -5,11 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useDownloadDialog } from "@/components/DownloadDialogProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { openDownloadDialog } = useDownloadDialog();
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
@@ -17,11 +19,19 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold gradient-text">Guidew</span>
+              <img
+                src="/APP_LOGO.jpeg"
+                alt="Guidew logo"
+                className="h-10 w-auto object-contain"
+              />
+              <span className="ml-2 text-2xl font-bold gradient-text uppercase">GUIDEW</span>
             </Link>
           </div>
           
           <div className="hidden md:flex items-center space-x-4">
+            <Link to="/" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
+              {t('nav.home')}
+            </Link>
             <Link to="/discover" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
               {t('nav.discover')}
             </Link>
@@ -33,11 +43,11 @@ const Navbar = () => {
             </Link>
 
             <div className="ml-4 flex items-center space-x-3">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="sm"
                 className="flex items-center gap-2 border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white"
-                onClick={() => window.open('https://apps.apple.com/app/guidew', '_blank')}
+                onClick={() => openDownloadDialog()}
               >
                 <Download size={16} />
                 Download App
@@ -76,6 +86,13 @@ const Navbar = () => {
         <div className="md:hidden bg-white shadow-lg rounded-b-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link 
+              to="/" 
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-teal hover:bg-gray-50"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('nav.home')}
+            </Link>
+            <Link 
               to="/discover" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-teal hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
@@ -96,11 +113,11 @@ const Navbar = () => {
             >
               {t('nav.becomeExpert')}
             </Link>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="sm"
               className="w-full mt-2 flex items-center justify-center gap-2 border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white"
-              onClick={() => window.open('https://apps.apple.com/app/guidew', '_blank')}
+              onClick={() => openDownloadDialog()}
             >
               <Download size={16} />
               Download App

@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SearchBar from '@/components/SearchBar';
-import FilterSection from '@/components/FilterSection';
 import ServiceCard from '@/components/ServiceCard';
 import { Badge } from '@/components/ui/badge';
 import { useTranslation } from 'react-i18next';
 import DownloadApp from '@/components/DownloadApp';
+import { useDownloadDialog } from '@/components/DownloadDialogProvider';
 
 // Sample services data (we'll keep the existing services and add a few new ones for the new categories)
 const sampleServices = [
@@ -39,7 +39,7 @@ const sampleServices = [
       name: "Carlos M.",
       avatar: "https://randomuser.me/api/portraits/men/22.jpg"
     },
-    imageSrc: "https://images.unsplash.com/photo-1558746636-283b1d39d0e0"
+    imageSrc: "https://images.unsplash.com/photo-1505764706515-aa95265c5abc?auto=format&fit=crop&w=2070&q=80"
   },
   
   // Use Case 2: On-Demand Language Translation
@@ -122,7 +122,7 @@ const sampleServices = [
       name: "Emma B.",
       avatar: "https://randomuser.me/api/portraits/women/33.jpg"
     },
-    imageSrc: "https://images.unsplash.com/photo-1511795409834-c954f0b11126"
+    imageSrc: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2070&q=80"
   },
   
   // Use Case 6: Home Improvement
@@ -139,7 +139,7 @@ const sampleServices = [
       name: "Thomas M.",
       avatar: "https://randomuser.me/api/portraits/men/41.jpg"
     },
-    imageSrc: "https://images.unsplash.com/photo-1574359435415-e51f9a3d8e33"
+    imageSrc: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=2070&q=80"
   },
   
   // Use Case 7: Personalized Travel
@@ -190,7 +190,7 @@ const sampleServices = [
       name: "Yuki T.",
       avatar: "https://randomuser.me/api/portraits/women/67.jpg"
     },
-    imageSrc: "https://images.unsplash.com/photo-1576091160399-112ba8633047"
+    imageSrc: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=2070&q=80"
   },
   
   // Use Case 10: Health and Wellness
@@ -241,7 +241,7 @@ const sampleServices = [
       name: "Jessica W.",
       avatar: "https://randomuser.me/api/portraits/women/37.jpg"
     },
-    imageSrc: "https://images.unsplash.com/photo-1560884328-3ed97526ab3c"
+    imageSrc: "https://images.unsplash.com/photo-1504151932400-72d4384f04b3?auto=format&fit=crop&w=2070&q=80"
   },
   
   // Use Case 13: Home Organization
@@ -258,7 +258,7 @@ const sampleServices = [
       name: "Emily K.",
       avatar: "https://randomuser.me/api/portraits/women/19.jpg"
     },
-    imageSrc: "https://images.unsplash.com/photo-1594194003472-8431a9db1818"
+    imageSrc: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=2070&q=80"
   },
   
   // Additional Use Cases
@@ -412,7 +412,7 @@ const sampleServices = [
       name: "Carmen R.",
       avatar: "https://randomuser.me/api/portraits/women/39.jpg"
     },
-    imageSrc: "https://images.unsplash.com/photo-1551704831-2a4451a3e1e1"
+    imageSrc: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=2070&q=80"
   },
   {
     id: "42",
@@ -457,7 +457,7 @@ const sampleServices = [
       name: "Eric T.",
       avatar: "https://randomuser.me/api/portraits/men/49.jpg"
     },
-    imageSrc: "https://images.unsplash.com/photo-1558002038-1055e2ff8a59"
+    imageSrc: "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=2070&q=80"
   },
   {
     id: "45",
@@ -517,7 +517,7 @@ const sampleServices = [
       name: "Michael S.",
       avatar: "https://randomuser.me/api/portraits/men/57.jpg"
     },
-    imageSrc: "https://images.unsplash.com/photo-1558959356-2d5b6cdc6bdc"
+    imageSrc: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2070&q=80"
   },
   {
     id: "50",
@@ -594,6 +594,7 @@ const Discover: React.FC = () => {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const { openDownloadDialog } = useDownloadDialog();
 
   const filteredServices = sampleServices.filter(service => {
     const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -604,6 +605,10 @@ const Discover: React.FC = () => {
     
     return matchesSearch && matchesCategory;
   });
+
+  const handleServiceSelect = (service: typeof sampleServices[number]) => {
+    openDownloadDialog(service.title);
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -638,7 +643,7 @@ const Discover: React.FC = () => {
             {filteredServices.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredServices.map((service) => (
-                  <ServiceCard key={service.id} {...service} />
+                  <ServiceCard key={service.id} {...service} onCardClick={() => handleServiceSelect(service)} />
                 ))}
               </div>
             ) : (
@@ -651,7 +656,6 @@ const Discover: React.FC = () => {
           </div>
         </div>
       </main>
-      
       <DownloadApp />
       
       <Footer />

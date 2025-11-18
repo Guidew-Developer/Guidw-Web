@@ -16,12 +16,30 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link to="/" className="inline-block">
-              <span className="text-2xl font-bold gradient-text">Guidew</span>
+            <Link to="/" className="inline-flex items-center">
+              <img
+                src="/APP_LOGO.jpeg"
+                alt="Guidew logo"
+                className="h-12 w-auto object-contain"
+              />
+              <span className="ml-2 text-2xl font-bold gradient-text uppercase">GUIDEW</span>
             </Link>
             <p className="mt-3 text-gray-600 text-sm">
               Connecting you with local expertise, on demand, wherever you are in the world.
             </p>
+            <a
+              href="https://www.vivadance.co.nz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 flex items-center space-x-3 hover:opacity-90 transition-opacity"
+            >
+              <img
+                src="/VIVA_logo.jpeg"
+                alt="VIVA Dance Limited logo"
+                className="h-8 w-auto object-contain"
+              />
+              <span className="text-sm text-gray-700 font-medium">Powered by VIVA Dance Limited</span>
+            </a>
             <div className="mt-6 flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-brand-teal">
                 <Facebook size={20} />
@@ -105,16 +123,16 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin size={18} className="flex-shrink-0 text-brand-teal mr-2 mt-0.5" />
                 <span className="text-gray-600 text-sm">
-                  123 Innovation Way, San Francisco, CA 94107
+                  10 Newton Road, Auckland Central, NZ 1010
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="flex-shrink-0 text-brand-teal mr-2" />
-                <span className="text-gray-600 text-sm">+1 (555) 123-4567</span>
+                <span className="text-gray-600 text-sm">+64 (21) 513-258</span>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="flex-shrink-0 text-brand-teal mr-2" />
-                <span className="text-gray-600 text-sm">support@localxpert.com</span>
+                <span className="text-gray-600 text-sm">hello@guidew.com</span>
               </li>
             </ul>
           </div>
@@ -123,7 +141,7 @@ const Footer = () => {
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-500">
-              &copy; {new Date().getFullYear()} LocalXpert. All rights reserved.
+              &copy; {new Date().getFullYear()} VIVA Dance Limited. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0 flex space-x-6">
               <Link to="/terms" className="text-sm text-gray-500 hover:text-brand-teal">

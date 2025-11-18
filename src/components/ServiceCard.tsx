@@ -17,6 +17,7 @@ interface ServiceCardProps {
     avatar: string;
   };
   imageSrc: string;
+  onCardClick?: () => void;
 }
 
 const ServiceCard = ({
@@ -29,16 +30,24 @@ const ServiceCard = ({
   location,
   provider,
   imageSrc,
+  onCardClick,
 }: ServiceCardProps) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
+    if (onCardClick) {
+      onCardClick();
+      return;
+    }
     const isSkillService = id >= "39" && id <= "50";
     navigate(isSkillService ? `/skill-service/${id}` : `/service/${id}`);
   };
 
   return (
-    <Card className="overflow-hidden transition-all duration-300 hover:shadow-md cursor-pointer h-full flex flex-col">
+    <Card
+      className="overflow-hidden transition-all duration-300 hover:shadow-md cursor-pointer h-full flex flex-col"
+      onClick={handleClick}
+    >
       <div className="relative h-48 overflow-hidden">
         <img 
           src={imageSrc} 
