@@ -2,12 +2,45 @@ import { useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { cityProfiles } from "@/constants/siteContent";
+import { getCityProfiles } from "@/constants/siteContent";
 import { ArrowLeft, MapPinned, Route } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { resolveLocale } from "@/utils/locale";
+
+const copy = {
+  en: {
+    missingTitle: "City not launched",
+    missingDescription: "We are expanding to more destinations soon.",
+    back: "Back to Locations",
+    allCities: "All cities",
+    why: "Why travelers choose this city",
+    logistics: "Operational highlights",
+    ctaTitle: (name: string) => `Ready to experience ${name}?`,
+    ctaDescription: "Send a request in the Guidew app or join the provider network to shape the city with us.",
+    browse: "Browse services",
+    join: "Join provider network"
+  },
+  zh: {
+    missingTitle: "尚未上线的城市",
+    missingDescription: "我们正在扩展更多目的地，敬请期待。",
+    back: "返回 Locations",
+    allCities: "所有城市",
+    why: "为什么用户选择这里",
+    logistics: "运营要点",
+    ctaTitle: (name: string) => `准备好体验 ${name} 吗？`,
+    ctaDescription: "立即在 Guidew App 中发出需求，或加入成为服务提供者。",
+    browse: "浏览服务",
+    join: "加入服务者网络"
+  }
+} as const;
 
 const LocationDetail = () => {
   const { cityId } = useParams<{ cityId: string }>();
-  const city = useMemo(() => cityProfiles.find(item => item.id === cityId), [cityId]);
+  const { i18n } = useTranslation();
+  const locale = resolveLocale(i18n.language);
+  const profiles = useMemo(() => getCityProfiles(i18n.language), [i18n.language]);
+  const city = useMemo(() => profiles.find(item => item.id === cityId), [profiles, cityId]);
+  const content = copy[locale];
 
   if (!city) {
     return (
@@ -16,11 +49,11 @@ const LocationDetail = () => {
         <div className="flex-grow flex items-center justify-center text-center px-4">
           <div>
             <p className="text-sm text-brand-teal uppercase tracking-[0.3em] mb-3">Guidew Locations</p>
-            <h1 className="text-3xl font-bold text-brand-darkBlue mb-3">尚未上线的城市</h1>
-            <p className="text-gray-600 mb-6">我们正在扩展更多目的地，敬请期待。</p>
+            <h1 className="text-3xl font-bold text-brand-darkBlue mb-3">{content.missingTitle}</h1>
+            <p className="text-gray-600 mb-6">{content.missingDescription}</p>
             <Link to="/locations" className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-teal text-white">
               <ArrowLeft className="h-4 w-4" />
-              返回 Locations
+              {content.back}
             </Link>
           </div>
         </div>
@@ -37,7 +70,7 @@ const LocationDetail = () => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link to="/locations" className="inline-flex items-center text-sm text-brand-teal mb-6">
               <ArrowLeft className="h-4 w-4 mr-2" />
-              所有城市
+              {content.allCities}
             </Link>
             <div className="flex items-center gap-3 mb-4">
               <MapPinned className="text-brand-teal" />
@@ -52,7 +85,7 @@ const LocationDetail = () => {
         <section className="py-16">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-6 md:grid-cols-2">
             <div className="bg-white rounded-2xl p-6 border border-brand-lightGray">
-              <h2 className="text-2xl font-semibold text-brand-darkBlue mb-4">为什么用户选择这里</h2>
+              <h2 className="text-2xl font-semibold text-brand-darkBlue mb-4">{content.why}</h2>
               <ul className="space-y-4 text-gray-600">
                 {city.experiences.map(item => (
                   <li key={item} className="flex items-start gap-3">
@@ -63,7 +96,7 @@ const LocationDetail = () => {
               </ul>
             </div>
             <div className="bg-white rounded-2xl p-6 border border-brand-lightGray">
-              <h2 className="text-2xl font-semibold text-brand-darkBlue mb-4">运营要点</h2>
+              <h2 className="text-2xl font-semibold text-brand-darkBlue mb-4">{content.logistics}</h2>
               <ul className="space-y-4 text-gray-600">
                 {city.logistics.map(item => (
                   <li key={item}>{item}</li>
@@ -75,14 +108,14 @@ const LocationDetail = () => {
 
         <section className="py-16 bg-gradient-to-r from-brand-teal via-brand-gold to-brand-orange text-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">准备好体验 {city.name} 吗？</h2>
-            <p className="text-white/90 mb-6">立即在 Guidew App 中发出需求，或者加入成为服务提供者，共同打造可信赖的城市网络。</p>
+            <h2 className="text-3xl font-bold mb-4">{content.ctaTitle(city.name)}</h2>
+            <p className="text-white/90 mb-6">{content.ctaDescription}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/discover" className="px-6 py-3 rounded-full bg-white text-brand-teal font-semibold">
-                浏览服务
+                {content.browse}
               </Link>
               <Link to="/become-expert" className="px-6 py-3 rounded-full border border-white/70 text-white font-semibold">
-                加入服务者网络
+                {content.join}
               </Link>
             </div>
           </div>

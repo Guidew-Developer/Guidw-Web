@@ -2,8 +2,7 @@
   "nav": {
     "home": "Home",
     "discover": "Discover",
-    "howItWorks": "How It Works",
-    "becomeExpert": "Become an Expert",
+    "about": "About",
     "downloadApp": "Download App"
   },
   "search": {
@@ -118,6 +117,147 @@
       "becomeExpert": "Become an Expert"
     }
   },
+  "how": {
+    "title": "Guidew Journey",
+    "heading": "How Guidew Works",
+    "subtitle": "From onboarding to in-person experiences, Guidew keeps every step transparent and safe for travelers and providers.",
+    "stepLabel": "Step {{step}}",
+    "detailLabel": "Detail",
+    "stepCounter": "Step {{current}} of {{total}}",
+    "steps": [
+      {
+        "title": "Create & Explore",
+        "description": "Sign up in seconds and browse by city, map, or curated themes.",
+        "detailTitle": "1. Start your profile & explore services",
+        "detailBody": "Set your language preference, choose traveler or provider mode, and use map view, curated collections, and saved filters to build a shortlist of experts.",
+        "bullets": [
+          "Email or Google/Apple one-tap sign-in",
+          "Map view for nearby experts, list view for global browsing",
+          "Save favorites and enable alerts for new services"
+        ]
+      },
+      {
+        "title": "Tell Us Your Need",
+        "description": "Describe the request, time, and meeting spot.",
+        "detailTitle": "2. Share what you need in plain language",
+        "detailBody": "Set service type, time window, duration, and location. Use the AI request field for complex itineraries—Guidew structures everything for you.",
+        "bullets": [
+          "Choose preset tags like dance, translation, or emergency help",
+          "Add multiple time slots and backup locations",
+          "Upload screenshots or references for personalized prep"
+        ]
+      },
+      {
+        "title": "Match & Chat",
+        "description": "Guidew recommends verified experts instantly.",
+        "detailTitle": "3. Match, chat, and align expectations",
+        "detailBody": "Experts are ranked by proximity, availability, VIP status, and reviews. Chat in-app, request AI-generated itineraries, and confirm add-ons before booking.",
+        "bullets": [
+          "Profiles include certificates and portfolios",
+          "AI itinerary drafts that both sides can edit",
+          "Real-time translation for bilingual conversations"
+        ]
+      },
+      {
+        "title": "Confirm & Pay",
+        "description": "Secure Stripe escrow protects everyone.",
+        "detailTitle": "4. Confirm instantly, funds stay in escrow",
+        "detailBody": "Authorize payment via Stripe (Apple Pay/Google Pay coming soon). Funds remain in escrow until you mark the experience complete.",
+        "bullets": [
+          "Transparent 15% platform commission",
+          "VIP users pay zero hiring fees with priority routing",
+          "Automated reminders and cancellation guidance"
+        ]
+      },
+      {
+        "title": "Experience",
+        "description": "Meet your expert and enjoy local magic.",
+        "detailTitle": "5. Meet offline & keep everything documented",
+        "detailBody": "Get navigation tips, share live location, and access emergency contacts. Afterward, tip, review, or extend the booking with one tap.",
+        "bullets": [
+          "One-tap check-in/out for both parties",
+          "Push notifications for next-stop reminders",
+          "Mutual reviews unlock badges and perks"
+        ]
+      }
+    ],
+    "safety": [
+      {
+        "title": "Verified Identities",
+        "description": "Tiered verification for every service level.",
+        "detailTitle": "Multi-layer identity checks",
+        "detailBody": "From ID and liveness checks to professional certificates and criminal records, every sensitive service category requires extra documentation.",
+        "bullets": [
+          "Passport/driver license + liveness verification",
+          "Upload professional certificates or government permits",
+          "In-home or childcare services require background checks"
+        ]
+      },
+      {
+        "title": "Protected Payments",
+        "description": "Transparent commission & escrow system.",
+        "detailTitle": "Transparent commission + escrow",
+        "detailBody": "Guidew charges a flat 15% commission. Funds sit in escrow until both sides confirm completion. VIP users enjoy zero hiring fees and dedicated support.",
+        "bullets": [
+          "Stripe escrow with full traceability",
+          "VIP = zero hiring fees + priority routing",
+          "Support for tips, partial refunds, and add-ons"
+        ]
+      },
+      {
+        "title": "Mutual Reviews",
+        "description": "Two-way reviews and dispute support.",
+        "detailTitle": "Mutual reviews & dispute help",
+        "detailBody": "Reviews stay private until both parties submit or seven days pass. If issues occur, our team references chats, locations, and itineraries to arbitrate.",
+        "bullets": [
+          "Reviews hidden until both sides submit",
+          "One-tap dispute submission with evidence upload",
+          "Clear cancellation/penalty policy enforcement"
+        ]
+      }
+    ],
+    "providerTitle": "For Providers",
+    "providerSubtitle": "Build a trustworthy storefront and manage orders with confidence",
+    "provider": [
+      {
+        "title": "Provider App",
+        "description": "Bid board plus availability management.",
+        "detailTitle": "1. Switch to provider mode",
+        "detailBody": "Access the live request board, order list, chat, and wallet in one app. VIP providers can enable auto-accept and define their max travel radius.",
+        "bullets": [
+          "Filter orders by region or service type",
+          "Toggle auto-accept or manual confirmation",
+          "Set weekly availability blocks"
+        ]
+      },
+      {
+        "title": "Showcase Skills",
+        "description": "Showcase certificates, videos, and introductions.",
+        "detailTitle": "2. Build a trustworthy storefront",
+        "detailBody": "Upload intro videos, audio intros, certificates, and photos. Add service tags, min hours, included expenses, and language abilities.",
+        "bullets": [
+          "Certificates automatically display as badges",
+          "Create multiple packages and add-ons",
+          "Support for multilingual bios and audio greetings"
+        ]
+      },
+      {
+        "title": "Order Execution",
+        "description": "Communicate, use AI itineraries, deliver results.",
+        "detailTitle": "3. Execute orders & get paid",
+        "detailBody": "Chat to align details, use AI to draft itineraries, submit deliverables, and release funds once the client confirms.",
+        "bullets": [
+          "AI itinerary builder + cost estimation",
+          "One-tap extensions or price adjustments",
+          "Wallet view shows payable vs. pending balances"
+        ]
+      }
+    ],
+    "ctaTitle": "Ready to experience or provide local expertise?",
+    "ctaSubtitle": "Download the app to book within minutes—or turn your passion into high-commission work.",
+    "downloadBtn": "Download Guidew App",
+    "learnBtn": "Learn in the App"
+  },
   "discover": {
     "title": "Discover Services",
     "subtitle": "Find the perfect local service for any need, available right now",
@@ -193,24 +333,109 @@
       }
     }
   },
-  "becomeExpert": {
+  "become": {
     "title": "Become a Guidew Expert",
-    "subtitle": "Share your skills and provide unique local experiences to users worldwide",
-    "features": {
-      "flexible": {
-        "title": "Flexible Work",
-        "description": "Provide services according to your schedule and comfort"
+    "heading": "Build your Guidew studio",
+    "subtitle": "Turn dance, translation, guiding, or emergency help into a premium service. Guidew provides verification, AI tools, and transparent payouts so you can focus on delivering magic.",
+    "cta": "Start Registration",
+    "pillars": [
+      {
+        "title": "Flexible workload",
+        "description": "Choose when and where you take orders. Set travel radius, minimum hours, and instant availability toggles."
       },
-      "global": {
-        "title": "Global Connections",
-        "description": "Share your skills with people from around the world"
+      {
+        "title": "Global demand",
+        "description": "Access travelers landing in Auckland or Wellington, plus locals booking private workshops and urgent help."
       },
-      "income": {
-        "title": "Extra Income",
-        "description": "Get paid for sharing your expertise"
+      {
+        "title": "High commissions",
+        "description": "Keep the majority of each order while Guidew handles marketing, payments, and dispute support."
       }
-    },
-    "cta": "Start Registration"
+    ],
+    "processTitle": "Four-stage onboarding",
+    "processSubtitle": "Every step is guided by an onboarding specialist",
+    "processStepLabel": "Stage {{step}}",
+    "processDetail": "Step detail",
+    "processCounter": "{{current}} / {{total}}",
+    "processSteps": [
+      {
+        "title": "Identity & background",
+        "description": "Upload ID, selfie, and essential certificates.",
+        "detailTitle": "1. Verify who you are",
+        "detailBody": "Provide a government ID, complete liveness verification, and upload relevant certificates or licenses. In-home and childcare services require an additional background check.",
+        "bullets": [
+          "Passport/driver license + selfie verification",
+          "Optional professional or education certificates",
+          "High-trust services require criminal record checks"
+        ]
+      },
+      {
+        "title": "Service storefront",
+        "description": "Record introductions, set pricing, define scope.",
+        "detailTitle": "2. Build a storefront that converts",
+        "detailBody": "Add intro videos, testimonials, and service tags. Define what is included, travel radius, minimum hours, and languages you support.",
+        "bullets": [
+          "Multiple service packages with add-ons",
+          "AI can refine your self-introduction copy",
+          "Upload galleries, playlists, or itineraries"
+        ]
+      },
+      {
+        "title": "Operational training",
+        "description": "Learn the live request board and AI itinerary tools.",
+        "detailTitle": "3. Train on the live request board",
+        "detailBody": "Understand how instant requests appear, how auto-accept works for VIP, and how to communicate with travelers using templates and AI itineraries.",
+        "bullets": [
+          "Response-time targets and badge incentives",
+          "AI itinerary builder with editable blocks",
+          "Safety checklist before meeting clients"
+        ]
+      },
+      {
+        "title": "Launch & scale",
+        "description": "Go live, request reviews, earn achievements.",
+        "detailTitle": "4. Launch with ongoing support",
+        "detailBody": "Start taking orders, collect mutual reviews, and unlock VIP perks such as automatic acceptance and personalized growth coaching.",
+        "bullets": [
+          "Escrow payouts released within 7 days",
+          "VIP providers get AI-generated marketing kits",
+          "Quarterly workshops to master pricing and upsells"
+        ]
+      }
+    ],
+    "benefitsTitle": "Why experts love Guidew",
+    "benefitsSubtitle": "Professional infrastructure without losing independence",
+    "benefits": [
+      {
+        "title": "High payouts",
+        "description": "Keep most of each booking. Guidew only charges a 15% commission that covers marketing, payments, and dispute support."
+      },
+      {
+        "title": "VIP-only automations",
+        "description": "Upgrade to unlock auto-accept, AI itinerary planning, and priority placement in traveler feeds."
+      },
+      {
+        "title": "Real customers daily",
+        "description": "Access inbound travelers, local corporations, and urgent requests instead of relying purely on word-of-mouth."
+      },
+      {
+        "title": "Human + AI support",
+        "description": "Onboarding specialists and AI assistants help you polish your storefront, write proposals, and manage paperwork."
+      }
+    ],
+    "requirementsTitle": "What you need to get started",
+    "requirementsSubtitle": "These basics keep our marketplace trusted and safe",
+    "requirements": [
+      "Valid government-issued ID plus a recent selfie",
+      "Proof of address or residency for payout compliance",
+      "Professional certificates or portfolios for specialized skills",
+      "Smartphone capable of running the Guidew app",
+      "Ability to communicate in English or Mandarin (additional languages welcome)",
+      "Agreement to Guidew’s safety, cancellation, and mutual review policies"
+    ],
+    "downloadCta": "Get the Provider App",
+    "ctaTitle": "Ready to experience or provide local expertise?",
+    "ctaSubtitle": "Download the app to book within minutes—or turn your passion into high-commission work."
   },
   "serviceDetail": {
     "availableNow": "Available Now",

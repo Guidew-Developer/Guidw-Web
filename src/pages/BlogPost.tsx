@@ -2,12 +2,15 @@ import { useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { blogPosts } from "@/constants/siteContent";
+import { getBlogPosts } from "@/constants/siteContent";
 import { ArrowLeft, PenSquare } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = useMemo(() => blogPosts.find(item => item.id === slug), [slug]);
+  const { i18n } = useTranslation();
+  const posts = useMemo(() => getBlogPosts(i18n.language), [i18n.language]);
+  const post = useMemo(() => posts.find(item => item.id === slug), [posts, slug]);
 
   if (!post) {
     return (

@@ -8,8 +8,67 @@ import {
   MapPin, 
   Phone 
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { resolveLocale } from "@/utils/locale";
+
+const copy = {
+  en: {
+    tagline: "Connecting you with local expertise, on demand, wherever you are in the world.",
+    powered: "Powered by VIVA Dance Limited",
+    explore: "Explore",
+    company: "Company",
+    contact: "Contact",
+    quickLinks: [
+      { to: "/discover", label: "Find Services" },
+      { to: "/how-it-works", label: "How It Works" },
+      { to: "/become-expert", label: "Become an Expert" },
+      { to: "/locations", label: "Locations" }
+    ],
+    companyLinks: [
+      { to: "/about", label: "About Us" },
+      { to: "/careers", label: "Careers" },
+      { to: "/blog", label: "Blog" },
+      { to: "/press", label: "Press" }
+    ],
+    address: "10 Newton Road, Auckland Central, NZ 1010",
+    phone: "+64 (21) 513-258",
+    email: "hello@guidew.com",
+    terms: "Terms of Service",
+    privacy: "Privacy Policy",
+    cookies: "Cookie Policy"
+  },
+  zh: {
+    tagline: "随时连接本地专家，无论您身在世界何处。",
+    powered: "由 VIVA Dance Limited 提供技术支持",
+    explore: "探索",
+    company: "公司",
+    contact: "联系",
+    quickLinks: [
+      { to: "/discover", label: "查找服务" },
+      { to: "/how-it-works", label: "使用指南" },
+      { to: "/become-expert", label: "成为服务者" },
+      { to: "/locations", label: "服务城市" }
+    ],
+    companyLinks: [
+      { to: "/about", label: "关于我们" },
+      { to: "/careers", label: "加入我们" },
+      { to: "/blog", label: "城市故事" },
+      { to: "/press", label: "媒体与公关" }
+    ],
+    address: "10 Newton Road, Auckland Central, NZ 1010",
+    phone: "+64 (21) 513-258",
+    email: "hello@guidew.com",
+    terms: "服务条款",
+    privacy: "隐私政策",
+    cookies: "Cookie 政策"
+  }
+} as const;
 
 const Footer = () => {
+  const { i18n } = useTranslation();
+  const locale = resolveLocale(i18n.language);
+  const content = copy[locale];
+
   return (
     <footer className="bg-gray-50 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,7 +84,7 @@ const Footer = () => {
               <span className="ml-2 text-2xl font-bold gradient-text uppercase">GUIDEW</span>
             </Link>
             <p className="mt-3 text-gray-600 text-sm">
-              Connecting you with local expertise, on demand, wherever you are in the world.
+              {content.tagline}
             </p>
             <a
               href="https://www.vivadance.co.nz/"
@@ -38,7 +97,7 @@ const Footer = () => {
                 alt="VIVA Dance Limited logo"
                 className="h-8 w-auto object-contain"
               />
-              <span className="text-sm text-gray-700 font-medium">Powered by VIVA Dance Limited</span>
+              <span className="text-sm text-gray-700 font-medium">{content.powered}</span>
             </a>
             <div className="mt-6 flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-brand-teal">
@@ -59,80 +118,54 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
-              Explore
+              {content.explore}
             </h3>
             <ul className="mt-4 space-y-2">
-              <li>
-                <Link to="/discover" className="text-gray-600 hover:text-brand-teal text-sm">
-                  Find Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/how-it-works" className="text-gray-600 hover:text-brand-teal text-sm">
-                  How It Works
-                </Link>
-              </li>
-              <li>
-                <Link to="/become-expert" className="text-gray-600 hover:text-brand-teal text-sm">
-                  Become an Expert
-                </Link>
-              </li>
-              <li>
-                <Link to="/locations" className="text-gray-600 hover:text-brand-teal text-sm">
-                  Locations
-                </Link>
-              </li>
+              {content.quickLinks.map(link => (
+                <li key={link.to}>
+                  <Link to={link.to} className="text-gray-600 hover:text-brand-teal text-sm">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           
           {/* Company */}
           <div>
             <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
-              Company
+              {content.company}
             </h3>
             <ul className="mt-4 space-y-2">
-              <li>
-                <Link to="/about" className="text-gray-600 hover:text-brand-teal text-sm">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/careers" className="text-gray-600 hover:text-brand-teal text-sm">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-gray-600 hover:text-brand-teal text-sm">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/press" className="text-gray-600 hover:text-brand-teal text-sm">
-                  Press
-                </Link>
-              </li>
+              {content.companyLinks.map(link => (
+                <li key={link.to}>
+                  <Link to={link.to} className="text-gray-600 hover:text-brand-teal text-sm">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           
           {/* Contact */}
           <div>
             <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
-              Contact
+              {content.contact}
             </h3>
             <ul className="mt-4 space-y-2">
               <li className="flex items-start">
                 <MapPin size={18} className="flex-shrink-0 text-brand-teal mr-2 mt-0.5" />
                 <span className="text-gray-600 text-sm">
-                  10 Newton Road, Auckland Central, NZ 1010
+                  {content.address}
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="flex-shrink-0 text-brand-teal mr-2" />
-                <span className="text-gray-600 text-sm">+64 (21) 513-258</span>
+                <span className="text-gray-600 text-sm">{content.phone}</span>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="flex-shrink-0 text-brand-teal mr-2" />
-                <span className="text-gray-600 text-sm">hello@guidew.com</span>
+                <span className="text-gray-600 text-sm">{content.email}</span>
               </li>
             </ul>
           </div>
@@ -145,13 +178,13 @@ const Footer = () => {
             </p>
             <div className="mt-4 md:mt-0 flex space-x-6">
               <Link to="/terms" className="text-sm text-gray-500 hover:text-brand-teal">
-                Terms of Service
+                {content.terms}
               </Link>
               <Link to="/privacy" className="text-sm text-gray-500 hover:text-brand-teal">
-                Privacy Policy
+                {content.privacy}
               </Link>
               <Link to="/cookies" className="text-sm text-gray-500 hover:text-brand-teal">
-                Cookie Policy
+                {content.cookies}
               </Link>
             </div>
           </div>

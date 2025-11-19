@@ -2,6 +2,8 @@ import { createContext, useContext, useMemo, useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { resolveLocale } from "@/utils/locale";
 
 interface DownloadDialogContextValue {
   openDownloadDialog: (serviceTitle?: string) => void;
@@ -15,14 +17,20 @@ const platformOptions = [
     label: "iOS",
     link: "https://apps.apple.com/app/guidew",
     logo: "https://cdn.simpleicons.org/apple/ffffff",
-    tagline: "App Store · 立即安装"
+    tagline: {
+      en: "App Store · Install now",
+      zh: "App Store · 立即安装"
+    }
   },
   {
     id: "android",
     label: "Android",
     link: "https://play.google.com/store/apps/details?id=guidew",
     logo: "https://cdn.simpleicons.org/android/ffffff",
-    tagline: "Google Play · 极速下载"
+    tagline: {
+      en: "Google Play · Fast download",
+      zh: "Google Play · 极速下载"
+    }
   }
 ] as const;
 
@@ -32,6 +40,36 @@ export const DownloadDialogProvider = ({ children }: { children: React.ReactNode
   const [open, setOpen] = useState(false);
   const [selectedPlatform, setSelectedPlatform] = useState<PlatformId>("ios");
   const [serviceTitle, setServiceTitle] = useState<string | undefined>();
+  const { i18n } = useTranslation();
+  const locale = resolveLocale(i18n.language);
+
+  const copy = {
+    en: {
+      label: "Download Guidew",
+      defaultHeadline: "Bring Guidew anywhere your journey goes",
+      serviceHeadline: (title: string) => `Save ${title} directly in the app`,
+      description:
+        "Summon bilingual experts, world champions, or rescue teams in seconds. Scan the QR code to land on the right store.",
+      vipNote: "Guidew VIP users skip commissions, providers earn more, and AI plans every itinerary.",
+      qrLabel: "QR Download",
+      scanTitle: (platform: string) => `Scan to install the ${platform} version`,
+      visitStore: (platform: string) => `Go to ${platform} store`,
+      scanNote: "Scan or click to open the download link in your browser, then continue chatting with experts.",
+      versionLabel: (platform: string) => `${platform} version`
+    },
+    zh: {
+      label: "下载 Guidew",
+      defaultHeadline: "带上 Guidew，走进新西兰的真实生活",
+      serviceHeadline: (title: string) => `锁定 ${title}，就在手机里`,
+      description: "一次下载即可召唤本地专家、冠军导师或救援团队。扫码立即跳转到正确的应用商店。",
+      vipNote: "VIP 用户免佣下单，服务者享受高佣金，并可使用 AI 行程规划。",
+      qrLabel: "二维码下载",
+      scanTitle: (platform: string) => `扫码下载 ${platform} 版本`,
+      visitStore: (platform: string) => `前往 ${platform} 商店`,
+      scanNote: "扫码或点击后在浏览器中打开下载链接。登录后即可继续与当地专家沟通。",
+      versionLabel: (platform: string) => `${platform} 版本`
+    }
+  }[locale];
 
   const currentPlatform = useMemo(
     () => platformOptions.find(option => option.id === selectedPlatform) ?? platformOptions[0],
@@ -59,13 +97,11 @@ export const DownloadDialogProvider = ({ children }: { children: React.ReactNode
           <div className="flex flex-col lg:flex-row h-full">
             <div className="w-full lg:w-1/2 bg-gradient-to-br from-brand-teal via-brand-gold/60 to-brand-orange text-white p-10 flex flex-col justify-between">
               <div>
-                <p className="uppercase tracking-[0.4em] text-sm mb-4">Download Guidew</p>
+                <p className="uppercase tracking-[0.4em] text-sm mb-4">{copy.label}</p>
                 <h2 className="text-4xl font-bold leading-tight mb-4">
-                  {serviceTitle ? `锁定 ${serviceTitle}，就在手机里` : "带上 Guidew，走进新西兰的真实生活"}
+                  {serviceTitle ? copy.serviceHeadline(serviceTitle) : copy.defaultHeadline}
                 </h2>
-                <p className="text-white/90 text-lg mb-8">
-                  一次下载，随时召唤本地专家、冠军导师、语言搭档与救援团队。二维码扫码即可立即进入应用商店。
-                </p>
+                <p className="text-white/90 text-lg mb-8">{copy.description}</p>
                 <div className="grid grid-cols-1 gap-3">
                   {platformOptions.map(option => (
                     <button
@@ -88,14 +124,14 @@ export const DownloadDialogProvider = ({ children }: { children: React.ReactNode
                             selectedPlatform === option.id ? "text-brand-teal" : "text-white"
                           }`}
                         >
-                          {option.label} 版本
+                          {copy.versionLabel(option.label)}
                         </p>
                         <p
                           className={`text-sm ${
                             selectedPlatform === option.id ? "text-brand-teal/80" : "text-white/80"
                           }`}
                         >
-                          {option.tagline}
+                          {option.tagline[locale]}
                         </p>
                       </div>
                       <ArrowUpRight
@@ -106,14 +142,14 @@ export const DownloadDialogProvider = ({ children }: { children: React.ReactNode
                 </div>
               </div>
               <div className="text-sm text-white/70">
-                通过 Guidew，VIP 用户免佣下单，服务者享受高佣金，并可使用 AI 行程规划。
+                {copy.vipNote}
               </div>
             </div>
             <div className="w-full lg:w-1/2 bg-white p-8 flex flex-col items-center justify-center gap-6">
               <div className="text-center">
-                <p className="text-sm uppercase tracking-[0.3em] text-brand-teal mb-2">QR Download</p>
+                <p className="text-sm uppercase tracking-[0.3em] text-brand-teal mb-2">{copy.qrLabel}</p>
                 <h3 className="text-2xl font-semibold leading-tight text-brand-darkBlue">
-                  扫码下载 {currentPlatform.label} 版本
+                  {copy.scanTitle(currentPlatform.label)}
                 </h3>
               </div>
               <div className="bg-brand-lightGray/60 p-5 rounded-3xl shadow-inner">
@@ -121,11 +157,11 @@ export const DownloadDialogProvider = ({ children }: { children: React.ReactNode
               </div>
               <Button className="w-full bg-brand-teal hover:bg-brand-teal/90 text-base" asChild>
                 <a href={currentPlatform.link} target="_blank" rel="noopener noreferrer">
-                  直接前往 {currentPlatform.label} 商店
+                  {copy.visitStore(currentPlatform.label)}
                 </a>
               </Button>
               <p className="text-sm text-gray-500 text-center">
-                扫码或点击后在浏览器中打开下载链接。登录后即可继续与当地专家沟通。
+                {copy.scanNote}
               </p>
             </div>
           </div>

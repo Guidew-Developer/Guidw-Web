@@ -8,11 +8,13 @@ import { Button } from "@/components/ui/button";
 import { Star, MapPin, Clock, User, Calendar, Shield, MessageCircle } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import DownloadApp from "@/components/DownloadApp";
-import { skillServiceData } from "@/constants/skillServiceData";
+import { getSkillService } from "@/constants/skillServiceData";
+import { useTranslation } from "react-i18next";
 
 const SkillServiceDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const service = skillServiceData[id || "39"];
+  const { i18n } = useTranslation();
+  const service = getSkillService(i18n.language, id || "39");
 
   if (!service) {
     return (

@@ -18,6 +18,7 @@ interface ServiceCardProps {
   };
   imageSrc: string;
   onCardClick?: () => void;
+  detailPath?: string;
 }
 
 const ServiceCard = ({
@@ -31,6 +32,7 @@ const ServiceCard = ({
   provider,
   imageSrc,
   onCardClick,
+  detailPath,
 }: ServiceCardProps) => {
   const navigate = useNavigate();
 
@@ -39,8 +41,7 @@ const ServiceCard = ({
       onCardClick();
       return;
     }
-    const isSkillService = id >= "39" && id <= "50";
-    navigate(isSkillService ? `/skill-service/${id}` : `/service/${id}`);
+    navigate(detailPath ?? `/service/${id}`);
   };
 
   return (

@@ -2,12 +2,15 @@ import { useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { careerOpenings } from "@/constants/siteContent";
+import { getCareerOpenings } from "@/constants/siteContent";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const CareerDetail = () => {
   const { roleId } = useParams<{ roleId: string }>();
-  const role = useMemo(() => careerOpenings.find(item => item.id === roleId), [roleId]);
+  const { i18n } = useTranslation();
+  const openings = useMemo(() => getCareerOpenings(i18n.language), [i18n.language]);
+  const role = useMemo(() => openings.find(item => item.id === roleId), [openings, roleId]);
 
   if (!role) {
     return (

@@ -1,9 +1,11 @@
+import { useMemo } from "react";
 import type { ElementType } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { PenSquare, MapPinned, Languages, Music3, Compass } from "lucide-react";
-import { blogPosts } from "@/constants/siteContent";
+import { getBlogPosts } from "@/constants/siteContent";
+import { useTranslation } from "react-i18next";
 
 const iconMap: Record<string, ElementType> = {
   map: MapPinned,
@@ -13,6 +15,9 @@ const iconMap: Record<string, ElementType> = {
 };
 
 const Blog = () => {
+  const { i18n } = useTranslation();
+  const posts = useMemo(() => getBlogPosts(i18n.language), [i18n.language]);
+
   return (
     <div className="min-h-screen flex flex-col bg-brand-lightGray">
       <Navbar />
@@ -32,7 +37,7 @@ const Blog = () => {
 
         <section className="py-16">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-8 md:grid-cols-2">
-            {blogPosts.map(post => {
+            {posts.map(post => {
               const Icon = iconMap[post.icon] ?? MapPinned;
               return (
                 <article key={post.title} className="bg-white rounded-2xl p-6 border border-brand-lightGray shadow-sm">

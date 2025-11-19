@@ -42,7 +42,7 @@ const ServiceDetail: React.FC = () => {
     category: "Local Guide",
     price: 40,
     duration: "3小时",
-    location: "东京, 日本",
+    location: "奥克兰, 新西兰",
     languages: ["日语", "英语", "中文"],
     groupSize: "1-5人",
     availableNow: true,
@@ -52,14 +52,14 @@ const ServiceDetail: React.FC = () => {
         avatar: "https://randomuser.me/api/portraits/women/22.jpg",
         rating: 5,
         date: "2023-10-15",
-        text: "Hiroshi was an amazing guide! He showed us places we would have never found on our own and was very knowledgeable about the history and culture of Tokyo."
+        text: "Hiroshi was an amazing guide! He showed us places we would have never found on our own and was very knowledgeable about the history and culture of Auckland."
       },
       {
         author: "Michael C.",
         avatar: "https://randomuser.me/api/portraits/men/54.jpg",
         rating: 4,
         date: "2023-09-28",
-        text: "Great experience overall. We visited some amazing hidden restaurants and shops. Would highly recommend for first-time visitors to Tokyo."
+        text: "Great experience overall. We visited some amazing hidden restaurants and shops. Would highly recommend for first-time visitors to Auckland."
       }
     ],
     availableDates: ["2023-11-10", "2023-11-11", "2023-11-12"],
@@ -131,17 +131,17 @@ const ServiceDetail: React.FC = () => {
               <div className="grid grid-cols-3 gap-2">
                 <img 
                   src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc" 
-                  alt="Tokyo street" 
+                  alt="Auckland street" 
                   className="w-full h-24 object-cover rounded-lg"
                 />
                 <img 
                   src="https://images.unsplash.com/photo-1553621042-f6e147245754" 
-                  alt="Tokyo food" 
+                  alt="Auckland food" 
                   className="w-full h-24 object-cover rounded-lg"
                 />
                 <img 
                   src="https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1" 
-                  alt="Tokyo garden" 
+                  alt="Auckland garden" 
                   className="w-full h-24 object-cover rounded-lg"
                 />
               </div>

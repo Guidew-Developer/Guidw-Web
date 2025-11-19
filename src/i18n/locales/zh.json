@@ -2,8 +2,7 @@
   "nav": {
     "home": "首页",
     "discover": "发现",
-    "howItWorks": "使用指南",
-    "becomeExpert": "成为专家",
+    "about": "关于",
     "downloadApp": "下载应用"
   },
   "search": {
@@ -118,6 +117,147 @@
       "becomeExpert": "成为专家"
     }
   },
+  "how": {
+    "title": "Guidew Journey",
+    "heading": "Guidew如何工作",
+    "subtitle": "从注册到线下体验，Guidew 为旅行者与服务者提供透明、安全的全流程指引。",
+    "stepLabel": "步骤 {{step}}",
+    "detailLabel": "细节",
+    "stepCounter": "当前第 {{current}} 步 / 共 {{total}} 步",
+    "steps": [
+      {
+        "title": "创建与探索",
+        "description": "秒级注册，按城市、地图或主题浏览。",
+        "detailTitle": "1. 完成资料并探索服务",
+        "detailBody": "设置语言偏好和旅客/服务者身份，使用地图、合集和筛选器快速找到心仪的本地专家。",
+        "bullets": [
+          "支持邮箱或 Google / Apple 一键登录",
+          "地图查看附近专家，列表支持全球搜索",
+          "收藏专家并开启提醒"
+        ]
+      },
+      {
+        "title": "描述需求",
+        "description": "填写服务内容、时间与地点。",
+        "detailTitle": "2. 用自然语言描述需求",
+        "detailBody": "设定服务类型、预算、时长和地点。AI 输入框可一句话生成结构化订单草稿。",
+        "bullets": [
+          "选择舞蹈、翻译、应急等预设标签",
+          "支持多时间段及备用见面地点",
+          "上传图片或语音帮助专家理解"
+        ]
+      },
+      {
+        "title": "匹配与沟通",
+        "description": "Guidew 即时推荐认证专家。",
+        "detailTitle": "3. 匹配并在线沟通",
+        "detailBody": "系统综合评分、距离、VIP 等因素排序，双方可在聊天室交换资料并使用 AI 生成行程。",
+        "bullets": [
+          "专家展示证书与作品集",
+          "AI 行程草案支持协作修改",
+          "内置多语言即时翻译"
+        ]
+      },
+      {
+        "title": "确认与支付",
+        "description": "Stripe 托管保障双方权益。",
+        "detailTitle": "4. 即时确认与托管支付",
+        "detailBody": "通过 Stripe 预付（即将支持 Apple Pay/Google Pay），款项在服务完成前由平台托管。",
+        "bullets": [
+          "统一 15% 佣金，VIP 免佣并优先匹配",
+          "自动推送提醒与取消政策",
+          "支持追加服务与费用调整"
+        ]
+      },
+      {
+        "title": "线下体验",
+        "description": "与专家见面，体验当地生活。",
+        "detailTitle": "5. 线下体验并完成评价",
+        "detailBody": "提供导航提示、位置共享与安全联系人。体验后可给小费、延长订单或提交评价。",
+        "bullets": [
+          "一键签到/签退保障双方权益",
+          "实时推送下一站提醒",
+          "互评系统带来徽章与更多机会"
+        ]
+      }
+    ],
+    "safety": [
+      {
+        "title": "多级身份验证",
+        "description": "身份证/证书/无犯罪记录多重审核。",
+        "detailTitle": "多级身份验证",
+        "detailBody": "依据服务类型要求不同等级的认证，入户或儿童服务必须提供无犯罪记录等更严格的材料。",
+        "bullets": [
+          "实名 + 活体检测 + 证件 OCR",
+          "上传职业证书或政府许可",
+          "敏感服务强制无犯罪记录"
+        ]
+      },
+      {
+        "title": "安全支付",
+        "description": "Stripe 托管 + 透明佣金。",
+        "detailTitle": "透明佣金与 VIP 免佣",
+        "detailBody": "平台统一收取 15% 佣金。VIP 用户免佣并享受专属客服、优先推荐与自动接单等功能。",
+        "bullets": [
+          "Stripe 托管可追踪",
+          "支持小费、部分退款与追加",
+          "VIP 享受零雇佣费与优先匹配"
+        ]
+      },
+      {
+        "title": "互评与争议",
+        "description": "互评后公开，争议由客服协助。",
+        "detailTitle": "互评与争议协助",
+        "detailBody": "评价在双方提交或 7 天后才公开。如有争议，可提交聊天记录、位置与行程证据，由客服裁定。",
+        "bullets": [
+          "互评期间评价私密",
+          "一键上传证据并追踪进度",
+          "严格执行取消与惩罚机制"
+        ]
+      }
+    ],
+    "providerTitle": "面向服务提供者",
+    "providerSubtitle": "打造可信门面，轻松管理每一单",
+    "provider": [
+      {
+        "title": "服务者界面",
+        "description": "抢单面板 + 可用时间管理。",
+        "detailTitle": "1. 切换到服务者模式",
+        "detailBody": "在 App 内一键切换角色，即可查看抢单墙、订单、聊天与钱包。VIP 可开启自动接单并设定最大出行范围。",
+        "bullets": [
+          "按地区或类型筛选订单",
+          "支持自动接单或手动确认",
+          "自定义每日可用时间"
+        ]
+      },
+      {
+        "title": "展示专业",
+        "description": "上传证书、视频与自我介绍。",
+        "detailTitle": "2. 打造可信的服务门面",
+        "detailBody": "上传视频、音频、自述文本与案例。添加服务标签、最小时长、包含费用和语言能力，提升匹配效率。",
+        "bullets": [
+          "证书自动生成徽章",
+          "可配置多种套餐与附加服务",
+          "支持多语言简介与音频问候"
+        ]
+      },
+      {
+        "title": "执行订单",
+        "description": "沟通、AI 行程与交付。",
+        "detailTitle": "3. 执行订单并解锁收入",
+        "detailBody": "接单后使用 AI 生成行程，再提交给用户确认。服务完成后上传凭证或总结即可解锁酬劳。",
+        "bullets": [
+          "AI 行程建议与费用估算",
+          "支持延长时长或追加费用",
+          "钱包清晰展示可提现金额"
+        ]
+      }
+    ],
+    "ctaTitle": "现在就体验或提供本地专家服务",
+    "ctaSubtitle": "下载 App 即可几分钟内预订，或开启高佣金的自由职业旅程。",
+    "downloadBtn": "下载 Guidew App",
+    "learnBtn": "在 App 中进一步了解"
+  },
   "discover": {
     "title": "发现服务",
     "subtitle": "为任何需求找到完美的本地服务，立即可用",
@@ -193,24 +333,88 @@
       }
     }
   },
-  "becomeExpert": {
-    "title": "成为Guidew专家",
-    "subtitle": "与全球用户分享您的技能，提供独特的本地体验",
-    "features": {
-      "flexible": {
-        "title": "灵活工作",
-        "description": "按照您的时间和舒适度提供服务"
+  "become": {
+    "title": "成为 Guidew 专家",
+    "heading": "打造属于你的 Guidew 工作室",
+    "subtitle": "无论是舞蹈、翻译、城市陪同还是紧急支援，都可以在 Guidew 上成为高需求的线下服务。平台提供认证、AI 工具与透明结算，让你专注在真实体验上。",
+    "cta": "开始注册",
+    "pillars": [
+      { "title": "时间自由", "description": "自定义接单时间、出行范围和最小时长，随时开启/关闭可接单状态。" },
+      { "title": "海量需求", "description": "连接抵达奥克兰和惠灵顿的旅行者，也能服务本地企业与紧急请求。" },
+      { "title": "高收益", "description": "保留大部分订单收入，Guidew 负责营销、支付与争议处理。" }
+    ],
+    "processTitle": "四阶段入驻流程",
+    "processSubtitle": "每一步都有专属顾问协助",
+    "processStepLabel": "阶段 {{step}}",
+    "processDetail": "步骤详情",
+    "processCounter": "{{current}} / 共 {{total}}",
+    "processSteps": [
+      {
+        "title": "身份与背景",
+        "description": "上传证件、自拍与必要证书。",
+        "detailTitle": "1. 通过身份验证",
+        "detailBody": "提交政府签发的身份证件并完成活体检测。若提供入户或儿童相关服务，还需额外无犯罪记录证明。",
+        "bullets": [
+          "护照/驾照 + 自助人脸验证",
+          "可上传专业或教育证书",
+          "高信任服务需额外背调"
+        ]
       },
-      "global": {
-        "title": "全球连接",
-        "description": "与来自世界各地的人分享您的技能"
+      {
+        "title": "打造门面",
+        "description": "录制介绍、配置价格与服务范围。",
+        "detailTitle": "2. 打造可信的服务门面",
+        "detailBody": "添加视频/音频自我介绍、证书、服务标签、最小时长、收费包含项与语言能力，帮助用户快速了解你。",
+        "bullets": [
+          "支持多个套餐与附加服务",
+          "AI 帮你润色文案和简介",
+          "可上传案例、行程或播放列表"
+        ]
       },
-      "income": {
-        "title": "额外收入",
-        "description": "通过分享您的专业知识获得报酬"
+      {
+        "title": "运营培训",
+        "description": "熟悉抢单面板、行程工具与沟通规范。",
+        "detailTitle": "3. 学会使用抢单与 AI 工具",
+        "detailBody": "了解实时需求如何出现、VIP 自动接单的规则，以及如何利用模板与 AI 行程回应客户。",
+        "bullets": [
+          "响应时间指标与徽章激励",
+          "AI 行程模板可供双方协作修改",
+          "接单前的安全提醒清单"
+        ]
+      },
+      {
+        "title": "上线与成长",
+        "description": "正式接单、收获评价、解锁 VIP。",
+        "detailTitle": "4. 上线并持续成长",
+        "detailBody": "开始接单并积累互评，逐步解锁 VIP 特权，如自动接单、AI 行程和专属运营辅导。",
+        "bullets": [
+          "托管款 7 天内结算",
+          "VIP 获得 AI 生成的营销素材",
+          "季度工作坊分享定价与增购技巧"
+        ]
       }
-    },
-    "cta": "开始注册"
+    ],
+    "benefitsTitle": "专家爱上 Guidew 的理由",
+    "benefitsSubtitle": "专业基础设施 + 完整自由度",
+    "benefits": [
+      { "title": "高收益结构", "description": "统一 15% 平台佣金覆盖营销、支付与客服，剩余收入归你所有。" },
+      { "title": "VIP 自动化工具", "description": "升级即可使用自动接单、AI 行程规划、优先曝光与专属客服。" },
+      { "title": "真实稳定的需求", "description": "无需被动等客户，平台实时推送旅行者、企业和紧急请求。" },
+      { "title": "人机协同支持", "description": "入驻顾问与 AI 助手一起帮你优化简介、报价与文书工作。" }
+    ],
+    "requirementsTitle": "入驻前需要准备",
+    "requirementsSubtitle": "这些材料能确保市场可信安全",
+    "requirements": [
+      "有效身份证件与近期自拍",
+      "用于收款的地址/居留证明",
+      "技能或行业相关证书、作品集",
+      "可运行 Guidew App 的智能手机",
+      "具备英语或普通话沟通能力（其他语言更佳）",
+      "同意平台安全、取消与互评政策"
+    ],
+    "downloadCta": "获取服务者 App",
+    "ctaTitle": "现在就体验或提供本地专家服务",
+    "ctaSubtitle": "下载 App 即可几分钟内预订，或开启高佣金的自由职业旅程。"
   },
   "serviceDetail": {
     "availableNow": "立即可用",

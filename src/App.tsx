@@ -29,6 +29,7 @@ import PressKit from "./pages/PressKit";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Cookies from "./pages/Cookies";
+import Vip from "./pages/Vip";
 import './i18n/config';
 
 const queryClient = new QueryClient();
@@ -55,6 +56,7 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/press" element={<Press />} />
           <Route path="/press/kit" element={<PressKit />} />
+          <Route path="/vip" element={<Vip />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookies" element={<Cookies />} />

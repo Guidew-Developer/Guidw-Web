@@ -1,8 +1,10 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Briefcase, Rocket, Users2, Target } from "lucide-react";
-import { careerOpenings } from "@/constants/siteContent";
+import { getCareerOpenings } from "@/constants/siteContent";
+import { useTranslation } from "react-i18next";
 
 const values = [
   {
@@ -23,6 +25,9 @@ const values = [
 ];
 
 const Careers = () => {
+  const { i18n } = useTranslation();
+  const openings = useMemo(() => getCareerOpenings(i18n.language), [i18n.language]);
+
   return (
     <div className="min-h-screen flex flex-col bg-brand-lightGray">
       <Navbar />
@@ -58,7 +63,7 @@ const Careers = () => {
               <h2 className="text-3xl font-bold text-brand-darkBlue">开放职位</h2>
             </div>
             <div className="space-y-6">
-              {careerOpenings.map(role => (
+              {openings.map(role => (
                 <div key={role.id} className="border border-brand-lightGray rounded-2xl p-6 bg-brand-lightGray/30">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
                     <div>

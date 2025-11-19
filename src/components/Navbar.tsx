@@ -35,11 +35,8 @@ const Navbar = () => {
             <Link to="/discover" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
               {t('nav.discover')}
             </Link>
-            <Link to="/how-it-works" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
-              {t('nav.howItWorks')}
-            </Link>
-            <Link to="/become-expert" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
-              {t('nav.becomeExpert')}
+            <Link to="/about" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-brand-teal transition-colors">
+              {t('nav.about')}
             </Link>
 
             <div className="ml-4 flex items-center space-x-3">
@@ -50,19 +47,18 @@ const Navbar = () => {
                 onClick={() => openDownloadDialog()}
               >
                 <Download size={16} />
-                Download App
+                {t("nav.downloadApp")}
               </Button>
               <LanguageSwitcher />
               <Button
                 variant="outline"
                 className="border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white"
-                onClick={() => navigate("/auth")}
+                onClick={() => navigate("/auth?tab=login")}
               >
-                Sign in
+                {t("common.signIn")}
               </Button>
-              <Button className="bg-brand-teal hover:bg-brand-teal/90 text-white" onClick={() => navigate("/auth")}
-              >
-                Join now
+              <Button className="bg-brand-teal hover:bg-brand-teal/90 text-white" onClick={() => navigate("/auth?tab=register")}>
+                {t("common.joinNow")}
               </Button>
             </div>
           </div>
@@ -74,7 +70,7 @@ const Navbar = () => {
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">{t("common.openMenu", "Open main menu")}</span>
               {isMenuOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
             </button>
           </div>
@@ -100,18 +96,11 @@ const Navbar = () => {
               {t('nav.discover')}
             </Link>
             <Link 
-              to="/how-it-works" 
+              to="/about" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-teal hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              {t('nav.howItWorks')}
-            </Link>
-            <Link 
-              to="/become-expert" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-teal hover:bg-gray-50"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('nav.becomeExpert')}
+              {t('nav.about')}
             </Link>
             <Button
               variant="outline"
@@ -120,24 +109,23 @@ const Navbar = () => {
               onClick={() => openDownloadDialog()}
             >
               <Download size={16} />
-              Download App
+              {t("nav.downloadApp")}
             </Button>
           </div>
           <div className="pt-4 pb-3 border-t border-gray-200">
             <div className="flex items-center px-5">
               <div className="flex-shrink-0">
-                <Button className="w-full mb-2 bg-brand-teal hover:bg-brand-teal/90 text-white" onClick={() => navigate("/auth")}
-                >
-                  Sign in
+                <Button className="w-full mb-2 bg-brand-teal hover:bg-brand-teal/90 text-white" onClick={() => navigate("/auth?tab=login")}>
+                  {t("common.signIn")}
                 </Button>
               </div>
               <div className="ml-3">
                 <Button
                   variant="outline"
                   className="w-full border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white"
-                  onClick={() => navigate("/auth")}
+                  onClick={() => navigate("/auth?tab=register")}
                 >
-                  Join now
+                  {t("common.joinNow")}
                 </Button>
               </div>
             </div>
