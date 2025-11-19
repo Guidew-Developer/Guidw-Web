@@ -1,6 +1,6 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { StarIcon } from "lucide-react";
+import { ThumbsUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 interface ServiceCardProps {
@@ -43,6 +43,7 @@ const ServiceCard = ({
     }
     navigate(detailPath ?? `/service/${id}`);
   };
+  const satisfactionPercentage = Math.min(99.99, Math.max(80, (rating / 5) * 100)).toFixed(2);
 
   return (
     <Card
@@ -62,9 +63,9 @@ const ServiceCard = ({
       
       <CardContent className="pt-4 flex-grow">
         <div className="flex items-center mb-2">
-          <div className="flex items-center text-amber-500">
-            <StarIcon className="h-4 w-4 fill-current" />
-            <span className="ml-1 text-sm">{rating.toFixed(1)}</span>
+          <div className="flex items-center text-brand-teal">
+            <ThumbsUp className="h-4 w-4" />
+            <span className="ml-1 text-sm font-medium">{satisfactionPercentage}%</span>
           </div>
           <span className="mx-2 text-gray-300">•</span>
           <span className="text-sm text-gray-500">{location}</span>
