@@ -277,22 +277,42 @@ const blogPosts: Record<SupportedLocale, BlogPost[]> = {
       title: "Why Travelers Need Local Skill Networks More Than Ever",
       date: "2024-12-12",
       summary:
-        "From touchdown to hidden gems, Guidew connects travelers with locals to solve the last-mile gap and unlock authentic experiences.",
+        "From touchdown to hidden gems, Guidew connects travelers with locals to solve the last-mile gap, surface verifiable expertise, and unlock authentic experiences.",
       sections: [
         {
           heading: "The Last Mile in a Strange City",
           content:
-            "Transport and hotels are solved, but the first 72 hours determine how a trip feels. Guidew lets you summon locals for language help, cultural decoding, and human support the moment you arrive."
+            "Transport and hotels are solved, but the first 72 hours determine how a trip feels. Guidew lets you summon locals for language help, cultural decoding, and human support the moment you arrive. Instead of doom-scrolling unrelated reviews, you select a mission—airport escort, hospital visit, maker tour—and receive a shortlist of verified humans within minutes."
         },
         {
           heading: "Two-sided Network Effects",
           content:
-            "Providers upload credentials, proof, and portfolios to build trust. Users leave reviews, tip, and join VIP subscriptions, creating incentives for more experts to join."
+            "Providers upload credentials, proof, and portfolios to build trust. Users leave reviews, tip, and join VIP subscriptions, creating incentives for more experts to join. Each completed order feeds a quality graph that exposes availability, response time, and transparent pricing to the next traveler."
         },
         {
           heading: "The Power of AI + Humans",
           content:
-            "AI parses requests and matchmaking, but the service happens offline through people. Guidew uses technology as a connector, not a replacement."
+            "AI parses requests, tags intents, and does matchmaking, but the service happens offline through people. Guidew keeps technology in the background as the connector while humans own empathy, improvisation, and cultural fluency."
+        },
+        {
+          heading: "What Travelers Actually Request",
+          content:
+            "Top categories include airport concierge, urgent translation for clinics, curated experiences for kids, and pop-up creator sessions. A typical brief might be \"Need a bilingual driver to pick up parents, set up SIM cards, and schedule a grocery run.\" We tag these jobs and surface modular packages like errands, cultural escort, or VIP nightlife."
+        },
+        {
+          heading: "Designing Trust for Local Experts",
+          content:
+            "Experts build service cards with time, price, and requirements, then attach proof: certificates, video intros, liability coverage, and community references. Guidew reminds them to refresh documents every 90 days and rewards consistent acceptance rates with instant payouts and higher ranking."
+        },
+        {
+          heading: "Blueprint for City Operations",
+          content:
+            "Each city is seeded with at least 30 reliable providers across translation, concierge, cultural experiences, wellness, and mobility. Local partners—language schools, dance studios, tourism boards—act as verification hubs. Once supply density crosses three experts per square kilometer in downtown areas, we unlock VIP subscriptions and cross-city reservations."
+        },
+        {
+          heading: "Where We're Taking It Next",
+          content:
+            "The same playbook expands to Sydney, Singapore, and Osaka. We are shipping multilingual AI intake forms, deeper insurance coverage, and API hooks for airlines, real-estate agents, and relocation firms so a traveler can land anywhere in APAC and ping the nearest Guidew squad for instant human logistics."
         }
       ]
     },
@@ -303,22 +323,42 @@ const blogPosts: Record<SupportedLocale, BlogPost[]> = {
       title: "VIP Translation Subscription: Instant Cross-language Support",
       date: "2024-11-28",
       summary:
-        "VIP users can call certified translators anytime for medical visits, meetings, and errands while enjoying AI matching and zero booking fees.",
+        "VIP users can call certified translators anytime for medical visits, meetings, and errands while enjoying AI intent intake, concierge routing, and zero booking fees—a single membership that replaces ad-hoc messaging groups.",
       sections: [
         {
           heading: "Why $9.9/Month Matters",
           content:
-            "VIP users skip commissions and describe their needs in one sentence. AI recommends the best translator or companion for the task."
+            "VIP users skip commissions and describe their needs in one sentence or by uploading a photo of paperwork. AI rewrites the brief, highlights jargon, and recommends the right translator, guide, or bilingual driver within 60 seconds."
         },
         {
           heading: "Priority Matching",
           content:
-            "Requests surface to top providers based on proximity, skills, and ratings. VIP orders tap into a faster routing lane."
+            "Requests surface to top providers based on proximity, skills, compliance records, and recent availability. VIP orders tap into a faster routing lane with automated reminders so translators can accept without refreshing the app."
         },
         {
           heading: "Safety & Compliance",
           content:
-            "All translators pass identity and professional verification, and can upload certificates plus background checks."
+            "All translators pass identity and professional verification, and can upload certificates plus background checks. Enterprise clients can request NDAs or HIPAA-like confidentiality agreements that auto-attach to every VIP order."
+        },
+        {
+          heading: "Use Cases Our VIPs Trigger",
+          content:
+            "Common flows: hospital intake with simultaneous note taking, investment tours with whisper interpretation, parent-teacher meetings, and last-minute contract reviews. VIP mode stores preferences—dialect, tone, or domain knowledge—so future jobs reuse the same crew."
+        },
+        {
+          heading: "Provider Requirements & Tooling",
+          content:
+            "Translators sync Google or Outlook calendars, define hourly slots, and can opt into auto-accept for recurring clients. Guidew reminds them to update certificates every 6 months and offers AI draft replies for sensitive situations like medical emergencies."
+        },
+        {
+          heading: "Billing, Compliance, and Privacy",
+          content:
+            "Receipts arrive instantly with categorized expense codes for visa applications or insurance claims. Chat transcripts, audio snippets, and signed documents remain encrypted; users can request deletion or export per jurisdiction rules."
+        },
+        {
+          heading: "Roadmap: Beyond Translation",
+          content:
+            "Next up: instant voice cloning for outbound calls, shared glossaries for corporate teams, and bundled mobility services so the same translator can book rides or check in at embassies. VIP tiers will expand to cover relocation and legal concierge support."
         }
       ]
     },
@@ -329,22 +369,42 @@ const blogPosts: Record<SupportedLocale, BlogPost[]> = {
       title: "Finding a Bachata Coach in Wellington Takes One Tap",
       date: "2024-11-02",
       summary:
-        "A dance fan shares how she booked a local instructor through Guidew and brought South American rhythms to her living room.",
+        "A dance fan shares how she booked a local instructor through Guidew and turned her apartment into a pop-up studio, revealing how the local skill network handles matching, space prep, payments, and community follow-ups.",
       sections: [
         {
           heading: "How the Request Started",
           content:
-            "The user simply wrote “I want a Bachata lesson this weekend, preferably at home.” The system matched her with vetted dancers."
+            "The user simply wrote \"I want a Bachata lesson this weekend, preferably at home.\" She added context about her living room size, experience level, and music preferences. Within eight minutes, Guidew surfaced three vetted dancers plus add-on options like bringing mirrors or audio gear."
         },
         {
           heading: "What Providers Show",
           content:
-            "Dancers upload teaching clips, credentials, and rates so users understand their style and professionalism instantly."
+            "Dancers upload teaching clips, credentials, dance crew affiliations, and rates so users understand their style and professionalism instantly. Availability calendars display which evenings they travel across Te Aro, Mount Cook, or online, and response-time streaks reassure newcomers."
         },
         {
           heading: "Offline Magic",
           content:
-            "One-on-one lessons paired with local music recommendations became more than a class—it turned into a cultural exchange."
+            "One-on-one lessons paired with local music recommendations became more than a class—it turned into a cultural exchange. The coach curated warm-ups inspired by Wellington street performances and wrapped with a playlist of emerging Chilean DJs."
+        },
+        {
+          heading: "Coordinating the Session",
+          content:
+            "Guidew shared a checklist covering floor space, ventilation, and neighbors. The coach dropped a pin for arrival, used in-app messaging for elevator access, and logged a pre-lesson safety brief covering hydration and stretching."
+        },
+        {
+          heading: "Pricing, Tipping, and Extras",
+          content:
+            "The base fee was $95 NZD for 90 minutes, plus an optional $20 equipment kit with speakers and portable mirrors. Payment cleared automatically after the coach marked the session complete, and the user tipped 15% with a quick note highlighting the bilingual instruction."
+        },
+        {
+          heading: "Impact for Local Providers",
+          content:
+            "Dancers treat Guidew as a storefront: they list duet or group packages, connect Stripe for weekly payouts, and unlock badges for punctuality. Successful sessions feed a highlight reel that helps them sell choreography services to events and weddings."
+        },
+        {
+          heading: "Community Ripple Effects",
+          content:
+            "After the lesson, the user joined a Guidew chat thread where locals share upcoming socials, costume rentals, and studio recommendations. The coach now hosts a monthly rooftop class sourced entirely from similar Guidew requests."
         }
       ]
     },
@@ -355,22 +415,42 @@ const blogPosts: Record<SupportedLocale, BlogPost[]> = {
       title: "How Providers Use Guidew to Build Personal Brands",
       date: "2024-10-15",
       summary:
-        "Showcase proof, certificates, audio/video work, auto-accept VIP orders, and use AI itineraries to build a trusted digital storefront.",
+        "Showcase proof, certificates, audio/video work, auto-accept VIP orders, and use AI itineraries to build a trusted digital storefront that functions like a mini agency with payouts, analytics, and community referrals.",
       sections: [
         {
-          heading: "Presentation is the Brand",
+          heading: "Designing Your Digital Storefront",
           content:
-            "Detailed bios, certificate walls, service videos, and transparent pricing determine whether travelers trust you enough to book."
+            "Every profile starts with a headline that describes the mission: bilingual concierge, cultural curator, wellness escort. Providers choose a hero image, list service radius, languages, equipment, and safety certifications so travelers understand exactly who will show up."
+        },
+        {
+          heading: "Proof Wins Bookings",
+          content:
+            "Detailed bios, certificate walls, service videos, and transparent pricing determine whether travelers trust you enough to book. Providers pin credentials (NAATI, first-aid, hospitality), upload short reels, and add testimonials pulled from past Guidew orders."
+        },
+        {
+          heading: "Packages, Pricing, and Upsells",
+          content:
+            "You can bundle services such as 90-minute translation plus errands, or two-hour nightlife escort with transport add-ons. Add-ons include gear rental, rush fees, or VIP-only perks like itinerary editing. Transparent tiers reduce haggling and increase conversion."
         },
         {
           heading: "Automation & AI",
           content:
-            "VIP providers auto-accept, plan routes with AI, and keep calendars synced—boosting earning potential dramatically."
+            "VIP providers auto-accept trusted clients, plan routes with AI, and keep calendars synced via Google or Outlook so double bookings disappear. Intake forms auto-summarize traveler needs into professional proposals that are ready to send."
         },
         {
-          heading: "Reviews & Achievements",
+          heading: "Reputation Loops",
           content:
-            "Badges, ratings, and response-time streaks help providers steadily accumulate trust capital."
+            "Badges, ratings, response-time streaks, and \"last active\" stamps help providers steadily accumulate trust capital. Highlight reels stitch together photos, audio, or feedback quotes for social proof that the next traveler can skim in seconds."
+        },
+        {
+          heading: "Business Engine",
+          content:
+            "Stripe or local bank payouts run weekly with instant payout boosts unlocked through verification. Dashboards expose top request types, repeat-client rate, tip averages, and cancellations so providers can tweak offerings or staffing."
+        },
+        {
+          heading: "Growth Roadmap",
+          content:
+            "Upcoming drops include video consultations, templated marketing pages, and partner campaigns with tourism boards. Providers can opt into co-branded experiences or retail collabs to expand beyond single bookings."
         }
       ]
     }
@@ -382,21 +462,42 @@ const blogPosts: Record<SupportedLocale, BlogPost[]> = {
       iconLabel: "Local Insight",
       title: "为什么旅客比以往更需要本地技能网络",
       date: "2024-12-12",
-      summary: "从机场落地到隐藏景点，Guidew 如何连接旅客与本地专家，提供最后一公里的真实体验。",
+      summary: "从机场落地到隐藏景点，Guidew 将旅客与可信赖的本地专家连接起来，补齐最后一公里，让真实体验成为城市标配。",
       sections: [
         {
           heading: "陌生城市的“最后一公里”",
           content:
-            "传统旅行产品解决的是交通与住宿，但真正影响体验的是抵达后的 72 小时。Guidew 通过即时召唤本地专家，让旅客在语言、文化、交通上都能得到人性的帮助。"
+            "传统旅行产品解决的是交通与住宿，但真正影响体验的是抵达后的 72 小时。Guidew 通过即时召唤本地专家，让旅客在语言、文化、交通上都能得到人性的帮助。不必在无关评论里反复筛选，只需选择一个“任务”——机场陪同、医院陪诊、创客工坊参观——系统就会在几分钟内推送已验证的服务者清单。"
         },
         {
           heading: "双边网络效应",
           content:
-            "服务者上传证明、证书与作品，形成可信赖的供给。用户通过评价、VIP 订阅和小费机制，激励更多人加入生态。"
+            "服务者上传证明、证书与作品，形成可信赖的供给。用户通过评价、VIP 订阅和小费机制，激励更多人加入生态。每次完成的订单都会更新质量图谱，让下一位旅客可以直观看到服务者的可预约时间、响应速度与价格区间。"
         },
         {
           heading: "AI + 人的组合",
-          content: "AI 用于需求理解与匹配，而真正的服务是线下完成的。Guidew 让技术成为连接者，而非替代者。"
+          content:
+            "AI 用于需求理解、意图标签与匹配，真正的服务仍由人在线下完成。Guidew 让技术退到幕后担任连接者，把同理心、即兴应对和文化翻译留给人类专家。"
+        },
+        {
+          heading: "旅客真实的下单场景",
+          content:
+            "最常见的需求包括机场管家、就医陪同翻译、亲子策展体验、短时创作课堂等。典型文案是“需要双语司机接父母，顺便买 SIM 卡并采购生活用品”。我们为这些任务打上“差事、文化陪同、VIP 夜生活”等标签，再以模块化套餐呈现。"
+        },
+        {
+          heading: "为服务者设计信任机制",
+          content:
+            "专家可以创建包含时长、价格、注意事项的服务卡片，并附上证明文件：资格证书、自我介绍视频、保险与社群推荐。Guidew 每 90 天提醒他们更新资料，并通过即时结算、排序加权奖励稳定接单表现。"
+        },
+        {
+          heading: "城市运营蓝图",
+          content:
+            "每个城市至少要铺设 30 位在翻译、礼宾、文化体验、康养与交通领域可靠的服务者。我们与语言学校、舞蹈工作室、旅游局等本地伙伴合作完成认证。当 CBD 区域的供给密度达到每平方公里 3 名以上专家后，就会开放 VIP 订阅与跨城预订功能。"
+        },
+        {
+          heading: "下一步拓展方向",
+          content:
+            "同样的打法将扩展到悉尼、新加坡和大阪。我们正在推出多语言 AI 取单表、进阶保险方案，以及面向航空公司、房产中介、搬迁机构的 API。未来旅客在亚太任意城市落地时，都能即时召唤最近的 Guidew 队伍完成“人类物流”。"
         }
       ]
     },
@@ -406,19 +507,39 @@ const blogPosts: Record<SupportedLocale, BlogPost[]> = {
       iconLabel: "VIP Features",
       title: "VIP 翻译订阅：跨语言沟通的即时解决方案",
       date: "2024-11-28",
-      summary: "VIP 用户可随时召唤专业翻译陪同就医、开会或办事，并享受 AI 匹配与优先接单服务。",
+      summary: "VIP 用户可随时召唤专业翻译陪同就医、开会或办事，配套 AI 需求采集、礼宾式调度与免佣权益，一个会员取代零散的微信群与临时联系人。",
       sections: [
         {
           heading: "9.9 美元/月的价值",
-          content: "VIP 用户在下单时免佣，并可通过一句话描述需求，让 AI 推荐最合适的翻译或陪同服务者。"
+          content: "VIP 用户在下单时免佣，可通过一句话或上传材料照片描述需求，AI 会自动润色要点、标注术语，并在 60 秒内推荐最合适的翻译、陪同或双语司机。"
         },
         {
           heading: "优先匹配机制",
-          content: "系统根据服务者可达性、技能标签与评分进行排序，VIP 订单会优先推送给优质供给。"
+          content: "系统根据服务者的里程半径、技能标签、合规记录与实时空闲情况排序。VIP 订单进入专属信道并自动发送提醒，翻译无需频繁刷新即可接单。"
         },
         {
           heading: "安全合规保障",
-          content: "所有翻译服务者需通过身份与专业认证，支持上传证书及审查历史记录。"
+          content: "所有翻译服务者需通过身份与专业认证，可上传证书与背景调查结果。企业用户还能附加 NDA 或医疗隐私协议，每一笔 VIP 订单都会自动携带。"
+        },
+        {
+          heading: "VIP 用户最常触发的场景",
+          content:
+            "典型流程包括医院陪诊与同步记录、投资考察耳语翻译、家长会陪同、临时合同查阅等。VIP 档案会保存口音偏好、沟通语气与行业背景，让后续任务可以直接复用熟悉的服务团队。"
+        },
+        {
+          heading: "服务者的准入与工具",
+          content:
+            "翻译可同步 Google/Outlook 日历、设置小时档期，并为固定客户开启自动接单。Guidew 每 6 个月提醒更新资质，还提供 AI 回复模板，帮助在医疗等敏感情境下快速沟通。"
+        },
+        {
+          heading: "计费、合规与隐私",
+          content:
+            "系统即时生成分类账单，满足签证或保险报销所需的费用科目。聊天记录、语音片段与签署文件都经过加密，用户可依照所在地区法规申请导出或删除。"
+        },
+        {
+          heading: "超越翻译的路线图",
+          content:
+            "下一阶段将上线电话即时语音克隆、企业共享术语表以及“翻译 + 出行”组合服务，让同一位翻译支持预约交通或办理领事手续。VIP 将扩展到搬迁与法律陪同等更复杂的场景。"
         }
       ]
     },
@@ -428,19 +549,42 @@ const blogPosts: Record<SupportedLocale, BlogPost[]> = {
       iconLabel: "Community Story",
       title: "在惠灵顿寻找 Bachata 老师，只需一键",
       date: "2024-11-02",
-      summary: "真实案例分享：舞蹈爱好者如何通过 Guidew 找到本地老师，上门体验南美舞蹈。",
+      summary: "真实案例分享：舞蹈爱好者如何通过 Guidew 找到本地老师，把客厅改造成快闪教室，并了解平台在匹配、空间准备、支付与社群运营上的细节。",
       sections: [
         {
           heading: "需求是如何发出的",
-          content: "用户只需描述“想在周末学习 Bachata、希望有人上门教学”，系统便能推荐合适的舞者。"
+          content:
+            "用户写下\"周末想学 Bachata，最好能上门\"，并补充了客厅面积、舞蹈基础与偏好音乐。8 分钟内就收到 3 位舞者的推荐，还能选择是否携带镜子或音响等加购服务。"
         },
         {
           heading: "服务者的门面",
-          content: "舞者上传教学视频、舞鞋证书与收费标准，用户一眼即可判断专业度。"
+          content:
+            "舞者会上传教学短片、证书、所在舞团与收费标准，方便用户快速了解风格与专业度。行程表显示他们可覆盖 Te Aro、Mount Cook 以及线上课程，响应速度和准时徽章也公开展示。"
         },
         {
           heading: "线下体验的魅力",
-          content: "一对一教学+本地音乐推荐，体验不止于课程，更是一场文化交流。"
+          content:
+            "一对一教学加上本地音乐推荐，让课程变成文化交流。老师安排灵感来自惠灵顿街头表演的热身动作，并精选智利 DJ 的播放列表串起整堂课。"
+        },
+        {
+          heading: "课程协同与安全提示",
+          content:
+            "Guidew 提供空间检查清单，包括地板、通风与邻里沟通。老师提前在地图中标注抵达路线，通过站内信获取电梯权限，并在课程前完成拉伸与补水提示。"
+        },
+        {
+          heading: "价格、小费与增值选项",
+          content:
+            "基础费用为 95 新西兰元/90 分钟，可加购 20 新西兰元的音响+便携镜组合。课程完成后系统自动结算，用户附赠 15% 小费并留言感谢老师的双语讲解。"
+        },
+        {
+          heading: "对本地舞者的价值",
+          content:
+            "舞者把 Guidew 视为数字门店：能上架双人或小组套餐、绑定 Stripe 获取周结，并通过准时和高评分解锁徽章。成功案例会生成高光片段，帮助他们拓展婚礼或活动编舞订单。"
+        },
+        {
+          heading: "社群的连锁效应",
+          content:
+            "课程结束后，用户被邀请加入 Guidew 舞蹈群，接收社交舞会、服装租借与练习室推荐。老师也开设了每月一次的 Rooftop 课程，学员几乎都来自类似的 Guidew 请求。"
         }
       ]
     },
@@ -450,19 +594,43 @@ const blogPosts: Record<SupportedLocale, BlogPost[]> = {
       iconLabel: "Provider Playbook",
       title: "服务者如何利用 Guidew 建立个人品牌",
       date: "2024-10-15",
-      summary: "展示服务证明、证书、音视频作品，使用自动接单与 AI 行程规划，打造值得信赖的数字门店。",
+      summary:
+        "展示服务证明、证书、音视频作品，配自动接单、AI 行程规划与结算分析，将 Guidew 打造成集门店、客服与代理公司于一体的个人品牌基地。",
       sections: [
         {
-          heading: "门面即品牌",
-          content: "详细的自我介绍、证书墙、服务视频和收费透明度，决定了用户是否愿意下单。"
+          heading: "搭建数字门店",
+          content:
+            "从一句使命宣言开始：双语礼宾、文化策展、康养陪护……服务者可选择主图、可服务半径、语言能力、装备与安全认证，帮助旅客第一时间判断匹配度。"
+        },
+        {
+          heading: "证明即转化率",
+          content:
+            "详细自我介绍、证书墙、服务短片与透明价格，是赢得信任的关键。服务者会固定展示翻译资格、急救证、酒店背景等证明，并嵌入过往订单的精选评价。"
+        },
+        {
+          heading: "套餐与增值组合",
+          content:
+            "可以组合 90 分钟翻译 + 差事，或 2 小时夜生活陪同 + 交通加购等套餐。还可提供设备租赁、加急费或 VIP 限定权益，让价格层级更清晰、成交更顺畅。"
         },
         {
           heading: "AI 与自动化的力量",
-          content: "VIP 服务者可自动接单、使用 AI 生成功能规划路线，大幅提高接单效率。"
+          content:
+            "VIP 服务者可为信任客户开启自动接单，使用 AI 规划路线，并与 Google/Outlook 同步日程杜绝撞单。AI 会把旅客需求压缩成专业提案，随时可发出。"
         },
         {
-          heading: "评价与成就系统",
-          content: "通过徽章、评价与响应速度等指标，服务者可以持续积累信任资产。"
+          heading: "口碑循环",
+          content:
+            "徽章、评分、响应速度连胜、最近在线时间等指标持续累积信任。高光集锦会把照片、音频或用户引用整合在一起，让下一位旅客数秒内感知真实体验。"
+        },
+        {
+          heading: "业务引擎",
+          content:
+            "通过 Stripe 或本地银行周结，完成额外验证后还能触发即时结算。仪表盘展示热门需求类型、复购率、小费均值与取消原因，便于迭代产品或团队排班。"
+        },
+        {
+          heading: "成长路线图",
+          content:
+            "即将上线的视频咨询、模板化营销页与目的地联合活动。服务者可报名与旅游局或零售品牌共创体验，把 Guidew 订单延伸到更多线下合作。"
         }
       ]
     }
