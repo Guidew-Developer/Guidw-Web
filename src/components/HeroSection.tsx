@@ -190,7 +190,7 @@ const heroSlides: Record<SupportedLocale, HeroSlide[]> = {
       layout: "immersive",
       cta: "button",
       button: {
-        label: "Join VIP waitlist",
+        label: "Join VIP",
         to: "/vip"
       },
       badges: [
