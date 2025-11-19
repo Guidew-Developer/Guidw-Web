@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CookieConsent from "./components/CookieConsent";
 import { DownloadDialogProvider } from "./components/DownloadDialogProvider";
+import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Discover from "./pages/Discover";
 import HowItWorks from "./pages/HowItWorks";
@@ -41,6 +42,7 @@ const App = () => (
       <Sonner />
       <DownloadDialogProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/discover" element={<Discover />} />
