@@ -422,29 +422,29 @@ const About = () => {
           </div>
         </section>
 
-        <section className="py-16 bg-[#030b1f] text-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-[1.05fr_1fr] items-center">
-              <div className="order-2 lg:order-1 space-y-6">
-                <div>
-                  <h2 className="text-3xl font-bold mb-4">{content.growth.title}</h2>
-                  <p className="text-white/80 text-lg leading-relaxed">{content.growth.description}</p>
-                </div>
-                <div className="space-y-4">
-                  {content.growth.destinations.map(destination => (
-                    <div
-                      key={destination.label}
-                      className="rounded-2xl border border-white/15 bg-white/5 p-4 backdrop-blur"
-                    >
-                      <p className="text-xs uppercase tracking-[0.3em] text-brand-gold">{destination.label}</p>
-                      <p className="text-xl font-semibold mt-1">{destination.region}</p>
-                      <p className="text-white/80 mt-2 text-sm leading-relaxed">{destination.description}</p>
-                    </div>
-                  ))}
-                </div>
+        <section className="relative overflow-hidden py-16 bg-[#030b1f] text-white">
+          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+            <GlobalExpansionGlobe className="h-full w-full" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#030b1f]/90 via-[#030b1f]/65 to-transparent" />
+          </div>
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl w-full md:w-[70%] space-y-6">
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-brand-gold">{content.badge}</p>
+                <h2 className="text-3xl font-bold mt-3 mb-4">{content.growth.title}</h2>
+                <p className="text-white/80 text-lg leading-relaxed">{content.growth.description}</p>
               </div>
-              <div className="order-1 lg:order-2 h-[460px] w-full">
-                <GlobalExpansionGlobe className="h-full w-full" />
+              <div className="space-y-4">
+                {content.growth.destinations.map(destination => (
+                  <div
+                    key={destination.label}
+                    className="rounded-2xl border border-white/15 bg-white/5 p-4 backdrop-blur"
+                  >
+                    <p className="text-xs uppercase tracking-[0.3em] text-brand-gold">{destination.label}</p>
+                    <p className="text-xl font-semibold mt-1">{destination.region}</p>
+                    <p className="text-white/80 mt-2 text-sm leading-relaxed">{destination.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

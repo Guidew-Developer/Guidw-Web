@@ -568,12 +568,14 @@ const GlobalExpansionGlobe = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "relative h-full w-full overflow-hidden rounded-[32px] border border-white/15 bg-gradient-to-br from-[#030b1f] via-[#071533] to-[#0b283d] shadow-[0_20px_45px_rgba(0,0,0,0.55)]",
+        "relative h-full w-full",
         className
       )}
       aria-hidden="true"
     >
-      <div ref={mountRef} className="absolute inset-0" />
+      <div className="absolute inset-0 flex items-center justify-end pr-6 sm:pr-12">
+        <div ref={mountRef} className="relative h-[66%] w-[66%]" />
+      </div>
     </div>
   );
 };
