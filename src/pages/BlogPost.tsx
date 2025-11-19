@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const posts = useMemo(() => getBlogPosts(i18n.language), [i18n.language]);
   const post = useMemo(() => posts.find(item => item.id === slug), [posts, slug]);
 
@@ -19,11 +19,11 @@ const BlogPost = () => {
         <div className="flex-grow flex items-center justify-center text-center px-4">
           <div>
             <PenSquare className="mx-auto text-brand-teal mb-4" size={32} />
-            <h1 className="text-3xl font-bold text-brand-darkBlue mb-3">文章未找到</h1>
-            <p className="text-gray-600 mb-6">请返回博客，查看最新的本地故事与产品更新。</p>
+            <h1 className="text-3xl font-bold text-brand-darkBlue mb-3">{t("blog.notFound.title")}</h1>
+            <p className="text-gray-600 mb-6">{t("blog.notFound.description")}</p>
             <Link to="/blog" className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-teal text-white">
               <ArrowLeft className="h-4 w-4" />
-              返回 Blog
+              {t("blog.notFound.cta")}
             </Link>
           </div>
         </div>
@@ -40,7 +40,7 @@ const BlogPost = () => {
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link to="/blog" className="inline-flex items-center text-sm text-brand-teal mb-6">
               <ArrowLeft className="h-4 w-4 mr-2" />
-              所有文章
+              {t("blog.detail.allArticles")}
             </Link>
             <p className="text-xs uppercase tracking-[0.4em] text-brand-teal mb-3">{post.iconLabel}</p>
             <h1 className="text-4xl font-bold text-brand-darkBlue mb-3">{post.title}</h1>
@@ -61,14 +61,14 @@ const BlogPost = () => {
 
         <section className="py-12 bg-gradient-to-r from-brand-teal via-brand-gold to-brand-orange text-white text-center">
           <div className="max-w-3xl mx-auto px-4">
-            <p className="text-lg font-medium mb-3">喜欢这篇文章？</p>
-            <p className="text-white/90 mb-6">在 Guidew App 中体验真实的本地服务，或关注我们的下一篇城市故事。</p>
+            <p className="text-lg font-medium mb-3">{t("blog.detail.ctaTitle")}</p>
+            <p className="text-white/90 mb-6">{t("blog.detail.ctaSubtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/discover" className="px-6 py-3 rounded-full bg-white text-brand-teal font-semibold">
-                浏览服务
+                {t("blog.detail.ctaPrimary")}
               </Link>
               <Link to="/become-expert" className="px-6 py-3 rounded-full border border-white/60 text-white font-semibold">
-                成为服务者
+                {t("blog.detail.ctaSecondary")}
               </Link>
             </div>
           </div>

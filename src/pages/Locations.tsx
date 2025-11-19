@@ -15,6 +15,7 @@ const copy = {
       description:
         "Guidew focuses on the last mile between airports, ports, convention centers, and local culture. We partner with cultural groups and travel ecosystems to build trustworthy offline networks."
     },
+    roadmapHeading: "Global expansion roadmap",
     roadmap: [
       { title: "Auckland & Wellington", detail: "0-12 months: build premium supply, verify providers, polish VIP tools." },
       { title: "New Zealand nationwide", detail: "Year 2: expand to Queenstown, Christchurch, more tourism and education hubs." },
@@ -29,6 +30,7 @@ const copy = {
       description:
         "Guidew 专注机场、港口、会展中心与本地文化之间的“最后一公里”体验。我们与文化机构、创业社区和旅行生态合作，打造可信的线下网络。"
     },
+    roadmapHeading: "全球扩张路线图",
     roadmap: [
       { title: "奥克兰 & 惠灵顿", detail: "0-12 个月专注构建高质量供给，认证服务者，打磨 VIP 功能。" },
       { title: "新西兰全国", detail: "第 2 年拓展皇后镇、基督城等地，覆盖旅游、教育、医疗等场景。" },
@@ -90,7 +92,7 @@ const Locations = () => {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-3 mb-6">
               <Globe2 className="h-6 w-6" />
-              <h2 className="text-3xl font-bold">全球扩张路线图</h2>
+              <h2 className="text-3xl font-bold">{content.roadmapHeading}</h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
               {content.roadmap.map(step => (

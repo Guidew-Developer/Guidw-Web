@@ -24,5 +24,27 @@
     "loading": "Carregando...",
     "error": "Ocorreu um erro",
     "retry": "Tentar novamente"
+  },
+  "blog": {
+    "hero": {
+      "badge": "Blog da Guidew",
+      "title": "Ideias, histórias e inspiração urbana",
+      "description": "Veja como a Guidew está construindo uma rede presencial de habilidades confiável, com novidades das operações das cidades, recursos VIP e histórias da comunidade."
+    },
+    "list": {
+      "readStory": "Ler história →"
+    },
+    "detail": {
+      "allArticles": "Todos os artigos",
+      "ctaTitle": "Gostou deste artigo?",
+      "ctaSubtitle": "Experimente serviços locais reais no app da Guidew ou acompanhe nossa próxima história da cidade.",
+      "ctaPrimary": "Explorar serviços",
+      "ctaSecondary": "Torne-se um especialista"
+    },
+    "notFound": {
+      "title": "Artigo não encontrado",
+      "description": "Volte ao blog para conferir as últimas histórias das cidades e atualizações do produto.",
+      "cta": "Voltar ao blog"
+    }
   }
 }

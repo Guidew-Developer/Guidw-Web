@@ -537,23 +537,52 @@ const heroLayoutStyles: Record<HeroSlideLayout, LayoutConfig> = {
 const HeroSection = () => {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
   const { openDownloadDialog } = useDownloadDialog();
   const { i18n } = useTranslation();
   const locale = resolveLocale(i18n.language);
   const slides = useMemo(() => heroSlides[locale], [locale]);
+  const hasMultipleSlides = slides.length > 1;
+  const extendedSlides = useMemo(() => {
+    if (!slides.length) {
+      return [];
+    }
+    if (!hasMultipleSlides) {
+      return slides;
+    }
+    const firstSlide = slides[0];
+    const lastSlide = slides[slides.length - 1];
+    return [lastSlide, ...slides, firstSlide];
+  }, [slides, hasMultipleSlides]);
   const copy = searchCopy[locale];
   const badges = badgeCopy[locale];
 
   useEffect(() => {
+    setCurrentSlide(0);
+    setCarouselIndex(slides.length > 1 ? 1 : 0);
+  }, [slides]);
+
+  useEffect(() => {
+    if (!hasMultipleSlides) {
+      return;
+    }
     const timer = setInterval(() => {
+      setCarouselIndex(prev => prev + 1);
       setCurrentSlide(prev => (prev + 1) % slides.length);
     }, 7000);
 
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [hasMultipleSlides, slides.length]);
 
-  const activeSlide = useMemo(() => slides[currentSlide], [slides, currentSlide]);
-  const layout = heroLayoutStyles[activeSlide.layout ?? "default"];
+  useEffect(() => {
+    if (isTransitionEnabled) {
+      return;
+    }
+    const frame = requestAnimationFrame(() => setIsTransitionEnabled(true));
+    return () => cancelAnimationFrame(frame);
+  }, [isTransitionEnabled]);
+
   const contentBaseClass =
     "w-full transition-all duration-500 min-h-[320px] flex flex-col justify-center";
   const imageBaseClass = "w-full transition-all duration-500 flex justify-center";
@@ -563,14 +592,37 @@ const HeroSection = () => {
     navigate("/discover");
   };
 
-  const handleButtonCta = () => {
+  const handleButtonCta = (slide: HeroSlide) => {
     // download slide marker
-    if (activeSlide.button?.to === "/download") {
+    if (slide.button?.to === "/download") {
       openDownloadDialog();
       return;
     }
-    if (activeSlide.button) {
-      navigate(activeSlide.button.to);
+    if (slide.button) {
+      navigate(slide.button.to);
+    }
+  };
+
+  const handleDotClick = (index: number) => {
+    if (index === currentSlide) {
+      return;
+    }
+    setCurrentSlide(index);
+    if (hasMultipleSlides) {
+      setCarouselIndex(index + 1);
+    }
+  };
+
+  const handleTrackTransitionEnd = () => {
+    if (!hasMultipleSlides) {
+      return;
+    }
+    if (carouselIndex === 0) {
+      setIsTransitionEnabled(false);
+      setCarouselIndex(slides.length);
+    } else if (carouselIndex === slides.length + 1) {
+      setIsTransitionEnabled(false);
+      setCarouselIndex(1);
     }
   };
 
@@ -631,87 +683,100 @@ const HeroSection = () => {
       <div className="absolute top-20 left-10 w-64 h-64 bg-brand-teal/10 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-brand-orange/10 rounded-full blur-3xl -z-10"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 md:pt-16 md:pb-28">
-        <div className={`${layout.container} items-center min-h-[520px]`}>
-          {/* Hero content */}
+      <div className="w-full pt-12 pb-20 md:pt-16 md:pb-28">
+        <div className="relative overflow-hidden">
           <div
-            className={`${contentBaseClass} ${layout.contentWrapper}`}
-            key={activeSlide.id}
+            className={`flex ${isTransitionEnabled ? "transition-transform duration-700 ease-in-out" : ""}`}
+            style={{ transform: `translateX(-${carouselIndex * 100}%)` }}
+            onTransitionEnd={handleTrackTransitionEnd}
           >
-            <p className="uppercase tracking-[0.4em] text-sm text-brand-teal mb-4">{activeSlide.kicker}</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              {activeSlide.title}
-              <br />
-              <span className="gradient-text">{activeSlide.highlight}</span>
-            </h1>
-            <p className={`text-lg md:text-xl text-gray-600 mb-8 ${layout.bodyCopy}`}>
-              {activeSlide.description}
-            </p>
-            
-            {activeSlide.cta === "search" ? (
-              <form
-                onSubmit={handleSearch}
-                className={`flex w-full flex-col sm:flex-row gap-3 ${layout.ctaWrapper}`}
-              >
-                <div className="relative flex-grow">
-                  <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
-                  <Input
-                    placeholder={copy.placeholder}
-                    className="pl-10 bg-white border-gray-200 focus-visible:ring-brand-teal h-12"
-                  />
+            {extendedSlides.map((slide, index) => {
+              const slideLayout = heroLayoutStyles[slide.layout ?? "default"];
+              return (
+                <div key={`${slide.id}-${index}`} className="min-w-full shrink-0">
+                  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className={`${slideLayout.container} items-center min-h-[520px]`}>
+                      {/* Hero content */}
+                      <div className={`${contentBaseClass} ${slideLayout.contentWrapper}`}>
+                        <p className="uppercase tracking-[0.4em] text-sm text-brand-teal mb-4">{slide.kicker}</p>
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                          {slide.title}
+                          <br />
+                          <span className="gradient-text">{slide.highlight}</span>
+                        </h1>
+                        <p className={`text-lg md:text-xl text-gray-600 mb-8 ${slideLayout.bodyCopy}`}>
+                          {slide.description}
+                        </p>
+                        
+                        {slide.cta === "search" ? (
+                          <form
+                            onSubmit={handleSearch}
+                            className={`flex w-full flex-col sm:flex-row gap-3 ${slideLayout.ctaWrapper}`}
+                          >
+                            <div className="relative flex-grow">
+                              <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+                              <Input
+                                placeholder={copy.placeholder}
+                                className="pl-10 bg-white border-gray-200 focus-visible:ring-brand-teal h-12"
+                              />
+                            </div>
+                            <Button type="submit" className="bg-brand-teal hover:bg-brand-teal/90 h-12">
+                              <Search className="mr-2 h-4 w-4" /> {copy.button}
+                            </Button>
+                          </form>
+                        ) : (
+                          <div className={`flex w-full flex-col sm:flex-row gap-3 ${slideLayout.ctaWrapper}`}>
+                            <Button className="h-12 bg-brand-teal hover:bg-brand-teal/90 text-base" onClick={() => handleButtonCta(slide)}>
+                              {slide.button?.label}
+                            </Button>
+                          </div>
+                        )}
+                      </div>
+                      
+                      {/* Hero image */}
+                      <div className={`${imageBaseClass} ${slideLayout.imageWrapper}`}>
+                        <div className={`relative ${slideLayout.imageFrame}`}>
+                          {slideLayout.imageGlow && (
+                            <div className={`absolute ${slideLayout.imageGlow}`}></div>
+                          )}
+                          <img
+                            src={slide.image}
+                            alt={slide.imageAlt}
+                            className={`${slideLayout.imageClass} animate-float`}
+                          />
+                          
+                          {/* Floating badges */}
+                          {slide.badges.map(badge => (
+                            <div
+                              key={`${slide.id}-${badge.id}`}
+                              className={`absolute ${badge.position} bg-white p-3 rounded-lg shadow-lg animate-float`}
+                              style={{ animationDelay: badge.delay }}
+                            >
+                              {renderBadgeContent(badge)}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <Button type="submit" className="bg-brand-teal hover:bg-brand-teal/90 h-12">
-                  <Search className="mr-2 h-4 w-4" /> {copy.button}
-                </Button>
-              </form>
-            ) : (
-              <div className={`flex w-full flex-col sm:flex-row gap-3 ${layout.ctaWrapper}`}>
-                <Button className="h-12 bg-brand-teal hover:bg-brand-teal/90 text-base" onClick={handleButtonCta}>
-                  {activeSlide.button?.label}
-                </Button>
-              </div>
-            )}
-          </div>
-          
-          {/* Hero image */}
-          <div
-            className={`${imageBaseClass} ${layout.imageWrapper}`}
-            key={`${activeSlide.id}-image`}
-          >
-            <div className={`relative ${layout.imageFrame}`}>
-              {layout.imageGlow && (
-                <div className={`absolute ${layout.imageGlow}`}></div>
-              )}
-              <img
-                src={activeSlide.image}
-                alt={activeSlide.imageAlt}
-                className={`${layout.imageClass} animate-float`}
-              />
-              
-              {/* Floating badges */}
-              {activeSlide.badges.map(badge => (
-                <div
-                  key={badge.id}
-                  className={`absolute ${badge.position} bg-white p-3 rounded-lg shadow-lg animate-float`}
-                  style={{ animationDelay: badge.delay }}
-                >
-                  {renderBadgeContent(badge)}
-                </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
-        <div className="flex justify-center gap-2 mt-12">
-          {slides.map((slide, index) => (
-            <button
-              key={slide.id}
-              aria-label={`${copy.slideLabel} ${index + 1}`}
-              onClick={() => setCurrentSlide(index)}
-              className={`h-2 w-10 rounded-full transition ${
-                index === currentSlide ? "bg-brand-teal" : "bg-gray-200 hover:bg-gray-300"
-              }`}
-            />
-          ))}
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center gap-2 mt-12">
+            {slides.map((slide, index) => (
+              <button
+                key={slide.id}
+                aria-label={`${copy.slideLabel} ${index + 1}`}
+                onClick={() => handleDotClick(index)}
+                className={`h-2 w-10 rounded-full transition ${
+                  index === currentSlide ? "bg-brand-teal" : "bg-gray-200 hover:bg-gray-300"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ const iconMap: Record<string, ElementType> = {
 };
 
 const Blog = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const posts = useMemo(() => getBlogPosts(i18n.language), [i18n.language]);
 
   return (
@@ -26,12 +26,10 @@ const Blog = () => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center gap-2 text-brand-teal uppercase tracking-[0.2em] text-xs mb-4">
               <PenSquare className="h-4 w-4" />
-              Guidew Blog
+              {t("blog.hero.badge")}
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-brand-darkBlue mb-6">洞察、故事与城市灵感</h1>
-            <p className="text-lg text-gray-600">
-              了解 Guidew 如何打造可信赖的线下技能网络，以及我们的城市运营动态、VIP 功能更新和供需故事。
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-brand-darkBlue mb-6">{t("blog.hero.title")}</h1>
+            <p className="text-lg text-gray-600">{t("blog.hero.description")}</p>
           </div>
         </section>
 
@@ -51,7 +49,7 @@ const Blog = () => {
                   <h3 className="text-2xl font-semibold mb-3 text-brand-darkBlue">{post.title}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">{post.summary}</p>
                   <Link to={`/blog/${post.id}`} className="text-brand-teal font-semibold text-sm">
-                    Read story →
+                    {t("blog.list.readStory")}
                   </Link>
                 </article>
               );

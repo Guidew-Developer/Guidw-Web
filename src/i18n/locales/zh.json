@@ -654,5 +654,27 @@
       "title": "活动餐饮服务",
       "description": "通过定制菜单和专业服务，为您的活动创造难忘的用餐体验"
     }
+  },
+  "blog": {
+    "hero": {
+      "badge": "Guidew 博客",
+      "title": "洞察、故事与城市灵感",
+      "description": "了解 Guidew 如何打造可信赖的线下技能网络，并掌握城市运营、VIP 功能与供需故事。"
+    },
+    "list": {
+      "readStory": "阅读故事 →"
+    },
+    "detail": {
+      "allArticles": "所有文章",
+      "ctaTitle": "喜欢这篇文章？",
+      "ctaSubtitle": "在 Guidew App 中体验真实的本地服务，或关注我们的下一篇城市故事。",
+      "ctaPrimary": "浏览服务",
+      "ctaSecondary": "成为服务者"
+    },
+    "notFound": {
+      "title": "文章未找到",
+      "description": "请返回博客，查看最新的城市故事与产品更新。",
+      "cta": "返回博客"
+    }
   }
 }

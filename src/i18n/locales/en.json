@@ -675,5 +675,27 @@
       "title": "Event Catering Services",
       "description": "Create memorable dining experiences for your events with customized menus and professional service"
     }
+  },
+  "blog": {
+    "hero": {
+      "badge": "Guidew Blog",
+      "title": "Insights, stories, and city inspiration",
+      "description": "See how Guidew is building a trustworthy offline skill network along with city operations updates, VIP releases, and real supply stories."
+    },
+    "list": {
+      "readStory": "Read story →"
+    },
+    "detail": {
+      "allArticles": "All articles",
+      "ctaTitle": "Enjoyed this article?",
+      "ctaSubtitle": "Experience real local services in the Guidew app or follow our next city story.",
+      "ctaPrimary": "Browse services",
+      "ctaSecondary": "Become a provider"
+    },
+    "notFound": {
+      "title": "Article not found",
+      "description": "Please return to the blog to see the latest city stories and product updates.",
+      "cta": "Back to Blog"
+    }
   }
 }

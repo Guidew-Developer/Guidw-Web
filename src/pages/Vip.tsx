@@ -527,61 +527,6 @@ const Vip = () => {
           </div>
         </section>
 
-        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 grid lg:grid-cols-2 gap-10">
-          <div className="bg-white rounded-3xl border border-slate-100 p-8 shadow-lg">
-            <div className="flex items-center gap-3 mb-6">
-              <Sparkles className="text-brand-teal" />
-              <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-brand-teal/70">{content.traveler.title}</p>
-                <h2 className="text-2xl font-semibold">{content.traveler.description}</h2>
-              </div>
-            </div>
-            <p className="text-xl font-semibold text-brand-darkBlue">{content.traveler.priceTag}</p>
-            <p className="text-sm text-gray-500 mb-4">{content.traveler.priceSubline}</p>
-            <Button className="mb-6 bg-brand-teal hover:bg-brand-teal/90" onClick={openDownloadDialog}>
-              {content.traveler.cta}
-            </Button>
-            <div className="space-y-4">
-              {content.traveler.benefits.map(benefit => (
-                <div key={benefit.title} className="border border-brand-teal/10 rounded-2xl p-4">
-                  <p className="font-semibold text-brand-darkBlue">{benefit.title}</p>
-                  <p className="text-sm text-gray-600">{benefit.detail}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="bg-white rounded-3xl border border-slate-100 p-8 shadow-lg">
-            <div className="flex items-center gap-3 mb-6">
-              <ShieldCheck className="text-brand-darkBlue" />
-              <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-brand-darkBlue/70">{content.provider.title}</p>
-                <h2 className="text-2xl font-semibold">{content.provider.description}</h2>
-              </div>
-            </div>
-            <p className="text-xl font-semibold text-brand-darkBlue">{content.provider.priceTag}</p>
-            <p className="text-sm text-gray-500 mb-4">{content.provider.priceSubline}</p>
-            <Button className="mb-6 bg-brand-darkBlue hover:bg-brand-darkBlue/90" onClick={openDownloadDialog}>
-              {content.provider.cta}
-            </Button>
-            <div className="space-y-4">
-              {content.provider.benefits.map((benefit, index) => {
-                const Icon = providerIconMap[index % providerIconMap.length];
-                return (
-                  <div key={benefit.title} className="flex gap-4 border border-brand-darkBlue/10 rounded-2xl p-4">
-                    <div className="h-10 w-10 rounded-2xl bg-brand-darkBlue/10 flex items-center justify-center text-brand-darkBlue">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-brand-darkBlue">{benefit.title}</p>
-                      <p className="text-sm text-gray-600">{benefit.detail}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
         <section id="timeline" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
           <div className="flex flex-col gap-4 text-center max-w-3xl mx-auto mb-12">
             <p className="text-sm uppercase tracking-[0.3em] text-brand-teal">{content.timeline.title}</p>
