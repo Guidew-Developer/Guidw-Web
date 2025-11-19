@@ -24,7 +24,7 @@ type HeroBadge =
       delay: string;
     };
 
-type HeroSlideLayout = "default" | "reverse" | "spotlight" | "immersive";
+type HeroSlideLayout = "default" | "reverse" | "spotlight" | "immersive" | "editorial";
 
 type HeroSlide = {
   id: string;
@@ -248,6 +248,41 @@ const heroSlides: Record<SupportedLocale, HeroSlide[]> = {
       ]
     },
     {
+      id: "dance-school-finder",
+      kicker: "Language Coach Radar",
+      title: "Find New Zealand's",
+      highlight: "Best Language Tutors",
+      description:
+        "Compare bilingual mentors, immersion labs, and exam coaches curated by locals. Preview voice samples, then book a private session in 60 seconds.",
+      image:
+        "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Students practicing language skills in a sunlit studio",
+      layout: "editorial",
+      cta: "button",
+      button: {
+        label: "Book a language mentor",
+        to: "/discover?category=language&tag=coaches"
+      },
+      badges: [
+        {
+          id: "badge-trial-en",
+          type: "info",
+          title: "48h placement",
+          subtitle: "Trial guaranteed",
+          position: "-left-6 top-6",
+          delay: "0.3s"
+        },
+        {
+          id: "badge-genres-en",
+          type: "info",
+          title: "IELTS • Business • Survival",
+          subtitle: "30+ pro mentors",
+          position: "right-6 bottom-8",
+          delay: "2s"
+        }
+      ]
+    },
+    {
       id: "global-dance",
       kicker: "Dance Legends On Call",
       title: "Invite World Champions,",
@@ -432,6 +467,24 @@ const heroSlides: Record<SupportedLocale, HeroSlide[]> = {
       ]
     },
     {
+      id: "dance-school-finder",
+      kicker: "语言教练雷达",
+      title: "寻找全新西兰最好的",
+      highlight: "语言老师",
+      description:
+        "沉浸式卡片对比课程风格、口音、考试战绩与录取名额，双语顾问 60 秒内帮你锁定一对一试听。",
+      image:
+        "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "学员在阳光照射的教室里练习语言",
+      layout: "editorial",
+      cta: "button",
+      button: { label: "预约语言导师", to: "/discover?category=language&tag=coaches" },
+      badges: [
+        { id: "badge-trial-zh", type: "info", title: "48 小时内锁档", subtitle: "专属试听保留", position: "-left-6 top-6", delay: "0.3s" },
+        { id: "badge-genres-zh", type: "info", title: "雅思 · 商务 · 生存口语", subtitle: "30+ 认证导师", position: "right-6 bottom-8", delay: "2s" }
+      ]
+    },
+    {
       id: "global-dance",
       kicker: "冠军导师随叫随到",
       title: "把世界冠军请到你家，",
@@ -492,45 +545,61 @@ type LayoutConfig = {
 
 const heroLayoutStyles: Record<HeroSlideLayout, LayoutConfig> = {
   default: {
-    container: "flex w-full flex-col lg:flex-row",
-    contentWrapper: "lg:w-1/2 text-center lg:text-left items-center lg:items-start mb-12 lg:mb-0",
+    container: "flex w-full flex-col gap-10 justify-center lg:flex-row",
+    contentWrapper: "lg:w-1/2 text-center lg:text-left items-center lg:items-start mb-6 lg:mb-0",
     bodyCopy: "max-w-xl mx-auto lg:mx-0",
     ctaWrapper: "max-w-md mx-auto lg:mx-0",
     imageWrapper: "lg:w-1/2 lg:justify-end",
-    imageFrame: "w-full max-w-lg",
-    imageClass: "w-full rounded-xl shadow-xl h-[340px] object-cover"
+    imageFrame: "w-full max-w-md sm:max-w-lg",
+    imageClass: "w-full rounded-xl shadow-xl h-[230px] sm:h-[320px] lg:h-[380px] object-cover"
   },
   reverse: {
-    container: "flex w-full flex-col lg:flex-row-reverse",
-    contentWrapper: "lg:w-1/2 text-center lg:text-right items-center lg:items-end mb-12 lg:mb-0",
+    container: "flex w-full flex-col gap-10 justify-center lg:flex-row-reverse",
+    contentWrapper: "lg:w-1/2 text-center lg:text-right items-center lg:items-end mb-6 lg:mb-0",
     bodyCopy: "max-w-xl mx-auto lg:mx-0 lg:ml-auto",
     ctaWrapper: "max-w-md mx-auto lg:mx-0 lg:ml-auto",
     imageWrapper: "lg:w-1/2 lg:justify-start",
-    imageFrame: "w-full max-w-lg",
-    imageClass: "w-full rounded-[32px] shadow-2xl h-[360px] object-cover",
-    imageGlow: "-inset-6 -z-10 bg-gradient-to-br from-brand-orange/30 via-brand-teal/20 to-brand-darkBlue/30 opacity-70 blur-3xl rounded-[40px]"
+    imageFrame: "w-full max-w-md sm:max-w-lg",
+    imageClass: "w-full rounded-[32px] shadow-2xl h-[230px] sm:h-[320px] lg:h-[390px] object-cover",
+    imageGlow:
+      "-inset-6 -z-10 bg-gradient-to-br from-brand-orange/30 via-brand-teal/20 to-brand-darkBlue/30 opacity-70 blur-3xl rounded-[40px]"
   },
   spotlight: {
-    container: "grid w-full grid-cols-1 gap-10 lg:grid-cols-[0.65fr_0.35fr] lg:gap-16",
+    container: "grid w-full grid-cols-1 gap-10 items-center lg:grid-cols-[0.65fr_0.35fr] lg:gap-16",
     contentWrapper:
-      "order-2 lg:order-1 w-full rounded-2xl border border-white/60 bg-white/90 backdrop-blur px-8 py-10 text-left items-start shadow-2xl",
+      "order-1 w-full rounded-2xl border border-white/60 bg-white/90 backdrop-blur px-6 py-8 sm:px-8 sm:py-10 text-left items-start shadow-2xl",
     bodyCopy: "max-w-2xl",
     ctaWrapper: "max-w-sm w-full",
-    imageWrapper: "order-1 lg:order-2",
-    imageFrame: "w-full max-w-xl",
-    imageClass: "w-full rounded-[36px] shadow-2xl h-[380px] object-cover",
-    imageGlow: "-inset-8 -z-10 bg-gradient-to-br from-brand-darkBlue/30 via-brand-teal/40 to-brand-orange/30 opacity-80 blur-3xl rounded-[48px]"
+    imageWrapper: "order-2 lg:order-2",
+    imageFrame: "w-full max-w-md sm:max-w-xl",
+    imageClass: "w-full rounded-[36px] shadow-2xl h-[230px] sm:h-[320px] lg:h-[420px] object-cover",
+    imageGlow:
+      "-inset-8 -z-10 bg-gradient-to-br from-brand-darkBlue/30 via-brand-teal/40 to-brand-orange/30 opacity-80 blur-3xl rounded-[48px]"
   },
   immersive: {
-    container: "relative w-full min-h-[520px] flex items-center justify-center",
+    container: "relative w-full min-h-[420px] md:min-h-[520px] flex items-center justify-center",
     contentWrapper:
-      "relative z-10 w-full max-w-3xl text-center items-center rounded-[36px] border border-white/60 bg-white/90 px-10 py-12 backdrop-blur shadow-[0_45px_140px_rgba(15,23,42,0.35)]",
+      "relative z-10 w-full max-w-3xl text-center items-center rounded-[36px] border border-white/60 bg-white/90 px-6 py-10 sm:px-10 sm:py-12 backdrop-blur shadow-[0_45px_140px_rgba(15,23,42,0.35)]",
     bodyCopy: "max-w-2xl mx-auto",
     ctaWrapper: "w-full max-w-md mx-auto",
     imageWrapper: "absolute inset-0",
     imageFrame: "w-full h-full",
-    imageClass: "w-full h-full rounded-[48px] object-cover opacity-90",
-    imageGlow: "-inset-4 rounded-[50px] bg-gradient-to-r from-brand-darkBlue/60 via-brand-teal/40 to-brand-orange/40 mix-blend-multiply"
+    imageClass:
+      "w-full h-full rounded-[48px] object-cover opacity-90 max-h-[520px] sm:max-h-none",
+    imageGlow:
+      "-inset-4 rounded-[50px] bg-gradient-to-r from-brand-darkBlue/60 via-brand-teal/40 to-brand-orange/40 mix-blend-multiply"
+  },
+  editorial: {
+    container: "grid w-full grid-cols-1 gap-10 items-center lg:grid-cols-[0.48fr_0.52fr] lg:items-stretch",
+    contentWrapper:
+      "order-1 items-start text-left rounded-[36px] border border-white/50 bg-gradient-to-br from-brand-darkBlue via-brand-teal/80 to-brand-orange/60 text-white px-6 py-8 sm:px-10 sm:py-12 shadow-[0_35px_120px_rgba(15,23,42,0.4)]",
+    bodyCopy: "text-white/90",
+    ctaWrapper: "w-full",
+    imageWrapper: "order-2 lg:order-2",
+    imageFrame: "w-full h-full max-w-md sm:max-w-none",
+    imageClass:
+      "w-full h-[230px] sm:h-[340px] lg:h-full object-cover rounded-[42px] border border-white/30 shadow-2xl",
+    imageGlow: "-inset-6 rounded-[48px] bg-brand-orange/30 blur-3xl"
   }
 };
 
@@ -693,9 +762,9 @@ const HeroSection = () => {
             {extendedSlides.map((slide, index) => {
               const slideLayout = heroLayoutStyles[slide.layout ?? "default"];
               return (
-                <div key={`${slide.id}-${index}`} className="min-w-full shrink-0">
-                  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className={`${slideLayout.container} items-center min-h-[520px]`}>
+                <div key={`${slide.id}-${index}`} className="basis-full shrink-0">
+                  <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className={`${slideLayout.container} items-center py-6 md:min-h-[520px] md:py-0`}>
                       {/* Hero content */}
                       <div className={`${contentBaseClass} ${slideLayout.contentWrapper}`}>
                         <p className="uppercase tracking-[0.4em] text-sm text-brand-teal mb-4">{slide.kicker}</p>
