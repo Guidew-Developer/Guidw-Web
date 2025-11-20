@@ -1508,18 +1508,25 @@ const HeroSection = () => {
     }
   };
 
-  const handleTrackTransitionEnd = () => {
+  useEffect(() => {
     if (!hasMultipleSlides) {
       return;
     }
     if (carouselIndex === 0) {
-      setIsTransitionEnabled(false);
-      setCarouselIndex(slides.length);
-    } else if (carouselIndex === slides.length + 1) {
-      setIsTransitionEnabled(false);
-      setCarouselIndex(1);
+      const frame = requestAnimationFrame(() => {
+        setIsTransitionEnabled(false);
+        setCarouselIndex(slides.length);
+      });
+      return () => cancelAnimationFrame(frame);
     }
-  };
+    if (carouselIndex === slides.length + 1) {
+      const frame = requestAnimationFrame(() => {
+        setIsTransitionEnabled(false);
+        setCarouselIndex(1);
+      });
+      return () => cancelAnimationFrame(frame);
+    }
+  }, [carouselIndex, hasMultipleSlides, slides.length]);
 
   const renderBadgeContent = (badge: HeroBadge) => {
     switch (badge.type) {
@@ -1584,7 +1591,6 @@ const HeroSection = () => {
             className={`flex ${isTransitionEnabled ? "transition-transform duration-700 ease-in-out" : ""}`}
             style={{ transform: `translateX(-${carouselIndex * 100}%)` }}
             dir="ltr"
-            onTransitionEnd={handleTrackTransitionEnd}
           >
             {extendedSlides.map((slide, index) => {
               const slideLayout = heroLayoutStyles[slide.layout ?? "default"];
