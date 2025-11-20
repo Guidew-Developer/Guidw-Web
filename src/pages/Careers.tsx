@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Briefcase, Rocket, Users2, Target, type LucideIcon } from "lucide-react";
+import { Briefcase, Rocket, Users2, Target, Sparkles, Globe2, ShieldCheck, type LucideIcon } from "lucide-react";
 import { getCareerOpenings } from "@/constants/siteContent";
 import { useTranslation } from "react-i18next";
 import { resolveLocale, type SupportedLocale } from "@/utils/locale";
@@ -19,6 +19,31 @@ type CareersCopy = {
     icon: LucideIcon;
   }>;
   openRolesTitle: string;
+  metricsTitle: string;
+  metrics: Array<{
+    value: string;
+    label: string;
+    description: string;
+  }>;
+  culture: {
+    title: string;
+    intro: string;
+    highlights: Array<{
+      title: string;
+      description: string;
+      icon: LucideIcon;
+    }>;
+  };
+  perks: {
+    title: string;
+    items: string[];
+  };
+  closing: {
+    title: string;
+    description: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
+  };
   actions: {
     viewDetails: string;
     apply: string;
@@ -51,6 +76,65 @@ const copy: Record<SupportedLocale, CareersCopy> = {
       }
     ],
     openRolesTitle: "Open Roles",
+    metricsTitle: "Guidew at a glance",
+    metrics: [
+      {
+        value: "12+",
+        label: "craft verticals",
+        description: "Chefs, surf mentors, botanists, and more."
+      },
+      {
+        value: "1K+",
+        label: "beta travelers",
+        description: "Already trusting our offline hosts."
+      },
+      {
+        value: "48 hrs",
+        label: "ship cycle",
+        description: "From hypothesis to in-city pilots."
+      },
+      {
+        value: "3 continents",
+        label: "operator partners",
+        description: "Asia-Pacific, Europe, and North America roots."
+      }
+    ],
+    culture: {
+      title: "Craft premium, high-trust encounters",
+      intro: "Hospitality rituals meet product rigor—every decision keeps travelers and hosts at the table.",
+      highlights: [
+        {
+          title: "Obsessed with details",
+          description: "We critique every host script and field-test every welcome experience.",
+          icon: Sparkles
+        },
+        {
+          title: "Local-first mindset",
+          description: "Regional operators lead; HQ removes roadblocks and unlocks budgets.",
+          icon: Globe2
+        },
+        {
+          title: "Safety is sacred",
+          description: "Identity, payment, and review loops are verified before people meet.",
+          icon: ShieldCheck
+        }
+      ]
+    },
+    perks: {
+      title: "What you'll enjoy",
+      items: [
+        "Founding equity plus upside tied to every new city launch.",
+        "Quarterly craftsmanship residencies to co-create offline sessions.",
+        "Wellness and relocation stipend across Australia & New Zealand.",
+        "Personal learning budget to shadow top masters in any craft we serve."
+      ]
+    },
+    closing: {
+      title: "Shape the benchmark for offline expertise",
+      description: "If you love taking products into the real world, Guidew gives you a huge canvas. Write to the partners directly and let's scope your role.",
+      ctaPrimary: "Talk to a Partner",
+      ctaSecondary: "See Open Roles"
+    },
     actions: {
       viewDetails: "View Details",
       apply: "Apply Now"
@@ -81,6 +165,65 @@ const copy: Record<SupportedLocale, CareersCopy> = {
       }
     ],
     openRolesTitle: "开放职位",
+    metricsTitle: "Guidew 一览",
+    metrics: [
+      {
+        value: "12+",
+        label: "线下体验品类",
+        description: "覆盖主厨、冲浪导师、植物学家等真实场景。"
+      },
+      {
+        value: "1000+",
+        label: "内测旅行者",
+        description: "已在奥克兰与惠灵顿信任我们的向导。"
+      },
+      {
+        value: "48 小时",
+        label: "迭代闭环",
+        description: "从假设到城市内场景实验仅需两天。"
+      },
+      {
+        value: "3 大洲",
+        label: "运营合伙人背景",
+        description: "团队成员来自亚太、欧洲与北美。"
+      }
+    ],
+    culture: {
+      title: "打造高端可信赖的会面",
+      intro: "我们用产品方法与待客之道双重推演，确保旅行者与供给端始终坐在决策桌上。",
+      highlights: [
+        {
+          title: "细节执念",
+          description: "逐字推敲每份接待脚本、亲测每一次欢迎体验。",
+          icon: Sparkles
+        },
+        {
+          title: "本地主导",
+          description: "区域运营拥有决策权，总部负责资源调度与节奏护航。",
+          icon: Globe2
+        },
+        {
+          title: "安全优先",
+          description: "身份验证、支付托管与评价闭环在见面前全部完成。",
+          icon: ShieldCheck
+        }
+      ]
+    },
+    perks: {
+      title: "加入你将获得",
+      items: [
+        "创始期股权 + 与新城市上线挂钩的绩效激励。",
+        "每季度线下驻地，与匠人共创体验设计。",
+        "澳新地区搬迁及身心健康补贴。",
+        "个人学习预算，可跟随任意品类的顶级导师。"
+      ]
+    },
+    closing: {
+      title: "一起制定线下专业服务的标准",
+      description: "擅长把数字工具落地到真实场景？Guidew 会给你足够大的舞台。直接与合伙人沟通，共同定义你的角色。",
+      ctaPrimary: "联系合伙人",
+      ctaSecondary: "查看职位"
+    },
     actions: {
       viewDetails: "查看详情",
       apply: "申请职位"
@@ -98,11 +241,30 @@ const Careers = () => {
     <div className="min-h-screen flex flex-col bg-brand-lightGray">
       <Navbar />
       <main className="flex-grow">
-        <section className="bg-white py-16">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="bg-gradient-to-br from-white via-brand-lightGray/30 to-brand-lightGray/60 py-16 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute -top-24 right-10 w-64 h-64 bg-brand-teal/10 blur-[120px]" />
+            <div className="absolute -bottom-24 left-10 w-72 h-72 bg-brand-darkBlue/10 blur-[140px]" />
+          </div>
+          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-sm text-brand-teal uppercase tracking-[0.3em] mb-4">{content.hero.badge}</p>
             <h1 className="text-4xl md:text-5xl font-bold text-brand-darkBlue mb-6">{content.hero.title}</h1>
             <p className="text-lg text-gray-600">{content.hero.description}</p>
+          </div>
+        </section>
+
+        <section className="py-16 bg-brand-darkBlue text-white">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-sm uppercase tracking-[0.3em] text-brand-teal mb-6">{content.metricsTitle}</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {content.metrics.map(metric => (
+                <div key={metric.label} className="border border-white/20 rounded-2xl p-4 backdrop-blur">
+                  <p className="text-3xl font-semibold text-white">{metric.value}</p>
+                  <p className="text-sm uppercase tracking-wide text-white/70 mb-2">{metric.label}</p>
+                  <p className="text-sm text-white/80">{metric.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -120,7 +282,40 @@ const Careers = () => {
           </div>
         </section>
 
-        <section className="py-16 bg-white">
+        <section className="py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-brand-teal mb-4">{content.culture.title}</p>
+              <p className="text-3xl font-semibold text-brand-darkBlue mb-6 leading-tight">{content.culture.intro}</p>
+              <div className="space-y-5">
+                {content.culture.highlights.map(({ title, description, icon: Icon }) => (
+                  <div key={title} className="flex gap-4 items-start bg-brand-lightGray/60 rounded-2xl p-4">
+                    <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                      <Icon className="text-brand-teal" />
+                    </div>
+                    <div>
+                      <p className="text-lg font-semibold text-brand-darkBlue">{title}</p>
+                      <p className="text-sm text-gray-600">{description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-brand-lightGray/50 rounded-3xl p-8 border border-brand-lightGray">
+              <p className="text-sm uppercase tracking-[0.3em] text-brand-teal mb-3">{content.perks.title}</p>
+              <ul className="space-y-4">
+                {content.perks.items.map(item => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-brand-teal" />
+                    <p className="text-base text-gray-700">{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="open-roles" className="py-16 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-3 mb-8">
               <Briefcase className="text-brand-teal" />
@@ -156,6 +351,27 @@ const Careers = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-brand-darkBlue text-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-sm uppercase tracking-[0.3em] text-brand-teal mb-4">{content.closing.title}</p>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6">{content.closing.description}</h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="mailto:talent@guidew.com?subject=Guidew%20Careers"
+                className="px-6 py-3 rounded-full bg-brand-teal text-sm font-medium hover:bg-brand-teal/90 transition"
+              >
+                {content.closing.ctaPrimary}
+              </a>
+              <a
+                href="#open-roles"
+                className="px-6 py-3 rounded-full border border-white/40 text-sm font-medium hover:bg-white hover:text-brand-darkBlue transition"
+              >
+                {content.closing.ctaSecondary}
+              </a>
             </div>
           </div>
         </section>
