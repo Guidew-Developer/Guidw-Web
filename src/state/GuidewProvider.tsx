@@ -14,6 +14,7 @@ import { estimateTravelWindow, haversineDistanceKm } from "@/utils/geo";
 import { evaluateAchievements } from "@/utils/achievements";
 import { createId } from "@/utils/id";
 import { generateItineraryPlan } from "@/utils/itinerary";
+import type { SupportedLocale } from "@/utils/locale";
 
 const STORAGE_KEY = "guidew-state-v1";
 
@@ -267,7 +268,7 @@ interface GuidewContextValue extends GuidewState {
   updateProviderAvailability: (providerId: string, availability: ProviderProfile["availability"]) => void;
   setProviderTravelRadius: (providerId: string, radius: number) => void;
   requestVerification: (userId: string, level: string) => void;
-  generateItinerarySuggestion: (orderId: string) => string | undefined;
+  generateItinerarySuggestion: (orderId: string, locale?: SupportedLocale) => string | undefined;
 }
 
 interface CancellationResult {
@@ -343,12 +344,25 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
     dispatch({ type: "UPSERT_SERVICE", payload: service });
   };
 
-  const addTimelineEvent = (order: OrderRecord, description: string, type: OrderRecord["timeline"][number]["type"]) => {
+  const addTimelineEvent = (
+    order: OrderRecord,
+    description: string,
+    type: OrderRecord["timeline"][number]["type"],
+    translationKey?: string,
+    translationValues?: Record<string, string | number>
+  ) => {
     return {
       ...order,
       timeline: [
         ...order.timeline,
-        { id: createId("timeline"), timestamp: new Date().toISOString(), description, type }
+        {
+          id: createId("timeline"),
+          timestamp: new Date().toISOString(),
+          description,
+          translationKey,
+          translationValues,
+          type
+        }
       ]
     };
   };
@@ -413,19 +427,27 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
           id: createId("timeline"),
           timestamp: new Date().toISOString(),
           type: "created",
-          description: `Order created by ${user.name}`
+          description: `Order created by ${user.name}`,
+          translationKey: "dashboard.timelineEvents.orderCreated",
+          translationValues: { name: user.name }
         },
         {
           id: createId("timeline"),
           timestamp: new Date().toISOString(),
           type: "payment-authorized",
-          description: "Payment authorised via Stripe"
+          description: "Payment authorised via Stripe",
+          translationKey: "dashboard.timelineEvents.paymentAuthorized"
         }
       ]
     };
 
     const updated = provider.autoAccept
-      ? addTimelineEvent(order, "Auto accepted by VIP provider", "auto-accepted")
+      ? addTimelineEvent(
+          order,
+          "Auto accepted by VIP provider",
+          "auto-accepted",
+          "dashboard.timelineEvents.autoAccepted"
+        )
       : order;
 
     dispatch({ type: "UPSERT_ORDER", payload: updated });
@@ -471,7 +493,8 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
           id: createId("timeline"),
           timestamp: new Date().toISOString(),
           type: "auto-matched",
-          description: "Itinerary submitted"
+          description: "Itinerary submitted",
+          translationKey: "dashboard.timelineEvents.itinerarySubmitted"
         }
       ]
     };
@@ -481,7 +504,12 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
   const acceptOrder: GuidewContextValue["acceptOrder"] = orderId => {
     const order = state.orders.find(o => o.id === orderId);
     if (!order) return;
-    const updated = addTimelineEvent({ ...order, status: "accepted" }, "Provider accepted order", "accepted");
+    const updated = addTimelineEvent(
+      { ...order, status: "accepted" },
+      "Provider accepted order",
+      "accepted",
+      "dashboard.timelineEvents.providerAccepted"
+    );
     dispatch({ type: "UPSERT_ORDER", payload: updated });
     const provider = state.providerProfiles.find(p => p.id === order.providerId);
     if (provider) {
@@ -492,7 +520,12 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
   const startOrder: GuidewContextValue["startOrder"] = orderId => {
     const order = state.orders.find(o => o.id === orderId);
     if (!order) return;
-    const updated = addTimelineEvent({ ...order, status: "in-progress" }, "Service started", "started");
+    const updated = addTimelineEvent(
+      { ...order, status: "in-progress" },
+      "Service started",
+      "started",
+      "dashboard.timelineEvents.serviceStarted"
+    );
     dispatch({ type: "UPSERT_ORDER", payload: updated });
   };
 
@@ -508,7 +541,8 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
           id: createId("timeline"),
           timestamp: new Date().toISOString(),
           type: "completed",
-          description: "Service completed"
+          description: "Service completed",
+          translationKey: "dashboard.timelineEvents.serviceCompleted"
         }
       ]
     };
@@ -601,6 +635,12 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
       reason
     };
 
+    const cancellationTranslationKey = options?.mutual
+      ? "dashboard.timelineEvents.cancelledMutual"
+      : actor === "user"
+        ? "dashboard.timelineEvents.cancelledUser"
+        : "dashboard.timelineEvents.cancelledProvider";
+
     const updated: OrderRecord = {
       ...order,
       status: "cancelled",
@@ -611,7 +651,8 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
           id: createId("timeline"),
           timestamp: new Date().toISOString(),
           type: "cancelled",
-          description: `${options?.mutual ? "Both parties" : actor} cancelled the service`
+          description: `${options?.mutual ? "Both parties" : actor} cancelled the service`,
+          translationKey: cancellationTranslationKey
         }
       ]
     };
@@ -685,7 +726,8 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
           id: createId("timeline"),
           timestamp: new Date().toISOString(),
           type: "cancelled",
-          description: "Provider no-show reported"
+          description: "Provider no-show reported",
+          translationKey: "dashboard.timelineEvents.providerNoShow"
         }
       ]
     };
@@ -750,7 +792,8 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
           id: createId("timeline"),
           timestamp: new Date().toISOString(),
           type: "cancelled",
-          description: "Traveler no-show recorded"
+          description: "Traveler no-show recorded",
+          translationKey: "dashboard.timelineEvents.travelerNoShow"
         }
       ]
     };
@@ -814,7 +857,8 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
           id: createId("timeline"),
           timestamp: new Date().toISOString(),
           description: "Tip added",
-          type: "tip-added"
+          type: "tip-added",
+          translationKey: "dashboard.timelineEvents.tipAdded"
         }
       ]
     };
@@ -839,6 +883,11 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
       merged.publishedAt = publishedAt;
     }
 
+    const reviewTranslationKey =
+      actor === "user"
+        ? "dashboard.timelineEvents.reviewSubmittedTraveler"
+        : "dashboard.timelineEvents.reviewSubmittedProvider";
+
     const updated: OrderRecord = {
       ...order,
       review: merged,
@@ -849,7 +898,8 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
           id: createId("timeline"),
           timestamp: new Date().toISOString(),
           description: `${actor} submitted a review`,
-          type: "review-submitted"
+          type: "review-submitted",
+          translationKey: reviewTranslationKey
         }
       ]
     };
@@ -947,13 +997,13 @@ export const GuidewProvider = ({ children }: { children: React.ReactNode }) => {
     dispatch({ type: "UPSERT_PROVIDER", payload: { ...provider, travelRadiusKm: radius } });
   };
 
-  const generateItinerarySuggestion: GuidewContextValue["generateItinerarySuggestion"] = orderId => {
+  const generateItinerarySuggestion: GuidewContextValue["generateItinerarySuggestion"] = (orderId, locale = "en") => {
     const order = state.orders.find(item => item.id === orderId);
     if (!order) return undefined;
     const service = state.services.find(item => item.id === order.serviceId);
     const provider = state.providerProfiles.find(item => item.id === order.providerId);
     if (!service || !provider) return undefined;
-    return generateItineraryPlan({ order, service, provider });
+    return generateItineraryPlan({ order, service, provider, locale });
   };
 
   const value = useMemo<GuidewContextValue>(
@@ -1007,4 +1057,3 @@ export const useGuidew = () => {
   }
   return context;
 };
-

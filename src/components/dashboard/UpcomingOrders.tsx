@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { OrderRecord } from "@/types/guidew";
+import { useTranslation } from "react-i18next";
 
 interface UpcomingOrdersProps {
   orders: OrderRecord[];
@@ -10,6 +11,7 @@ interface UpcomingOrdersProps {
 }
 
 const UpcomingOrders = ({ orders, onSelectOrder, selectedOrderId }: UpcomingOrdersProps) => {
+  const { t } = useTranslation();
   const grouped = orders.reduce<Record<string, OrderRecord[]>>((accumulator, order) => {
     const day = format(new Date(order.startTime), "PPP");
     if (!accumulator[day]) accumulator[day] = [];
@@ -22,10 +24,10 @@ const UpcomingOrders = ({ orders, onSelectOrder, selectedOrderId }: UpcomingOrde
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Upcoming services</CardTitle>
+        <CardTitle>{t("dashboard.upcoming.title")}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        {sortedDays.length === 0 && <p className="text-sm text-muted-foreground">No services scheduled yet.</p>}
+        {sortedDays.length === 0 && <p className="text-sm text-muted-foreground">{t("dashboard.upcoming.empty")}</p>}
         {sortedDays.map(day => (
           <div key={day} className="space-y-3">
             <p className="text-sm font-semibold">{day}</p>
@@ -41,10 +43,14 @@ const UpcomingOrders = ({ orders, onSelectOrder, selectedOrderId }: UpcomingOrde
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <p className="font-medium">{format(new Date(order.startTime), "p")} · {order.location.address}</p>
-                      <Badge>{order.durationHours} hrs</Badge>
+                      <p className="font-medium">
+                        {format(new Date(order.startTime), "p")} · {order.location.address}
+                      </p>
+                      <Badge>{t("dashboard.upcoming.duration", { hours: order.durationHours })}</Badge>
                     </div>
-                    <p className="text-xs text-muted-foreground">Status: {order.status}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {t("dashboard.upcoming.status", { status: t(`dashboard.status.${order.status}`, { defaultValue: order.status }) })}
+                    </p>
                   </button>
                 ))}
             </div>
@@ -56,4 +62,3 @@ const UpcomingOrders = ({ orders, onSelectOrder, selectedOrderId }: UpcomingOrde
 };
 
 export default UpcomingOrders;
-

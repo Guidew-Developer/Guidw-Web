@@ -54,6 +54,8 @@ type VipCopy = {
     languagesLabel: string;
     stackLabel: string;
     stackTitle: string;
+    priceTag: string;
+    priceSubline: string;
   };
   traveler: VipProductDetail;
   provider: VipProductDetail;
@@ -91,7 +93,9 @@ const vipCopy: Record<VipLocale, VipCopy> = {
       note: "Traveler VIP $9.9/mo · Provider VIP $99/mo · Cancel anytime.",
       languagesLabel: "Available in 6 languages",
       stackLabel: "VIP stack",
-      stackTitle: "Separate memberships"
+      stackTitle: "Separate memberships",
+      priceTag: "$9.9/mo · $99/mo",
+      priceSubline: "Travelers waive 15% fees · Providers unlock automation"
     },
     traveler: {
       title: "Traveler VIP",
@@ -149,7 +153,9 @@ const vipCopy: Record<VipLocale, VipCopy> = {
       note: "用户 VIP $9.9/月 · 服务者 VIP $99/月 · 随时可退。",
       languagesLabel: "支持 6 种语言",
       stackLabel: "VIP 组合",
-      stackTitle: "双会员体系"
+      stackTitle: "双会员体系",
+      priceTag: "$9.9/月 · $99/月",
+      priceSubline: "用户免 15% 佣金 · 服务者获自动化与 AI 支持"
     },
     traveler: {
       title: "用户 VIP",
@@ -207,7 +213,9 @@ const vipCopy: Record<VipLocale, VipCopy> = {
       note: "VIP viajante US$ 9,9/mês · VIP provedor US$ 99/mês · cancele quando quiser.",
       languagesLabel: "Disponível em 6 idiomas",
       stackLabel: "Pacote VIP",
-      stackTitle: "Assinaturas distintas"
+      stackTitle: "Assinaturas distintas",
+      priceTag: "US$ 9,9/mês · US$ 99/mês",
+      priceSubline: "Usuários sem 15% · provedores com automação e alertas"
     },
     traveler: {
       title: "VIP viajante",
@@ -265,7 +273,9 @@ const vipCopy: Record<VipLocale, VipCopy> = {
       note: "Viajeros VIP US$ 9,9/mes · Proveedores VIP US$ 99/mes · cancela cuando quieras.",
       languagesLabel: "Disponible en 6 idiomas",
       stackLabel: "Paquete VIP",
-      stackTitle: "Membresías separadas"
+      stackTitle: "Membresías separadas",
+      priceTag: "US$ 9,9/mes · US$ 99/mes",
+      priceSubline: "Viajeros sin 15% · proveedores con automatización"
     },
     traveler: {
       title: "VIP viajeros",
@@ -323,7 +333,9 @@ const vipCopy: Record<VipLocale, VipCopy> = {
       note: "VIP voyageurs 9,9 $US/mois · VIP prestataires 99 $US/mois · résiliable à tout moment.",
       languagesLabel: "Disponible en 6 langues",
       stackLabel: "Pack VIP",
-      stackTitle: "Abonnements distincts"
+      stackTitle: "Abonnements distincts",
+      priceTag: "9,9 $US/mois · 99 $US/mois",
+      priceSubline: "Voyageurs sans 15 % · prestataires avec automatisation"
     },
     traveler: {
       title: "VIP voyageurs",
@@ -381,7 +393,9 @@ const vipCopy: Record<VipLocale, VipCopy> = {
       note: "VIP למטיילים $9.9 לחודש · VIP לספקים $99 לחודש · ניתן לבטל בכל עת.",
       languagesLabel: "זמין ב‑6 שפות",
       stackLabel: "חבילת VIP",
-      stackTitle: "חברויות נפרדות"
+      stackTitle: "חברויות נפרדות",
+      priceTag: "$9.9 · $99 לחודש",
+      priceSubline: "מטיילים בלי 15% · ספקים עם אוטומציה ו-AI"
     },
     traveler: {
       title: "VIP למטיילים",

@@ -5,6 +5,23 @@
     "about": "关于",
     "downloadApp": "下载应用"
   },
+  "guidew": {
+    "messages": {
+      "orderNotFound": "未找到该订单",
+      "orderAlreadyCancelled": "订单已被取消",
+      "travelerMissing": "旅客信息缺失",
+      "participantsMissing": "参与方信息不完整",
+      "providerProfileMissing": "未找到服务者档案",
+      "providerAccountMissing": "未找到服务者账号",
+      "mutualCancellation": "三小时内双方协商取消",
+      "cancelledMoreThan3Hours": "提前 3 小时以上取消",
+      "cancelledOneToThreeHours": "开场前 1-3 小时取消",
+      "cancelledLessThanOneHour": "开场前不足 1 小时取消",
+      "cancelledAfterStart": "服务开始后取消",
+      "providerNoShow": "服务者缺席，已全额退款。",
+      "travelerNoShow": "旅客缺席，服务者获得补偿。"
+    }
+  },
   "search": {
     "placeholder": "搜索服务、专家或地点..."
   },
@@ -438,6 +455,276 @@
       "reviews": "评价",
       "provider": "服务提供者"
     }
+  },
+  "serviceCard": {
+    "availableNow": "立即可用"
+  },
+  "userApp": {
+    "thirdParty": {
+      "title": "关联增值服务",
+      "items": {
+        "skyTower": "预订奥克兰天空塔门票",
+        "intercity": "预约 InterCity 大巴",
+        "rentalCar": "租一辆自驾车辆",
+        "danceShoes": "购买探戈/萨尔萨舞鞋"
+      },
+      "disclaimer": "部分合作方会向 Guidew 支付推广佣金。"
+    }
+  },
+  "dashboard": {
+    "upcoming": {
+      "title": "即将进行的服务",
+      "empty": "你还没有安排新的服务。",
+      "duration": "{{hours}} 小时",
+      "status": "状态：{{status}}"
+    },
+    "status": {
+      "awaiting-provider": "等待服务者响应",
+      "accepted": "已接受",
+      "in-progress": "进行中",
+      "awaiting-review": "等待评价",
+      "completed": "已完成",
+      "cancelled": "已取消"
+    },
+    "providerFeed": {
+      "title": "实时抢单",
+      "empty": "暂时没有新订单，保持在线即可第一时间抢单。",
+      "grab": "抢",
+      "durationEarnings": "时长：{{hours}} 小时 · 预计收入 ${{earnings}}",
+      "travelEstimate": "预计交通时间：{{minutes}} 分钟",
+      "arrivalOnTime": "可准时抵达",
+      "arrivalRisk": "可能延误"
+    },
+    "timeline": {
+      "title": "服务时间轴",
+      "empty": "你还没有订单，先去发起一个需求吧。"
+    },
+    "wallet": {
+      "title": "钱包与 VIP",
+      "refresh": "刷新余额",
+      "available": "可用余额",
+      "pending": "待结算",
+      "withdrawable": "可提现",
+      "vipTitle": "VIP 订阅",
+      "vipActive": "享受 AI 礼宾、0 佣金与优先分发。",
+      "vipInactive": "升级后解锁 AI 礼宾、自动派单与佣金优惠。",
+      "vipCancel": "取消 VIP",
+      "vipActivate": "开通 VIP（$9.9/月）",
+      "lastUpdated": "最后更新：{{time}}"
+    },
+    "achievements": {
+      "title": "成就徽章",
+      "empty": "完成预约即可获得徽章奖励。",
+      "earned": "获取时间：{{date}}",
+      "templates": {
+        "user-first-booking": {
+          "title": "首次冒险",
+          "description": "完成在 Guidew 的第一笔预订。"
+        },
+        "provider-first-order": {
+          "title": "第一位客户",
+          "description": "在 Guidew 交付了第一笔服务。"
+        },
+        "provider-5-orders": {
+          "title": "可信赖的当地人",
+          "description": "成功完成 5 笔服务。"
+        },
+        "provider-50-orders": {
+          "title": "城市传奇",
+          "description": "成功完成 50 笔服务。"
+        },
+        "user-3-cities": {
+          "title": "环球探索者",
+          "description": "在 3 座不同城市预订过服务。"
+        }
+      }
+    },
+    "review": {
+      "title": "发布评价",
+      "empty": "请选择一条已完成的订单进行评价。",
+      "overallLabel": "整体体验",
+      "worth": "值得推荐",
+      "notWorth": "不值得",
+      "detailsLabel": "分享细节",
+      "tipLabel": "可选小费",
+      "tipButton": "${{amount}}",
+      "tipSkip": "跳过小费",
+      "tipSend": "发送 ${{amount}} 小费",
+      "submit": "提交评价",
+      "defaultComment": "体验顺畅，沟通专业。"
+    },
+    "request": {
+      "title": "预订本地专家",
+      "description": "填写所需服务信息，VIP 可使用自然语言描述，自动获得 AI 推荐。",
+      "activeWarning": "你已在 {{time}} 安排了一条订单，新预订会在此基础上自动分配时间。",
+      "serviceLabel": "服务类型",
+      "servicePlaceholder": "选择服务",
+      "providerLabel": "意向服务者",
+      "providerPlaceholder": "选择服务者",
+      "startLabel": "开始时间",
+      "durationLabel": "服务时长（小时）",
+      "locationLabel": "服务地点",
+      "locationPlaceholder": "地址或集合点",
+      "itineraryLabel": "需要提前提供行程吗？",
+      "itineraryYes": "需要，请提供计划",
+      "itineraryNo": "不需要，自由安排",
+      "aiLabel": "描述需求（AI 礼宾）",
+      "aiButton": "生成推荐专家",
+      "speaksLanguages": "支持 {{languages}}",
+      "submit": "提交预约请求"
+    },
+    "activeOrder": {
+      "title": "进行中的服务",
+      "empty": "暂无进行中的服务，去抢单队列看看吧。",
+      "durationEarnings": "时长 {{hours}} 小时 · 收益 ${{earnings}}",
+      "aiButton": "生成 AI 行程",
+      "submitItinerary": "提交行程",
+      "vipUpsell": "升级 VIP 可解锁自动行程与延时提醒。",
+      "start": "开始服务",
+      "complete": "完成",
+      "reportNoShow": "上报旅客缺席",
+      "defaultItinerary": "当地咖啡欢迎\n城市亮点导览\n滨水午餐"
+    },
+    "profileForm": {
+      "title": "服务者档案",
+      "bio": "个人简介",
+      "hourlyRate": "小时费率",
+      "minHours": "最少预订时长",
+      "tags": "标签",
+      "tagsPlaceholder": "城市向导, 翻译",
+      "languages": "支持语言",
+      "languagesPlaceholder": "英文, 普通话",
+      "travelRadius": "服务半径（公里）",
+      "expensesLabel": "费用是否包含成本？",
+      "expensesIncluded": "包含成本",
+      "expensesExcluded": "成本另计",
+      "expensePlaceholder": "门票、交通、过路费按实际收取",
+      "certifications": "证书与证明",
+      "certificationPlaceholder": "证书链接或说明",
+      "uploadProof": "上传证明",
+      "serviceMedia": "服务素材",
+      "mediaTypes": {
+        "image": "图片",
+        "video": "视频",
+        "document": "文件"
+      },
+      "mediaPlaceholder": "https://example.com/portfolio",
+      "addMedia": "添加素材",
+      "mediaBadge": "{{type}} 证明",
+      "remove": "移除",
+      "mediaEmpty": "上传照片、视频或文档展示你的专业能力。",
+      "save": "保存档案"
+    },
+    "reviewHistory": {
+      "title": "公开评价",
+      "empty": "暂无公开评价。完成行程并互评即可提升信任。",
+      "serviceFallback": "自定义服务",
+      "counterpartFallback": "客户",
+      "decisions": {
+        "worth": "值得合作",
+        "not-worth": "体验一般",
+        "again": "愿意再次合作",
+        "no": "暂不考虑"
+      },
+      "published": "发布于 {{date}}"
+    },
+    "providerFilters": {
+      "title": "筛选专家",
+      "tags": "标签",
+      "tagsEmpty": "尚未设置任何标签。",
+      "languages": "语言",
+      "languagesEmpty": "服务者尚未填写语言信息。",
+      "vipOnly": "仅看 VIP",
+      "autoAcceptOnly": "仅自动接单",
+      "minRating": "最低评分 {{rating}}",
+      "reset": "重置筛选"
+    },
+    "providerList": {
+      "serviceFallback": "服务套餐",
+      "meta": "{{city}} · {{distance}} · {{languages}}",
+      "rate": "${{rate}}/小时",
+      "minHours": "至少 {{hours}} 小时",
+      "verifications": "认证",
+      "certifications": "已上传 {{count}} 个证书",
+      "rating": "评分",
+      "ratingDetail": "{{rating}} · {{trips}} 次服务"
+    },
+    "orderActions": {
+      "title": "订单操作",
+      "empty": "请选择一条预约以取消或上报缺席。",
+      "cancel": "取消预约",
+      "mutual": "双方协商取消",
+      "reportProvider": "上报服务者缺席",
+      "instructions": "取消遵循 Guidew 政策。三小时内双方协商取消，旅客可退回 85%。超过开始时间可直接上报服务者缺席并获得全额退款。"
+    },
+    "timelineEvents": {
+      "orderCreated": "{{name}} 创建了订单",
+      "paymentAuthorized": "付款已通过 Stripe 授权",
+      "autoAccepted": "VIP 服务者已自动接单",
+      "itinerarySubmitted": "行程已提交",
+      "providerAccepted": "服务者已接受",
+      "serviceStarted": "服务已开始",
+      "serviceCompleted": "服务已完成",
+      "cancelledUser": "旅客取消了订单",
+      "cancelledProvider": "服务者取消了订单",
+      "cancelledMutual": "双方同意取消",
+      "providerNoShow": "服务者缺席已上报",
+      "travelerNoShow": "旅客缺席已记录",
+      "tipAdded": "小费已添加",
+      "reviewSubmittedTraveler": "旅客提交了评价",
+      "reviewSubmittedProvider": "服务者提交了评价"
+    },
+    "itinerary": {
+      "header": "服务：{{service}} · {{city}} 专家 {{expert}}",
+      "travel": "建议出发提前 {{minutes}} 分钟（系统自动测算）",
+      "wrapUp": "总结与反馈",
+      "phase": "阶段 {{index}}：{{item}}",
+      "defaults": [
+        "见面寒暄并确认期待",
+        "围绕兴趣定制核心体验",
+        "回顾亮点并给出后续建议"
+      ],
+      "tags": {
+        "city-guide": [
+          "当地咖啡厅集合欢迎",
+          "穿梭历史街区与隐秘巷弄",
+          "制高点拍照留念",
+          "品尝主理人私藏美食"
+        ],
+        "translation": [
+          "会前术语同步",
+          "现场口译协助",
+          "总结要点与常用表达"
+        ],
+        "food": [
+          "市集买菜听食材故事",
+          "本地餐厅品鉴菜单",
+          "打卡标志性甜品"
+        ],
+        "dance": [
+          "热身与基础动作",
+          "双人套路拆解",
+          "自由练习与讲解"
+        ],
+        "adventure": [
+          "安全装备检查",
+          "路线与活动 briefing",
+          "向导陪同体验及拍照"
+        ]
+      }
+    }
+  },
+  "skillDetail": {
+    "notFound": "未找到该技能服务详情",
+    "modeLabel": "服务方式",
+    "highlights": "服务特色",
+    "detailsTitle": "服务详情介绍",
+    "certifications": "服务认证",
+    "faq": "常见问题",
+    "reviews": "用户评价",
+    "timeLabel": "可约时间",
+    "galleryAlt": "图片 {{index}}",
+    "verified": "已实名认证"
   },
   "notFound": {
     "title": "404",

@@ -2,11 +2,18 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
-import { resolveLocale } from "@/utils/locale";
+import { pickLocaleValue, resolveLocale, type SupportedLocale } from "@/utils/locale";
 
 const STORAGE_KEY = "guidew-cookie-preference";
 
-const copy = {
+const copy: Partial<Record<SupportedLocale, {
+  title: string;
+  description: string;
+  acknowledge: string;
+  decline: string;
+  accept: string;
+  policy: string;
+}>> = {
   en: {
     title: "We use cookies to enhance your experience",
     description:
@@ -16,6 +23,22 @@ const copy = {
     accept: "Agree",
     policy: "Cookie Policy"
   },
+  es: {
+    title: "Usamos cookies para mejorar tu experiencia",
+    description: "Haz clic en “Aceptar” para permitir cookies esenciales y de analítica. Consulta más detalles en la Política de Cookies.",
+    acknowledge: "Entendido",
+    decline: "Rechazar",
+    accept: "Aceptar",
+    policy: "Política de cookies"
+  },
+  pt: {
+    title: "Usamos cookies para melhorar sua experiência",
+    description: "Clique em “Concordar” para permitir cookies essenciais e de análise. Saiba mais na nossa Política de Cookies",
+    acknowledge: "Entendi",
+    decline: "Recusar",
+    accept: "Concordar",
+    policy: "Política de cookies"
+  },
   zh: {
     title: "我们使用 Cookie 优化体验",
     description: "点击“同意”表示允许必要与分析类 Cookie。更多细节请查看 Cookie 政策。",
@@ -23,6 +46,22 @@ const copy = {
     decline: "拒绝",
     accept: "同意",
     policy: "Cookie 政策"
+  },
+  fr: {
+    title: "Nous utilisons des cookies pour améliorer votre expérience",
+    description: "Cliquez sur « Accepter » pour autoriser les cookies essentiels et analytiques. Plus de détails dans notre Politique de cookies.",
+    acknowledge: "J’ai compris",
+    decline: "Refuser",
+    accept: "Accepter",
+    policy: "Politique de cookies"
+  },
+  he: {
+    title: "אנחנו משתמשים בעוגיות כדי לשפר את החוויה",
+    description: "לחצו על \"מאשר\" כדי לאפשר עוגיות חיוניות וניתוח. פרטים מלאים במדיניות ה‑Cookies שלנו",
+    acknowledge: "הבנתי",
+    decline: "דחו",
+    accept: "מאשר",
+    policy: "מדיניות Cookies"
   }
 } as const;
 
@@ -30,7 +69,8 @@ const CookieConsent = () => {
   const [visible, setVisible] = useState(false);
   const { i18n } = useTranslation();
   const locale = resolveLocale(i18n.language);
-  const content = copy[locale];
+  const content = pickLocaleValue(copy, locale);
+  const isZh = locale === "zh";
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -59,7 +99,7 @@ const CookieConsent = () => {
             <Link to="/cookies" className="ml-1 font-semibold text-brand-teal underline">
               {content.policy}
             </Link>
-            {locale === "zh" ? "。" : "."}
+            {isZh ? "。" : "."}
           </p>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center">

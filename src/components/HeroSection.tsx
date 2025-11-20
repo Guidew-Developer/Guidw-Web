@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Search, MapPin, Briefcase } from "lucide-react";
 import { useDownloadDialog } from "@/components/DownloadDialogProvider";
 import { useTranslation } from "react-i18next";
-import { resolveLocale, type SupportedLocale } from "@/utils/locale";
+import { pickLocaleValue, resolveLocale, type SupportedLocale } from "@/utils/locale";
 
 type HeroBadge =
   | {
@@ -43,7 +43,7 @@ type HeroSlide = {
   layout?: HeroSlideLayout;
 };
 
-const heroSlides: Record<SupportedLocale, HeroSlide[]> = {
+const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
   en: [
     {
       id: "local-expertise",
@@ -318,6 +318,525 @@ const heroSlides: Record<SupportedLocale, HeroSlide[]> = {
       ]
     }
   ],
+  es: [
+    {
+      id: "local-expertise",
+      kicker: "Expertos locales",
+      title: "Talento local,",
+      highlight: "a demanda",
+      description:
+        "Conecta con especialistas de confianza para recorridos urbanos, traducción o clases privadas desde una sola app.",
+      image:
+        "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Experto local guiando a viajeros",
+      layout: "default",
+      cta: "search",
+      badges: [
+        { id: "badge-location-es", type: "location", position: "-left-4 top-1/4", delay: "0s" },
+        { id: "badge-community-es", type: "community", position: "right-4 bottom-1/4", delay: "2s" }
+      ]
+    },
+    {
+      id: "elite-advisors",
+      kicker: "Mesa directiva global",
+      title: "Expertos top en cada disciplina,",
+      highlight: "tu board personal",
+      description:
+        "Activa sesiones de estrategia, cultura o expansión con coaches ejecutivos, mentores VC y fixers locales que se conectan en minutos.",
+      image:
+        "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Asesores en reunión virtual",
+      layout: "reverse",
+      cta: "button",
+      button: { label: "Reserva un asesor privado", to: "/discover?category=business" },
+      badges: [
+        {
+          id: "badge-board-es",
+          type: "info",
+          title: "Estrategia • Cultura • Legal",
+          subtitle: "Mentores curados",
+          position: "-left-5 top-1/3",
+          delay: "0.4s"
+        },
+        {
+          id: "badge-response-es",
+          type: "info",
+          title: "Respuesta en 30 min",
+          subtitle: "Husos 24/7",
+          position: "right-3 bottom-1/3",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "concierge-luxury",
+      kicker: "Concierge de élite",
+      title: "Vive como un billonario,",
+      highlight: "con expertos en guardia",
+      description:
+        "Sommeliers personales, capitanes de yate, estilistas y equipos de crisis coordinan cada detalle en toda Nueva Zelanda.",
+      image:
+        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Equipo concierge diseñando experiencias",
+      layout: "spotlight",
+      cta: "button",
+      button: { label: "Desbloquear concierge VIP", to: "/discover?category=professional" },
+      badges: [
+        {
+          id: "badge-luxe-team-es",
+          type: "info",
+          title: "Arquitectos de lifestyle",
+          subtitle: "Concierge seis estrellas",
+          position: "-left-6 top-1/3",
+          delay: "0.4s"
+        },
+        {
+          id: "badge-luxe-response-es",
+          type: "info",
+          title: "Respuesta en 15 min",
+          subtitle: "Cobertura nacional",
+          position: "right-4 bottom-1/4",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "download-app",
+      kicker: "App Guidew",
+      title: "Convierte ideas en",
+      highlight: "magia local",
+      description:
+        "Descarga Guidew y convoca expertos de Auckland o Wellington—coaches de danza, compañeros de idioma o equipos de rescate con IA y perks VIP.",
+      image:
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Usuario descargando Guidew",
+      layout: "reverse",
+      cta: "button",
+      button: { label: "Descargar la app", to: "/download" },
+      badges: [
+        { id: "badge-app-es", type: "info", title: "iOS & Android", subtitle: "Escanea para instalar", position: "-left-3 top-1/4", delay: "0.5s" },
+        { id: "badge-vip-es", type: "info", title: "Beneficios VIP", subtitle: "Asistente IA de itinerarios", position: "right-4 bottom-1/3", delay: "2s" }
+      ]
+    },
+    {
+      id: "vip-membership",
+      kicker: "Guidew VIP",
+      title: "9,9 USD/mes,",
+      highlight: "desbloquea concierge IA",
+      description:
+        "VIP elimina el 15% de comisión, habilita solicitudes por IA y matching prioritario; los proveedores reciben auto-accept, itinerarios y alertas de desplazamiento.",
+      image:
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Miembros VIP hablando con IA",
+      layout: "immersive",
+      cta: "button",
+      button: { label: "Unirme al VIP", to: "/vip" },
+      badges: [
+        {
+          id: "badge-vip-fee-es",
+          type: "info",
+          title: "Sin comisión 15%",
+          subtitle: "Exclusivo VIP",
+          position: "left-6 top-6",
+          delay: "0.4s"
+        },
+        {
+          id: "badge-vip-ai-es",
+          type: "info",
+          title: "Concierge IA",
+          subtitle: "Matching prioritario",
+          position: "right-6 bottom-10",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "creator-network",
+      kicker: "Hazte experto Guidew",
+      title: "Diseña tu ritmo laboral,",
+      highlight: "entra a la red global",
+      description:
+        "Ofrece traducción, city escort o coaching creativo y administra pedidos con IA, pagos transparentes y badges de reputación.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Creadores planeando experiencias",
+      layout: "default",
+      cta: "button",
+      button: { label: "Comenzar ahora", to: "/become-expert" },
+      badges: [
+        { id: "badge-impact-es", type: "info", title: "1M+ creadores", subtitle: "Red 2026", position: "-left-6 top-1/3", delay: "0.5s" },
+        { id: "badge-earning-es", type: "info", title: "Altas comisiones", subtitle: "Pagos claros", position: "right-2 bottom-1/3", delay: "2s" }
+      ]
+    },
+    {
+      id: "dance-school-finder",
+      kicker: "Radar de idiomas",
+      title: "Encuentra los mejores",
+      highlight: "profesores de idioma",
+      description:
+        "Tarjetas inmersivas comparan estilos, acentos, logros y cupos; asesores bilingües aseguran un trial privado en 60 segundos.",
+      image:
+        "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Estudiantes practicando en aula",
+      layout: "editorial",
+      cta: "button",
+      button: { label: "Agendar coach de idiomas", to: "/discover?category=language&tag=coaches" },
+      badges: [
+        { id: "badge-trial-es", type: "info", title: "Agenda en 48h", subtitle: "Trial garantizado", position: "-left-6 top-6", delay: "0.3s" },
+        { id: "badge-genres-es", type: "info", title: "IELTS • Negocios • Supervivencia", subtitle: "30+ coaches pro", position: "right-6 bottom-8", delay: "2s" }
+      ]
+    },
+    {
+      id: "global-dance",
+      kicker: "Campeones on-call",
+      title: "Invita campeones mundiales,",
+      highlight: "domina Bachata en NZ",
+      description:
+        "De rooftops bohemios al puerto de Auckland, mentores campeones enseñan pasos, presencia escénica y confianza social.",
+      image:
+        "https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Alumnos practicando con instructora",
+      layout: "spotlight",
+      cta: "button",
+      button: { label: "Reservar campeón", to: "/discover?category=dance" },
+      badges: [
+        { id: "badge-stars-es", type: "info", title: "Campeones mundiales", subtitle: "Equipo Bachata", position: "-left-4 top-1/4", delay: "0.3s" },
+        { id: "badge-sessions-es", type: "info", title: "40+ privadas/semana", subtitle: "Auckland · Wellington", position: "right-4 bottom-1/3", delay: "2s" }
+      ]
+    }
+  ],
+  pt: [
+    {
+      id: "local-expertise",
+      kicker: "Especialistas locais",
+      title: "Expertise local,",
+      highlight: "sob demanda",
+      description:
+        "Conecte-se com moradores de confiança para passeios, tradução ou aulas particulares—tudo em um único app.",
+      image:
+        "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Especialista local guiando viajantes",
+      layout: "default",
+      cta: "search",
+      badges: [
+        { id: "badge-location", type: "location", position: "-left-4 top-1/4", delay: "0s" },
+        { id: "badge-community", type: "community", position: "right-4 bottom-1/4", delay: "2s" }
+      ]
+    },
+    {
+      id: "elite-advisors",
+      kicker: "Conselho global",
+      title: "Top experts de várias áreas,",
+      highlight: "no seu board pessoal",
+      description:
+        "Inicie sessões de estratégia, cultura ou crescimento com executivos, mentores de VC e fixers locais que entram na sua call em minutos.",
+      image:
+        "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Consultores em reunião virtual",
+      layout: "reverse",
+      cta: "button",
+      button: { label: "Reservar consultor privado", to: "/discover?category=business" },
+      badges: [
+        {
+          id: "badge-board-pt",
+          type: "info",
+          title: "Estratégia • Cultura • Jurídico",
+          subtitle: "Mentores curados",
+          position: "-left-5 top-1/3",
+          delay: "0.4s"
+        },
+        {
+          id: "badge-response-pt",
+          type: "info",
+          title: "Resposta em 30 min",
+          subtitle: "Fusos 24/7",
+          position: "right-3 bottom-1/3",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "concierge-luxury",
+      kicker: "Concierge de elite",
+      title: "Viva como bilionário,",
+      highlight: "com experts de prontidão",
+      description:
+        "Sommelier, capitães de iate, stylists e equipes de crise coordenam cada detalhe pela Nova Zelândia em poucos minutos.",
+      image:
+        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Equipe concierge planejando experiências",
+      layout: "spotlight",
+      cta: "button",
+      button: { label: "Desbloquear concierge VIP", to: "/discover?category=professional" },
+      badges: [
+        {
+          id: "badge-luxe-team-pt",
+          type: "info",
+          title: "Arquitetos de lifestyle",
+          subtitle: "Concierge 6 estrelas",
+          position: "-left-6 top-1/3",
+          delay: "0.4s"
+        },
+        {
+          id: "badge-luxe-response-pt",
+          type: "info",
+          title: "Resposta em 15 min",
+          subtitle: "Cobertura nacional",
+          position: "right-4 bottom-1/4",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "download-app",
+      kicker: "App Guidew",
+      title: "Transforme momentos em",
+      highlight: "magia local",
+      description:
+        "Baixe a Guidew e acione especialistas de Auckland ou Wellington—coaches de dança, parceiros de idioma ou equipes de resgate com IA e perks VIP.",
+      image:
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Pessoa baixando o app Guidew",
+      layout: "reverse",
+      cta: "button",
+      button: { label: "Baixar o app", to: "/download" },
+      badges: [
+        { id: "badge-app-pt", type: "info", title: "iOS & Android", subtitle: "Escaneie para instalar", position: "-left-3 top-1/4", delay: "0.5s" },
+        { id: "badge-vip-pt", type: "info", title: "Benefícios VIP", subtitle: "Assistente de itinerário IA", position: "right-4 bottom-1/3", delay: "2s" }
+      ]
+    },
+    {
+      id: "vip-membership",
+      kicker: "Guidew VIP",
+      title: "US$ 9,9/mês,",
+      highlight: "desbloqueie o concierge IA",
+      description:
+        "VIP remove a taxa de 15%, libera pedidos por IA e prioridade; provedores ganham autoaceite, roteiros inteligentes e alertas de deslocamento.",
+      image:
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Membros VIP conversando com assistente IA",
+      layout: "immersive",
+      cta: "button",
+      button: { label: "Entrar no VIP", to: "/vip" },
+      badges: [
+        {
+          id: "badge-vip-fee-pt",
+          type: "info",
+          title: "Sem taxa de 15%",
+          subtitle: "Exclusivo VIP",
+          position: "left-6 top-6",
+          delay: "0.4s"
+        },
+        {
+          id: "badge-vip-ai-pt",
+          type: "info",
+          title: "Concierge IA",
+          subtitle: "Matching prioritário",
+          position: "right-6 bottom-10",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "creator-network",
+      kicker: "Torne-se especialista Guidew",
+      title: "Desenhe seu ritmo de trabalho,",
+      highlight: "entre na rede global",
+      description:
+        "Ofereça dança, tradução ou city escort e administre pedidos com IA, pagamentos transparentes e badges de reputação.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Criadores planejando experiências",
+      layout: "default",
+      cta: "button",
+      button: { label: "Começar agora", to: "/become-expert" },
+      badges: [
+        { id: "badge-impact-pt", type: "info", title: "1M+ criadores", subtitle: "Rede global 2026", position: "-left-6 top-1/3", delay: "0.5s" },
+        { id: "badge-earning-pt", type: "info", title: "Comissão alta", subtitle: "Liquidação transparente", position: "right-2 bottom-1/3", delay: "2s" }
+      ]
+    },
+    {
+      id: "dance-school-finder",
+      kicker: "Radar de idiomas",
+      title: "Encontre os melhores",
+      highlight: "professores de idioma da NZ",
+      description:
+        "Cartões imersivos comparam estilo de aula, sotaque, aprovações e vagas; consultores bilíngues garantem um trial em 60 segundos.",
+      image:
+        "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Alunos praticando em sala iluminada",
+      layout: "editorial",
+      cta: "button",
+      button: { label: "Agendar professor de idiomas", to: "/discover?category=language&tag=coaches" },
+      badges: [
+        { id: "badge-trial-pt", type: "info", title: "Agenda garantida em 48h", subtitle: "Trial exclusivo", position: "-left-6 top-6", delay: "0.3s" },
+        { id: "badge-genres-pt", type: "info", title: "IELTS · negócios · conversação", subtitle: "30+ coaches certificados", position: "right-6 bottom-8", delay: "2s" }
+      ]
+    },
+    {
+      id: "global-dance",
+      kicker: "Campeões ao vivo",
+      title: "Traga campeões mundiais,",
+      highlight: "domine Bachata Kiwi em 2h",
+      description:
+        "De rooftops boêmios ao porto de Auckland, mentores campeões ensinam passos, presença de palco e confiança social.",
+      image:
+        "https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Alunos dançando com instrutora",
+      layout: "spotlight",
+      cta: "button",
+      button: { label: "Reservar campeão", to: "/discover?category=dance" },
+      badges: [
+        { id: "badge-stars-pt", type: "info", title: "Campeões mundiais", subtitle: "Equipe Bachata", position: "-left-4 top-1/4", delay: "0.3s" },
+        { id: "badge-sessions-pt", type: "info", title: "40+ particulares/semana", subtitle: "Auckland · Wellington", position: "right-4 bottom-1/3", delay: "2s" }
+      ]
+    }
+  ],
+  fr: [
+    {
+      id: "local-expertise",
+      kicker: "Experts locaux",
+      title: "Talents locaux,",
+      highlight: "à la demande",
+      description:
+        "Connectez-vous à des spécialistes de confiance pour visites urbaines, traduction ou coaching personnalisé depuis une seule application.",
+      image:
+        "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Expert local guidant des voyageurs",
+      layout: "default",
+      cta: "search",
+      badges: [
+        { id: "badge-location-fr", type: "location", position: "-left-4 top-1/4", delay: "0s" },
+        { id: "badge-community-fr", type: "community", position: "right-4 bottom-1/4", delay: "2s" }
+      ]
+    },
+    {
+      id: "elite-advisors",
+      kicker: "Conseil global",
+      title: "Experts de haut niveau,",
+      highlight: "votre board personnel",
+      description:
+        "Activez des sessions de stratégie, culture ou expansion avec coaches exécutifs, mentors VC et fixers locaux connectés en quelques minutes.",
+      image:
+        "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Conseillers en réunion virtuelle",
+      layout: "reverse",
+      cta: "button",
+      button: { label: "Réserver un conseiller privé", to: "/discover?category=business" },
+      badges: [
+        { id: "badge-board-fr", type: "info", title: "Stratégie • Culture • Legal", subtitle: "Mentors triés", position: "-left-5 top-1/3", delay: "0.4s" },
+        { id: "badge-response-fr", type: "info", title: "Réponse 30 min", subtitle: "Fuseaux 24/7", position: "right-3 bottom-1/3", delay: "2s" }
+      ]
+    },
+    {
+      id: "concierge-luxury",
+      kicker: "Concierge d’élite",
+      title: "Vivez comme un milliardaire,",
+      highlight: "experts en alerte",
+      description:
+        "Sommeliers, skippers, stylistes et cellules de crise coordonnent chaque détail sur toute la Nouvelle-Zélande.",
+      image:
+        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Équipe concierge orchestrant une expérience",
+      layout: "spotlight",
+      cta: "button",
+      button: { label: "Débloquer le concierge VIP", to: "/discover?category=professional" },
+      badges: [
+        { id: "badge-luxe-team-fr", type: "info", title: "Architectes lifestyle", subtitle: "Concierge 6 étoiles", position: "-left-6 top-1/3", delay: "0.4s" },
+        { id: "badge-luxe-response-fr", type: "info", title: "Réponse 15 min", subtitle: "Couverture nationale", position: "right-4 bottom-1/4", delay: "2s" }
+      ]
+    },
+    {
+      id: "download-app",
+      kicker: "App Guidew",
+      title: "Transformez vos idées en",
+      highlight: "magie locale",
+      description:
+        "Téléchargez Guidew et sollicitez des experts à Auckland ou Wellington—coaches de danse, tandems linguistiques ou équipes de secours avec IA et avantages VIP.",
+      image:
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Téléchargement de l’application Guidew",
+      layout: "reverse",
+      cta: "button",
+      button: { label: "Télécharger l’app", to: "/download" },
+      badges: [
+        { id: "badge-app-fr", type: "info", title: "iOS & Android", subtitle: "Scannez pour installer", position: "-left-3 top-1/4", delay: "0.5s" },
+        { id: "badge-vip-fr", type: "info", title: "Avantages VIP", subtitle: "Assistant IA d’itinéraires", position: "right-4 bottom-1/3", delay: "2s" }
+      ]
+    },
+    {
+      id: "vip-membership",
+      kicker: "Guidew VIP",
+      title: "9,9 USD/mois,",
+      highlight: "concierge IA activé",
+      description:
+        "Le plan VIP supprime les 15 % de frais, permet de briefer via IA et offre un matching prioritaire; les prestataires obtiennent auto-accept, itinéraires IA et alertes de distance.",
+      image:
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Membres VIP utilisant un planificateur IA",
+      layout: "immersive",
+      cta: "button",
+      button: { label: "Rejoindre le VIP", to: "/vip" },
+      badges: [
+        { id: "badge-vip-fee-fr", type: "info", title: "Sans frais 15 %", subtitle: "Demandes exclusives", position: "left-6 top-6", delay: "0.4s" },
+        { id: "badge-vip-ai-fr", type: "info", title: "Concierge IA", subtitle: "Matching prioritaire", position: "right-6 bottom-10", delay: "2s" }
+      ]
+    },
+    {
+      id: "creator-network",
+      kicker: "Devenir expert Guidew",
+      title: "Créez votre travail,",
+      highlight: "rejoignez 1M+ créateurs",
+      description:
+        "Choisissez votre planning et proposez danse, traduction ou city buddy. Maximisez vos revenus et automatisez vos réservations avec les outils IA.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Créatrice planifiant des itinéraires",
+      layout: "default",
+      cta: "button",
+      button: { label: "Commencer maintenant", to: "/become-expert" },
+      badges: [
+        { id: "badge-impact-fr", type: "info", title: "1M+ créateurs", subtitle: "Réseau mondial 2026", position: "-left-6 top-1/3", delay: "0.5s" },
+        { id: "badge-earning-fr", type: "info", title: "Commissions élevées", subtitle: "Payouts transparents", position: "right-2 bottom-1/3", delay: "2s" }
+      ]
+    },
+    {
+      id: "dance-school-finder",
+      kicker: "Radar coach linguistique",
+      title: "Trouvez les meilleurs",
+      highlight: "mentors de langues en NZ",
+      description:
+        "Comparez mentors bilingues, labos d’immersion et coachs d’examen vérifiés par des locaux. Prévisualisez des voix, puis réservez en 60 s.",
+      image:
+        "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Étudiants pratiquant une langue",
+      layout: "editorial",
+      cta: "button",
+      button: { label: "Réserver un mentor linguistique", to: "/discover?category=language&tag=coaches" },
+      badges: [
+        { id: "badge-trial-fr", type: "info", title: "Placement 48 h", subtitle: "Essai garanti", position: "-left-6 top-6", delay: "0.3s" },
+        { id: "badge-genres-fr", type: "info", title: "IELTS • Business • Survie", subtitle: "30+ mentors pro", position: "right-6 bottom-8", delay: "2s" }
+      ]
+    },
+    {
+      id: "global-dance",
+      kicker: "Champions à portée",
+      title: "Invitez des maîtres mondiaux,",
+      highlight: "domptez la bachata en NZ",
+      description:
+        "Des rooftops bohèmes aux quais d’Auckland, nous faisons venir des champions chez vous. Apprenez une bachata saveur kiwi en deux heures et gagnez en confiance scénique.",
+      image:
+        "https://images.unsplash.com/photo-1502786129293-79981df4ca60f?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Danseurs coachés",
+      layout: "spotlight",
+      cta: "button",
+      button: { label: "Réserver un coach champion", to: "/discover?category=dance" },
+      badges: [
+        { id: "badge-stars-fr", type: "info", title: "Champions du monde", subtitle: "Mentors bachata", position: "-left-4 top-1/4", delay: "0.3s" },
+        { id: "badge-sessions-fr", type: "info", title: "40+ sessions privées", subtitle: "Auckland & Wellington", position: "right-4 bottom-1/3", delay: "2s" }
+      ]
+    }
+  ],
   zh: [
     {
       id: "local-expertise",
@@ -501,36 +1020,342 @@ const heroSlides: Record<SupportedLocale, HeroSlide[]> = {
         { id: "badge-sessions", type: "info", title: "每周 40+ 私教", subtitle: "奥克兰·惠灵顿", position: "right-4 bottom-1/3", delay: "2s" }
       ]
     }
+  ],
+  he: [
+    {
+      id: "local-expertise",
+      kicker: "מומחים מקומיים",
+      title: "חיבורים מקומיים,",
+      highlight: "בכל רגע",
+      description:
+        "הזמינו מדריכים, מתורגמנים ומאמני מיומנויות מאומתים לטיולים, חירום או רגעי פינוק—הכול מתוך אפליקציה אחת.",
+      image:
+        "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "מדריכה מקומית מובילה אורחים בעיר",
+      layout: "default",
+      cta: "search",
+      badges: [
+        { id: "badge-location-he", type: "location", position: "-left-4 top-1/4", delay: "0s" },
+        { id: "badge-community-he", type: "community", position: "right-4 bottom-1/4", delay: "2s" }
+      ]
+    },
+    {
+      id: "elite-advisors",
+      kicker: "לשכת יועצים גלובלית",
+      title: "צוות מומחים על,",
+      highlight: "לוח אישי משלכם",
+      description:
+        "פתחו סשנים אסטרטגיים עם מאמני מנהלים, משקיעים ו-Fixers מקומיים שמצטרפים לשיחה תוך דקות ספורות.",
+      image:
+        "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "צוות יועצים בפגישה מקוונת",
+      layout: "reverse",
+      cta: "button",
+      button: { label: "הזמינו יועץ פרטי", to: "/discover?category=business" },
+      badges: [
+        {
+          id: "badge-board-he",
+          type: "info",
+          title: "אסטרטגיה • תרבות • משפט",
+          subtitle: "מנטורים נבחרים",
+          position: "-left-5 top-1/3",
+          delay: "0.4s"
+        },
+        {
+          id: "badge-response-he",
+          type: "info",
+          title: "תגובה תוך 30 דק׳",
+          subtitle: "24/7 בכל אזור זמן",
+          position: "right-3 bottom-1/3",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "concierge-luxury",
+      kicker: "קונסיירז' יוקרתי",
+      title: "חיו כמו מיליארדרים,",
+      highlight: "כשמומחים בכוננות",
+      description:
+        "סומלייה אישי, קפטן יאכטה, סטייליסטים וצוותי חירום מתזמנים כל פרט ברחבי ניו זילנד תוך 15 דקות מרגע הקריאה.",
+      image:
+        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "צוות קונסיירז' מתכנן חוויות",
+      layout: "spotlight",
+      cta: "button",
+      button: { label: "פתחו קונסיירז' VIP", to: "/discover?category=professional" },
+      badges: [
+        {
+          id: "badge-luxe-team-he",
+          type: "info",
+          title: "אדריכלי לייף-סטייל",
+          subtitle: "שירות 6 כוכבים",
+          position: "-left-6 top-1/3",
+          delay: "0.4s"
+        },
+        {
+          id: "badge-luxe-response-he",
+          type: "info",
+          title: "תגובה תוך 15 דק׳",
+          subtitle: "כיסוי בכל ניו זילנד",
+          position: "right-4 bottom-1/4",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "download-app",
+      kicker: "Guidew App",
+      title: "הורידו את Guidew,",
+      highlight: "והפכו רגעים לקסם",
+      description:
+        "הזמינו מומחים מאוקלנד או וולינגטון—מאמני ריקוד, שותפי תרגום או צוותי חירום—עם התאמות AI והטבות VIP.",
+      image:
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "משתמשת מורידה את אפליקציית Guidew",
+      layout: "reverse",
+      cta: "button",
+      button: { label: "הורידו את האפליקציה", to: "/download" },
+      badges: [
+        {
+          id: "badge-app-he",
+          type: "info",
+          title: "iOS ו‑Android",
+          subtitle: "סרקו להתקנה",
+          position: "-left-3 top-1/4",
+          delay: "0.5s"
+        },
+        {
+          id: "badge-vip-he",
+          type: "info",
+          title: "הטבות VIP",
+          subtitle: "עוזר AI למסלולים",
+          position: "right-4 bottom-1/3",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "vip-membership",
+      kicker: "Guidew VIP",
+      title: "9.9 דולר לחודש,",
+      highlight: "AI קונסיירז' אישי",
+      description:
+        "חברי VIP מדלגים על עמלת ה‑15%, מתארים צרכים בשפה טבעית ומקבלים התאמה מיידית; ספקים מפעילים Auto-Accept וכלי AI למסלולים.",
+      image:
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "חברי VIP משוחחים עם עוזר AI",
+      layout: "immersive",
+      cta: "button",
+      button: { label: "הצטרפו ל‑VIP", to: "/vip" },
+      badges: [
+        {
+          id: "badge-vip-fee-he",
+          type: "info",
+          title: "ללא עמלת 15%",
+          subtitle: "בלעדי לחברי VIP",
+          position: "left-6 top-6",
+          delay: "0.4s"
+        },
+        {
+          id: "badge-vip-ai-he",
+          type: "info",
+          title: "AI Concierge",
+          subtitle: "התאמה מיידית",
+          position: "right-6 bottom-10",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "creator-network",
+      kicker: "הפכו למומחי Guidew",
+      title: "בנו את הקריירה שלכם,",
+      highlight: "הצטרפו ליוצרי העבודה",
+      description:
+        "קבעו את לוח הזמנים שלכם, הציעו שיעורי ריקוד, תרגום או ליווי עירוני ותיהנו מתשלומים שקופים ואוטומציה של AI.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "יוצרת מתכננת מסלולים במחשב",
+      layout: "default",
+      cta: "button",
+      button: { label: "התחילו לבנות", to: "/become-expert" },
+      badges: [
+        {
+          id: "badge-impact-he",
+          type: "info",
+          title: "1M+ יוצרים",
+          subtitle: "רשת עולמית עד 2026",
+          position: "-left-6 top-1/3",
+          delay: "0.5s"
+        },
+        {
+          id: "badge-earning-he",
+          type: "info",
+          title: "עמלות הוגנות",
+          subtitle: "תשלומים שקופים",
+          position: "right-2 bottom-1/3",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "dance-school-finder",
+      kicker: "רדאר מאמני שפה",
+      title: "מצאו את מאמני השפה הטובים",
+      highlight: "בניו זילנד",
+      description:
+        "השוו מנטורים דו-לשוניים, מעבדות אימרסיביות ומאמני בחינות. האזינו לדוגמיות קול והזמינו שיעור ניסיון תוך 60 שניות.",
+      image:
+        "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "תלמידים מתרגלים בכיתה מוארת",
+      layout: "editorial",
+      cta: "button",
+      button: { label: "שריינו מנטור לשפה", to: "/discover?category=language&tag=coaches" },
+      badges: [
+        {
+          id: "badge-trial-he",
+          type: "info",
+          title: "הצעה מובטחת ב‑48 ש׳",
+          subtitle: "שיעור ניסיון אישי",
+          position: "-left-6 top-6",
+          delay: "0.3s"
+        },
+        {
+          id: "badge-genres-he",
+          type: "info",
+          title: "IELTS • עסקים • הישרדות",
+          subtitle: "30+ מאמנים מקצועיים",
+          position: "right-6 bottom-8",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "global-dance",
+      kicker: "אגדות הריקוד זמינות",
+      title: "הזמינו אלופי עולם,",
+      highlight: "ותשלימו Bachata בניחוח ניו זילנדי",
+      description:
+        "מהגגות הבוהמיים ועד נמל אוקלנד—אלופים מגיעים עד הבית, מלמדים צעד אחר צעד ומחזקים ביטחון לבמה ולחיי הלילה.",
+      image:
+        "https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "זוג מתאמן עם מאמן Bachata",
+      layout: "spotlight",
+      cta: "button",
+      button: { label: "הזמינו מאמן אלוף", to: "/discover?category=dance" },
+      badges: [
+        {
+          id: "badge-stars-he",
+          type: "info",
+          title: "אלופי עולם",
+          subtitle: "צוות Bachata",
+          position: "-left-4 top-1/4",
+          delay: "0.3s"
+        },
+        {
+          id: "badge-sessions-he",
+          type: "info",
+          title: "40+ שיעורים פרטיים",
+          subtitle: "אוקלנד & וולינגטון",
+          position: "right-4 bottom-1/3",
+          delay: "2s"
+        }
+      ]
+    }
   ]
 };
 
-const badgeCopy = {
+const badgeCopy: Partial<
+  Record<
+    SupportedLocale,
+    {
+      locationTitle: string;
+      locationDistance: string;
+      communityTitle: string;
+      communitySubtitle: string;
+    }
+  >
+> = {
   en: {
     locationTitle: "Local Expert",
     locationDistance: "5 min away",
     communityTitle: "500+ Experts",
     communitySubtitle: "In your area"
   },
+  es: {
+    locationTitle: "Experto local",
+    locationDistance: "A 5 min",
+    communityTitle: "500+ expertos",
+    communitySubtitle: "Cerca de ti"
+  },
+  pt: {
+    locationTitle: "Especialista local",
+    locationDistance: "A 5 min",
+    communityTitle: "500+ especialistas",
+    communitySubtitle: "Perto de você"
+  },
   zh: {
     locationTitle: "附近专家",
     locationDistance: "5 分钟可达",
     communityTitle: "500+ 服务者",
     communitySubtitle: "就在你身边"
+  },
+  fr: {
+    locationTitle: "Expert à proximité",
+    locationDistance: "à 5 min",
+    communityTitle: "500+ experts",
+    communitySubtitle: "Près de chez vous"
+  },
+  he: {
+    locationTitle: "מומחה קרוב",
+    locationDistance: "5 דק׳ ממך",
+    communityTitle: "500+ מומחים",
+    communitySubtitle: "בדיוק באזור שלך"
   }
-} as const;
+};
 
-const searchCopy = {
+const searchCopy: Partial<
+  Record<
+    SupportedLocale,
+    {
+      placeholder: string;
+      button: string;
+      slideLabel: string;
+    }
+  >
+> = {
   en: {
     placeholder: "Where are you going?",
     button: "Search",
     slideLabel: "Go to slide"
   },
+  es: {
+    placeholder: "¿A dónde viajas?",
+    button: "Buscar",
+    slideLabel: "Ir al slide"
+  },
+  pt: {
+    placeholder: "Para onde você vai?",
+    button: "Buscar",
+    slideLabel: "Ir para o slide"
+  },
   zh: {
     placeholder: "想去哪里？",
     button: "搜索",
     slideLabel: "跳转到幻灯片"
+  },
+  fr: {
+    placeholder: "Où partez-vous ?",
+    button: "Rechercher",
+    slideLabel: "Aller à la diapositive"
+  },
+  he: {
+    placeholder: "לאן תרצו להגיע?",
+    button: "חיפוש",
+    slideLabel: "מעבר לשקופית"
   }
-} as const;
+};
 
 type LayoutConfig = {
   container: string;
@@ -611,7 +1436,8 @@ const HeroSection = () => {
   const { openDownloadDialog } = useDownloadDialog();
   const { i18n } = useTranslation();
   const locale = resolveLocale(i18n.language);
-  const slides = useMemo(() => heroSlides[locale], [locale]);
+  const slides = useMemo(() => pickLocaleValue(heroSlides, locale), [locale]);
+  const isRtl = locale === "he";
   const hasMultipleSlides = slides.length > 1;
   const extendedSlides = useMemo(() => {
     if (!slides.length) {
@@ -624,8 +1450,8 @@ const HeroSection = () => {
     const lastSlide = slides[slides.length - 1];
     return [lastSlide, ...slides, firstSlide];
   }, [slides, hasMultipleSlides]);
-  const copy = searchCopy[locale];
-  const badges = badgeCopy[locale];
+  const copy = pickLocaleValue(searchCopy, locale);
+  const badges = pickLocaleValue(badgeCopy, locale);
 
   useEffect(() => {
     setCurrentSlide(0);
@@ -757,6 +1583,7 @@ const HeroSection = () => {
           <div
             className={`flex ${isTransitionEnabled ? "transition-transform duration-700 ease-in-out" : ""}`}
             style={{ transform: `translateX(-${carouselIndex * 100}%)` }}
+            dir="ltr"
             onTransitionEnd={handleTrackTransitionEnd}
           >
             {extendedSlides.map((slide, index) => {
@@ -766,7 +1593,7 @@ const HeroSection = () => {
                   <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className={`${slideLayout.container} items-center py-6 md:min-h-[520px] md:py-0`}>
                       {/* Hero content */}
-                      <div className={`${contentBaseClass} ${slideLayout.contentWrapper}`}>
+                      <div className={`${contentBaseClass} ${slideLayout.contentWrapper}`} dir={isRtl ? "rtl" : "ltr"}>
                         <p className="uppercase tracking-[0.4em] text-sm text-brand-teal mb-4">{slide.kicker}</p>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                           {slide.title}

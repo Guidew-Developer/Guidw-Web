@@ -1,49 +1,987 @@
 {
   "nav": {
-    "discover": "גלה",
-    "howItWorks": "איך זה עובד",
-    "becomeExpert": "הפוך למומחה",
-    "downloadApp": "הורד את האפליקציה"
+    "home": "בית",
+    "discover": "גלו",
+    "about": "אודות",
+    "downloadApp": "הורידו את האפליקציה"
+  },
+  "guidew": {
+    "messages": {
+      "orderNotFound": "ההזמנה לא נמצאה",
+      "orderAlreadyCancelled": "ההזמנה כבר בוטלה",
+      "travelerMissing": "פרטי המטייל חסרים",
+      "participantsMissing": "מידע על המשתתפים חסר",
+      "providerProfileMissing": "לא נמצא פרופיל ספק",
+      "providerAccountMissing": "לא נמצא חשבון ספק",
+      "mutualCancellation": "ביטול בהסכמה בתוך שלוש שעות",
+      "cancelledMoreThan3Hours": "בוטל למעלה משלוש שעות מראש",
+      "cancelledOneToThreeHours": "בוטל 1‑3 שעות לפני התחלה",
+      "cancelledLessThanOneHour": "בוטל פחות משעה מראש",
+      "cancelledAfterStart": "בוטל לאחר תחילת השירות",
+      "providerNoShow": "הספק סומן כלא הגיע. הונפק החזר מלא.",
+      "travelerNoShow": "המטייל סומן כלא הגיע. הספק קיבל פיצוי."
+    }
   },
   "search": {
-    "placeholder": "חפש שירותים, מומחים או מיקומים..."
+    "placeholder": "חפשו שירותים, מומחים או ערים..."
   },
   "filter": {
-    "title": "סנן",
+    "title": "סינון",
     "categories": {
-      "all": "הכל",
-      "cityGuide": "מדריך עיר",
+      "all": "הכול",
+      "cityGuide": "מדריך עירוני",
       "translation": "תרגום",
-      "cultural": "חוויה תרבותית",
-      "skills": "הוראת מיומנויות",
-      "food": "חוויה קולינרית",
-      "photography": "צילום"
+      "cultural": "חווייה תרבותית",
+      "skills": "הדרכת מיומנויות",
+      "food": "חוויית אוכל",
+      "photography": "צילום",
+      "localguide": "מדריך מקומי",
+      "emergency": "חירום",
+      "events": "אירועים",
+      "home": "שירותי בית",
+      "skillteaching": "הדרכת מיומנויות",
+      "foodexperience": "חוויית אוכל",
+      "professional": "מיומנויות מקצועיות",
+      "culturalexchange": "חלופת תרבות",
+      "health": "בריאות ורווחה",
+      "petcare": "טיפול בחיות מחמד",
+      "childcare": "טיפול בילדים",
+      "homeorg": "סידור הבית",
+      "shopping": "סטיילינג אישי",
+      "techsupport": "תמיכה טכנית",
+      "financial": "ייעוץ פיננסי",
+      "legal": "ייעוץ משפטי",
+      "artcraft": "אמנות ואומנות",
+      "musicdance": "מוזיקה וריקוד",
+      "gardening": "גינון",
+      "fitness": "אימון כושר",
+      "cooking": "שיעורי בישול",
+      "photovideo": "צילום ווידאו",
+      "languageexchange": "חלופת שפה",
+      "hometutoring": "שיעורים פרטיים בבית",
+      "seniorcare": "ליווי לגיל השלישי",
+      "vrexperience": "חוויית מציאות מדומה",
+      "environmental": "ייעוץ סביבתי",
+      "mentalhealth": "בריאות נפש",
+      "interiordesign": "עיצוב פנים",
+      "eventent": "בידור לאירועים",
+      "giftservices": "מתנות אישיות",
+      "travelplanning": "תכנון נסיעות",
+      "nutritionplanning": "תזונה מותאמת",
+      "travelphotography": "צילום טיולים",
+      "weddingplanning": "תכנון חתונה",
+      "corporatetraining": "הדרכות ארגוניות",
+      "homestaging": "הום סטייג'ינג",
+      "wellnessretreats": "רטריטים של רווחה",
+      "artworkshops": "סדנאות אמנות",
+      "languagelearning": "למידת שפות",
+      "careercounseling": "ליווי קריירה",
+      "financialplanning": "תכנון פיננסי",
+      "homeautomation": "בית חכם",
+      "pettraining": "אילוף חיות מחמד",
+      "childeducation": "חינוך ילדים",
+      "homesecurity": "אבטחת בית",
+      "eventcatering": "קייטרינג לאירועים"
     }
   },
   "common": {
     "loading": "טוען...",
     "error": "אירעה שגיאה",
-    "retry": "נסה שוב"
+    "retry": "נסו שוב",
+    "signIn": "התחברות",
+    "joinNow": "פתיחת חשבון",
+    "featured": "מומלצים",
+    "topPicks": "בחירות מובילות",
+    "explore": "גלו",
+    "learnMore": "למידע נוסף",
+    "availableNow": "זמין כעת"
+  },
+  "home": {
+    "hero": {
+      "title": "מתחברים למומחיות מקומית",
+      "subtitle": "חוו שירותים וחוויות ייחודיים מאנשים שחיים את המקום"
+    },
+    "categories": {
+      "title": "איזו עזרה אתם צריכים?",
+      "subtitle": "ממדריכי עיר ותרגום אישי ועד מיומנויות מיוחדות וחוויות עומק—מצאו את האדם המתאים בכל יעד"
+    },
+    "featured": {
+      "title": "שירותים מומלצים",
+      "subtitle": "הזמנות פופולריות שנבדקו ונבחרו ע\"י משתמשים אמיתיים"
+    },
+    "howItWorks": {
+      "title": "איך זה עובד",
+      "subtitle": "שלושה צעדים פשוטים להתחבר למומחה",
+      "steps": {
+        "discover": {
+          "title": "גלו",
+          "description": "חפשו שירותים ואנשים בעיר שלכם או ביעד הבא"
+        },
+        "book": {
+          "title": "הזמינו",
+          "description": "בחרו תאריך ושעה ואשרו בלחיצה"
+        },
+        "experience": {
+          "title": "תחוו",
+          "description": "פוגשים את המומחה ומקבלים חוויה מותאמת"
+        }
+      }
+    },
+    "cta": {
+      "title": "מוכנים לחוות Guidew?",
+      "subtitle": "אלפי מטיילים ותושבים כבר משתמשים ב-Guidew כדי למצוא אנשים אמיתיים",
+      "findExpert": "מצאו מומחה",
+      "becomeExpert": "הפכו למומחים"
+    }
+  },
+  "how": {
+    "title": "מסע Guidew",
+    "heading": "איך Guidew פועל",
+    "subtitle": "מהרישום ועד הפגישה בשטח—הכול מתועד, שקוף ובטוח",
+    "stepLabel": "שלב {{step}}",
+    "detailLabel": "פרטים",
+    "stepCounter": "שלב {{current}} מתוך {{total}}",
+    "steps": [
+      {
+        "title": "יוצרים ומגלים",
+        "description": "נרשמים בשניות ומתחילים לחקור לפי מפה או קטגוריות.",
+        "detailTitle": "1. בונים פרופיל ומוסיפים העדפות",
+        "detailBody": "מגדירים שפה, מצב משתמש או ספק, ומשתמשים במפה, באוספים ובמסננים שמורים כדי לאתר אנשים מתאימים.",
+        "bullets": [
+          "כניסה עם אימייל או חשבון Google/Apple",
+          "תצוגת מפה לאנשי מקצוע קרובים ותצוגת רשימה לחיפוש גלובלי",
+          "שמירה על שירותים מועדפים והתראות לשירותים חדשים"
+        ]
+      },
+      {
+        "title": "מספרים מה צריך",
+        "description": "מתארים את הצורך, הזמן והמיקום.",
+        "detailTitle": "2. מסבירים בשפה טבעית",
+        "detailBody": "מגדירים סוג שירות, חלון זמנים, משך וכתובת. אפשר להשתמש בשדה המונע ב-AI כדי לתאר בקשות מורכבות—אנחנו מארגנים הכול.",
+        "bullets": [
+          "תיוגים נוחים כמו ריקוד, תרגום או עזרה בחירום",
+          "הוספת חלונות וזירות חלופיים",
+          "העלאת צילומי מסך או מסמכים שיסייעו בהכנה"
+        ]
+      },
+      {
+        "title": "מתאימים ומשוחחים",
+        "description": "Guidew מציג מומחים מאומתים לפי זמן אמת.",
+        "detailTitle": "3. התאמה, צ'אט ויישור ציפיות",
+        "detailBody": "ההתאמה מבוססת על מיקום, זמינות, סטטוס VIP וחוות דעת. משוחחים באפליקציה, מבקשים תוואי עם AI ומחדדים תוספות לפני ההזמנה.",
+        "bullets": [
+          "פרופילים עם תעודות ופורטפוליו",
+          "טיוטות מסלול חכמות לשני הצדדים",
+          "תרגום בזמן אמת לשיחה דו-לשונית"
+        ]
+      },
+      {
+        "title": "מאשרים ומשלמים",
+        "description": "Stripe מחזיק את הכסף בנאמנות.",
+        "detailTitle": "4. אישור ותשלום מאובטח",
+        "detailBody": "מאשרים דרך Stripe (תמיכה ב-Apple Pay/Google Pay בקרוב). הכסף נשמר עד ששני הצדדים מאשרים שהכול בוצע.",
+        "bullets": [
+          "נאמנות Stripe שקופה",
+          "משתמשי VIP לא משלמים עמלת גיוס וזוכים לתיעדוף",
+          "תמיכה בטיפים, החזר חלקי ותוספים"
+        ]
+      },
+      {
+        "title": "חווים את השטח",
+        "description": "נפגשים עם המומחה וחווים את העיר לעומק.",
+        "detailTitle": "5. מפגש מתועד ומגובה",
+        "detailBody": "מקבלים הוראות ניווט, משתפים מיקום חי ושומרים אנשים לחירום. בסיום ניתן לתת טיפ, חוות דעת או להאריך את השירות בלחיצה.",
+        "bullets": [
+          "צ'ק אין/אאוט לשני הצדדים",
+          "התרעות על הפגישה הבאה",
+          "חוות דעת הדדיות פותחות תגמולים וסמלים"
+        ]
+      }
+    ],
+    "safety": [
+      {
+        "title": "זהויות מאומתות",
+        "description": "בדיקות זהות מותאמות לרגישות השירות.",
+        "detailTitle": "שכבות אימות",
+        "detailBody": "תעודה ממשלתית, בדיקת חיוניות, תעודות מקצועיות ותעודת יושר. שירותים שנכנסים לבית או לילדים דורשים בדיקה נוספת.",
+        "bullets": [
+          "תעודה + אימות פנים",
+          "תעודות מקצועיות או רישיונות",
+          "הכנסת אורחים בבית = בדיקת רקע"
+        ]
+      },
+      {
+        "title": "תשלומים מוגנים",
+        "description": "עמלה אחידה + נאמנות ברורה.",
+        "detailTitle": "תשלום בטוח",
+        "detailBody": "Guidew גובה עמלה קבועה של 15%. הכסף משוחרר רק אחרי אישור שני הצדדים. VIP נהנים מאפס עמלת גיוס ותמיכה ייעודית.",
+        "bullets": [
+          "נאמנות Stripe מתועדת",
+          "VIP = ללא עמלה + קדימות",
+          "תמיכה בטיפים, זיכויים ותוספים"
+        ]
+      },
+      {
+        "title": "חוות דעת הדדיות",
+        "description": "משובים מתואמים ופתרון מחלוקות.",
+        "detailTitle": "מערכת חוות דעת",
+        "detailBody": "החוות נשארות פרטיות עד שהצד השני מגיש או עד שעוברים 7 ימים. במקרה של מחלוקת נעזרים בשיחה, במיקום ובמסמכים.",
+        "bullets": [
+          "חוות דעת נסתרות עד לשליחה הדדית",
+          "הגשת מחלוקת בלחיצה עם קבצים",
+          "כללי ביטול ועונשים שקופים"
+        ]
+      }
+    ],
+    "providerTitle": "לספקים",
+    "providerSubtitle": "בנו חלון ראווה אמין ושמרו על שליטה מלאה",
+    "provider": [
+      {
+        "title": "אפליקציית ספק",
+        "description": "לוח הזדמנויות וניהול זמינות במקום אחד.",
+        "detailTitle": "1. מצב ספק",
+        "detailBody": "ניגשים ללוח הבקשות, להזמנות, לצ'אט ולארנק באפליקציה אחת. VIP מפעילים קבלה אוטומטית ומגדירים רדיוס תנועה.",
+        "bullets": [
+          "סינון הבקשות לפי אזור או קטגוריה",
+          "מעבר מהיר בין קבלה אוטומטית לאישור ידני",
+          "תכנון שבועי של זמינות"
+        ]
+      },
+      {
+        "title": "מבליטים את היכולות",
+        "description": "סרטונים, אודיו, תעודות ותמונות.",
+        "detailTitle": "2. יוצרים חלון ראווה",
+        "detailBody": "מעלים מצגות, תעודות ותמונות. מוסיפים תגיות שירות, שעות מינימום, הוצאות כלולות ושפות. ה-AI מסייע בכתיבה.",
+        "bullets": [
+          "תעודות הופכות לסמלים",
+          "הגדרת חבילות ותוספות",
+          "ביו רב-לשוני וברכות קוליות"
+        ]
+      },
+      {
+        "title": "מבצעים ומקבלים",
+        "description": "ניהול תקשורת, מסלולי AI ותיעוד ברור.",
+        "detailTitle": "3. מבצעים את ההזמנה",
+        "detailBody": "תאום פרטים בצ'אט, שימוש במסלולי AI, העלאת תוצרים ושחרור כספים לאחר אישור הלקוח.",
+        "bullets": [
+          "בונה מסלולים חכם עם הערכת עלות",
+          "הארכת הזמנה או שינוי מחיר בלחיצה",
+          "ארנק שמציג סכומים זמינים וממתינים"
+        ]
+      }
+    ],
+    "ctaTitle": "רוצים להציע או לקבל מומחיות מקומית?",
+    "ctaSubtitle": "הורידו את האפליקציה להזמנה מהירה או להפיכת הכישרון להכנסה.",
+    "downloadBtn": "הורידו את Guidew",
+    "learnBtn": "גלו באפליקציה"
+  },
+  "discover": {
+    "title": "גלו שירותים",
+    "subtitle": "שירות מדויק לכל צורך—זמין עכשיו",
+    "noResults": "לא נמצאו שירותים תואמים. נסו לשנות מסננים.",
+    "categoryTitles": {
+      "cityGuide": "מדריך מקומי",
+      "translation": "תרגום",
+      "cultural": "חוויות תרבות",
+      "skillTeaching": "הדרכת מיומנויות",
+      "foodExperience": "חוויות אוכל",
+      "photography": "שירותי צילום",
+      "emergency": "חירום",
+      "events": "תכנון אירועים",
+      "home": "שירותי בית",
+      "professional": "פיתוח מקצועי",
+      "culturalExchange": "חלופת תרבות",
+      "health": "בריאות ורווחה",
+      "petCare": "טיפול בחיות",
+      "childcare": "בייביסיטר",
+      "homeOrg": "ארגון הבית",
+      "shopping": "סטיילינג אישי",
+      "techSupport": "תמיכה טכנית",
+      "financial": "ייעוץ פיננסי",
+      "legal": "ייעוץ משפטי",
+      "artCraft": "סדנאות אמנות",
+      "musicDance": "שיעורי מוזיקה/ריקוד",
+      "gardening": "גינון",
+      "fitness": "אימון אישי",
+      "cooking": "סדנאות בישול",
+      "photoVideo": "צילום ווידאו",
+      "languageExchange": "תכניות שפה",
+      "homeTutoring": "שיעורים בבית",
+      "seniorCare": "ליווי לגיל השלישי",
+      "vrExperience": "מציאות מדומה",
+      "environmentalConsulting": "ייעוץ סביבתי",
+      "mentalHealth": "תמיכה נפשית",
+      "interiordesign": "עיצוב פנים",
+      "eventEntertainment": "בידור לאירועים",
+      "giftServices": "מתנות אישיות",
+      "travelPlanning": "תכנון נסיעות",
+      "nutritionPlanning": "תזונה מותאמת",
+      "travelPhotography": "צילום טיולים",
+      "weddingPlanning": "חתונה",
+      "corporateTraining": "הדרכות ארגוניות",
+      "homestaging": "הום סטייג'ינג",
+      "wellnessretreats": "רטריטי רווחה",
+      "artworkshops": "סדנאות אמנות",
+      "languagelearning": "למידת שפות",
+      "careercounseling": "ליווי קריירה",
+      "financialplanning": "תכנון פיננסי",
+      "homeautomation": "בית חכם",
+      "pettraining": "אילוף",
+      "childeducation": "חינוך ילדים",
+      "homesecurity": "אבטחת בית",
+      "eventcatering": "קייטרינג"
+    }
+  },
+  "howItWorks": {
+    "title": "כך זה עובד",
+    "subtitle": "מוצאים מומחה בשלושה צעדים",
+    "steps": {
+      "discover": {
+        "title": "גלו",
+        "description": "חפשו וסננו שירותים מקומיים"
+      },
+      "book": {
+        "title": "הזמינו",
+        "description": "בחרו את האדם והזמן המתאים"
+      },
+      "experience": {
+        "title": "תחוו",
+        "description": "תיהנו משירות מותאם אישית"
+      }
+    }
+  },
+  "become": {
+    "title": "הפכו למומחי Guidew",
+    "heading": "בונים סטודיו אישי",
+    "subtitle": "הפכו ריקוד, תרגום, ליווי או סיוע לשירות פרימיום. Guidew מטפלת באימות, בכלי AI ובתשלומים שקופים כדי שתתמקדו בחוויה.",
+    "cta": "מתחילים הרשמה",
+    "pillars": [
+      {
+        "title": "גמישות מלאה",
+        "description": "בוחרים שעות ורדיוס פעילות. זמינות מידית בלחיצה."
+      },
+      {
+        "title": "ביקוש אמיתי",
+        "description": "לקוחות שמגיעים לאוקלנד/וולינגטון וגם תושבים מזמינים סדנאות פרטיות ואירועים."
+      },
+      {
+        "title": "תגמול גבוה",
+        "description": "שומרים את רוב ההכנסה בזמן שהפלטפורמה דואגת לשיווק, תשלומים ופיתרון מחלוקות."
+      }
+    ],
+    "processTitle": "תהליך בן 4 שלבים",
+    "processSubtitle": "ליווי אישי לאורך כל הדרך",
+    "processStepLabel": "שלב {{step}}",
+    "processDetail": "פרטים",
+    "processCounter": "{{current}}/{{total}}",
+  "processSteps": [
+      {
+        "title": "זהות ורקע",
+        "description": "העלאת מסמכים ותעודות.",
+        "detailTitle": "1. אימות זהות",
+        "detailBody": "מספקים תעודה רשמית, מבצעים בדיקת חיוניות ומעלים תעודות או רישיונות. שירותי בית/ילדים דורשים אישור רקע.",
+        "bullets": [
+          "תעודה + אימות פנים",
+          "תעודות מקצועיות או תעודות ממשלתיות",
+          "מי שנכנס לבית נדרש להציג רישום פלילי נקי"
+        ]
+      },
+    {
+      "title": "חלון ראווה",
+      "description": "מקליטים הצגה עצמית, מגדירים מחירים והיקף.",
+      "detailTitle": "2. מציגים את עצמכם",
+      "detailBody": "וידאו, אודיו, תעודות ותמונות. מוסיפים תגיות, שעות מינימום, הוצאות כלולות ושפות. הטקסטים מקבלים סיוע מה-AI.",
+      "bullets": [
+        "מגדירים כמה חבילות שירות ותוספות paid",
+        "ה-AI מסייע ללטש את הטקסטים ואת ההצגה האישית",
+        "מעלים גלריות, פלייליסטים או דוגמאות מסלולים"
+      ]
+    },
+    {
+      "title": "אימון תפעולי",
+      "description": "מכירים את לוח הבקשות ואת כלי ה-AI.",
+      "detailTitle": "3. שולטים בלוח",
+      "detailBody": "מבינים איך המלצות מגיעות, איך פועל Auto-Accept במצב VIP ואיך לתקשר עם הלקוחות.",
+      "bullets": [
+        "מטרות זמן תגובה ותגמולים בדמות Badges",
+        "בונה מסלולים מבוסס AI עם בלוקים ניתנים לעריכה",
+        "צ'ק-ליסט בטיחות לפני כל מפגש עם לקוח"
+      ]
+    },
+    {
+      "title": "השקה וצמיחה",
+      "description": "עולים לאוויר, מקבלים חוות דעת ומגדילים הכנסה.",
+      "detailTitle": "4. יוצאים לדרך",
+      "detailBody": "מתחילים לקבל הזמנות, אוספים חוות דעת הדדיות ופותחים כלי VIP כמו קבלה אוטומטית ומנטורינג.",
+      "bullets": [
+        "תשלומים בנאמנות משתחררים תוך 7 ימים",
+        "ספקי VIP מקבלים ערכות שיווק המבוססות AI",
+        "סדנאות רבעוניות ללימוד תמחור ואפסלים"
+      ]
+    }
+  ],
+  "benefitsTitle": "למה משתלם להיות מומחה Guidew",
+  "benefitsSubtitle": "Infrastructure מקצועית בלי לוותר על עצמאות",
+  "benefits": [
+    {
+      "title": "הכנסה גבוהה",
+      "description": "Guidew שומרת רק 15% כדי לממן שיווק, תשלומים ותמיכה."
+      },
+      {
+        "title": "כלי VIP",
+        "description": "הסטטוס מעניק קבלה אוטומטית, מסלולי AI וקדימות בחיפושים."
+      },
+      {
+        "title": "פניות יומיומיות",
+        "description": "מטיילים, עסקים מקומיים והזמנות חירום זורמים למערכת."
+      },
+      {
+        "title": "תמיכה אנושית + AI",
+        "description": "ליווי בהקמת הפרופיל, בניסוחים ובניהול הבירוקרטיה."
+      }
+  ],
+  "requirementsTitle": "מה צריך להביא",
+  "requirementsSubtitle": "הבסיס שמחזיק Marketplace אמין ובטוח",
+  "requirements": [
+      "תעודה מזהה תקפה וסלפי עדכני",
+      "אישור כתובת לשימוש במערכת התשלומים",
+      "תעודות מקצועיות או תיק עבודות",
+      "טלפון חכם שמריץ את אפליקציית Guidew",
+      "יכולת תקשורת באנגלית או מנדרינית (שפות נוספות מבורכות)",
+      "הסכמה למדיניות הבטיחות, הביטול וחוות הדעת"
+    ],
+    "downloadCta": "הורידו את אפליקציית הספק",
+    "ctaTitle": "רוצים להציע או לקבל מומחיות מקומית?",
+    "ctaSubtitle": "הורידו את האפליקציה והתחילו להזמין או להרוויח מהרגע הראשון."
+  },
+  "serviceDetail": {
+    "availableNow": "זמין עכשיו",
+    "description": "תיאור",
+    "includes": "מה כלול",
+    "languages": "שפות",
+    "reviews": "חוות דעת",
+    "experience": "ניסיון",
+    "responseTime": "זמן תגובה",
+    "messageProvider": "הודעה לספק",
+    "selectDate": "בחרו תאריך",
+    "selectTime": "בחרו שעה",
+    "bookNow": "הזמינו עכשיו",
+    "requestNow": "שלחו בקשה",
+    "secureBooking": "הזמנה ותשלום מאובטחים",
+    "pricePerHour": "לשעה",
+    "groupSize": "יחיד או קבוצה קטנה",
+    "verified": "מאומת",
+    "tabs": {
+      "details": "פרטים",
+      "reviews": "חוות דעת",
+      "provider": "ספק"
+    }
+  },
+  "serviceCard": {
+    "availableNow": "זמין עכשיו"
+  },
+  "userApp": {
+    "thirdParty": {
+      "title": "שיתופי פעולה מומלצים",
+      "items": {
+        "skyTower": "הזמינו כרטיסים למגדל השמיים באוקלנד",
+        "intercity": "שריינו נסיעה באוטובוס InterCity",
+        "rentalCar": "שכרו רכב לטיול הבא",
+        "danceShoes": "הזמינו נעלי טנגו/סלסה"
+      },
+      "disclaimer": "חלק מהשותפים משלמים ל-Guidew עמלת שיווק."
+    }
+  },
+  "dashboard": {
+    "upcoming": {
+      "title": "שירותים קרובים",
+      "empty": "אין שירותים מתוכננים כרגע.",
+      "duration": "{{hours}} ש׳",
+      "status": "סטטוס: {{status}}"
+    },
+    "status": {
+      "awaiting-provider": "ממתין לספק",
+      "accepted": "התקבל",
+      "in-progress": "בתהליך",
+      "awaiting-review": "ממתין לביקורת",
+      "completed": "הושלם",
+      "cancelled": "בוטל"
+    },
+    "providerFeed": {
+      "title": "בקשות חיות",
+      "empty": "אין הזמנות חדשות כרגע—השאירו את האפליקציה פתוחה כדי להקדים את הבקשה הבאה.",
+      "grab": "לתפוס",
+      "durationEarnings": "משך: {{hours}} שעות · רווח ${{earnings}}",
+      "travelEstimate": "זמן נסיעה משוער: {{minutes}} דקות",
+      "arrivalOnTime": "מגיעים בזמן",
+      "arrivalRisk": "סיכון לעיכוב"
+    },
+    "timeline": {
+      "title": "ציר הזמן של השירות",
+      "empty": "אין הזמנות עדיין. התחילו בבקשת השירות הראשונה שלכם."
+    },
+    "wallet": {
+      "title": "ארנק ומנוי VIP",
+      "refresh": "רענון יתרות",
+      "available": "זמין",
+      "pending": "ממתין לשחרור",
+      "withdrawable": "זמין למשיכה",
+      "vipTitle": "מנוי VIP",
+      "vipActive": "תיהנו מקונסיירז' AI, ללא עמלות הזמנה ותיעדוף בבקשות.",
+      "vipInactive": "שדרגו כדי לפתוח קונסיירז' AI, שיגור אוטומטי והטבות עמלה.",
+      "vipCancel": "ביטול VIP",
+      "vipActivate": "הפעלת VIP (‎$9.9 לחודש)",
+      "lastUpdated": "עודכן לאחרונה {{time}}"
+    },
+    "achievements": {
+      "title": "הישגים",
+      "empty": "השלימו הזמנות כדי לצבור תגי אמון.",
+      "earned": "הושג בתאריך {{date}}",
+      "templates": {
+        "user-first-booking": {
+          "title": "ההרפתקה הראשונה",
+          "description": "השלמת את ההזמנה הראשונה ב‑Guidew."
+        },
+        "provider-first-order": {
+          "title": "לקוח ראשון",
+          "description": "סיפקת את השירות הראשון שלך ב‑Guidew."
+        },
+        "provider-5-orders": {
+          "title": "מקומי אמין",
+          "description": "השלמת בהצלחה 5 שירותים."
+        },
+        "provider-50-orders": {
+          "title": "אגדת העיר",
+          "description": "השלמת בהצלחה 50 שירותים."
+        },
+        "user-3-cities": {
+          "title": "מגלה עולם",
+          "description": "הזמנת שירותים בשלוש ערים שונות."
+        }
+      }
+    },
+    "review": {
+      "title": "השאירו חוות דעת",
+      "empty": "בחרו הזמנה שהושלמה כדי להשאיר משוב.",
+      "overallLabel": "חוויית השירות הכוללת",
+      "worth": "שווה",
+      "notWorth": "לא שווה",
+      "detailsLabel": "פרטים נוספים",
+      "tipLabel": "טיפ אופציונלי",
+      "tipButton": "‏${{amount}}",
+      "tipSkip": "ללא טיפ",
+      "tipSend": "שליחת טיפ של ${{amount}}",
+      "submit": "שליחת חוות דעת",
+      "defaultComment": "שירות מצוין ותקשורת חלקה!"
+    },
+    "request": {
+      "title": "הזמינו מומחה מקומי",
+      "description": "פרטו את הצורך שלכם; VIP יכולים לתאר בשפה חופשית לקבלת התאמות AI.",
+      "activeWarning": "יש לכם הזמנה פעילה ב-{{time}}. הזמנות חדשות יותאמו סביב הזמן הזה.",
+      "serviceLabel": "סוג השירות",
+      "servicePlaceholder": "בחרו שירות",
+      "providerLabel": "ספק מועדף",
+      "providerPlaceholder": "בחרו ספק",
+      "startLabel": "תאריך ושעת התחלה",
+      "durationLabel": "משך (שעות)",
+      "locationLabel": "מיקום השירות",
+      "locationPlaceholder": "כתובת או נקודת מפגש",
+      "itineraryLabel": "זקוקים למסלול מראש?",
+      "itineraryYes": "כן, שלחו מסלול",
+      "itineraryNo": "לא, נשאיר גמיש",
+      "aiLabel": "תארו את הצורך (Concierge AI)",
+      "aiButton": "יצירת מומחים מומלצים",
+      "speaksLanguages": "דובר {{languages}}",
+      "submit": "שליחת בקשת הזמנה"
+    },
+    "activeOrder": {
+      "title": "שירות פעיל",
+      "empty": "אין שירות פעיל כעת. עברו לתור הבקשות כדי לתפוס הזמנה חדשה.",
+      "durationEarnings": "משך {{hours}} שעות · הכנסה ${{earnings}}",
+      "aiButton": "יצירת מסלול בינה",
+      "submitItinerary": "שליחת מסלול",
+      "vipUpsell": "שדרגו ל‑VIP כדי לקבל מסלולים אוטומטיים והתראות איחור.",
+      "start": "התחלת שירות",
+      "complete": "סיום",
+      "reportNoShow": "דיווח על אי הגעת מטייל",
+      "defaultItinerary": "קבלת פנים בבית קפה מקומי\nסיור בנקודות החובה בעיר\nארוחת צהריים על קו המים"
+    },
+    "profileForm": {
+      "title": "פרופיל ספק",
+      "bio": "ביוגרפיה",
+      "hourlyRate": "תעריף לשעה",
+      "minHours": "מספר שעות מינימלי",
+      "tags": "תגיות",
+      "tagsPlaceholder": "מדריך עירוני, תרגום",
+      "languages": "שפות",
+      "languagesPlaceholder": "אנגלית, מנדרינית",
+      "travelRadius": "רדיוס שירות (ק\"מ)",
+      "expensesLabel": "האם המחיר כולל הוצאות?",
+      "expensesIncluded": "כולל הוצאות",
+      "expensesExcluded": "הוצאות נפרדות",
+      "expensePlaceholder": "כרטיסים, דלק ואגרות לפי עלות",
+      "certifications": "אישורים והוכחות",
+      "certificationPlaceholder": "קישור לאישור",
+      "uploadProof": "העלאת הוכחה",
+      "serviceMedia": "מדיה של השירות",
+      "mediaTypes": {
+        "image": "תמונה",
+        "video": "וידאו",
+        "document": "מסמך"
+      },
+      "mediaPlaceholder": "https://example.com/portfolio",
+      "addMedia": "הוספת מדיה",
+      "mediaBadge": "הוכחת {{type}}",
+      "remove": "הסרה",
+      "mediaEmpty": "העלו תמונות, סרטונים או מסמכים שממחישים את המקצועיות שלכם.",
+      "save": "שמירת פרופיל"
+    },
+    "reviewHistory": {
+      "title": "חוות דעת שפורסמו",
+      "empty": "עדיין אין ביקורות ציבוריות. השלימו משימות ושתפו משוב כדי לבנות אמון.",
+      "serviceFallback": "שירות מותאם",
+      "counterpartFallback": "לקוח",
+      "decisions": {
+        "worth": "שווה שיתוף פעולה",
+        "not-worth": "פחות מוצלח",
+        "again": "אשמח לעבוד שוב",
+        "no": "מעדיף שלא"
+      },
+      "published": "פורסם ב‑{{date}}"
+    },
+    "providerFilters": {
+      "title": "מסנני ספקים",
+      "tags": "תגיות",
+      "tagsEmpty": "לא הוגדרו תגיות עדיין.",
+      "languages": "שפות",
+      "languagesEmpty": "הספקים טרם ציינו שפות.",
+      "vipOnly": "VIP בלבד",
+      "autoAcceptOnly": "קבלה אוטומטית",
+      "minRating": "דירוג מינימלי {{rating}}",
+      "reset": "איפוס מסננים"
+    },
+    "providerList": {
+      "serviceFallback": "חבילת שירות",
+      "meta": "{{city}} · {{distance}} · {{languages}}",
+      "rate": "${{rate}} לשעה",
+      "minHours": "מינימום {{hours}} שעות",
+      "verifications": "אימותים",
+      "certifications": "{{count}} אישורים הועלו",
+      "rating": "דירוג",
+      "ratingDetail": "{{rating}} · {{trips}} משימות"
+    },
+    "orderActions": {
+      "title": "ניהול הזמנה",
+      "empty": "בחרו הזמנה מתוזמנת כדי לבטל או לדווח על אי הופעה.",
+      "cancel": "ביטול הזמנה",
+      "mutual": "ביטול בהסכמה",
+      "reportProvider": "דיווח על אי הגעת ספק",
+      "instructions": "מדיניות הביטולים של Guidew חלה בכל מקרה. ביטול הדדי בתוך שלוש שעות מזכה את הלקוח ב‑85%. לאחר שעת ההתחלה ניתן לדווח על אי הופעת הספק ולהחזיר את מלוא הסכום."
+    },
+    "timelineEvents": {
+      "orderCreated": "{{name}} יצר הזמנה",
+      "paymentAuthorized": "התשלום אושר דרך Stripe",
+      "autoAccepted": "ההזמנה התקבלה אוטומטית על ידי ספק VIP",
+      "itinerarySubmitted": "מסלול נשלח",
+      "providerAccepted": "הספק אישר את השירות",
+      "serviceStarted": "השירות החל",
+      "serviceCompleted": "השירות הושלם",
+      "cancelledUser": "מטייל ביטל את ההזמנה",
+      "cancelledProvider": "הספק ביטל את ההזמנה",
+      "cancelledMutual": "ההזמנה בוטלה בהסכמה",
+      "providerNoShow": "דווח על אי הגעת הספק",
+      "travelerNoShow": "דווח על אי הגעת המטייל",
+      "tipAdded": "טיפ נוסף להזמנה",
+      "reviewSubmittedTraveler": "המטייל השאיר חוות דעת",
+      "reviewSubmittedProvider": "הספק השאיר חוות דעת"
+    },
+    "itinerary": {
+      "header": "שירות {{service}} עם מומחה {{city}} {{expert}}",
+      "travel": "נדרש לצאת כ‑{{minutes}} דקות לפני (חישוב אוטומטי)",
+      "wrapUp": "סיכום ופידבק",
+      "phase": "שלב {{index}}: {{item}}",
+      "defaults": [
+        "מפגש היכרות והגדרת ציפיות",
+        "חוויית ליבה מותאמת אישית",
+        "סיכום וליווי להמשך"
+      ],
+      "tags": {
+        "city-guide": [
+          "קבלת פנים בבית קפה שכונתי",
+          "סיור ברבעים היסטוריים ובסמטאות נסתרות",
+          "נקודת תצפית לצילום",
+          "טעימות במקומות אהובים"
+        ],
+        "translation": [
+          "יישור מושגים לפני הפגישה",
+          "תמיכת תרגום בזמן אמת",
+          "סיכום והטמעת ביטויים מרכזיים"
+        ],
+        "food": [
+          "ביקור בשוק והיכרות עם חומרי גלם",
+          "תפריט טעימות במסעדה מקומית",
+          "עצירת קינוח במוסד איקוני"
+        ],
+        "dance": [
+          "חימום ובסיס",
+          "עבודה מודרכת על כוריאוגרפיה",
+          "תרגול חופשי עם משוב"
+        ],
+        "adventure": [
+          "בדיקת בטיחות וציוד",
+          "תדריך מסלול או פעילות",
+          "חוויית שטח מודרכת עם עצירות צילום"
+        ]
+      }
+    }
+  },
+  "skillDetail": {
+    "notFound": "לא נמצאו פרטי השירות",
+    "modeLabel": "אופן השירות",
+    "highlights": "מאפיינים עיקריים",
+    "detailsTitle": "פירוט השירות",
+    "certifications": "אישורים",
+    "faq": "שאלות נפוצות",
+    "reviews": "חוות דעת משתמשים",
+    "timeLabel": "זמני זמינות",
+    "galleryAlt": "תמונה {{index}}",
+    "verified": "מאומת"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "הדף לא קיים",
+    "description": "לא מצאנו את הדף שחיפשתם. אולי החוויה נמצאת בנתיב אחר.",
+    "actions": {
+      "home": "חזרה לדף הבית",
+      "discover": "גלו שירותים"
+    }
+  },
+  "download": {
+    "title": "הורידו את Guidew",
+    "subtitle": "שמרו על גישה למומחיות מקומית בכל רגע",
+    "getApp": "הורדת האפליקציה",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "features": {
+      "instant": "הזמנה מיידית",
+      "personalized": "התאמה אישית",
+      "secure": "תשלומים מוגנים",
+      "chat": "צ'אט בזמן אמת"
+    }
+  },
+  "useCase": {
+    "localGuide": {
+      "title": "ליווי מקומי",
+      "description": "מישהו שמכיר את העיר מצטרף אליכם"
+    },
+    "translation": {
+      "title": "תרגום על המקום",
+      "description": "איש צוות שמנתב דו\"ח, ישיבה או רכש"
+    },
+    "skillsLearning": {
+      "title": "למידה מהירה",
+      "description": "לומדים מיומנות חדשה בקצב שלכם"
+    },
+    "emergency": {
+      "title": "סיוע חירום",
+      "description": "מומחה שמגיע כשהכול נתקע"
+    },
+    "events": {
+      "title": "אירועים",
+      "description": "אנשי צוות שמרימים אירוע בשעות ספורות"
+    },
+    "home": {
+      "title": "שירותי בית",
+      "description": "תיקונים, סידור והשלמות"
+    },
+    "travel": {
+      "title": "טיולים מותאמים",
+      "description": "מסלולים שיצרו בני המקום"
+    },
+    "professional": {
+      "title": "פיתוח מקצועי",
+      "description": "מנטורים שממציאים קריירה מחדש"
+    },
+    "culturalExchange": {
+      "title": "חוויית תרבות",
+      "description": "היכרות עם מסורת, מטבח ושפה"
+    },
+    "health": {
+      "title": "בריאות",
+      "description": "מטפלים אישיים לפי צורך"
+    },
+    "petCare": {
+      "title": "טיפול בחיות",
+      "description": "מישהו שמטפל בחבר על ארבע"
+    },
+    "childcare": {
+      "title": "בייביסיטר",
+      "description": "סיוע אמין למשפחה"
+    },
+    "homeOrg": {
+      "title": "ארגון",
+      "description": "פתרונות לסדר חדש בבית"
+    },
+    "shopping": {
+      "title": "סטיילינג אישי",
+      "description": "מומחה אופנה שמלווה אתכם"
+    },
+    "techSupport": {
+      "title": "תמיכה טכנית",
+      "description": "פתרון תקלות במכשירים"
+    },
+    "financial": {
+      "title": "ייעוץ כספי",
+      "description": "אסטרטגיה מדויקת לכסף שלכם"
+    },
+    "legal": {
+      "title": "ייעוץ משפטי",
+      "description": "תשובות מקצועיות בזמן אמת"
+    },
+    "artCraft": {
+      "title": "סדנאות יצירה",
+      "description": "מתמסרים להשראה"
+    },
+    "musicDance": {
+      "title": "מוזיקה וריקוד",
+      "description": "שיעורים עם אמנים אמיתיים"
+    },
+    "gardening": {
+      "title": "גינון",
+      "description": "אמנים לנוף ולמרפסת"
+    },
+    "fitness": {
+      "title": "אימון אישי",
+      "description": "תכנית מותאמת לגוף ולזמן שלכם"
+    },
+    "cooking": {
+      "title": "שיעורי בישול",
+      "description": "לומדים טעמים חדשים"
+    },
+    "photoVideo": {
+      "title": "צילום",
+      "description": "מקבלים תיעוד מקצועי"
+    },
+    "languageExchange": {
+      "title": "חלופת שפה",
+      "description": "תרגול עם דוברי אם"
+    },
+    "homeTutoring": {
+      "title": "שיעורים פרטיים",
+      "description": "תמיכה לימודית בבית"
+    },
+    "seniorCare": {
+      "title": "ליווי לגיל השלישי",
+      "description": "אנשים עם לב גדול"
+    },
+    "vrExperience": {
+      "title": "מציאות מדומה",
+      "description": "חוויות לימוד ובידור"
+    },
+    "environmentalConsulting": {
+      "title": "ייעוץ סביבתי",
+      "description": "מיישמים קיימות בבית ובעסק"
+    },
+    "mentalHealth": {
+      "title": "תמיכה נפשית",
+      "description": "שיחה עם אנשי מקצוע"
+    },
+    "interiordesign": {
+      "title": "עיצוב פנים",
+      "description": "הופכים חללים ליחודיים"
+    },
+    "eventEntertainment": {
+      "title": "בידור",
+      "description": "מוזיקה, אורחים וקסם לאירוע"
+    },
+    "giftServices": {
+      "title": "מתנות",
+      "description": "פריטים אישיים עם משמעות"
+    },
+    "travelPlanning": {
+      "title": "תכנון טיולים",
+      "description": "מסלול אישי מאנשים שחיים את היעד"
+    },
+    "nutritionPlanning": {
+      "title": "תזונה",
+      "description": "תכנית מותאמת לבריאות"
+    },
+    "travelPhotography": {
+      "title": "צילום מסע",
+      "description": "זיכרונות מקצועיים מהטיול"
+    },
+    "weddingPlanning": {
+      "title": "תכנון חתונה",
+      "description": "ליווי מלא ליום הגדול"
+    },
+    "corporateTraining": {
+      "title": "הדרכות ארגוניות",
+      "description": "סדנאות מותאמות לצוות"
+    },
+    "homestaging": {
+      "title": "הום סטייג'ינג",
+      "description": "מעלים ערך לפני מכירה"
+    },
+    "wellnessRetreats": {
+      "title": "רטריטי רווחה",
+      "description": "דיטוקס לגוף ולנפש"
+    },
+    "artWorkshops": {
+      "title": "סדנאות אמנות",
+      "description": "מסע יצירתי מונחה"
+    },
+    "languageLearning": {
+      "title": "למידת שפה",
+      "description": "מורים פרטיים בקצב שלכם"
+    },
+    "careerCounseling": {
+      "title": "ליווי קריירה",
+      "description": "מביטים קדימה עם מנטור"
+    },
+    "financialPlanning": {
+      "title": "תכנון פיננסי",
+      "description": "מאורגנים לעתיד בטוח"
+    },
+    "homeAutomation": {
+      "title": "בית חכם",
+      "description": "הופכים את הבית לחכם ומחובר"
+    },
+    "petTraining": {
+      "title": "אילוף",
+      "description": "התנהגות טובה לחברים על ארבע"
+    },
+    "childEducation": {
+      "title": "חינוך ילדים",
+      "description": "תמיכה פדגוגית מותאמת"
+    },
+    "homeSecurity": {
+      "title": "אבטחת בית",
+      "description": "פתרונות שמגנים על המשפחה"
+    },
+    "eventCatering": {
+      "title": "קייטרינג",
+      "description": "תפריטים מותאמים עם שירות מקצועי"
+    }
   },
   "blog": {
     "hero": {
       "badge": "בלוג Guidew",
-      "title": "תובנות, סיפורים והשראה עירונית",
-      "description": "גלו כיצד Guidew בונה רשת כישורים מקומית ואמינה, יחד עם עדכוני תפעול בערים, השקות VIP וסיפורי קהילה."
+      "title": "סיפורים, תובנות והשראה עירונית",
+      "description": "הצצה לאיך Guidew בונה רשת מומחיות אנושית—חדשות אופרטיביות, השקות VIP וסיפורים מהשטח."
     },
     "list": {
       "readStory": "לקריאת הסיפור →"
     },
     "detail": {
       "allArticles": "כל המאמרים",
-      "ctaTitle": "אהבתם את המאמר?",
-      "ctaSubtitle": "התנסו בשירותים מקומיים אמיתיים באפליקציית Guidew או עקבו אחרי סיפור העיר הבא שלנו.",
-      "ctaPrimary": "עיינו בשירותים",
-      "ctaSecondary": "הפכו לספקים"
+      "ctaTitle": "נהניתם לקרוא?",
+      "ctaSubtitle": "חוו שירותים אמיתיים באפליקציה או עקבו אחרי הסיפור הבא.",
+      "ctaPrimary": "גלו שירותים",
+      "ctaSecondary": "הצטרפו כמומחים"
     },
     "notFound": {
       "title": "המאמר לא נמצא",
-      "description": "חזרו לבלוג כדי לראות את סיפורי העיר והעדכוני המוצר האחרונים.",
+      "description": "חזרו לבלוג כדי לקרוא את הסיפורים והעדכונים האחרונים.",
       "cta": "חזרה לבלוג"
     }
   }

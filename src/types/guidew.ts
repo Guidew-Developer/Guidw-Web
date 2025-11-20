@@ -126,6 +126,8 @@ export interface OrderTimelineEvent {
     | "tip-added"
     | "review-submitted";
   description: string;
+  translationKey?: string;
+  translationValues?: Record<string, string | number>;
 }
 
 export interface OrderRecord {
@@ -220,4 +222,3 @@ export type GuidewAction =
   | { type: "UPDATE_USER"; payload: BaseUser }
   | { type: "UPSERT_USERS"; payload: BaseUser[] }
   | { type: "UPSERT_PROVIDER_BATCH"; payload: ProviderProfile[] };
-

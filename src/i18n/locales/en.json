@@ -5,6 +5,23 @@
     "about": "About",
     "downloadApp": "Download App"
   },
+  "guidew": {
+    "messages": {
+      "orderNotFound": "Order not found",
+      "orderAlreadyCancelled": "Order already cancelled",
+      "travelerMissing": "Traveler missing",
+      "participantsMissing": "Participants missing",
+      "providerProfileMissing": "Provider profile missing",
+      "providerAccountMissing": "Provider account missing",
+      "mutualCancellation": "Mutual cancellation within 3 hours",
+      "cancelledMoreThan3Hours": "Cancelled more than 3 hours in advance",
+      "cancelledOneToThreeHours": "Cancelled 1-3 hours before start",
+      "cancelledLessThanOneHour": "Cancelled less than 1 hour before start",
+      "cancelledAfterStart": "Cancelled after service start",
+      "providerNoShow": "Provider marked as no-show. Full refund issued.",
+      "travelerNoShow": "Traveler marked as no-show. Provider compensated."
+    }
+  },
   "search": {
     "placeholder": "Search services, experts, or locations..."
   },
@@ -459,6 +476,276 @@
       "reviews": "Reviews",
       "provider": "Provider"
     }
+  },
+  "serviceCard": {
+    "availableNow": "Available now"
+  },
+  "userApp": {
+    "thirdParty": {
+      "title": "Recommended extras",
+      "items": {
+        "skyTower": "Book Auckland Sky Tower tickets",
+        "intercity": "Reserve an InterCity coach",
+        "rentalCar": "Hire a rental car",
+        "danceShoes": "Order Tango dance shoes"
+      },
+      "disclaimer": "Guidew receives affiliate commissions from some partners."
+    }
+  },
+  "dashboard": {
+    "upcoming": {
+      "title": "Upcoming services",
+      "empty": "No services scheduled yet.",
+      "duration": "{{hours}} hrs",
+      "status": "Status: {{status}}"
+    },
+    "status": {
+      "awaiting-provider": "Awaiting provider",
+      "accepted": "Accepted",
+      "in-progress": "In progress",
+      "awaiting-review": "Awaiting review",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "providerFeed": {
+      "title": "Live requests",
+      "empty": "No new orders. Keep the app open to grab the next request.",
+      "grab": "Grab",
+      "durationEarnings": "Duration: {{hours}} hours · Earnings ${{earnings}}",
+      "travelEstimate": "Travel time estimate: {{minutes}} minutes",
+      "arrivalOnTime": "On time",
+      "arrivalRisk": "Risk of delay"
+    },
+    "timeline": {
+      "title": "Service timeline",
+      "empty": "No bookings yet. Start by requesting your first service."
+    },
+    "wallet": {
+      "title": "Wallet & VIP",
+      "refresh": "Refresh balances",
+      "available": "Available",
+      "pending": "Pending clearance",
+      "withdrawable": "Withdrawable",
+      "vipTitle": "VIP subscription",
+      "vipActive": "Enjoy AI concierge, zero booking fees, and priority dispatch.",
+      "vipInactive": "Upgrade to unlock AI concierge, automated dispatch, and commission perks.",
+      "vipCancel": "Cancel VIP",
+      "vipActivate": "Activate VIP ($9.9/month)",
+      "lastUpdated": "Last updated {{time}}"
+    },
+    "achievements": {
+      "title": "Achievements",
+      "empty": "Complete bookings to earn badges.",
+      "earned": "Earned {{date}}",
+      "templates": {
+        "user-first-booking": {
+          "title": "First Adventure",
+          "description": "Completed the first booking on Guidew."
+        },
+        "provider-first-order": {
+          "title": "First Client",
+          "description": "Delivered the first service on Guidew."
+        },
+        "provider-5-orders": {
+          "title": "Trusted Local",
+          "description": "Completed 5 successful services."
+        },
+        "provider-50-orders": {
+          "title": "City Legend",
+          "description": "Completed 50 successful services."
+        },
+        "user-3-cities": {
+          "title": "Global Explorer",
+          "description": "Booked services in 3 different cities."
+        }
+      }
+    },
+    "review": {
+      "title": "Leave a review",
+      "empty": "Select a completed order to review.",
+      "overallLabel": "Overall experience",
+      "worth": "Worth it",
+      "notWorth": "Not worth it",
+      "detailsLabel": "Share details",
+      "tipLabel": "Optional tip",
+      "tipButton": "$ {{amount}}",
+      "tipSkip": "Skip tip",
+      "tipSend": "Send tip of ${{amount}}",
+      "submit": "Submit review",
+      "defaultComment": "Great service and communication!"
+    },
+    "request": {
+      "title": "Book a local expert",
+      "description": "Share service details; VIPs can describe needs in natural language to get AI suggestions.",
+      "activeWarning": "You already have an active order scheduled for {{time}}. New bookings will be planned around it.",
+      "serviceLabel": "Service",
+      "servicePlaceholder": "Choose a service",
+      "providerLabel": "Preferred expert",
+      "providerPlaceholder": "Pick a provider",
+      "startLabel": "Start date & time",
+      "durationLabel": "Duration (hours)",
+      "locationLabel": "Service location",
+      "locationPlaceholder": "Address or meeting point",
+      "itineraryLabel": "Require itinerary in advance?",
+      "itineraryYes": "Yes, share a plan",
+      "itineraryNo": "No, keep it flexible",
+      "aiLabel": "Describe your need (AI concierge)",
+      "aiButton": "Generate recommended experts",
+      "speaksLanguages": "Speaks {{languages}}",
+      "submit": "Submit booking request"
+    },
+    "activeOrder": {
+      "title": "Active order",
+      "empty": "No active orders. Grab a new request from the queue.",
+      "durationEarnings": "Duration {{hours}} hours · Earnings ${{earnings}}",
+      "aiButton": "Generate AI plan",
+      "submitItinerary": "Submit itinerary",
+      "vipUpsell": "Upgrade to VIP to access auto-generated itineraries and travel alerts.",
+      "start": "Start service",
+      "complete": "Complete",
+      "reportNoShow": "Report traveler no-show",
+      "defaultItinerary": "Morning coffee at local cafe\nTour of city highlights\nLunch at waterfront"
+    },
+    "profileForm": {
+      "title": "Provider profile",
+      "bio": "Bio",
+      "hourlyRate": "Hourly rate",
+      "minHours": "Minimum hours",
+      "tags": "Tags",
+      "tagsPlaceholder": "city-guide, translation",
+      "languages": "Languages",
+      "languagesPlaceholder": "English, Mandarin",
+      "travelRadius": "Travel radius (km)",
+      "expensesLabel": "Expenses included in rate?",
+      "expensesIncluded": "Includes expenses",
+      "expensesExcluded": "Expenses billed separately",
+      "expensePlaceholder": "Tickets, petrol, tolls billed at cost",
+      "certifications": "Certificates & proof",
+      "certificationPlaceholder": "URL to certification",
+      "uploadProof": "Upload proof",
+      "serviceMedia": "Service media",
+      "mediaTypes": {
+        "image": "Image",
+        "video": "Video",
+        "document": "Document"
+      },
+      "mediaPlaceholder": "https://example.com/portfolio",
+      "addMedia": "Add media",
+      "mediaBadge": "{{type}} proof",
+      "remove": "Remove",
+      "mediaEmpty": "Upload photos, videos, or documents to prove your expertise.",
+      "save": "Save profile"
+    },
+    "reviewHistory": {
+      "title": "Published feedback",
+      "empty": "No public reviews yet. Complete trips and exchange feedback to build trust.",
+      "serviceFallback": "Custom service",
+      "counterpartFallback": "Client",
+      "decisions": {
+        "worth": "Worth it",
+        "not-worth": "Not worth it",
+        "again": "Would work again",
+        "no": "Would not work again"
+      },
+      "published": "Published {{date}}"
+    },
+    "providerFilters": {
+      "title": "Filter experts",
+      "tags": "Tags",
+      "tagsEmpty": "No tags configured yet.",
+      "languages": "Languages",
+      "languagesEmpty": "Providers have not listed languages yet.",
+      "vipOnly": "VIP only",
+      "autoAcceptOnly": "Auto accept only",
+      "minRating": "Minimum rating {{rating}}",
+      "reset": "Reset filters"
+    },
+    "providerList": {
+      "serviceFallback": "Service package",
+      "meta": "{{city}} · {{distance}} away · {{languages}}",
+      "rate": "${{rate}}/hr",
+      "minHours": "Min {{hours}} hours",
+      "verifications": "Verifications",
+      "certifications": "{{count}} certificates uploaded",
+      "rating": "Rating",
+      "ratingDetail": "{{rating}} · {{trips}} trips"
+    },
+    "orderActions": {
+      "title": "Order controls",
+      "empty": "Select a scheduled order to cancel or report a no-show.",
+      "cancel": "Cancel booking",
+      "mutual": "Mutual cancel",
+      "reportProvider": "Report provider no-show",
+      "instructions": "Standard cancellations follow Guidew policy. Mutual cancellations within three hours refund 85% to the traveler. Once the start time passes you can report a provider no-show for a full refund."
+    },
+    "timelineEvents": {
+      "orderCreated": "Order created by {{name}}",
+      "paymentAuthorized": "Payment authorised via Stripe",
+      "autoAccepted": "Auto accepted by VIP provider",
+      "itinerarySubmitted": "Itinerary submitted",
+      "providerAccepted": "Provider accepted order",
+      "serviceStarted": "Service started",
+      "serviceCompleted": "Service completed",
+      "cancelledUser": "Traveler cancelled the service",
+      "cancelledProvider": "Provider cancelled the service",
+      "cancelledMutual": "Both parties cancelled the service",
+      "providerNoShow": "Provider no-show reported",
+      "travelerNoShow": "Traveler no-show recorded",
+      "tipAdded": "Tip added",
+      "reviewSubmittedTraveler": "Traveler submitted a review",
+      "reviewSubmittedProvider": "Provider submitted a review"
+    },
+    "itinerary": {
+      "header": "Service: {{service}} with {{city}} expert {{expert}}",
+      "travel": "Travel buffer: {{minutes}} minutes (auto-calculated)",
+      "wrapUp": "Time for feedback & wrap-up",
+      "phase": "Phase {{index}}: {{item}}",
+      "defaults": [
+        "Meet & align on expectations",
+        "Core experience tailored to your interests",
+        "Wrap-up, recap, and next-step suggestions"
+      ],
+      "tags": {
+        "city-guide": [
+          "Welcome briefing at a local café",
+          "Walk through heritage precincts and hidden laneways",
+          "Panoramic lookout for photos",
+          "Food tastings at favourite neighbourhood spots"
+        ],
+        "translation": [
+          "Pre-meeting terminology alignment",
+          "On-site live translation support",
+          "Summary notes and key phrases recap"
+        ],
+        "food": [
+          "Market visit with ingredient story",
+          "Local eatery tasting menu",
+          "Dessert stop at iconic venue"
+        ],
+        "dance": [
+          "Warm-up and foundations",
+          "Partnered routine walk-through",
+          "Freestyle practice with feedback"
+        ],
+        "adventure": [
+          "Safety and gear check",
+          "Trail or activity briefing",
+          "Guided experience with photo stops"
+        ]
+      }
+    }
+  },
+  "skillDetail": {
+    "notFound": "Skill service not found",
+    "modeLabel": "Service mode",
+    "highlights": "Service highlights",
+    "detailsTitle": "Service details",
+    "certifications": "Certifications",
+    "faq": "Frequently asked questions",
+    "reviews": "User reviews",
+    "timeLabel": "Available schedule",
+    "galleryAlt": "image {{index}}",
+    "verified": "Verified identity"
   },
   "notFound": {
     "title": "404",

@@ -204,6 +204,438 @@ const copy = {
       { title: "阶段 4 · 跨塔斯曼拓展", detail: "启动悉尼、墨尔本与布里斯班走廊，扩大联合用户规模。" },
       { title: "阶段 5 · 全球布局", detail: "面向亚太、欧洲与美洲展开多语言运营。" }
     ]
+  },
+  pt: {
+    hero: {
+      badge: "Cidades atendidas",
+      title: "Corredores ativos: Auckland & Wellington",
+      description:
+        "A Guidew posiciona concierges bilíngues nos dois polos da Nova Zelândia para que chegadas, tarefas, imersões e cuidados fluam sem atrito.",
+      support:
+        "Em cada cidade você chama em minutos equipes de aeroporto, anfitriões de bairro, curadores culturais e guardiões para missões sensíveis."
+    },
+    stats: [
+      { value: "Dezenas", label: "Bairros mapeados entre centros, portos e subúrbios" },
+      { value: "Centenas", label: "Tags de habilidades aprovadas em tradução, artes, tarefas e educação" },
+      { value: "Menos de 1h", label: "Janela típica para pedidos on-demand em cada corredor" },
+      { value: "Até 7 dias", label: "Liberação de ganhos após reviews mútuos confirmarem o serviço" }
+    ],
+    citySpotlightsSection: {
+      kicker: "Inteligência das cidades",
+      heading: "O que cada corredor oferece",
+      description: "Escolha um corredor e veja os pontos âncora e os serviços mais buscados pelos viajantes.",
+      labels: {
+        anchors: "Corredores centrais",
+        experiences: "Serviços assinatura"
+      }
+    },
+    citySpotlights: [
+      {
+        name: "Auckland",
+        intro:
+          "A principal porta de entrada do país equilibra aeroportos trans-Tasmânia, hubs tech e lifestyle à beira-mar. A Guidew atua do terminal até as galerias de Parnell.",
+        anchors: [
+          "AKL International ↔ CBD com lounges dedicados e vagas privadas",
+          "North Shore e Takapuna para bem-estar costeiro, childcare e compras essenciais",
+          "Parnell, Newmarket e Wynyard Quarter para compras, visitas a labs e reuniões com investidores"
+        ],
+        experiences: [
+          "Concierge de aeroporto com bagagem, documentos fast-track e roteamento terrestre",
+          "Interpretação em night markets, tours privados em galerias e aulas relâmpago de Bachata",
+          "Acompanhamento médico e onboarding universitário em mandarim, inglês ou espanhol"
+        ]
+      },
+      {
+        name: "Wellington",
+        intro:
+          "A capital combina governo, arte e ventos costeiros. A Guidew mantém transfers, caminhadas culturais e suporte de produção sincronizados.",
+        anchors: [
+          "Aeroporto ↔ Te Aro ↔ parlamento com rotas ajustadas ao clima",
+          "Waterfront e Oriental Bay para passeios criativos, festivais de cinema e museus noturnos",
+          "Lower Hutt, Porirua e Johnsonville para famílias em relocação e diplomatas"
+        ],
+        experiences: [
+          "Intérpretes para conferências, redatores de briefings e anfitriões bilíngues",
+          "Trilhas do porto às colinas com concierge de equipamentos e imersão em cervejas artesanais, jazz e teatro",
+          "Visitas hospitalares, idas ao veterinário e burocracias consulares conduzidas por guardiões certificados"
+        ]
+      }
+    ],
+    serviceLayers: {
+      kicker: "Camadas de serviço",
+      heading: "O que desbloqueamos em toda cidade",
+      description:
+        "Independente do bairro, entregamos apoio na chegada, tradução, imersão cultural e logística de cuidado para cada reserva parecer sob medida.",
+      pillars: [
+        {
+          icon: "plane",
+          title: "Chegadas & logística",
+          detail: "Recepção em aeroportos, balsas e píeres com buffers de deslocamento calculados automaticamente."
+        },
+        {
+          icon: "landmark",
+          title: "Cultura & imersão",
+          detail: "Curadores revelam bairros escondidos, mercados noturnos, galerias e artes performáticas."
+        },
+        {
+          icon: "languages",
+          title: "Tradução & negócios",
+          detail: "Intérpretes presenciais apoiam compras, hospitais, vistos, tribunais e reuniões de investimento."
+        },
+        {
+          icon: "wellness",
+          title: "Cuidado & guarda",
+          detail: "Acompanhamento médico, realocação familiar, planos de bem-estar e check-ins de segurança."
+        }
+      ]
+    },
+    roadmapHeading: "Roteiro de expansão",
+    roadmap: [
+      {
+        title: "Fase 1 · MVP",
+        detail: "Finalizar playbooks de Auckland + Wellington e embarcar a primeira onda de usuários."
+      },
+      {
+        title: "Fase 2 · Densificação urbana",
+        detail: "Adicionar lounges de chegada, novas tags verificadas e crescimento por indicação."
+      },
+      {
+        title: "Fase 3 · Cobertura nacional",
+        detail: "Replicar o modelo em toda a Nova Zelândia para turismo, educação e bem-estar."
+      },
+      {
+        title: "Fase 4 · Salto trans-Tasmânia",
+        detail: "Ativar Sydney, Melbourne e Brisbane enquanto ampliamos a base combinada."
+      },
+      {
+        title: "Fase 5 · Horizonte global",
+        detail: "Operar de forma multilíngue na Ásia-Pacífico, Europa e Américas."
+      }
+    ]
+  },
+  es: {
+    hero: {
+      badge: "Ciudades de servicio",
+      title: "Corredores activos: Auckland y Wellington",
+      description:
+        "Guidew despliega conserjes bilingües en los dos grandes hubs de Nueva Zelanda para que las llegadas, los encargos, las inmersiones culturales y las visitas de bienestar fluyan sin fricción.",
+      support:
+        "Cada corredor combina recibimientos en aeropuertos, solucionadores de barrio, docentes culturales y figuras de guardianía que puedes convocar en minutos."
+    },
+    stats: [
+      { value: "Decenas", label: "Barrios activos mapeados entre CBD, puertos y suburbios" },
+      { value: "Cientos", label: "Etiquetas de habilidades aprobadas en traducción, artes, encargos, bienestar y educación" },
+      { value: "Menos de una hora", label: "Ventana típica de despacho para solicitudes on-demand dentro de cada corredor" },
+      { value: "Menos de una semana", label: "Liberación de pagos cuando las reseñas mutuas finalizan" }
+    ],
+    citySpotlightsSection: {
+      kicker: "Inteligencia urbana",
+      heading: "Lo que ofrece cada ciudad",
+      description: "Elige un corredor para entender los anclajes que cubrimos y los servicios que más confían los viajeros.",
+      labels: {
+        anchors: "Corredores principales",
+        experiences: "Servicios distintivos"
+      }
+    },
+    citySpotlights: [
+      {
+        name: "Auckland",
+        intro:
+          "La ciudad puerta de entrada equilibra aeropuertos trans-Tasmán, puertos tecnológicos y vida junto al mar. Guidew se extiende desde la pista hasta las galerías de Parnell.",
+        anchors: [
+          "Recepciones AKL International ↔ CBD con lounges dedicados y estacionamiento privado",
+          "Recorridos North Shore & Takapuna para wellness costero, childcare y compras esenciales",
+          "Acompañamientos en Parnell, Newmarket y Wynyard Quarter para shopping, laboratorios y visitas de inversionistas"
+        ],
+        experiences: [
+          "Conserje de aeropuerto con manejo de equipaje, documentos fast-track y coordinación de transporte terrestre",
+          "Interpretación en night markets, tours privados por galerías y clases relámpago de Bachata",
+          "Acompañamiento médico y onboarding universitario ofrecidos en mandarín, inglés o español"
+        ]
+      },
+      {
+        name: "Wellington",
+        intro:
+          "La capital enlaza gobierno, artes y vida costera con viento. Guidew mantiene sincronizados los traslados, los paseos culturales y el soporte de producción.",
+        anchors: [
+          "Aeropuerto de Wellington ↔ Te Aro ↔ distrito parlamentario con rutas sensibles al clima",
+          "Waterfront y Oriental Bay para caminatas creativas, festivales de cine y noches de museo",
+          "Lower Hutt, Porirua y Johnsonville para familias en reubicación y diplomáticos"
+        ],
+        experiences: [
+          "Intérpretes de conferencias, redactores de briefings y anfitriones bilingües de sala",
+          "Hikes del puerto a las colinas con concierge de equipo más inmersión en cerveza artesanal, jazz y teatro",
+          "Visitas hospitalarias, idas al veterinario y trámites consulares gestionados por guardianes verificados"
+        ]
+      }
+    ],
+    serviceLayers: {
+      kicker: "Capas de servicio",
+      heading: "Lo que desbloqueas en cada ciudad",
+      description:
+        "Sin importar el distrito, Guidew estandariza soporte de llegada, traducción, inmersión cultural y logística de cuidado para que cada reserva se sienta hecha a medida.",
+      pillars: [
+        {
+          icon: "plane",
+          title: "Arribos y logística",
+          detail: "Meet-and-greets en aeropuertos, terminales de ferry y muelles de crucero con buffers de tiempo incluidos."
+        },
+        {
+          icon: "landmark",
+          title: "Cultura e inmersión",
+          detail: "Docentes y creativos curan barrios ocultos, night markets, galerías y artes escénicas."
+        },
+        {
+          icon: "languages",
+          title: "Traducción y negocios",
+          detail: "Intérpretes presenciales cubren compras, hospitales, oficinas de visa, juzgados y reuniones con inversionistas."
+        },
+        {
+          icon: "wellness",
+          title: "Cuidado y guardianía",
+          detail: "Acompañamiento médico, asistencia en reubicaciones familiares, planes de bienestar y check-ins de seguridad en todos los suburbios."
+        }
+      ]
+    },
+    roadmapHeading: "Hoja de ruta de expansión",
+    roadmap: [
+      {
+        title: "Fase 1 · MVP runway",
+        detail: "Finalizar los playbooks de Auckland + Wellington e incorporar la primera ola de viajeros y anfitriones."
+      },
+      {
+        title: "Fase 2 · Escala urbana",
+        detail: "Densificar ambas ciudades con más lounges de llegada, etiquetas verificadas y crecimiento boca a boca."
+      },
+      {
+        title: "Fase 3 · Elevación nacional",
+        detail: "Extender el modelo en toda Nueva Zelanda para turismo, educación, bienestar y escenarios ejecutivos."
+      },
+      {
+        title: "Fase 4 · Salto trans-Tasmán",
+        detail: "Lanzar corredores en Sydney, Melbourne y Brisbane mientras consolida la base combinada."
+      },
+      {
+        title: "Fase 5 · Horizonte global",
+        detail: "Operar de forma multilingüe en Asia-Pacífico, Europa y las Américas."
+      }
+    ]
+  },
+  fr: {
+    hero: {
+      badge: "Villes desservies",
+      title: "Corridors actifs : Auckland & Wellington",
+      description:
+        "Guidew déploie des concierges bilingues dans les deux grands hubs néo‑zélandais afin que arrivées, missions, immersions culturelles et rendez-vous bien-être se déroulent sans friction.",
+      support:
+        "Chaque corridor combine accueil aéroport, fixers de quartier, médiateurs culturels et rôles de garde rapprochée que l’on peut solliciter en quelques minutes."
+    },
+    stats: [
+      { value: "Des dizaines", label: "Quartiers actifs cartographiés entre CBD, ports et banlieues" },
+      { value: "Des centaines", label: "Tags de compétences validés : traduction, arts, errands, bien-être, éducation" },
+      { value: "Moins d’1 h", label: "Fenêtre moyenne d’envoi pour les demandes on‑demand dans chaque corridor" },
+      { value: "Moins d’une semaine", label: "Libération des paiements une fois les avis croisés publiés" }
+    ],
+    citySpotlightsSection: {
+      kicker: "Intelligence urbaine",
+      heading: "Ce que débloque chaque ville",
+      description: "Choisissez un corridor pour comprendre les ancrages couverts et les services les plus sollicités.",
+      labels: {
+        anchors: "Corridors clés",
+        experiences: "Services signature"
+      }
+    },
+    citySpotlights: [
+      {
+        name: "Auckland",
+        intro:
+          "La porte d’entrée du pays équilibre aéroports trans-Tasman, ports tech et lifestyle côtier. Guidew s’étend de la piste aux galeries de Parnell.",
+        anchors: [
+          "AKL International ↔ CBD : salons d’arrivée dédiés et stationnements privés",
+          "North Shore & Takapuna pour bien-être balnéaire, garde d’enfants et courses essentielles",
+          "Parnell, Newmarket, Wynyard Quarter pour shopping, visites de labos et rencontres investisseurs"
+        ],
+        experiences: [
+          "Conciergerie aéroport avec gestion bagages, documents fast-track et coordination du transport terrestre",
+          "Interprétation sur les night markets, visites privées de galeries et sessions pop-up de Bachata",
+          "Accompagnement médical et onboarding universitaire en mandarin, anglais ou espagnol"
+        ]
+      },
+      {
+        name: "Wellington",
+        intro:
+          "La capitale relie gouvernement, arts et rivage venteux. Guidew synchronise transferts, balades culturelles et support de production.",
+        anchors: [
+          "Aéroport de Wellington ↔ Te Aro ↔ quartier parlementaire avec itinéraires sensibles à la météo",
+          "Promenades waterfront & Oriental Bay pour marches créatives, festivals de cinéma et nocturnes muséales",
+          "Support à Lower Hutt, Porirua et Johnsonville pour familles relocalisées et diplomates"
+        ],
+        experiences: [
+          "Interprètes de conférence, rédacteurs de briefings et hôtes bilingues de boardrooms",
+          "Randonnées du port aux collines avec concierge matériel + immersion craft beer, jazz et théâtre",
+          "Visites hospitalières, trajets vétérinaire et paperasse consulaire gérés par des gardiens vérifiés"
+        ]
+      }
+    ],
+    serviceLayers: {
+      kicker: "Couches de service",
+      heading: "Ce que chaque voyageur débloque",
+      description:
+        "Peu importe le district, Guidew standardise accueil, traduction, immersion culturelle et logistique de care afin que chaque mission paraisse sur mesure.",
+      pillars: [
+        {
+          icon: "plane",
+          title: "Arrivées & logistique",
+          detail: "Meet-and-greet aux aéroports, ferries et quais de croisière avec marges de trajet intégrées."
+        },
+        {
+          icon: "landmark",
+          title: "Culture & immersion",
+          detail: "Docents et créatifs révèlent quartiers cachés, marchés nocturnes, galeries et scènes vivantes."
+        },
+        {
+          icon: "languages",
+          title: "Traduction & affaires",
+          detail: "Interprètes sur place pour shopping, hôpitaux, visas, tribunaux et rendez-vous investisseurs."
+        },
+        {
+          icon: "wellness",
+          title: "Care & guardianship",
+          detail: "Escort médical, aide à la relocalisation familiale, planners bien-être et check-ins de sécurité."
+        }
+      ]
+    },
+    roadmapHeading: "Feuille de route d’expansion",
+    roadmap: [
+      {
+        title: "Phase 1 · Runway MVP",
+        detail: "Finaliser les playbooks Auckland + Wellington et embarquer la première vague d’utilisateurs."
+      },
+      {
+        title: "Phase 2 · Montée en densité",
+        detail: "Ajouter des lounges d’arrivée, plus de tags vérifiés et accélérer la croissance bouche-à-oreille."
+      },
+      {
+        title: "Phase 3 · Portée nationale",
+        detail: "Étendre le modèle à toute la Nouvelle-Zélande pour tourisme, éducation, bien-être et exécutifs."
+      },
+      {
+        title: "Phase 4 · Saut trans-Tasman",
+        detail: "Lancer des corridors à Sydney, Melbourne et Brisbane tout en consolidant la base combinée."
+      },
+      {
+        title: "Phase 5 · Horizons globaux",
+      detail: "Déployer des opérations multilingues en Asie-Pacifique, Europe et Amériques."
+      }
+    ]
+  },
+  he: {
+    hero: {
+      badge: "ערי שירות",
+      title: "מסלולי השירות: אוקלנד וולינגטון",
+      description:
+        "Guidew מפעילה קונסיירז' דו-לשוניים בשני מרכזי העל של ניו זילנד כדי שהגעה, שליחויות, טיולי עומק וביקורי רווחה יהיו נטולי תקלות.",
+      support:
+        "בכל עיר משולבים קבלת פנים בשדה התעופה, מומחי שכונות, מדריכי תרבות ותפקידי השגחה משפחתיים שאפשר לזמן בתוך דקות."
+    },
+    stats: [
+      { value: "עשרות", label: "שכונות פעילות שמחברות בין ה-CBD, הנמלים והפרברים" },
+      { value: "מאות", label: "תגיות מיומנות מאושרות בתחומי תרגום, אמנות, שליחויות, בריאות וחינוך" },
+      { value: "פחות משעה", label: "חלון היציאה הממוצע לבקשות מיידיות בכל מסדרון" },
+      { value: "עד שבוע", label: "שחרור תשלומים לאחר ששני הצדדים מסיימים חוות דעת" }
+    ],
+    citySpotlightsSection: {
+      kicker: "מודיעין עירוני",
+      heading: "מה כל עיר מאפשרת",
+      description: "בחרו במסדרון כדי לראות אילו עוגנים מכוסים ואילו שירותים מבוקשים ביותר.",
+      labels: {
+        anchors: "מסדרונות ליבה",
+        experiences: "שירותי חתימה"
+      }
+    },
+    citySpotlights: [
+      {
+        name: "Auckland",
+        intro:
+          "עיר הכניסה של ניו זילנד מאזנת בין שדות תעופה טרנס-טסמנים, נמלים טכנולוגיים ואורח חיים על קו המים. Guidew נמתחת מהמסלול ועד גלריות פארנל.",
+        anchors: [
+          "AKL International ↔ ה-CBD עם לונג'ים פרטיים וחניות ייעודיות לפגישות",
+          "נסיעות ל-North Shore ו-Takapuna עבור רווחה חופית, בייביסיטר וסידורי קניות",
+          "Parnell, Newmarket ו-Wynyard Quarter לליווי קניות, מעבדות וביקורי משקיעים"
+        ],
+        experiences: [
+          "קונסיירז' בשדה עם טיפול במזוודות, fast-track במסמכים ותכנון הסעות קרקע",
+          "תרגום בשווקי לילה, סיורי גלריה פרטיים ושיעורי Bachata לאורחים",
+          "ליווי רפואי והכוונת סטודנטים באנגלית, מנדרינית או ספרדית"
+        ]
+      },
+      {
+        name: "Wellington",
+        intro:
+          "הבירה מחברת ממשל, אמנות וחיים רועשי רוח. Guidew מחזיקה את ההסעות, טיולי התרבות ותמיכת ההפקה מחוברים.",
+        anchors: [
+          "שדה התעופה של ולינגטון ↔ Te Aro ↔ רובע הפרלמנט עם מסלולים מותאמי מזג אוויר",
+          "הטיילת ו-Oriental Bay לטיולי יצירה, פסטיבלי קולנוע ונשפי מוזיאון",
+          "Lower Hutt, Porirua ו-Johnsonville למשפחות ברילוקיישן ודיפלומטים"
+        ],
+        experiences: [
+          "מתורגמני כנסים, כותבי בריפים ומארחי חדרי ישיבות דו-לשוניים",
+          "טיולי נמל-אל-ההר עם קונסיירז' ציוד יחד עם בירה, ג'אז ותיאטרון",
+          "ביקורים בבתי חולים, משלוחים וטרינריים וניירת שגרירות שמנוהלים ע\"י צוותים מאומתים"
+        ]
+      }
+    ],
+    serviceLayers: {
+      kicker: "שכבות שירות",
+      heading: "מה כל מבקר מקבל בכל עיר",
+      description:
+        "לא משנה באיזה רובע אתם נמצאים, Guidew מיישרת קו סביב תמיכה בהגעה, תרגום, חוויית עומק תרבותית ולוגיסטיקה של רווחה כדי שכל הזמנה תרגיש מותאמת.",
+      pillars: [
+        {
+          icon: "plane",
+          title: "הגעה ולוגיסטיקה",
+          detail: "קבלת פנים בשדות תעופה, מעגני מעבורת ונמלי קרוז עם מרווחי זמן לנסיעה."
+        },
+        {
+          icon: "landmark",
+          title: "תרבות וחוויה",
+          detail: "מדריכים ואמנים חושפים שכונות נסתרות, שווקי לילה, גלריות ומופעים."
+        },
+        {
+          icon: "languages",
+          title: "תרגום ועסקים",
+          detail: "מתורגמנים בשטח לקניות, בתי חולים, משרדי ויזה, בתי משפט ופגישות משקיעים."
+        },
+        {
+          icon: "wellness",
+          title: "רווחה והשגחה",
+          detail: "מלווים רפואיים, סיוע לרילוקיישן משפחתי, מתכנני wellness ובדיקות בטיחות."
+        }
+      ]
+    },
+    roadmapHeading: "מפת דרכים להתרחבות השירות",
+    roadmap: [
+      {
+        title: "שלב 1 · מסלול MVP",
+        detail: "ללטש את ספרי המסדרונות באוקלנד + ולינגטון ולהצטרף עם גל המשתמשים הראשון."
+      },
+      {
+        title: "שלב 2 · בניית צפיפות",
+        detail: "להוסיף לונג'ים לקבלת פנים, עוד תגי מיומנות מאומתים ולהאיץ צמיחת word-of-mouth."
+      },
+      {
+        title: "שלב 3 · פריסה לאומית",
+        detail: "להחיל את המודל על כל ניו זילנד עבור תיירות, חינוך, בריאות והנהלות."
+      },
+      {
+        title: "שלב 4 · גשר טרנס-טסמני",
+        detail: "לפתוח מסדרונות בסידני, מלבורן ובריסביין תוך ביסוס התשתית המאוחדת."
+      },
+      {
+        title: "שלב 5 · אופק גלובלי",
+        detail: "להפעיל מרכזים רב-לשוניים באסיה-פסיפיק, אירופה ואמריקות."
+      }
+    ]
   }
 } as const;
 
@@ -218,7 +650,8 @@ const Locations = () => {
   const { i18n } = useTranslation();
   const locale = resolveLocale(i18n.language);
   const profiles = useMemo(() => getCityProfiles(i18n.language), [i18n.language]);
-  const content = copy[locale];
+  const localeKey = locale === "zh" || locale === "pt" || locale === "es" || locale === "fr" || locale === "he" ? locale : "en";
+  const content = copy[localeKey];
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-lightGray">

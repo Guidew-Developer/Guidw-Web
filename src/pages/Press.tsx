@@ -62,13 +62,142 @@ const copy = {
       email: "hello@guidew.com",
       kit: "下载媒体资料"
     }
+  },
+  pt: {
+    hero: {
+      badge: "Imprensa & Mídia",
+      title: "Materiais e novidades da Guidew",
+      description: "A Guidew está construindo uma rede global de talentos locais. Conheça nossa missão, tecnologia e marcos de crescimento."
+    },
+    highlights: [
+      { label: "15% de comissão", detail: "Estrutura transparente que premia parcerias de longo prazo." },
+      { label: "VIP por US$ 9,9", detail: "Matching com IA, pedidos sem taxa e prioridade no roteamento." },
+      { label: "Experiência dupla", detail: "Aplicativos separados garantem fluxos sob medida para viajantes e provedores." }
+    ],
+    notes: [
+      {
+        title: "Estágio do produto",
+        content: "Foco inicial em Auckland/Wellington com 1.000 usuários beta, escalando para 5–10 mil em 12 meses."
+      },
+      {
+        title: "Cenários comuns",
+        content: "Companhias de cidade, tradução, aulas on-demand, guias outdoor e apoio a eventos com confiança offline."
+      },
+      {
+        title: "Destaques técnicos",
+        content: "Recomendações com IA, autoaceite, planejamento de itinerário, chat, carteira e visualização mapa/lista."
+      }
+    ],
+    cta: {
+      title: "Entrevistas e parcerias",
+      description: "Solicite dados das cidades, roadmap de VIP, planos de IA ou visão de expansão global. Respondemos em até 24 horas.",
+      email: "hello@guidew.com",
+      kit: "Baixar press kit"
+    }
+  },
+  es: {
+    hero: {
+      badge: "Prensa y medios",
+      title: "Noticias y materiales de Guidew",
+      description: "Guidew construye una red global de talentos locales. Conoce nuestra misión, tecnología y próximos hitos."
+    },
+    highlights: [
+      { label: "15% de comisión", detail: "Estructura transparente que recompensa la colaboración a largo plazo." },
+      { label: "$9.9 VIP", detail: "Matching con IA, pedidos sin comisión y prioridad en el ruteo para power users." },
+      { label: "Experiencia dual", detail: "Aplicaciones separadas ofrecen interfaces hechas a medida para viajeros y proveedores." }
+    ],
+    notes: [
+      {
+        title: "Etapa del producto",
+        content: "El MVP cubre Auckland/Wellington con 1.000 betatesters y escala a 5–10k usuarios en 12 meses."
+      },
+      {
+        title: "Casos típicos",
+        content: "Compañeros de ciudad, traducción, clases on-demand, guías outdoor y apoyo a eventos con respaldo offline."
+      },
+      {
+        title: "Claves tecnológicas",
+        content: "Recomendaciones con IA, autoaceptación, planeación de itinerarios, chat, wallet y modos mapa/lista."
+      }
+    ],
+    cta: {
+      title: "Entrevistas y alianzas",
+      description: "Solicita datos de ciudades, planes VIP, roadmap de IA o expansión internacional. Respondemos en 24 h.",
+      email: "hello@guidew.com",
+      kit: "Descargar media kit"
+    }
+  },
+  fr: {
+    hero: {
+      badge: "Presse & Médias",
+      title: "Actualités et dossiers Guidew",
+      description: "Guidew bâtit un réseau mondial d’experts locaux. Découvrez notre mission, notre pile technologique et nos jalons."
+    },
+    highlights: [
+      { label: "15 % de commission", detail: "Modèle transparent qui favorise les collaborations durables." },
+      { label: "VIP à 9,9 $", detail: "Matching IA, commandes sans frais et priorisation des utilisateurs intensifs." },
+      { label: "Expérience double", detail: "Applications dédiées pour voyageurs et prestataires avec parcours adaptés." }
+    ],
+    notes: [
+      {
+        title: "Phase produit",
+        content: "Le MVP se concentre sur Auckland/Wellington avec 1 000 bêta-testeurs et passe à 5–10 k en 12 mois."
+      },
+      {
+        title: "Scénarios typiques",
+        content: "Accompagnement urbain, traduction, cours à la demande, guidage outdoor et support événementiel fiable."
+      },
+      {
+        title: "Points techniques",
+        content: "Reco IA, auto-acceptation, planification d’itinéraires, chat, wallet et bascule carte/liste."
+      }
+    ],
+    cta: {
+      title: "Interviews et partenariats",
+      description: "Demandez des données ville, plans VIP, feuille de route IA ou insights d’expansion. Réponse sous 24 h.",
+      email: "hello@guidew.com",
+      kit: "Télécharger le kit média"
+    }
+  },
+  he: {
+    hero: {
+      badge: "תקשורת ועיתונות",
+      title: "חדשות וחומרי מדיה של Guidew",
+      description: "Guidew בונה רשת כישורים מקומית ברחבי העולם. קבלו מידע על החזון, הטכנולוגיה והיעדים שלנו."
+    },
+    highlights: [
+      { label: "15% עמלת פלטפורמה", detail: "מודל שקוף שמתגמל שיתופי פעולה מתמשכים." },
+      { label: "$9.9 VIP", detail: "התאמה בינה מלאכותית, הזמנות ללא עמלה ומסלולי עדיפות למשתמשי VIP." },
+      { label: "שתי אפליקציות ייעודיות", detail: "ממשקים מותאמים בנפרד לנוסעים ולספקים." }
+    ],
+    notes: [
+      {
+        title: "שלב מוצר",
+        content: "ה-MVP פעיל באוקלנד/וולינגטון עם 1,000 בטאיסטים ומתרחב ל-5–10 אלף משתמשים ב-12 חודשים."
+      },
+      {
+        title: "תרחישים נפוצים",
+        content: "חבר מקומי, תרגום, שיעורים אישיים, ליווי בשטח ותמיכה באירועים עם ביטחון Offline."
+      },
+      {
+        title: "נקודות טכנולוגיות",
+        content: "המלצות AI, קבלת הזמנות אוטומטית, תכנון מסלולים, צ’אט, ארנק ומצב מפה/רשימה."
+      }
+    ],
+    cta: {
+      title: "ראיונות ושותפויות מדיה",
+      description: "בקשו נתוני עיר, תכניות VIP, מפת דרכים של AI או תובנות התרחבות. נשיב בתוך 24 שעות.",
+      email: "hello@guidew.com",
+      kit: "הורד ערכת מדיה"
+    }
   }
 } as const;
 
 const Press = () => {
   const { i18n } = useTranslation();
   const locale = resolveLocale(i18n.language);
-  const content = copy[locale];
+  const localeKey = (locale in copy ? locale : "en") as keyof typeof copy;
+  const content = copy[localeKey];
   return (
     <div className="min-h-screen flex flex-col bg-brand-lightGray">
       <Navbar />

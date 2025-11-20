@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { OrderRecord } from "@/types/guidew";
+import { useTranslation } from "react-i18next";
 
 interface OrderTimelineProps {
   orders: OrderRecord[];
@@ -18,13 +19,14 @@ const statusColors: Record<OrderRecord["status"], string> = {
 };
 
 const OrderTimeline = ({ orders }: OrderTimelineProps) => {
+  const { t } = useTranslation();
   if (!orders.length) {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Service timeline</CardTitle>
+          <CardTitle>{t("dashboard.timeline.title")}</CardTitle>
         </CardHeader>
-        <CardContent className="text-sm text-muted-foreground">No bookings yet. Start by requesting your first service.</CardContent>
+        <CardContent className="text-sm text-muted-foreground">{t("dashboard.timeline.empty")}</CardContent>
       </Card>
     );
   }
@@ -32,7 +34,7 @@ const OrderTimeline = ({ orders }: OrderTimelineProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Service timeline</CardTitle>
+        <CardTitle>{t("dashboard.timeline.title")}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         {orders.map(order => (
@@ -42,14 +44,23 @@ const OrderTimeline = ({ orders }: OrderTimelineProps) => {
                 <p className="text-sm font-medium">{format(new Date(order.startTime), "PPPp")}</p>
                 <p className="text-xs text-muted-foreground">{order.location.address}</p>
               </div>
-              <Badge className={statusColors[order.status]}>{order.status.replace(/-/g, " ")}</Badge>
+              <Badge className={statusColors[order.status]}>
+                {t(`dashboard.status.${order.status}`, { defaultValue: order.status.replace(/-/g, " ") })}
+              </Badge>
             </div>
 
             <div className="space-y-2">
               {order.timeline.map(event => (
                 <div key={event.id} className="text-sm text-muted-foreground flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-brand-teal" />
-                  <span>{event.description}</span>
+                  <span>
+                    {event.translationKey
+                      ? t(event.translationKey, {
+                          defaultValue: event.description,
+                          ...(event.translationValues ?? {})
+                        })
+                      : event.description}
+                  </span>
                   <span className="ml-auto text-xs">{format(new Date(event.timestamp), "PPp")}</span>
                 </div>
               ))}
@@ -62,4 +73,3 @@ const OrderTimeline = ({ orders }: OrderTimelineProps) => {
 };
 
 export default OrderTimeline;
-

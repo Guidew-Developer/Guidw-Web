@@ -13,7 +13,7 @@ import { useTranslation } from "react-i18next";
 
 const SkillServiceDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const service = getSkillService(i18n.language, id || "39");
 
   if (!service) {
@@ -21,7 +21,7 @@ const SkillServiceDetail = () => {
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1 container mx-auto px-4 py-16 text-center">
-          <div className="text-2xl font-bold mb-4 text-red-500">未找到该技能服务详情</div>
+          <div className="text-2xl font-bold mb-4 text-red-500">{t("skillDetail.notFound")}</div>
         </main>
         <Footer />
       </div>
@@ -43,14 +43,14 @@ const SkillServiceDetail = () => {
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-gray-500 mt-2">
               <span className="flex items-center"><MapPin className="w-4 h-4 mr-1" />{service.location}</span>
               <span className="flex items-center"><Clock className="w-4 h-4 mr-1" />{service.timeRange}</span>
-              <span className="flex items-center"><User className="w-4 h-4 mr-1" />服务方式：{service.mode}</span>
+              <span className="flex items-center"><User className="w-4 h-4 mr-1" />{t("skillDetail.modeLabel")}: {service.mode}</span>
               <span className="flex items-center text-amber-500"><Star className="h-4 w-4 mr-1" fill="currentColor" />{service.provider.rating}</span>
             </div>
           </div>
 
           {/* 特色亮点 */}
           <div className="mb-6">
-            <h2 className="text-xl font-semibold mb-3 text-brand-teal">服务特色</h2>
+            <h2 className="text-xl font-semibold mb-3 text-brand-teal">{t("skillDetail.highlights")}</h2>
             <div className="flex flex-wrap gap-2">
               {service.highlights.map((hl: string, i: number) => (
                 <Badge key={i} className="bg-green-100 text-green-800">{hl}</Badge>
@@ -63,7 +63,7 @@ const SkillServiceDetail = () => {
             {service.images.map((src: string, i: number) => (
               <img
                 src={src}
-                alt={service.title + "-图片" + (i + 1)}
+                alt={`${service.title} ${t("skillDetail.galleryAlt", { index: i + 1 })}`}
                 className="w-full h-32 object-cover rounded-lg shadow"
                 key={i}
               />
@@ -72,27 +72,28 @@ const SkillServiceDetail = () => {
 
           {/* 详细介绍 */}
           <div className="mb-8">
-            <h3 className="text-lg font-semibold mb-2 text-brand-teal">服务详情介绍</h3>
+            <h3 className="text-lg font-semibold mb-2 text-brand-teal">{t("skillDetail.detailsTitle")}</h3>
             <p className="text-gray-700 leading-relaxed">{service.description}</p>
           </div>
 
           {/* 认证与FAQ */}
           <div className="flex flex-col md:flex-row gap-6 mb-8">
             <div className="flex-1">
-              <h3 className="font-semibold mb-2">服务认证</h3>
+              <h3 className="font-semibold mb-2">{t("skillDetail.certifications")}</h3>
               <div className="flex flex-col gap-2">
                 {service.provider.certifications?.map((c: string, i: number) => (
                   <Badge key={i} className="bg-blue-100 text-blue-700">{c}</Badge>
                 ))}
                 {service.provider.verified && (
                   <Badge className="bg-blue-500 text-white mt-2">
-                    <Shield className="w-4 h-4 mr-1" />已实名认证
+                    <Shield className="w-4 h-4 mr-1" />
+                    {t("skillDetail.verified")}
                   </Badge>
                 )}
               </div>
             </div>
             <div className="flex-1">
-              <h3 className="font-semibold mb-2">常见问题</h3>
+              <h3 className="font-semibold mb-2">{t("skillDetail.faq")}</h3>
               <ul>
                 {service.faq?.map((item: any, i: number) => (
                   <li key={i} className="mb-2">
@@ -106,7 +107,7 @@ const SkillServiceDetail = () => {
 
           {/* 客户评价 */}
           <div className="mb-10">
-            <h3 className="text-lg font-semibold mb-3 text-brand-teal">用户评价</h3>
+            <h3 className="text-lg font-semibold mb-3 text-brand-teal">{t("skillDetail.reviews")}</h3>
             <div className="flex flex-col gap-6">
               {service.reviews.map((review: any, idx: number) => (
                 <div key={idx} className="border-b pb-4">
@@ -155,23 +156,23 @@ const SkillServiceDetail = () => {
             </div>
             <div className="mb-4">
               <span className="text-2xl font-bold text-brand-teal">
-                ¥{service.price}
+                {(service.currencySymbol ?? "NZ$")}{service.price}
               </span>
               <span className="ml-1 text-gray-700">{service.priceUnit}</span>
             </div>
             <div className="mb-4">
-              <div className="font-medium text-gray-600 mb-1">可约时间：</div>
+              <div className="font-medium text-gray-600 mb-1">{t("skillDetail.timeLabel")}:</div>
               <div className="flex items-center">
                 <Calendar className="h-5 w-5 mr-1 text-brand-teal" />
                 <span>{service.timeRange}</span>
               </div>
             </div>
             <Button className="w-full bg-brand-teal hover:bg-brand-teal/90 text-white mb-3">
-              立即预约
+              {t("serviceDetail.bookNow")}
             </Button>
             <Button variant="outline" className="w-full border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white flex items-center justify-center mb-2">
               <MessageCircle className="h-4 w-4 mr-2" />
-              联系服务方
+              {t("serviceDetail.messageProvider")}
             </Button>
           </div>
         </aside>

@@ -1,4 +1,4 @@
-import { resolveLocale, type SupportedLocale } from "@/utils/locale";
+import { pickLocaleValue, resolveLocale, type SupportedLocale } from "@/utils/locale";
 
 export interface SkillService {
   title: string;
@@ -7,6 +7,7 @@ export interface SkillService {
   location: string;
   price: number;
   priceUnit: string;
+  currencySymbol?: string;
   timeRange: string;
   highlights: string[];
   images: string[];
@@ -27,7 +28,7 @@ export interface SkillService {
   faq?: Array<{ q: string; a: string }>;
 }
 
-const services: Record<SupportedLocale, Record<string, SkillService>> = {
+const services: Partial<Record<SupportedLocale, Record<string, SkillService>>> = {
   en: {
     "39": {
       title: "Yoga & Meditation Workshop",
@@ -36,6 +37,7 @@ const services: Record<SupportedLocale, Record<string, SkillService>> = {
       mode: "In-person / virtual",
       location: "Auckland, Wellington",
       price: 200,
+      currencySymbol: "NZ$",
       priceUnit: "per hour",
       timeRange: "Mon-Sun 8:00-20:00",
       highlights: ["Certified yoga coach", "Customized plans", "Stress relief", "Mind-body balance"],
@@ -79,6 +81,7 @@ const services: Record<SupportedLocale, Record<string, SkillService>> = {
       mode: "In-person",
       location: "Christchurch",
       price: 280,
+      currencySymbol: "NZ$",
       priceUnit: "per hour",
       timeRange: "Tue-Sun 10:00-18:00",
       highlights: ["Professional equipment", "Kiln firing services", "Personalized coaching", "Materials included"],
@@ -116,6 +119,7 @@ const services: Record<SupportedLocale, Record<string, SkillService>> = {
       mode: "线下/线上可选",
       location: "奥克兰、惠灵顿",
       price: 200,
+      currencySymbol: "NZ$",
       priceUnit: "每小时",
       timeRange: "周一至周日 8:00-20:00",
       highlights: ["专业瑜伽认证教练", "个性化课程定制", "放松减压", "身心健康提升"],
@@ -158,6 +162,7 @@ const services: Record<SupportedLocale, Record<string, SkillService>> = {
       mode: "线下体验",
       location: "基督城",
       price: 280,
+      currencySymbol: "NZ$",
       priceUnit: "每小时",
       timeRange: "周二至周日 10:00-18:00",
       highlights: ["专业陶艺设备", "作品烧制服务", "个性化指导", "材料提供"],
@@ -187,10 +192,343 @@ const services: Record<SupportedLocale, Record<string, SkillService>> = {
         { q: "需要预约吗？", a: "建议提前预约，保证器材和材料准备充足。" }
       ]
     }
+  },
+  pt: {
+    "39": {
+      title: "Workshop de ioga e meditação",
+      description:
+        "Sessões personalizadas conduzidas por uma instrutora certificada. Escolha mentoria individual, turmas reduzidas ou programas corpo-mente sob medida.",
+      mode: "Presencial / virtual",
+      location: "Auckland, Wellington",
+      price: 200,
+      currencySymbol: "NZ$",
+      priceUnit: "por hora",
+      timeRange: "Seg-Dom 8h00-20h00",
+      highlights: ["Coach de ioga certificada", "Planos personalizados", "Redução de estresse", "Equilíbrio corpo-mente"],
+      images: [
+        "https://images.unsplash.com/photo-1545389336-cf090694435e",
+        "https://images.unsplash.com/photo-1603988363607-e1e4a66962c6",
+        "https://images.unsplash.com/photo-1599447421416-3414546c2a89"
+      ],
+      provider: {
+        name: "Coach Wang",
+        avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+        rating: 4.9,
+        certifications: ["Yoga Alliance Certified", "Instrutora de mindfulness"],
+        verified: true
+      },
+      reviews: [
+        {
+          user: "Sra. Zhang",
+          avatar: "https://randomuser.me/api/portraits/women/22.jpg",
+          rating: 5,
+          date: "2024-03-21",
+          content: "Orientação super profissional—meu sono e foco melhoraram muito."
+        },
+        {
+          user: "Sr. Li",
+          avatar: "https://randomuser.me/api/portraits/men/54.jpg",
+          rating: 4,
+          date: "2024-04-11",
+          content: "Coach paciente, aulas bem ritmadas. Já sinto diferença no corpo."
+        }
+      ],
+      faq: [
+        { q: "Preciso de equipamentos?", a: "Somente um tapete e roupa confortável. Levamos o restante." },
+        { q: "Serve para iniciantes?", a: "Sim, cada aula é adaptada ao nível e objetivos de cada pessoa." }
+      ]
+    },
+    "40": {
+      title: "Estúdio de cerâmica autoral",
+      description:
+        "Aulas práticas guiadas por mestre ceramista. Aprenda técnicas fundamentais e crie peças exclusivas, do design até a queima final.",
+      mode: "Presencial",
+      location: "Christchurch",
+      price: 280,
+      currencySymbol: "NZ$",
+      priceUnit: "por hora",
+      timeRange: "Ter-Dom 10h00-18h00",
+      highlights: ["Equipamentos profissionais", "Serviço de queima em forno", "Mentoria personalizada", "Materiais incluídos"],
+      images: [
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261",
+        "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61",
+        "https://images.unsplash.com/photo-1604242684300-b8e24fdb149c"
+      ],
+      provider: {
+        name: "Professor Chen",
+        avatar: "https://randomuser.me/api/portraits/men/36.jpg",
+        rating: 4.8,
+        certifications: ["Artista nacional de artes e ofícios", "Certificação em ensino de cerâmica"],
+        verified: true
+      },
+      reviews: [
+        {
+          user: "Sra. Wang",
+          avatar: "https://randomuser.me/api/portraits/women/28.jpg",
+          rating: 5,
+          date: "2024-03-25",
+          content: "Experiência incrível—aprendi técnicas e saí com minha primeira peça finalizada!"
+        }
+      ],
+      faq: [
+        { q: "Posso levar minha peça?", a: "Sim, após a queima você retira no estúdio ou recebe em casa." },
+        { q: "Preciso agendar?", a: "Recomendamos reserva antecipada para preparar materiais e forno." }
+      ]
+    }
+  },
+  es: {
+    "39": {
+      title: "Taller de yoga y meditación",
+      description:
+        "Sesiones personalizadas dirigidas por una instructora certificada. Elige coaching uno a uno, clases grupales o programas cuerpo-mente hechos a medida.",
+      mode: "Presencial / virtual",
+      location: "Auckland, Wellington",
+      price: 200,
+      currencySymbol: "NZ$",
+      priceUnit: "por hora",
+      timeRange: "Lun-Dom 8:00-20:00",
+      highlights: ["Coach de yoga certificada", "Planes personalizados", "Alivio de estrés", "Equilibrio mente-cuerpo"],
+      images: [
+        "https://images.unsplash.com/photo-1545389336-cf090694435e",
+        "https://images.unsplash.com/photo-1603988363607-e1e4a66962c6",
+        "https://images.unsplash.com/photo-1599447421416-3414546c2a89"
+      ],
+      provider: {
+        name: "Coach Wang",
+        avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+        rating: 4.9,
+        certifications: ["Yoga Alliance Certified", "Instructora de mindfulness"],
+        verified: true
+      },
+      reviews: [
+        {
+          user: "Sra. Zhang",
+          avatar: "https://randomuser.me/api/portraits/women/22.jpg",
+          rating: 5,
+          date: "2024-03-21",
+          content: "Guía muy profesional; mi sueño y niveles de estrés mejoraron notablemente."
+        },
+        {
+          user: "Sr. Li",
+          avatar: "https://randomuser.me/api/portraits/men/54.jpg",
+          rating: 4,
+          date: "2024-04-11",
+          content: "Coach paciente y sesiones con ritmo adecuado. Ya siento el cambio."
+        }
+      ],
+      faq: [
+        { q: "¿Qué equipo necesito?", a: "Solo un mat de yoga y ropa cómoda. El resto de los props se proveen." },
+        { q: "¿Es apto para principiantes?", a: "Sí, las clases se ajustan a tu nivel y objetivos." }
+      ]
+    },
+    "40": {
+      title: "Estudio de cerámica artesanal",
+      description:
+        "Clases prácticas guiadas por un maestro ceramista. Aprende técnicas base y diseña tus propias piezas, del boceto al esmaltado.",
+      mode: "Presencial",
+      location: "Christchurch",
+      price: 280,
+      currencySymbol: "NZ$",
+      priceUnit: "por hora",
+      timeRange: "Mar-Dom 10:00-18:00",
+      highlights: ["Equipamiento profesional", "Servicio de horneado", "Mentoría personalizada", "Materiales incluidos"],
+      images: [
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261",
+        "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61",
+        "https://images.unsplash.com/photo-1604242684300-b8e24fdb149c"
+      ],
+      provider: {
+        name: "Profesor Chen",
+        avatar: "https://randomuser.me/api/portraits/men/36.jpg",
+        rating: 4.8,
+        certifications: ["Artista nacional de artes y oficios", "Certificación en enseñanza de cerámica"],
+        verified: true
+      },
+      reviews: [
+        {
+          user: "Sra. Wang",
+          avatar: "https://randomuser.me/api/portraits/women/28.jpg",
+          rating: 5,
+          date: "2024-03-25",
+          content: "Experiencia increíble: guía detallada y salí con mi primera pieza terminada."
+        }
+      ],
+      faq: [
+        { q: "¿Puedo llevarme mi pieza?", a: "Sí, después del horneado puedes retirarla o pedir envío." },
+        { q: "¿Necesito reservar?", a: "Se recomienda reservar con anticipación para preparar materiales y el horno." }
+      ]
+    }
+  },
+  fr: {
+    "39": {
+      title: "Atelier yoga & méditation",
+      description:
+        "Séances personnalisées animées par une coach certifiée. Choisissez coaching individuel, petits groupes ou programme corps-esprit sur mesure.",
+      mode: "Présentiel / virtuel",
+      location: "Auckland, Wellington",
+      price: 200,
+      currencySymbol: "NZ$",
+      priceUnit: "par heure",
+      timeRange: "Lun-Dim 8h00-20h00",
+      highlights: ["Coach certifiée", "Programmes personnalisés", "Gestion du stress", "Équilibre corps-esprit"],
+      images: [
+        "https://images.unsplash.com/photo-1545389336-cf090694435e",
+        "https://images.unsplash.com/photo-1603988363607-e1e4a66962c6",
+        "https://images.unsplash.com/photo-1599447421416-3414546c2a89"
+      ],
+      provider: {
+        name: "Coach Wang",
+        avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+        rating: 4.9,
+        certifications: ["Yoga Alliance Certified", "Instructrice mindfulness"],
+        verified: true
+      },
+      reviews: [
+        {
+          user: "Mme Zhang",
+          avatar: "https://randomuser.me/api/portraits/women/22.jpg",
+          rating: 5,
+          date: "2024-03-21",
+          content: "Coaching très professionnel, mon sommeil et mon énergie se sont nettement améliorés."
+        },
+        {
+          user: "M. Li",
+          avatar: "https://randomuser.me/api/portraits/men/54.jpg",
+          rating: 4,
+          date: "2024-04-11",
+          content: "Coach patiente, séances bien rythmées. Je sens déjà la différence."
+        }
+      ],
+      faq: [
+        { q: "Quel matériel prévoir ?", a: "Un tapis et une tenue confortable suffisent. Nous fournissons le reste." },
+        { q: "Est-ce adapté aux débutants ?", a: "Oui, chaque session est ajustée à votre niveau et à vos objectifs." }
+      ]
+    },
+    "40": {
+      title: "Studio de céramique artisanale",
+      description:
+        "Cours pratiques guidés par un maître céramiste. Apprenez les techniques de base et créez vos pièces du design à l’émaillage.",
+      mode: "Présentiel",
+      location: "Christchurch",
+      price: 280,
+      currencySymbol: "NZ$",
+      priceUnit: "par heure",
+      timeRange: "Mar-Dim 10h00-18h00",
+      highlights: ["Équipement professionnel", "Cuisson au four incluse", "Coaching personnalisé", "Matériel fourni"],
+      images: [
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261",
+        "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61",
+        "https://images.unsplash.com/photo-1604242684300-b8e24fdb149c"
+      ],
+      provider: {
+        name: "Professeur Chen",
+        avatar: "https://randomuser.me/api/portraits/men/36.jpg",
+        rating: 4.8,
+        certifications: ["Artiste national arts & métiers", "Certificat d’enseignement céramique"],
+        verified: true
+      },
+      reviews: [
+        {
+          user: "Mme Wang",
+          avatar: "https://randomuser.me/api/portraits/women/28.jpg",
+          rating: 5,
+          date: "2024-03-25",
+          content: "Expérience géniale : conseils précis et j’ai emporté ma toute première pièce terminée !"
+        }
+      ],
+      faq: [
+        { q: "Puis-je repartir avec ma pièce ?", a: "Oui, vous la récupérez après cuisson ou nous l’expédions." },
+        { q: "Faut-il réserver ?", a: "Une réservation à l’avance est conseillée pour préparer matériaux et four." }
+      ]
+    }
+  },
+  he: {
+    "39": {
+      title: "סדנת יוגה ומדיטציה",
+      description:
+        "מפגשי יוגה ומדיטציה המותאמים אישית בהובלת מדריכה מוסמכת. אפשר לבחור ליווי אחד על אחד, כיתות קטנות או תוכנית גוף-נפש ייעודית.",
+      mode: "פרונטלי / מקוון",
+      location: "אוקלנד, וולינגטון",
+      price: 200,
+      currencySymbol: "NZ$",
+      priceUnit: "לשעה",
+      timeRange: "א'-ש' 8:00-20:00",
+      highlights: ["מאמנת יוגה מוסמכת", "תוכנית מותאמת אישית", "הפחתת סטרס", "איזון גוף ונפש"],
+      images: [
+        "https://images.unsplash.com/photo-1545389336-cf090694435e",
+        "https://images.unsplash.com/photo-1603988363607-e1e4a66962c6",
+        "https://images.unsplash.com/photo-1599447421416-3414546c2a89"
+      ],
+      provider: {
+        name: "Coach Wang",
+        avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+        rating: 4.9,
+        certifications: ["Yoga Alliance Certified", "Mindfulness Instructor"],
+        verified: true
+      },
+      reviews: [
+        {
+          user: "גברת ג'אנג",
+          avatar: "https://randomuser.me/api/portraits/women/22.jpg",
+          rating: 5,
+          date: "2024-03-21",
+          content: "ליווי מקצועי ומרגיע שהחזיר לי שינה עמוקה אחרי כמה מפגשים."
+        },
+        {
+          user: "מר לי",
+          avatar: "https://randomuser.me/api/portraits/men/54.jpg",
+          rating: 4,
+          date: "2024-04-11",
+          content: "קצב מדויק וסבלנות אינסופית—אני מרגיש גמישות ואנרגיה חדשות."
+        }
+      ],
+      faq: [
+        { q: "מה צריך להביא?", a: "מזרן יוגה ובגדי ספורט נוחים—שאר האביזרים מחכים בסטודיו." },
+        { q: "האם זה מתאים למתחילים?", a: "כן. התרגול נבנה לפי הרמה והצרכים האישיים שלכם." }
+      ]
+    },
+    "40": {
+      title: "סטודיו ליצירת קרמיקה",
+      description:
+        "שיעורי חימר חווייתיים בליווי אמן קרמיקה בכיר. לומדים טכניקות בסיס, מפתחים סגנון אישי ומעצבים יצירה משלכם.",
+      mode: "פרונטלי",
+      location: "כרייסטצ'רץ'",
+      price: 280,
+      currencySymbol: "NZ$",
+      priceUnit: "לשעה",
+      timeRange: "ג'-א' 10:00-18:00",
+      highlights: ["ציוד מקצועי מלא", "שירותי שריפה בתנור", "הדרכה צמודה", "חומרים כלולים"],
+      images: [
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261",
+        "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61",
+        "https://images.unsplash.com/photo-1604242684300-b8e24fdb149c"
+      ],
+      provider: {
+        name: "Teacher Chen",
+        avatar: "https://randomuser.me/api/portraits/men/36.jpg",
+        rating: 4.8,
+        certifications: ["National Arts & Crafts Artist", "Pottery Education Certificate"],
+        verified: true
+      },
+      reviews: [
+        {
+          user: "גברת וונג",
+          avatar: "https://randomuser.me/api/portraits/women/28.jpg",
+          rating: 5,
+          date: "2024-03-25",
+          content: "חוויה מהנה וסבלנית. יצאתי עם הכלי הקרמי הראשון שלי וגאווה גדולה."
+        }
+      ],
+      faq: [
+        { q: "אפשר לקחת את היצירה הביתה?", a: "בוודאי. לאחר השריפה תוכלו לאסוף בעצמכם או להזמין משלוח." },
+        { q: "צריך להזמין מקום מראש?", a: "מומלץ לשריין מראש כדי שנכין את החומרים והציוד המתאימים." }
+      ]
+    }
   }
 };
 
 export const getSkillService = (language: string, id: string) => {
   const locale = resolveLocale(language);
-  return services[locale][id];
+  const localeServices = pickLocaleValue(services, locale);
+  return localeServices[id] ?? services.en?.[id];
 };

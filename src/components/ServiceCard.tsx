@@ -2,6 +2,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ThumbsUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface ServiceCardProps {
   id: string;
@@ -35,6 +36,7 @@ const ServiceCard = ({
   detailPath,
 }: ServiceCardProps) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleClick = () => {
     if (onCardClick) {
@@ -86,7 +88,7 @@ const ServiceCard = ({
       <CardFooter className="pt-0 pb-4">
         <div className="w-full flex justify-between items-center">
           <span className="font-semibold text-brand-teal">${price}/hr</span>
-          <span className="text-xs text-gray-500">Available now</span>
+          <span className="text-xs text-gray-500">{t("serviceCard.availableNow")}</span>
         </div>
       </CardFooter>
     </Card>

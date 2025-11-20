@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import type { ProviderProfile, ServiceOffering } from "@/types/guidew";
 import { formatDistance } from "@/utils/geo";
+import { useTranslation } from "react-i18next";
 
 interface ProviderListProps {
   providers: ProviderProfile[];
@@ -13,6 +14,7 @@ interface ProviderListProps {
 }
 
 const ProviderList = ({ providers, services, onSelect, activeProviderId, userLocation }: ProviderListProps) => {
+  const { t } = useTranslation();
   return (
     <div className="space-y-4 max-h-[28rem] overflow-y-auto pr-2">
       {providers.map(provider => {
@@ -35,14 +37,22 @@ const ProviderList = ({ providers, services, onSelect, activeProviderId, userLoc
             <CardContent className="p-4 space-y-3">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-lg font-semibold">{service?.title ?? "Service package"}</p>
+                  <p className="text-lg font-semibold">{service?.title ?? t("dashboard.providerList.serviceFallback")}</p>
                   <p className="text-sm text-muted-foreground">
-                    {provider.location.city} · {distance} away · {provider.languages.join(", ")}
+                    {t("dashboard.providerList.meta", {
+                      city: provider.location.city,
+                      distance,
+                      languages: provider.languages.join(", ")
+                    })}
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="font-bold text-brand-teal">${provider.hourlyRate}/hr</p>
-                  <p className="text-xs text-muted-foreground">Min {provider.minHours} hours</p>
+                  <p className="font-bold text-brand-teal">
+                    {t("dashboard.providerList.rate", { rate: provider.hourlyRate })}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {t("dashboard.providerList.minHours", { hours: provider.minHours })}
+                  </p>
                 </div>
               </div>
 
@@ -58,12 +68,19 @@ const ProviderList = ({ providers, services, onSelect, activeProviderId, userLoc
 
               <div className="grid grid-cols-2 gap-3 text-sm">
                 <div>
-                  <p className="font-semibold">Verifications</p>
-                  <p className="text-muted-foreground">{provider.certifications.length} certificates uploaded</p>
+                  <p className="font-semibold">{t("dashboard.providerList.verifications")}</p>
+                  <p className="text-muted-foreground">
+                    {t("dashboard.providerList.certifications", { count: provider.certifications.length })}
+                  </p>
                 </div>
                 <div>
-                  <p className="font-semibold">Rating</p>
-                  <p className="text-muted-foreground">{provider.rating.toFixed(2)} · {provider.completedOrders} trips</p>
+                  <p className="font-semibold">{t("dashboard.providerList.rating")}</p>
+                  <p className="text-muted-foreground">
+                    {t("dashboard.providerList.ratingDetail", {
+                      rating: provider.rating.toFixed(2),
+                      trips: provider.completedOrders
+                    })}
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -75,4 +92,3 @@ const ProviderList = ({ providers, services, onSelect, activeProviderId, userLoc
 };
 
 export default ProviderList;
-

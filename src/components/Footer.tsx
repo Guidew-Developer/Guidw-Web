@@ -9,9 +9,28 @@ import {
   Phone 
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { resolveLocale } from "@/utils/locale";
+import { pickLocaleValue, resolveLocale, type SupportedLocale } from "@/utils/locale";
 
-const copy = {
+const copy: Partial<
+  Record<
+    SupportedLocale,
+    {
+      tagline: string;
+      powered: string;
+      explore: string;
+      company: string;
+      contact: string;
+      quickLinks: Array<{ to: string; label: string }>;
+      companyLinks: Array<{ to: string; label: string }>;
+      address: string;
+      phone: string;
+      email: string;
+      terms: string;
+      privacy: string;
+      cookies: string;
+    }
+  >
+> = {
   en: {
     tagline: "Connecting you with local expertise, on demand, wherever you are in the world.",
     powered: "Powered by VIVA Dance Limited",
@@ -61,13 +80,113 @@ const copy = {
     terms: "服务条款",
     privacy: "隐私政策",
     cookies: "Cookie 政策"
+  },
+  es: {
+    tagline: "Conectamos viajeros y especialistas locales, on demand, en cualquier ciudad.",
+    powered: "Operado por VIVA Dance Limited",
+    explore: "Explorar",
+    company: "Compañía",
+    contact: "Contacto",
+    quickLinks: [
+      { to: "/discover", label: "Buscar servicios" },
+      { to: "/how-it-works", label: "Cómo funciona" },
+      { to: "/become-expert", label: "Quiero ser experto" },
+      { to: "/locations", label: "Ciudades" }
+    ],
+    companyLinks: [
+      { to: "/about", label: "Sobre Guidew" },
+      { to: "/careers", label: "Carreras" },
+      { to: "/blog", label: "Blog" },
+      { to: "/press", label: "Prensa" }
+    ],
+    address: "10 Newton Road, Auckland Central, NZ 1010",
+    phone: "+64 (21) 513-258",
+    email: "hello@guidew.com",
+    terms: "Términos de servicio",
+    privacy: "Política de privacidad",
+    cookies: "Política de cookies"
+  },
+  pt: {
+    tagline: "Conectamos você a especialistas locais, sob demanda, em qualquer parte do mundo.",
+    powered: "Operado pela VIVA Dance Limited",
+    explore: "Explorar",
+    company: "Empresa",
+    contact: "Contato",
+    quickLinks: [
+      { to: "/discover", label: "Encontrar serviços" },
+      { to: "/how-it-works", label: "Como funciona" },
+      { to: "/become-expert", label: "Quero ser especialista" },
+      { to: "/locations", label: "Cidades" }
+    ],
+    companyLinks: [
+      { to: "/about", label: "Sobre nós" },
+      { to: "/careers", label: "Carreiras" },
+      { to: "/blog", label: "Blog" },
+      { to: "/press", label: "Imprensa" }
+    ],
+    address: "10 Newton Road, Auckland Central, NZ 1010",
+    phone: "+64 (21) 513-258",
+    email: "hello@guidew.com",
+    terms: "Termos de serviço",
+    privacy: "Política de privacidade",
+    cookies: "Política de cookies"
+  },
+  fr: {
+    tagline: "Reliez-vous à une expertise locale, à la demande, où que vous soyez dans le monde.",
+    powered: "Propulsé par VIVA Dance Limited",
+    explore: "Explorer",
+    company: "Entreprise",
+    contact: "Contact",
+    quickLinks: [
+      { to: "/discover", label: "Trouver des services" },
+      { to: "/how-it-works", label: "Comment ça marche" },
+      { to: "/become-expert", label: "Devenir expert" },
+      { to: "/locations", label: "Villes desservies" }
+    ],
+    companyLinks: [
+      { to: "/about", label: "À propos" },
+      { to: "/careers", label: "Carrières" },
+      { to: "/blog", label: "Blog" },
+      { to: "/press", label: "Presse" }
+    ],
+    address: "10 Newton Road, Auckland Central, NZ 1010",
+    phone: "+64 (21) 513-258",
+    email: "hello@guidew.com",
+    terms: "Conditions d’utilisation",
+    privacy: "Politique de confidentialité",
+    cookies: "Politique de cookies"
+  },
+  he: {
+    tagline: "חיבור מיידי למומחיות מקומית בכל מקום בעולם.",
+    powered: "מופעל על ידי VIVA Dance Limited",
+    explore: "גלו",
+    company: "החברה",
+    contact: "יצירת קשר",
+    quickLinks: [
+      { to: "/discover", label: "מצאו שירותים" },
+      { to: "/how-it-works", label: "איך זה עובד" },
+      { to: "/become-expert", label: "הפכו למומחים" },
+      { to: "/locations", label: "ערים ושירותים" }
+    ],
+    companyLinks: [
+      { to: "/about", label: "אודות" },
+      { to: "/careers", label: "קריירות" },
+      { to: "/blog", label: "בלוג" },
+      { to: "/press", label: "תקשורת" }
+    ],
+    address: "10 Newton Road, Auckland Central, NZ 1010",
+    phone: "+64 (21) 513-258",
+    email: "hello@guidew.com",
+    terms: "תנאי שימוש",
+    privacy: "מדיניות פרטיות",
+    cookies: "מדיניות Cookies"
   }
 } as const;
 
 const Footer = () => {
   const { i18n } = useTranslation();
   const locale = resolveLocale(i18n.language);
-  const content = copy[locale];
+  const content = pickLocaleValue(copy, locale);
 
   return (
     <footer className="bg-gray-50 pt-16 pb-8">

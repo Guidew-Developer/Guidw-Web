@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import type { ProviderProfile } from "@/types/guidew";
+import { useTranslation } from "react-i18next";
 
 export interface ProviderFilterState {
   tags: string[];
@@ -22,6 +23,7 @@ const toggleValue = (current: string[], value: string) =>
   current.includes(value) ? current.filter(item => item !== value) : [...current, value];
 
 const ProviderFilters = ({ providers, value, onChange }: ProviderFiltersProps) => {
+  const { t } = useTranslation();
   const { tags, languages } = useMemo(() => {
     const tagSet = new Set<string>();
     const languageSet = new Set<string>();
@@ -35,11 +37,11 @@ const ProviderFilters = ({ providers, value, onChange }: ProviderFiltersProps) =
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Filter experts</CardTitle>
+        <CardTitle>{t("dashboard.providerFilters.title")}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <div>
-          <p className="text-sm font-semibold mb-2">Tags</p>
+          <p className="text-sm font-semibold mb-2">{t("dashboard.providerFilters.tags")}</p>
           <div className="flex flex-wrap gap-2">
             {tags.map(tag => (
               <Button
@@ -51,12 +53,14 @@ const ProviderFilters = ({ providers, value, onChange }: ProviderFiltersProps) =
                 #{tag}
               </Button>
             ))}
-            {tags.length === 0 && <p className="text-xs text-muted-foreground">No tags configured yet.</p>}
+            {tags.length === 0 && (
+              <p className="text-xs text-muted-foreground">{t("dashboard.providerFilters.tagsEmpty")}</p>
+            )}
           </div>
         </div>
 
         <div>
-          <p className="text-sm font-semibold mb-2">Languages</p>
+          <p className="text-sm font-semibold mb-2">{t("dashboard.providerFilters.languages")}</p>
           <div className="flex flex-wrap gap-2">
             {languages.map(language => (
               <Button
@@ -68,7 +72,9 @@ const ProviderFilters = ({ providers, value, onChange }: ProviderFiltersProps) =
                 {language}
               </Button>
             ))}
-            {languages.length === 0 && <p className="text-xs text-muted-foreground">Providers have not listed languages yet.</p>}
+            {languages.length === 0 && (
+              <p className="text-xs text-muted-foreground">{t("dashboard.providerFilters.languagesEmpty")}</p>
+            )}
           </div>
         </div>
 
@@ -77,18 +83,20 @@ const ProviderFilters = ({ providers, value, onChange }: ProviderFiltersProps) =
             variant={value.vipOnly ? "default" : "outline"}
             onClick={() => onChange({ ...value, vipOnly: !value.vipOnly })}
           >
-            VIP only
+            {t("dashboard.providerFilters.vipOnly")}
           </Button>
           <Button
             variant={value.autoAcceptOnly ? "default" : "outline"}
             onClick={() => onChange({ ...value, autoAcceptOnly: !value.autoAcceptOnly })}
           >
-            Auto accept only
+            {t("dashboard.providerFilters.autoAcceptOnly")}
           </Button>
         </div>
 
         <div>
-          <p className="text-sm font-semibold mb-2">Minimum rating {value.minRating.toFixed(1)}</p>
+          <p className="text-sm font-semibold mb-2">
+            {t("dashboard.providerFilters.minRating", { rating: value.minRating.toFixed(1) })}
+          </p>
           <Slider
             value={[value.minRating]}
             onValueChange={([minRating]) => onChange({ ...value, minRating })}
@@ -98,8 +106,12 @@ const ProviderFilters = ({ providers, value, onChange }: ProviderFiltersProps) =
           />
         </div>
 
-        <Button variant="ghost" size="sm" onClick={() => onChange({ tags: [], languages: [], vipOnly: false, autoAcceptOnly: false, minRating: 0 })}>
-          Reset filters
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() => onChange({ tags: [], languages: [], vipOnly: false, autoAcceptOnly: false, minRating: 0 })}
+        >
+          {t("dashboard.providerFilters.reset")}
         </Button>
       </CardContent>
     </Card>

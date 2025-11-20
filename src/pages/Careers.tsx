@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Briefcase, Rocket, Users2, Target, Sparkles, Globe2, ShieldCheck, type LucideIcon } from "lucide-react";
 import { getCareerOpenings } from "@/constants/siteContent";
 import { useTranslation } from "react-i18next";
-import { resolveLocale, type SupportedLocale } from "@/utils/locale";
+import { pickLocaleValue, resolveLocale, type SupportedLocale } from "@/utils/locale";
 
 type CareersCopy = {
   hero: {
@@ -50,7 +50,7 @@ type CareersCopy = {
   };
 };
 
-const copy: Record<SupportedLocale, CareersCopy> = {
+const copy: Partial<Record<SupportedLocale, CareersCopy>> = {
   en: {
     hero: {
       badge: "Join The Mission",
@@ -228,13 +228,258 @@ const copy: Record<SupportedLocale, CareersCopy> = {
       viewDetails: "查看详情",
       apply: "申请职位"
     }
+  },
+  pt: {
+    hero: {
+      badge: "Junte-se à missão",
+      title: "Redefina o compartilhamento de habilidades offline",
+      description:
+        "Convidamos designers, pessoas de produto, engenheiros e operadores locais para servir os primeiros 1.000+ usuários em Auckland e Wellington e preparar nossa expansão global."
+    },
+    values: [
+      {
+        title: "Design centrado em pessoas",
+        description: "Acompanhamos viajantes e provedores em campo para criar experiências que resolvem dores na hora.",
+        icon: Users2
+      },
+      {
+        title: "Validação rápida",
+        description: "MVP em 6 meses, duas cidades em 12—lançamentos pequenos e entrega constante.",
+        icon: Rocket
+      },
+      {
+        title: "Confiança e segurança",
+        description: "Fluxos de identidade, pedidos e pagamentos foram desenhados para encontros presenciais impecáveis.",
+        icon: Target
+      }
+    ],
+    openRolesTitle: "Vagas abertas",
+    metricsTitle: "Guidew em números",
+    metrics: [
+      { value: "12+", label: "verticais artesanais", description: "Chefs, mentores de surf, botânicos e muito mais." },
+      { value: "1K+", label: "viajantes beta", description: "Já confiam nos nossos hosts offline." },
+      { value: "48h", label: "ciclo de entrega", description: "Da hipótese ao piloto em cidades reais." },
+      { value: "3 continentes", label: "parceiros operacionais", description: "Raízes na Ásia-Pacífico, Europa e América do Norte." }
+    ],
+    culture: {
+      title: "Construa encontros premium de alta confiança",
+      intro: "Rituais de hospitalidade encontram rigor de produto—cada decisão mantém viajantes e hosts à mesa.",
+      highlights: [
+        {
+          title: "Obcecados por detalhes",
+          description: "Testamos pessoalmente scripts e experiências de recepção.",
+          icon: Sparkles
+        },
+        {
+          title: "Mentalidade local-first",
+          description: "Operadores regionais lideram; HQ remove bloqueios e libera orçamento.",
+          icon: Globe2
+        },
+        {
+          title: "Segurança é sagrada",
+          description: "Identidade, pagamentos e avaliações são verificadas antes do encontro físico.",
+          icon: ShieldCheck
+        }
+      ]
+    },
+    perks: {
+      title: "Benefícios",
+      items: [
+        "Equity de fundadores com upside atrelado a cada cidade lançada.",
+        "Residências trimestrais de craftsmanship para co-criar experiências offline.",
+        "Auxílio bem-estar e relocação pela Austrália e Nova Zelândia.",
+        "Orçamento para aprender com mestres em qualquer ofício que atendemos."
+      ]
+    },
+    closing: {
+      title: "Molde o padrão da expertise offline",
+      description:
+        "Se você ama levar produtos para o mundo físico, a Guidew oferece um canvas gigante. Escreva diretamente para os partners e vamos desenhar seu papel.",
+      ctaPrimary: "Falar com um Partner",
+      ctaSecondary: "Ver vagas"
+    },
+    actions: {
+      viewDetails: "Ver detalhes",
+      apply: "Candidatar-se"
+    }
+  },
+  es: {
+    hero: {
+      badge: "Únete a la misión",
+      title: "Redefine el intercambio de habilidades presenciales junto a Guidew",
+      description:
+        "Sumamos diseñadores, producto, ingeniería y operadores locales para servir a los primeros 1.000 usuarios en Auckland/Wellington antes de escalar a cada ciudad."
+    },
+    values: [
+      {
+        title: "Diseño humano",
+        description: "Acompañamos a viajeros y anfitriones en situaciones reales para construir experiencias que resuelven dolores inmediatos.",
+        icon: Users2
+      },
+      {
+        title: "Validación exprés",
+        description: "MVP en 6 meses, dos ciudades en 12: lanzamientos pequeños, entrega continua.",
+        icon: Rocket
+      },
+      {
+        title: "Confianza y seguridad",
+        description: "Identidad, flujos de pedidos y pagos garantizan que cada encuentro offline sea seguro.",
+        icon: Target
+      }
+    ],
+    openRolesTitle: "Vacantes abiertas",
+    metricsTitle: "Guidew en cifras",
+    metrics: [
+      { value: "12+", label: "verticales artesanales", description: "Chefs privados, mentores de surf, botánicos y más." },
+      { value: "1K+", label: "viajeros beta", description: "Ya confían en nuestros anfitriones locales." },
+      { value: "48 h", label: "ciclo de entrega", description: "De la hipótesis al piloto urbano en dos días." },
+      { value: "3 continentes", label: "socios operadores", description: "Anclados en APAC, Europa y Norteamérica." }
+    ],
+    culture: {
+      title: "Diseña encuentros premium y fiables",
+      intro: "Rituales de hospitalidad se mezclan con rigor de producto para mantener a viajeros y hosts al centro.",
+      highlights: [
+        { title: "Obsesión por el detalle", description: "Probamos cada guion de bienvenida y experiencia en campo.", icon: Sparkles },
+        { title: "Mentalidad local-first", description: "Los operadores regionales lideran; HQ retira bloqueos y financia.", icon: Globe2 },
+        { title: "Seguridad sagrada", description: "Identidad, pago y reseñas se verifican antes del encuentro.", icon: ShieldCheck }
+      ]
+    },
+    perks: {
+      title: "Beneficios",
+      items: [
+        "Equity de etapa fundadora más variable ligada a cada lanzamiento.",
+        "Residencias trimestrales con maestros locales para co-crear experiencias.",
+        "Stipend de bienestar y relocación en Australia/Nueva Zelanda.",
+        "Presupuesto personal para aprender de referentes en cada oficio."
+      ]
+    },
+    closing: {
+      title: "Define el estándar de expertise offline",
+      description: "Si disfrutas llevar el producto al mundo físico, Guidew es tu lienzo. Conversemos con el equipo fundador y definamos tu rol.",
+      ctaPrimary: "Hablar con un partner",
+      ctaSecondary: "Ver vacantes"
+    },
+    actions: {
+      viewDetails: "Ver detalles",
+      apply: "Postular"
+    }
+  },
+  fr: {
+    hero: {
+      badge: "Rejoignez Guidew",
+      title: "Redéfinissez le partage de compétences offline",
+      description:
+        "Nous recrutons designers, produit, ingénieurs et opérateurs locaux pour servir les premiers 1 000 utilisateurs à Auckland/Wellington avant de nous étendre."
+    },
+    values: [
+      {
+        title: "Design centré humain",
+        description: "Nous observons voyageurs et prestataires sur le terrain pour livrer des expériences à impact immédiat.",
+        icon: Users2
+      },
+      {
+        title: "Validation rapide",
+        description: "MVP en 6 mois, deux villes en 12—mini-lancements et livraison continue.",
+        icon: Rocket
+      },
+      {
+        title: "Confiance & sûreté",
+        description: "Identité, commandes et paiements protègent chaque interaction physique.",
+        icon: Target
+      }
+    ],
+    openRolesTitle: "Postes ouverts",
+    metricsTitle: "Guidew en chiffres",
+    metrics: [
+      { value: "12+", label: "verticales artisanales", description: "Chefs privés, mentors surf, botanistes, etc." },
+      { value: "1K+", label: "voyageurs bêta", description: "Ils confient déjà leurs rencontres offline à Guidew." },
+      { value: "48 h", label: "cycle de livraison", description: "De l’idée au pilote terrain en deux jours." },
+      { value: "3 continents", label: "partenaires opérateurs", description: "Ancrages APAC, Europe, Amérique du Nord." }
+    ],
+    culture: {
+      title: "Imaginer des rencontres haut de gamme",
+      intro: "Rituels d’hospitalité et rigueur produit gardent voyageurs et hôtes au centre des décisions.",
+      highlights: [
+        { title: "Goût du détail", description: "Chaque script et expérience d’accueil est testé en interne.", icon: Sparkles },
+        { title: "Primauté locale", description: "Les équipes régionales mènent, le siège lève les freins.", icon: Globe2 },
+        { title: "Sécurité inviolable", description: "Identité, paiements et avis sont validés avant la rencontre.", icon: ShieldCheck }
+      ]
+    },
+    perks: {
+      title: "Avantages",
+      items: [
+        "Equity fondatrice + bonus liés à l’ouverture de nouvelles villes.",
+        "Résidences trimestrielles avec artisans pour co-créer des expériences.",
+        "Budget bien-être et mobilité en Australie & Nouvelle-Zélande.",
+        "Crédit formation pour apprendre auprès des meilleurs artisans."
+      ]
+    },
+    closing: {
+      title: "Fixez la nouvelle référence de l’expertise locale",
+      description: "Envie de déployer un produit dans le monde réel ? Guidew vous offre un terrain immense. Contactez nos partners pour dessiner votre poste.",
+      ctaPrimary: "Parler à un partner",
+      ctaSecondary: "Voir les postes"
+    },
+    actions: {
+      viewDetails: "Voir les détails",
+      apply: "Postuler"
+    }
+  },
+  he: {
+    hero: {
+      badge: "הצטרפו ל-Guidew",
+      title: "מגדירים מחדש שיתוף כישורים בעולם הפיזי",
+      description:
+        "מחפשים מעצבים, מוצר, מפתחים ותפעול מקומי כדי לשרת את אלף המשתמשים הראשונים ולקחת את המודל לכל עיר."
+    },
+    values: [
+      { title: "עיצוב מבוסס אנשים", description: "נמצאים בשטח עם משתמשים וספקים כדי לפתור כאב מיידי.", icon: Users2 },
+      { title: "אימות מהיר", description: "MVP בחצי שנה, שתי ערים בשנה—השקות קטנות ורצף משלוחים.", icon: Rocket },
+      { title: "אמון ובטיחות", description: "זהות, הזמנות ותשלומים נבנים כך שכל מפגש יהיה בטוח.", icon: Target }
+    ],
+    openRolesTitle: "תפקידים פתוחים",
+    metricsTitle: "Guidew במספרים",
+    metrics: [
+      { value: "12+", label: "תחומי מומחיות", description: "שפים פרטיים, מדריכי גלישה, בוטנאים ועוד." },
+      { value: "1K+", label: "מטיילי בטא", description: "כבר מסתמכים על רשת המארחים שלנו." },
+      { value: "48 שעות", label: "מחזור אספקה", description: "מהיפותזה לפיילוט בעיר תוך יומיים." },
+      { value: "3 יבשות", label: "שותפי תפעול", description: "שורשים באסיה-פסיפיק, אירופה ואמריקה." }
+    ],
+    culture: {
+      title: "יוצרים מפגשים מדויקים ואמינים",
+      intro: "טקסי אירוח מתחברים למשמעת מוצר כדי לשים את האורחים והספקים במרכז.",
+      highlights: [
+        { title: "אובססיה לפרטים", description: "בודקים כל תסריט קבלת פנים וכל חוויה לפני ההשקה.", icon: Sparkles },
+        { title: "לוקאלי תחילה", description: "מנהלים אזוריים מובילים; HQ מסיר חסמים ומממן.", icon: Globe2 },
+        { title: "הבטיחות מעל הכול", description: "זהות, תשלום ומעגל הביקורות נסגר לפני מפגש.", icon: ShieldCheck }
+      ]
+    },
+    perks: {
+      title: "מה מקבלים",
+      items: [
+        "אקוויטי של צוות מייסד ובונוס לפי פתיחת ערים.",
+        "רזידנסי רבעוני עם מאסטרים מקומיים ליצירת חוויות.",
+        "מענק רווחה ורילוקיישן באוסטרליה וניו זילנד.",
+        "תקציב למידה אישי ללמוד מהטובים בכל תחום פעילות."
+      ]
+    },
+    closing: {
+      title: "מעצבים את הסטנדרט של מומחיות מקומית",
+      description: "אם אתם אוהבים להוריד מוצר לקרקע, Guidew היא הבמה. דברו עם השותפים ונבנה יחד את התפקיד.",
+      ctaPrimary: "דברו עם שותף",
+      ctaSecondary: "ראו תפקידים"
+    },
+    actions: {
+      viewDetails: "לפרטי התפקיד",
+      apply: "הגשת מועמדות"
+    }
   }
 };
 
 const Careers = () => {
   const { i18n } = useTranslation();
   const locale = resolveLocale(i18n.language);
-  const content = copy[locale];
+  const content = pickLocaleValue(copy, locale);
   const openings = useMemo(() => getCareerOpenings(i18n.language), [i18n.language]);
 
   return (

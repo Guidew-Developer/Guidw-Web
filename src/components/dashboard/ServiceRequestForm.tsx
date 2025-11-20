@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import type { OrderRecord, ProviderProfile, ServiceOffering } from "@/types/guidew";
+import { useTranslation } from "react-i18next";
 
 interface ServiceRequestFormProps {
   services: ServiceOffering[];
@@ -34,6 +35,7 @@ const ServiceRequestForm = ({
   onSelectProvider,
   activeOrder
 }: ServiceRequestFormProps) => {
+  const { t } = useTranslation();
   const [serviceId, setServiceId] = useState(services[0]?.id ?? "");
   const [providerId, setProviderId] = useState(providers[0]?.id ?? "");
   const [startTime, setStartTime] = useState(() => format(new Date(Date.now() + 3 * 60 * 60 * 1000), "yyyy-MM-dd'T'HH:mm"));
@@ -57,24 +59,22 @@ const ServiceRequestForm = ({
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Book a local expert</CardTitle>
-        <CardDescription>
-          Provide your desired service details. VIP users can describe needs in natural language to receive AI-powered matches.
-        </CardDescription>
+        <CardTitle>{t("dashboard.request.title")}</CardTitle>
+        <CardDescription>{t("dashboard.request.description")}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         {activeOrder && (
           <div className="rounded-lg border border-amber-500 bg-amber-50 p-4 text-sm text-amber-700">
-            You already have an active order scheduled for {format(new Date(activeOrder.startTime), "PPPp")}. New bookings will be scheduled around it.
+            {t("dashboard.request.activeWarning", { time: format(new Date(activeOrder.startTime), "PPPp") })}
           </div>
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label>Service</Label>
+            <Label>{t("dashboard.request.serviceLabel")}</Label>
             <Select value={serviceId} onValueChange={value => setServiceId(value)}>
               <SelectTrigger>
-                <SelectValue placeholder="Choose a service" />
+                <SelectValue placeholder={t("dashboard.request.servicePlaceholder")} />
               </SelectTrigger>
               <SelectContent>
                 {services.map(service => (
@@ -87,10 +87,10 @@ const ServiceRequestForm = ({
           </div>
 
           <div className="space-y-2">
-            <Label>Preferred expert</Label>
+            <Label>{t("dashboard.request.providerLabel")}</Label>
             <Select value={providerId} onValueChange={value => setProviderId(value)}>
               <SelectTrigger>
-                <SelectValue placeholder="Pick a provider" />
+                <SelectValue placeholder={t("dashboard.request.providerPlaceholder")} />
               </SelectTrigger>
               <SelectContent>
                 {providers.map(provider => (
@@ -103,36 +103,36 @@ const ServiceRequestForm = ({
           </div>
 
           <div className="space-y-2">
-            <Label>Start date & time</Label>
+            <Label>{t("dashboard.request.startLabel")}</Label>
             <Input type="datetime-local" value={startTime} onChange={event => setStartTime(event.target.value)} />
           </div>
 
           <div className="space-y-2">
-            <Label>Duration (hours)</Label>
+            <Label>{t("dashboard.request.durationLabel")}</Label>
             <Input type="number" min={1} value={duration} onChange={event => setDuration(Number(event.target.value))} />
           </div>
 
           <div className="md:col-span-2 space-y-2">
-            <Label>Service location</Label>
-            <Input value={address} onChange={event => setAddress(event.target.value)} placeholder="Address or meeting point" />
+            <Label>{t("dashboard.request.locationLabel")}</Label>
+            <Input value={address} onChange={event => setAddress(event.target.value)} placeholder={t("dashboard.request.locationPlaceholder")} />
           </div>
 
           <div className="md:col-span-2 space-y-2">
-            <Label>Require itinerary in advance?</Label>
+            <Label>{t("dashboard.request.itineraryLabel")}</Label>
             <div className="flex gap-3">
               <Button
                 type="button"
                 variant={requiresItinerary ? "default" : "outline"}
                 onClick={() => setRequiresItinerary(true)}
               >
-                Yes, please share a plan
+                {t("dashboard.request.itineraryYes")}
               </Button>
               <Button
                 type="button"
                 variant={!requiresItinerary ? "default" : "outline"}
                 onClick={() => setRequiresItinerary(false)}
               >
-                No, keep it flexible
+                {t("dashboard.request.itineraryNo")}
               </Button>
             </div>
           </div>
@@ -140,14 +140,14 @@ const ServiceRequestForm = ({
 
         {aiSuggest && (
           <div className="space-y-2">
-            <Label>Describe your need (AI concierge)</Label>
+            <Label>{t("dashboard.request.aiLabel")}</Label>
             <Textarea value={aiQuery} onChange={event => setAiQuery(event.target.value)} rows={4} />
             <Button
               type="button"
               variant="outline"
               onClick={() => aiSuggest(aiQuery, { startTime, durationHours: duration })}
             >
-              Generate recommended experts
+              {t("dashboard.request.aiButton")}
             </Button>
             {recommendedProviders.length > 0 && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -161,7 +161,9 @@ const ServiceRequestForm = ({
                     className="rounded-lg border p-3 text-left hover:border-brand-teal"
                   >
                     <p className="font-semibold">{provider.location.city} · {provider.tags[0]}</p>
-                    <p className="text-sm text-muted-foreground">Speaks {provider.languages.join(", ")}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {t("dashboard.request.speaksLanguages", { languages: provider.languages.join(", ") })}
+                    </p>
                   </button>
                 ))}
               </div>
@@ -182,7 +184,7 @@ const ServiceRequestForm = ({
             })
           }
         >
-          Submit booking request
+          {t("dashboard.request.submit")}
         </Button>
       </CardContent>
     </Card>
@@ -190,4 +192,3 @@ const ServiceRequestForm = ({
 };
 
 export default ServiceRequestForm;
-

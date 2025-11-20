@@ -1,76 +1,341 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
-import { 
-  Calendar, 
-  MapPin, 
-  Clock, 
-  User, 
-  Star, 
-  MessageCircle, 
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import {
+  Calendar,
+  MapPin,
+  Clock,
+  User,
+  Star,
+  MessageCircle,
   Calendar as CalendarIcon,
   Check,
   Shield
-} from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import DownloadApp from '@/components/DownloadApp';
+} from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import DownloadApp from "@/components/DownloadApp";
+import { resolveLocale } from "@/utils/locale";
 
-const ServiceDetail: React.FC = () => {
-  const { t } = useTranslation();
-  const { id } = useParams();
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
-  const [selectedTime, setSelectedTime] = useState<string | null>(null);
-  
-  const service = {
-    id: id || "1",
-    title: "东京城市隐藏宝地之旅",
-    provider: {
-      name: "Hiroshi K.",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-      rating: 4.9,
-      responseTime: "5 min",
-      languages: ["Japanese", "English", "Chinese"],
-      experience: "3 years",
-      verified: true
-    },
-    description: "探索东京鲜为人知的小巷和本地特色，体验真正的日本文化。这个导览将带您穿过繁华的新宿和涩谷区的小巷，发现当地人最喜欢的餐馆、咖啡馆和商店。我们会品尝正宗的日本小吃，参观传统的日本庭院，并了解这座城市丰富的历史和文化。全程我会根据您的兴趣定制行程，确保您获得最地道的东京体验。",
-    category: "Local Guide",
-    price: 40,
-    duration: "3小时",
-    location: "奥克兰, 新西兰",
-    languages: ["日语", "英语", "中文"],
-    groupSize: "1-5人",
-    availableNow: true,
+const serviceLocales = ["en", "zh", "pt", "es", "fr", "he"] as const;
+type ServiceLocale = (typeof serviceLocales)[number];
+
+type ServiceTemplate = {
+  title: string;
+  description: string;
+  location: string;
+  duration: string;
+  groupSize: string;
+  price: number;
+  currencySymbol: string;
+  languages: string[];
+  includedFeatures: string[];
+  reviews: Array<{
+    author: string;
+    avatar: string;
+    rating: number;
+    date: string;
+    text: string;
+  }>;
+  provider: {
+    name: string;
+    avatar: string;
+    rating: number;
+    responseTime: string;
+    languages: string[];
+    experience: string;
+    verified: boolean;
+  };
+};
+
+const providerAvatar = "https://randomuser.me/api/portraits/men/32.jpg";
+const reviewAvatars = {
+  sarah: "https://randomuser.me/api/portraits/women/22.jpg",
+  michael: "https://randomuser.me/api/portraits/men/54.jpg"
+};
+
+const serviceCopy: Record<ServiceLocale, ServiceTemplate> = {
+  en: {
+    title: "Auckland laneways & izakaya storytelling",
+    description:
+      "Follow a bilingual concierge through Ponsonby backstreets and Britomart rooftops. We taste signature small plates, decode cultural etiquette, and map hidden art alleys that rarely show up in guidebooks. Every stop adjusts to your interests—design, pop culture, wellness, or after-dark adventures.",
+    location: "Auckland, New Zealand",
+    duration: "3 hours",
+    groupSize: "1–5 guests",
+    price: 95,
+    currencySymbol: "NZ$",
+    languages: ["English", "Japanese", "Mandarin"],
+    includedFeatures: [
+      "Personalized micro-itinerary with AI-generated notes",
+      "Local food & drink recommendations for the week",
+      "Hidden laneways, rooftop gardens, and gallery pop-ups",
+      "Etiquette coaching for meetings and nightlife",
+      "On-demand translation + emergency phrases"
+    ],
     reviews: [
       {
         author: "Sarah L.",
-        avatar: "https://randomuser.me/api/portraits/women/22.jpg",
+        avatar: reviewAvatars.sarah,
         rating: 5,
-        date: "2023-10-15",
-        text: "Hiroshi was an amazing guide! He showed us places we would have never found on our own and was very knowledgeable about the history and culture of Auckland."
+        date: "2024-10-15",
+        text: "Hiroshi mixed street food, indie art, and business etiquette in one evening. I felt prepared for meetings and still saw the coolest side of Auckland."
       },
       {
         author: "Michael C.",
-        avatar: "https://randomuser.me/api/portraits/men/54.jpg",
+        avatar: reviewAvatars.michael,
         rating: 4,
-        date: "2023-09-28",
-        text: "Great experience overall. We visited some amazing hidden restaurants and shops. Would highly recommend for first-time visitors to Auckland."
+        date: "2024-09-28",
+        text: "Great flow between hidden bars and heritage spots. The live translation during vendor visits saved us time."
       }
     ],
-    availableDates: ["2023-11-10", "2023-11-11", "2023-11-12"],
-    availableTimes: ["09:00", "13:00", "17:00"],
+    provider: {
+      name: "Hiroshi K.",
+      avatar: providerAvatar,
+      rating: 4.9,
+      responseTime: "Replies within 5 min",
+      languages: ["English", "Japanese", "Mandarin"],
+      experience: "3 years guiding in Auckland",
+      verified: true
+    }
+  },
+  zh: {
+    title: "奥克兰巷内秘境与居酒屋夜谈",
+    description:
+      "和双语礼宾一起穿梭 Ponsonby 小巷与 Britomart 天台，在当地人的节奏中品尝居酒屋小食、参观临时艺术展，并学习在商务、社交场合的沟通礼仪。行程可按你的兴趣实时调整：设计、流行文化、康养或夜生活都能覆盖。",
+    location: "新西兰 奥克兰",
+    duration: "3 小时",
+    groupSize: "1-5 人",
+    price: 95,
+    currencySymbol: "NZ$",
+    languages: ["英语", "日语", "中文"],
     includedFeatures: [
-      "Personalized itinerary",
-      "Local food recommendations",
-      "Hidden spots not in guidebooks",
-      "Cultural insights and history",
-      "Translation assistance"
-    ]
+      "AI 协助生成的个性化行程卡片",
+      "一周内可用的餐饮与城市推荐",
+      "巷内壁画、天台花园与快闪展览",
+      "商务/夜生活礼仪提醒",
+      "现场翻译与应急用语同步"
+    ],
+    reviews: [
+      {
+        author: "Sarah L.",
+        avatar: reviewAvatars.sarah,
+        rating: 5,
+        date: "2024-10-15",
+        text: "Hiroshi 把街头美食、独立艺术与商务礼仪融合在一起，非常适合第一次来奥克兰的人。"
+      },
+      {
+        author: "Michael C.",
+        avatar: reviewAvatars.michael,
+        rating: 4,
+        date: "2024-09-28",
+        text: "行程衔接顺畅，从隐蔽酒吧到历史街区都有覆盖，还帮我们现场翻译供应商沟通。"
+      }
+    ],
+    provider: {
+      name: "Hiroshi K.",
+      avatar: providerAvatar,
+      rating: 4.9,
+      responseTime: "平均 5 分钟内回复",
+      languages: ["英语", "日语", "中文"],
+      experience: "在奥克兰带队 3 年",
+      verified: true
+    }
+  },
+  pt: {
+    title: "Bairros escondidos de Auckland com concierge bilíngue",
+    description:
+      "Caminhe por ruelas de Ponsonby e terraços de Britomart ao lado de um especialista bilíngue. Degustamos petiscos autorais, revelamos como navegar em reuniões e vida noturna e mostramos galerias pop-up que não aparecem nos guias tradicionais.",
+    location: "Auckland, Nova Zelândia",
+    duration: "3 horas",
+    groupSize: "1–5 pessoas",
+    price: 95,
+    currencySymbol: "NZ$",
+    languages: ["Inglês", "Japonês", "Mandarim"],
+    includedFeatures: [
+      "Itinerário personalizado com notas geradas por IA",
+      "Recomendações locais de comida e lazer para toda a semana",
+      "Ruelas secretas, jardins suspensos e exposições relâmpago",
+      "Coaching de etiqueta para reuniões e noite",
+      "Tradução sob demanda e frases essenciais"
+    ],
+    reviews: [
+      {
+        author: "Sarah L.",
+        avatar: reviewAvatars.sarah,
+        rating: 5,
+        date: "2024-10-15",
+        text: "Hiroshi combinou comida de rua, arte indie e dicas de negócios. Saí confiante para reuniões e ainda conheci o lado descolado da cidade."
+      },
+      {
+        author: "Michael C.",
+        avatar: reviewAvatars.michael,
+        rating: 4,
+        date: "2024-09-28",
+        text: "Ótimo equilíbrio entre bares escondidos e patrimônios históricos. A tradução ao vivo com fornecedores foi essencial."
+      }
+    ],
+    provider: {
+      name: "Hiroshi K.",
+      avatar: providerAvatar,
+      rating: 4.9,
+      responseTime: "Responde em até 5 min",
+      languages: ["Inglês", "Japonês", "Mandarim"],
+      experience: "3 anos guiando em Auckland",
+      verified: true
+    }
+  },
+  es: {
+    title: "Callejones e izakayas de Auckland con storytelling",
+    description:
+      "Sigue a un concierge bilingüe por los callejones de Ponsonby y los rooftops de Britomart. Degustamos platos pequeños de autor, desciframos la etiqueta cultural y mapeamos pasajes artísticos que rara vez aparecen en las guías. Cada parada se adapta a tus intereses: diseño, cultura pop, bienestar o aventuras nocturnas.",
+    location: "Auckland, Nueva Zelanda",
+    duration: "3 horas",
+    groupSize: "1–5 personas",
+    price: 95,
+    currencySymbol: "NZ$",
+    languages: ["Inglés", "Japonés", "Mandarín"],
+    includedFeatures: [
+      "Micro-itinerario personalizado con notas generadas por IA",
+      "Recomendaciones locales de comida y ocio para toda la semana",
+      "Callejones ocultos, jardines en azoteas y galerías pop-up",
+      "Coaching de etiqueta para reuniones y vida nocturna",
+      "Traducción on-demand + frases esenciales de emergencia"
+    ],
+    reviews: [
+      {
+        author: "Sarah L.",
+        avatar: reviewAvatars.sarah,
+        rating: 5,
+        date: "2024-10-15",
+        text: "Hiroshi mezcló street food, arte indie y etiqueta de negocios en una sola noche. Llegué lista para mis reuniones y conocí el lado más cool de Auckland."
+      },
+      {
+        author: "Michael C.",
+        avatar: reviewAvatars.michael,
+        rating: 4,
+        date: "2024-09-28",
+        text: "Excelente balance entre bares escondidos y sitios patrimoniales. La traducción en vivo con proveedores nos ahorró tiempo."
+      }
+    ],
+    provider: {
+      name: "Hiroshi K.",
+      avatar: providerAvatar,
+      rating: 4.9,
+      responseTime: "Responde en 5 min",
+      languages: ["Inglés", "Japonés", "Mandarín"],
+      experience: "3 años guiando en Auckland",
+      verified: true
+    }
+  },
+  fr: {
+    title: "Ruelles d’Auckland & récits d’izakaya",
+    description:
+      "Suivez un concierge bilingue dans les arrière-cours de Ponsonby et sur les rooftops de Britomart. Nous goûtons des tapas signatures, décodons l’étiquette culturelle et cartographions des passages artistiques rarement listés dans les guides. Chaque arrêt s’adapte à vos centres d’intérêt : design, pop culture, bien-être ou soirées after-work.",
+    location: "Auckland, Nouvelle-Zélande",
+    duration: "3 heures",
+    groupSize: "1–5 personnes",
+    price: 95,
+    currencySymbol: "NZ$",
+    languages: ["Anglais", "Japonais", "Mandarin"],
+    includedFeatures: [
+      "Micro-itinéraire personnalisé avec notes générées par IA",
+      "Recommandations locales de restos et sorties pour la semaine",
+      "Ruelles cachées, jardins suspendus et pop-up galleries",
+      "Coaching d’étiquette pour réunions et nightlife",
+      "Traduction à la demande + phrases d’urgence"
+    ],
+    reviews: [
+      {
+        author: "Sarah L.",
+        avatar: reviewAvatars.sarah,
+        rating: 5,
+        date: "2024-10-15",
+        text: "Hiroshi a mêlé street food, art indépendant et codes business en une soirée. J’ai abordé mes réunions avec assurance tout en découvrant le côté tendance d’Auckland."
+      },
+      {
+        author: "Michael C.",
+        avatar: reviewAvatars.michael,
+        rating: 4,
+        date: "2024-09-28",
+        text: "Très bon équilibre entre bars cachés et quartiers patrimoniaux. La traduction en temps réel lors des visites fournisseurs nous a fait gagner du temps."
+      }
+    ],
+    provider: {
+      name: "Hiroshi K.",
+      avatar: providerAvatar,
+      rating: 4.9,
+      responseTime: "Répond sous 5 min",
+      languages: ["Anglais", "Japonais", "Mandarin"],
+      experience: "3 ans de guidage à Auckland",
+      verified: true
+    }
+  },
+  he: {
+    title: "סיפורי סמטאות ואיזאקיה באוקלנד",
+    description:
+      "הצטרפו לליווי דו-לשוני דרך הסמטאות של Ponsonby והגגות של Britomart. טועמים מנות קטנות חתימתיות, לומדים קודים תרבותיים ומגלים נתיבי אמנות שלא מופיעים במדריכים. כל עצירה מתעדכנת לפי מה שמעניין אתכם—עיצוב, פופ, רווחה או חיי לילה.",
+    location: "אוקלנד, ניו זילנד",
+    duration: "3 שעות",
+    groupSize: "1–5 משתתפים",
+    price: 95,
+    currencySymbol: "NZ$",
+    languages: ["אנגלית", "יפנית", "סינית מנדרינית"],
+    includedFeatures: [
+      "מסלול מיקרו מותאם אישית עם הערות שנוצרו ב-AI",
+      "המלצות אוכל ומשקאות לכל השבוע",
+      "סמטאות נסתרות, גינות גג ותערוכות פופ-אפ",
+      "אימון נימוסין לפגישות עסקיות וללילות",
+      "תרגום מיידי + משפטי חירום"
+    ],
+    reviews: [
+      {
+        author: "Sarah L.",
+        avatar: reviewAvatars.sarah,
+        rating: 5,
+        date: "2024-10-15",
+        text: "הירושי שילב אוכל רחוב, אמנות עצמאית וטיפים לפגישות בערב אחד. הגעתי לפגישות רגועה וגם הכרתי את הצד הכי מעניין בעיר."
+      },
+      {
+        author: "Michael C.",
+        avatar: reviewAvatars.michael,
+        rating: 4,
+        date: "2024-09-28",
+        text: "איזון מצוין בין ברים חבויים לאזורי מורשת. התרגום החי מול ספקים חסך לנו זמן."
+      }
+    ],
+    provider: {
+      name: "Hiroshi K.",
+      avatar: providerAvatar,
+      rating: 4.9,
+      responseTime: "משיב תוך 5 דקות",
+      languages: ["אנגלית", "יפנית", "סינית מנדרינית"],
+      experience: "3 שנות הדרכה באוקלנד",
+      verified: true
+    }
+  }
+};
+
+const ServiceDetail: React.FC = () => {
+  const { t, i18n } = useTranslation();
+  const { id } = useParams();
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+  const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const locale = resolveLocale(i18n.language);
+  const localeKey: ServiceLocale =
+    locale === "zh" || locale === "pt" || locale === "es" || locale === "fr" || locale === "he"
+      ? (locale as ServiceLocale)
+      : "en";
+  const serviceTemplate = serviceCopy[localeKey];
+
+  const service = {
+    id: id || "1",
+    category: "Local Experience",
+    availableNow: true,
+    ...serviceTemplate
   };
 
   const generateAvailableDates = () => {
@@ -273,7 +538,10 @@ const ServiceDetail: React.FC = () => {
           <div className="md:col-span-1">
             <div className="border rounded-lg p-6 shadow-md sticky top-24">
               <div className="flex items-center mb-6">
-                <span className="text-3xl font-bold mr-2 text-brand-teal">¥{service.price}</span>
+                <span className="text-3xl font-bold mr-2 text-brand-teal">
+                  {service.currencySymbol}
+                  {service.price}
+                </span>
                 <span className="text-gray-500">{t('serviceDetail.pricePerHour')}</span>
               </div>
               

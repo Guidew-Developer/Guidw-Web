@@ -19,8 +19,137 @@ import OrderActionsCard from "@/components/dashboard/OrderActionsCard";
 import { useGuidew } from "@/state/GuidewProvider";
 import type { ProviderProfile } from "@/types/guidew";
 import { estimateTravelWindow, haversineDistanceKm } from "@/utils/geo";
+import { useTranslation } from "react-i18next";
+import { resolveLocale } from "@/utils/locale";
+import { translateGuidewMessage } from "@/utils/guidewMessages";
+
+const userAppLocales = ["en", "zh", "pt", "es", "fr", "he"] as const;
+type UserAppLocale = (typeof userAppLocales)[number];
+
+type UserAppCopy = {
+  greeting: string;
+  subheading: string;
+  actions: { syncWallet: string; checkAchievements: string };
+  tabs: { explore: string; chat: string; schedule: string; wallet: string };
+  toasts: {
+    providerUnavailable: string;
+    orderCreateFailed: string;
+    requestSubmitted: string;
+    aiMatches: string;
+    vipCancelled: string;
+    vipActivated: string;
+    reviewSubmitted: string;
+    tipAdded: string;
+  };
+};
+
+const userAppCopy: Record<UserAppLocale, UserAppCopy> = {
+  en: {
+    greeting: "Hi {name}, welcome to Guidew",
+    subheading: "Discover trusted locals in {city}, manage bookings, and unlock authentic experiences.",
+    actions: { syncWallet: "Sync wallet", checkAchievements: "Check achievements" },
+    tabs: { explore: "Explore", chat: "Chat", schedule: "Trips", wallet: "Wallet" },
+    toasts: {
+      providerUnavailable: "Selected provider is unavailable for the requested slot.",
+      orderCreateFailed: "Unable to create order. Ensure provider has availability and try again.",
+      requestSubmitted: "Request submitted. We'll notify the expert.",
+      aiMatches: "AI found {count} matching experts.",
+      vipCancelled: "VIP cancelled. You can rejoin anytime.",
+      vipActivated: "VIP activated. Enjoy AI concierge and priority support!",
+      reviewSubmitted: "Review submitted. We'll publish once the provider also reviews you.",
+      tipAdded: "Tip of ${amount} added."
+    }
+  },
+  zh: {
+    greeting: "Hi {name}，欢迎回到 Guidew",
+    subheading: "在 {city} 继续发现可信赖的本地专家，管理订单并解锁地道体验。",
+    actions: { syncWallet: "同步钱包", checkAchievements: "检查成就" },
+    tabs: { explore: "探索", chat: "聊天", schedule: "行程", wallet: "钱包" },
+    toasts: {
+      providerUnavailable: "该服务者当前时间段不可用。",
+      orderCreateFailed: "下单失败，请确认服务者可用后重试。",
+      requestSubmitted: "需求已提交，我们将提醒服务者。",
+      aiMatches: "AI 找到了 {count} 位匹配的专家。",
+      vipCancelled: "VIP 已取消，可随时重新开通。",
+      vipActivated: "VIP 已激活，享受 AI 礼宾与优先支持！",
+      reviewSubmitted: "评价已提交，对方完成评价后将公开。",
+      tipAdded: "已添加 {amount} 美元小费。"
+    }
+  },
+  pt: {
+    greeting: "Olá {name}, bem-vindo de volta à Guidew",
+    subheading: "Descubra especialistas confiáveis em {city}, gerencie reservas e desbloqueie experiências autênticas.",
+    actions: { syncWallet: "Sincronizar carteira", checkAchievements: "Ver conquistas" },
+    tabs: { explore: "Explorar", chat: "Chat", schedule: "Viagens", wallet: "Carteira" },
+    toasts: {
+      providerUnavailable: "O especialista selecionado não está disponível nesse horário.",
+      orderCreateFailed: "Não foi possível criar o pedido. Verifique a disponibilidade e tente novamente.",
+      requestSubmitted: "Solicitação enviada. Avisaremos o especialista.",
+      aiMatches: "A IA encontrou {count} especialistas compatíveis.",
+      vipCancelled: "VIP cancelado. Você pode voltar quando quiser.",
+      vipActivated: "VIP ativado. Aproveite concierge com IA e suporte prioritário!",
+      reviewSubmitted: "Avaliação enviada. Publicaremos quando o provedor também avaliar.",
+      tipAdded: "Gorjeta de US$ {amount} adicionada."
+    }
+  },
+  es: {
+    greeting: "Hola {name}, bienvenido a Guidew",
+    subheading: "Descubre expertos confiables en {city}, administra reservas y desbloquea experiencias auténticas.",
+    actions: { syncWallet: "Sincronizar billetera", checkAchievements: "Ver logros" },
+    tabs: { explore: "Explorar", chat: "Chat", schedule: "Viajes", wallet: "Billetera" },
+    toasts: {
+      providerUnavailable: "El proveedor elegido no está disponible en ese horario.",
+      orderCreateFailed: "No logramos crear la orden. Comprueba la disponibilidad e inténtalo de nuevo.",
+      requestSubmitted: "Solicitud enviada. Avisaremos al especialista.",
+      aiMatches: "La IA encontró {count} expertos compatibles.",
+      vipCancelled: "VIP cancelado. Puedes volver cuando quieras.",
+      vipActivated: "VIP activado. Disfruta concierge IA y soporte prioritario.",
+      reviewSubmitted: "Reseña enviada. Se publicará cuando el proveedor también opine.",
+      tipAdded: "Se agregó una propina de {amount} USD."
+    }
+  },
+  fr: {
+    greeting: "Bonjour {name}, bienvenue sur Guidew",
+    subheading: "Découvrez des experts locaux fiables à {city}, gérez vos réservations et vivez des expériences authentiques.",
+    actions: { syncWallet: "Synchroniser le portefeuille", checkAchievements: "Voir les réussites" },
+    tabs: { explore: "Explorer", chat: "Chat", schedule: "Voyages", wallet: "Portefeuille" },
+    toasts: {
+      providerUnavailable: "Ce prestataire n’est pas disponible à ce créneau.",
+      orderCreateFailed: "Impossible de créer la demande. Vérifiez la disponibilité et réessayez.",
+      requestSubmitted: "Demande envoyée. Nous préviendrons l’expert.",
+      aiMatches: "L’IA a trouvé {count} experts compatibles.",
+      vipCancelled: "VIP annulé. Vous pourrez revenir quand vous voudrez.",
+      vipActivated: "VIP activé. Profitez du concierge IA et du support prioritaire.",
+      reviewSubmitted: "Avis envoyé. Il sera publié une fois la réponse du prestataire reçue.",
+      tipAdded: "Pourboire de {amount} $ ajouté."
+    }
+  },
+  he: {
+    greeting: "היי {name}, ברוך הבא ל‑Guidew",
+    subheading: "גלה מומחים מקומיים אמינים ב‑{city}, נהל הזמנות וחווה חוויות אותנטיות.",
+    actions: { syncWallet: "סנכרון ארנק", checkAchievements: "בדיקת הישגים" },
+    tabs: { explore: "חקור", chat: "צ׳אט", schedule: "נסיעות", wallet: "ארנק" },
+    toasts: {
+      providerUnavailable: "הספק שבחרת אינו זמין במועד הזה.",
+      orderCreateFailed: "לא ניתן ליצור הזמנה. ודא שיש זמינות ונסה שוב.",
+      requestSubmitted: "הבקשה נשלחה. נעדכן את המומחה.",
+      aiMatches: "ה‑AI מצא {count} מומחים מתאימים.",
+      vipCancelled: "מנוי VIP בוטל. אפשר להצטרף מחדש בכל עת.",
+      vipActivated: "VIP הופעל. נהנו מקונסיירז' AI ותמיכה מועדפת!",
+      reviewSubmitted: "הביקורת נשלחה ותפורסם לאחר שגם הספק יגיב.",
+      tipAdded: "נוסף טיפ של {amount}$."
+    }
+  }
+};
+
+const formatMessage = (template: string, vars: Record<string, string | number>) =>
+  template.replace(/\{(\w+)\}/g, (_, key) => String(vars[key] ?? ""));
 
 const UserApp = () => {
+  const { t, i18n } = useTranslation();
+  const resolvedLocale = resolveLocale(i18n.language) as UserAppLocale;
+  const locale = userAppLocales.includes(resolvedLocale) ? resolvedLocale : "en";
+  const ui = userAppCopy[locale] ?? userAppCopy.en;
   const {
     currentUserId,
     users,
@@ -170,7 +299,7 @@ const UserApp = () => {
   }) => {
     const provider = providerProfiles.find(item => item.id === providerId);
     if (!provider || !providerCanServe(provider, startTime, durationHours)) {
-      toast.error("Selected provider is unavailable for the requested slot.");
+      toast.error(ui.toasts.providerUnavailable);
       return;
     }
     const order = createOrder({
@@ -183,10 +312,10 @@ const UserApp = () => {
       requiresItinerary
     });
     if (!order) {
-      toast.error("Unable to create order. Ensure provider has availability and try again.");
+      toast.error(ui.toasts.orderCreateFailed);
       return;
     }
-    toast.success("Request submitted. We'll notify the expert.");
+    toast.success(ui.toasts.requestSubmitted);
     recomputeAchievements(currentUser.id);
   };
 
@@ -204,37 +333,37 @@ const UserApp = () => {
       .slice(0, 3)
       .map(item => item.provider);
     setRecommendedProviders(matched);
-    toast.success(`AI found ${matched.length} matching experts.`);
+    toast.success(formatMessage(ui.toasts.aiMatches, { count: matched.length }));
     return matched;
   };
 
   const handleCancelOrder = (orderId: string, mutual = false) => {
     const result = cancelOrder(orderId, "user", mutual ? { mutual: true } : undefined);
     if (result.success) {
-      toast.success(result.message);
+      toast.success(translateGuidewMessage(result.message, t));
       refreshWallets();
     } else {
-      toast.error(result.message);
+      toast.error(translateGuidewMessage(result.message, t));
     }
   };
 
   const handleReportProviderNoShow = (orderId: string) => {
     const result = reportProviderNoShow(orderId);
     if (result.success) {
-      toast.success(result.message);
+      toast.success(translateGuidewMessage(result.message, t));
       refreshWallets();
     } else {
-      toast.error(result.message);
+      toast.error(translateGuidewMessage(result.message, t));
     }
   };
 
   const handleToggleVip = () => {
     if (currentUser.vip.active) {
       downgradeVip(currentUser.id);
-      toast("VIP cancelled. You can rejoin anytime.");
+      toast(ui.toasts.vipCancelled);
     } else {
       upgradeVip(currentUser.id);
-      toast.success("VIP activated. Enjoy AI concierge and priority support!");
+      toast.success(ui.toasts.vipActivated);
     }
   };
 
@@ -245,23 +374,25 @@ const UserApp = () => {
     <div className="min-h-screen bg-brand-lightGray/60 p-6 space-y-6">
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Hi {currentUser.name.split(" ")[0]}, welcome to Guidew</h1>
+          <h1 className="text-3xl font-bold">
+            {formatMessage(ui.greeting, { name: currentUser.name.split(" ")[0] })}
+          </h1>
           <p className="text-sm text-muted-foreground">
-            Discover trusted locals in {currentUser.lastKnownLocation.city}, manage bookings, and unlock authentic experiences.
+            {formatMessage(ui.subheading, { city: currentUser.lastKnownLocation.city })}
           </p>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline" onClick={() => refreshWallets()}>Sync wallet</Button>
-          <Button onClick={() => recomputeAchievements(currentUser.id)}>Check achievements</Button>
+          <Button variant="outline" onClick={() => refreshWallets()}>{ui.actions.syncWallet}</Button>
+          <Button onClick={() => recomputeAchievements(currentUser.id)}>{ui.actions.checkAchievements}</Button>
         </div>
       </div>
 
       <Tabs defaultValue="explore" className="space-y-6">
         <TabsList className="grid w-full grid-cols-4">
-          <TabsTrigger value="explore">Explore</TabsTrigger>
-          <TabsTrigger value="messages">Chat</TabsTrigger>
-          <TabsTrigger value="schedule">Trips</TabsTrigger>
-          <TabsTrigger value="wallet">Wallet</TabsTrigger>
+          <TabsTrigger value="explore">{ui.tabs.explore}</TabsTrigger>
+          <TabsTrigger value="messages">{ui.tabs.chat}</TabsTrigger>
+          <TabsTrigger value="schedule">{ui.tabs.schedule}</TabsTrigger>
+          <TabsTrigger value="wallet">{ui.tabs.wallet}</TabsTrigger>
         </TabsList>
 
         <TabsContent value="explore" className="space-y-6">
@@ -317,12 +448,12 @@ const UserApp = () => {
                 onSubmit={review => {
                   if (!selectedCompletedOrder) return;
                   submitReview(selectedCompletedOrder.id, { userDecision: review.decision, userComment: review.comment }, "user");
-                  toast.success("Review submitted. We'll publish once the provider also reviews you.");
+                  toast.success(ui.toasts.reviewSubmitted);
                 }}
                 onTip={amount => {
                   if (!selectedCompletedOrder) return;
                   addTip(selectedCompletedOrder.id, amount);
-                  toast.success(`Tip of $${amount} added.`);
+                  toast.success(formatMessage(ui.toasts.tipAdded, { amount }));
                 }}
               />
               <OrderActionsCard
@@ -360,4 +491,3 @@ const UserApp = () => {
 };
 
 export default UserApp;
-

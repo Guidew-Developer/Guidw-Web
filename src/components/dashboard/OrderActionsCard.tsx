@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { OrderRecord } from "@/types/guidew";
+import { useTranslation } from "react-i18next";
 
 interface OrderActionsCardProps {
   order?: OrderRecord;
@@ -11,15 +12,14 @@ interface OrderActionsCardProps {
 }
 
 const OrderActionsCard = ({ order, onCancel, onMutualCancel, onReportProviderNoShow }: OrderActionsCardProps) => {
+  const { t } = useTranslation();
   if (!order) {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Order controls</CardTitle>
+          <CardTitle>{t("dashboard.orderActions.title")}</CardTitle>
         </CardHeader>
-        <CardContent className="text-sm text-muted-foreground">
-          Select a scheduled order to cancel or report a no-show.
-        </CardContent>
+        <CardContent className="text-sm text-muted-foreground">{t("dashboard.orderActions.empty")}</CardContent>
       </Card>
     );
   }
@@ -32,7 +32,7 @@ const OrderActionsCard = ({ order, onCancel, onMutualCancel, onReportProviderNoS
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Order controls</CardTitle>
+        <CardTitle>{t("dashboard.orderActions.title")}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
         <div>
@@ -41,26 +41,24 @@ const OrderActionsCard = ({ order, onCancel, onMutualCancel, onReportProviderNoS
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           <Button variant="outline" onClick={onCancel}>
-            Cancel booking
+            {t("dashboard.orderActions.cancel")}
           </Button>
           <Button
             variant="outline"
             disabled={!withinThreeHours}
             onClick={onMutualCancel}
           >
-            Mutual cancel
+            {t("dashboard.orderActions.mutual")}
           </Button>
           <Button
             variant="destructive"
             disabled={!hasStarted}
             onClick={onReportProviderNoShow}
           >
-            Report provider no-show
+            {t("dashboard.orderActions.reportProvider")}
           </Button>
         </div>
-        <p className="text-xs text-muted-foreground">
-          Standard cancellations follow Guidew policy. Mutual cancellations within three hours refund 85% to the traveler. Once the start time passes you can report a provider no-show for a full refund.
-        </p>
+        <p className="text-xs text-muted-foreground">{t("dashboard.orderActions.instructions")}</p>
       </CardContent>
     </Card>
   );

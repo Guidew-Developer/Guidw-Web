@@ -1,35 +1,973 @@
 {
   "nav": {
-    "discover": "Descubrir",
-    "howItWorks": "Cómo Funciona",
-    "becomeExpert": "Conviértete en Experto",
-    "downloadApp": "Descargar App"
+    "home": "Inicio",
+    "discover": "Explorar",
+    "about": "Acerca de",
+    "downloadApp": "Descargar app"
+  },
+  "guidew": {
+    "messages": {
+      "orderNotFound": "Pedido no encontrado",
+      "orderAlreadyCancelled": "Pedido ya cancelado",
+      "travelerMissing": "Viajero no disponible",
+      "participantsMissing": "Participantes incompletos",
+      "providerProfileMissing": "Perfil del proveedor no disponible",
+      "providerAccountMissing": "Cuenta del proveedor no disponible",
+      "mutualCancellation": "Cancelación mutua dentro de las tres horas",
+      "cancelledMoreThan3Hours": "Cancelado con más de 3 horas de anticipación",
+      "cancelledOneToThreeHours": "Cancelado entre 1 y 3 horas antes",
+      "cancelledLessThanOneHour": "Cancelado con menos de 1 hora",
+      "cancelledAfterStart": "Cancelado después de iniciar el servicio",
+      "providerNoShow": "Proveedor marcado como ausente. Reembolso completo emitido.",
+      "travelerNoShow": "Viajero marcado como ausente. Proveedor compensado."
+    }
   },
   "search": {
-    "placeholder": "Buscar servicios, expertos o ubicaciones..."
+    "placeholder": "Busca servicios, expertos o ubicaciones..."
   },
   "filter": {
     "title": "Filtrar",
     "categories": {
       "all": "Todos",
-      "cityGuide": "Guía de Ciudad",
+      "cityGuide": "Guía de ciudad",
       "translation": "Traducción",
-      "cultural": "Experiencia Cultural",
-      "skills": "Enseñanza de Habilidades",
-      "food": "Experiencia Gastronómica",
-      "photography": "Fotografía"
+      "cultural": "Experiencia cultural",
+      "skills": "Enseñanza de habilidades",
+      "food": "Experiencia gastronómica",
+      "photography": "Fotografía",
+      "localguide": "Guía local",
+      "emergency": "Emergencia",
+      "events": "Eventos",
+      "home": "Servicios para el hogar",
+      "skillteaching": "Enseñanza de habilidades",
+      "foodexperience": "Experiencia gastronómica",
+      "professional": "Habilidades profesionales",
+      "culturalexchange": "Intercambio cultural",
+      "health": "Salud y bienestar",
+      "petcare": "Cuidado de mascotas",
+      "childcare": "Cuidado infantil",
+      "homeorg": "Organización del hogar",
+      "shopping": "Personal shopper",
+      "techsupport": "Soporte técnico",
+      "financial": "Asesoría financiera",
+      "legal": "Asesoría legal",
+      "artcraft": "Arte y artesanía",
+      "musicdance": "Música y danza",
+      "gardening": "Jardinería",
+      "fitness": "Entrenamiento físico",
+      "cooking": "Clases de cocina",
+      "photovideo": "Foto y video",
+      "languageexchange": "Intercambio de idiomas",
+      "hometutoring": "Tutorías en casa",
+      "seniorcare": "Cuidado de personas mayores",
+      "vrexperience": "Experiencias en RV",
+      "environmental": "Consultoría ambiental",
+      "mentalhealth": "Salud mental",
+      "interiordesign": "Diseño de interiores",
+      "eventent": "Entretenimiento para eventos",
+      "giftservices": "Regalos personalizados",
+      "travelplanning": "Planificación de viajes",
+      "nutritionplanning": "Planificación nutricional",
+      "travelphotography": "Fotografía de viaje",
+      "weddingplanning": "Planificación de bodas",
+      "corporatetraining": "Capacitación corporativa",
+      "homestaging": "Home staging",
+      "wellnessretreats": "Retiros de bienestar",
+      "artworkshops": "Talleres de arte",
+      "languagelearning": "Aprendizaje de idiomas",
+      "careercounseling": "Orientación profesional",
+      "financialplanning": "Planificación financiera",
+      "homeautomation": "Automatización del hogar",
+      "pettraining": "Adiestramiento de mascotas",
+      "childeducation": "Educación infantil",
+      "homesecurity": "Seguridad residencial",
+      "eventcatering": "Catering para eventos"
     }
   },
   "common": {
     "loading": "Cargando...",
     "error": "Ocurrió un error",
-    "retry": "Reintentar"
+    "retry": "Reintentar",
+    "signIn": "Iniciar sesión",
+    "joinNow": "Crear cuenta",
+    "featured": "Destacado",
+    "topPicks": "Selecciones principales",
+    "explore": "Explorar",
+    "learnMore": "Saber más",
+    "availableNow": "Disponible ahora"
+  },
+  "home": {
+    "hero": {
+      "title": "Conéctate con la pericia local",
+      "subtitle": "Descubre experiencias y servicios únicos ofrecidos por expertos locales en todo el mundo"
+    },
+    "categories": {
+      "title": "¿Qué tipo de ayuda necesitas?",
+      "subtitle": "Desde guías urbanos y apoyo lingüístico hasta habilidades específicas y experiencias inmersivas, encuentra expertos en cualquier área y ciudad"
+    },
+    "featured": {
+      "title": "Servicios destacados",
+      "subtitle": "Explora los servicios más reservados con expertos de alta calificación en todo el mundo"
+    },
+    "howItWorks": {
+      "title": "Cómo funciona",
+      "subtitle": "Conéctate con especialistas locales en unos cuantos pasos",
+      "steps": {
+        "discover": {
+          "title": "Descubrir",
+          "description": "Explora servicios y expertos en tu destino o ciudad actual"
+        },
+        "book": {
+          "title": "Reservar",
+          "description": "Elige la fecha y hora ideales y confirma en segundos"
+        },
+        "experience": {
+          "title": "Vivir",
+          "description": "Reúnete con el experto y disfruta una experiencia personalizada"
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para vivir la experiencia Guidew?",
+      "subtitle": "Únete a miles de viajeros y residentes conectados a través de Guidew",
+      "findExpert": "Encontrar experto",
+      "becomeExpert": "Quiero ser experto"
+    }
+  },
+  "how": {
+    "title": "Recorrido Guidew",
+    "heading": "Cómo funciona Guidew",
+    "subtitle": "Desde el registro hasta el encuentro presencial, cada paso se mantiene transparente y seguro para viajeros y proveedores.",
+    "stepLabel": "Paso {{step}}",
+    "detailLabel": "Detalle",
+    "stepCounter": "Paso {{current}} de {{total}}",
+    "steps": [
+      {
+        "title": "Crear y explorar",
+        "description": "Regístrate en segundos y filtra por ciudad, mapa o colecciones temáticas.",
+        "detailTitle": "1. Ajusta tu perfil y explora servicios",
+        "detailBody": "Define idioma, elige modo viajero o proveedor y usa mapa, colecciones y filtros guardados para armar tu lista corta de expertos.",
+        "bullets": [
+          "Ingreso con correo o con un toque Google/Apple",
+          "Vista en mapa para expertos cercanos y vista en lista para buscar ciudades globales",
+          "Guarda favoritos y activa alertas para nuevos servicios"
+        ]
+      },
+      {
+        "title": "Cuéntanos tu necesidad",
+        "description": "Describe el pedido, la franja horaria y el punto de encuentro.",
+        "detailTitle": "2. Explica en lenguaje natural",
+        "detailBody": "Define tipo de servicio, ventana horaria, duración y lugar. Usa el campo con IA para itinerarios complejos: nosotros estructuramos todo por ti.",
+        "bullets": [
+          "Selecciona etiquetas como danza, traducción o emergencia",
+          "Agrega horarios y ubicaciones alternativas",
+          "Adjunta capturas o referencias para preparaciones a medida"
+        ]
+      },
+      {
+        "title": "Match y chat",
+        "description": "Guidew recomienda expertos verificados al instante.",
+        "detailTitle": "3. Combina, conversa y alinea expectativas",
+        "detailBody": "Ordenamos expertos por proximidad, disponibilidad, estado VIP y reseñas. Chatea en la app, solicita itinerarios generados por IA y confirma extras antes de reservar.",
+        "bullets": [
+          "Perfiles con certificados y portafolios",
+          "Borradores de itinerario con IA editables",
+          "Traducción en tiempo real para charlas bilingües"
+        ]
+      },
+      {
+        "title": "Confirmar y pagar",
+        "description": "La custodia Stripe protege a todos.",
+        "detailTitle": "4. Confirma y deja el pago en custodia",
+        "detailBody": "Autoriza con Stripe (Apple Pay/Google Pay pronto). El dinero queda retenido hasta que marques la experiencia como completada.",
+        "bullets": [
+          "Custodia Stripe rastreable",
+          "VIP = cero tarifa de contratación y prioridad",
+          "Soporte para propinas, reembolsos parciales y extras"
+        ]
+      },
+      {
+        "title": "Vivir la experiencia",
+        "description": "Encuéntrate con el experto y disfruta la magia local.",
+        "detailTitle": "5. Encuentro presencial con todo documentado",
+        "detailBody": "Recibe tips de navegación, comparte ubicación en vivo y guarda contactos de emergencia. Luego, propina, reseña o extiende la reserva en un toque.",
+        "bullets": [
+          "Check-in/out en un toque para ambos",
+          "Notificaciones recuerdan el siguiente compromiso",
+          "Reseñas mutuas desbloquean insignias y beneficios"
+        ]
+      }
+    ],
+    "safety": [
+      {
+        "title": "Identidades verificadas",
+        "description": "Verificación por capas para cada categoría.",
+        "detailTitle": "Controles de identidad",
+        "detailBody": "Desde documentos y prueba de vida hasta certificados profesionales y antecedentes penales, las categorías sensibles requieren evidencia adicional.",
+        "bullets": [
+          "Documento + verificación de vivacidad",
+          "Carga de certificados o permisos oficiales",
+          "Servicios en casa o con niños exigen chequeo extra"
+        ]
+      },
+      {
+        "title": "Pagos protegidos",
+        "description": "Comisión transparente + sistema de custodia.",
+        "detailTitle": "Comisión fija y custodia",
+        "detailBody": "Guidew cobra 15% de comisión. El dinero permanece en custodia hasta que ambas partes confirman la finalización. Usuarios VIP no pagan tarifa de contratación y reciben soporte dedicado.",
+        "bullets": [
+          "Custodia Stripe con trazabilidad completa",
+          "VIP = cero tarifa + prioridad de búsqueda",
+          "Soporte para propinas, reembolsos y complementos"
+        ]
+      },
+      {
+        "title": "Reseñas mutuas",
+        "description": "Feedback bilateral y apoyo en disputas.",
+        "detailTitle": "Reseñas + mediación",
+        "detailBody": "Las reseñas permanecen privadas hasta que ambos envían o pasan 7 días. Si hay disputa, revisamos chats, ubicaciones e itinerarios para arbitrar.",
+        "bullets": [
+          "Reseñas ocultas hasta que ambos envían",
+          "Disputa en un toque con evidencia",
+          "Política clara de cancelaciones y penalizaciones"
+        ]
+      }
+    ],
+    "providerTitle": "Para proveedores",
+    "providerSubtitle": "Construye una vitrina confiable y gestiona pedidos con confianza",
+    "provider": [
+      {
+        "title": "App de proveedor",
+        "description": "Tablón de oportunidades + control de disponibilidad.",
+        "detailTitle": "1. Activa el modo proveedor",
+        "detailBody": "Entra al tablón en vivo, pedidos, chat y billetera en un solo app. VIP puede habilitar autoaceptar y definir radio máximo.",
+        "bullets": [
+          "Filtra pedidos por zona o categoría",
+          "Alterna autoaceptar o confirmación manual",
+          "Configura bloques semanales de disponibilidad"
+        ]
+      },
+      {
+        "title": "Muestra tus habilidades",
+        "description": "Exhibe certificados, videos y presentaciones.",
+        "detailTitle": "2. Construye una vitrina que convierta",
+        "detailBody": "Sube videos, audios, certificados y fotos. Define etiquetas, horas mínimas, gastos incluidos e idiomas.",
+        "bullets": [
+          "Certificados se convierten en insignias",
+          "Crea paquetes y complementos",
+          "Soporte para biografías multilingües y saludos en audio"
+        ]
+      },
+      {
+        "title": "Ejecución de pedidos",
+        "description": "Comunica, apóyate en IA y entrega resultados.",
+        "detailTitle": "3. Ejecuta y cobra",
+        "detailBody": "Alinea detalles en el chat, usa IA para itinerarios, sube entregables y libera fondos cuando el cliente confirma.",
+        "bullets": [
+          "Constructor de itinerario con IA + costos",
+          "Extensiones o ajustes de precio en un toque",
+          "La billetera separa montos liberados y pendientes"
+        ]
+      }
+    ],
+    "ctaTitle": "¿Listo para ofrecer o contratar talento local?",
+    "ctaSubtitle": "Descarga la app para reservar en minutos o convertir tu pasión en ingresos premium.",
+    "downloadBtn": "Descargar Guidew",
+    "learnBtn": "Ver en la app"
+  },
+  "discover": {
+    "title": "Descubrir servicios",
+    "subtitle": "Encuentra el servicio perfecto para cualquier necesidad, disponible ahora",
+    "noResults": "No se encontraron servicios. Ajusta tu búsqueda.",
+    "categoryTitles": {
+      "cityGuide": "Guía local",
+      "translation": "Servicios de traducción",
+      "cultural": "Experiencias culturales",
+      "skillTeaching": "Enseñanza de habilidades",
+      "foodExperience": "Experiencias gastronómicas",
+      "photography": "Servicios de fotografía",
+      "emergency": "Servicios de emergencia",
+      "events": "Planeación de eventos",
+      "home": "Servicios para el hogar",
+      "professional": "Desarrollo profesional",
+      "culturalExchange": "Intercambio e inmersión cultural",
+      "health": "Salud y bienestar",
+      "petCare": "Cuidado de mascotas",
+      "childcare": "Babysitting y cuidado infantil",
+      "homeOrg": "Organización del hogar",
+      "shopping": "Personal shopper y estilo",
+      "techSupport": "Soporte y reparación tech",
+      "financial": "Asesoría financiera",
+      "legal": "Asesoría legal",
+      "artCraft": "Talleres de arte y artesanía",
+      "musicDance": "Clases de música y danza",
+      "gardening": "Jardinería y paisajismo",
+      "fitness": "Entrenamiento personalizado",
+      "cooking": "Clases de cocina",
+      "photoVideo": "Foto y video",
+      "languageExchange": "Programas de intercambio lingüístico",
+      "homeTutoring": "Tutorías en casa",
+      "seniorCare": "Cuidado y compañía para mayores",
+      "vrExperience": "Experiencias de realidad virtual",
+      "environmentalConsulting": "Consultoría ambiental y sostenibilidad",
+      "mentalHealth": "Apoyo en salud mental",
+      "interiordesign": "Diseño y decoración interior",
+      "eventEntertainment": "Entretenimiento para eventos",
+      "giftServices": "Regalos personalizados",
+      "travelPlanning": "Itinerarios personalizados de viaje",
+      "nutritionPlanning": "Planificación nutricional",
+      "travelPhotography": "Fotografía de viaje personalizada",
+      "weddingPlanning": "Planeación de bodas",
+      "corporateTraining": "Capacitación corporativa",
+      "homestaging": "Home staging",
+      "wellnessretreats": "Retiros de bienestar",
+      "artworkshops": "Talleres de arte",
+      "languagelearning": "Aprendizaje de idiomas",
+      "careercounseling": "Orientación profesional",
+      "financialplanning": "Planificación financiera",
+      "homeautomation": "Automatización del hogar",
+      "pettraining": "Adiestramiento de mascotas",
+      "childeducation": "Educación infantil",
+      "homesecurity": "Seguridad residencial",
+      "eventcatering": "Catering para eventos"
+    }
+  },
+  "howItWorks": {
+    "title": "Cómo opera Guidew",
+    "subtitle": "Conéctate con expertos en tres pasos",
+    "steps": {
+      "discover": {
+        "title": "Descubrir",
+        "description": "Busca y explora servicios de especialistas locales"
+      },
+      "book": {
+        "title": "Reservar",
+        "description": "Elige al profesional y el horario ideal"
+      },
+      "experience": {
+        "title": "Vivir",
+        "description": "Disfruta de un servicio totalmente personalizado"
+      }
+    }
+  },
+  "become": {
+    "title": "Hazte experto Guidew",
+    "heading": "Construye tu estudio Guidew",
+    "subtitle": "Transforma danza, traducción, guianza o rescates en un servicio premium. Guidew se encarga de verificación, IA y pagos transparentes para que te enfoques en sorprender.",
+    "cta": "Empezar registro",
+    "pillars": [
+      {
+        "title": "Carga flexible",
+        "description": "Elige cuándo y dónde atender. Define radio de desplazamiento, horas mínimas y disponibilidad inmediata."
+      },
+      {
+        "title": "Demanda global",
+        "description": "Atiende viajeros que llegan a Auckland o Wellington y a residentes que reservan clases privadas o ayuda urgente."
+      },
+      {
+        "title": "Comisiones altas",
+        "description": "Conserva la mayor parte de cada reserva mientras Guidew maneja marketing, pagos y disputas."
+      }
+    ],
+    "processTitle": "Onboarding en cuatro etapas",
+    "processSubtitle": "Cada fase cuenta con acompañamiento",
+    "processStepLabel": "Fase {{step}}",
+    "processDetail": "Detalle",
+    "processCounter": "{{current}} / {{total}}",
+    "processSteps": [
+      {
+        "title": "Identidad y antecedentes",
+        "description": "Envía documento, selfie y certificados.",
+        "detailTitle": "1. Verifica quién eres",
+        "detailBody": "Presenta documento oficial, completa prueba de vida y sube certificados o licencias. Servicios en casa o con niñas/niños requieren chequeo extra.",
+        "bullets": [
+          "Documento + verificación biométrica",
+          "Certificados profesionales u oficiales",
+          "Servicios sensibles piden certificado de antecedentes"
+        ]
+      },
+      {
+        "title": "Vitrina del servicio",
+        "description": "Graba presentaciones, fija precios y alcance.",
+        "detailTitle": "2. Diseña una vitrina efectiva",
+        "detailBody": "Suma videos, testimonios y etiquetas. Define qué está incluido, radio, horas mínimas e idiomas. IA puede ayudarte con la redacción.",
+        "bullets": [
+          "Varios paquetes con extras",
+          "Textos asistidos por IA",
+          "Galerías, playlists e itinerarios adjuntos"
+        ]
+      },
+      {
+        "title": "Entrenamiento operativo",
+        "description": "Conoce el tablón en vivo y las herramientas IA.",
+        "detailTitle": "3. Domina el tablón de solicitudes",
+        "detailBody": "Comprende cómo llegan pedidos instantáneos, cómo opera el autoaceptar VIP y cómo comunicarte usando plantillas y itinerarios con IA.",
+        "bullets": [
+          "Metas de tiempo de respuesta e insignias",
+          "Itinerarios IA con bloques editables",
+          "Checklist de seguridad antes de cada encuentro"
+        ]
+      },
+      {
+        "title": "Lanzar y crecer",
+        "description": "Sal a producción, reúne reseñas y gana logros.",
+        "detailTitle": "4. Lanzamiento con soporte continuo",
+        "detailBody": "Empieza a atender, recolecta reseñas mutuas y desbloquea beneficios VIP como autoaceptar y mentorías.",
+        "bullets": [
+          "Pagos liberados en hasta 7 días",
+          "VIP recibe kits de marketing con IA",
+          "Workshops trimestrales sobre precios y upsell"
+        ]
+      }
+    ],
+    "benefitsTitle": "Por qué los expertos aman Guidew",
+    "benefitsSubtitle": "Infraestructura profesional sin perder autonomía",
+    "benefits": [
+      {
+        "title": "Pagos altos",
+        "description": "Conserva la mayor parte de cada reserva. Guidew solo retiene 15% para cubrir marketing, pagos y disputas."
+      },
+      {
+        "title": "Automatizaciones VIP",
+        "description": "Al subir a VIP obtienes autoaceptar, itinerarios con IA y prioridad en los feeds de viajeros."
+      },
+      {
+        "title": "Demanda diaria real",
+        "description": "Accede a viajeros, empresas locales y pedidos urgentes en lugar de depender solo del boca a boca."
+      },
+      {
+        "title": "Soporte humano + IA",
+        "description": "Especialistas y asistentes con IA te ayudan a pulir la vitrina, propuestas y trámites."
+      }
+    ],
+    "requirementsTitle": "Requisitos para comenzar",
+    "requirementsSubtitle": "Estas bases mantienen confiable el marketplace",
+    "requirements": [
+      "Documento oficial válido + selfie reciente",
+      "Comprobante de domicilio para pagos",
+      "Certificados o portafolio para habilidades especializadas",
+      "Smartphone compatible con la app Guidew",
+      "Capacidad de comunicarte en inglés o mandarín (otros idiomas suman)",
+      "Aceptar las políticas de seguridad, cancelación y reseñas mutuas"
+    ],
+    "downloadCta": "Descargar app de proveedor",
+    "ctaTitle": "¿Listo para ofrecer o contratar talento local?",
+    "ctaSubtitle": "Descarga la app para reservar en minutos o monetizar tu pasión."
+  },
+  "serviceDetail": {
+    "availableNow": "Disponible ahora",
+    "description": "Descripción",
+    "includes": "Qué incluye",
+    "languages": "Idiomas",
+    "reviews": "Reseñas",
+    "experience": "Experiencia",
+    "responseTime": "Tiempo de respuesta",
+    "messageProvider": "Enviar mensaje",
+    "selectDate": "Elegir fecha",
+    "selectTime": "Elegir hora",
+    "bookNow": "Reservar ahora",
+    "requestNow": "Solicitar ahora",
+    "secureBooking": "Reserva y pago seguros",
+    "pricePerHour": "por hora",
+    "groupSize": "Individual o grupo pequeño",
+    "verified": "Verificado",
+    "tabs": {
+      "details": "Detalles",
+      "reviews": "Reseñas",
+      "provider": "Proveedor"
+    }
+  },
+  "serviceCard": {
+    "availableNow": "Disponible ahora"
+  },
+  "userApp": {
+    "thirdParty": {
+      "title": "Extras recomendados",
+      "items": {
+        "skyTower": "Comprar tickets para la Sky Tower de Auckland",
+        "intercity": "Reservar un autobús InterCity",
+        "rentalCar": "Alquilar un coche",
+        "danceShoes": "Comprar zapatos de tango/salsa"
+      },
+      "disclaimer": "Guidew recibe comisiones de algunos socios afiliados."
+    }
+  },
+  "dashboard": {
+    "upcoming": {
+      "title": "Próximos servicios",
+      "empty": "Aún no hay servicios programados.",
+      "duration": "{{hours}} h",
+      "status": "Estado: {{status}}"
+    },
+    "status": {
+      "awaiting-provider": "En espera del proveedor",
+      "accepted": "Aceptado",
+      "in-progress": "En progreso",
+      "awaiting-review": "Pendiente de reseña",
+      "completed": "Completado",
+      "cancelled": "Cancelado"
+    },
+    "providerFeed": {
+      "title": "Solicitudes en vivo",
+      "empty": "No hay pedidos nuevos. Mantén la app abierta para tomar el siguiente.",
+      "grab": "Tomar",
+      "durationEarnings": "Duración: {{hours}} horas · Ganancia ${{earnings}}",
+      "travelEstimate": "Tiempo de viaje estimado: {{minutes}} minutos",
+      "arrivalOnTime": "Llegada a tiempo",
+      "arrivalRisk": "Riesgo de retraso"
+    },
+    "timeline": {
+      "title": "Cronología del servicio",
+      "empty": "Aún no hay reservas. Envía tu primera solicitud."
+    },
+    "wallet": {
+      "title": "Billetera y VIP",
+      "refresh": "Actualizar saldos",
+      "available": "Disponible",
+      "pending": "Pendiente",
+      "withdrawable": "Retirable",
+      "vipTitle": "Suscripción VIP",
+      "vipActive": "Disfruta concierge con IA, pedidos sin comisión y prioridad en el despacho.",
+      "vipInactive": "Mejora tu plan para desbloquear concierge IA, despacho automático y beneficios de comisión.",
+      "vipCancel": "Cancelar VIP",
+      "vipActivate": "Activar VIP (US$ 9,9/mes)",
+      "lastUpdated": "Última actualización {{time}}"
+    },
+    "achievements": {
+      "title": "Logros",
+      "empty": "Completa reservas para ganar insignias.",
+      "earned": "Obtenido el {{date}}",
+      "templates": {
+        "user-first-booking": {
+          "title": "Primera aventura",
+          "description": "Completaste tu primera reserva en Guidew."
+        },
+        "provider-first-order": {
+          "title": "Primer cliente",
+          "description": "Entregaste tu primer servicio en Guidew."
+        },
+        "provider-5-orders": {
+          "title": "Experto de confianza",
+          "description": "5 servicios exitosos completados."
+        },
+        "provider-50-orders": {
+          "title": "Leyenda de la ciudad",
+          "description": "50 servicios exitosos completados."
+        },
+        "user-3-cities": {
+          "title": "Explorador global",
+          "description": "Reservaste servicios en 3 ciudades distintas."
+        }
+      }
+    },
+    "review": {
+      "title": "Deja una reseña",
+      "empty": "Selecciona un pedido completado para opinar.",
+      "overallLabel": "Experiencia general",
+      "worth": "Valió la pena",
+      "notWorth": "No valió",
+      "detailsLabel": "Comparte detalles",
+      "tipLabel": "Propina opcional",
+      "tipButton": "US$ {{amount}}",
+      "tipSkip": "Omitir propina",
+      "tipSend": "Enviar propina de US$ {{amount}}",
+      "submit": "Enviar reseña",
+      "defaultComment": "Servicio excelente y comunicación clara."
+    },
+    "request": {
+      "title": "Reserva un experto local",
+      "description": "Comparte los detalles del servicio; los VIP pueden describir necesidades en lenguaje natural para recibir sugerencias de IA.",
+      "activeWarning": "Ya tienes una orden activa programada para {{time}}. Las nuevas reservas se ajustarán alrededor de esa cita.",
+      "serviceLabel": "Servicio",
+      "servicePlaceholder": "Elige un servicio",
+      "providerLabel": "Experto preferido",
+      "providerPlaceholder": "Selecciona un proveedor",
+      "startLabel": "Fecha y hora de inicio",
+      "durationLabel": "Duración (horas)",
+      "locationLabel": "Lugar del servicio",
+      "locationPlaceholder": "Dirección o punto de encuentro",
+      "itineraryLabel": "¿Necesitas itinerario anticipado?",
+      "itineraryYes": "Sí, comparte un plan",
+      "itineraryNo": "No, prefiero flexibilidad",
+      "aiLabel": "Describe tu necesidad (concierge IA)",
+      "aiButton": "Generar expertos recomendados",
+      "speaksLanguages": "Habla {{languages}}",
+      "submit": "Enviar solicitud"
+    },
+    "activeOrder": {
+      "title": "Servicio activo",
+      "empty": "Sin servicios activos. Toma una nueva solicitud de la cola.",
+      "durationEarnings": "Duración {{hours}} h · Ganancias ${{earnings}}",
+      "aiButton": "Generar plan IA",
+      "submitItinerary": "Enviar itinerario",
+      "vipUpsell": "Activa VIP para recibir itinerarios automáticos y alertas de trayecto.",
+      "start": "Iniciar servicio",
+      "complete": "Finalizar",
+      "reportNoShow": "Reportar ausencia del viajero",
+      "defaultItinerary": "Café de bienvenida en un local\nRecorrido por los puntos clave de la ciudad\nAlmuerzo frente al agua"
+    },
+    "profileForm": {
+      "title": "Perfil del proveedor",
+      "bio": "Biografía",
+      "hourlyRate": "Tarifa por hora",
+      "minHours": "Horas mínimas",
+      "tags": "Etiquetas",
+      "tagsPlaceholder": "guía urbano, traducción",
+      "languages": "Idiomas",
+      "languagesPlaceholder": "Inglés, Mandarín",
+      "travelRadius": "Radio de traslado (km)",
+      "expensesLabel": "¿Incluye gastos?",
+      "expensesIncluded": "Incluye gastos",
+      "expensesExcluded": "Gastos se facturan aparte",
+      "expensePlaceholder": "Boletos, combustible y peajes a costo",
+      "certifications": "Certificados y evidencias",
+      "certificationPlaceholder": "URL del certificado",
+      "uploadProof": "Subir prueba",
+      "serviceMedia": "Medios del servicio",
+      "mediaTypes": {
+        "image": "Imagen",
+        "video": "Video",
+        "document": "Documento"
+      },
+      "mediaPlaceholder": "https://ejemplo.com/portfolio",
+      "addMedia": "Agregar medio",
+      "mediaBadge": "Prueba {{type}}",
+      "remove": "Quitar",
+      "mediaEmpty": "Sube fotos, videos o documentos que respalden tu experiencia.",
+      "save": "Guardar perfil"
+    },
+    "reviewHistory": {
+      "title": "Reseñas publicadas",
+      "empty": "Todavía no hay reseñas públicas. Completa viajes e intercambia comentarios para generar confianza.",
+      "serviceFallback": "Servicio personalizado",
+      "counterpartFallback": "Cliente",
+      "decisions": {
+        "worth": "Valió la pena",
+        "not-worth": "No valió",
+        "again": "Volvería a trabajar",
+        "no": "Preferiría no repetir"
+      },
+      "published": "Publicado el {{date}}"
+    },
+    "providerFilters": {
+      "title": "Filtrar expertos",
+      "tags": "Etiquetas",
+      "tagsEmpty": "Aún no hay etiquetas configuradas.",
+      "languages": "Idiomas",
+      "languagesEmpty": "Los proveedores aún no indicaron idiomas.",
+      "vipOnly": "Solo VIP",
+      "autoAcceptOnly": "Solo autoaceptar",
+      "minRating": "Calificación mínima {{rating}}",
+      "reset": "Restablecer"
+    },
+    "providerList": {
+      "serviceFallback": "Paquete de servicio",
+      "meta": "{{city}} · {{distance}} · {{languages}}",
+      "rate": "${{rate}}/h",
+      "minHours": "Min {{hours}} h",
+      "verifications": "Verificaciones",
+      "certifications": "{{count}} certificados cargados",
+      "rating": "Calificación",
+      "ratingDetail": "{{rating}} · {{trips}} servicios"
+    },
+    "orderActions": {
+      "title": "Controles de la reserva",
+      "empty": "Selecciona una reserva programada para cancelar o reportar una ausencia.",
+      "cancel": "Cancelar reserva",
+      "mutual": "Cancelación mutua",
+      "reportProvider": "Reportar ausencia del proveedor",
+      "instructions": "Las cancelaciones siguen la política de Guidew. Una cancelación mutua dentro de las tres horas reembolsa 85 % al viajero. Una vez iniciada la hora puedes reportar la ausencia del proveedor para un reembolso total."
+    },
+    "timelineEvents": {
+      "orderCreated": "Pedido creado por {{name}}",
+      "paymentAuthorized": "Pago autorizado vía Stripe",
+      "autoAccepted": "Aceptado automáticamente por un VIP",
+      "itinerarySubmitted": "Itinerario enviado",
+      "providerAccepted": "Proveedor aceptó el servicio",
+      "serviceStarted": "Servicio iniciado",
+      "serviceCompleted": "Servicio completado",
+      "cancelledUser": "Viajero canceló",
+      "cancelledProvider": "Proveedor canceló",
+      "cancelledMutual": "Cancelación conjunta",
+      "providerNoShow": "Se reportó ausencia del proveedor",
+      "travelerNoShow": "Se registró ausencia del viajero",
+      "tipAdded": "Propina añadida",
+      "reviewSubmittedTraveler": "Viajero envió una reseña",
+      "reviewSubmittedProvider": "Proveedor envió una reseña"
+    },
+    "itinerary": {
+      "header": "Servicio: {{service}} con el experto de {{city}} {{expert}}",
+      "travel": "Margen de traslado: {{minutes}} minutos (cálculo automático)",
+      "wrapUp": "Cierre y retroalimentación",
+      "phase": "Fase {{index}}: {{item}}",
+      "defaults": [
+        "Reunión y alineación de expectativas",
+        "Experiencia central adaptada a tus intereses",
+        "Cierre, resumen y próximos pasos"
+      ],
+      "tags": {
+        "city-guide": [
+          "Bienvenida en una cafetería local",
+          "Recorrido por barrios históricos y pasajes ocultos",
+          "Mirador panorámico para fotos",
+          "Degustaciones en sitios favoritos"
+        ],
+        "translation": [
+          "Alineación terminológica previa",
+          "Traducción en vivo en el sitio",
+          "Resumen con notas y frases clave"
+        ],
+        "food": [
+          "Visita a mercado con historia de ingredientes",
+          "Menú degustación en restaurante local",
+          "Parada de postre en un lugar icónico"
+        ],
+        "dance": [
+          "Calentamiento y fundamentos",
+          "Repaso guiado de la coreografía",
+          "Práctica libre con retroalimentación"
+        ],
+        "adventure": [
+          "Chequeo de seguridad y equipo",
+          "Briefing del recorrido o actividad",
+          "Experiencia guiada con paradas para fotos"
+        ]
+      }
+    }
+  },
+  "skillDetail": {
+    "notFound": "No encontramos los detalles de este servicio de habilidades",
+    "modeLabel": "Modalidad del servicio",
+    "highlights": "Aspectos destacados",
+    "detailsTitle": "Detalles del servicio",
+    "certifications": "Certificaciones",
+    "faq": "Preguntas frecuentes",
+    "reviews": "Opiniones de usuarios",
+    "timeLabel": "Horarios disponibles",
+    "galleryAlt": "imagen {{index}}",
+    "verified": "Identidad verificada"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Página no encontrada",
+    "description": "No encontramos la página solicitada. La experiencia que buscas puede estar en otra ruta.",
+    "actions": {
+      "home": "Volver al inicio",
+      "discover": "Explorar servicios"
+    }
+  },
+  "download": {
+    "title": "Descarga la app Guidew",
+    "subtitle": "Accede a expertos locales en cualquier lugar",
+    "getApp": "Obtener app",
+    "appStore": "App Store",
+      "googlePlay": "Google Play",
+    "features": {
+      "instant": "Reserva instantánea",
+      "personalized": "Experiencias personalizadas",
+      "secure": "Pagos seguros",
+      "chat": "Chat en tiempo real"
+    }
+  },
+  "useCase": {
+    "localGuide": {
+      "title": "Guía local inmediata",
+      "description": "Conéctate con guías locales para recorridos personalizados"
+    },
+    "translation": {
+      "title": "Traducción bajo demanda",
+      "description": "Recibe apoyo lingüístico en tiempo real"
+    },
+    "skillsLearning": {
+      "title": "Aprendizaje de habilidades",
+      "description": "Aprende algo nuevo con expertos locales a tu ritmo"
+    },
+    "emergency": {
+      "title": "Asistencia de emergencia",
+      "description": "Apoyo rápido cuando más lo necesitas"
+    },
+    "events": {
+      "title": "Planeación de eventos",
+      "description": "Encuentra profesionales para coordinar tu evento ideal"
+    },
+    "home": {
+      "title": "Servicios para el hogar",
+      "description": "Recibe ayuda inmediata para mantenimiento y mejoras"
+    },
+    "travel": {
+      "title": "Viajes personalizados",
+      "description": "Vive aventuras únicas con expertos locales"
+    },
+    "professional": {
+      "title": "Desarrollo profesional",
+      "description": "Avanza en tu carrera con entrenamiento personalizado"
+    },
+    "culturalExchange": {
+      "title": "Imersión cultural",
+      "description": "Sumérgete en tradiciones y culturas distintas"
+    },
+    "health": {
+      "title": "Salud y bienestar",
+      "description": "Accede a servicios personalizados de salud y autocuidado"
+    },
+    "petCare": {
+      "title": "Cuidado de mascotas",
+      "description": "Profesionales listos para tu mascota cuando lo necesites"
+    },
+    "childcare": {
+      "title": "Babysitting y cuidado infantil",
+      "description": "Apoyo confiable e inmediato para tus hijos"
+    },
+    "homeOrg": {
+      "title": "Organización del hogar",
+      "description": "Ayuda profesional para ordenar y optimizar espacios"
+    },
+    "shopping": {
+      "title": "Personal shopper y estilo",
+      "description": "Recibe asesoría personalizada de compras"
+    },
+    "techSupport": {
+      "title": "Soporte y reparación tech",
+      "description": "Soluciones inmediatas para tus dispositivos"
+    },
+    "financial": {
+      "title": "Asesoría financiera",
+      "description": "Estrategias personalizadas para tus finanzas"
+    },
+    "legal": {
+      "title": "Asesoría legal",
+      "description": "Consejos profesionales cuando más los necesitas"
+    },
+    "artCraft": {
+      "title": "Talleres de arte y artesanía",
+      "description": "Expresa creatividad con clases guiadas"
+    },
+    "musicDance": {
+      "title": "Clases de música y danza",
+      "description": "Aprende con instructores experimentados"
+    },
+    "gardening": {
+      "title": "Jardinería y paisajismo",
+      "description": "Profesionales para transformar tus áreas exteriores"
+    },
+    "fitness": {
+      "title": "Entrenamiento personalizado",
+      "description": "Alcanza metas físicas con planes a medida"
+    },
+    "cooking": {
+      "title": "Clases de cocina",
+      "description": "Aprende técnicas y sabores nuevos"
+    },
+    "photoVideo": {
+      "title": "Foto y video",
+      "description": "Registra momentos clave con profesionales"
+    },
+    "languageExchange": {
+      "title": "Programas de idiomas",
+      "description": "Practica con nativos y comparte cultura"
+    },
+    "homeTutoring": {
+      "title": "Tutorías en casa",
+      "description": "Apoyo académico personalizado donde estés"
+    },
+    "seniorCare": {
+      "title": "Cuidado de mayores",
+      "description": "Servicios inmediatos de compañía y bienestar"
+    },
+    "vrExperience": {
+      "title": "Experiencias en RV",
+      "description": "Vive experiencias inmersivas para entretenimiento o educación"
+    },
+    "environmentalConsulting": {
+      "title": "Consultoría ambiental",
+      "description": "Implementa prácticas sostenibles en tu hogar o negocio"
+    },
+    "mentalHealth": {
+      "title": "Apoyo en salud mental",
+      "description": "Habla con profesionales calificados cuando lo necesites"
+    },
+    "interiordesign": {
+      "title": "Diseño de interiores",
+      "description": "Transforma tus espacios con proyectos personalizados"
+    },
+    "eventEntertainment": {
+      "title": "Entretenimiento para eventos",
+      "description": "Garantiza shows memorables para tus invitados"
+    },
+    "giftServices": {
+      "title": "Regalos personalizados",
+      "description": "Crea obsequios únicos para cualquier ocasión"
+    },
+    "travelPlanning": {
+      "title": "Planeación de viajes",
+      "description": "Arma itinerarios completos con ayuda experta"
+    },
+    "nutritionPlanning": {
+      "title": "Planificación nutricional",
+      "description": "Recibe planes alimenticios alineados a tus metas"
+    },
+    "travelPhotography": {
+      "title": "Fotografía de viaje",
+      "description": "Captura recuerdos con fotógrafos dedicados"
+    },
+    "weddingPlanning": {
+      "title": "Planeación de bodas",
+      "description": "Organiza tu gran día con apoyo profesional"
+    },
+    "corporateTraining": {
+      "title": "Capacitación corporativa",
+      "description": "Programas a medida para equipos"
+    },
+    "homestaging": {
+      "title": "Home staging",
+      "description": "Aumenta el valor del inmueble antes de vender o alquilar"
+    },
+    "wellnessRetreats": {
+      "title": "Retiros de bienestar",
+      "description": "Experiencias de descanso y salud planificadas"
+    },
+    "artWorkshops": {
+      "title": "Talleres de arte",
+      "description": "Desarrolla tus habilidades creativas con guía experta"
+    },
+    "languageLearning": {
+      "title": "Aprendizaje de idiomas",
+      "description": "Estudia de forma personalizada según tu estilo"
+    },
+    "careerCounseling": {
+      "title": "Orientación profesional",
+      "description": "Planifica tus próximos pasos con especialistas"
+    },
+    "financialPlanning": {
+      "title": "Planificación financiera",
+      "description": "Respaldo personalizado para asegurar tu futuro"
+    },
+    "homeAutomation": {
+      "title": "Automatización del hogar",
+      "description": "Integra tecnología inteligente adaptada a tu estilo de vida"
+    },
+    "petTraining": {
+      "title": "Adiestramiento de mascotas",
+      "description": "Entrenadores experimentados ajustan conductas y rutinas"
+    },
+    "childEducation": {
+      "title": "Educación infantil",
+      "description": "Acompañamiento pedagógico hecho para cada niño"
+    },
+    "homeSecurity": {
+      "title": "Seguridad residencial",
+      "description": "Protege tu hogar con soluciones a medida"
+    },
+    "eventCatering": {
+      "title": "Catering para eventos",
+      "description": "Banquetes personalizados con servicio profesional"
+    }
   },
   "blog": {
     "hero": {
-      "badge": "Blog de Guidew",
-      "title": "Ideas, historias e inspiración urbana",
-      "description": "Descubre cómo Guidew construye una red presencial de habilidades confiable, con actualizaciones operativas, lanzamientos VIP e historias de la comunidad."
+      "badge": "Blog Guidew",
+      "title": "Historias, ideas y datos de ciudad",
+      "description": "Descubre cómo Guidew construye una red confiable de habilidades offline, junto con novedades operativas, lanzamientos VIP y casos reales."
     },
     "list": {
       "readStory": "Leer historia →"
@@ -37,13 +975,13 @@
     "detail": {
       "allArticles": "Todos los artículos",
       "ctaTitle": "¿Te gustó este artículo?",
-      "ctaSubtitle": "Vive servicios locales reales en la app de Guidew o sigue nuestra próxima historia de ciudad.",
+      "ctaSubtitle": "Vive servicios reales en la app Guidew o sigue nuestra próxima historia de ciudad.",
       "ctaPrimary": "Explorar servicios",
-      "ctaSecondary": "Conviértete en proveedor"
+      "ctaSecondary": "Ser proveedor"
     },
     "notFound": {
       "title": "Artículo no encontrado",
-      "description": "Vuelve al blog para conocer las últimas historias de ciudad y novedades del producto.",
+      "description": "Regresa al blog para ver historias y novedades recientes.",
       "cta": "Volver al blog"
     }
   }

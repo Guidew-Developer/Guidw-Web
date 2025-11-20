@@ -31,6 +31,54 @@ const copy = {
     ctaDescription: "立即在 Guidew App 中发出需求，或加入成为服务提供者。",
     browse: "浏览服务",
     join: "加入服务者网络"
+  },
+  pt: {
+    missingTitle: "Cidade ainda não disponível",
+    missingDescription: "Estamos expandindo para novos destinos em breve.",
+    back: "Voltar para Locations",
+    allCities: "Todas as cidades",
+    why: "Por que viajantes escolhem esta cidade",
+    logistics: "Destaques operacionais",
+    ctaTitle: (name: string) => `Pronto para explorar ${name}?`,
+    ctaDescription: "Envie uma solicitação no app Guidew ou entre como provedor para moldar este corredor conosco.",
+    browse: "Ver serviços",
+    join: "Entrar na rede de provedores"
+  },
+  es: {
+    missingTitle: "Ciudad aún no disponible",
+    missingDescription: "Pronto abriremos más destinos.",
+    back: "Volver a Locations",
+    allCities: "Todas las ciudades",
+    why: "Por qué los viajeros eligen esta ciudad",
+    logistics: "Puntos operativos",
+    ctaTitle: (name: string) => `¿Listo para vivir ${name}?`,
+    ctaDescription: "Envía una solicitud en la app Guidew o súmate como proveedor para darle forma al corredor con nosotros.",
+    browse: "Ver servicios",
+    join: "Unirme a la red de proveedores"
+  },
+  fr: {
+    missingTitle: "Ville pas encore disponible",
+    missingDescription: "De nouvelles destinations arrivent bientôt.",
+    back: "Retour vers Locations",
+    allCities: "Toutes les villes",
+    why: "Pourquoi les voyageurs choisissent cette ville",
+    logistics: "Points opérationnels",
+    ctaTitle: (name: string) => `Prêt à explorer ${name} ?`,
+    ctaDescription: "Envoyez une demande dans l’app Guidew ou rejoignez le réseau de prestataires pour construire ce corridor avec nous.",
+    browse: "Parcourir les services",
+    join: "Rejoindre le réseau de prestataires"
+  },
+  he: {
+    missingTitle: "העיר עדיין לא הושקה",
+    missingDescription: "אנחנו מרחיבים ליעדים נוספים ממש בקרוב.",
+    back: "חזרה לרשימת הערים",
+    allCities: "כל הערים",
+    why: "למה מטיילים בוחרים בעיר הזו",
+    logistics: "דגשים תפעוליים",
+    ctaTitle: (name: string) => `מוכנים לחוות את ${name}?`,
+    ctaDescription: "שלחו בקשה באפליקציית Guidew או הצטרפו לרשת הספקים כדי לבנות איתנו את המסדרון.",
+    browse: "עיינו בשירותים",
+    join: "הצטרפו לרשת הספקים"
   }
 } as const;
 
@@ -40,7 +88,9 @@ const LocationDetail = () => {
   const locale = resolveLocale(i18n.language);
   const profiles = useMemo(() => getCityProfiles(i18n.language), [i18n.language]);
   const city = useMemo(() => profiles.find(item => item.id === cityId), [profiles, cityId]);
-  const content = copy[locale];
+  const localeKey =
+    locale === "zh" || locale === "pt" || locale === "es" || locale === "fr" || locale === "he" ? locale : "en";
+  const content = copy[localeKey];
 
   if (!city) {
     return (

@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "react-i18next";
 import DownloadApp from "@/components/DownloadApp";
 import { useDownloadDialog } from "@/components/DownloadDialogProvider";
-import { resolveLocale, type SupportedLocale } from "@/utils/locale";
+import { pickLocaleValue, resolveLocale, type SupportedLocale } from "@/utils/locale";
 
 interface BaseService {
   id: string;
@@ -452,7 +452,7 @@ const baseServices: BaseService[] = [
   }
 ];
 
-const serviceCopy: Record<SupportedLocale, Record<string, { title: string; description: string; location: string }>> = {
+const serviceCopy: Partial<Record<SupportedLocale, Record<string, { title: string; description: string; location: string }>>> = {
   en: {
     "1": {
       title: "Auckland Hidden Gems Tour",
@@ -986,6 +986,1074 @@ const serviceCopy: Record<SupportedLocale, Record<string, { title: string; descr
       description: "快闪厨房共创菜单并迅速集结餐饮团队。",
             location: "奥克兰，新西兰"
     }
+  },
+  pt: {
+    "1": {
+      title: "Tour de cantinhos ocultos em Auckland",
+      description: "Descubra ruelas e cafés secretos no primeiro dia na cidade.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "2": {
+      title: "Caminhada por arte urbana",
+      description: "Explore murais e a história por trás de cada obra com um artista local.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "3": {
+      title: "Tradução para reuniões de negócios",
+      description: "Intérprete certificado para manter cada conversa internacional alinhada.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "4": {
+      title: "Tradução para consultas médicas",
+      description: "Interpretação precisa durante visitas a hospitais e clínicas.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "5": {
+      title: "Oficina de cerâmica japonesa",
+      description: "Aprenda técnicas manuais com acompanhamento personalizado.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "6": {
+      title: "Suporte técnico emergencial",
+      description: "Profissional de prontidão para laptop, celular ou soluções domésticas.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "7": {
+      title: "Planejamento rápido de eventos",
+      description: "Organizamos aniversários, corporativos ou pop-ups em poucas horas.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "8": {
+      title: "Serviços residenciais imediatos",
+      description: "Arrumação, manutenção e upgrades com chegada garantida.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "9": {
+      title: "Tour gastronômico autêntico",
+      description: "Vivencie mercados e cozinhas secretas adaptadas ao seu paladar.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "10": {
+      title: "Workshop de estratégia",
+      description: "Mentor executivo para revisar pitch e planos de expansão.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "11": {
+      title: "Cerimônia tradicional do chá",
+      description: "Aprenda filosofia e rituais com mestre formado em Kyoto.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "12": {
+      title: "Sessão de meditação e alívio de estresse",
+      description: "Mindfulness guiado para profissionais que precisam desacelerar.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "13": {
+      title: "Cuidados emergenciais com pets",
+      description: "Dog walker ou cuidador chega em menos de uma hora.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "14": {
+      title: "Babá e apoio infantil",
+      description: "Profissionais verificados para ida a eventos ou compromissos.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "15": {
+      title: "Planejamento de viagens personalizadas",
+      description: "Especialista cria roteiros completos com logística e reservas.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "16": {
+      title: "Organização do lar",
+      description: "Consultoria premium para destralhar e criar sistemas fáceis.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "17": {
+      title: "Personal shopping",
+      description: "Stylist seleciona peças e lojas conforme seu perfil.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "18": {
+      title: "Suporte tech para residências",
+      description: "Configuração e resolução de problemas em casa ou escritório.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "19": {
+      title: "Consultoria financeira pessoal",
+      description: "Planejamento de investimentos e rotinas de controle.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "20": {
+      title: "Sessões de orientação jurídica",
+      description: "Advogada especializada para dúvidas rápidas e estratégicas.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "21": {
+      title: "Ateliê de arte e craft",
+      description: "Experiência prática para criar peças exclusivas.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "22": {
+      title: "Aulas de música e dança latina",
+      description: "Instrutores premiados trazem energia e técnica para sua casa.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "23": {
+      title: "Resgate de jardim urbano",
+      description: "Paisagista revive varandas e quintais com planos sazonais.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "24": {
+      title: "Treinador móvel de força",
+      description: "Personal trainer leva equipamentos para HIIT ou recuperação sob medida.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "25": {
+      title: "Laboratório de street food com chef",
+      description: "Chef local ensina pratos autorais na sua cozinha ou estúdio pop-up.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "26": {
+      title: "Equipe relâmpago de documentário",
+      description: "Dois profissionais filmam o evento e entregam edição no mesmo dia.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "27": {
+      title: "Parceria para café e conversa",
+      description: "Encontramos falantes nativos para bate-papos e passeios imersivos.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "28": {
+      title: "Mentoria STEM sob demanda",
+      description: "Tutor de alto nível resolve bloqueios de matemática e ciências.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "29": {
+      title: "Visita de companhia cuidadosa",
+      description: "Cuidador certificado garante bem-estar, recados e socialização.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "30": {
+      title: "Experiência VR imersiva",
+      description: "Laboratório móvel leva turismo virtual e team building ao local.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "31": {
+      title: "Diagnóstico de sustentabilidade",
+      description: "Consultor mede impactos e entrega plano de ações sem desperdício.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "32": {
+      title: "Clínica express de saúde mental",
+      description: "Psicóloga licenciada conduz sessões para aliviar estresse e recuperar foco.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "33": {
+      title: "Renovação instantânea de interiores",
+      description: "Designer rearranja móveis e iluminação com lista de compras.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "34": {
+      title: "Time pop-up de entretenimento",
+      description: "Produtor convoca DJs, mestres de cerimônia e performers em 24h.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "35": {
+      title: "Serviço de presentes curados",
+      description: "Curadora busca lembranças artesanais alinhadas à sua história.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "36": {
+      title: "Blueprint de viagem em 48h",
+      description: "Planner envia roteiro reservável e acompanha atualizações em tempo real.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "37": {
+      title: "Estúdio híbrido de nutrição",
+      description: "Nutricionista interpreta exames e co-cria menus e listas de compras.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "38": {
+      title: "Fotografia narrativa de viagem",
+      description: "Fotógrafo registra a jornada e entrega imagens cinematográficas.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "39": {
+      title: "Retiro de bem-estar em três dias",
+      description: "Pacote de ioga e meditação com trilhas e alimentação plant-based.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "40": {
+      title: "Residência privada de cerâmica",
+      description: "Sessões individuais de torno, modelagem e esmaltação com peças finais.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "41": {
+      title: "Central de microcasamentos",
+      description: "Planejadora boutique fecha fornecedores e detalhes em ritmo acelerado.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "42": {
+      title: "Laboratório de aceleração corporativa",
+      description: "Coach conduz treinamentos práticos de liderança ou produto.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "43": {
+      title: "Staging para vender rápido",
+      description: "Equipe de interiores organiza, decora e agenda fotos profissionais.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "44": {
+      title: "Imersão em sotaque e fluência",
+      description: "Linguista cria sprint de 7 dias para pronúncia e confiança.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "45": {
+      title: "Oficina de transição de carreira",
+      description: "Consultor mapeia competências, narrativa e contatos-chave.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "46": {
+      title: "Planejamento financeiro para marcos",
+      description: "Especialista simula poupança, impostos e proteções para grandes decisões.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "47": {
+      title: "Projeto de automação residencial",
+      description: "Integrador desenha iluminação, clima e segurança inteligentes.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "48": {
+      title: "Logística para nômades globais",
+      description: "Concierge organiza vistos, seguros e reservas multi-cidade.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "49": {
+      title: "Reprogramação do comportamento pet",
+      description: "Adestrador combina treinos em casa e na rua para corrigir hábitos.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "50": {
+      title: "Coaching educacional personalizado",
+      description: "Consultora cria projetos STEAM com devolutivas detalhadas.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "51": {
+      title: "Segurança residencial sob medida",
+      description: "Especialista avalia riscos, instala sensores e treina a família.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "52": {
+      title: "Oficina de hortas comestíveis",
+      description: "Paisagista ensina a montar jardins regenerativos e mantê-los.",
+      location: "Auckland, Nova Zelândia"
+    },
+    "53": {
+      title: "Catering colaborativo com chef",
+      description: "Cozinha pop-up monta equipe e menu autoral em ritmo acelerado.",
+      location: "Auckland, Nova Zelândia"
+    }
+  },
+  es: {
+    "1": {
+      title: "Tour de joyas ocultas en Auckland",
+      description: "Descubre callejones y cafés secretos desde tu primer día en la ciudad.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "2": {
+      title: "Caminata de arte urbano",
+      description: "Explora murales con una artista local que conoce cada historia.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "3": {
+      title: "Traducción para reuniones de negocios",
+      description: "Intérprete certificado para conversaciones críticas con socios globales.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "4": {
+      title: "Intérprete para citas médicas",
+      description: "Acompañamiento preciso en hospitales para que nada se pierda.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "5": {
+      title: "Taller de cerámica japonesa",
+      description: "Práctica guiada adaptada a principiantes y aficionados.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "6": {
+      title: "Soporte tecnológico de emergencia",
+      description: "Experto on-call para urgencias con teléfono, portátil o smart home.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "7": {
+      title: "Planeación exprés de eventos",
+      description: "Corporativos, cumpleaños o pop-ups coordinados de principio a fin.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "8": {
+      title: "Reparación urgente de plomería",
+      description: "Llegada en 30 minutos para detener fugas y destapar tuberías.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "9": {
+      title: "Ruta gastronómica auténtica",
+      description: "Degusta puestos ocultos personalizados a tus preferencias.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "10": {
+      title: "Workshop de estrategia empresarial",
+      description: "Mentor ejecutivo para pulir hojas de ruta y pitches.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "11": {
+      title: "Ceremonia tradicional del té",
+      description: "Aprende filosofía y rituales junto a una maestra de Kioto.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "12": {
+      title: "Meditación y alivio del estrés",
+      description: "Sesiones guiadas para profesionales que necesitan reiniciar.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "13": {
+      title: "Cuidado urgente para mascotas",
+      description: "Cuidador certificado llega en menos de una hora para paseos o medicación.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "14": {
+      title: "Niñera de último minuto",
+      description: "Profesional con verificación de antecedentes para cualquier edad.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "15": {
+      title: "Conserjería personal de viajes",
+      description: "Diseña itinerarios, reserva locales y coordina logística en horas.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "16": {
+      title: "Reset del hogar en 48 horas",
+      description: "Organizadora profesional ordena closets, cocina y documentos en un fin de semana.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "17": {
+      title: "Sprint de guardarropa curado",
+      description: "Stylist recorre boutiques y arma looks combinables según tu perfil.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "18": {
+      title: "Rescate de dispositivos in situ",
+      description: "Ingeniero de hardware soluciona laptops, móviles y domótica a domicilio.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "19": {
+      title: "Chequeo rápido de portafolio",
+      description: "Asesor CFP revisa inversiones y entrega pasos accionables en una sesión.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "20": {
+      title: "Primeros auxilios contractuales",
+      description: "Abogada revisa acuerdos urgentes y explica riesgos en lenguaje claro.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "21": {
+      title: "Estudio de makers del barrio",
+      description: "Únete a artistas locales para talleres exprés de textiles, cerámica o grabado.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "22": {
+      title: "Coaching exprés de salsa",
+      description: "Bailarina privada entrena rutinas para eventos, confianza o ejercicio.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "23": {
+      title: "Rescate de jardín urbano",
+      description: "Horticultora revive balcones y patios con planes estacionales.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "24": {
+      title: "Entrenador móvil de fuerza",
+      description: "Coach certificado lleva equipo para HIIT o recuperación personalizada.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "25": {
+      title: "Laboratorio culinario guiado por chef",
+      description: "Chef local enseña platos icónicos en tu cocina o estudio pop-up.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "26": {
+      title: "Equipo relámpago de documental",
+      description: "Dúo audiovisual filma eventos y entrega edición el mismo día.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "27": {
+      title: "Maridaje de café y conversación",
+      description: "Emparejamos hablantes nativos para charlas inmersivas y paseos por la ciudad.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "28": {
+      title: "Mentor STEM a demanda",
+      description: "Tutor élite resuelve bloqueos de matemáticas y ciencias en sesiones enfocadas.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "29": {
+      title: "Visita de compañía compasiva",
+      description: "Cuidador certificado ofrece chequeos, recados y tiempo social.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "30": {
+      title: "Experiencia VR inmersiva",
+      description: "Laboratorio móvil lleva turismo virtual y team building a tu sede.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "31": {
+      title: "Recorrido de sostenibilidad",
+      description: "Consultor cuantifica huella y entrega plan de acción sin desperdicios.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "32": {
+      title: "Clínica pop-up de salud mental",
+      description: "Psicóloga licenciada ofrece sesiones para reducir estrés y recuperar enfoque.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "33": {
+      title: "Refresh instantáneo de interiores",
+      description: "Diseñadora reorganiza muebles e iluminación con lista de compras.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "34": {
+      title: "Equipo de entretenimiento pop-up",
+      description: "Productor reúne DJs, MCs y performers en menos de 24 horas.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "35": {
+      title: "Servicio curado de obsequios",
+      description: "Curadora elige piezas artesanales alineadas con tu historia.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "36": {
+      title: "Plano de viaje en 48 horas",
+      description: "Planner entrega itinerario reservable y da seguimiento en vivo.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "37": {
+      title: "Estudio híbrido de nutrición",
+      description: "Nutrióloga interpreta estudios y co-diseña menús y compras.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "38": {
+      title: "Fotografía narrativa de viaje",
+      description: "Fotógrafo documenta tu ruta y entrega imágenes cinematográficas.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "39": {
+      title: "Retiro de bienestar de tres días",
+      description: "Paquete todo incluido con yoga, meditación, hiking y cocina vegetal.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "40": {
+      title: "Residencia privada de cerámica",
+      description: "Sesiones uno a uno de torno, modelado y esmaltado con piezas listas para llevar.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "41": {
+      title: "Comando de microbodas",
+      description: "Planner boutique asegura venue, proveedores y detalles con rapidez.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "42": {
+      title: "Laboratorio corporativo acelerado",
+      description: "Coach diseña entrenamientos prácticos de liderazgo o producto.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "43": {
+      title: "Home staging en una semana",
+      description: "Equipo de interiores limpia, decora y coordina sesión fotográfica.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "44": {
+      title: "Laboratorio de acentos inmersivo",
+      description: "Lingüista crea sprint de 7 días para pronunciación y fluidez.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "45": {
+      title: "Taller de cambio profesional",
+      description: "Consultor mapea habilidades, narrativa y estrategia de contactos.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "46": {
+      title: "Plan financiero para hitos",
+      description: "Planner modela ahorro, impuestos y coberturas para grandes decisiones.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "47": {
+      title: "Blueprint de hogar inteligente",
+      description: "Integrador diseña iluminación, clima y seguridad automatizadas.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "48": {
+      title: "Logística para nómadas globales",
+      description: "Conserje gestiona visados, seguros y reservas multi-ciudad.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "49": {
+      title: "Campamento de reeducación canina",
+      description: "Entrenador diseña rutina combinando prácticas en casa y exteriores.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "50": {
+      title: "Coaching educativo personalizado",
+      description: "Consejera crea proyectos STEAM con retroalimentación detallada.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "51": {
+      title: "Seguridad residencial a medida",
+      description: "Especialista evalúa riesgos, instala sensores y capacita a la familia.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "52": {
+      title: "Taller de huertos comestibles",
+      description: "Paisajista enseña a crear jardines regenerativos y mantenerlos.",
+      location: "Auckland, Nueva Zelanda"
+    },
+    "53": {
+      title: "Catering colaborativo con chef",
+      description: "Cocina pop-up arma menú y equipo culinario en tiempo récord.",
+      location: "Auckland, Nueva Zelanda"
+    }
+  },
+  fr: {
+    "1": {
+      title: "Visite des trésors cachés d'Auckland",
+      description: "Découvrez ruelles secrètes et cafés confidentiels dès votre arrivée.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "2": {
+      title: "Balade d'art urbain",
+      description: "Explorez les fresques avec une artiste locale qui connaît chaque anecdote.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "3": {
+      title: "Interprétation pour réunions d'affaires",
+      description: "Interprète certifié pour sécuriser vos échanges avec des partenaires internationaux.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "4": {
+      title: "Accompagnement médical bilingue",
+      description: "Traduction précise lors des rendez-vous à l'hôpital ou en clinique.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "5": {
+      title: "Atelier de céramique japonaise",
+      description: "Coaching pratique adapté aux débutants comme aux passionnés.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "6": {
+      title: "Assistance tech d'urgence",
+      description: "Expert disponible 24/7 pour mobile, ordinateur ou maison connectée.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "7": {
+      title: "Organisation express d'événements",
+      description: "Conférences, anniversaires ou pop-ups coordonnés de A à Z.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "8": {
+      title: "Plomberie de secours",
+      description: "Intervention en 30 minutes pour stopper fuites et bouchons.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "9": {
+      title: "Parcours gastronomique authentique",
+      description: "Dégustez des adresses cachées sélectionnées selon vos goûts.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "10": {
+      title: "Workshop de stratégie",
+      description: "Mentor exécutif pour affiner feuilles de route et pitch investisseurs.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "11": {
+      title: "Cérémonie traditionnelle du thé",
+      description: "Apprenez les rituels et la philosophie avec une maîtresse de Kyōto.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "12": {
+      title: "Méditation et gestion du stress",
+      description: "Séances guidées pour professionnels surmenés.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "13": {
+      title: "Assistance urgente pour animaux",
+      description: "Pet sitter certifié sur place en moins d'une heure pour balades ou soins.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "14": {
+      title: "Garde d'enfants de dernière minute",
+      description: "Garde vérifiée et habituée à tous les âges.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "15": {
+      title: "Conciergerie voyage personnalisée",
+      description: "Conçoit itinéraires, réservations locales et logistique en quelques heures.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "16": {
+      title: "Remise en ordre du foyer en 48 h",
+      description: "Home organiser rationalise placards, cuisine et paperasse en un week-end.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "17": {
+      title: "Sprint dressing sur-mesure",
+      description: "Styliste parcourt les boutiques et compose des tenues mix & match.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "18": {
+      title: "Sauvetage d'appareils sur site",
+      description: "Ingénieur hardware dépanne ordinateurs, mobiles et domotique à domicile.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "19": {
+      title: "Check-up de portefeuille",
+      description: "Conseiller financier analyse vos placements et propose des actions immédiates.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "20": {
+      title: "Secours contractuel",
+      description: "Juriste passe vos contrats en revue et traduit les risques en langage clair.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "21": {
+      title: "Atelier des makers du quartier",
+      description: "Partagez textile, céramique ou gravure avec des artisans locaux.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "22": {
+      title: "Coaching salsa express",
+      description: "Danseuse privée prépare chorégraphies pour événements ou confiance en soi.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "23": {
+      title: "Sauvetage de jardin urbain",
+      description: "Horticultrice redonne vie aux balcons et jardins avec plans saisonniers.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "24": {
+      title: "Coach mobile de renforcement",
+      description: "Trainer certifié apporte le matériel pour HIIT ou récupération ciblée.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "25": {
+      title: "Laboratoire street food avec chef",
+      description: "Chef local enseigne ses plats signatures chez vous ou en pop-up.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "26": {
+      title: "Équipe documentaire éclair",
+      description: "Duo vidéo capture votre événement et livre un montage le jour même.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "27": {
+      title: "Pairing café & conversation",
+      description: "Rencontrez des natifs sélectionnés pour des échanges immersifs en ville.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "28": {
+      title: "Mentor STEM à la demande",
+      description: "Tuteur d'excellence débloque maths et sciences en sessions ciblées.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "29": {
+      title: "Visite de compagnie bienveillante",
+      description: "Auxiliaire certifié assure suivi santé, courses et moments sociaux.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "30": {
+      title: "Expérience VR immersive",
+      description: "Laboratoire mobile apporte voyages virtuels et team building chez vous.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "31": {
+      title: "Audit durabilité",
+      description: "Consultant mesure votre empreinte et fournit un plan zéro déchet.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "32": {
+      title: "Clinique éphémère bien-être mental",
+      description: "Psychologue agréée propose des sessions pour réduire le stress et retrouver le focus.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "33": {
+      title: "Refresh intérieur instantané",
+      description: "Décoratrice réorganise mobilier et éclairages avec liste d'achats dédiée.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "34": {
+      title: "Troupe d'animation pop-up",
+      description: "Producteur réunit DJs, MCs et artistes en moins de 24 h.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "35": {
+      title: "Service cadeaux sur-mesure",
+      description: "Curatrice sélectionne des pièces artisanales alignées sur votre histoire.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "36": {
+      title: "Plan voyage sous 48 h",
+      description: "Travel planner livre un itinéraire réservable et suit les ajustements en direct.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "37": {
+      title: "Studio nutrition hybride",
+      description: "Nutritionniste analyse vos bilans et co-construit menus & listes de courses.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "38": {
+      title: "Photographie d'aventure",
+      description: "Photographe capture votre voyage et remet des images cinématographiques.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "39": {
+      title: "Retraite bien-être de trois jours",
+      description: "Programme tout compris mêlant yoga, méditation, randonnées et cuisine végétale.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "40": {
+      title: "Résidence privée en céramique",
+      description: "Cours individuels de tournage, modelage et émaillage avec pièces à emporter.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "41": {
+      title: "Quartier général micro-mariage",
+      description: "Wedding planner boutique sécurise lieux, prestataires et détails éclair.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "42": {
+      title: "Lab d'accélération corporate",
+      description: "Coach conçoit des trainings immersifs sur la direction ou le produit.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "43": {
+      title: "Home staging express",
+      description: "Équipe déco prépare, met en scène et organise la séance photo.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "44": {
+      title: "Sprint accent & fluidité",
+      description: "Linguiste bâtit un programme de 7 jours pour prononciation et aisance.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "45": {
+      title: "Atelier transition de carrière",
+      description: "Consultant cartographie compétences, storytelling et plan de networking.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "46": {
+      title: "Plan financier pour étapes de vie",
+      description: "Planner modélise épargne, fiscalité et protections pour vos décisions clés.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "47": {
+      title: "Blueprint maison intelligente",
+      description: "Intégrateur conçoit éclairage, climat et sécurité automatisés.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "48": {
+      title: "Logistique pour nomades globaux",
+      description: "Concierge gère visas, assurances et réservations multi-villes.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "49": {
+      title: "Bootcamp comportemental canin",
+      description: "Éducateur combine entraînements à domicile et en extérieur.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "50": {
+      title: "Coaching éducatif personnalisé",
+      description: "Conseillère construit des projets STEAM avec retours détaillés.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "51": {
+      title: "Sécurité domestique sur mesure",
+      description: "Spécialiste évalue les risques, installe capteurs et forme la famille.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "52": {
+      title: "Atelier potager comestible",
+      description: "Paysagiste enseigne la création et l'entretien d'un jardin régénératif.",
+      location: "Auckland, Nouvelle-Zélande"
+    },
+    "53": {
+      title: "Traiteur collaboratif avec chef",
+      description: "Cuisine pop-up monte équipe et menu signature en un temps record.",
+      location: "Auckland, Nouvelle-Zélande"
+    }
+  },
+  he: {
+    "1": {
+      title: "סיור פנינים נסתרות באוקלנד",
+      description: "גלה סמטאות ובתי קפה מקומיים כבר ביום הראשון בעיר.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "2": {
+      title: "סיור אמנות רחוב",
+      description: "אמנית מקומית מובילה אותך בין קירות וצובעת את הסיפורים שמאחוריהם.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "3": {
+      title: "תרגום לפגישות עסקיות",
+      description: "מתורגמן מוסמך שמבטיח שכל מילה מול שותפים גלובליים עוברת נכון.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "4": {
+      title: "מתורגמן לביקורים רפואיים",
+      description: "ליווי בבית חולים כדי לוודא ששום פרט רפואי לא מתפספס.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "5": {
+      title: "סדנת קרמיקה יפנית",
+      description: "לימוד מעשי מותאם למתחילים ולחובבי עיצוב.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "6": {
+      title: "סיוע טכנולוגי דחוף",
+      description: "מומחה זמין לכל תקלה בטלפון, מחשב או בית חכם.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "7": {
+      title: "הפקת אירועים מיידית",
+      description: "אירועים עסקיים, ימי הולדת או פופ-אפ נשלטים מקצה לקצה.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "8": {
+      title: "תיקון אינסטלציה חירום",
+      description: "הגעה תוך 30 דקות לעצירת נזילות ופתיחת סתימות.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "9": {
+      title: "סיור אוכל אותנטי",
+      description: "מסלול מותאם לפי הטעם שלך בין מסעדות רחוב חבויות.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "10": {
+      title: "סדנת אסטרטגיה עסקית",
+      description: "מנטור בכיר שמלטש מצגות ותכניות צמיחה.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "11": {
+      title: "טקס תה יפני",
+      description: "למידת פילוסופיה וטקסיות לצד מאסטרית מקיוטו.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "12": {
+      title: "מדיטציה והפגת מתחים",
+      description: "מפגשים מודרכים למקצוענים שרוצים לנשום מחדש.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "13": {
+      title: "טיפול חירום לחיות מחמד",
+      description: "מטפל מוסמך מגיע תוך שעה להליכה, האכלה או תרופות.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "14": {
+      title: "בייביסיטר בדקה התשעים",
+      description: "מטפלת עם בדיקת רקע מלאה המתאימה לכל גיל.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "15": {
+      title: "קונסיירז' אישי לטיולים",
+      description: "משרטטת מסלולים, סוגרת ספקים ומנהלת לוגיסטיקה תוך שעות.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "16": {
+      title: "ריסט לבית ב-48 שעות",
+      description: "מסדרת מקצועית מטפלת בארונות, מטבח וניירת בסוף שבוע אחד.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "17": {
+      title: "ספרינט ארון קפסולה",
+      description: "סטייליסטית אוצרת מראות תואמים אחרי סבב בוטיקים.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "18": {
+      title: "הצלת מכשירים עד הבית",
+      description: "מהנדס חומרה פותר תקלות במחשב, טלפון ובית חכם במקום.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "19": {
+      title: "בדק פורטפוליו מהיר",
+      description: "יועץ מוסמך בודק הקצאות ומציע צעדי פעולה בפגישה אחת.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "20": {
+      title: "עזרה ראשונה לחוזים",
+      description: "עורכת דין קוראת מסמכים דחופים ומדגישה סיכונים בשפה פשוטה.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "21": {
+      title: "סטודיו יוצרים שכונתי",
+      description: "הצטרף לאמנים מקומיים לחוויות טקסטיל, קרמיקה או הדפסה.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "22": {
+      title: "אימון סלסה מהיר",
+      description: "רקדנית פרטית בונה רוטינות לאירועים, ביטחון או כושר.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "23": {
+      title: "החייאת גינה עירונית",
+      description: "אדריכלית נוף מחזירה חיים למרפסות וגינות עם תכנית עונתית.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "24": {
+      title: "מאמן כוח נייד",
+      description: "מאמן מוסמך מגיע עם הציוד ל-HIIT או שיקום מותאם.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "25": {
+      title: "מעבדת סטריט פוד עם שף",
+      description: "שף מקומי מלמד מנות חתימה במטבח שלך או בסטודיו זמני.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "26": {
+      title: "צוות דוקו במהירות שיא",
+      description: "צמד וידאו מצלם את האירוע ומוסר קליפ עוד באותו יום.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "27": {
+      title: "חיבור קפה ושיחה",
+      description: "משדכים דוברי שפת אם למפגשים חווייתיים וביקור בעיר.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "28": {
+      title: "מנטור STEM זמין",
+      description: "מורה עילית פותר חסמים במתמטיקה ובמדעים במפגשים מרוכזים.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "29": {
+      title: "ביקור ליווי אמפתי",
+      description: "מטפל מוסמך מבצע בדיקות רווחה, סידורים וזמן חברתי.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "30": {
+      title: "חויית VR סוחפת",
+      description: "מעבדת מציאות מדומה ניידת מביאה מסעות ווירטואליים וצוותי גיבוש למקום שלך.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "31": {
+      title: "בדיקת קיימות",
+      description: "יועץ מודד צריכה ומציג תכנית פעולה ללא בזבוז.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "32": {
+      title: "קליניקת בריאות נפש פופ-אפ",
+      description: "פסיכולוגית מוסמכת מקיימת מפגשים להורדת סטרס ולהחזרת ריכוז.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "33": {
+      title: "ריענון מיידי לעיצוב פנים",
+      description: "מעצבת מסדרת את הריהוט והאור ונותנת רשימת קניות.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "34": {
+      title: "צוות בידור פופ-אפ",
+      description: "מפיק מגייס DJs, מנחים ואמנים בתוך 24 שעות.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "35": {
+      title: "שירות מתנות אוצר",
+      description: "אוצרת בוחרת מתנות עבודת יד שמספרות את הסיפור שלך.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "36": {
+      title: "מפת מסע ב-48 שעות",
+      description: "מתכננת טיולים שולחת מסלול שניתן להזמין ועוקבת אחרי העדכונים.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "37": {
+      title: "סטודיו היברידי לתזונה",
+      description: "דיאטנית מנתחת בדיקות ומבנית תפריטים ורשימות קנייה.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "38": {
+      title: "צילום סיפורי למסע",
+      description: "צלם מלווה את הטיול ומוסר תמונות בסגנון קולנועי.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "39": {
+      title: "ריטריט רווחה של שלושה ימים",
+      description: "חבילה מלאה של יוגה, מדיטציה, טיולים ותזונה מבוססת צומח.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "40": {
+      title: "רזידנס פרטי בקרמיקה",
+      description: "שיעורים אישיים באובניים, פיסול וזיגוג עם יצירות לקחת הביתה.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "41": {
+      title: "חמל למיקרו-חתונות",
+      description: "מפיקת חתונות בוטיק סוגרת לוקיישנים, ספקים ופירוט לוח זמנים בקצב מהיר.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "42": {
+      title: "מעבדת האצה לחברות",
+      description: "מאמן מוביל סדנאות עומק בניהול או בפיתוח מוצר.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "43": {
+      title: "הום סטייג'ינג מהיר",
+      description: "צוות עיצוב מארגן, מעצב ומכין צילום מקצועי לנכס.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "44": {
+      title: "ספרינט הגייה ושטף",
+      description: "בלשנית בונה תכנית של שבוע לחידוד מבטא וביטחון בדיבור.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "45": {
+      title: "סדנת שינוי קריירה",
+      description: "יועץ ממפה יכולות, סיפור אישי ואסטרטגיית נטוורקינג.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "46": {
+      title: "תכנון פיננסי לצמתי חיים",
+      description: "מתכננת מדמה חסכונות, מסים והגנות לפני החלטות גדולות.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "47": {
+      title: "תכנית לבית חכם",
+      description: "אינטגרטור מעצב תאורה, אקלים ואבטחה חכמים.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "48": {
+      title: "לוגיסטיקה לנומאדים גלובליים",
+      description: "קונסיירז' מטפל בויזות, ביטוחים והזמנות במספר ערים.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "49": {
+      title: "מחנה לאילוף התנהגותי",
+      description: "מאלף יוצר תכנית שמחברת אימונים בבית ובחוץ.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "50": {
+      title: "אימון לימודי אישי",
+      description: "יועצת בונה פרויקטי STEAM עם משוב מפורט.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "51": {
+      title: "אבטחת בית מותאמת",
+      description: "מומחה בוחן סיכונים, מתקין חיישנים ומדריך את המשפחה.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "52": {
+      title: "סדנת גינה אכילה",
+      description: "מעצבת נוף מלמדת ליצור גן מתחדש ולתחזק אותו.",
+      location: "אוקלנד, ניו זילנד"
+    },
+    "53": {
+      title: "קייטרינג שיתופי עם שף",
+      description: "מטבח פופ-אפ מגבש צוות ותפריט מקורי בזמן קצר מאוד.",
+      location: "אוקלנד, ניו זילנד"
+    }
   }
 };
 
@@ -1055,19 +2123,23 @@ const Discover: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const services = useMemo(
-    () =>
-      baseServices.map(service => {
-        const localized = serviceCopy[locale][service.id];
-        return {
-          ...service,
-          title: localized.title,
-          description: localized.description,
-          location: localized.location
-        };
-      }),
-    [locale]
-  );
+  const services = useMemo(() => {
+    const localizedMap = pickLocaleValue(serviceCopy, locale);
+    const fallbackMap = pickLocaleValue(serviceCopy, "en");
+    return baseServices.map(service => {
+      const localized = localizedMap[service.id] ?? fallbackMap[service.id] ?? {
+        title: service.id,
+        description: "",
+        location: ""
+      };
+      return {
+        ...service,
+        title: localized.title,
+        description: localized.description,
+        location: localized.location
+      };
+    });
+  }, [locale]);
 
   const filteredServices = services.filter(service => {
     const matchesSearch =

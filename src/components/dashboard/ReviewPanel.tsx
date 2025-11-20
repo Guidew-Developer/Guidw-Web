@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import type { OrderRecord } from "@/types/guidew";
+import { useTranslation } from "react-i18next";
 
 interface ReviewPanelProps {
   order?: OrderRecord;
@@ -13,17 +14,18 @@ interface ReviewPanelProps {
 }
 
 const ReviewPanel = ({ order, onSubmit, onTip }: ReviewPanelProps) => {
+  const { t } = useTranslation();
   const [decision, setDecision] = useState<"worth" | "not-worth">("worth");
-  const [comment, setComment] = useState("Great service, very knowledgeable guide!");
+  const [comment, setComment] = useState(() => t("dashboard.review.defaultComment"));
   const [tip, setTip] = useState(0);
 
   if (!order) {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Leave a review</CardTitle>
+          <CardTitle>{t("dashboard.review.title")}</CardTitle>
         </CardHeader>
-        <CardContent className="text-sm text-muted-foreground">Select a completed order to review.</CardContent>
+        <CardContent className="text-sm text-muted-foreground">{t("dashboard.review.empty")}</CardContent>
       </Card>
     );
   }
@@ -31,31 +33,31 @@ const ReviewPanel = ({ order, onSubmit, onTip }: ReviewPanelProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Leave a review</CardTitle>
+        <CardTitle>{t("dashboard.review.title")}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
-          <Label>Overall experience</Label>
+          <Label>{t("dashboard.review.overallLabel")}</Label>
           <RadioGroup value={decision} onValueChange={value => setDecision(value as "worth" | "not-worth")}
             className="flex gap-3">
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="worth" id="worth" />
-              <Label htmlFor="worth">Worth it</Label>
+              <Label htmlFor="worth">{t("dashboard.review.worth")}</Label>
             </div>
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="not-worth" id="not-worth" />
-              <Label htmlFor="not-worth">Not worth it</Label>
+              <Label htmlFor="not-worth">{t("dashboard.review.notWorth")}</Label>
             </div>
           </RadioGroup>
         </div>
 
         <div className="space-y-2">
-          <Label>Share details</Label>
+          <Label>{t("dashboard.review.detailsLabel")}</Label>
           <Textarea rows={4} value={comment} onChange={event => setComment(event.target.value)} />
         </div>
 
         <div className="space-y-2">
-          <Label>Optional tip</Label>
+          <Label>{t("dashboard.review.tipLabel")}</Label>
           <div className="flex gap-2">
             {[0, 10, 20, 40].map(amount => (
               <Button
@@ -64,7 +66,7 @@ const ReviewPanel = ({ order, onSubmit, onTip }: ReviewPanelProps) => {
                 variant={tip === amount ? "default" : "outline"}
                 onClick={() => setTip(amount)}
               >
-                ${amount}
+                {t("dashboard.review.tipButton", { amount })}
               </Button>
             ))}
           </div>
@@ -77,9 +79,9 @@ const ReviewPanel = ({ order, onSubmit, onTip }: ReviewPanelProps) => {
               if (tip > 0) onTip(tip);
             }}
           >
-            {tip > 0 ? `Send tip of $${tip}` : "Skip tip"}
+            {tip > 0 ? t("dashboard.review.tipSend", { amount: tip }) : t("dashboard.review.tipSkip")}
           </Button>
-          <Button onClick={() => onSubmit({ decision, comment })}>Submit review</Button>
+          <Button onClick={() => onSubmit({ decision, comment })}>{t("dashboard.review.submit")}</Button>
         </div>
       </CardContent>
     </Card>
@@ -87,4 +89,3 @@ const ReviewPanel = ({ order, onSubmit, onTip }: ReviewPanelProps) => {
 };
 
 export default ReviewPanel;
-

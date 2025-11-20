@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import type { OrderRecord } from "@/types/guidew";
 import { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface ActiveOrderPanelProps {
   order?: OrderRecord;
@@ -24,11 +25,13 @@ const ActiveOrderPanel = ({
   onReportUserNoShow,
   isVip
 }: ActiveOrderPanelProps) => {
-  const [itinerary, setItinerary] = useState(order?.itinerary ?? "Morning coffee at local cafe\nTour of city highlights\nLunch at waterfront");
+  const { t } = useTranslation();
+  const defaultItinerary = t("dashboard.activeOrder.defaultItinerary");
+  const [itinerary, setItinerary] = useState(order?.itinerary ?? defaultItinerary);
 
   useEffect(() => {
-    setItinerary(order?.itinerary ?? "Morning coffee at local cafe\nTour of city highlights\nLunch at waterfront");
-  }, [order?.id, order?.itinerary]);
+    setItinerary(order?.itinerary ?? defaultItinerary);
+  }, [order?.id, order?.itinerary, defaultItinerary]);
 
   const canReportNoShow = useMemo(() => {
     if (!order) return false;
@@ -41,9 +44,9 @@ const ActiveOrderPanel = ({
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Active order</CardTitle>
+          <CardTitle>{t("dashboard.activeOrder.title")}</CardTitle>
         </CardHeader>
-        <CardContent className="text-sm text-muted-foreground">No active orders. Grab a new request from the queue.</CardContent>
+        <CardContent className="text-sm text-muted-foreground">{t("dashboard.activeOrder.empty")}</CardContent>
       </Card>
     );
   }
@@ -51,13 +54,18 @@ const ActiveOrderPanel = ({
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Active order</CardTitle>
+        <CardTitle>{t("dashboard.activeOrder.title")}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <div>
           <p className="text-lg font-semibold">{format(new Date(order.startTime), "PPP p")}</p>
           <p className="text-sm text-muted-foreground">{order.location.address}</p>
-          <p className="text-sm">Duration {order.durationHours} hours · Earnings ${order.providerEarnings.toFixed(2)}</p>
+          <p className="text-sm">
+            {t("dashboard.activeOrder.durationEarnings", {
+              hours: order.durationHours,
+              earnings: order.providerEarnings.toFixed(2)
+            })}
+          </p>
         </div>
 
         {order.requiresItinerary && (
@@ -75,27 +83,27 @@ const ActiveOrderPanel = ({
                     }
                   }}
                 >
-                  Generate AI plan
+                  {t("dashboard.activeOrder.aiButton")}
                 </Button>
               )}
-              <Button onClick={() => onSubmitItinerary(order.id, itinerary)}>Submit itinerary</Button>
+              <Button onClick={() => onSubmitItinerary(order.id, itinerary)}>
+                {t("dashboard.activeOrder.submitItinerary")}
+              </Button>
             </div>
             {!isVip && (
-              <p className="text-xs text-muted-foreground">
-                Upgrade to VIP to access auto-generated itineraries and travel alerts.
-              </p>
+              <p className="text-xs text-muted-foreground">{t("dashboard.activeOrder.vipUpsell")}</p>
             )}
           </div>
         )}
 
         <div className="flex flex-wrap gap-2 justify-end">
           <Button variant="outline" onClick={() => onStart(order.id)}>
-            Start service
+            {t("dashboard.activeOrder.start")}
           </Button>
-          <Button onClick={() => onComplete(order.id)}>Complete</Button>
+          <Button onClick={() => onComplete(order.id)}>{t("dashboard.activeOrder.complete")}</Button>
           {canReportNoShow && onReportUserNoShow && (
             <Button variant="destructive" onClick={() => onReportUserNoShow(order.id)}>
-              Report traveler no-show
+              {t("dashboard.activeOrder.reportNoShow")}
             </Button>
           )}
         </div>
@@ -105,4 +113,3 @@ const ActiveOrderPanel = ({
 };
 
 export default ActiveOrderPanel;
-

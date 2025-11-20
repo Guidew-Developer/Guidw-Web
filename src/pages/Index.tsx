@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { resolveLocale } from "@/utils/locale";
+import { useDownloadDialog } from "@/components/DownloadDialogProvider";
 
 const featuredServices = {
   en: [
@@ -44,6 +45,76 @@ const featuredServices = {
       price: 35,
       rating: 4.7,
       location: "Queenstown, New Zealand",
+      provider: { id: "p3", name: "Carlos M.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
+      imageSrc: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=2070&q=80"
+    }
+  ],
+  pt: [
+    {
+      id: "1",
+      title: "Tour urbano com segredos locais",
+      description: "Descubra becos escondidos, cafés autorais e histórias que só os moradores contam.",
+      category: "Guia da cidade",
+      price: 40,
+      rating: 4.9,
+      location: "Auckland, Nova Zelândia",
+      provider: { id: "p1", name: "Hiroshi K.", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
+      imageSrc: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=987&q=80"
+    },
+    {
+      id: "2",
+      title: "Tradução para reuniões estratégicas",
+      description: "Intérpretes certificados garantem clareza em negociações e pitches bilíngues.",
+      category: "Tradução",
+      price: 60,
+      rating: 4.8,
+      location: "Wellington, Nova Zelândia",
+      provider: { id: "p2", name: "Mei L.", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
+      imageSrc: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      id: "3",
+      title: "Aula express de salsa ou bachata",
+      description: "Aprenda passos básicos e postura com campeões que dão apoio individual.",
+      category: "Dança",
+      price: 35,
+      rating: 4.7,
+      location: "Queenstown, Nova Zelândia",
+      provider: { id: "p3", name: "Carlos M.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
+      imageSrc: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=2070&q=80"
+    }
+  ],
+  es: [
+    {
+      id: "1",
+      title: "Tour urbano con rincones ocultos",
+      description: "Descubre lugares secretos y favoritos locales ideales para tu primer día en la ciudad.",
+      category: "Guía urbana",
+      price: 40,
+      rating: 4.9,
+      location: "Auckland, Nueva Zelanda",
+      provider: { id: "p1", name: "Hiroshi K.", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
+      imageSrc: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=987&q=80"
+    },
+    {
+      id: "2",
+      title: "Traducción para reuniones ejecutivas",
+      description: "Interpretación profesional para que cada reunión transfronteriza sea clara y segura.",
+      category: "Traducción",
+      price: 60,
+      rating: 4.8,
+      location: "Wellington, Nueva Zelanda",
+      provider: { id: "p2", name: "Mei L.", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
+      imageSrc: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      id: "3",
+      title: "Introducción a la salsa con práctica guiada",
+      description: "Aprende fundamentos de salsa junto a un instructor campeón, sin necesidad de experiencia previa.",
+      category: "Danza",
+      price: 35,
+      rating: 4.7,
+      location: "Queenstown, Nueva Zelanda",
       provider: { id: "p3", name: "Carlos M.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
       imageSrc: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=2070&q=80"
     }
@@ -82,6 +153,76 @@ const featuredServices = {
       provider: { id: "p3", name: "Carlos M.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
       imageSrc: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=2070&q=80"
     }
+  ],
+  fr: [
+    {
+      id: "1",
+      title: "Balade urbaine et perles cachées",
+      description: "Découvrez passages secrets et adresses favorites pour réussir votre premier jour.",
+      category: "Guide urbain",
+      price: 40,
+      rating: 4.9,
+      location: "Auckland, Nouvelle-Zélande",
+      provider: { id: "p1", name: "Hiroshi K.", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
+      imageSrc: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=987&q=80"
+    },
+    {
+      id: "2",
+      title: "Interprétation pour réunions exécutives",
+      description: "Assurez des échanges limpides lors de vos rendez-vous transfrontaliers.",
+      category: "Traduction",
+      price: 60,
+      rating: 4.8,
+      location: "Wellington, Nouvelle-Zélande",
+      provider: { id: "p2", name: "Mei L.", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
+      imageSrc: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      id: "3",
+      title: "Initiation salsa guidée",
+      description: "Apprenez les bases avec un champion international—aucune expérience nécessaire.",
+      category: "Danse",
+      price: 35,
+      rating: 4.7,
+      location: "Queenstown, Nouvelle-Zélande",
+      provider: { id: "p3", name: "Carlos M.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
+      imageSrc: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=2070&q=80"
+    }
+  ],
+  he: [
+    {
+      id: "1",
+      title: "סיור עירוני עם נקודות חבויות",
+      description: "מתאים ליום הראשון בעיר: סמטאות סודיות, בתי קפה מקומיים וסיפורים אותנטיים.",
+      category: "מדריך עיר",
+      price: 40,
+      rating: 4.9,
+      location: "אוקלנד, ניו זילנד",
+      provider: { id: "p1", name: "Hiroshi K.", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
+      imageSrc: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=987&q=80"
+    },
+    {
+      id: "2",
+      title: "תרגום וליווי לפגישות עסקיות",
+      description: "מתורגמנית מוסמכת שומרת על שיחה מדויקת ומקצועית בכל פגישה בינלאומית.",
+      category: "תרגום",
+      price: 60,
+      rating: 4.8,
+      location: "וולינגטון, ניו זילנד",
+      provider: { id: "p2", name: "Mei L.", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
+      imageSrc: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      id: "3",
+      title: "סדנת סלסה למתחילים",
+      description: "לומדים קצב וצעד בסיסי עם אלוף תחרויות, באווירה נינוחה וללא צורך בניסיון.",
+      category: "ריקוד",
+      price: 35,
+      rating: 4.7,
+      location: "קווינסטאון, ניו זילנד",
+      provider: { id: "p3", name: "Carlos M.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
+      imageSrc: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=2070&q=80"
+    }
   ]
 } as const;
 
@@ -103,6 +244,57 @@ const testimonials = {
       author: { name: "Ava Nguyen", title: "Vietnam · Adventurer", avatar: "https://randomuser.me/api/portraits/women/29.jpg" }
     }
   ],
+  pt: [
+    {
+      content:
+        "Cheguei a Auckland sem contatos. Em dois dias, a Guidew me levou a clubes de jazz e a um grupo de bachata—agora cumpro agendas em maori básico e tenho amigos por toda a cidade.",
+      author: { name: "Lívia Andrade", title: "São Paulo · Empreendedora criativa", avatar: "https://randomuser.me/api/portraits/women/65.jpg" }
+    },
+    {
+      content:
+        "Mudei para Wellington para trabalhar com games e precisava de networking imediato. A Guidew me conectou com um intérprete que explicou etiqueta de negócios kiwi e abriu portas em meetups tech.",
+      author: { name: "Guilherme Costa", title: "Lisboa · Product designer", avatar: "https://randomuser.me/api/portraits/men/46.jpg" }
+    },
+    {
+      content:
+        "Nas férias em Queenstown, um coach da Guidew me levou a oficinas maori, trilhas secretas e fazendas de alpacas. Foi a primeira vez que senti a alma do país.",
+      author: { name: "Carolina Dias", title: "Rio · Viajante solo", avatar: "https://randomuser.me/api/portraits/women/12.jpg" }
+    }
+  ],
+  es: [
+    {
+      content:
+        "Aterrizar en Auckland sin conocer a nadie fue intimidante. Guidew me llevó a bares de jazz y a un crew de bachata; en pocos días saludaba en maorí y tenía amigos en todos lados.",
+      author: { name: "Valeria Núñez", title: "Madrid · Bailarina de finde", avatar: "https://randomuser.me/api/portraits/women/63.jpg" }
+    },
+    {
+      content:
+        "Me mudé a Wellington para un estudio de videojuegos. Guidew me conectó con una traductora que me enseñó etiqueta de negocios kiwi y me abrió puertas en meetups tech nocturnos.",
+      author: { name: "Santiago Álvarez", title: "Buenos Aires · Creador", avatar: "https://randomuser.me/api/portraits/men/57.jpg" }
+    },
+    {
+      content:
+        "En Queenstown, una coach de Guidew me llevó a talleres maoríes y granjas ocultas. Por primera vez sentí el espíritu real de Nueva Zelanda.",
+      author: { name: "Lucía Herrera", title: "CDMX · Aventurera", avatar: "https://randomuser.me/api/portraits/women/21.jpg" }
+    }
+  ],
+  fr: [
+    {
+      content:
+        "Arriver à Auckland sans connaître personne faisait peur. Guidew m’a emmenée dans des bars jazz underground et un crew de bachata; en quelques jours je saluais tout le monde en maori.",
+      author: { name: "Camille Robert", title: "Paris · Danseuse du week-end", avatar: "https://randomuser.me/api/portraits/women/31.jpg" }
+    },
+    {
+      content:
+        "Je me suis installé à Wellington pour un studio de jeux vidéo. Guidew m’a présenté une interprète qui m’a expliqué l’étiquette business kiwi le jour et m’a introduit aux meetups tech le soir.",
+      author: { name: "Hugo Martin", title: "Lyon · Producteur de jeux", avatar: "https://randomuser.me/api/portraits/men/23.jpg" }
+    },
+    {
+      content:
+        "Pendant la saison de ski à Queenstown, une coach Guidew m’a ouvert les portes d’ateliers maoris cachés et de fermes d’alpagas. J’ai enfin ressenti l’âme de la Nouvelle-Zélande.",
+      author: { name: "Noémie Laurent", title: "Bruxelles · Aventurière", avatar: "https://randomuser.me/api/portraits/women/50.jpg" }
+    }
+  ],
   zh: [
     {
       content:
@@ -118,6 +310,23 @@ const testimonials = {
       content:
         "在皇后镇滑雪季，Guidew 让我认识热爱毛利文化的教练。她带我拜访部落工坊，还推荐驼羊牧场里的即兴舞会，我终于感受到新西兰的灵魂。",
       author: { name: "Ava Nguyen", title: "来自越南 · 冒险爱好者", avatar: "https://randomuser.me/api/portraits/women/29.jpg" }
+    }
+  ],
+  he: [
+    {
+      content:
+        "נחתתי באוקלנד בלי להכיר אף אחד. Guidew הובילו אותי למועדוני ג׳אז מחתרתיים ולחוג Bachata, ותוך ימים כבר בירכתי אנשים במאורית.",
+      author: { name: "נועה הדר", title: "תל אביב · רוקדת בסופי שבוע", avatar: "https://randomuser.me/api/portraits/women/75.jpg" }
+    },
+    {
+      content:
+        "עברתי לוולינגטון כדי לעבוד בסטודיו למשחקים והייתי צריך חברים מהר. מומחית Guidew שימשה כמתורגמנית ביום וחיברה אותי ל-meetups טכנולוגיים בלילה.",
+      author: { name: "אסף גולן", title: "חיפה · יזם משחקים", avatar: "https://randomuser.me/api/portraits/men/71.jpg" }
+    },
+    {
+      content:
+        "בעונת הסקי בקווינסטאון מאמנת Guidew לקחה אותי לסדנאות מאוריות נסתרות ולחוות אלפקות. סוף סוף הרגשתי את הנשמה של ניו זילנד.",
+      author: { name: "יעל שלו", title: "ירושלים · מחפשת הרפתקאות", avatar: "https://randomuser.me/api/portraits/women/11.jpg" }
     }
   ]
 } as const;
@@ -169,6 +378,144 @@ const copy = {
       become: "Become an Expert"
     }
   },
+  pt: {
+    notice:
+      "Este site é um protótipo de pesquisa. Não realize cadastros, pagamentos ou decisões reais com base nas informações exibidas.",
+    noticeButton: "Entendi",
+    categories: {
+      badge: "Expertise diversa",
+      title: "Que tipo de ajuda você procura?",
+      description:
+        "De guias urbanos e apoio linguístico a aulas exclusivas e experiências culturais, encontre especialistas confiáveis em qualquer lugar.",
+      cards: [
+        { title: "Guias urbanos", description: "Roteiros sob medida e segredos locais.", icon: MapPin, color: "bg-brand-teal", route: "/discover?category=city-guides" },
+        { title: "Tradução imediata", description: "Intérpretes que eliminam barreiras nos seus encontros.", icon: Languages, color: "bg-brand-orange", route: "/discover?category=translation" },
+        { title: "Experiências culturais", description: "Imersões em tradições, gastronomia e arte.", icon: Globe, color: "bg-purple-500", route: "/discover?category=cultural-experiences" },
+        { title: "Aulas personalizadas", description: "Culinária, música, dança e muito mais.", icon: Book, color: "bg-blue-500", route: "/discover?category=skill-instruction" }
+      ],
+      cta: "Ver todas as categorias"
+    },
+    featured: {
+      badge: "Favoritos da comunidade",
+      title: "Serviços em destaque",
+      description: "Seleção atualizada com experiências que os usuários mais amam.",
+      cta: "Explorar todos os serviços"
+    },
+    howItWorks: {
+      badge: "Processo simples",
+      title: "Como funciona na prática",
+      description: "Três passos para encontrar um especialista local e confirmar em minutos.",
+      steps: [
+        { title: "Descobrir", description: "Busque serviços perto de você ou no próximo destino.", icon: MapPin },
+        { title: "Reservar", description: "Escolha o horário ideal e confirme instantaneamente.", icon: Calendar },
+        { title: "Viver", description: "Encontre o especialista e aproveite uma experiência sob medida.", icon: Coffee }
+      ],
+      cta: "Saiba mais sobre o passo a passo"
+    },
+    testimonials: {
+      badge: "Histórias reais",
+      title: "O que viajantes e moradores dizem",
+      description: "Depoimentos inspiradores de quem já usou a Guidew para desbloquear novas conexões."
+    },
+    cta: {
+      title: "Pronto para viver a experiência Guidew?",
+      description: "Junte-se a milhares de viajantes e locais que encontram ajuda humana pela plataforma.",
+      find: "Encontrar especialista",
+      become: "Quero ser especialista"
+    }
+  },
+  es: {
+    notice:
+      "Este sitio es un prototipo de investigación. No realices registros, pagos ni decisiones reales con la información mostrada.",
+    noticeButton: "Entendido",
+    categories: {
+      badge: "Talento diverso",
+      title: "¿Qué tipo de ayuda buscas?",
+      description:
+        "Desde guías urbanos y apoyo lingüístico hasta clases exclusivas y experiencias culturales, encuentra expertos confiables en segundos.",
+      cards: [
+        { title: "Guías urbanos", description: "Itinerarios a medida y secretos locales.", icon: MapPin, color: "bg-brand-teal", route: "/discover?category=city-guides" },
+        { title: "Traducción inmediata", description: "Intérpretes que derriban barreras en tus reuniones.", icon: Languages, color: "bg-brand-orange", route: "/discover?category=translation" },
+        { title: "Experiencias culturales", description: "Inmersiones en gastronomía, arte y rituales.", icon: Globe, color: "bg-purple-500", route: "/discover?category=cultural-experiences" },
+        { title: "Clases personalizadas", description: "Cocina, música, danza y más.", icon: Book, color: "bg-blue-500", route: "/discover?category=skill-instruction" }
+      ],
+      cta: "Ver todas las categorías"
+    },
+    featured: {
+      badge: "Favoritos de la comunidad",
+      title: "Servicios destacados",
+      description: "Experiencias que los viajeros recomiendan una y otra vez.",
+      cta: "Explorar todos los servicios"
+    },
+    howItWorks: {
+      badge: "Proceso simple",
+      title: "¿Cómo funciona Guidew?",
+      description: "Tres pasos para encontrar un experto local y confirmar en minutos.",
+      steps: [
+        { title: "Descubrir", description: "Explora servicios cerca de ti o del próximo destino.", icon: MapPin },
+        { title: "Reservar", description: "Elige la hora ideal y confirma al instante.", icon: Calendar },
+        { title: "Vivir", description: "Reúnete con el experto y disfruta una experiencia diseñada para ti.", icon: Coffee }
+      ],
+      cta: "Conoce el paso a paso"
+    },
+    testimonials: {
+      badge: "Historias reales",
+      title: "Lo que dicen viajeros y locales",
+      description: "Testimonios de quienes desbloquearon conexiones humanas con Guidew."
+    },
+    cta: {
+      title: "¿Listo para vivir Guidew?",
+      description: "Únete a miles de viajeros y locales que encuentran ayuda confiable en la plataforma.",
+      find: "Encontrar especialista",
+      become: "Convertirme en experto"
+    }
+  },
+  fr: {
+    notice:
+      "Ce site est un prototype de recherche. Merci de ne pas créer de compte, de ne pas payer et de ne pas vous baser sur les données affichées.",
+    noticeButton: "Compris",
+    categories: {
+      badge: "Talents variés",
+      title: "Quelle aide recherchez-vous ?",
+      description:
+        "Guides urbains, soutien linguistique, ateliers exclusifs ou expériences culturelles : trouvez des experts fiables en quelques secondes.",
+      cards: [
+        { title: "Guides urbains", description: "Itinéraires sur mesure et secrets locaux.", icon: MapPin, color: "bg-brand-teal", route: "/discover?category=city-guides" },
+        { title: "Traduction express", description: "Des interprètes qui effacent les barrières linguistiques.", icon: Languages, color: "bg-brand-orange", route: "/discover?category=translation" },
+        { title: "Immersions culturelles", description: "Gastronomie, art, rituels et quartiers cachés.", icon: Globe, color: "bg-purple-500", route: "/discover?category=cultural-experiences" },
+        { title: "Cours personnalisés", description: "Cuisine, musique, danse et plus encore.", icon: Book, color: "bg-blue-500", route: "/discover?category=skill-instruction" }
+      ],
+      cta: "Voir toutes les catégories"
+    },
+    featured: {
+      badge: "Favoris de la communauté",
+      title: "Services en vedette",
+      description: "Les expériences que les voyageurs recommandent encore et encore.",
+      cta: "Explorer tous les services"
+    },
+    howItWorks: {
+      badge: "Processus simple",
+      title: "Comment fonctionne Guidew ?",
+      description: "Trois étapes pour trouver un expert local et confirmer en quelques minutes.",
+      steps: [
+        { title: "Découvrir", description: "Parcourez les services près de chez vous ou de votre prochaine destination.", icon: MapPin },
+        { title: "Réserver", description: "Choisissez l’horaire idéal et confirmez instantanément.", icon: Calendar },
+        { title: "Vivre", description: "Rencontrez l’expert et profitez d’une expérience sur mesure.", icon: Coffee }
+      ],
+      cta: "Découvrir le fonctionnement"
+    },
+    testimonials: {
+      badge: "Histoires réelles",
+      title: "Ce que disent voyageurs et locaux",
+      description: "Ils racontent comment Guidew leur a ouvert de nouvelles connexions humaines."
+    },
+    cta: {
+      title: "Prêt à vivre l’expérience Guidew ?",
+      description: "Rejoignez des milliers de voyageurs et de locaux qui trouvent une aide fiable sur la plateforme.",
+      find: "Trouver un expert",
+      become: "Devenir expert"
+    }
+  },
   zh: {
     notice: "当前网站仍处于研发阶段，仅用于演示。请勿注册、支付或依据页面信息做实际决策，所有数据为模拟内容。",
     noticeButton: "我已了解",
@@ -212,16 +559,73 @@ const copy = {
       find: "寻找专家",
       become: "成为专家"
     }
+  },
+  he: {
+    notice: "האתר הזה הוא דמו למחקר. אל תבצעו הרשמות, תשלומים או החלטות אמיתיות על בסיס המידע שמופיע כאן.",
+    noticeButton: "הבנתי",
+    categories: {
+      badge: "מומחיות מגוונת",
+      title: "איזו עזרה אתם מחפשים?",
+      description: "ממדריכי עיר ותרגום מיידי ועד סדנאות תרבותיות והדרכות פרטיות—מצאו מומחים אמינים בכל יעד.",
+      cards: [
+        { title: "מדריכי עיר", description: "מסלולים אישיים וסודות מקומיים.", icon: MapPin, color: "bg-brand-teal", route: "/discover?category=city-guides" },
+        { title: "שירותי תרגום", description: "מתורגמנים זמינים שוברים מחסומי שפה.", icon: Languages, color: "bg-brand-orange", route: "/discover?category=translation" },
+        { title: "חוויות תרבות", description: "טבילה במטבח, באמנות ובקהילות המקומיות.", icon: Globe, color: "bg-purple-500", route: "/discover?category=cultural-experiences" },
+        { title: "הדרכות מיומנות", description: "שיעורי בישול, מוזיקה, ריקוד ועוד.", icon: Book, color: "bg-blue-500", route: "/discover?category=skill-instruction" }
+      ],
+      cta: "צפו בכל הקטגוריות"
+    },
+    featured: {
+      badge: "בחירות מובילות",
+      title: "שירותים מומלצים",
+      description: "החוויה של מדריכים מדורגים שהקהילה לא מפסיקה להזמין.",
+      cta: "כל השירותים הזמינים"
+    },
+    howItWorks: {
+      badge: "תהליך פשוט",
+      title: "איך Guidew עובדת",
+      description: "שלושה צעדים קלים כדי להתחבר למומחית מקומית.",
+      steps: [
+        { title: "גילוי", description: "מגלים שירותים לידכם או ביעד הבא.", icon: MapPin },
+        { title: "הזמנה", description: "בוחרים זמן ומאשרים בלחיצה.", icon: Calendar },
+        { title: "חווים", description: "נפגשים עם המומחה ומקבלים ליווי מותאם אישית.", icon: Coffee }
+      ],
+      cta: "למידע נוסף על התהליך"
+    },
+    testimonials: {
+      badge: "סיפורי משתמשים",
+      title: "מה הקהילה מספרת",
+      description: "מטיילים ותושבים משתפים כיצד Guidew שדרגה להם את הנסיעות."
+    },
+    cta: {
+      title: "מוכנים לחוות מומחיות מקומית?",
+      description: "הצטרפו לאלפי אנשים שכבר מתחברים דרך Guidew.",
+      find: "מצאו מומחה",
+      become: "הפכו למומחה"
+    }
   }
 } as const;
 
 const Index = () => {
   const [showNotice, setShowNotice] = useState(true);
   const { i18n } = useTranslation();
+  const { openDownloadDialog } = useDownloadDialog();
   const locale = resolveLocale(i18n.language);
-  const content = copy[locale];
-  const services = featuredServices[locale];
-  const stories = testimonials[locale];
+  const localeKey =
+    locale === "zh"
+      ? "zh"
+      : locale === "pt"
+        ? "pt"
+        : locale === "es"
+          ? "es"
+          : locale === "fr"
+            ? "fr"
+            : locale === "he"
+              ? "he"
+              : "en";
+  const content = copy[localeKey];
+  const services = featuredServices[locale] ?? featuredServices.en;
+  const stories = testimonials[locale] ?? testimonials.en;
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -286,7 +690,11 @@ const Index = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map(service => (
-                <ServiceCard key={service.id} {...service} />
+                <ServiceCard
+                  key={service.id}
+                  {...service}
+                  onCardClick={() => openDownloadDialog(service.title)}
+                />
               ))}
             </div>
 

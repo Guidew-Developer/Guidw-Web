@@ -1,47 +1,17 @@
 import type { OrderRecord, ProviderProfile, ServiceOffering } from "@/types/guidew";
+import type { SupportedLocale } from "@/utils/locale";
+import i18n from "@/i18n/config";
 
 interface GenerateItineraryInput {
   order: OrderRecord;
   service: ServiceOffering;
   provider: ProviderProfile;
+  locale?: SupportedLocale;
 }
-
-const tagTemplates: Record<string, string[]> = {
-  "city-guide": [
-    "Welcome briefing at a local café",
-    "Walk through heritage precincts and hidden laneways",
-    "Panoramic lookout for photos",
-    "Food tastings at favourite neighbourhood spots"
-  ],
-  translation: [
-    "Pre-meeting terminology alignment",
-    "On-site live translation support",
-    "Summary notes and key phrases recap"
-  ],
-  food: [
-    "Market visit with ingredient story",
-    "Local eatery tasting menu",
-    "Dessert stop at iconic venue"
-  ],
-  dance: [
-    "Warm-up and foundations",
-    "Partnered routine walk-through",
-    "Freestyle practice with feedback"
-  ],
-  adventure: [
-    "Safety and gear check",
-    "Trail or activity briefing",
-    "Guided experience with photo stops"
-  ]
-};
-
-const defaultTemplates = [
-  "Meet & align on expectations",
-  "Core experience tailored to your interests",
-  "Wrap-up, recap, and next-step suggestions"
-];
-
-export const generateItineraryPlan = ({ order, service, provider }: GenerateItineraryInput) => {
+export const generateItineraryPlan = ({ order, service, provider, locale = "en" }: GenerateItineraryInput) => {
+  const t = i18n.getFixedT(locale);
+  const tagTemplates = t("dashboard.itinerary.tags", { returnObjects: true }) as Record<string, string[]>;
+  const defaultTemplates = t("dashboard.itinerary.defaults", { returnObjects: true }) as string[];
   const segments = new Set<string>();
   service.tags.forEach(tag => {
     tagTemplates[tag]?.forEach(item => segments.add(item));
@@ -54,8 +24,25 @@ export const generateItineraryPlan = ({ order, service, provider }: GenerateItin
   const durationBlocks = Math.max(2, Math.round(order.durationHours));
   const plan = Array.from(segments).slice(0, durationBlocks);
 
-  const header = `Service: ${service.title} with ${provider.location.city} expert ${provider.id.replace("provider-", "")}`;
-  const travelNotice = `Travel buffer: ${order.travel.estimatedTravelMinutes} minutes (auto-calculated)`;
+  const header = t("dashboard.itinerary.header", {
+    service: service.title,
+    city: provider.location.city,
+    expert: provider.id.replace("provider-", "")
+  });
+  const travelNotice = t("dashboard.itinerary.travel", {
+    minutes: order.travel.estimatedTravelMinutes
+  });
+  const wrapUp = t("dashboard.itinerary.wrapUp");
 
-  return [header, travelNotice, ...plan.map((item, index) => `Phase ${index + 1}: ${item}`), "Time for feedback & wrap-up"].join("\n");
+  return [
+    header,
+    travelNotice,
+    ...plan.map((item, index) =>
+      t("dashboard.itinerary.phase", {
+        index: index + 1,
+        item
+      })
+    ),
+    wrapUp
+  ].join("\n");
 };
