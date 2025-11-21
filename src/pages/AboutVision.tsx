@@ -808,14 +808,148 @@ const visionCopy = {
         { heading: "מחברות משותפת", body: "שותפי עיר, מנהיגי iwi ויוצרים עצמאיים כותבים יחד את ספרי ההפעלה—אף פעם לא מעתיקים בלי הסכמה." }
       ]
     }
-  }
-} as const;
+  },
+
+  mi: {
+    hero: {
+      badge: "Aratohu te tirohanga",
+      title: "He tangata e mahi ana i nga taangata mo nga haerenga katoa",
+      description:
+        "Ko te kaiarahi i te wa kei te heke mai nga taone katoa ki a koe me nga taangata e whakawhirinaki ana, a AI Coupits, me nga tikanga e pai ana te hanga i nga waa."
+    },
+    manifesto: ["Ko nga Gilds a-rohe e tika ana ki te whakamahinga o te akomanga o te ao.", "Ko nga kaiwhakahaere katoa me hanga i te ahurea me te ohanga mo ona rangatira.", "He mea nui te automation i te wa e whakanui ana i te tiaki tangata."],
+    pillars: {
+      title: "Nga tikanga o te raki-whetu",
+      subtitle: "Tokotoru nga whakataunga e pupuri ana i te maia ki te tiaki i te whakawhirinaki.",
+      description: "Ka hangaia e matou nga wheako pono, te taangata-a-tangata tuatahi, katahi ka huri te apiti me te tipu i te wa e pai ake ai te tiaki.",
+      items: [
+        {
+          title: "Te matauranga-tangata-tuatahi",
+          description: "Horo-mohio-a-AI e anga ana ki nga rohe tika, i te wa e tiakina ai e nga kaiwhaiwhai te kaha, rohe, me nga waehere ahurea."
+        },
+        {
+          title: "Tuhinga o mua",
+          description: "Ko nga kainoho o nga kainoho e huri ana i nga pukenga huna ki nga tohu hainatanga me nga korero poto me nga korero whakaari."
+        },
+        {
+          title: "Kupenga haumaru marino",
+          description: "Te tuakiri, te inihua, te inihua, me te tautohetohe e rere humarie ana i te papamuri kia pai ai te hunga haereere i te waa marino."
+        }
+      ]
+    },
+    experiences: {
+      title: "Te Tauhokohoko Akoranga",
+      subtitle: "Ko ia rere e rere ana i roto i te puranga maha-paparanga e whakakotahi ana i te toi, nga tohu, me te atawhai aronganui.",
+      items: [
+        {
+          label: "Ko te Alpha Alpha",
+          title: "Nga tikanga Discovery",
+          description: "He patapatai, he papa tari, me nga micro-ataata antros e whakaatu ana he aha te mea e rapu ana te tangata haere i te tangata haere."
+        },
+        {
+          label: "Wewete lumen",
+          title: "Whakamahere tahi",
+          description: "Nga Kaiwhakarato me Ai-Copilots Come Comeries e whakauru ana i nga tohu logistics me nga mea ngaro noa iho."
+        },
+        {
+          label: "Pulse peke",
+          title: "Whakahau-ora",
+          description: "Ko te whakamaoritanga o te waa-pono, nga takutai haumaru, me nga punaha SOS o te rohe e karapoti ana i nga huihuinga katoa."
+        },
+        {
+          label: "Hekenga",
+          title: "I muri i te pono me te pono",
+          description: "Kōrero Ka whakahoki, ka mau i nga puna wai, me nga tohu kohikohi ka whangai i te kauwhata aratohu mo nga haerenga a meake nei."
+        }
+      ],
+      highlight: {
+        title: "Waitohu Whakawhitiwhiti",
+        text: "Ko te haerenga whakatapu i whakatapua, i nga haerenga pa-pa nui mo nga kaiwhakahauhau, nga kaiwaiata, me nga rangatira.",
+        bullets: [
+          "Whakapaia te tangata me Ai ki te poto mo nga kaiwhakarato katoa i te aroaro o te tangata haereere.",
+          "Wewete i nga \"Pouaka o te rohe\" ma te taha o nga kaiwhakaako, ahurea, ahurea.",
+          "Raraunga hapori hapori hei whakamatau i te pumau me te utu utu."
+        ]
+      }
+    },
+    labs: {
+      title: "Ateliers Ateliers",
+      subtitle: "E wha nga taiwhanga kua whakatere i nga kaiwhakatere a meake nei.",
+      cards: [
+        {
+          name: "Athela Studio",
+          focus: "Te mohio o te taone",
+          copy: "Whakakotahitia nga raraunga amiorangi, maramataka ahurea, me nga kaunihera noho hei whiriwhiri i nga kaainga e whai ake nei."
+        },
+        {
+          name: "Tapanga pulse",
+          focus: "Teihana Haumaru",
+          copy: "Ka hangaia nga haangai haumaru haumaru, te tirotiro koiora, me te mahi-a-rangi mo te ara mo nga huihuinga ora."
+        },
+        {
+          name: "Ealight Restidecy",
+          focus: "Ahurea ahurea",
+          copy: "Ko nga kaitoi a nga Komihana, kaiwhakaora, me nga kaiwhakaako ki nga tikanga whakahoahoa e haere tere ana nga kaihaerere i muri i te haerenga."
+        },
+        {
+          name: "Kaitatau",
+          focus: "Te oranga o te kaiwhakarato",
+          copy: "Nga whakamatautau mo nga utu mo nga utu, ko nga kaari utu utunga, me nga whakatutukitanga ka puta hei whakaara i nga rangatira ki nga kaihanga mahi katoa."
+        }
+      ]
+    },
+    trust: {
+      title: "Whakapono tinihanga",
+      subtitle: "Ko te haumaru te haere tonu ki nga taangata, nga haereere, me nga hoa taone.",
+      items: [
+        { icon: ShieldCheck, title: "Tuhinga o mua", text: "Ko nga whakaurunga whakakitenga kua whakaritea, ko nga tohu toi, me nga taunakitanga a Peer e tau ana ki ia wheako." },
+        { icon: Users2, title: "Nga Ritenga Tuarua", text: "E rua nga arotake e whakaputaina ana i muri i nga reo e rua e whakahoutia ana, me nga tohu e whakanui ana i te rite me te manaaki." },
+        { icon: BarChart3, title: "Studio kaupapa here ora", text: "Ko nga kaitātari mōrearea me nga kaiwhakataki matakitaki tohu i roto i te waa tūturu, te whakatikatika i nga papaahi i mua i te pikinga o tetahi take." }
+      ]
+    },
+    arcs: {
+      title: "Tarcs momentum",
+      subtitle: "Ka piki ake te kaha o te kaiarahi - kotahi te taone nui e whakahohe ana i muri.",
+      steps: [
+        {
+          name: "Aurora Launtads",
+          headline: "He pakiaka hohonu i Aotearoa",
+          copy: "Ka tiimata i roto i nga kaainga e whakanui ana i nga mahi toi, ki te whakatika i te duet i waenga i a Ai orchestration me te mahana o te tangata."
+        },
+        {
+          name: "Nga piriti o te takutai",
+          headline: "Tasman ki nga tohu Moananui-a-Kiwa",
+          copy: "Hono i nga Kaituhi auaha puta noa i Ahitereiria me Asia-Kiwa, te hanga i nga ropu kai reorua e korero ana i te ngaru o muri o nga mano."
+        },
+        {
+          name: "Nga hononga whenua",
+          headline: "Europe, Middle East, Africa",
+          copy: "Ko te hoa me nga rohe ahurea me nga huihuinga nui hei arahi i te wahanga mo nga kaihanga o te ao-trotting."
+        },
+        {
+          name: "Rangatira Whenua",
+          headline: "Amerika me tua atu",
+          copy: "Ko nga roopu a Anchor Aratohu i nga wa katoa, ko te tiri i nga papaahi ki nga waahi katoa ka taea te huri i nga pukenga ki te manaaki."
+        }
+      ],
+      closing: "He maamaa te mutunga: he tangata haereere, i roto i tetahi taone nui, ko te kaiarahi i te tangata tika."
+    },
+    leadership: {
+      title: "Te Taura Take'araa",
+      subtitle: "Ko nga rangatira katoa e tohu ana ki enei kupu whakaari i mua i te whakarewanga o te ara.",
+      statements: [
+        { heading: "Tiaki i mua i te tauine", body: "Ka tukuna e matou he aukati mena kaore e taea e taatau te whakarite i nga kaihokohoko atawhai reorua, me te kapinga o te oranga, me te urupare tautohetohe." },
+        { heading: "Whakatūwhera ōhanga ringa", body: "Ka whakaputahia e maatau nga utu utu, te whakahoutanga hapori, me te paanga o nga purongo kia kitea ai e nga kainoho te tino uara." },
+        { heading: "Te kaituhi tiri", body: "Ko nga hoa taone nui, nga rangatira o te iwi, me te tuutu takitahi i nga kaitakaro-kaore he panui-whakapiri-kore whakaae." }
+      ]
+    }
+  },} as const;
 
 const AboutVision = () => {
   const { i18n } = useTranslation();
   const locale = resolveLocale(i18n.language);
   const localeKey =
-    (locale === "zh" || locale === "pt" || locale === "es" || locale === "fr" || locale === "he" ? locale : "en") as keyof typeof visionCopy;
+    (locale === "zh" || locale === "pt" || locale === "es" || locale === "fr" || locale === "he" || locale === "mi" ? locale : "en") as keyof typeof visionCopy;
   const content = visionCopy[localeKey];
   return (
     <div className="min-h-screen flex flex-col bg-brand-lightGray">

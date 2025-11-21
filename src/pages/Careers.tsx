@@ -473,8 +473,97 @@ const copy: Partial<Record<SupportedLocale, CareersCopy>> = {
       viewDetails: "לפרטי התפקיד",
       apply: "הגשת מועמדות"
     }
-  }
-};
+  },
+
+  mi: {
+    hero: {
+      badge: "Whakauru atu ki te Misioni",
+      title: "Whakaaetia te tohatoha pukenga tuimotu me te arataki",
+      description:
+        "Kei te kawe tatou i nga kaihoahoa, hinengaro hinengaro, miihini, me nga kaiwhakahaere o te rohe ki te mahi i nga kaiwhakamahi tuatahi o te 1,000 ki Akarana me Poneke i mua i te taone nui."
+    },
+    values: [
+      {
+        title: "Hoahoa tangata-toto",
+        description: "Ka whai tatou i nga kaihaere me nga kaiwhakarato na roto i nga tirohanga tūturu me te hanga wheako e tangohia tonu i o raatau mamae.",
+        icon: Users2
+      },
+      {
+        title: "Whakamana Tere",
+        description: "Tukuna te MVP i roto i nga marama 6, te tauine ki nga taone e rua i roto i nga whakarewa 12-iti, te tuku tonu.",
+        icon: Rocket
+      },
+      {
+        title: "Whakapono me te haumaru",
+        description: "Ko nga tirotirohanga tuakiri, ota, me nga utu kua hangaia kia mau tonu nga taunekeneke tuimotu.",
+        icon: Target
+      }
+    ],
+    openRolesTitle: "Nga Mahi Whakatuwhera",
+    metricsTitle: "He aratohu i te tirohanga",
+    metrics: [
+      {
+        value: "12+",
+        label: "Poutati Hiko",
+        description: "Chefs, kaiwhakaako ngaru, pania, me te maha atu."
+      },
+      {
+        value: "1k +",
+        label: "Haereere Beta",
+        description: "Kua whakawhirinaki ki o maatau rangatira rangatira."
+      },
+      {
+        value: "48 haora",
+        label: "Huringa kaipuke",
+        description: "Mai i te whakapae ki nga kaiurungi o te taone nui."
+      },
+      {
+        value: "3 nga whenua",
+        label: "hoa hoa",
+        description: "Asia-Moananui-a-Kiwa, Europe, me nga pakiaka o Amerika Te Tai Tokerau."
+      }
+    ],
+    culture: {
+      title: "Te utu toi, nga tutaki tiketike-whakawhirinaki",
+      intro: "Ko nga tikanga manaaki e tutuki ana i nga mahi hua - ko nga whakataunga ka mau tonu nga kaihaere me nga rangatira i te teepu.",
+      highlights: [
+        {
+          title: "He matatau ki nga korero",
+          description: "Ka whiua e tatou nga tuhinga o te ope me nga whakamatautau-whakamatautau i nga wheako manaaki.",
+          icon: Sparkles
+        },
+        {
+          title: "Te tirohanga tuatahi-tuatahi",
+          description: "Ko nga kaiwhakahaere o te rohe e arahi ana; Ka whakakorea e te HQ nga RoadBlocks me nga tahua kaore e raru.",
+          icon: Globe2
+        },
+        {
+          title: "He tapu te haumaru",
+          description: "Ko te tuakiri, te utu, me nga arotake arotake ka whakatauhia i mua i te hui.",
+          icon: ShieldCheck
+        }
+      ]
+    },
+    perks: {
+      title: "He aha taau e pai ai",
+      items: [
+        "Ko te Whakanohia Te Whakawhiwhinga Plusside I herea ki nga Whakaohotanga o nga Taone Nui.",
+        "Ko nga toenga mahi a-waahanga mo te waa-hangai ki te hanga i nga huihuinga tuimotu.",
+        "Te oranga me te heke mai i Ahitereiria me Aotearoa.",
+        "Te tahua ako a te tangata ake ki te atarangi o runga ake o nga rangatira o te Matauranga e mahi ana tatou."
+      ]
+    },
+    closing: {
+      title: "Hangaia te tohu tohu mo nga tohungatanga tuimotu",
+      description: "Mena e pai ana koe ki te tango hua ki te ao tūturu, ka whakawhiwhia e te kaiarahi ki a koe he pouaka nui. Tuhia ki nga hoa o nga hoa me te tuku i to mahi.",
+      ctaPrimary: "Korero ki tetahi hoa",
+      ctaSecondary: "Tirohia nga mahi tuwhera"
+    },
+    actions: {
+      viewDetails: "Tirohia nga korero taipitopito",
+      apply: "Tono inaianei"
+    }
+  },};
 
 const Careers = () => {
   const { i18n } = useTranslation();

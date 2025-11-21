@@ -79,8 +79,20 @@ const copy = {
     ctaDescription: "שלחו בקשה באפליקציית Guidew או הצטרפו לרשת הספקים כדי לבנות איתנו את המסדרון.",
     browse: "עיינו בשירותים",
     join: "הצטרפו לרשת הספקים"
-  }
-} as const;
+  },
+
+  mi: {
+    missingTitle: "Kaore i whakarewahia te pa",
+    missingDescription: "Kei te whakawhānui atu matou ki etahi atu haerenga mai.",
+    back: "Hoki ki nga waahi",
+    allCities: "Nga taone katoa",
+    why: "He aha te hunga e haereere ana i tenei taone",
+    logistics: "Nga tohu nui",
+    ctaTitle: (name: string) => `Ready to experience ${name}?`,
+    ctaDescription: "Tukuna he tono i roto i te taupānga Aratohu, whakauru atu ranei ki te whatunga kaiwhakarato kia pai ai te taone.",
+    browse: "Tirohia nga Ratonga",
+    join: "Whakauru atu ki te whatunga kaiwhakarato"
+  },} as const;
 
 const LocationDetail = () => {
   const { cityId } = useParams<{ cityId: string }>();
@@ -89,7 +101,7 @@ const LocationDetail = () => {
   const profiles = useMemo(() => getCityProfiles(i18n.language), [i18n.language]);
   const city = useMemo(() => profiles.find(item => item.id === cityId), [profiles, cityId]);
   const localeKey =
-    locale === "zh" || locale === "pt" || locale === "es" || locale === "fr" || locale === "he" ? locale : "en";
+    locale === "zh" || locale === "pt" || locale === "es" || locale === "fr" || locale === "he" || locale === "mi" ? locale : "en";
   const content = copy[localeKey];
 
   if (!city) {

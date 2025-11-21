@@ -17,13 +17,13 @@ import ProviderFilters, { ProviderFilterState } from "@/components/dashboard/Pro
 import ReviewHistory from "@/components/dashboard/ReviewHistory";
 import OrderActionsCard from "@/components/dashboard/OrderActionsCard";
 import { useGuidew } from "@/state/GuidewProvider";
-import type { ProviderProfile } from "@/types/guidew";
+import type { CityLocation, ProviderProfile } from "@/types/guidew";
 import { estimateTravelWindow, haversineDistanceKm } from "@/utils/geo";
 import { useTranslation } from "react-i18next";
 import { resolveLocale } from "@/utils/locale";
 import { translateGuidewMessage } from "@/utils/guidewMessages";
 
-const userAppLocales = ["en", "zh", "pt", "es", "fr", "he"] as const;
+const userAppLocales = ["en", "zh", "pt", "es", "fr", "he", "mi"] as const;
 type UserAppLocale = (typeof userAppLocales)[number];
 
 type UserAppCopy = {
@@ -139,8 +139,24 @@ const userAppCopy: Record<UserAppLocale, UserAppCopy> = {
       reviewSubmitted: "הביקורת נשלחה ותפורסם לאחר שגם הספק יגיב.",
       tipAdded: "נוסף טיפ של {amount}$."
     }
-  }
-};
+  },
+
+  mi: {
+    greeting: "Kia {Ingoa}, Nau mai ki te Aratohu",
+    subheading: "Tirohia nga kaainga whakawhirinaki i roto i te {City}, whakahaere i nga pukapuka, me te iriti i nga wheako pono.",
+    actions: { syncWallet: "Tukutahi putea", checkAchievements: "Tirohia nga whakatutukitanga" },
+    tabs: { explore: "Hōpara", chat: "Kōrerorero", schedule: "Haereere", wallet: "Kopa" },
+    toasts: {
+      providerUnavailable: "Kaore i te waatea te kaiwhakarato i te tono mo te mokamoka kua tonoa.",
+      orderCreateFailed: "Kaore e taea te hanga ota. Me whakarite kei a ia te kaiwhakarato me te ngana ano.",
+      requestSubmitted: "Tono tono. Ka whakamōhio atu maatau i te tohunga.",
+      aiMatches: "I kitea e AI {tatau} nga tohunga e rite ana.",
+      vipCancelled: "Kua whakakorea e Vip. Ka taea e koe te koa i nga wa katoa.",
+      vipActivated: "Whakahohe VIP. Kia pai te AI Whakataetae me te Tautoko Matua!",
+      reviewSubmitted: "Te arotake i tukuna. Ka whakaputahia e maatau te wa e arotake ai te kaiwhakarato ki a koe.",
+      tipAdded: "Matamata o te $ {rahi {rahi."
+    }
+  },};
 
 const formatMessage = (template: string, vars: Record<string, string | number>) =>
   template.replace(/\{(\w+)\}/g, (_, key) => String(vars[key] ?? ""));
@@ -191,11 +207,14 @@ const UserApp = () => {
   const activeOrder = userOrders.find(order => order.status === "accepted" || order.status === "in-progress");
   const orderForChat = userOrders.find(order => order.id === selectedOrderId) ?? activeOrder;
 
-  if (!currentUser) {
-    return <Navigate to="/auth" replace />;
-  }
+  const fallbackLocation: CityLocation = currentUser?.lastKnownLocation ?? {
+    city: "",
+    country: "",
+    lat: 0,
+    lng: 0
+  };
 
-  const userLocation = currentUser.lastKnownLocation;
+  const userLocation = fallbackLocation;
 
   const timeStringToMinutes = (value: string) => {
     const [hours, minutes] = value.split(":").map(Number);
@@ -281,6 +300,10 @@ const UserApp = () => {
   useEffect(() => {
     setRecommendedProviders(prev => prev.filter(provider => filteredProviders.some(item => item.id === provider.id)));
   }, [filteredProviders]);
+
+  if (!currentUser) {
+    return <Navigate to="/auth" replace />;
+  }
 
   const handleSubmitRequest = ({
     serviceId,

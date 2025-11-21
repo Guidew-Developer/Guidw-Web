@@ -62,7 +62,17 @@ const copy: Partial<Record<SupportedLocale, {
     decline: "דחו",
     accept: "מאשר",
     policy: "מדיניות Cookies"
-  }
+  },
+
+  mi: {
+    title: "Ka whakamahia e matou nga pihikete hei whakarei ake i to wheako",
+    description:
+      "Paatohia te \"Whakaaetanga\" kia taea ai te pihikete nui me te tātari. Ako atu ki ta maatau kaupapahere pihikete",
+    acknowledge: "Kei te mohio ahau",
+    decline: "Kāhore e whakaae",
+    accept: "Whakaae",
+    policy: "Kaupapahere Kuki"
+  },
 } as const;
 
 const CookieConsent = () => {

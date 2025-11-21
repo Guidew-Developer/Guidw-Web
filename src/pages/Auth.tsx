@@ -24,7 +24,7 @@ const heroIconMap = {
 
 type HeroIconKey = keyof typeof heroIconMap;
 
-const supportedAuthLocales = ["en", "zh", "pt", "es", "fr", "he"] as const;
+const supportedAuthLocales = ["en", "zh", "pt", "es", "fr", "he", "mi"] as const;
 type AuthLocale = (typeof supportedAuthLocales)[number];
 
 type AuthCopy = {
@@ -347,9 +347,9 @@ const authCopy: Record<AuthLocale, AuthCopy> = {
     cardTags: ["Concierge last-mile", "Exclusivo Auckland · Wellington", "Respuesta VIP < 5 min"],
     login: {
       trigger: "Iniciar sesión",
-      emailLabel: "Correo electrónico",
+      emailLabel: "Corlanguages electrónico",
       emailPlaceholder: "tú@ejemplo.com",
-      continueWithEmail: "Continuar con correo",
+      continueWithEmail: "Continuar con corlanguages",
       orDivider: "o",
       google: "Continuar con Google",
       apple: "Continuar con Apple",
@@ -366,7 +366,7 @@ const authCopy: Record<AuthLocale, AuthCopy> = {
       trigger: "Registrarse",
       nameLabel: "Nombre completo",
       namePlaceholder: "Ana López",
-      emailLabel: "Correo electrónico",
+      emailLabel: "Corlanguages electrónico",
       emailPlaceholder: "tú@ejemplo.com",
       roleLabel: "Rol",
       roleUser: "Quiero reservar servicios",
@@ -538,8 +538,84 @@ const authCopy: Record<AuthLocale, AuthCopy> = {
         "פרופיל מלא מעניק קדימות בסגנון כרטיס שחור לקונסיירז'."
       ]
     }
-  }
-};
+  },
+
+  mi: {
+    heroBadge: "Ārahi ārahi",
+    heroTitle: "Waitohu ki te Aratohu · ara ake i te haerenga",
+    heroDescription:
+      "Takiuru ki te orchestrate Auckland me te whatunga rohe o Te Whanganui-a-Tara. Ai + Ko nga Kaipupuri Tamariki Kia mau tonu nga huringa taone.",
+    heroHighlights: [
+      {
+        icon: "sparkles",
+        title: "AI Cractrice Orchecation",
+        description: "Kei te maarama ki to hiahia i mua i te taenga mai me te whakaatu i nga whakataetae o te rohe me nga Iniana."
+      },
+      {
+        icon: "shield",
+        title: "E whitu-apa kua whakatauhia nga rohe",
+        description: "Ko nga tohunga anake e haere ana i te ID, papamuri, me nga arowhai poroto e uru atu ana ki te raarangi whakautu."
+      },
+      {
+        icon: "pin",
+        title: "Te Taone-a-Taone",
+        description: "Kotahi te tuakiri e heke ana i nga waahi ka tukuna e ia nga waahanga katoa i te horopaki vip."
+      }
+    ],
+    stats: [
+      { value: "3,200+", label: "Ko nga tohunga o te rohe" },
+      { value: "68", label: "Nga taone nui" },
+      { value: "<5 min", label: "Te urupare a AVG VIP" }
+    ],
+    testimonial: {
+      quote: "Mai i te taunga i Akarana ki nga wira i Poneke, i mau tonu te kaiarahi i nga mea rereke me te marino.",
+      author: "- Olivia · Kaiwhakawhanake wheako"
+    },
+    cardTitle: "Te uru kaha",
+    cardDescription: "Takiuru ki te rehita ranei i tetahi raarangi hei whakahaere i nga pukapuka, nga tono VIP, me nga haerenga whakawhiti-taone.",
+    cardTags: ["Ko te Whakataetae Tuarua", "Auckland · Wellington motuhake", "Whakautu VIP <5 min"],
+    login: {
+      trigger: "Takiuru",
+      emailLabel: "Aiea",
+      emailPlaceholder: "koe@example.com",
+      continueWithEmail: "Haere tonu me te imeera",
+      orDivider: "rānei",
+      google: "Haere tonu me Google",
+      apple: "Haere tonu me te aporo",
+      blockEyebrow: "Ko te hokinga mai o te mema",
+      blockHeading: "Kia noho i mua",
+      blockDescription: "Aroturuki i te ahunga whakamua, te tukutahi o Synks, me te whakapiri i o hiahia ki nga haerenga katoa.",
+      highlights: [
+        "Tirohia nga Pukapuka me nga Whakamaumahara mo nga taone maha i roto i te papa papatohu.",
+        "Ko nga kaiwhaiwhai VIP Digital e whakatikatika ana i nga whakawhitinga, kai, me nga wheako huna ranei i roto i nga meneti.",
+        "Ko to tuakiri kaiarahi ka mau tonu i te rongoa o te maimoatanga i nga waahi katoa."
+      ]
+    },
+    register: {
+      trigger: "Rēhita",
+      nameLabel: "Ingoa Katoa",
+      namePlaceholder: "Jane Smith",
+      emailLabel: "Aiea",
+      emailPlaceholder: "koe@example.com",
+      roleLabel: "Tūranga",
+      roleUser: "Kei te hiahia au ki nga ratonga pukapuka",
+      roleProvider: "Kei te hiahia au ki te whakarato ratonga",
+      cityLabel: "Taone tuatahi",
+      cities: { auckland: "Akarana", wellington: "Te Whanganui-a-Tara" },
+      languagesLabel: "Reo",
+      languagesPlaceholder: "Ingarihi, Mandarin",
+      vipText: "Ohauru ki te VIP ($ 9.9 / marama) mo te utu mo te awhina me te kore utu.",
+      button: "Waihangahia te Kaute",
+      blockEyebrow: "Whakawhanake Mema hou",
+      blockHeading: "Wewete i te whatunga tūmataiti arataki",
+      blockDescription: "Whakaotihia to kōtaha kia whiwhi i nga Iti Itiera me te whakawakanga VIP.",
+      highlights: [
+        "Kotahi te rēhitatanga e aukati i to maatau hononga o te ao.",
+        "Ko te whakawakanga o Vip te tuku i nga utu utu me te whakaatu i te rite ki a AI.",
+        "Te mutunga o to kaihoahoa ka wehe i te kaupapa o te ahua pango-kāri pango."
+      ]
+    }
+  },};
 
 const defaultCity: CityLocation = {
   city: "Auckland",

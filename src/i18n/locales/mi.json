@@ -1,0 +1,988 @@
+{
+  "nav": {
+    "home": "Kāinga",
+    "discover": "Hura",
+    "about": "Mō",
+    "downloadApp": "Tangohia te taupānga"
+  },
+  "guidew": {
+    "messages": {
+      "orderNotFound": "Kaore i kitea",
+      "orderAlreadyCancelled": "Kua whakakorea te ota",
+      "travelerMissing": "Kei te ngaro te haere",
+      "participantsMissing": "Kei te ngaro nga kaiwhakauru",
+      "providerProfileMissing": "Ko te kōtaha kaiwhakarato e ngaro ana",
+      "providerAccountMissing": "Kei te ngaro te putea kaiwhakarato",
+      "mutualCancellation": "Whakakorea te whakakore i roto i nga haora 3",
+      "cancelledMoreThan3Hours": "Kua whakakorea atu i te 3 haora i mua",
+      "cancelledOneToThreeHours": "Kua whakakorea nga haora 1-3 i mua i te tiimata",
+      "cancelledLessThanOneHour": "Ka whakakorea te iti iho i te 1 haora i mua i te tiimata",
+      "cancelledAfterStart": "Kua whakakorea i muri i te tiimata o te ratonga",
+      "providerNoShow": "Kua tohua te kaiwhakarato hei kore-whakaatu. Te moni whakahoki kua tukuna.",
+      "travelerNoShow": "I tohu a te haerere hei kore-whakaatu. Ka utua te kaiwhakarato."
+    }
+  },
+  "search": {
+    "placeholder": "Nga Ratonga Rapu, Nga Tohunga, nga waahi ranei ..."
+  },
+  "filter": {
+    "title": "Tātari",
+    "categories": {
+      "all": "Katoa",
+      "cityGuide": "He Aratohu Taone",
+      "translation": "Whakamāoritanga",
+      "cultural": "Te wheako ahurea",
+      "skills": "Nga pukenga whakaako",
+      "food": "Te wheako kai",
+      "photography": "Whakaahua",
+      "localguide": "'Aratohu ā-rohe",
+      "emergency": "Mate whawhati tata",
+      "events": "Takanga",
+      "home": "Kāinga",
+      "skillteaching": "Whakaakoranga pukenga",
+      "foodexperience": "Te wheako kai",
+      "professional": "Nga pukenga ngaio",
+      "culturalexchange": "Whakawhitiwhiti ahurea",
+      "health": "Te hauora me te oranga",
+      "petcare": "Tiaki poaka",
+      "childcare": "Te kura",
+      "homeorg": "Whakahaere Home",
+      "shopping": "Hokohoko Whaiaro",
+      "techsupport": "Tautoko Hangarau",
+      "financial": "Tohutohu Putea",
+      "legal": "Whakawhitiwhiti Ture",
+      "artcraft": "Toi me te mahi toi",
+      "musicdance": "Waiata & Kanikani",
+      "gardening": "Mahikari",
+      "fitness": "Whakangungu whakangungu",
+      "cooking": "Akomanga tunu",
+      "photovideo": "Whakaahua me te Ataata",
+      "languageexchange": "Whakawhiti Reo",
+      "hometutoring": "Kaiwhakaako",
+      "seniorcare": "Te tiaki matua",
+      "vrexperience": "Wheako vr",
+      "environmental": "Whakawhitinga taiao",
+      "mentalhealth": "Te Hauora Hinengaro",
+      "interiordesign": "Hoahoa o roto",
+      "eventent": "Te whakangahau i nga huihuinga",
+      "giftservices": "Ratonga takoha",
+      "travelplanning": "Te whakamahere haere",
+      "nutritionplanning": "Te whakamahere kai",
+      "travelphotography": "Whakaahua Haere",
+      "weddingplanning": "Mahere marena",
+      "corporatetraining": "Whakangungu umanga",
+      "homestaging": "Whakataetae Kaainga",
+      "wellnessretreats": "Reti pai",
+      "artworkshops": "Toi Toi",
+      "languagelearning": "Akoranga Reo",
+      "careercounseling": "Tohutohu tohutohu",
+      "financialplanning": "Te whakamahere pūtea",
+      "homeautomation": "Te Kaainga Kaainga",
+      "pettraining": "Whakangungu mōkai",
+      "childeducation": "Mātauranga Tamaiti",
+      "homesecurity": "Haumaru Kaainga",
+      "eventcatering": "Te Pera Takahanga"
+    }
+  },
+  "common": {
+    "loading": "Hoko ...",
+    "error": "Kua puta he hapa",
+    "retry": "Rehiry hoki",
+    "signIn": "Haina",
+    "joinNow": "Hono inaianei",
+    "featured": "Whakaaturanga",
+    "topPicks": "Tuhinga o mua",
+    "explore": "Hōpara",
+    "learnMore": "Ako atu",
+    "availableNow": "Waatea inaianei"
+  },
+  "home": {
+    "hero": {
+      "title": "Tūhono me te tohungatanga o te rohe",
+      "subtitle": "Tirohia nga wheako me nga ratonga motuhake mai i nga tohunga o te ao huri noa"
+    },
+    "categories": {
+      "title": "He aha te momo awhina e hiahiatia ana e koe?",
+      "subtitle": "Mai i nga kaiarahi o te taone me nga awhina reo ki nga pukenga motuhake me nga wheako o te rohe, kitea nga tohunga ki tetahi mara, ki hea"
+    },
+    "featured": {
+      "title": "Ratonga Whakaaturanga",
+      "subtitle": "Te tirotiro i o maatau ratonga tino rongonui mai i nga tohunga o te rohe o runga i te ao"
+    },
+    "howItWorks": {
+      "title": "Me pehea te mahi",
+      "subtitle": "Tūhono me te tohungatanga o te rohe i roto i nga waahanga ngawari noa iho",
+      "steps": {
+        "discover": {
+          "title": "Hura",
+          "description": "Tirotiro nga ratonga me nga tohunga ki to haerenga me to waahi o naianei"
+        },
+        "book": {
+          "title": "Pukapuka",
+          "description": "Whiriwhiria to waa me to ra, katahi ka tuhi tonu"
+        },
+        "experience": {
+          "title": "Taunga",
+          "description": "Me tutaki to tangata mohio o to rohe me te pai ki tetahi wheako whaiaro"
+        }
+      }
+    },
+    "cta": {
+      "title": "Kua rite ki te wheako i nga tohungatanga o te rohe?",
+      "subtitle": "Hono atu ki nga mano o nga kaihaerere me nga kaainga e hono ana i te aratohu",
+      "findExpert": "Rapua he tohunga",
+      "becomeExpert": "Riro hei tohunga"
+    }
+  },
+  "how": {
+    "title": "Te haerenga aratohu",
+    "heading": "Me pehea te mahi a te kaiarahi",
+    "subtitle": "Mai i te papaa ki nga wheako o-tangata, ko nga kaiarahi e mau tonu ana i nga waahanga katoa, me te haumaru mo nga kaihaerere me nga kaiwhakarato.",
+    "stepLabel": "Hipanga __cephoner_0__",
+    "detailLabel": "Mokamoka",
+    "stepCounter": "Taahiraa __plealdor_0__ o __cephoner_1__",
+    "steps": [
+      {
+        "title": "Waihanga & Toanui",
+        "description": "Waitohu i roto i te hēkona me te tirotiro i te taone, mahere, mahere whenua ranei.",
+        "detailTitle": "1. Tīmata tō kōtaha me te tūhura i ngā ratonga",
+        "detailBody": "Whakatauhia to manakohanga reo, Whiriwhiria te Traveller Traveller, me te whakamahi i te Tirohanga Mahere, me nga kohinga e tiakina ana hei hanga i nga tohungatanga.",
+        "bullets": [
+          "Emailmera me te Google / Apple Kotahi-Tap Waitohu-i roto",
+          "Tirohia ma te mahere mo nga tohunga tata, raarangi tirohanga mo te tirotiro a te ao",
+          "Tiakina nga manakohanga me te whakahohe i nga matohi mo nga ratonga hou"
+        ]
+      },
+      {
+        "title": "Korerohia mai ki a matou to hiahia",
+        "description": "Te whakaahua i te tono, te waa, me te hui.",
+        "detailTitle": "2. Whakapaahia nga mea e hiahiatia ana e koe i te reo maamaa",
+        "detailBody": "Whakatauhia te momo ratonga, matapihi wa, te roa, me te waahi. Whakamahia te mara tono AI mo nga Iniana-arataki e hangaia ana e koe.",
+        "bullets": [
+          "Whiriwhiria nga tūtohu Tautuhi penei i te kanikani, whakamaori, he awhina ohorere ranei",
+          "Tāpirihia nga waahanga wa maha me nga waahi pūrua",
+          "Tukuna nga whakaahua whakaahua, tohutoro ranei mo te whakarite whaiaro"
+        ]
+      },
+      {
+        "title": "Ōrite me te kōrerorero",
+        "description": "Ka tūtohu a Aratohu ki nga tohunga mohio.",
+        "detailTitle": "3. Te tukinga, te korerorero, me te whakatau i nga tumanako",
+        "detailBody": "Ko nga tohunga e whai kiko ana, e waatea ana, te mana VIP, me nga arotake. Korero i roto i te-taupānga, tono i nga Itiera-hanga, me te whakaū i nga taapiri i mua i te tono.",
+        "bullets": [
+          "Kei roto i nga whaarangi nga tiwhikete me nga raarangi",
+          "AI tauira i te wa e rua ka taea e nga taha e rua te whakatika",
+          "Whakamaoritanga tūturu mo nga korerorero reorua"
+        ]
+      },
+      {
+        "title": "Whakaū me te utu",
+        "description": "Ka tiakina e te tini o nga whiu whiu ki te katoa.",
+        "detailTitle": "4. Whakaū tonu, ka noho tonu nga moni ki roto",
+        "detailBody": "Whakamanahia te utu ma te Stripe (Apple Pay / Google Utu ka haere mai). Ka noho tonu nga putea ki te Escrow tae noa ki te tohu i te wheako.",
+        "bullets": [
+          "Whakaoho 15% Komihana Raupapa",
+          "Ka utua e nga kaiwhakamahi VIP nga utu utu mo te utu mo te kaupapa matua",
+          "Whakamaumahara aunoa me te arahi i te whakakorekore"
+        ]
+      },
+      {
+        "title": "Taunga",
+        "description": "Me tutaki ki o tohunga me te pai ki te mahi makutu a rohe.",
+        "detailTitle": "5. Te whakatau i te tuimotu me te pupuri i nga mea katoa",
+        "detailBody": "Tikina nga tohutohu whakatere, tiri i te waahi ora, me te uru atu ki nga hoapaki ohorere. Muri iho, matamata, te arotake, te whakawhānui ranei i te pukapuka me te tap kotahi.",
+        "bullets": [
+          "Kotahi-Tap-Tap / Out mo nga roopu e rua",
+          "Nga whakamohio pana mo nga whakamaharatanga e whai ake nei",
+          "Ko nga arotake a Mutiatua ka whakatuwhera i nga tohu me nga tohu"
+        ]
+      }
+    ],
+    "safety": [
+      {
+        "title": "Tuakiri whakapumautia",
+        "description": "Whakatutukitanga mo nga taumata ratonga katoa.",
+        "detailTitle": "Tirohia te tirotiro Tuakiri-a-papa",
+        "detailBody": "Mai i te ID me te tirotiro i nga tiwhikete ngaio me nga rekoata taihara, me tuhi tuhinga taapiri.",
+        "bullets": [
+          "Raihana / Raihana taraiwa + Whakatutukitanga Ora",
+          "Tukuna nga Tiwhikete Ngaio me nga Whakaaetanga Kawanatanga ranei",
+          "I roto i te whare-whare, ko nga ratonga tamariki ranei e hiahia ana kia tirohia nga papamuri"
+        ]
+      },
+      {
+        "title": "Nga utu kua tiakina",
+        "description": "Te punaha whakahaere me te punaha eschow.",
+        "detailTitle": "Te Komihana mo te Roopu Whakaari",
+        "detailBody": "Ka whakaekea e te kaiarahi he komihana 15% tau. Ko nga putea e noho ana i te escrow kia oti ra ano nga taha e rua te whakaotinga. He pai ki nga kaiwhakamahi VIP te utu mo te utu utu me te tautoko i te tautoko.",
+        "bullets": [
+          "E pupuhi ana te whiu me te kaha ake",
+          "VIP = Zero Te utu utu mo te utu matua",
+          "Tautoko mo nga tohutohu, nga moni whakahoki, me te taapiri"
+        ]
+      },
+      {
+        "title": "Nga arotake arotake",
+        "description": "E rua nga arotake me te tautoko tautohetohe.",
+        "detailTitle": "Nga arotake arotake me te awhina tautohetohe",
+        "detailBody": "Ko nga arotake e noho motuhake ana tae noa ki te tuku i nga roopu e rua, e whitu ra nga ra. Mena ka puta nga take, ka tohutohutia ta maatau roopu, nga waahi, me nga Itiana ki te whakatau.",
+        "bullets": [
+          "Ko nga arotake kei te huna kia tae noa ki nga taha e rua ka tukuna e nga taha e rua",
+          "Te tukunga o te tautohetohe kotahi me te tuku taunakitanga",
+          "Whakamaahia te whakakoretanga / Whakanuitanga Kaupapaherehere"
+        ]
+      }
+    ],
+    "providerTitle": "Mo nga kaiwhakarato",
+    "providerSubtitle": "Hangaia he whare pumau me te whakahaere i nga ota me te maia",
+    "provider": [
+      {
+        "title": "App Provider",
+        "description": "BID BURE me te whakahaere a-ringa.",
+        "detailTitle": "1. Whakawhiti ki te aratau kaiwhakarato",
+        "detailBody": "Whakauru atu ki te poari tono ora, raarangi raupapa, kōrerorero, me te putea i roto i te taupānga kotahi. Ka taea e nga kaiwhakarato VIP te whakaae aunoa me te tautuhi i a ratau a Radius Haerere.",
+        "bullets": [
+          "Tātarihia te rohe, te momo ratonga ranei",
+          "Toggle Auto-whakaae, Whakaputanga ā-ringa ranei",
+          "Whakaritea nga poraka a-wiki"
+        ]
+      },
+      {
+        "title": "Whakaaturanga Whakaaturanga",
+        "description": "Whakaatu tiwhikete, ataata, me nga whakauru.",
+        "detailTitle": "2. Hangaia he whare pumau",
+        "detailBody": "Tukuna atu nga ataata INR, oro, tohu, me nga whakaahua. Tāpirihia nga Taonga Ratonga, Nga haora Min, whakauru nga utu, me nga pukenga reo.",
+        "bullets": [
+          "Ko nga tiwhikete kei te whakaatu aunoa i nga tohu",
+          "Waihangahia nga kohinga maha me nga taapiri",
+          "Tautoko mo te BIOS maha me nga mihi ororongo"
+        ]
+      },
+      {
+        "title": "Whakahauhau",
+        "description": "Whakawhiti, whakamahi i nga Itiana, Whakaotia nga hua.",
+        "detailTitle": "3. Whakanohia nga ota me te utu",
+        "detailBody": "Kōrero ki te whakahāngai i nga taipitopito taapiri, te whakamahi i Ai ki nga tauira taatai, tuku mai i nga kaihoko, ka tukuna nga moni ka whakapumautia e te kiritaki.",
+        "bullets": [
+          "AI kaihanga i te whakatauranga + whakatau tata",
+          "Whakaputanga-Tap-Tap ranei te whakatikatika utu",
+          "Ko te tirohanga a Wallet e whakaatu ana i nga toenga o nga toenga"
+        ]
+      }
+    ],
+    "ctaTitle": "Kua rite ki te wheako, ki te whakaatu ranei i nga tohungatanga o te rohe?",
+    "ctaSubtitle": "Tangohia te taupānga ki te pukapuka i roto i nga meneti - ka huri ranei i to hiahia ki nga mahi a te Komihana Nui.",
+    "downloadBtn": "Tikiake App Tere",
+    "learnBtn": "Ako i roto i te taupānga"
+  },
+  "discover": {
+    "title": "Rapu Ratonga",
+    "subtitle": "Rapua te ratonga o te rohe tino pai mo nga hiahia, e waatea ana inaianei",
+    "noResults": "Kaore he ratonga i kitea. Whakamātauhia te whakatika i to rapu.",
+    "categoryTitles": {
+      "cityGuide": "He Aratohu Taone Taone",
+      "translation": "Ratonga Whakawhiti",
+      "cultural": "Nga wheako ahurea",
+      "skillTeaching": "Whakaakoranga pukenga",
+      "foodExperience": "Nga wheako kai",
+      "photography": "Ratonga Whakaahua",
+      "emergency": "Ratonga ohorere",
+      "events": "Te whakamahere huihuinga",
+      "home": "Ratonga Kaainga",
+      "professional": "Whakarei ngaiotanga ngaio",
+      "culturalExchange": "Te whakawhiti ahurea me te rumaki",
+      "health": "Te hauora me te oranga",
+      "petCare": "Ratonga tiaki mōkai",
+      "childcare": "Tamariki & kohungahunga",
+      "homeOrg": "Whakahaere Home",
+      "shopping": "Hokohoko Whaiaro me te Taha",
+      "techSupport": "Tautoko Hangarau me te Whakatikatika",
+      "financial": "Tohutohu Putea",
+      "legal": "Whakawhitiwhiti Ture",
+      "artCraft": "Toi me nga awheawhe toi",
+      "musicDance": "Waiata & Akoranga Kanikani",
+      "gardening": "Kamupene me te Whenua",
+      "fitness": "Whakangungu oranga tinana",
+      "cooking": "Ko nga karaehe tunu me te tunu",
+      "photoVideo": "Whakaahuatanga & Whakaaturanga Ataata",
+      "languageExchange": "Nga Kaupapa Whakawhiti Reo",
+      "homeTutoring": "Ratonga Tohunga Home",
+      "seniorCare": "Te tiaki matua me te whakahoahoa",
+      "vrExperience": "Nga wheako mo te mariko",
+      "environmentalConsulting": "Whakawhitinga Taiao me te Whakapono",
+      "mentalHealth": "Te hauora hinengaro me te tohutohu",
+      "interiordesign": "Hoahoa o roto me te whakapaipai",
+      "eventEntertainment": "Te whakangahau i nga huihuinga",
+      "giftServices": "Ko nga taonga whaiaro & ratonga whaihua",
+      "travelPlanning": "Te whakamahere i te haerenga mo te haerenga",
+      "nutritionPlanning": "Te kai totika me te whakamahere kai",
+      "travelPhotography": "Whakaahuatanga Haerenga Whaiaro",
+      "weddingPlanning": "Te whakamahere marena whaiaro",
+      "corporateTraining": "Whakangungu Whakangungu Whakangungu Awhina",
+      "homestaging": "Whakataetae Kaainga",
+      "wellnessretreats": "Reti pai",
+      "artworkshops": "Toi Toi",
+      "languagelearning": "Akoranga Reo",
+      "careercounseling": "Tohutohu tohutohu",
+      "financialplanning": "Te whakamahere pūtea",
+      "homeautomation": "Te Kaainga Kaainga",
+      "pettraining": "Whakangungu mōkai",
+      "childeducation": "Mātauranga Tamaiti",
+      "homesecurity": "Haumaru Kaainga",
+      "eventcatering": "Te Pera Takahanga"
+    }
+  },
+  "howItWorks": {
+    "title": "Me pehea te mahi a te kaiarahi",
+    "subtitle": "Tūhono ki nga tohunga o te rohe i roto i nga waahanga ngawari e toru",
+    "steps": {
+      "discover": {
+        "title": "Hura",
+        "description": "Tirotiro me te rapu ratonga tohunga"
+      },
+      "book": {
+        "title": "Pukapuka",
+        "description": "Whiriwhiria to waa pai me to mohio"
+      },
+      "experience": {
+        "title": "Taunga",
+        "description": "Kia pai ki nga ratonga a-rohe"
+      }
+    }
+  },
+  "become": {
+    "title": "Riro hei tohunga mohio",
+    "heading": "Hangaia to Studio Studio",
+    "subtitle": "Hurihia te kanikani, whakamaori, arataki, mate ohorere ranei te awhina i tetahi ratonga moni. Ko te kaiarahi e whakaatu ana i te whakamana, he taputapu AI, me nga utu mo nga utu ka taea e koe te arotahi ki te tuku makutu.",
+    "cta": "Tīmata rēhitatanga",
+    "pillars": [
+      {
+        "title": "Mahi ngawari",
+        "description": "Whiriwhiria te wa me te waahi ka whakatauhia e koe nga ota. Whakatakotoria te radius haerenga, haora iti, me nga taapapa kaha inamata."
+      },
+      {
+        "title": "Te tono a te ao",
+        "description": "Uru ki nga kaihaerere e ahu ana ki Akarana, ki Poneke, me nga takiwa o te takiwa o te awheawhe motuhake me te awhina awhina."
+      },
+      {
+        "title": "Heminui Hiko",
+        "description": "Kia mau ki te nuinga o ia ota i te wa e whakahaere ana te aratohu, te utu, me te tautoko tautohetohe."
+      }
+    ],
+    "processTitle": "E wha-wahanga i runga i te papa",
+    "processSubtitle": "Ko nga taahiraa katoa e arahina ana e te tohunga motuhake",
+    "processStepLabel": "Atamira __plealdorder_0__",
+    "processDetail": "Taipitopito taahiraa",
+    "processCounter": "__Cephoner_0__ / __plealdleder_1__",
+    "processSteps": [
+      {
+        "title": "Tuakiri me te Papamuri",
+        "description": "Tukuna te ID, Selfie, me nga tiwhikete nui.",
+        "detailTitle": "1. Tirohia ko wai koe",
+        "detailBody": "Homai he ID a te kawanatanga, whakaoti i te whakaotinga ora, me te tuku i nga tiwhikete e tika ana, raihana raihana ranei. Ko nga ratonga kaainga-a-whare me nga tamariki e hiahia ana kia tirohia etahi atu papamuri.",
+        "bullets": [
+          "Raihana / Raihana taraiwa + Whakamana Whaiaro",
+          "Nga tohu ngaio ngaiotanga, maatauranga ranei",
+          "Ko nga ratonga tino whakawhirinaki ki te tirotiro i nga mahi toihara"
+        ]
+      },
+      {
+        "title": "Te Ratonga Ratonga",
+        "description": "Tuhia nga Whakaaturanga, Whakatauhia te utu, Whakatauhia te Whawhai.",
+        "detailTitle": "2. Hangaia he kaihokohoko e hurihuri",
+        "detailBody": "Taapirihia nga ataata, whakaaturanga, me nga tūtohu ratonga. Whakamaahia he aha te whakauru, te radius haerenga, haora iti, me nga reo e tautoko ana koe.",
+        "bullets": [
+          "He maha nga kohinga ratonga me nga taapiri",
+          "Ka taea e AI te whakamahi i to kape-a-whaiaro",
+          "Tukuna nga ara tuku, nga kaitakaro, i nga Itiana ranei"
+        ]
+      },
+      {
+        "title": "Whakangungu whakahaere",
+        "description": "Akohia te Pouaka Whakaari mo te Poari Matua me te AI.",
+        "detailTitle": "3. Te whakangungu i runga i te poari tono ora",
+        "detailBody": "Kia mohio me pehea te puta o nga tono a-mate, me pehea te tango i nga mahi a-Motu mo te VIP, me te whakawhitiwhiti korero me nga haereere ma te whakamahi i nga tauira tauira me nga Itiana.",
+        "bullets": [
+          "Te whaainga o te waa whakautu me nga tohu tohu tohu",
+          "AI kaihanga i te timatanga me nga poraka whakatika",
+          "I mua i te huihuinga o nga kaihoko"
+        ]
+      },
+      {
+        "title": "Whakarewa & Tauiwi",
+        "description": "Haere ora, tono arotake, ka tutuki nga whakatutukitanga.",
+        "detailTitle": "4. Whakarewa me te tautoko haere tonu",
+        "detailBody": "Tīmatahia te tango whakahau, te kohikohi arotake arotake, ka iriti i nga tohu VIP penei i te whakaaetanga aunoa me te whakangungu tipu.",
+        "bullets": [
+          "I tukuna nga utu escrows i roto i nga ra e 7",
+          "Ko nga kaiwhakarato VIP te tiki i nga kete hokohoko-hanga i hangaia",
+          "Nga awheawhe a-hau ki te rangatira o nga utu me nga Upsells"
+        ]
+      }
+    ],
+    "benefitsTitle": "He aha nga tohunga e arahi ana i te aratohu",
+    "benefitsSubtitle": "He hanganga ngaio kaore e ngaro te rangatiratanga",
+    "benefits": [
+      {
+        "title": "Nga utu nui",
+        "description": "Kia mau tonu te nuinga o ia pukapuka. Ko te kaiarahi anake te utu 15% Komihana e kapi ana i te maakete, utu, me te tautoko tautohetohe."
+      },
+      {
+        "title": "AUTOHANGA VIP-ANAKE",
+        "description": "Whakahoutanga ki te iriti i te whakaaetanga aunoa, ai i te whakamahere i whakarite, me te waahi matua i roto i nga kai haere haere."
+      },
+      {
+        "title": "Kaihoko tūturu ia ra",
+        "description": "Whakauru atu ki nga kaihaerere uruwhenua, nga umanga a-rohe, me nga tono akiaki, kaua ki te whakawhirinaki ki te kupu-o te waha."
+      },
+      {
+        "title": "Tautoko tangata + AI Tautoko",
+        "description": "I runga i nga tohunga motuhake me nga awhina Ai ka awhina koe ki te aukati i to maakete, tuhia nga tono, me te whakahaere pepa."
+      }
+    ],
+    "requirementsTitle": "Ko te mea e hiahia ana koe kia tiimata",
+    "requirementsSubtitle": "Ko enei tikanga ka mau tonu to maatau maakete",
+    "requirements": [
+      "He tika te tuku a te Kawanatanga me te SEFIE",
+      "Te Whakaaturanga o te Wāhitau, te noho ranei mo te Tauhokohoko utu",
+      "Nga Tiwhikete Ngaio me nga Portfolios ranei mo nga pukenga motuhake",
+      "Atamai e taea ana te whakahaere i te taupānga aratohu",
+      "Te kaha ki te whakawhitiwhiti korero i te reo Ingarihi, i te Mandarin ranei (he maha atu nga reo \"",
+      "Whakaaetanga ki te arahi i te haumaru, te whakakore, me nga kaupapa here arotake arotake"
+    ],
+    "downloadCta": "Tikina te taupānga kaiwhakarato",
+    "ctaTitle": "Kua rite ki te wheako, ki te whakaatu ranei i nga tohungatanga o te rohe?",
+    "ctaSubtitle": "Tangohia te taupānga ki te pukapuka i roto i nga meneti - ka huri ranei i to hiahia ki nga mahi a te Komihana Nui."
+  },
+  "serviceDetail": {
+    "availableNow": "Waatea inaianei",
+    "description": "Whakaaturanga",
+    "includes": "He aha te whakauru",
+    "languages": "Reo",
+    "reviews": "Arotake",
+    "experience": "Taunga",
+    "responseTime": "Te wa whakautu",
+    "messageProvider": "Kaiwhakarato karere",
+    "selectDate": "Tīpakohia rā",
+    "selectTime": "Whiriwhiria te waa",
+    "bookNow": "Pukapuka inaianei",
+    "requestNow": "Tono inaianei",
+    "secureBooking": "Kia mau ki te utu me te utu",
+    "pricePerHour": "ia haora",
+    "groupSize": "Takitahi, ropu iti ranei",
+    "verified": "Whakaū",
+    "tabs": {
+      "details": "Taipitopito",
+      "reviews": "Arotake",
+      "provider": "Kaiwhakarato"
+    }
+  },
+  "serviceCard": {
+    "availableNow": "Waatea inaianei"
+  },
+  "userApp": {
+    "thirdParty": {
+      "title": "Taapiri tūtohutia",
+      "items": {
+        "skyTower": "Pukapuka a Akarana Rangi Tower Tower",
+        "intercity": "Rahui he kaiako takaro",
+        "rentalCar": "Utu i te motuka reti",
+        "danceShoes": "Whakatauhia nga hu kanikani tango"
+      },
+      "disclaimer": "Ka whiwhi a Guidew i nga komihana honohono mai i etahi hoa."
+    }
+  },
+  "dashboard": {
+    "upcoming": {
+      "title": "Ratonga Torangatanga",
+      "empty": "Kaore ano kia whakaritea he ratonga.",
+      "duration": "__Plealdor_0__ haora",
+      "status": "Te mana: __cephoneser_0__"
+    },
+    "status": {
+      "awaiting-provider": "Taria te kaiwhakarato",
+      "accepted": "Whakaae",
+      "in-progress": "I te ahunga whakamua",
+      "awaiting-review": "Taria te arotake",
+      "completed": "Kua oti",
+      "cancelled": "Whakakore"
+    },
+    "providerFeed": {
+      "title": "Nga tono ora",
+      "empty": "Kaore he ota hou. Kia mau tonu te taupānga kia mau ki te tono i muri mai.",
+      "grab": "Kōrapurapu",
+      "durationEarnings": "Te roanga: __ceploulder_0__ haora · Whiwhinga $ __ Kaihuri_1__",
+      "travelEstimate": "Te whakatau tata i te waa: __ceploulder_0__ meneti",
+      "arrivalOnTime": "I te wa",
+      "arrivalRisk": "Tuhinga o mua"
+    },
+    "timeline": {
+      "title": "Raarangi Ratonga",
+      "empty": "Kaore ano nga pukapuka. Tiimata ma te tono i to ratonga tuatahi."
+    },
+    "wallet": {
+      "title": "Wallet & VIP",
+      "refresh": "Te toenga o te toenga",
+      "available": "Reri",
+      "pending": "Te tatari mo te whakawhiwhi",
+      "withdrawable": "Taea e",
+      "vipTitle": "He ohaurunga VIP",
+      "vipActive": "Kia pai te hononga AI, utu utu kore, me te tuku matua.",
+      "vipInactive": "Whakahoutu ki te Wewete i te Whakaaetanga AI, Whakawhitiwhiti Aunoa, me nga tohu a te Komihana.",
+      "vipCancel": "Whakakorehia te VIP",
+      "vipActivate": "Whakahohehia te VIP ($ 9.9 / Marama)",
+      "lastUpdated": "I whakahoutia whakamutunga __cephonemer_0__"
+    },
+    "achievements": {
+      "title": "Whakatutukitanga",
+      "empty": "Whakaotia nga pukapuka ki te whiwhi tohu tohu.",
+      "earned": "Whiwhi __ceploulder_0__",
+      "templates": {
+        "user-first-booking": {
+          "title": "Tuhinga o mua",
+          "description": "Kua oti i te pukapuka tuatahi mo te kaiarahi."
+        },
+        "provider-first-order": {
+          "title": "Kiritaki tuatahi",
+          "description": "I tukuna te ratonga tuatahi mo runga i te kaiarahi."
+        },
+        "provider-5-orders": {
+          "title": "Rohe Whakapono",
+          "description": "Kua oti i te 5 nga ratonga angitu."
+        },
+        "provider-50-orders": {
+          "title": "Taonga o te taone nui",
+          "description": "Kua oti nga ratonga 50 angitu."
+        },
+        "user-3-cities": {
+          "title": "Te kaihōpara o te ao",
+          "description": "Nga ratonga kua tuhia i roto i nga taone rereke e 3."
+        }
+      }
+    },
+    "review": {
+      "title": "Waiho he arotake",
+      "empty": "Whiriwhiria te ota kua oti te arotake.",
+      "overallLabel": "Wheako whānui",
+      "worth": "Utu",
+      "notWorth": "E kore e utu",
+      "detailsLabel": "Korero taipitopito",
+      "tipLabel": "Tohiwhiri kōwhiri",
+      "tipButton": "$ __Plealdor_0__",
+      "tipSkip": "Peke hua",
+      "tipSend": "Tukuna nga matamata o te $ __ Kaitono_0__",
+      "submit": "Tukuna he arotake",
+      "defaultComment": "Ratonga nui me te whakawhitiwhiti korero!"
+    },
+    "request": {
+      "title": "Tuhia he tohunga mohio",
+      "description": "Tiritiri taipitopito ratonga; Ka taea e nga tuhinga te whakaatu i nga hiahia ki te reo taiao kia pai ai nga whakaaro.",
+      "activeWarning": "Kei a koe ano tetahi ota kaha i whakaritea mo __cephoner_0__. Ka whakamaheretia nga pukapuka hou a tawhio noa.",
+      "serviceLabel": "Whakatikatika",
+      "servicePlaceholder": "Kōwhiria he ratonga",
+      "providerLabel": "Tohunga Pai",
+      "providerPlaceholder": "Whiriwhiria he kaiwhakarato",
+      "startLabel": "Tīmata Te rā & te wā",
+      "durationLabel": "Te roanga (haora)",
+      "locationLabel": "Wāhi Ratonga",
+      "locationPlaceholder": "Wāhitau, hui hui ranei",
+      "itineraryLabel": "Me tono mo te whakarite i mua?",
+      "itineraryYes": "Ae, tohatoha i tetahi mahere",
+      "itineraryNo": "Kaore, kia ngawari",
+      "aiLabel": "Whakaahuahia to hiahia (AI Confierge)",
+      "aiButton": "Hangaia nga tohunga e taunakitia ana",
+      "speaksLanguages": "Korero __plealdler_0__",
+      "submit": "Tuku tono tono"
+    },
+    "activeOrder": {
+      "title": "Te raupapa kaha",
+      "empty": "Kaore he ota kaha. Hopu tetahi tono hou mai i te waa.",
+      "durationEarnings": "Te roanga __ Upleadloder_0__ haora · Whiwhinga $ __ Kaihuri_1__",
+      "aiButton": "Hangaia te mahere AI",
+      "submitItinerary": "Whakaratohia te Waanui",
+      "vipUpsell": "Whakahou ake ki te VIP ki te uru ki nga Inineraries hanga-aunoa me nga tohu haerenga.",
+      "start": "Tīmata ratonga",
+      "complete": "Katoa",
+      "reportNoShow": "Korerotia te hunga haereere kore-whakaatu",
+      "defaultItinerary": "Kawhe ata i te Cafe o te rohe\nTuhinga o mua\nTina i te wai"
+    },
+    "profileForm": {
+      "title": "Kōtaha kaiwhakarato",
+      "bio": "Bio",
+      "hourlyRate": "Haora haora",
+      "minHours": "Haora iti",
+      "tags": "Ngā",
+      "tagsPlaceholder": "City-Aratohu, whakamaori",
+      "languages": "Reo",
+      "languagesPlaceholder": "Ingarihi, Mandarin",
+      "travelRadius": "Radius haere (km)",
+      "expensesLabel": "Ko nga whakapaunga kei roto i te reiti?",
+      "expensesIncluded": "Kei roto i nga utu",
+      "expensesExcluded": "Nga utu kua tohua wehe motuhake",
+      "expensePlaceholder": "Nga tikiti, petrol, tolls i utua i te utu",
+      "certifications": "Tiwhikete & Whakakitenga",
+      "certificationPlaceholder": "URL ki te tiwhikete",
+      "uploadProof": "Tukuna he tohu",
+      "serviceMedia": "Pāpāho ratonga",
+      "mediaTypes": {
+        "image": "Pakoko",
+        "video": "Ataata",
+        "document": "Pepa whai tikanga"
+      },
+      "mediaPlaceholder": "https://example.com/portfolio",
+      "addMedia": "Tāpiri pāpāho",
+      "mediaBadge": "__Plealdor_0__ taunakitanga",
+      "remove": "Neke",
+      "mediaEmpty": "Tukuna atu nga whakaahua, ataata, tuhinga ranei hei whakamatau i to tohungatanga.",
+      "save": "Tiaki kōtaha"
+    },
+    "reviewHistory": {
+      "title": "He urupare kua whakaputaina",
+      "empty": "Kaore ano kia arotakehia e te iwi. Whakaotia nga haerenga me te urupare whakawhiti hei hanga i te whakawhirinaki.",
+      "serviceFallback": "Ratonga Ritenga",
+      "counterpartFallback": "Kaitono",
+      "decisions": {
+        "worth": "Utu",
+        "not-worth": "E kore e utu",
+        "again": "Ka mahi ano",
+        "no": "E kore e mahi ano"
+      },
+      "published": "I whakaputaina __plealdor_0__"
+    },
+    "providerFilters": {
+      "title": "Nga tohunga tātari",
+      "tags": "Ngā",
+      "tagsEmpty": "Kaore ano he tohu e whirihora ana.",
+      "languages": "Reo",
+      "languagesEmpty": "Kaore ano nga kaiwhakarato i te raarangi reo.",
+      "vipOnly": "VIP anake",
+      "autoAcceptOnly": "Whakaaetia Aunoa anake",
+      "minRating": "Te whakatauranga iti __plealdler_0__",
+      "reset": "Tautuhi Tātari"
+    },
+    "providerList": {
+      "serviceFallback": "Mōkihi ratonga",
+      "meta": "__Celopholder_0__ · __fepaludear_1__ atu · __cephonelear_2__",
+      "rate": "$ __ Kaitono_0 __ / HR",
+      "minHours": "Min __pleadear_0__ haora",
+      "verifications": "Whakauru",
+      "certifications": "__Plealdor_0__ Tiwhikete i tukuna",
+      "rating": "Tohu",
+      "ratingDetail": "__Plealdler_0__ · __fepalhophoner_1__ haerenga"
+    },
+    "orderActions": {
+      "title": "Nga Mana Whakahaere",
+      "empty": "Whiriwhiria te ota kua whakaritea hei whakakore, hei ripoata ranei i te kore-whakaatu.",
+      "cancel": "Whakakorehia te pukapuka",
+      "mutual": "Whakakorea",
+      "reportProvider": "Te ripoata a te Kaiwhakarato Kaore-Whakaatu",
+      "instructions": "Whakakorea Paerewa E whai ana i te kaupapa here aratohu. Whakakoretanga Takitahi i roto i nga haora e toru i te 85% ki te tangata haere. Ka tae ana te wa tiimata ka taea e koe te ripoata i tetahi kaiwhakarato kaore-whakaatu mo te moni whakahoki."
+    },
+    "timelineEvents": {
+      "orderCreated": "Ota i hangaia e __cephoner_0__",
+      "paymentAuthorized": "Te utu kua whakamanatia ma te whiu",
+      "autoAccepted": "Aunoa whakaaetia e te kaiwhakarato Vip",
+      "itinerarySubmitted": "I tukuna mai",
+      "providerAccepted": "Ko te ota kua whakaaetia",
+      "serviceStarted": "Timata te ratonga",
+      "serviceCompleted": "Kua oti te ratonga",
+      "cancelledUser": "I whakakorea e te Travelle te ratonga",
+      "cancelledProvider": "Kua whakakorea e te kaiwhakarato te ratonga",
+      "cancelledMutual": "I whakakorea e nga roopu e rua te ratonga",
+      "providerNoShow": "Kaiwhakarato Kaore-Whakaaturanga",
+      "travelerNoShow": "Ka tuhia e te hunga haere kaore-whakaatu",
+      "tipAdded": "Tapiri tapiritia",
+      "reviewSubmittedTraveler": "I tukuna e te kainoho he arotake",
+      "reviewSubmittedProvider": "I tukuna e te kaiwhakarato he arotake"
+    },
+    "itinerary": {
+      "header": "Ratonga: __cephoneser_0__ me __cephoner_1__ tohunga __plealdler_2__",
+      "travel": "Ko te haerenga haerenga: __ceploulder_0__ meneti (auto-aunoa)",
+      "wrapUp": "Te wa mo te urupare me te takai-ake",
+      "phase": "Wahanga __ceplouder_0__: __plealdleor_1__",
+      "defaults": [
+        "Tutaki me te hono ki nga tumanako",
+        "He wheako ano i a koe mo o hiahia",
+        "Ka takai-ake, ka whakahoki ano, me nga korero o muri-taahiraa"
+      ],
+      "tags": {
+        "city-guide": [
+          "Te pōho ki te tuhi i te café rohe",
+          "Haere ma nga taonga tuku iho me nga tohu huna",
+          "Tirohia te tirotiro mo nga whakaahua",
+          "Nga Taestings Kai i nga waahi tino pai"
+        ],
+        "translation": [
+          "Tuhinga o mua",
+          "Tautoko-a-Tautoko Whakawhitiwhiti",
+          "Nga tuhinga whakarapopototanga me nga tohu tohu matua"
+        ],
+        "food": [
+          "Haere ki te maakete me nga korero whakauru",
+          "Tahua Testring o te rohe",
+          "Whakamutua te kai reka i te waahi tohu"
+        ],
+        "dance": [
+          "Mahana-ake me nga turanga",
+          "Whaihua haere haere",
+          "Te mahi koreutu me te urupare"
+        ],
+        "adventure": [
+          "Ka tirohia te Haumaru me te Gear",
+          "Te ara, te mahi mahi ranei",
+          "Ko nga wheako e arahi ana me nga whakaahua ka mutu"
+        ]
+      }
+    }
+  },
+  "skillDetail": {
+    "notFound": "Kaore i kitea nga ratonga pukenga",
+    "modeLabel": "Aratau Ratonga",
+    "highlights": "Nga tohu tohu ratonga",
+    "detailsTitle": "Taipitopito Ratonga",
+    "certifications": "Whiriwhiringa",
+    "faq": "Nga Pātai Auau",
+    "reviews": "Nga arotake a te kaiwhakamahi",
+    "timeLabel": "Watea wa",
+    "galleryAlt": "ahua __ceplouder_0__",
+    "verified": "Tuakiri tuakiri"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Whaarangi kaore i kitea",
+    "description": "Kaore i kitea e matou te whaarangi e rapu ana koe. Ko te tohungatanga e rapu ana koe i etahi atu waahi.",
+    "actions": {
+      "home": "Hoki ki te kainga",
+      "discover": "Rapu Ratonga"
+    }
+  },
+  "download": {
+    "title": "Tangohia te taupānga Arataki",
+    "subtitle": "Whakauruhia nga tohungatanga o te rohe ki te haere",
+    "getApp": "Tikina te taupānga",
+    "appStore": "Toa Toa",
+    "googlePlay": "Taakaro a Google",
+    "features": {
+      "instant": "Te utu mo te waa",
+      "personalized": "Nga wheako whaiaro",
+      "secure": "Nga utu haumaru",
+      "chat": "Kōrerorero kōrerorero"
+    }
+  },
+  "useCase": {
+    "localGuide": {
+      "title": "Tautoko a rohe",
+      "description": "Tūhono ki nga kaiarahi o te rohe tonu mo nga haerenga o te taone nui"
+    },
+    "translation": {
+      "title": "Te whakamaoritanga i runga i-tono",
+      "description": "Tikina he awhina reo-a-waa i te wa e hiahia ana koe"
+    },
+    "skillsLearning": {
+      "title": "Akoranga-a-mohio",
+      "description": "Akohia nga pukenga hou mai i nga tohunga o te rohe ki to raarangi"
+    },
+    "emergency": {
+      "title": "He awhina mo te ohorere",
+      "description": "Tikina te awhina tere i te wa e hiahia ana koe"
+    },
+    "events": {
+      "title": "Te whakamahere huihuinga",
+      "description": "Rapua nga tohunga ki te whakamahere me te mahi i to huihuinga tino"
+    },
+    "home": {
+      "title": "Ratonga Kaainga",
+      "description": "Tikina he awhina wawe ki te tiaki me te whakapaitanga o te kaainga"
+    },
+    "travel": {
+      "title": "Te haerenga whaiaro",
+      "description": "Te wheako i nga mahinga ahurei, he mea hanga me nga tohunga o te rohe"
+    },
+    "professional": {
+      "title": "Whakarei ngaiotanga ngaio",
+      "description": "Whakapaihia to mahi me nga whakangungu ngaio mai i nga tohunga o te rohe"
+    },
+    "culturalExchange": {
+      "title": "Te whakawhiti ahurea me te rumaki",
+      "description": "Rumakina koe ki roto i nga ahurea me nga tikanga"
+    },
+    "health": {
+      "title": "Te hauora me te oranga",
+      "description": "Whakauruhia nga ratonga hauora me te oranga oranga"
+    },
+    "petCare": {
+      "title": "Ratonga tiaki mōkai",
+      "description": "Te tiaki ngaio mo o pepi ka hiahia koe"
+    },
+    "childcare": {
+      "title": "Tamariki & kohungahunga",
+      "description": "Te tiaki pono mo o tamariki, kei te waatea te tono"
+    },
+    "homeOrg": {
+      "title": "Whakahaere Home",
+      "description": "Awhina ngaio ki te tarai me te arotau i to waahi noho"
+    },
+    "shopping": {
+      "title": "Hokohoko Whaiaro me te Taha",
+      "description": "Whakarei ake i to taera me te awhina hokohoko whaiaro"
+    },
+    "techSupport": {
+      "title": "Tautoko Hangarau me te Whakatikatika",
+      "description": "Nga rongoā tika mo o raru me nga taputapu"
+    },
+    "financial": {
+      "title": "Tohutohu Putea",
+      "description": "Tohutohu tahua me nga rautaki haumi"
+    },
+    "legal": {
+      "title": "Whakawhitiwhiti Ture",
+      "description": "Tohutohu ture a te ngaio ina hiahia ana koe i te nuinga"
+    },
+    "artCraft": {
+      "title": "Toi me nga awheawhe toi",
+      "description": "Whakapuaki i to auahatanga ma nga mahi toi me nga mahi toi"
+    },
+    "musicDance": {
+      "title": "Waiata & Akoranga Kanikani",
+      "description": "Ako i nga pukenga waiata, kanikani kanikani ranei mai i nga kaiwhakaako mohio"
+    },
+    "gardening": {
+      "title": "Kamupene me te Whenua",
+      "description": "Te māra ngaio me te papa whenua mo o papa o waho"
+    },
+    "fitness": {
+      "title": "Whakangungu oranga tinana",
+      "description": "Tutuki i o whaainga whakangungu me te whakangungu whaiaro"
+    },
+    "cooking": {
+      "title": "Ko nga karaehe tunu me te tunu",
+      "description": "Akohia nga pukenga tunu kai me te tirotiro i nga whiringa toa"
+    },
+    "photoVideo": {
+      "title": "Whakaahuatanga & Whakaaturanga Ataata",
+      "description": "Te hopu ngaiotanga o au waa whakahirahira me o kaupapa"
+    },
+    "languageExchange": {
+      "title": "Nga Kaupapa Whakawhiti Reo",
+      "description": "Tūhono ki nga kaikorero Maori mo te mahi reo me te whakawhiti ahurea"
+    },
+    "homeTutoring": {
+      "title": "Ratonga Tohunga Home",
+      "description": "Tikina te tautoko aiao me te maatauranga whaiaro i roto i te whakamarie o to kaainga"
+    },
+    "seniorCare": {
+      "title": "Te tiaki matua me te whakahoahoa",
+      "description": "Rapua nga ratonga tiaki tonu me nga mahi whakahoahoa mo nga mema mema ki te whakarei ake i o raatau oranga"
+    },
+    "vrExperience": {
+      "title": "Nga wheako mo te mariko",
+      "description": "Rumakina koe i roto i te ahurei me te whai i nga wheako mo te mariko pono mo te whakangahau me te maatauranga"
+    },
+    "environmentalConsulting": {
+      "title": "Whakawhitinga Taiao me te Whakapono",
+      "description": "Tikina he tohutohu tohunga mo te whakatinana i nga tikanga pumau i roto i to whare, i to umanga ranei"
+    },
+    "mentalHealth": {
+      "title": "Te hauora hinengaro me te tohutohu",
+      "description": "Uru atu ki te tautoko hauora hinengaro mai i nga tohunga ngaio ka hiahia koe ki te nuinga"
+    },
+    "interiordesign": {
+      "title": "Hoahoa o roto me te whakapaipai",
+      "description": "Hurihia to waahi noho me te hoahoa o roto me nga ratonga whakapaipai"
+    },
+    "eventEntertainment": {
+      "title": "Te whakangahau i nga huihuinga",
+      "description": "Rapua nga otinga whakangahau wawe mo o kaupapa ki te hanga wheako maumahara"
+    },
+    "giftServices": {
+      "title": "Ko nga taonga whaiaro & ratonga whaihua",
+      "description": "Waihangahia nga taonga motuhake me te taangata mo tetahi waa me te ratonga tere"
+    },
+    "travelPlanning": {
+      "title": "Te whakamahere i te haerenga mo te haerenga",
+      "description": "Tikina he awhina tohunga ki te whakamahere i to haerenga tino pai me nga Iniana Whaiaro"
+    },
+    "nutritionPlanning": {
+      "title": "Te kai totika me te whakamahere kai",
+      "description": "Whiwhi i nga mahere kai me nga mahere kai hei whakatutuki i o whaainga hauora me te oranga"
+    },
+    "travelPhotography": {
+      "title": "Whakaahuatanga Haerenga Whaiaro",
+      "description": "Tangohia o maumahara haerenga me nga ratonga whakaahua ngaio e waatea ana i runga i te tono"
+    },
+    "weddingPlanning": {
+      "title": "Te whakamahere marena whaiaro",
+      "description": "Waihangahia to marena moemoea me te awhina wawe mai i nga mahere marena ngaio"
+    },
+    "corporateTraining": {
+      "title": "Whakangungu Whakangungu Whakangungu Awhina",
+      "description": "Whakanuia nga pukenga a to roopu me nga kaupapa whakangungu whakangungu umanga e waatea ana i runga i te tono"
+    },
+    "homestaging": {
+      "title": "Whakataetae Home Whaiaro",
+      "description": "Whakanuia te tono a to rawa me to uara me nga ratonga whakaari kaainga ngaio"
+    },
+    "wellnessRetreats": {
+      "title": "Te Hauora Whaiaro me te Otinga Pai",
+      "description": "Te wheako i te oranga o te oranga me nga reti o te whakangungu i hangaia hei whakahou i to hinengaro me to tinana"
+    },
+    "artWorkshops": {
+      "title": "Toi Toi me nga awheawhe",
+      "description": "Whakawhanake i o pukenga auaha ma roto i nga mahi toi me nga mahi toi me nga mahi toi"
+    },
+    "languageLearning": {
+      "title": "Akoranga Reo Whaiaro",
+      "description": "Akohia nga reo hou me nga huihuinga whakahoahoa i hangaia ki o hiahia motuhake me to momo akoranga"
+    },
+    "careerCounseling": {
+      "title": "Ratonga tohutohu tohutohu",
+      "description": "Whiwhi i te aratohu tere i runga i to ara mahi mai i nga tohunga ngaio mohio"
+    },
+    "financialPlanning": {
+      "title": "Ratonga whakamahere pūtea",
+      "description": "Tikina he tohutohu putea whaiaro hei awhina i a koe ki te whakatutuki i o whaainga putea me te haumaru i to heke mai"
+    },
+    "homeAutomation": {
+      "title": "Ratonga Atorangi Kaainga",
+      "description": "Hurihia to kaainga me nga rongoā mohio ki te ahua o to oranga me o hiahia"
+    },
+    "petTraining": {
+      "title": "Whakangungu kararehe whaiaro",
+      "description": "Me mahi tahi me nga kaiwhakangungu mohio ki te whakatutuki i nga matea whanonga o to kararehe me nga whaainga whakangungu"
+    },
+    "childEducation": {
+      "title": "Ratonga Akoranga Tamariki",
+      "description": "Homai ki o tamariki ki te tautoko mo te maatauranga hei awhina i a raatau ki te whaiwhakaaro i a raatau"
+    },
+    "homeSecurity": {
+      "title": "Ratonga Haumaru Home",
+      "description": "Tiakina to kaainga me to whanau me nga otinga haumarutanga whaiaro i hangaia mo o hiahia motuhake"
+    },
+    "eventCatering": {
+      "title": "Nga mahi a nga mahi",
+      "description": "Waihangahia nga wheako kai pai mo o kaupapa me nga menus kua whakaritea me te ratonga ngaio"
+    }
+  },
+  "blog": {
+    "hero": {
+      "badge": "Pouaka Arataki",
+      "title": "Tirohanga, korero, me te faaururaa pa",
+      "description": "Tirohia te pehea e hanga ai te kaiarahi i tetahi hononga pukenga tuuturu me nga whakahoutanga o te taone, nga putanga VIP, me nga korero moata."
+    },
+    "list": {
+      "readStory": "Panuihia nga korero →"
+    },
+    "detail": {
+      "allArticles": "Nga Tuhinga Katoa",
+      "ctaTitle": "He pai tenei tuhinga?",
+      "ctaSubtitle": "Ka wheako i nga ratonga tuuturu i roto i te taupānga Aratohu, te whai i a maatau korero o te taone nui.",
+      "ctaPrimary": "Tirohia nga Ratonga",
+      "ctaSecondary": "Riro hei kaiwhakarato"
+    },
+    "notFound": {
+      "title": "Tuhinga kaore i kitea",
+      "description": "Tena koa hoki mai ki te blog kia kite i nga korero hou o te taone me nga whakahoutanga hua.",
+      "cta": "Hoki ki te Blog"
+    }
+  }
+}

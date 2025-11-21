@@ -13,6 +13,12 @@ import { useTranslation } from "react-i18next";
 import { resolveLocale } from "@/utils/locale";
 import { useDownloadDialog } from "@/components/DownloadDialogProvider";
 
+const featuredServiceImages = {
+  tour: "/images/featured-tour.jpg",
+  translation: "/images/featured-translation.jpg",
+  dance: "/images/featured-dance.jpg"
+};
+
 const featuredServices = {
   en: [
     {
@@ -24,7 +30,7 @@ const featuredServices = {
       rating: 4.9,
       location: "Auckland, New Zealand",
       provider: { id: "p1", name: "Hiroshi K.", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=987&q=80"
+      imageSrc: featuredServiceImages.tour
     },
     {
       id: "2",
@@ -35,7 +41,7 @@ const featuredServices = {
       rating: 4.8,
       location: "Wellington, New Zealand",
       provider: { id: "p2", name: "Mei L.", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2070&q=80"
+      imageSrc: featuredServiceImages.translation
     },
     {
       id: "3",
@@ -46,7 +52,7 @@ const featuredServices = {
       rating: 4.7,
       location: "Queenstown, New Zealand",
       provider: { id: "p3", name: "Carlos M.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=2070&q=80"
+      imageSrc: featuredServiceImages.dance
     }
   ],
   pt: [
@@ -59,7 +65,7 @@ const featuredServices = {
       rating: 4.9,
       location: "Auckland, Nova Zelândia",
       provider: { id: "p1", name: "Hiroshi K.", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=987&q=80"
+      imageSrc: featuredServiceImages.tour
     },
     {
       id: "2",
@@ -70,7 +76,7 @@ const featuredServices = {
       rating: 4.8,
       location: "Wellington, Nova Zelândia",
       provider: { id: "p2", name: "Mei L.", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2070&q=80"
+      imageSrc: featuredServiceImages.translation
     },
     {
       id: "3",
@@ -81,7 +87,7 @@ const featuredServices = {
       rating: 4.7,
       location: "Queenstown, Nova Zelândia",
       provider: { id: "p3", name: "Carlos M.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=2070&q=80"
+      imageSrc: featuredServiceImages.dance
     }
   ],
   es: [
@@ -94,7 +100,7 @@ const featuredServices = {
       rating: 4.9,
       location: "Auckland, Nueva Zelanda",
       provider: { id: "p1", name: "Hiroshi K.", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=987&q=80"
+      imageSrc: featuredServiceImages.tour
     },
     {
       id: "2",
@@ -105,7 +111,7 @@ const featuredServices = {
       rating: 4.8,
       location: "Wellington, Nueva Zelanda",
       provider: { id: "p2", name: "Mei L.", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2070&q=80"
+      imageSrc: featuredServiceImages.translation
     },
     {
       id: "3",
@@ -116,7 +122,7 @@ const featuredServices = {
       rating: 4.7,
       location: "Queenstown, Nueva Zelanda",
       provider: { id: "p3", name: "Carlos M.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=2070&q=80"
+      imageSrc: featuredServiceImages.dance
     }
   ],
   zh: [
@@ -129,7 +135,7 @@ const featuredServices = {
       rating: 4.9,
       location: "奥克兰，新西兰",
       provider: { id: "p1", name: "Hiroshi K.", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=987&q=80"
+      imageSrc: featuredServiceImages.tour
     },
     {
       id: "2",
@@ -140,7 +146,7 @@ const featuredServices = {
       rating: 4.8,
       location: "惠灵顿，新西兰",
       provider: { id: "p2", name: "Mei L.", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2070&q=80"
+      imageSrc: featuredServiceImages.translation
     },
     {
       id: "3",
@@ -151,7 +157,7 @@ const featuredServices = {
       rating: 4.7,
       location: "皇后镇，新西兰",
       provider: { id: "p3", name: "Carlos M.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=2070&q=80"
+      imageSrc: featuredServiceImages.dance
     }
   ],
   fr: [
@@ -164,7 +170,7 @@ const featuredServices = {
       rating: 4.9,
       location: "Auckland, Nouvelle-Zélande",
       provider: { id: "p1", name: "Hiroshi K.", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=987&q=80"
+      imageSrc: featuredServiceImages.tour
     },
     {
       id: "2",
@@ -175,7 +181,7 @@ const featuredServices = {
       rating: 4.8,
       location: "Wellington, Nouvelle-Zélande",
       provider: { id: "p2", name: "Mei L.", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2070&q=80"
+      imageSrc: featuredServiceImages.translation
     },
     {
       id: "3",
@@ -186,7 +192,7 @@ const featuredServices = {
       rating: 4.7,
       location: "Queenstown, Nouvelle-Zélande",
       provider: { id: "p3", name: "Carlos M.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=2070&q=80"
+      imageSrc: featuredServiceImages.dance
     }
   ],
   he: [
@@ -199,7 +205,7 @@ const featuredServices = {
       rating: 4.9,
       location: "אוקלנד, ניו זילנד",
       provider: { id: "p1", name: "Hiroshi K.", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=987&q=80"
+      imageSrc: featuredServiceImages.tour
     },
     {
       id: "2",
@@ -210,7 +216,7 @@ const featuredServices = {
       rating: 4.8,
       location: "וולינגטון, ניו זילנד",
       provider: { id: "p2", name: "Mei L.", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2070&q=80"
+      imageSrc: featuredServiceImages.translation
     },
     {
       id: "3",
@@ -221,9 +227,45 @@ const featuredServices = {
       rating: 4.7,
       location: "קווינסטאון, ניו זילנד",
       provider: { id: "p3", name: "Carlos M.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
-      imageSrc: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=2070&q=80"
+      imageSrc: featuredServiceImages.dance
     }
-  ]
+  ],
+
+  mi: [
+    {
+      id: "1",
+      title: "Haerenga taone nui me nga taonga huna",
+      description: "Tirohia nga waahanga ngaro me nga tino pai o te rohe mo to ra tuatahi i te taone.",
+      category: "He Aratohu Taone",
+      price: 40,
+      rating: 4.9,
+      location: "Auckland, Aotearoa",
+      provider: { id: "P1", name: "Hiri K.", avatar: "https://randomuser.me/api/portraits/men/32.jpg" },
+      imageSrc: featuredServiceImages.tour
+    },
+    {
+      id: "2",
+      title: "Ratonga Whakawhiti Pakihi",
+      description: "Te whakamaoritanga ngaio na reira ka marama, ka maia nga hui whakawhiti whakawhiti.",
+      category: "Whakamāoritanga",
+      price: 60,
+      rating: 4.8,
+      location: "Wellington, Aotearoa",
+      provider: { id: "p2", name: "Mei L.", avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
+      imageSrc: featuredServiceImages.translation
+    },
+    {
+      id: "3",
+      title: "Salsa Dance Whakataki me te Mahi",
+      description: "Akohia nga kaupapa a Salsa me tetahi kaiwhakaako toa-kaore he wheako e hiahiatia ana.",
+      category: "Kanikani",
+      price: 35,
+      rating: 4.7,
+      location: "Kuini, Aotearoa",
+      provider: { id: "P3", name: "Carlos M.", avatar: "https://randomuser.me/api/portraits/men/22.jpg" },
+      imageSrc: featuredServiceImages.dance
+    }
+  ],
 } as const;
 
 const testimonials = {
@@ -328,7 +370,25 @@ const testimonials = {
         "בעונת הסקי בקווינסטאון מאמנת Guidew לקחה אותי לסדנאות מאוריות נסתרות ולחוות אלפקות. סוף סוף הרגשתי את הנשמה של ניו זילנד.",
       author: { name: "יעל שלו", title: "ירושלים · מחפשת הרפתקאות", avatar: "https://randomuser.me/api/portraits/women/11.jpg" }
     }
-  ]
+  ],
+
+  mi: [
+    {
+      content:
+        "Ko te taunga ki Akarana me nga hoapaki kore, i whakauruhia e te kaiarahi ki a au ki nga tutaki o te jazz me te roopu bactata. E rua wiki i muri mai ka mihi ahau ki nga tangata katoa o te iwi Māori ka rite ki te rohe.",
+      author: { name: "Lily West", title: "London Cancer", avatar: "https://randomuser.me/api/portraits/women/68.jpg" }
+    },
+    {
+      content:
+        "Te neke ki Te Whanganui-a-Tara mo te Taakaro Game, I hiahiatia e ahau he pekerangi pāpori. Ko te kaiarahi i a au me tetahi kai whakamaoritanga i whakaakona e Iwi Pakihi ki te ra, a ka whakauru mai ahau ki te whakatau hangarau i te po.",
+      author: { name: "Mateo Rivera", title: "Mexico leger", avatar: "https://randomuser.me/api/portraits/men/54.jpg" }
+    },
+    {
+      content:
+        "I te wa o te reti o te Kuini, ka haria mai e te kaiarahi o te rohe ki te huna i nga awheawhe a te Māori me nga ahuwhenua a Alpaca. I te mutunga kua rongo ahau i te wairua o Aotearoa.",
+      author: { name: "Ava nuguyen", title: "Vietnam · te kaikorero", avatar: "https://randomuser.me/api/portraits/women/29.jpg" }
+    }
+  ],
 } as const;
 
 const copy = {
@@ -603,8 +663,54 @@ const copy = {
       find: "מצאו מומחה",
       become: "הפכו למומחה"
     }
-  }
-} as const;
+  },
+
+  mi: {
+    notice:
+      "Ko tenei papaanga he demo mo te rangahau. Tena koa kaua e rehita, utu, kia whakawhirinaki ranei ki nga raraunga - ko nga mea katoa he mea whakahihiri.",
+    noticeButton: "Ka mau",
+    categories: {
+      badge: "Tohungatanga kanorau",
+      title: "He aha te momo awhina e hiahiatia ana e koe?",
+      description:
+        "Mai i nga kaiarahi o te taone me nga awhina reo ki nga pukenga motuhake, kitea nga tohunga e whakawhirinaki ana ki nga waahi katoa.",
+      cards: [
+        { title: "Nga kaiarahi o te taone", description: "Nga taonga huna me nga haerenga ritenga.", icon: MapPin, color: "Bg-waitohu-teal", route: "/ Tirohia? Te Kāwai = Taonga-Taonga" },
+        { title: "Ratonga Whakawhiti", description: "Pakaru nga aukati me nga whakamaori i runga i te tono.", icon: Languages, color: "BG-waitohu-karaka", route: "/ Tirohia? Kāwai = Whakawhiti" },
+        { title: "Nga wheako ahurea", description: "Rumaki i roto i nga tikanga o te rohe.", icon: Globe, color: "BG-parple-500", route: "/ Tirohia? Te kāwai = nga wheako ahurea" },
+        { title: "Tohutohu pūkenga", description: "Akohia te tunu kai, waiata, kanikani, me te maha atu.", icon: Book, color: "BG-Blue-500", route: "/ Tirohia? Te Kāwai = Tohutohu-Tohutohu" }
+      ],
+      cta: "Tirohia nga waahanga katoa"
+    },
+    featured: {
+      badge: "Tuhinga o mua",
+      title: "Ratonga Whakaaturanga",
+      description: "Te tirotiro i o maatau ratonga tino aroha mai i nga taangata o runga.",
+      cta: "Te tirotiro i nga ratonga katoa"
+    },
+    howItWorks: {
+      badge: "He mahinga ngawari",
+      title: "Me pehea te mahi",
+      description: "Tūhono ki ngā tohungatanga o te rohe i roto i nga waahanga ngawari e toru.",
+      steps: [
+        { title: "Hura", description: "Tirotiro nga ratonga e tata ana ki a koe, ki to haerenga ranei.", icon: MapPin },
+        { title: "Pukapuka", description: "Whiriwhiria he wa ka whakaū tonu.", icon: Calendar },
+        { title: "Taunga", description: "Me tutaki ki to tohunga me te pai ki te awhina awhina.", icon: Coffee }
+      ],
+      cta: "Ako atu mo te tukanga"
+    },
+    testimonials: {
+      badge: "Nga korero a te kaiwhakamahi",
+      title: "He aha ta o maatau kaiwhakamahi",
+      description: "Ko nga kaihaere me nga taangata e whakaatu ana i te hurihanga o nga kaiarahi a raatau haerenga."
+    },
+    cta: {
+      title: "Kua rite ki te wheako i nga tohungatanga o te rohe?",
+      description: "Hono atu ki nga mano o nga kaihaere me nga takiwa e hono ana ma te arahi.",
+      find: "Rapua he tohunga",
+      become: "Riro hei tohunga"
+    }
+  },} as const;
 
 const Index = () => {
   const [showNotice, setShowNotice] = useState(true);
@@ -622,7 +728,9 @@ const Index = () => {
             ? "fr"
             : locale === "he"
               ? "he"
-              : "en";
+              : locale === "mi"
+                ? "mi"
+                : "en";
   const content = copy[localeKey];
   const services = featuredServices[locale] ?? featuredServices.en;
   const stories = testimonials[locale] ?? testimonials.en;

@@ -143,7 +143,21 @@ export const DownloadDialogProvider = ({ children }: { children: React.ReactNode
       visitStore: (platform: string) => `עברו לחנות ${platform}`,
       scanNote: "סרקו או לחצו כדי לפתוח את קישור ההורדה ולהמשיך לשוחח עם המומחים.",
       versionLabel: (platform: string) => `גרסת ${platform}`
-    }
+    },
+
+    mi: {
+      label: "Tikiake Aratohu",
+      defaultHeadline: "Kawea mai he aratohu ki nga wahi katoa e haere ana to haerenga",
+      serviceHeadline: (title: string) => `Save ${title} directly in the app`,
+      description:
+        "Karangahia nga tohunga reorua, nga toa o te ao, te kapa whakaora ranei i nga hēkona. Matawai i te QR Code ki te whenua i runga i te toa matau.",
+      vipNote: "Aratohu VIP Kaiwhakamahi Kimihia nga Komihana, Ka nui ake nga painga o nga kaiwhakarato, me te AI nga mahere mo nga rahinga.",
+      qrLabel: "QR download",
+      scanTitle: (platform: string) => `Scan to install the ${platform} version`,
+      visitStore: (platform: string) => `Go to ${platform} store`,
+      scanNote: "Matawai Ka paato ranei ki te whakatuwhera i te hononga download i roto i to huringa, katahi ka korerorero tonu ki nga tohunga.",
+      versionLabel: (platform: string) => `${platform} version`
+    },
   };
   const copy = pickLocaleValue(translationMap, locale);
   const taglineLocale =

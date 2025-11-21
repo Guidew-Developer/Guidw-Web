@@ -180,7 +180,33 @@ const copy: Partial<
     terms: "תנאי שימוש",
     privacy: "מדיניות פרטיות",
     cookies: "מדיניות Cookies"
-  }
+  },
+
+  mi: {
+    tagline: "Te hono ki a koe me nga tohungatanga o te rohe, i runga i te tono, kei hea koe i te ao.",
+    powered: "Powered by Viva Dance Limited",
+    explore: "Hōpara",
+    company: "Matua",
+    contact: "Whakapā",
+    quickLinks: [
+      { to: "/discover", label: "Rapua ngā ratonga" },
+      { to: "/how-it-works", label: "Me pēhea te mahi" },
+      { to: "/become-expert", label: "Riro hei tohunga" },
+      { to: "/locations", label: "Wāhi wāhi" }
+    ],
+    companyLinks: [
+      { to: "/about", label: "Mō mātou" },
+      { to: "/careers", label: "Tūranga mahi" },
+      { to: "/blog", label: "Rangi" },
+      { to: "/press", label: "Pēhi" }
+    ],
+    address: "10 Newton Road, Auckland Central, NZ 1010",
+    phone: "+64 (21) 513-258",
+    email: "hello@guidew.com",
+    terms: "Nga tikanga o te Ratonga",
+    privacy: "Kaupapa here tūmataiti",
+    cookies: "Kaupapahere Kuki"
+  },
 } as const;
 
 const Footer = () => {

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { ShieldCheck, Clock, Wallet2, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const termsLocales = ["en", "zh", "es", "pt", "fr", "he"] as const;
+const termsLocales = ["en", "zh", "es", "pt", "fr", "he", "mi"] as const;
 type TermsLocale = (typeof termsLocales)[number];
 
 type TermsSection = {
@@ -1196,8 +1196,198 @@ const termsCopy: Record<TermsLocale, TermsCopy> = {
     lastUpdated: "עודכן לאחרונה: 6 ביוני 2025",
     updateNotice:
       "Guidew ממשיכה לפתח את הטכנולוגיה, התפעול והפרוטוקולים הבטיחותיים שלה. הגרסה העדכנית של התנאים זמינה תמיד ב‑guidew.com/terms, וייתכן שנשלח הודעות דוא\"ל או התראות במוצר לגבי שינויים מהותיים."
-  }
-} as const;
+  },
+
+  mi: {
+    badge: "Nga tikanga o te Ratonga",
+    title: "Ko nga tikanga o te ratonga",
+    description:
+      "Ko enei kupu whakaata te hanganga o nga maakete nekeneke me te whakarite mo te whakakotahitanga o te kaiarahi, te haumaru, me nga tohungatanga o te rohe. Tena tirohia, tirohia mai i mua i te tono, i te whakarato ratonga ranei mo te kaiarahi.",
+    languagePrompt: "Tirohia tenei whaarangi ki:",
+    commitments: {
+      heading: "He aha taau e hiahia mai ana i te kaiarahi",
+      description: "Ka whakakotahihia e matou te rigor ture me te manaaki tangata-a-tangata i nga kaihokohoko, nga whanau, me nga kaiwhakarato, me te mahi maia.",
+      items: [
+        { title: "Haumaru-Hoahoa", description: "Tirohanga Tuakiri, Nga Kōwhiringa NDA, nga kaikopere haerenga, me nga mahi tautohetohe e tiakina ana e ia nga wheako tuimotu." },
+        { title: "Nga Kaikorero Whakanoho", description: "Te utu, te utu mo nga papa, nga ohaurunga VIP, me nga tohu utu ka kitea i mua i to whakaū i tetahi ota." },
+        { title: "Te kawenga a te hapori", description: "Nga arotake takitahi, ka tukuna nga tiwhikete, me nga tohu whakatutukitanga kia mau tonu nga ingoa." },
+        { title: "AI + Tautoko Tangata", description: "He poto nga korero, ko nga kaihanga i te wananga, me nga roopu whakahoahoa e tu ana i nga rohe katoa o te waa." }
+      ]
+    },
+    obligations: {
+      heading: "Ko o kawenga i te tirohanga",
+      description: "Whakamahia tenei raarangi arowhai i te wa e whakawhiti ana koe i waenga i nga kaitono me nga kaiwhakarato kaiwhakarato.",
+      columns: [
+        {
+          label: "Ka tono koe i nga ratonga",
+          items: [
+            "Whakaaetia he tika te ngohe me te pupuri i nga whakaaetanga e hiahiatia ana, i te inihua ranei.",
+            "Tukuna nga waahi tuuturu, nga raarangi wa, nga korero whakauru, me nga tikanga ahurea, rongoa ranei.",
+            "Nga utu putea, pauna ranei i te kaha o te mahi i mua i te tiimata o te ratonga me te whakamahi i nga korero korero mo nga whakahoutanga.",
+            "He urupare urupare, he tautohetohe ranei i roto i nga ra e 7 kia taea ai e ta maatau roopu te wawao mena e hiahiatia ana."
+          ]
+        },
+        {
+          label: "Ka tukuna e koe nga ratonga",
+          items: [
+            "Kia mau ki nga pukenga, tiwhikete, me nga ture iti rawa atu, ka kitea i roto i to whaarangi.",
+            "Tae mai me te wa nui o te wa; Whakamōhiotia te kiritaki i roto i te taupānga mena ka puta nga mate.",
+            "Whakamahi i nga raima utu a te kaiarahi anake-kore-papa-kore mo te utu kotahi.",
+            "Whakapaingia te tūmataiti: Rokiroki NDA, nga rekoata, te tuhi ranei i nga konae i te waahi anake e taea ai e te kaiarahi."
+          ]
+        }
+      ]
+    },
+    faq: {
+      heading: "I nga wa katoa i pa ki nga tautohetohe",
+      description: "Ko enei whakautu tere ka whakarapopoto i nga kaupapa here noa; Ko nga rara taipitopito i raro nei e whakahaere tonu ana.",
+      items: [
+        {
+          question: "Ka taea e au te whiriwhiri, te whakarereke ranei i te tohu o waho?",
+          answer:
+            "Ka taea e koe te matapaki i te whānuitanga o te korerorero, engari me whakaatu nga huringa kua whakapumautia i roto i te tono In-App na reira, inihua, me nga utu e noho tika ana."
+        },
+        {
+          question: "Ka ahatia mena ka pa te haerenga haerenga ki taku pukapuka?",
+          answer:
+            "Whakamohio i tetahi atu roopu i muri mai i te korerorero. Ka taea e te kaiarahi te whakatika, te aukati ranei i nga whiu kua whakatauhia penei i te rangi, i nga take rererangi ranei, engari me tuhi."
+        },
+        {
+          question: "Me pehea taku e kaha ai te awangawanga haumaru?",
+          answer:
+            "Whakamahia te pātene haumaru i roto i te-taupānga, imeera haumaru ranei@guidew.com me nga tohutoro raupapa, taunakitanga, me nga hiahia akiaki. Ka mahi tahi tatou me nga mana whakahaere o te rohe ina hiahiatia."
+        }
+      ]
+    },
+    support: {
+      heading: "Kei te hiahia te tautoko ture, whakahaere ranei?",
+      contact: "Email: legal@guidew.com",
+      secondary: "Hotline (24/7): +64 9 555 0100",
+      note: "Mo nga urupare hua, nga tono urunga ranei, toro atu ma te help.guidew.com kia taea ai e matou te neke ki te roopu tika."
+    },
+    sections: [
+      {
+        title: "1. Whanaungatanga kirimana",
+        content: [
+          "Ko enei tikanga o te ratonga (ko te \"kupu\") he whakaaetanga ture i waenganui i a koe - ahakoa he tangata haere takitahi, he kaiwhakarato, he kaiarahi me ona hinonga honohono.",
+          "Ma te uru atu ki te whakamahi i te Aratohu, te App App, he ratonga hono ranei, e mohio ana koe, e whakaae ana kia herea nga kaupapa here mai i te waa, tae atu ki ta maatau kaupapa here."
+        ]
+      },
+      {
+        title: "2..",
+        content: [
+          "Ka whakarato a Aratohu i nga taputapu hangarau e hono ana i nga kaiwhakamahi ki te rapu i nga wheako o te rohe, te tautoko haerenga, i nga pukenga taangata ranei me nga kaiwhakarato motuhake. Ka whakahohehia e tatou te taatai, te tuku, te utu, te utu, me te Haumaru Haumaru-engari kaore matou e hanga, hei whakahaere, hei tuku ranei i nga ratonga.",
+          "Mena kaore tatou e ahua mohio ki te tuhi, kaore e mahi, e whakahaere ana, e whakahaere ana, e whakahaere ana ranei i nga kawenga mo te whakahaere o nga kaiwhakarato; Ko nga rahui katoa e tohu ana i tetahi whakaaetanga motuhake i waenga i te kaiwhakamahi me te kaiwhakarato.",
+          "Ko te tuku tuatahi o te kaiarahi e arotahi ana ki Akarana me Poneke. Wahanga-i-waahanga, ka whaaia e matou te 1,000 MVP mo nga marama tuatahi, 5,000-100 nga kaiwhakamahi o Aotearoa i te marama 25,000 o te ao i muri i te tau e rima."
+        ]
+      },
+      {
+        title: "3. Nga putea me te tohu",
+        content: [
+          "Ma te hanga i tetahi kaute aratohu e whakaū ana koe he iti rawa te 18 tau te pakeke, ā, me whai mana te ture ki te kirimana. Mena kei te whakamahi koe i te kaiarahi mo te pakihi, whakahaere ranei, me whakamana koe kia herea taua hinonga.",
+          "Ka arahi pea, i nga wa katoa, me whakaoti koe i te whakaotinga tuakiri, papamuri papamuri, nga arotake tohu ranei; Ko te kore e tutuki i te aukati i te aukati i te aukati ranei.",
+          "Kei a koe te kawenga mo te tiaki i o tohu tohu takiuru me nga mahi katoa ka puta i raro i to putea. Whakamohio ki a maatau ki te kore koe e whakaae."
+        ]
+      },
+      {
+        title: "4. Kaiwhakamahi me nga Kaihaututanga Kaiwhakarato",
+        content: [
+          "Me whakarite nga kaiwhakamahi kia tika, kia ora, kia tutuki hoki nga tikanga o te rohe, me wehewehe i nga manakohanga, nga whakaritenga, me nga whakaritenga me nga kaiwhakarato.",
+          "Me pono te hunga kaiwhakarato mo o raatau pukenga, tohu, te waatea, me te utu i mua i te whakaae i tetahi ota; Me tuku nga ratonga i runga i te korerohia me te kore e waatea te kore whakaae.",
+          "Me whakarārangihia e ia nga kaiwhakarato ia ratonga, ko tana utu haora, ko te tohu iti o te haora, me nga tohu e tika ana, me nga tohu o te kaha (whakaahua, tohu tohu). Ko etahi o nga waahanga-penei i te uru o te kaainga, te tiaki tamariki, me te tautoko rongoa ranei (hei tauira i nga tirotirohanga papamuri, raihana raihana ranei).",
+          "E whakaae ana nga roopu e rua ki te whakamahi i nga taputapu karere a-ringa me nga taputapu tuhi ki te tuhi i nga korero whakapae me te tuku urupare, taunakitanga ranei i roto i nga wahanga e hiahiatia ana. Ka whakahoutia pea e nga kaiwhakamahi rehita ki te mana kaiwhakarato i te hainatanga i te waa ranei i roto i nga tautuhinga kaute, me nga kaiwhakamahi takiuru noa te tono, te tuku ratonga ranei.",
+          "Kei roto i nga papatohu e wha nga ripa tuatahi e wha (kereme, te teepu, nga ota, taku putea); Ko nga tohu aratau kereme e tono ana i te paatene a te Tapahi-Tap \". Whakaaetia-Aunoa, AI nga kaihanga i te wa, ko nga kai urupare-a AI nga kaiwhakautu-tautoko a AI he mea motuhake ki nga kaiwhakarato VIP. Ko te Whakauru Whakauru, Tirohia (Mahere / raarangi), Mahere, me aku Taputapu Kaute Hei tirotiro, Whakahaerehia nga Whakaaturanga Maramataka, Whakahaerehia nga Waanui."
+        ]
+      },
+      {
+        title: "5. Nga utu, utu, me nga taake",
+        content: [
+          "Ki te kore e whakawhitiwhiti korero, kaore i te tuhi, me utu nga kaiwhakamahi ki te utu katoa o te punaha utu a te kaiarahi i te wa o te tono; Kei te pupuri nga kaiarahi i nga moni i roto i te Escrow me te tuku i nga utu mo te utu e whitu (7) nga ra i muri i te tohu o te ratonga, kaore he tautohetohe e tatari ana.",
+          "Ka arahina pea e ia nga utu mo te Ratonga Hangarau Hangarau, nga utu mo nga tauhokohoko, me etahi atu taonga ranei ki nga kaiwhakamahi me / ranei nga kaiwhakarato, ko nga mea katoa e whakaatu ana i nga panui tirotiro.",
+          "Ko te utu mo te maakete matua a te kaiarahi he rite ki te tekau ma rima ōrau (15%) o ia whakawhitinga angitu. Ko nga ohaurunga VIP he mea motuhake: Ka hokona pea e nga kaitautoko te VIP mo te utu mo te utu mo te utu mo te tono-tono. Ka huri pea nga kaiwhakarato ki te arataki i te USD 99 ia marama ki te whakauru i te whakatipuranga-aunoa, ai i te whakatipuranga aunoa, ai te whakamahi i nga tohu taapiri.",
+          "Ka whakamahi pea tatou i nga kaituku utu tuatoru, tae atu ki te whiu mo te MVP, a ka whakamanahia e koe he kaiarahi mo te tuku utu mo nga utu me nga utu utu. Ka utua e Apple te utu a Google ki nga waahanga i muri mai.",
+          "Ko nga kaiwhakarato anake te kawenga mo te ripoata me te utu taake e tika ana; Ka taea e te kaiarahi te aukati, te ripoata ranei i nga moni mena ka hiahiatia e te ture. Tohutohu i utua e nga Kaipupuri i mua i te tuku i tetahi arotake ka rite ki nga hua taapiri ka tukuna i muri i te mana whitu-ra.",
+          "Me utu nga kaiwhakamahi mo nga taonga tawhito (tikiti, wahie, tara, reti) kaore i te tino whakauruhia ki te reiti i whakahuahia ai te kaiwhakarato. Me whakaatu marama nga kaiwhakarato mehemea kei roto i nga utu nga utu e pa ana ki nga utu."
+        ]
+      },
+      {
+        title: "6. Whakakore, Nga Whakahoki, me nga tautohetohe",
+        content: [
+          "Ka taea e nga kaiwhakamahi te whakakore i te neke atu i te toru (3) haora i mua i te tiimata o te ratonga kaore he whiu, ka whiwhi moni tonu. Mena ka whakakorehia e te kaiwhakamahi i waenga i nga haora e toru (3) me te kotahi (1) haora i mua i te tiimata, e rima tekau ma rima nga paanga (25%) ki te utu, e rima tekau ōrau (15%) hei utu. Ko te whakakore i roto i tetahi (1) haora, i muri mai ranei i te tiimata kaore he utu mo te kaiwhakamahi ki te kore e rua tekau ma rima ōrau (85%) me te kaiarahi i te tekau ma rima ōrau (15%).",
+          "Mena ka whakakorehia e te kaiwhakarato i waenga i tetahi (1) me te toru (3) haora i mua, ka whakahoki mai i te kaiwhakamahi kotahi rau ōrau (100%) me te whakaputa i te kaiwhiwhi kotahi (1) whakakorea i roto i tetahi (1) haora e hanga rua (2) tohu whiu; whakakore i muri i te tiimata kua whakaritea e wha (4) tohu whiu; me nga kaiwhakaako e ono (6) nga whiu whiu. Ka taea e te kaiarahi te aukati i te tango tonu ranei i nga kaiwhakarato e whakaemi ana i nga tohu nui.",
+          "Ka tiimata nga ratonga, me noho tonu nga kaiwhakarato ki te papanga (me te ipurangi ranei) mo te roanga o te waa ano ka mutu te ngaro o te kaitono. Mena ka kore te kaiwhakarato e puta, ka whakahoki i te whakahoki mai i te kaiwhakamahi. Mena ka puta te kaitirotiro, ka mau tonu te utu o te whare pukapuka, ka whiwhi tonu te kaiwhakarato i te utu kirimana i muri i te pupuri e whitu nga ra.",
+          "Me tuku nga tautohetohe i roto i te taupānga Aratohu i roto i nga ra e whitu (7) i muri i te mutunga o te ratonga, me nga taunakitanga tautoko penei i nga tuhinga korero, me nga tuhinga, nga tuhinga ranei. Ka taea e te kaiarahi te rongoa i nga whakaoranga, nga utu utu, te aukati i nga moni, te whakarereke, etahi atu whakatikatika ranei e tika ana i muri i te arotake i te tautohetohe.",
+          "Whai muri i ia ratonga, ka taea pea e nga roopu nga arotake, ko te tono \"he\" ranei kaore e pai ki te mahi \"me nga kaiwhakaako. Ko nga arotake ka kitea i muri noa iho i muri i nga roopu e rua e tuku ana, e toru ranei (3) nga ra e pa ana ki te tautohetohe."
+        ]
+      },
+      {
+        title: "7. Nga taonga me nga rawa hinengaro",
+        content: [
+          "Ko te Ratonga Aratohu, paetukutuku, raupaparorohiko, hokohoko, me nga raihana katoa e whai mana ana, a ka whiwhi koe i te raihana, kaore i te whakawhitiwhiti te raihana, kia kore ai e taea te whakamahi.",
+          "Ihirangi ka tukuna e koe, penei i te tuhinga, nga tohu, te arotake, te whakamahi, te whakaputa i te ihirangi, te whakaputa, me te maakete, me te maakete.",
+          "Kaua e kape, whakarereketia te miihini, whakarereke, te ngana ranei ki te tango i te waehere takenga o a maatau punaha, kaore hoki e whakamahi i nga tohu tohu a te kaiarahi."
+        ]
+      },
+      {
+        title: "8. Te Haumaru me te Whakapono",
+        content: [
+          "Me tono pea te kaiarahi mo nga ratonga taapiri penei i te uru ki te kaainga, te tautoko hauora, te tohu hauora, te tuku i nga uiuinga, te tuku i nga tuhinga tuatoru.",
+          "Kei a koe te haepapa mo te hono ki nga ture katoa, e whakaae ana, ko nga paerewa ngaio, me nga whakaritenga inihua e pa ana ki te waahi ka puta te ratonga. Me pupuri e nga kaiwhakarato nga tautuhinga o to raatau waahi na reira ka taea e te kaiarahi te tatauranga i nga peehi haerenga me te akiaki i nga whakamaharatanga i mua i te pukapuka e whai ake nei; Ka taea e nga kaiwhakarato VIP te whirihora i nga waahanga mahi roa me nga matohi nui ina heke mai nga ratonga kua mate.",
+          "Ka taea e tatou te aukati, te whakamutu ranei i nga kaute me te mahi tahi me te ture ture, mena ka kitea e tatou he ture, he mahi tinihanga ranei."
+        ]
+      },
+      {
+        title: "9. Te tūmataiti me te whakahaere raraunga",
+        content: [
+          "Ma te whakamahi i nga kaiarahi e whakaae ana koe ki te kohinga, whakamahi, tohatoha me te rokiroki o to raraunga kua tuhia i roto i te Kaupapahere Tūmataiti, tae atu ki nga korero tuakiri, raraunga utu, korero.",
+          "Ka taea e tatou te tiri i nga raraunga me nga kaiwhakarato ratonga, hoa, mana whakahaere ranei ina hiahiatia mo te tuku ratonga, te mana whakahaere, te tautoko, te aukati ranei, i te wa e tiakina ai nga mahi hokohoko."
+        ]
+      },
+      {
+        title: "10. Nga Korero",
+        content: [
+          "Ko te kaiarahi e whakarato ana i te paparanga i runga i te 'rite' me te kore e whakaatu, e whakaatu ana ranei, mo te whakauru kaore i te aukati, i te mahi hapa ranei, me tutuki ranei nga ratonga.",
+          "Kaore matou e taurangi ki te papamuri, nga tohu, te pono, te putanga o nga taunekeneke i waenga i nga kaiwhakamahi me nga kaiwhakarato."
+        ]
+      },
+      {
+        title: "11. Te aukati i te taunahatanga",
+        content: [
+          "Ki te tino tika e whakaaetia ana e te ture, ko nga kaiarahi, nga kaimahi, me nga hoa mahi, he raru, he whiu ranei, he mea e pa ana ki to whakamahi i nga ratonga.",
+          "Ko te taunahatanga a Guidew mo nga whiu tuuturu he iti noa atu ki nga moni i utua e koe hei arahi mo nga ratonga motuhake i te ono marama i mua i te kereme."
+        ]
+      },
+      {
+        title: "12. Taha",
+        content: [
+          "E whakaae ana koe ki te whaiwhakaaro me te pupuri i nga kaiarahi kaore i te kino, i nga utu, i nga utu, me nga utu o nga roia e puta mai ana i te takahi i te ture, i te takahi ranei i te mana tuatoru."
+        ]
+      },
+      {
+        title: "13. Te ture ture me te whakatau tautohetohe",
+        content: [
+          "Ko enei tikanga ka whakahaerehia e nga ture o Singapore, me te kore e aro ki nga ture o te pakanga.",
+          "Ko te tautohetohe, ko te kereme ranei ka whakatauhia ma te whakawakanga i whakahaerehia e te Cingapore International International Center (SIAC) i te reo Ingarihi, a ka taea te whakawhiwhi i te mana whakahaere."
+        ]
+      },
+      {
+        title: "14. Nga Huringa ki enei Ture",
+        content: [
+          "Ka taea e te kaiarahi te whakarereke i enei tikanga mai i te waa ki te waa. Ka kitea e matou te ra whai hua ki tenei whaarangi ka whakamohio atu ki a koe ma te imeera, i nga tuhinga-a-taputapu ranei mo nga huringa rauemi.",
+          "Mena kei te haere tonu koe ki te whakamahi i nga aratohu i muri i nga tikanga hou ka whai hua, ka kiia koe kia whakaae ratou; Mena kaore koe e whakaae, me mutu koe ki te whakamahi i nga ratonga me te kati i to putea."
+        ]
+      },
+      {
+        title: "15. Whakapā mai",
+        content: [
+          "Mena kei a koe nga patai mo enei tikanga, ko nga ratonga aratohu ranei, me whakapiri atu ki a TTTPS://www.guidew.com/help mo nga whiringa Tautoko."
+        ]
+      }
+    ],
+    lastUpdated: "Whakahoutanga Whakamutunga: 6 Hune 2025",
+    updateNotice:
+      "Ka whakaatuhia tonu e ia a tatou hangarau, nga mahi, me nga taakaro haumaru. Ko te putanga hou o enei tikanga ka tukuna i nga wa katoa i runga i te guidew.com/terms me nga whakahoutanga rauemi ka tukuna mai ma te imeera, i nga whakamohiotanga ranei o te hua."
+  },} as const;
 
 const Terms = () => {
   const { i18n } = useTranslation();

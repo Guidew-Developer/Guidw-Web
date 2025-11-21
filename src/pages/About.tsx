@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GlobalExpansionGlobe from "@/components/GlobalExpansionGlobe";
 
-const aboutLocales = ["en", "zh", "pt", "es", "fr", "he"] as const;
+const aboutLocales = ["en", "zh", "pt", "es", "fr", "he", "mi"] as const;
 type AboutLocale = (typeof aboutLocales)[number];
 
 type AboutDestination = {
@@ -69,7 +69,7 @@ const copy: Record<AboutLocale, AboutCopy> = {
       ]
     },
     stats: [
-      { value: "6 languages", label: "Product available in English, 中文, Português, Español, Français, עברית" },
+      { value: "7 languages", label: "Product available in English, 中文, Português, Español, Français, עברית, Te Reo Māori" },
       { value: "15% aligned", label: "Platform commission reinvested into trust, insurance, and live operations" },
       { value: "24/7 corridors", label: "Airports, harbors, clinics, universities, and creative districts stay covered" },
       { value: "Dual VIP tiers", label: "Guest + provider memberships unlock AI concierges and automation" }
@@ -149,7 +149,7 @@ const copy: Record<AboutLocale, AboutCopy> = {
       ]
     },
     stats: [
-      { value: "6 idiomas", label: "Produto disponível em English, 中文, Português, Español, Français, עברית" },
+      { value: "7 idiomas", label: "Produto disponível em English, 中文, Português, Español, Français, עברית, Te Reo Māori" },
       { value: "15% reinvestidos", label: "Comissão da plataforma retorna para confiança, seguros e operações ao vivo" },
       { value: "Corredores 24/7", label: "Aeroportos, portos, clínicas, universidades e distritos criativos têm cobertura" },
       { value: "VIP duplo", label: "Assinaturas para usuários e provedores liberam concierge com IA e automação" }
@@ -223,7 +223,7 @@ const copy: Record<AboutLocale, AboutCopy> = {
       ]
     },
     stats: [
-      { value: "6 种语言", label: "界面已支持 English、中文、Português、Español、Français、עברית" },
+      { value: "7 种语言", label: "界面已支持 English、中文、Português、Español、Français、עברית、Te Reo Māori" },
       { value: "15% 再投入", label: "平台佣金用于信任体系、保险与线下运维" },
       { value: "全天候走廊", label: "机场、港口、诊所、大学与创意街区都有覆盖" },
       { value: "双重 VIP", label: "普通用户与服务者分别拥有 AI 礼宾与自动化工具" }
@@ -303,7 +303,7 @@ const copy: Record<AboutLocale, AboutCopy> = {
       ]
     },
     stats: [
-      { value: "6 idiomas", label: "Disponible en English, 中文, Português, Español, Français, עברית" },
+      { value: "7 idiomas", label: "Disponible en English, 中文, Português, Español, Français, עברית, Te Reo Māori" },
       { value: "15% reinvertido", label: "La comisión se destina a confianza, seguros y operaciones en campo" },
       { value: "Corredores 24/7", label: "Aeropuertos, puertos, clínicas, universidades y distritos creativos bajo cobertura" },
       { value: "Doble VIP", label: "Membresías para huéspedes y proveedores liberan concierge con IA y automatización" }
@@ -384,7 +384,7 @@ const copy: Record<AboutLocale, AboutCopy> = {
       ]
     },
     stats: [
-      { value: "6 langues", label: "Disponible en English, 中文, Português, Español, Français, עברית" },
+      { value: "7 langues", label: "Disponible en English, 中文, Português, Español, Français, עברית, Te Reo Māori" },
       { value: "15 % réinvestis", label: "Commission dédiée à la confiance, aux assurances et aux opérations terrain" },
       { value: "Corridors 24/7", label: "Aéroports, ports, cliniques, universités et quartiers créatifs couverts" },
       { value: "VIP double", label: "Adhésions voyageurs + prestataires avec concierge IA et automatisation" }
@@ -465,7 +465,7 @@ const copy: Record<AboutLocale, AboutCopy> = {
       ]
     },
     stats: [
-      { value: "6 שפות", label: "English, 中文, Português, Español, Français, עברית זמינות כבר היום" },
+      { value: "7 שפות", label: "English, 中文, Português, Español, Français, עברית, Te Reo Māori זמינות כבר היום" },
       { value: "15% מושקעים חזרה", label: "העמלה ממומנת מחדש באמון, ביטוח ותפעול שטח" },
       { value: "מסדרונות סביב השעון", label: "נמלים, שדות תעופה, מרפאות, קמפוסים ומחוזות יצירתיים תמיד מכוסים" },
       { value: "מוצר VIP כפול", label: "מנויים לנוסעים ולספקים מספקים Concierge AI ואוטומציה" }
@@ -529,8 +529,88 @@ const copy: Record<AboutLocale, AboutCopy> = {
         }
       ]
     }
-  }
-} satisfies Record<AboutLocale, AboutCopy>;
+  },
+
+  mi: {
+    badge: "Mo te aratohu",
+    title: "Hangaia nga taone hou kia rite ki te kaainga",
+    description:
+      "Ko te Aratohu he papanga tiritiri mohio, honohono nga tohunga tūturu me nga kaihaerere. Ahakoa e hiahia ana koe ki te hoa rangatira, ki te kaiwhakamaori, ki te kaiako kanikani ranei, ko te tangata pono ko te tap ke atu.",
+    cta: "Tirohia te tirohanga →",
+    story: {
+      heading: "Te punaha whakahaere mo te aratohu i roto i te tangata",
+      subheading: "Ka hangahia e matou nga kaiwhakawhitiwhiti i nga kaikorero reorua, ko nga atua ahurea, me nga kaitiaki o te oranga me te roopu roopu manaaki.",
+      paragraphs: [
+        "Akarana me Wellington i ako ki a matou ko nga huihuinga utu nui atu i nga motuka - e tono ana ratou ki te tangata ka taea te whakamaori i te ahurea, te tikanga, me te mahi pakihi, me nga mahi pakihi i runga i te rere.",
+        "I whakairihia e te kaiarahi nga rangatira o te iwi, ara, hohipera, whare wananga, me te whakaohooho i te taha o te hapori e manaaki ana i te hapori.",
+        "Ko ta tatou kupu whakaari ko te whakakotahi i te mahana o te tangata me te utu nui o te tangata: Nga utu-a-ringa, ndas, AI nga mahere, me nga mahi tirotiro i nga ra whakamutunga katoa i runga i nga tuhinga."
+      ]
+    },
+    stats: [
+      { value: "7 ngā reo", label: "Hua e wātea ana i te reo Ingarihi, 中文, Português, Español, Français, עברית, Te Reo Māori" },
+      { value: "15% i hainatia", label: "I tukuna e te Komihana a te Komihana ki te whakawhirinaki, inihua, me nga mahi ora" },
+      { value: "24/7 nga Kari", label: "Ko nga taunga rererangi, nga whanga, nga haumanu, whare wānanga, me nga rohe auaha e hipoki ana" },
+      { value: "Ko nga tiera vip rua", label: "Manuhiri + Kaiwhakarato Kaituku Ka Wewete AI Whakataetae me te Aunoa" }
+    ],
+    differentiators: [
+      { title: "I tua atu o nga kaiarahi", description: "Mai i te whakamaoritanga me te Kanikani ki te hoahoa whakahoahoa, ko ta maatau whatunga tuuturu nui atu i te haerenga angamaheni." },
+      { title: "Te maakete e rua-taha", description: "Ka taea e tetahi te waiho hei kaiwhakarato, whakaaturanga whakaatu, me te whakarite i nga reiti mo te haora mo te haora." },
+      { title: "AI + VIP", description: "Ko nga kaihaerere VIP kia kaha te here me nga ota kore-utu; Ko nga kaiwhakarato VIP e whakaae ana ki te whakamahere me te mahere AI." },
+      { title: "Whakapono me te haumaru", description: "Nga tuakiri kua whakaūngia, tukuatu tiwhikete, korero i roto i-taupānga, arotake Filateral, me nga raru e rere ana." }
+    ],
+    principles: {
+      heading: "Ngā mātāpono mara",
+      description: "Ko ia aratohu aratohu e whakahaerehia ana he mema - ko nga mahi noa kei hea te taunakitanga, te ahurea, me te arahi i nga taunekeneke katoa.",
+      items: [
+        { title: "Tuhinga o mua", description: "Ka whakaputa nga tuhinga ki te whakaputa tuhinga, tohu tohu, me te BIOS-peia i mua i te rapu." },
+        { title: "Te whakaute i te waahi", description: "Ko nga huarahi rumaki tahi-hanga i nga huarahi rumaki kua kore e hoki mai nga moni ki nga kaitoi, iwi, me nga kaiwhakaako." },
+        { title: "Ai hei co-part", description: "Tauira Automation Iniana, whakamaoritanga, me nga kaikiri haere i te wa e tukuna ai e te tangata te maero whakamutunga." },
+        { title: "Te tiakitanga o te oranga", description: "Tirohanga Papamuri, Te whiu whiu, me te tautoko ora kia mau tonu nga haerenga hauora me nga nekehanga o te whanau." }
+      ]
+    },
+    growth: {
+      title: "Mahere Whakawhanaketanga Ao",
+      description: "Ka whakarewahia e matou a Aotearoa, ka huri ki waho, ka whakauru i nga roopu roopu a rohe e te whenua tae noa ki te ahua o te Arataki i nga waahi katoa.",
+      destinations: [
+        {
+          label: "Whakarewa ngaru",
+          region: "Awauma Alaunpad",
+          description: "Akarana me Te Whanganui-a-Tara e whakaatu ana he pehea te tere o te hunga pono i te wa e piki ana te aratohu i a raatau peke.",
+          coords: { top: "74%", left: "86%" }
+        },
+        {
+          label: "Piripiri Tasman",
+          region: "Ko nga upoko auaha a Ahitereiria",
+          description: "Poihakena, Melbourne, me Brisbane Hono ki te taha o muri, e hanga ana i te piriti kaore e pai ana mo nga tangata haereere e whakawhiti ana i te Tasman.",
+          coords: { top: "67%", left: "80%" }
+        },
+        {
+          label: "Tekau Mori",
+          region: "Ataata Ahia-Kiwa",
+          description: "Singapore, Auckland, Seoul, me Bali Ka kawe mai i nga taranata reorua kore mo nga haerenga o te Moana-nui-a-Kiwa.",
+          coords: { top: "55%", left: "66%" }
+        },
+        {
+          label: "Gateways",
+          region: "Europe & Middle East",
+          description: "London, Paris, Berlin, me Dubai Hoster Flagship Blagship Squads e hono ana i nga taone nui me te ratonga hou.",
+          coords: { top: "42%", left: "50%" }
+        },
+        {
+          label: "Amerika crescendo",
+          region: "Te Taitokerau & Amerika ki te Tonga",
+          description: "Mai i a Vancouver ki São Paulo e whakamarama ana i nga upoko auaha na nga taenga mai o nga korero a te rohe.",
+          coords: { top: "58%", left: "30%" }
+        },
+        {
+          label: "Papanga o te ao",
+          region: "Nga taone nui katoa i muri",
+          description: "Ko te mahere e mau tonu ana, kotahi ano te whenua i te wa kotahi, tae noa ki nga kawanatanga katoa.",
+          coords: { top: "35%", left: "45%" }
+        }
+      ]
+    }
+  },} satisfies Record<AboutLocale, AboutCopy>;
 
 const About = () => {
   const { i18n } = useTranslation();

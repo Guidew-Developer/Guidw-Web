@@ -9,7 +9,8 @@ const languages = [
   { code: "pt", name: "Português", dir: "ltr" },
   { code: "es", name: "Español", dir: "ltr" },
   { code: "fr", name: "Français", dir: "ltr" },
-  { code: "he", name: "עברית", dir: "rtl" }
+  { code: "he", name: "עברית", dir: "rtl" },
+  { code: "mi", name: "Te Reo Māori", dir: "ltr" }
 ] as const;
 
 type LanguageCode = (typeof languages)[number]["code"];

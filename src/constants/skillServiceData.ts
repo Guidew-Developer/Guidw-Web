@@ -524,7 +524,91 @@ const services: Partial<Record<SupportedLocale, Record<string, SkillService>>> =
         { q: "צריך להזמין מקום מראש?", a: "מומלץ לשריין מראש כדי שנכין את החומרים והציוד המתאימים." }
       ]
     }
-  }
+  },
+
+  mi: {
+    "39": {
+      title: "Yoga & awheawhe whaikorero",
+      description:
+        "Ko nga huihuinga yoga me te rongoa i arahina e te kaiwhakaako whaimana. Whiriwhiria te akomanga kotahi, akomanga roopu, he kaupapa-a-hinengaro ranei.",
+      mode: "In-tangata / mariko",
+      location: "Akarana, Poneke",
+      price: 200,
+      currencySymbol: "NZ $",
+      priceUnit: "ia haora",
+      timeRange: "Mon-Sun 8: 00-20: 00",
+      highlights: ["Kaiwhakaako Yoga Tiwhikete", "Mahere mahere", "Te Toihau", "Te toenga o te hinengaro-tinana"],
+      images: [
+        "https://images.unsplash.com/photo-154538936-cf0906944944495e",
+        "https://images.unsplash.com/photo-16039883607-e1e466999992c6",
+        "https://images.unsplash.com/photo-1599474214141454546C2A89"
+      ],
+      provider: {
+        name: "Kakapi Wang",
+        avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+        rating: 4.9,
+        certifications: ["Kua whakamanahia e te Alliance Yoga", "Kaiawhina Maatauranga"],
+        verified: true
+      },
+      reviews: [
+        {
+          user: "Ms. Zhang",
+          avatar: "https://randomuser.me/api/portraits/women/22.jpg",
+          rating: 5,
+          date: "2024-03-21",
+          content: "Te aratohu ngaio e tino pai ana ki taku kounga moe."
+        },
+        {
+          user: "Mr. Li",
+          avatar: "https://randomuser.me/api/portraits/men/54.jpg",
+          rating: 4,
+          date: "2024-04-11",
+          content: "Kaitohutohu a te Manawanui me nga huihuinga pai. Ka taea e au te ite i te rereketanga."
+        }
+      ],
+      faq: [
+        { q: "He aha nga taputapu e hiahiatia ana e au?", a: "He maaka yoga me te mauritau. Katoa etahi atu props e whakaratohia ana." },
+        { q: "He pai mo nga timatanga?", a: "Tino-Ko te kaiwhakaako mo nga akoranga mo to taumata." }
+      ]
+    },
+    "40": {
+      title: "Studio Chivio",
+      description:
+        "He maha nga akoranga a-ringa e arahina ana e te kaitoi tohunga. Akohia nga tikanga tukurua me te hoahoa i o waahanga ake.",
+      mode: "I-tangata",
+      location: "O Christchurch",
+      price: 280,
+      currencySymbol: "NZ $",
+      priceUnit: "ia haora",
+      timeRange: "Tue-Sun 10: 00-18: 00",
+      highlights: ["Taputapu ngaio", "Kinn ratonga pupuhi", "Kaiako Whaiaro", "Nga rauemi kei roto"],
+      images: [
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261",
+        "https://images.unsplash.com/photo-1578749556568-BC2c40E68B61",
+        "https://images.unsplash.com/photo-1604242684300-b8e24FDB149c"
+      ],
+      provider: {
+        name: "Chen Chen",
+        avatar: "https://randomuser.me/api/portraits/men/36.jpg",
+        rating: 4.8,
+        certifications: ["Toi Toi me nga Kaitoi a Motu", "Tiwhikete Mātauranga"],
+        verified: true
+      },
+      reviews: [
+        {
+          user: "Ms. Wang",
+          avatar: "https://randomuser.me/api/portraits/women/28.jpg",
+          rating: 5,
+          date: "2024-03-25",
+          content: "Te aratohu wheako-nui me te hanga i taku waahanga kohua tuatahi!"
+        }
+      ],
+      faq: [
+        { q: "Ka taea e au te tango i taku mahi?", a: "Ae, ka oti te pupuhi ka taea e koe te tiki i te reira, i tukuna mai ranei." },
+        { q: "Me titiro au ki mua?", a: "Ka tūtohutia te pukapuka whakamua kia taea ai e tatou te whakarite rauemi." }
+      ]
+    }
+  },
 };
 
 export const getSkillService = (language: string, id: string) => {

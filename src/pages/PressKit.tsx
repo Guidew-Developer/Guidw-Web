@@ -5,7 +5,7 @@ import { Download, Image, FileText, Video } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { resolveLocale } from "@/utils/locale";
 
-const localeKeys = ["en", "zh", "pt", "es", "fr", "he"] as const;
+const localeKeys = ["en", "zh", "pt", "es", "fr", "he", "mi"] as const;
 type PressKitLocale = (typeof localeKeys)[number];
 
 type Asset = {
@@ -235,14 +235,48 @@ const copy: Record<PressKitLocale, PressKitCopy> = {
       email: "press@guidew.app",
       back: "חזרה לעמוד התקשורת"
     }
-  }
-};
+  },
+
+  mi: {
+    hero: {
+      badge: "Pouaka Media",
+      title: "Tikiake Griseps waitohu waitohu",
+      description: "Ko nga waitohu a te hunga he logos, kotahi-pagers, me nga mata o te taupānga kia noho tonu nga korero me nga hoa mahi."
+    },
+    assets: [
+      {
+        icon: Image,
+        title: "Nga waitohu waitohu",
+        description: "Ko nga waitohu a te kura tuatahi / tuaruatanga me nga ture maamaa me nga tikanga o te Wordwant Gradient.",
+        link: "/App_logo.jpeg"
+      },
+      {
+        icon: FileText,
+        title: "He tirohanga hua",
+        description: "Misioni, tauira pakihi, Taone Taone, me te whakaatu i te snapshot i roto i te doc kotahi.",
+        link: null
+      },
+      {
+        icon: Video,
+        title: "App Apiti Panui",
+        description: "Ko nga mata o te taumira teitei o te kainga, kitea, me pehea te mahi, me te tango i nga waahanga.",
+        link: null
+      }
+    ],
+    downloadLabel: "Tango",
+    cta: {
+      heading: "Me whai uiui, nui ake ranei nga rawa?",
+      description: "Whakapā atu ki ta maatau roopu korero a Media i roto i nga haora 24 me nga raraunga kua rite ki nga korero.",
+      email: "press@guidew.app",
+      back: "Hoki atu ki te whārangi Press"
+    }
+  },};
 
 const PressKit = () => {
   const { i18n } = useTranslation();
   const locale = resolveLocale(i18n.language);
   const localeKey: PressKitLocale =
-    locale === "zh" || locale === "pt" || locale === "es" || locale === "fr" || locale === "he"
+    locale === "zh" || locale === "pt" || locale === "es" || locale === "fr" || locale === "he" || locale === "mi"
       ? (locale as PressKitLocale)
       : "en";
   const content = copy[localeKey];

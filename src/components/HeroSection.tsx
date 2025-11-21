@@ -1263,7 +1263,282 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
         }
       ]
     }
-  ]
+  ],
+
+  mi: [
+    {
+      id: "tohungatanga-rohe",
+      kicker: "Nga tohunga o te rohe",
+      title: "Te tohungatanga o te rohe,",
+      highlight: "I runga i te tono",
+      description:
+        "Tūhono me te hunga e whakawhirinaki ana mo nga haerenga taone, whakamaoritanga, he pukenga pukenga-katoa mai i te taupānga kotahi.",
+      image:
+        "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Tūruhi tohunga i te rohe",
+      layout: "default",
+      cta: "search",
+      badges: [
+        {
+          id: "badge-location-mi",
+          type: "location",
+          position: "-left-4 top-1/4",
+          delay: "0s"
+        },
+        {
+          id: "badge-community-mi",
+          type: "community",
+          position: "right-4 bottom-1/4",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "elite-advisors-mi",
+      kicker: "Tohutohu a te Ao",
+      title: "Tohunga puta noa i te ao,",
+      highlight: "To poari whaiaro",
+      description:
+        "Hurihia te rautaki, te ahurea, me te tipu me nga kaiwhakaako rangatira, nga kaitohutohu VC, me nga fixers o te rohe ka uru atu ki to waea i roto i nga meneti.",
+      image:
+        "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Huihuinga Kaitohutohu me nga kiritaki",
+      layout: "reverse",
+      cta: "button",
+      button: {
+        label: "Pukapuka he kaitohutohu tūmataiti",
+        to: "/discover?category=business"
+      },
+      badges: [
+        {
+          id: "badge-board-mi",
+          type: "info",
+          title: "Rautaki • Ahurea • Ture",
+          subtitle: "Kaitohutohu kua kōwhiria",
+          position: "-left-5 top-1/3",
+          delay: "0.4s"
+        },
+        {
+          id: "badge-response-mi",
+          type: "info",
+          title: "30 meneti te whakautu",
+          subtitle: "24/7 ā-ao",
+          position: "right-3 bottom-1/3",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "hangahanga-papai",
+      kicker: "Ko te concierge elite",
+      title: "Ora rite he piriona,",
+      highlight: "Nga tohunga e tū ana",
+      description:
+        "Ka whakaritehia e ngā sommeliers, ngā kaipupuri poti, ngā kaihoahoa kākahu, me ngā kaitapa raruraru ngā taipitopito katoa puta noa i Aotearoa i roto i ngā meneti.",
+      image:
+        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Nga wheako whakamahere a nga roopu papai",
+      layout: "spotlight",
+      cta: "button",
+      button: {
+        label: "Wewete i te concierge VIP",
+        to: "/discover?category=professional"
+      },
+      badges: [
+        {
+          id: "badge-luxe-team-mi",
+          type: "info",
+          title: "Kaihoahoa oranga",
+          subtitle: "Concierge 6-whetu",
+          position: "-left-6 top-1/3",
+          delay: "0.4s"
+        },
+        {
+          id: "badge-luxe-response-mi",
+          type: "info",
+          title: "15 meneti te whakautu",
+          subtitle: "Kapinga ā-motu",
+          position: "right-4 bottom-1/4",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "tango-taupanga",
+      kicker: "Guidew App",
+      title: "Huri i ngā wā",
+      highlight: "Hei mākutu ā-rohe",
+      description:
+        "Tikiake i te Guidew ka karanga tonu ki ngā tohunga o Tāmaki, o Te Whanganui-a-Tara hoki—kaiako kanikani, hoa reo, kapa āwhina rānei me te tautoko AI me te VIP.",
+      image:
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Tikiake i te taupānga Guidew",
+      layout: "reverse",
+      cta: "button",
+      button: {
+        label: "Tangohia te taupānga",
+        to: "/download"
+      },
+      badges: [
+        {
+          id: "badge-app-mi",
+          type: "info",
+          title: "iOS & Android",
+          subtitle: "Karapa hei tāuta",
+          position: "-left-3 top-1/4",
+          delay: "0.5s"
+        },
+        {
+          id: "badge-vip-mi",
+          type: "info",
+          title: "Painga VIP",
+          subtitle: "Kaiāwhina mahere AI",
+          position: "right-4 bottom-1/3",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "vip-membership-mi",
+      kicker: "Guidew VIP",
+      title: "9.9 USD ia marama,",
+      highlight: "Wewete i te concierge AI",
+      description:
+        "Whakakore i te 15% utu, kōrerohia ō hiahia ki te AI, ka pai ki te ōrite matua me ngā taputapu auto-accept mō ngā kaiwhakarato i Tāmaki me Pōneke.",
+      image:
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Ko nga mema VIP e whakamahere ana me te AI",
+      layout: "immersive",
+      cta: "button",
+      button: {
+        label: "Whakauru atu ki te VIP",
+        to: "/vip"
+      },
+      badges: [
+        {
+          id: "badge-vip-fee-mi",
+          type: "info",
+          title: "Kāore he 15% utu",
+          subtitle: "Toro vip-anake",
+          position: "left-6 top-6",
+          delay: "0.4s"
+        },
+        {
+          id: "badge-vip-ai-mi",
+          type: "info",
+          title: "Kaiāwhina AI",
+          subtitle: "Whakawhanaunga matua",
+          position: "right-6 bottom-10",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "kaihanga-whatunga",
+      kicker: "Riro hei tohunga Guidew",
+      title: "Hangaia tāu ake mahi,",
+      highlight: "Hono ki te 1M+ kaihanga",
+      description:
+        "Hoahoa tō maramataka, tuku akoranga kanikani, whakamaoritanga, hoa taone rānei. Whiwhi utu nui ake, ka whakamahi i ngā taputapu AI hei whakahaere ota.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Kaihanga e whakamahere ana i ngā ara i runga rorohiko",
+      layout: "default",
+      cta: "button",
+      button: {
+        label: "Tīmata te hanga",
+        to: "/become-expert"
+      },
+      badges: [
+        {
+          id: "badge-impact-mi",
+          type: "info",
+          title: "1M+ kaihanga",
+          subtitle: "Rōpū ao i te 2026",
+          position: "-left-6 top-1/3",
+          delay: "0.5s"
+        },
+        {
+          id: "badge-earning-mi",
+          type: "info",
+          title: "Kōmihana teitei",
+          subtitle: "Utu haumaru",
+          position: "-2 bottom-1/3",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "kanikani-kura-rapu",
+      kicker: "Te Kaiwhakaako Reo",
+      title: "Rapua ngā kaiwhakaako o Aotearoa",
+      highlight: "Ko ngā kaiako reo pai",
+      description:
+        "Whakatauritea ngā kaiwhakaako reorua, ngā awheawhe rumaki, me ngā kaitohutohu whakamātautau. Tirohia he tauira reo, ka whakarite hui i te 60 hēkona.",
+      image:
+        "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Ka whakamahia e ngā akonga ngā pūkenga reo i te awheawhe",
+      layout: "editorial",
+      cta: "button",
+      button: {
+        label: "Tonoa he kaiwhakaako reo",
+        to: "/discover?category=language&tag=coaches"
+      },
+      badges: [
+        {
+          id: "badge-trial-mi",
+          type: "info",
+          title: "48h tūnga",
+          subtitle: "Whakamātautau kua whakamanahia",
+          position: "-left-6 top-6",
+          delay: "0.3s"
+        },
+        {
+          id: "badge-genres-mi",
+          type: "info",
+          title: "IELTS • Pakihi • Oranga",
+          subtitle: "30+ kaitautoko",
+          position: "right-6 bottom-8",
+          delay: "2s"
+        }
+      ]
+    },
+    {
+      id: "global-dance-mi",
+      kicker: "Ko ngā pūrākau kanikani i te karanga",
+      title: "A ani manihini i te ao,",
+      highlight: "Nga kaiako Bachata i NZ",
+      description:
+        "Mai i ngā tuanui Bohemian ki te whanga o Tāmaki, ka rere mātou i ngā toa ki tō tatau. Ako i te Bachata i roto i ngā haora e rua me te māia ki te atamira.",
+      image:
+        "https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=2070&q=80",
+      imageAlt: "Kanikani e mahi ana i te bachata me te kaiako",
+      layout: "spotlight",
+      cta: "button",
+      button: {
+        label: "Pukapuka he kaiako toa",
+        to: "/discover?category=dance"
+      },
+      badges: [
+        {
+          id: "badge-stars-mi",
+          type: "info",
+          title: "Toa o te ao",
+          subtitle: "Kaiako Bachata",
+          position: "-left-4 top-1/4",
+          delay: "0.3s"
+        },
+        {
+          id: "badge-sessions-mi",
+          type: "info",
+          title: "40+ huihuinga tūmataiti",
+          subtitle: "Tāmaki & Pōneke",
+          position: "right-4 bottom-1/3",
+          delay: "2s"
+        }
+      ]
+    }
+  ],
 };
 
 const badgeCopy: Partial<
@@ -1312,7 +1587,14 @@ const badgeCopy: Partial<
     locationDistance: "5 דק׳ ממך",
     communityTitle: "500+ מומחים",
     communitySubtitle: "בדיוק באזור שלך"
-  }
+  },
+
+  mi: {
+    locationTitle: "Tohunga whenua",
+    locationDistance: "5 meneti",
+    communityTitle: "500+ tohunga",
+    communitySubtitle: "I to rohe"
+  },
 };
 
 const searchCopy: Partial<
@@ -1354,7 +1636,13 @@ const searchCopy: Partial<
     placeholder: "לאן תרצו להגיע?",
     button: "חיפוש",
     slideLabel: "מעבר לשקופית"
-  }
+  },
+
+  mi: {
+    placeholder: "Kei hea koe?",
+    button: "Rapu",
+    slideLabel: "Haere ki te Kiriata"
+  },
 };
 
 type LayoutConfig = {

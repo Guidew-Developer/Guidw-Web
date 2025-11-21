@@ -636,8 +636,116 @@ const copy = {
         detail: "להפעיל מרכזים רב-לשוניים באסיה-פסיפיק, אירופה ואמריקות."
       }
     ]
-  }
-} as const;
+  },
+
+  mi: {
+    hero: {
+      badge: "Nga taone nui",
+      title: "Ko nga Kaiwhakahaere Ratonga: Auckland & Wellington",
+      description:
+        "Ko te kaiarahi i nga kairangahau reorua puta noa i nga wahanga o nga mahanga o Aotearoa, na, he haerenga, he haerenga rumaki, me nga haerenga pai.",
+      support:
+        "Ko nga taone katoa e whakakotahi ana i te taunga rererangi-a-a-mihi, nga kaiwhakataetae takiwa, nga mahi ahurea, me nga mahi a te kaitiaki ka taea e koe te karanga i roto i nga meneti."
+    },
+    stats: [
+      { value: "Keretera", label: "Ko nga kaainga kaha e karapoti ana i waenga i nga CBD, nga whanga, me nga taone nui" },
+      { value: "Rau", label: "Ko nga tohu pukenga e whakaaetia ana puta noa i te whakamaoritanga, nga mahi toi, nga mahi, te oranga, me te maatauranga" },
+      { value: "I raro i te haora", label: "Matapihi Whakawhitiwhiti mo nga tono tono i roto i nga tono i roto i ia ara" },
+      { value: "I roto i te wiki", label: "Tukunga Utu i muri i te Whakauru i nga Arotake Mutual mo te Ratonga Kua oti" }
+    ],
+    citySpotlightsSection: {
+      kicker: "Te mohio o te taone",
+      heading: "He aha ia taone nui",
+      description: "Whiriwhiria te kowhatu kia mohio ai matou ki nga punga e kapi ana e matou, a ko nga momo ratonga ratonga e whakawhirinaki ana ki te nuinga.",
+      labels: {
+        anchors: "Nga Kaitohu Motuhake",
+        experiences: "Nga Ratonga Waitohu"
+      }
+    },
+    citySpotlights: [
+      {
+        name: "Akarana",
+        intro:
+          "Ko te taone o Gateway o Niu Tireni e aukati ana i nga taunga rererangi o te Tran-Tasman, nga whanga hangarau, me nga koiora o te wai. Ko te kaiarahi i te huarahi ki te ara ki nga papa o Parnell.",
+        anchors: [
+          "AKL International ↔ Ka tutaki a CBD-me-te mihi na te taenga mai me te waka rererangi motuhake",
+          "Kei te rere a Te Tai Tokerau a Takapuna mo te oranga o te takutai, te tiaki tamariki, me nga mahi kai",
+          "Parnell, Newmarketket, me Wynyard Quarters Collesters mo te hokohoko, Labs, me nga haerenga moni"
+        ],
+        experiences: [
+          "Ko te whakahoahoa rererangi me nga putea putea, nga tuhinga tere-tere, me te whakahaere waka",
+          "Ko te whakamaoritanga o te po-te po, haerenga motuhake, me nga akoranga pop-a-bactata mo nga manuhiri",
+          "Ko te Kaihauturu Hauora me te Whare Wananga i tukuna i Mandarin, Ingarihi, Pāniora ranei"
+        ]
+      },
+      {
+        name: "Te Whanganui-a-Tara",
+        intro:
+          "Ko te whakapaipai a te kawanatanga, nga mahi toi, me te hau-a-roto o te takutai o te takutai. Ka mau tonu te kaiarahi, te haereere ahurea, me te tautoko whakaputa i piri tahi.",
+        anchors: [
+          "Wellington Rerertport ↔ Te Aro ↔ Te Aro ↔ Te Aro quronementary Whakawhitiwhiti Whakawhitiwhiti mo te Haahi-Maarama",
+          "Ko te Perfront me te Orintal Bay Prosnades mo nga Walks auaha, hararei kiriata, me nga po taonga",
+          "Ko te Hutt Lower, Porirua, me te tautoko a Johnsonville mo nga whanau me nga tohu"
+        ],
+        experiences: [
+          "Nga kaiwhakamaori o te Hui, he kaituhi tuhipoka, me nga rangatira o te poari reorua",
+          "Ko te Harbour-ki-Hill Hights me te Cractiverge Gral Plus Craft-Beer, Jazz, me te rumaki whare tapere",
+          "Ko nga haerenga a nga hohipera, ka rere te kararehe, me te pepa pepaputanga i tukuna e nga kaitiaki"
+        ]
+      }
+    ],
+    serviceLayers: {
+      kicker: "Papamahi Ratonga",
+      heading: "He aha te hunga e haereere ana i nga taone katoa",
+      description:
+        "Ahakoa ko te rohe, ko te kaiarahi te tautoko i te taenga mai, te whakamaoritanga, te whakamahere i te ahurea, me nga tohu tiaki kia pai ai ia pukapuka.",
+      pillars: [
+        {
+          icon: "plane",
+          title: "Te taenga mai me te takiuru",
+          detail: "Ka hui-hutia koe i te taunga rererangi, ngā tauranga rerenga, me ngā whakawhitinga poti kia pai ai tō taenga."
+        },
+        {
+          icon: "landmark",
+          title: "Te ahurea me te rumaki",
+          detail: "Ka arahi ngā kaitautoko ki ngā kāinga toi, ngā maakete pō, me ngā ara whakaari piri tata."
+        },
+        {
+          icon: "languages",
+          title: "Translation & Pakihi",
+          detail: "Ka hipoki ngā kaiwhakamaori i te hokohoko, ngā hohipera, ngā tari visa, ngā kooti, me ngā hui kaihoko."
+        },
+        {
+          icon: "wellness",
+          title: "Te tiaki me te kaitiaki",
+          detail: "Ko ngā kaimahi hauora, ngā kaitautoko whānau, me ngā kaiwhakatere haumaru e tiaki ana i ngā haerenga tuawhenua."
+        }
+      ]
+    },
+    roadmapHeading: "Ratonga Whakawhanake Ratonga",
+    roadmap: [
+      {
+        title: "Wāhanga 1 · MVP Runway",
+        detail: "Whakamutua te Cordirods Pukapuka i Akarana + Te Whanganui-a-Tara me te tihi o te hunga haereere me nga mano."
+      },
+      {
+        title: "Wāhanga 2 · Tauiwi-taone nui",
+        detail: "E kii ana i nga taone e rua kia nui ake ai nga tau, nga tohu pukenga kua whakaū, me te kotahitanga o te tipu-o te reo."
+      },
+      {
+        title: "Wāhanga 3 · Aratia te motu",
+        detail: "Whakanuia te tauira puta noa i a Aotearoa, e kapi ana i te tuuruhi, te maatauranga, te oranga, me nga ahuatanga whakahaere."
+      },
+      {
+        title: "Wāhanga 4 · Trans-Tasman Leap",
+        detail: "Tuwhera Poihākena, Melbourne, me nga Kamupene Brisbane i te wa e whakauru ana i te turanga kaiwhakamahi whakakotahi."
+      },
+      {
+        title: "Wā 5 · Nga pae o te ao",
+        detail: "Ko te tuku i nga mahi maha puta noa i Ahia-Moananui a Kiwa, ko Europe, me nga Amerika."
+      }
+    ]
+  },} as const;
 
 const serviceLayerIconMap = {
   plane: Plane,
@@ -650,7 +758,8 @@ const Locations = () => {
   const { i18n } = useTranslation();
   const locale = resolveLocale(i18n.language);
   const profiles = useMemo(() => getCityProfiles(i18n.language), [i18n.language]);
-  const localeKey = locale === "zh" || locale === "pt" || locale === "es" || locale === "fr" || locale === "he" ? locale : "en";
+  const localeKey =
+    locale === "zh" || locale === "pt" || locale === "es" || locale === "fr" || locale === "he" || locale === "mi" ? locale : "en";
   const content = copy[localeKey];
 
   return (

@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const cookieLocales = ["en", "zh", "es", "pt", "fr", "he"] as const;
+const cookieLocales = ["en", "zh", "es", "pt", "fr", "he", "mi"] as const;
 type CookieLocale = (typeof cookieLocales)[number];
 
 type CookieSection = {
@@ -513,8 +513,88 @@ const cookieCopy: Record<CookieLocale, CookieCopy> = {
     preferenceDescription:
       "Guidew משיקה בהדרגה מרכז חזותי לניהול העדפות בהתאם לסטנדרט התעשייה. לניהול מיידי של ההרשאות או להגשת בקשת פרטיות, שלחו הודעה ל‑privacy@guidew.app.",
     lastUpdated: "עודכן לאחרונה: 6 ביוני 2025"
-  }
-};
+  },
+
+  mi: {
+    badge: "Kaupapahere Kuki",
+    title: "Kaupapahere Kuki Aihikini",
+    description:
+      "E whakamāramahia ana e tenei kaupapa here te whakamahi i nga pihikete me nga hangarau rite ki te pupuri i a tatou hua, kia mau ki nga maakete katoa e mahi ana tatou.",
+    sections: [
+      {
+        title: "1. He aha te take e whakamahi ai te kaiarahi i nga pihikete",
+        description:
+          "Ko nga pihikete e hopu ana i nga tohu hangarau hei awhina i a maatau ki te tautoko i nga taangata takitahi me nga kaihoko umanga me te kounga rite tonu mo nga taputapu katoa.",
+        bullets: [
+          "Kia mau ki te mahi matua: kia haina koe i roto i, kia mahara koe ki te whakamana haumarutanga, me te tukutahi me nga mahi mo nga taputapu.",
+          "Tiakina te Pūrere: Aukati i nga hainatanga SPAM, aukati i nga utu tinihanga, ka kitea nga whakawhitinga rereke.",
+          "Whakapiki i te mahinga: Me mohio ki nga tohu whaarangi, rapunga ratonga, me nga haerenga mai i te wa e pai ake ai te whakapai ake.",
+          "Akoranga Whaiaro: Kia maumahara ki te reo, pai ake nga taone, whakamahia nga waahanga tohunga, me nga kaupapa kei te haere whakamua."
+        ]
+      },
+      {
+        title: "2. Nga momo momo pihikete e tuu ana matou",
+        description: "Ka whai maatau i nga waahanga pihikete e whakamahia ana me te whakahohe noa i nga whiringa kaare koe i te whakaaetanga:",
+        bullets: [
+          "E tika ana: Kia mau ki nga kaute kua whakamanahia, ka whakahoki mai i nga huihuinga, nga utu tukatuka, me te mahi i nga arowhai haumaru. Kaore e taea te whakaweto.",
+          "Mahi: Ma te mahara ki nga whiringa reo, nga kaupapa atanga, nga mahi ranei (hei tauira, te kaiwhakahaere umanga, te kaiwhakarato ranei).",
+          "Te Mahi me te Tātari: Te ine i nga haerenga, te whakauru i te whakauru, te paanga o te whakatairanga, me te hurihanga.",
+          "Pānuitanga me te tuatoru: Whakahohehia anake me te whakaaetanga ki te whakaatu i nga kaupapa arataki, tuku hoa, he whakahoki ranei."
+        ]
+      },
+      {
+        title: "3. nga tuatoru me nga kaiarahi aiao e whai ake ana",
+        description:
+          "Ka mahi tahi matou me nga kaiwhakarato o-waho i raro i nga kirimana kaha kia mau tonu te wheako aratohu me te whakatutuki.",
+        bullets: [
+          "Ko nga kaihoko a te tātari penei i te Google tātaritanga, i te ranunga ranunga ranei e whakaatu ana i nga tikanga whakamahi hua i raro i nga whakamarumaru matatau.",
+          "Ko nga utu me nga hoa tupono ka whakawhirinaki ki nga pihikete tino nui hei tirotiro i nga tinihanga me nga whakawhitinga whakatika.",
+          "Ko nga kaihaka mehua inenga e whakaatu ana i nga pika anake i muri i a koe e whakamana ana i nga pihikete hokohoko.",
+          "Ko nga hoa whakauru (Maramataka, Videos, Videos, Videom, CRM) ka whakaatu i nga wa e hiahia ana a raatau taha ki te pihikete."
+        ]
+      },
+      {
+        title: "4. Ko nga tohu o te taputapu me te hangarau rite",
+        description:
+          "I tua atu i nga pihikete Matapihi Ka whakamahia hoki e matou nga tohu tautuhi taputapu, taapiri, pikika, me te rokiroki o te rohe ki te hono i nga huihuinga ki nga waahanga rereke.",
+        bullets: [
+          "Ka kitea e nga Kaitohu Pūrere Mobile te pupuri i te mana whakahaere i te IOS me te Android.",
+          "Ka awhina nga pika me nga SDKs ki a maatau ki te whaiwhai i waenga i nga kaiarahi arataki me nga kiritaki hinonga.",
+          "Ko nga kaakaro rokiroki o te rohe i tata nei nga maakete i tata nei, mahere, mahere rauemi ranei hei whakaiti i te waa kawenga."
+        ]
+      },
+      {
+        title: "5. Me pehea te whakahaere i nga pihikete ranei",
+        bullets: [
+          "Nga Mana Whiriwhiringa: Whakakore, poraka ranei i nga pihikete ma Chrome, Safari, taha, tetahi atu tirotiro ranei.",
+          "Tautuhinga OS Mobile: E rua iOS me te Android kia tautuhi ano i nga ID whakatairanga, ki te aukati i nga panui kua tohua ranei.",
+          "Pouaka Whakaari Manakohanga: Kei te huri haere maatau i tetahi papa paerewa-a-umanga kia taea ai e koe te whakatika i etahi atu pihikete e tika ana.",
+          "Te Hokohoko Hokohoko: Hono Whakauru i nga Kaipupuri Emailmera, i nga whiringa hokohoko ranei o te Whare Whakatuturutanga Whakapaipai me te kore e pa ki nga pihikete nui."
+        ]
+      },
+      {
+        title: "6. Te pupuri raraunga me te haumaru",
+        bullets: [
+          "Ka whakakorea te pihikete, i muri ranei i muri i te whakatutukitanga o ta raatau kaupapa, a kaore e roa atu i te 13 marama.",
+          "Ko nga tātaritanga whakahiatotanga i ahu mai i nga pihikete e whakamahia ana mo nga tirohanga a te maarama me te kore e whakaatu i nga tuakiri whaiaro.",
+          "Ka tono mātou i te whakamunatanga, te uru ki nga whakahaere, me te tirotiro ki te tiaki i nga pihikete me nga raarangi e pa ana."
+        ]
+      },
+      {
+        title: "7. Nga whakahoutanga me te whakapā atu",
+        description:
+          "Ka whakahou matou i tenei kaupapa here i te wa e whakarewahia ana e matou nga mahi hou, ka whakawhānuihia ki nga rohe hou, ki te whakamahi ranei i te hangarau mehua hou.",
+        bullets: [
+          "I te mea he nui te rereketanga o te huringa kua pa ki nga kaiwhakamahi i roto i te hua, ma te imeera ranei.",
+          "Ko nga paatai ​​mo nga pihikete ka taea te tuku ki te brivacy@guidew.App ranei i tukuna mai i te pokapū awhina awhina."
+        ]
+      }
+    ],
+    preferenceTitle: "Pihikete Kuki",
+    preferenceDescription:
+      "Kei te hurihuri te kaiarahi i tetahi pokapū manakohanga-a-tinana. Hei whakahaere i nga whakaaetanga tonu ka tuku ranei i tetahi tono tūmataiti, tuku tūmataiti, emainacy.guidew.app.",
+    lastUpdated: "Whakahoutanga Whakamutunga: 6 Hune 2025"
+  },};
 
 const Cookies = () => {
   const { i18n } = useTranslation();

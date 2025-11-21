@@ -15,7 +15,7 @@ import {
   type LucideIcon
 } from "lucide-react";
 
-const vipLocales = ["en", "zh", "pt", "es", "fr", "he"] as const;
+const vipLocales = ["en", "zh", "pt", "es", "fr", "he", "mi"] as const;
 type VipLocale = (typeof vipLocales)[number];
 
 type VipBenefit = {
@@ -442,8 +442,69 @@ const vipCopy: Record<VipLocale, VipCopy> = {
     legal: "עסקאות ללא VIP נשארות עם עמלה של 15%. החיסכון מיועד רק למנוי הפעיל.",
     faqLabel: "שאלות נפוצות",
     faqTitle: "עיקרי ה‑VIP"
-  }
-};
+  },
+
+  mi: {
+    hero: {
+      badge: "Nga mema VIP",
+      title: "E rua nga arahanga VIP mo nga kaihaere me nga kaiwhakarato",
+      description:
+        "Ko te kaiarahi i te Komihana 15% mo nga pukapuka paerewa. Ko te Vip Theaw ($ 9.9 / Mo) Tango me te taapiri i te AI e rite ana ki te kaiwhakarato AI, $ 99 / Momathery, whakamaherea papaaho, me te tautoko i nga korero.",
+      cta: "Tikiake Aratohu",
+      secondaryCta: "Tirohia te RoadMap",
+      note: "Rererangi Vip $ 9.9 / Mo · kaiwhakarato VIP $ 99 / Mo · Whakakore i nga wa katoa.",
+      languagesLabel: "E waatea ana i roto i nga reo 6",
+      stackLabel: "Whakaputanga VIP",
+      stackTitle: "Nga mema motuhake",
+      priceTag: "$ 9.9 / Mo · $ 99 / Mo",
+      priceSubline: "Ka haere nga kaihaere i te 15% utu me te iriti i te aukau"
+    },
+    traveler: {
+      title: "VIP haere",
+      description: "Utu $ 9.9 / marama ki te whakarere i te 15% utu utu, korerorero ki a Ai Converiers, me te kawe i nga huarahi matua puta noa i Akarana me Poneke.",
+      priceTag: "$ 9.9 / Marama",
+      priceSubline: "Kaore he utu mo te utu mo te utu",
+      cta: "Whakahohe i te VIP TINO",
+      benefits: [
+        { title: "Kaore he 15% utu utu", detail: "Ko te VIP haere a VIP te tango i te Komihana a Guidew na reira ka utua e koe anake te utu o te kaiwhakarato." },
+        { title: "AI tono whakawhitiwhiti korero", detail: "Whakaahuahia o hiahia ki tetahi reo e tautokohia ana ka whiwhi tonu i nga whakataetae whakaipoipo." },
+        { title: "Te Whakataetae Motuhake", detail: "Ka peke atu nga tono VIP i te waa me te aro turuki i te waa taenga mai." },
+        { title: "Pōro hono", detail: "Tukuna he tohutohu, hapai i nga moni whakahoki, ka taapirihia nga UPSells me te kore e whakauru i nga korero utu." }
+      ]
+    },
+    provider: {
+      title: "Kaiwhakarato VIP",
+      description: "Whakanohia te $ 99 / marama ki te tango i te Whakaaetanga Whakatau, Whakahaerehia te whakamahere i te wa, me te whakahoki i te kiritaki i te AI i te wa e noho ana koe.",
+      priceTag: "$ 99 / Marama",
+      priceSubline: "Whakaaetia-Aunoa · AI Mahere Whakatika i te wahanga · AI Kaihoko",
+      cta: "Whakahoutanga VIP",
+      benefits: [
+        { title: "Nga ture-auto", detail: "Ko nga whiriwhiringa o nga whiriwhiringa e kaha ana ki te whakaae i nga mahi e tika ana kia kore rawa koe e ngaro i nga ota uara." },
+        { title: "AI kaihanga i te wa", detail: "Hangaia mahere-a-waho, whakamaharatanga tiwhikete, me nga raarangi arowhai taputapu i roto i te hēkona." },
+        { title: "AI Auto Tautoko-Tautoko", detail: "He kaiwhakawhiti AI whakautu ki nga whakawhitinga a nga kaihoko maha ka piki haere anake ka hiahiatia." },
+        { title: "Ko nga tohu tohu a te haerenga", detail: "Ka whakatupato koe i nga taputapu VIP i te wa e pa ana te mahi i muri mai kia mau tonu ai koe i te tatauranga tika." }
+      ]
+    },
+    timeline: {
+      title: "Hurihuri Roadmap",
+      description: "Ka tukuna e nga Kaipupuri nga kaipuke i roto i nga ngaru kia whakawhirinaki, te wai, me te tauine reanga maha.",
+      milestones: [
+        { phase: "Wāhanga 1 · Te huarahi tuatahi", target: "Te ngaru tuatahi i Akarana me te Whanganui-a-Tara", detail: "Nga rau o nga paionia e whakamahi ana i te hononga AI AID me te utu mo te whakamana i te tauira." },
+        { phase: "Wahanga 2 · Momentum", target: "Maha mano nga kai", detail: "Ka taea e nga kaiwhaiwhai te iriti i nga whiriwhiringa Advance, korerorero, me nga maramataka Richher." },
+        { phase: "Wāhanga 3 · Motu", target: "Tekau mano mano nga mano puta noa i te NZ", detail: "Kapinga whenua katoa me te tiaki kaha me nga kai kaihoahoa elite." },
+        { phase: "Wahanga 4 · Tuhinga o mua", target: "Ahitereiria Australia", detail: "Ko nga taone penei i Poihakena, me Melbourne, me Brisbane te whakamahi i te papanga VIP ano." },
+        { phase: "Wahanga 5 000", target: "Nga Moananui Taapiri", detail: "Huringa International me nga utu kua whakaritea me nga pukapuka taakaro ahurea." }
+      ]
+    },
+    faqs: [
+      { question: "Kei te hiahiatia te VIP ki te pukapuka?", answer: "Kaore. Ko tetahi kaiwhakamahi kua rēhitatia ka taea e ia nga pukapuka pukapuka, engari ka tangohia e te VIP te utu 15%, ka tono i nga tono AI, me te tuku i nga tohu matua." },
+      { question: "Ka awhina ano a VIP ki nga kaiwhakarato?", answer: "Ae. Ka whakamahia e nga kaiwhakarato te tango-aunoa, te waihanga i te wa whakarite, me nga tohu matohera-i rahuitia mo nga kaihanga Vip." },
+      { question: "Me pehea taku hono atu?", answer: "Tap te paatene Tikiake, Waitohu, ka whakahohe i te VIP mai i te ripa Wantlet. He marama te nama me te whakakore i nga waa katoa." }
+    ],
+    legal: "Kei te tohe tonu te Arataki ki te utu 15% o nga whakawhitinga kore-Vip. Ka tangohia e Vip tenei utu mo te kaihauturu i te wa e utu tonu ana nga kaiwhakarato.",
+    faqLabel: "FQ",
+    faqTitle: "Kaupapa VIP"
+  },};
 
 const Vip = () => {
   const { i18n } = useTranslation();

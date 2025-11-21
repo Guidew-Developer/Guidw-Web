@@ -190,8 +190,42 @@ const copy = {
       email: "hello@guidew.com",
       kit: "הורד ערכת מדיה"
     }
-  }
-} as const;
+  },
+
+  mi: {
+    hero: {
+      badge: "Press & Media",
+      title: "He Aratohu me nga Rauemi Panui",
+      description:
+        "Kei te hanga te kaiarahi i tetahi whatunga pukenga a-rohe. Kia mohio ki ta maatau misioni, hangarau hangarau, me nga tohu."
+    },
+    highlights: [
+      { label: "15% utu mo te papa", detail: "Te hanganga marama e whai ana i te mahi tahi i te wa roa." },
+      { label: "$ 9.9 VIP", detail: "AI ōrite, nga whakahau utu-kore, me nga tikanga matua mo nga kaiwhakamahi mana." },
+      { label: "Wheako takirua", detail: "He pai ki nga kaiwhaiwhai me nga kaiwhakarato nga hononga papa me nga ahuatanga." }
+    ],
+    notes: [
+      {
+        title: "Te atamira hua",
+        content: "Kei te arotahi a MVP ki a Akarana / Te Whanganui-a-Tara me nga kaiwhakamahi Beta 1,000, e pa ana ki te 5-10k i roto i te 12 marama."
+      },
+      {
+        title: "Nga ahuatanga angamaheni",
+        content: "Ko nga taone o taone, whakamaoritanga, i runga i nga akoranga, te kaiarahi i waho, me te tautoko i nga huihuinga me te awhina awhina."
+      },
+      {
+        title: "Nga tohu hangarau hangarau",
+        content: "AI Taunakitanga, Whakawhiti-Aunoa, whakamahere i te wa, korerorero, putea, me te mahere mahere / raarangi."
+      }
+    ],
+    cta: {
+      title: "He uiui me nga whakahoahoa",
+      description:
+        "Tono raraunga City, mahere tipu tipu, ai te ara rori, i nga tirohanga nui o te ao. Ka whakautu matou i roto i nga haora 24.",
+      email: "hello@guidew.com",
+      kit: "Tangohia te kete pāpāho"
+    }
+  },} as const;
 
 const Press = () => {
   const { i18n } = useTranslation();

@@ -7,7 +7,7 @@ import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { resolveLocale } from "@/utils/locale";
 
-const careerLocales = ["en", "zh", "pt", "es", "fr", "he"] as const;
+const careerLocales = ["en", "zh", "pt", "es", "fr", "he", "mi"] as const;
 type CareerLocale = (typeof careerLocales)[number];
 
 const copy: Record<CareerLocale, {
@@ -121,8 +121,24 @@ const copy: Record<CareerLocale, {
     perks: "מה תרוויחו",
     ctaTitle: "מוכנים להצטרף ל‑Guidew?",
     ctaDescription: "שלחו קורות חיים או תיק עבודות ל‑careers@guidew.app וספרו לנו מדוע אתם התאמה מושלמת."
-  }
-};
+  },
+
+  mi: {
+    badge: "Nga Mahi Aratohu",
+    notFound: {
+      badge: "Nga Mahi Aratohu",
+      title: "Kaore e waatea te mahi",
+      description: "Ko nga whai wāhitanga hou ka noho tonu - kia mau tonu te kanohi ki o maatau whaarangi.",
+      cta: "Hoki ki nga mahi"
+    },
+    listCta: "Tirohia nga mahi katoa",
+    roleBadge: "Mahi hou",
+    responsibilities: "Ngā mahi haepapa",
+    requirements: "Whakaritenga",
+    perks: "Ko te mea e whiwhi ana koe",
+    ctaTitle: "Kua rite ki te hono atu ki te Aratohu?",
+    ctaDescription: "Tukuna to kōpaki me te whakahou ano ki te atawhai@Guidew.App me te korero ki a maatau he aha koe he whakataetae."
+  },};
 
 const CareerDetail = () => {
   const { roleId } = useParams<{ roleId: string }>();

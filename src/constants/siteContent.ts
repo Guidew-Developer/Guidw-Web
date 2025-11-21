@@ -324,6 +324,55 @@ const cityProfiles: Partial<Record<SupportedLocale, CityProfile[]>> = {
       ]
     }
   ],
+
+  mi: [
+    {
+      id: "Akarana",
+      name: "Akarana",
+      description:
+        "Ko te hib nui rawa o te ao o Aotearoa e kapi ana i te Airport Whakawhitiwhiti, te manaaki i te motu mo nga kaihaere e tumanako ana me nga waa e maumahara ana.",
+      stats: ["Kei te tono i nga kaiarahi o te rohe", "He kaiwhakamaori maha", "Te hau, te whenua me te moana"],
+      focus: "Te Taone Arotahi MVP",
+      hero: {
+        headline: "Mai i te Rangi Towena ki te takutai, ko te tohunga pono e whakawhirinaki ana ki nga wa katoa.",
+        subtext:
+          "Nga tono noa: Te whakamaarama pakihi, te roopu roopu e haere ana, e haere ana te ra o Waiheke, me te whakawhiti-ahurea."
+      },
+      experiences: [
+        "I muri i te taunga rererangi o Akarana, ka karanga i tetahi tohunga reorua ki te awhina i nga reti motuka, te haki-hotera, me nga hapa.",
+        "Kei te hiahia koe ki te ruku ki te po? Tuhia nga kaiwaiata o te iwi, nga kaiako kanikani ranei hei arahi ia koe i nga tutaki i a koe e whakaako ana i nga nekehanga hou.",
+        "Ka taea e nga roopu hangarau te rahui i nga kaitohutohu ahumahi mo nga mahi whakaohoohoiao, i nga waahanga whakangahau ranei."
+      ],
+      logistics: [
+        "Radioge Radius: Ka taea e nga kaiwhakarato te tautuhi i te whānuitanga 15-20 km me te kaiarahi i te wa e pa ana ki te waa haere mo te ota ka whai ake.",
+        "Te utu: Kei te tautokohia te Visa / MasterCard me Stripe inaianei, me te Apple Pay / Google Utu i muri mai.",
+        "VIP Perks: Ko te riterite aunoa, te whakamahere i te wa whakarite, me te tautoko i nga kaiwhakaari mo nga kaihoe tonu."
+      ]
+    },
+    {
+      id: "Te Whanganui-a-Tara",
+      name: "Te Whanganui-a-Tara",
+      description:
+        "Ko te whakapaipai ahurea me te kiriata o Niu Tireni e whakaatu ana i te kawhe motuhake, nga awheawhe auaha, me te tautoko hui ngaio.",
+      stats: ["Te Whakahauhau ahurea", "Tautoko huihuinga", "Kaitohutohu o waho"],
+      focus: "Te Taone Whakataetae Tuatahi",
+      hero: {
+        headline: "Te wheako toi, kiriata, me te taiao i roto i te taone nui-kaore e ngaro i te waa.",
+        subtext:
+          "Tono Tono: Te Ahumahi Ahumahi Kiriata, Te Whakariterite i nga Huihuinga mo nga Huihuinga, me nga huarahi kawhe motuhake."
+      },
+      experiences: [
+        "Ka taea e te Filving nga mahi a te kiriata me nga kaihanga o te rohe me nga kaihanga o te rohe me te kite i te tuunga o te umanga.",
+        "Ka whakaputahia e nga kaiwhakaora nga rangatira kawhe hei hoahoa i nga hikoi e whakarite ana i nga tohu tohu o Te Whanganui-a-Tara.",
+        "Ko nga Kaituku o waho e kitea ana e nga kaiarahi e mohio ana ki te Wairarapa me te takutai o Kāpiti ki te whakamahere i te ra tereina-tere-tere."
+      ],
+      logistics: [
+        "Ka taea e te Whuthorit terrain te kaiwhakarato ki te huri i nga ota ka huri i nga ota; Ka pana te kaiarahi i nga haerenga me nga tohu o te rangi i te waa tino.",
+        "Ko nga huihuinga a te kawanatanga me nga umanga ka hangaia he tono pumau mo te whakamaoritanga me te tuhi i nga ratonga.",
+        "Ko te tuku tohu tohu me nga raarangi ka awhina i nga kaiwhakarato ki te hanga tere me te wikitoria i nga pukapuka."
+      ]
+    }
+  ],
 };
 
 const careerOpenings: Partial<Record<SupportedLocale, CareerOpening[]>> = {
@@ -670,7 +719,79 @@ const careerOpenings: Partial<Record<SupportedLocale, CareerOpening[]>> = {
         "מסלול צמיחה להזדמנויות התרחבות גלובליות"
       ]
     }
-  ]
+  ],
+
+  mi: [
+    {
+      id: "tangata-kaihoahoa-kaihoahoa",
+      title: "Kaihoahoa Hua",
+      location: "Auckland / Mamao NZ",
+      tags: ["Pūnaha Hoahoa", "He tohu tohutohu ratonga"],
+      description:
+        "Ahua whakawhiti-reo, nga wheako maha me te tautuhi i te hoahoanga korero mo nga kaihaerere me nga kaihoko kaiwhakarato.",
+      responsibilities: [
+        "Ko te hoa me nga hua me nga mahi ki te mahere haere i nga haerenga kaiwhakamahi me nga tohu ratonga ratonga.",
+        "Hangaia he punaha hoahoa e tautoko ana i nga reo maha, nga papatae tae, me te aratau pouri.",
+        "Prototype me te whakahaere i nga whakamatautau ka taea te pupuri i to maatau mahere MVP 6-marama mo te ara."
+      ],
+      requirements: [
+        "5+ tau te waihanga pūkoro me nga wheako paetukutuku mo nga hua o nga kaihoko, maakete ranei.",
+        "He wheako-ringa me nga mahere, raarangi, karere, me etahi atu papa UI matatini ranei.",
+        "Whakamarie e mahi ana i te reo Ingarihi, Haina ranei; Ko te mohiotanga mo te maakete haere a Aotearoa ko te taapiri."
+      ],
+      perks: [
+        "Te tika me te momo mahi-tawhiti",
+        "Te rangatiratanga o nga whakataunga wheako hua me te roopu whakatuu",
+        "Ko te tono haerenga a-tau hei tirotiro i te whatunga aratohu"
+      ]
+    },
+    {
+      id: "Full-Stack-Miihini",
+      title: "Te Miihini Katoa",
+      location: "Wellington / Mamao NZ",
+      tags: ["Urupare", "Node.js", "Mahere SDK"],
+      description:
+        "Hangaia te Mahere Whenua / Raarangi Raupapa Akoranga, Whakatauhia te whakaaro arorau, me nga utu / utu putea.",
+      responsibilities: [
+        "Tukuna he Mahere Tiriti + Raarangi te atanga e rere ana i nga waahi me nga tātari.",
+        "Te whakawhanake i te Whakataunga Whakatau, Auto-Whakaaetia te arorau-aunoa, me te AI whakamahere whakamahereri.",
+        "Te pupuri i nga utu, putea, ohauru, me te haumaru o Teihana."
+      ],
+      requirements: [
+        "He mohio ki te tauhohenga, te tuhi, node.js, me nga taputapu hou penei i te ahua o muri ranei.js ranei",
+        "Te wheako me nga mahere / waahi, whakawhitiwhiti korero tūturu, utu ranei.",
+        "Te kounga o te waehere me te tirohanga i roto i nga taiao tere."
+      ],
+      perks: [
+        "Mamao-tuatahi me te hui a-tau i roto i te-tangata",
+        "Whakauru ki te hoahoanga hangarau matua",
+        "Tahua ako ā-tau mō te huihuinga, ki ngā akoranga rānei"
+      ]
+    },
+    {
+      id: "Te Taone-Whakahaere",
+      title: "Ko nga mahi a te taone nui",
+      location: "Akarana",
+      tags: ["Te tipu o te Whakatau", "Hapori"],
+      description:
+        "Tupu te turanga kaiwhakarato rohe me te whakarite tiwhikete me nga whakangungu whakangungu puta noa i nga waahanga penei i te kanikani, whakamaori, me nga mahinga o waho.",
+      responsibilities: [
+        "Hoahoa mahere mo te whakatipu me te waihanga tiwhikete, whakangungu, me nga kaupapa whakahiato.",
+        "Ko te hoa me nga mahi turuhi, maatauranga, me nga huihuinga huihuinga ki te whakarereke i nga ratonga.",
+        "Whakamahia nga raraunga hei whakapai ake i te pai o te whakautu me te makona o te kaiwhakamahi."
+      ],
+      requirements: [
+        "3+ tau i roto i nga ratonga rohe, nekeneke, me nga mahi maakete ranei me nga wheako kaiarahi a te kapa.",
+        "Te maarama hohonu mo nga taonga ahurea o Akarana me nga tuuruhi tuuruhi.",
+        "Ko te whakawhitiwhiti korero a te kaiwhakawhitiwhiti e taea ai te huri i te rautaki ki te mahi."
+      ],
+      perks: [
+        "Whakapaahia te tauira whakahaere o te taone me nga Kaipupuri",
+        "He mahi tirotiro a te taone nui",
+        "Huarahi ki nga whai wāhitanga nui o te ao"
+      ]
+    }
+  ],
 };
 
 const blogPosts: Partial<Record<SupportedLocale, BlogPost[]>> = {
@@ -1783,7 +1904,194 @@ const blogPosts: Partial<Record<SupportedLocale, BlogPost[]>> = {
         }
       ]
     }
-  ]
+  ],
+
+  mi: [
+    {
+      id: "Te whatunga-a-rohe",
+      icon: "mahere whenua",
+      iconLabel: "Tirohanga ā-rohe",
+      title: "He aha te hunga e haererere ana e hiahia ana te hunga haereere i nga whatunga pukenga a rohe atu i te wa ake",
+      date: "2024-12-12",
+      summary:
+        "Mai i Te Paanui ki nga Tikanga huna, ka hono honohono e te hunga haereere me nga takiwa ki te whakaoti i te āputa-maero whakamutunga, ka wetewete i nga wheako pono.",
+      sections: [
+        {
+          heading: "Te maero whakamutunga i roto i te taone ke",
+          content:
+            "Ka whakatikahia nga waka me nga hotera, engari ko nga haora 72 tuatahi e whakatau ana he pehea te ahua o te haerenga. Ka taea e koe te kii i a koe nga kaainga mo te awhina reo, te taatai ​​ahurea, me te tautoko a te tangata i te waa ka tae mai koe. Engari ki nga arotake-panuku kore-panui, ka tohua e koe he manuhiri rererangi rererangi, tirotirohia, haerenga haerenga-me te tango i te poto o te tangata i roto i nga meneti."
+        },
+        {
+          heading: "Nga paanga o te whatunga e rua",
+          content:
+            "Ka tukuna e nga kaiwhakarato nga tohu tohu, tohu, me nga korero hei whakapakari i te whakawhirinaki. Ka wehe nga kaiwhakamahi i nga arotake, te matamata, me te whakauru atu ki nga ohaurunga VIP, te hanga kaupapa mo etahi atu tohunga kia uru atu. Ko ia ota kua oti te whangai i tetahi kauwhata kounga e whakaatu ana i te waatea, te wa whakautu, me te whakaatu i te utu mo te tangata haere."
+        },
+        {
+          heading: "Te Mana o AI + Tangata",
+          content:
+            "Ko nga tono a Ai e tono ana, e hiahia ana nga tohu, me te mahi i nga mahi, engari ko te ratonga ka takahia e te iwi. Ko te kaiarahi i te hangarau kei roto i te papamuri ko te hono ki te taangata ake, te whakatikatika, me te maarama ahurea."
+        },
+        {
+          heading: "He aha te tono a te hunga haereere",
+          content:
+            "Ko nga waahanga o runga kei roto i te taunga rererangi, te whakamaoritanga ohorere mo nga haumanu, nga wheako i roto i nga tamariki, me nga huihuinga kaihoroi. Ko te tikanga poto noa \"me\" te taraiwa reorua ki te tiki i nga maatua, whakaturia nga kaari SIM, me te whakarite i te oma kai. \" Ka tūtohuhia e matou enei mahi me nga paanui mo te tango i nga waahanga, me nga kaitakawaenga ahurea, te viplife ranei."
+        },
+        {
+          heading: "Te hoahoa whakawhirinaki mo nga tohunga o te rohe",
+          content:
+            "Ka hangaia e nga tohunga nga kaari ratonga me te waa, te utu, me nga whakaritenga, me whakapiri i nga tohu: Tiwhikete, ataata Itono, te kapinga taunahatanga, me nga tohutoro hapori. Ka maumahara te kaiarahi ki a raatau ki te whakahou i nga tuhinga 90 me nga utu mo nga utu whakaae tonu me nga utu taapiri me te tino teitei."
+        },
+        {
+          heading: "He whakatauranga mo nga mahi taone",
+          content:
+            "Ko ia taone he purapura kia 30 nga kaiwhakarato pono puta noa i te whakamaoritanga, te whakahoahoa, nga wheako ahurea, te oranga, me te nekeneke. Nga kura reo-a-rohe, nga kanikani kanikani, nga papa tuuruhi-a-tari hei mahi whakamana. Kia whiti te kaha o te tuku i nga tohunga mo te kiromita tapawha i te taone nui o te taone nui, ka whakatuwherahia e matou nga ohaurunga VIP me nga rahui whakawhiti-taone."
+        },
+        {
+          heading: "Te wahi e tango ana matou i muri",
+          content:
+            "Ko te taua o te papa takaro ka piki ki Poihakena, Singapore, me Osaka. Kei te tuku matou i nga momo tohu AI maha, me nga tohu a te inihua, me nga umanga-a-ringa, me te haere o te tangata haere i nga waahi katoa o Apac."
+        }
+      ]
+    },
+    {
+      id: "VIP-Whakawhiti",
+      icon: "reo",
+      iconLabel: "Nga waahanga VIP",
+      title: "Urunga Whakawhiti VIP: Tautoko i te reo-tere",
+      date: "2024-11-28",
+      summary:
+        "Ka taea e nga kaiwhakamahi VIP te karanga i nga kaiwhakamaori whaimana i nga wa katoa, nga huihuinga i te wa e pai ana ki te whakauru AI, ko te mema kotahi te utu.",
+      sections: [
+        {
+          heading: "He aha te $ 9.9 / marama nga take",
+          content:
+            "Ko nga kaiwhakamahi VIP Hūpeke Komihana me te whakaahua i o raatau hiahia ki tetahi rerenga korero, ma te tuku i tetahi whakaahua pepa. Ko te AI te whakaatu i te waa poto, e whakaatu ana i a Jargon, ka taunaki i te kaiwhakamaori tika, aratohu, he taraiwa reo reorua ranei i roto i te 60 hēkona."
+        },
+        {
+          heading: "Te Whakataetae Motuhake",
+          content:
+            "Ka tono i te mata ki runga i nga kaiwhakarato runga e pa ana ki te waatea, nga pukenga, nga rekoata tautukunga, me te wa hou. Ko nga ota VIP e pa ana ki te ara tere tere me nga whakamaharatanga aunoa kia taea ai e nga kaiwhakamaori te kore e whakahoutia te taupānga."
+        },
+        {
+          heading: "Te Haumaru me te Whakapono",
+          content:
+            "Katoa nga kaiwhakamaori katoa e tuku ana me te whakaotinga ngaio, ka taea te tuku ake i nga tiwhikete me nga arowhai papamuri. Ka taea e nga kaihoko hinonga te tono NDAS, ki te HIPAA-rite ranei nga tohu muna-rite e piri ana ki nga tono VIP katoa."
+        },
+        {
+          heading: "Whakamahia nga keehi i a maatau VIPS",
+          content:
+            "Ko nga rerenga noa: te whakauru o te hohipera me te tango i nga haerenga, nga haerenga haumi me te whakamaarama a nga matua, nga hui a nga Kaiako, me nga arotake kirimana whakamutunga. Ko nga Manakohanga Aratau VIP VIP-reo, tangi, te matauranga ranei o te matauranga-na reira ka hoki ano nga mahi mo meake nei."
+        },
+        {
+          heading: "Whakaritenga Kaihautū me te whakamahana",
+          content:
+            "Ko nga kaiwhakamaori te tukutahi a Google, e marama ana ranei nga maramataka, ka tautuhi i te haora haora, ka taea te huri ki te tango i nga mahi-aunoa mo nga kiritaki whakahoki ano. Ka maumahara te kaiarahi ki a ratau ki te whakahou i nga tiwhikete ia 6 marama me te tuku i nga tauira AI mo nga ahuatanga taapiri penei i nga aituatanga rongoa."
+        },
+        {
+          heading: "Te nama, te hanganga ture, me te tūmataiti",
+          content:
+            "I tae tonu mai nga kaiwhiwhi ki nga waehere whakapaunga mo nga tono visa, i nga kereme inihua ranei. Ko nga tuhinga tuhi korero, tirohia nga tuhi oro, me nga tuhinga kua hainatia ka nohoia; Ka taea e nga kaiwhakamahi te tono ki te mukua, i te kaweake ranei mo nga ture whakahaere."
+        },
+        {
+          heading: "RoadMap: I tua atu i te whakamaoritanga",
+          content:
+            "Panuku ake: Te hononga o te reo inamata mo nga waea o waho, me nga umanga umanga, me nga ratonga nekeneke kia taea ai e te kaiwhakamaori te eke ki nga kaiwhakawhitiwhiti. Ka whakawhānui atu nga here VIP ki te kapi me te tautoko i te ture."
+        }
+      ]
+    },
+    {
+      id: "Wellington-Bathata",
+      icon: "rangi",
+      iconLabel: "He Korero Hapori",
+      title: "Ko te rapu i te kaiako Bactata i Poneke e tango i tetahi tap",
+      date: "2024-11-02",
+      summary:
+        "Ka tohatohahia e te kaini kanikani pehea te tuhi i tetahi kaiwhakaako o te rohe, ka huri i tana kaainga ki te wharepukapuka pop-ake, me pehea te whai i te whatunga pukenga, me te whai i nga mahi a te hapori.",
+      sections: [
+        {
+          heading: "Me pehea te tiimata o te tono",
+          content:
+            "I tuhia noa e te kaiwhakamahi \"Kei te hiahia au i te akoranga bachata i tenei wiki, pai ki te kaainga.\" I tapiritia e ia nga horopaki e pa ana ki tana rahi o te rūma noho, te taumata wheako, me nga hiahia puoro. I roto i nga meneti e waru, ka papakihia e te Kaihokohoko e toru nga whiringa toa me nga whiringa taapiri penei i te kawe whakaata, te taputapu oro ranei."
+        },
+        {
+          heading: "He aha nga whakaaturanga o nga kaiwhakarato",
+          content:
+            "Ka tukuna e nga kanikani nga tohu whakaako, taipitopito, nga hononga honohono kanikani, me nga reiti kia mohio ai nga kaiwhakamahi ki ta raatau ahua me te ngaiotanga. Ko nga maramataka a-ringa e whakaatu ana ko nga ahiahi e haere ana ratou puta noa i Te Aro, Maunga Cook, i te ipurangi ranei, me nga wa whakautu-a-waa ka whakamanahia nga tangata hou."
+        },
+        {
+          heading: "Magic Magic",
+          content:
+            "Kotahi nga akoranga-kotahi i takahia me nga kupu puoro a rohe i nui ake i te akomanga - ka hurihia hei whakawhiti ahurea. I whakaaria mai e te kaiako nga mahana i whakaaweahia e te mahi whakaari rori o Te Whanganui-a-Tara me te takai ki te kaitakaro o te tipu o Chilean DJ."
+        },
+        {
+          heading: "Te whakarite i te huihuinga",
+          content:
+            "Ka tohatohahia e te kaiarahi he raarangi arowhai e hipoki ana i te waahi papa, te hau, me nga hoa noho. I tukuna e te kaiako he titi mo te taenga mai, i whakamahia i roto i-taupānga mo te uru o te ara, me te whakauru i te whakamarumaru o te whakamarumaru i mua i te whakamarama me te hora."
+        },
+        {
+          heading: "Te utu, te whakapiri, me nga taapiri",
+          content:
+            "Ko te utu o te turanga he $ 95 NZD mo te 90 meneti, me tetahi kete taputapu $ 20 me nga kaikorero me nga whakaata whakaata. Ka mutu te utu i muri i te wa i tohua ai te kaiako i te huihuinga, a ka taia te kaiwhakamahi 15% me te tuhi tere e whakaatu ana i te reo reorua."
+        },
+        {
+          heading: "Te paanga mo nga kaiwhakarato o te rohe",
+          content:
+            "Ka poipoia e te hunga kanikani ano he toa, ka tuhia e ratou nga nama, nga roopu roopu ranei, hono ki nga utu mo ia wiki, me te iriti i nga tohu mo te wa tika. Ko nga huihuinga angitu e whangai ana i te reel miramira nui hei awhina i a raatau ki te hoko i nga ratonga miihini ki nga huihuinga me nga marena."
+        },
+        {
+          heading: "Pānga Ripa Hapori",
+          content:
+            "I muri i te akoranga, i uru atu te kaiwhakamahi ki te roopu korero korero mo te iwi e haere ana i nga hapori pāpori, nga reti utu, me nga Taunakitanga Studio. I naianei te kaiako inaianei i te akomanga o te akomanga-a-marama noa mai i nga tono tohutohu rite."
+        }
+      ]
+    },
+    {
+      id: "kaiwhakarato-waitohu",
+      icon: "kāpehu",
+      iconLabel: "Pukapuka Kaituku",
+      title: "Me pehea te whakamahi i nga kaiwhakarato ki te hanga i nga waitohu whaiaro",
+      date: "2024-10-15",
+      summary:
+        "Whakaatuhia te Whakaaturanga, Tiwhikete, Nga Mahi Airongo / Ataata / Whakaaetia nga tohu VIP, me te whakamahi i nga Iti Iniana hei hanga i tetahi umanga mamati me nga utu iti.",
+      sections: [
+        {
+          heading: "Te hoahoa i to Storefront mamati",
+          content:
+            "Ko nga korero katoa ka tiimata me te taitara e whakaahua ana i te misioni: Te Whakataetae reorua, Te Kohinga ahurea, Akoranga. Ka tohua e nga kaiwhakarato tetahi whakapakoko Hero, Radius Ratonga Raarangi, Nga Reo, Nga taputapu, nga taputapu, me nga Tiwhikete Hapori kia mohio ai nga kainoho."
+        },
+        {
+          heading: "Ka wikitoria nga tohu",
+          content:
+            "Ko te BIOS taipitopito, nga taiepa tiwhikete, nga ataata ratonga, me nga utu maatauranga e whakatau ana ahakoa te hunga e haere ana, e kaha ana ki te pukapuka. Ko nga kaiwhakarato PIN tohu (Naati, awhina, manaaki, manaaki, te tuku i nga reia poto, ka tapiritia nga whakaaturanga mai i nga ota arataki o mua."
+        },
+        {
+          heading: "Pahi, utu, me nga Upsells",
+          content:
+            "Ka taea e koe te mau i nga ratonga penei i te whakamaoritanga 90-meneti me nga mahi, e rua haora-haora ranei e haere ana me nga taapiri kawe waka. Kei roto i nga taapiri te whakauru i nga reti o te mokete, nga utu o te Rush, nga tohu VIP-anake ranei penei i te whakatika i te waa. Ka whakaitihia e nga tima iti te tarai me te whakapiki i te hurihanga."
+        },
+        {
+          heading: "Automation & AI",
+          content:
+            "Kaiwhakarato VIP Ka whakaaehia e nga kiritaki pono, me nga huarahi whakamahere me Ai, me te pupuri i nga Maramataka i tirotirohia ma Google, kei te ngaro ranei nga pukapuka takirua kia ngaro nga pukapuka takirua. Ko nga tohu whakauru-whakaraerae-whakarapopototanga me uru ki nga tono ngaio e rite ana ki te tuku."
+        },
+        {
+          heading: "Tuhinga o mua",
+          content:
+            "Nga tohu, nga whakatauranga, nga whakautu urupare-waa, me te \"Whakamutunga\" nga tohu awhina awhina awhina i te kohi i te whakapaipai o te Trust Trust. Ko nga Reels Tohu whakahoahoa whakaahua, oro, nga kupu urupare ranei mo te taunakitanga pāpori e taea ai e te tangata haere i muri mai i te hēkona."
+        },
+        {
+          heading: "Mīhini hea",
+          content:
+            "Ko te whiu, te utu putea ranei o te rohe e whakahaerehia ana i ia wiki me nga whakatairanga utu inamata kua huakina ma te whakaotinga. Ka whakaatuhia e nga papaa nga momo tono ki runga, tukurua-kiritaki, te tapahi a te kiritaki, me te whakakore i nga kaiwhakarato ka taea e nga kaiwhakarato nga tuku, nga kaimahi ranei."
+        },
+        {
+          heading: "Te tipu haere",
+          content:
+            "Kei roto i nga maturuturu a muri ake ko nga whakawhitiwhiti korero ataata, nga whaarangi hokohoko hokohoko, me nga kaupapa whakatairanga me nga papa tuuruhi. Ka taea e nga kaiwhakarato te kowhiri ki nga wheako whakahoahoa, ki nga waahi hokohoko ranei ki te neke atu i nga pukapuka kotahi."
+        }
+      ]
+    }
+  ],
 };
 
 const resolveCollection = <T,>(collection: Partial<Record<SupportedLocale, T>>, language: string): T =>

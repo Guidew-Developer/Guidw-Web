@@ -2054,8 +2054,275 @@ const serviceCopy: Partial<Record<SupportedLocale, Record<string, { title: strin
       description: "מטבח פופ-אפ מגבש צוות ותפריט מקורי בזמן קצר מאוד.",
       location: "אוקלנד, ניו זילנד"
     }
-  }
-};
+  },
+
+  mi: {
+    "1": {
+      title: "Auckland huna Gems Gems",
+      description: "Kitea nga mea ngaro me nga tino manakohia i to ra tuatahi i te taone nui.",
+            location: "Auckland, Aotearoa"
+    },
+    "2": {
+      title: "Haereere Toi Toi Barcelona",
+      description: "Kei te torotoro i nga tohu ki tetahi kaitoi o te rohe e mohio ana ki nga korero katoa kei muri i te peita.",
+            location: "Auckland, Aotearoa"
+    },
+    "3": {
+      title: "Te whakamaoritanga pakihi",
+      description: "Ko te kaiwhakamaori whaimana mo nga huihuinga nui o nga huihuinga me nga hoa o te ao.",
+            location: "Auckland, Aotearoa"
+    },
+    "4": {
+      title: "Te whakamaoritanga rongoa rongoa",
+      description: "He tika te whakamaarama i nga wa o te hohipera kaore e ngaro.",
+            location: "Auckland, Aotearoa"
+    },
+    "5": {
+      title: "He awheawhe popa Japanese",
+      description: "Ringa-i runga i te potiki potae i hangaia ki nga timatanga me nga kaiwhaiwhai.",
+            location: "Auckland, Aotearoa"
+    },
+    "6": {
+      title: "Tautoko hangarau ohorere",
+      description: "Ka karangahia te tohunga mo te waea, rorohiko pona, me nga raru ohorere ranei.",
+            location: "Auckland, Aotearoa"
+    },
+    "7": {
+      title: "Te whakamahere huihuinga mo te meneti whakamutunga",
+      description: "Kamupene, whanau, ko nga pop-Up ranei e mau ana i nga haora.",
+            location: "Auckland, Aotearoa"
+    },
+    "8": {
+      title: "Te whakatikatika i nga purongo",
+      description: "Aukati i nga riihi me nga clogs tere me te 30-meneti te whakamana.",
+            location: "Auckland, Aotearoa"
+    },
+    "9": {
+      title: "Haerere kai pono",
+      description: "Tapahia nga kaimoana huna a Bangkok i pa ki o hiahia.",
+            location: "Auckland, Aotearoa"
+    },
+    "10": {
+      title: "Rauemi rautaki rautaki pakihi",
+      description: "Kaiwhakahaere Matua mo te Whakahauhau me te Whakatikatika Whakatikatika.",
+            location: "Auckland, Aotearoa"
+    },
+    "11": {
+      title: "Hui Tapu",
+      description: "A haapii i te mau faature e te mau horo'a mai i te Feeo Paster Kyoto.",
+            location: "Auckland, Aotearoa"
+    },
+    "12": {
+      title: "Te whakaaroaro me te whakaoranga ohorere",
+      description: "Ko te ngakau mohio mo nga mahi pukumahi e hiahia ana ki te whakaara tere.",
+            location: "Auckland, Aotearoa"
+    },
+    "13": {
+      title: "Te tiaki mo te pepeke ohorere",
+      description: "Ka tae mai te Kaitohu kua tohua i roto i te haora mo nga hikoi, me nga meds, te kai ranei.",
+            location: "Auckland, Aotearoa"
+    },
+    "Rongo 14": {
+      title: "Te raumati whakamutunga-meneti",
+      description: "He pai te tiaki-tirotiro i te papamuri me nga reanga katoa.",
+            location: "Auckland, Aotearoa"
+    },
+    "15": {
+      title: "Ko te whakahoahoa haere a te tangata ake",
+      description: "Whakahoahoa Whakahoahoa Whakahoahoa, whare rohe, me te whakariterite i nga takiuru i roto i nga haora.",
+            location: "Auckland, Aotearoa"
+    },
+    "16": {
+      title: "48-haora te tautuhi",
+      description: "Ko nga kaiwhakawhitiwhiti ngaio e kii ana i nga kaata, ki te tunu, me nga pepa i roto i te wiki kotahi.",
+            location: "Auckland, Aotearoa"
+    },
+    "17": {
+      title: "Puta kakahu",
+      description: "Ko nga Stylist Scouts Boutoques me te tuku i te whakakii i te whakakii-a-rite ki to korero.",
+            location: "Auckland, Aotearoa"
+    },
+    "Ng 18": {
+      title: "I runga i-papanga whakaora",
+      description: "He raupaparorohiko raupaparorohiko raupaparorohiko raupaparorohiko raupaparorohiko, waea, me nga taputapu maamaa-kaainga i runga i te tono.",
+            location: "Auckland, Aotearoa"
+    },
+    "19": {
+      title: "Tirohia te Tirotiro Rapid",
+      description: "Ka arotakehia e CFP nga waahanga mahi me nga take i roto i te huihuinga kotahi.",
+            location: "Auckland, Aotearoa"
+    },
+    "20": {
+      title: "Kirimana awhina tuatahi",
+      description: "Ko nga whakaaetanga a nga roia e arotake ana i nga whakaaetanga me te whakamarama i nga haki whero i te reo maamaa.",
+            location: "Auckland, Aotearoa"
+    },
+    "21": {
+      title: "Kaihanga kaihanga takiwa",
+      description: "Hono atu ki nga kaitoi a rohe mo te kakano, te miihini, te huihuinga ranei o te tukinga.",
+            location: "Auckland, Aotearoa"
+    },
+    "22": {
+      title: "Express Depalsa Coast",
+      description: "Ko nga kaitakaro kanikani motuhake mo nga huihuinga, maia, he mahi ranei.",
+            location: "Auckland, Aotearoa"
+    },
+    "23": {
+      title: "Whakaora i te Kari taone",
+      description: "Ko Horciulturist te whakahou i nga pakihi me nga papa me nga mahere whakato i te tau.",
+            location: "Auckland, Aotearoa"
+    },
+    "24": {
+      title: "Kaiwhakangungu kaha a te Haumaru",
+      description: "Ko nga kaiwhakangungu kua tohua e kawe ana i nga taputapu mo te hii whakakakara, ki te whakaora ranei.",
+            location: "Auckland, Aotearoa"
+    },
+    "25": {
+      title: "Ko te tapanga kai o Chef-LED",
+      description: "Ka whakaakohia e Chef Chef a-rohe nga rihi haina i roto i to kaihini, i te papaa-ake ranei.",
+            location: "Auckland, Aotearoa"
+    },
+    "26": {
+      title: "Nga Kura Tuarua Flash",
+      description: "Ko nga mahi a te roopu e rua-a-iwi e kiriata ana me te tuku i nga ra-a-ra ano.",
+            location: "Auckland, Aotearoa"
+    },
+    "27": {
+      title: "Kawhe me te whakawhitiwhiti korero",
+      description: "Me tutaki nga hoa rangatira ki nga Pakeha Kaipupuri me nga hikoi taone.",
+            location: "Auckland, Aotearoa"
+    },
+    "28": {
+      title: "Ko te kaitohutohu a Stem mo te piiraa",
+      description: "Ko te kaiwhakaako o runga-tier e whakaoti ana i nga kaipupuri pāngarau me te pūtaiao i roto i nga huihuinga e arotahi ana.",
+            location: "Auckland, Aotearoa"
+    },
+    "29": {
+      title: "Whakahauhau Whanau",
+      description: "Ko te kaiarahi whaimana te whakahaere i nga arowhai pai, te mahi, me te waa hapori.",
+            location: "Auckland, Aotearoa"
+    },
+    "30": {
+      title: "He Huringa VR Abr",
+      description: "Ko te Lab Mobile VR e kawe mai ana i nga haerenga haerenga mariko ki nga tari, ki nga roopu ranei.",
+            location: "Auckland, Aotearoa"
+    },
+    "31": {
+      title: "Tātari Tuuturu Matua",
+      description: "Te whakapiki i te whaainga Pro me te whakaora i nga huarahi kore-ururua.",
+            location: "Auckland, Aotearoa"
+    },
+    "32": {
+      title: "Ma te Mind-Up Gym",
+      description: "Ka whakahaerehia e te Kaitohutohu Raihana Raihana te tere tere o nga huihuinga i runga i te papaanga, i te ipurangi ranei.",
+            location: "Auckland, Aotearoa"
+    },
+    "33": {
+      title: "He whakamahana tonu te waahi",
+      description: "Ka nohoia e te kaihoahoa nga ruma me nga raarangi taputapu mo te taputapu me nga hoapaki kaihoko.",
+            location: "Auckland, Aotearoa"
+    },
+    "34": {
+      title: "Pikitia-Up Contrastment",
+      description: "Ka huihui nga Kaipupuri DJs, nga kaiwhakaari, me nga rangatira iti iho i te 24 haora.",
+            location: "Auckland, Aotearoa"
+    },
+    "35": {
+      title: "Nga taonga tuku taonga a-rohe o te rohe",
+      description: "Ko nga hononga honohono e kaha ana nga tohu mai i nga kaihanga e rite ana ki to korero.",
+            location: "Auckland, Aotearoa"
+    },
+    "Awa 36": {
+      title: "48-haora haerenga",
+      description: "Ka hangaia e te mahere whakamaherea te tautuhi i nga pouaka whakaata me te tautoko ora mo ia ra.",
+            location: "Auckland, Aotearoa"
+    },
+    "37": {
+      title: "Studio Hauora Hauora",
+      description: "Ka tātarihia e te Kaitohu Kai-a Diditian me te mahere mahere kai me te hokohoko hoko.",
+            location: "Auckland, Aotearoa"
+    },
+    "389": {
+      title: "Kōrero Kōkiri",
+      description: "Ko te kaitango whakaahua te atarangi o to haerenga ki te hopu i nga huinga haerenga cinematic.",
+            location: "Auckland, Aotearoa"
+    },
+    "39": {
+      title: "3-ra Maunga Yoga Road",
+      description: "Mawhiti katoa te huarahi ki te whaiwhakaaro me te whai whakaaro me nga hikoi.",
+            location: "Auckland, Aotearoa"
+    },
+    "40": {
+      title: "Restident Pootter",
+      description: "Kotahi-i runga i te wa studio ki te hoahoa, maka, ka toro atu ki o waahanga ake.",
+            location: "Auckland, Aotearoa"
+    },
+    "41": {
+      title: "Pokapū whakahau marena",
+      description: "Ka mau te maakete a Boutique i nga waahi, nga kaihoko, me nga tikanga i te panui poto.",
+            location: "Auckland, Aotearoa"
+    },
+    "42": {
+      title: "RAPID TOPE TIKANGA USSKIll LAB",
+      description: "Ka hangaia e te kaiako hinonga nga awheawhe i whakamahia hei kaiarahi mo te kaiarahi, i nga waahanga hua ranei.",
+            location: "Auckland, Aotearoa"
+    },
+    "43": {
+      title: "Taua-wiki e huri haere ana",
+      description: "Ko te Stylists Declututh, te papanga, me nga raarangi taera me te whakaahua Pro.",
+            location: "Auckland, Aotearoa"
+    },
+    "44": {
+      title: "He tapawha accent",
+      description: "Ka hangaia e nga kaiwhaiwhai nga kaiwaiata e whitu-ra hei whakahou i te whakamaoritanga me te matatau.",
+            location: "Auckland, Aotearoa"
+    },
+    "455": {
+      title: "Te kaha o te mahi",
+      description: "Ko nga pukenga Mahere Mahere, korero, me nga mahere a-waho i roto i te huihuinga e arotahi ana.",
+            location: "Auckland, Aotearoa"
+    },
+    "46": {
+      title: "Mahere Moni Moni",
+      description: "Ko nga kaiwhakaari whakamahere, taake, me te rongoa mo nga whakataunga nui.",
+            location: "Auckland, Aotearoa"
+    },
+    "47": {
+      title: "He Maarama Home Smart",
+      description: "Ko nga hoahoa a Interaitor e hono ana i te rama, te huarere, me nga ahuatanga haumaru.",
+            location: "Auckland, Aotearoa"
+    },
+    "488": {
+      title: "LOCITS NOMAD",
+      description: "Ka whakahaerehia e te Kaihanga Haeretanga Visa, Inihua, me nga pukapuka maha-aukati.",
+            location: "Auckland, Aotearoa"
+    },
+    "49": {
+      title: "Whanonga tautuhi anō i te bootcamp",
+      description: "Ko nga kaiwhakangungu e hoahoa ana i nga mahere-kaainga mo te awangawanga, i nga pepi kaha ranei.",
+            location: "Auckland, Aotearoa"
+    },
+    "50": {
+      title: "Kaiwhakaako Akoranga-kaupapa",
+      description: "Ka hangaia e te Kaitohu te pai o nga pods Steam me te tuku urupare ahunga whakamua.",
+            location: "Auckland, Aotearoa"
+    },
+    "51": {
+      title: "Pakihi Haumaru",
+      description: "Ko nga raru o nga kaitohutohu mo te kaitohutohu, ka whakauruhia nga tohu, me nga whare whakangungu.",
+            location: "Auckland, Aotearoa"
+    },
+    "52": {
+      title: "Kāhua whenua",
+      description: "Ko nga mahere kaihoahoa kei te piki haere me te mahi whakangungu haere tonu.",
+            location: "Auckland, Aotearoa"
+    },
+    "53": {
+      title: "Te poipoi a te Chef Colch",
+      description: "Ko te Kuki-Uptchen Co-hanga i te menus me te whakamahi i nga kaimahi mo nga kaupapa o te Boutique.",
+            location: "Auckland, Aotearoa"
+    }
+  },};
 
 const categoryIds = [
   "localguide",

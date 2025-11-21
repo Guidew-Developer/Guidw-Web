@@ -95,7 +95,7 @@ const SkillServiceDetail = () => {
             <div className="flex-1">
               <h3 className="font-semibold mb-2">{t("skillDetail.faq")}</h3>
               <ul>
-                {service.faq?.map((item: any, i: number) => (
+                {service.faq?.map((item, i) => (
                   <li key={i} className="mb-2">
                     <strong>Q: {item.q}</strong>
                     <div className="text-gray-600">A: {item.a}</div>
@@ -109,7 +109,7 @@ const SkillServiceDetail = () => {
           <div className="mb-10">
             <h3 className="text-lg font-semibold mb-3 text-brand-teal">{t("skillDetail.reviews")}</h3>
             <div className="flex flex-col gap-6">
-              {service.reviews.map((review: any, idx: number) => (
+              {service.reviews.map((review, idx) => (
                 <div key={idx} className="border-b pb-4">
                   <div className="flex items-center mb-2 gap-3">
                     <Avatar className="h-8 w-8">

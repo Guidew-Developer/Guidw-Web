@@ -21,7 +21,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import DownloadApp from "@/components/DownloadApp";
 import { resolveLocale } from "@/utils/locale";
 
-const serviceLocales = ["en", "zh", "pt", "es", "fr", "he"] as const;
+const serviceLocales = ["en", "zh", "pt", "es", "fr", "he", "mi"] as const;
 type ServiceLocale = (typeof serviceLocales)[number];
 
 type ServiceTemplate = {
@@ -316,8 +316,51 @@ const serviceCopy: Record<ServiceLocale, ServiceTemplate> = {
       experience: "3 שנות הדרכה באוקלנד",
       verified: true
     }
-  }
-};
+  },
+
+  mi: {
+    title: "Auckland Laneways & Izakaya He whaikorero",
+    description:
+      "Whaaia tetahi huihuinga reorua na roto i te Ponsonby Backstreets me nga tuanui o Britomart. Ka pai ki a maatau nga papa iti o te haina, ka whakatauhia e matou te tikanga ahurea, me te mahere whakairo e whakaatu ana i nga tohu arataki. Ka mutu nga mahi katoa ki o hoahoatanga, panui ahurea, oranga, i muri mai-pouri ranei.",
+    location: "Auckland, Aotearoa",
+    duration: "3 haora",
+    groupSize: "1-5 manuhiri",
+    price: 95,
+    currencySymbol: "NZ $",
+    languages: ["Ingarihi", "Pēpoi", "Mandarin"],
+    includedFeatures: [
+      "Te micro-whakarite i whakaritea me nga tuhinga a AI-Hangaia",
+      "Nga Taonga Kai me te inu inu mo te wiki",
+      "Laneyways huna, te kari o te kari, me nga panui taiwhanga",
+      "Etiquette kaiako mo nga hui me nga po",
+      "Te whakamaoritanga i runga i-tono + nga rerenga ohorere"
+    ],
+    reviews: [
+      {
+        author: "Hara L",
+        avatar: reviewAvatars.sarah,
+        rating: 5,
+        date: "2024-10-15",
+        text: "Hiroshi i whakaranu i te kai, indie, me nga mahi pakihi i te ahiahi kotahi. I pai ahau mo nga hui, a ka kite tonu i te taha tino pai o Akarana."
+      },
+      {
+        author: "Michael C.",
+        avatar: reviewAvatars.michael,
+        rating: 4,
+        date: "2024-09-28",
+        text: "He rere nui i waenga i nga tutaki huna me nga taonga tuku iho. Ko te whakamaoritanga ora i te wa o te haerenga o te kaihoko ki te whakaora ia tatou i te waa."
+      }
+    ],
+    provider: {
+      name: "Hiri K.",
+      avatar: providerAvatar,
+      rating: 4.9,
+      responseTime: "Whakautu i roto i te 5 min",
+      languages: ["Ingarihi", "Pēpoi", "Mandarin"],
+      experience: "3 nga tau e arahi ana i Akarana",
+      verified: true
+    }
+  },};
 
 const ServiceDetail: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -326,7 +369,7 @@ const ServiceDetail: React.FC = () => {
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const locale = resolveLocale(i18n.language);
   const localeKey: ServiceLocale =
-    locale === "zh" || locale === "pt" || locale === "es" || locale === "fr" || locale === "he"
+    locale === "zh" || locale === "pt" || locale === "es" || locale === "fr" || locale === "he" || locale === "mi"
       ? (locale as ServiceLocale)
       : "en";
   const serviceTemplate = serviceCopy[localeKey];

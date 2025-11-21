@@ -9,6 +9,7 @@ import ptTranslations from './locales/pt.json';
 import esTranslations from './locales/es.json';
 import frTranslations from './locales/fr.json';
 import heTranslations from './locales/he.json';
+import miTranslations from './locales/mi.json';
 
 i18n
   .use(LanguageDetector)
@@ -20,7 +21,8 @@ i18n
       pt: { translation: ptTranslations },
       es: { translation: esTranslations },
       fr: { translation: frTranslations },
-      he: { translation: heTranslations }
+      he: { translation: heTranslations },
+      mi: { translation: miTranslations }
     },
     fallbackLng: 'en',
     interpolation: {
@@ -37,4 +39,3 @@ i18n
 document.documentElement.dir = i18n.language === 'he' ? 'rtl' : 'ltr';
 
 export default i18n;
-

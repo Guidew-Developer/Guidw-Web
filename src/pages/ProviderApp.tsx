@@ -22,7 +22,7 @@ import { useTranslation } from "react-i18next";
 import { resolveLocale } from "@/utils/locale";
 import { translateGuidewMessage } from "@/utils/guidewMessages";
 
-const providerLocales = ["en", "zh", "pt", "es", "fr", "he"] as const;
+const providerLocales = ["en", "zh", "pt", "es", "fr", "he", "mi"] as const;
 type ProviderLocale = (typeof providerLocales)[number];
 
 type ProviderCopy = {
@@ -229,8 +229,37 @@ const providerCopy: Record<ProviderLocale, ProviderCopy> = {
       walletVipNotice: "שינויים במנוי VIP מתבצעים באפליקציית הלקוחות."
     },
     primaryService: "שירות מוביל: {title} · {category}"
-  }
-};
+  },
+
+  mi: {
+    heroTitle: "Hoki mai, {ingoa}",
+    heroDescription: "Whakahaerehia nga ota, korero ki nga kiritaki, kia mau tonu to whakaaro ki te wikitoria i nga pukapuka.",
+    autoAccept: {
+      label: "Whakaaetia Aunoa (VIP)",
+      vipRequired: "Whakahoutu ki te VIP kia taea ai te whakaae-auto.",
+      enabled: "Whakahohe Aunoa Whakahohe.",
+      disabled: "Ka uru te aukati aunoa."
+    },
+    refreshWallet: "Waiata Whakatau",
+    tabs: { orders: "Nga whakahau", messages: "Kōrerorero", profile: "Kōtaha", wallet: "Kopa" },
+    toasts: {
+      travelReminderTitle: "Te wa ki te upoko mo to ratonga}",
+      travelReminderDescription: "Whakaaetia etahi meneti mo te haerenga ki te {wāhitau}.",
+      rangeWarningTitle: "Ko te ratonga e haere ake nei neke atu i to radius haerenga kua whirihora",
+      rangeWarningDescription: "Tawhiti {tawhiti} km vs radius {radius} km.",
+      acceptSuccess: "Kia whakaaetia. Whakapā atu ki te tangata haereere inaianei.",
+      startInfo: "Ratonga tohu kua rite ki te ahunga whakamua.",
+      completeSuccess: "Kua oti te ratonga. Ka marama nga whiwhinga i muri i nga ra e 7.",
+      itineraryShared: "I tohatohaina te waahi ki te tangata haere.",
+      profileUpdated: "Kua whakahoutia te korero.",
+      availabilityUpdated: "Kua whakahoutia.",
+      verificationRequest: "Tono whakamana mo te {pae} i tukuna.",
+      reviewSaved: "Ka arotakehia te arotake. Ka whakaputahia e maatau nga waahanga e rua.",
+      tipRecorded: "Ko te matamata i tuhia mo te ripoata.",
+      walletVipNotice: "Ko nga huringa VIP me whakahaere i te taupānga haereere."
+    },
+    primaryService: "Ratonga tuatahi: {taitara} {{Kāwai}"
+  },};
 
 const formatMessage = (template: string, vars: Record<string, string | number>) =>
   template.replace(/\{(\w+)\}/g, (_, key) => String(vars[key] ?? ""));
