@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ShieldCheck, Clock, Wallet2, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const termsLocales = ["en", "zh", "es", "pt", "fr", "he", "mi"] as const;
 type TermsLocale = (typeof termsLocales)[number];
@@ -136,7 +135,7 @@ const termsCopy: Record<TermsLocale, TermsCopy> = {
     support: {
       heading: "Need legal or operational support?",
       contact: "Email: legal@guidew.com",
-      secondary: "Hotline (24/7): +64 9 555 0100",
+      secondary: "Hotline (24/7): +64 (21) 513-258",
       note: "For product feedback or accessibility requests, reach out via help.guidew.com so we can route you to the correct team."
     },
     sections: [
@@ -323,7 +322,7 @@ const termsCopy: Record<TermsLocale, TermsCopy> = {
     support: {
       heading: "需要法律或运营支持？",
       contact: "邮箱：legal@guidew.com",
-      secondary: "24/7 热线：+64 9 555 0100",
+      secondary: "24/7 热线：+64 (21) 513-258",
       note: "如需产品反馈或无障碍支持，请前往 help.guidew.com，我方会转交至对应团队。"
     },
     sections: [
@@ -510,7 +509,7 @@ const termsCopy: Record<TermsLocale, TermsCopy> = {
     support: {
       heading: "¿Necesitas soporte legal u operativo?",
       contact: "Correo: legal@guidew.com",
-      secondary: "Línea 24/7: +64 9 555 0100",
+      secondary: "Línea 24/7: +64 (21) 513-258",
       note: "Para comentarios de producto o accesibilidad visita help.guidew.com y te conectaremos con el equipo adecuado."
     },
     sections: [
@@ -697,7 +696,7 @@ const termsCopy: Record<TermsLocale, TermsCopy> = {
     support: {
       heading: "Precisa de suporte jurídico ou operacional?",
       contact: "E-mail: legal@guidew.com",
-      secondary: "Linha 24/7: +64 9 555 0100",
+      secondary: "Linha 24/7: +64 (21) 513-258",
       note: "Para feedback de produto ou acessibilidade, utilize help.guidew.com para encaminharmos ao time correto."
     },
     sections: [
@@ -884,7 +883,7 @@ const termsCopy: Record<TermsLocale, TermsCopy> = {
     support: {
       heading: "Besoin d'aide juridique ou opérationnelle ?",
       contact: "Email : legal@guidew.com",
-      secondary: "Hotline 24/7 : +64 9 555 0100",
+      secondary: "Hotline 24/7 : +64 (21) 513-258",
       note: "Pour vos retours produit ou besoins d'accessibilité, contactez help.guidew.com afin d'être redirigé vers l'équipe adéquate."
     },
     sections: [
@@ -1071,7 +1070,7 @@ const termsCopy: Record<TermsLocale, TermsCopy> = {
     support: {
       heading: "צריכים סיוע משפטי או תפעולי?",
       contact: "אימייל: legal@guidew.com",
-      secondary: "קו חירום 24/7: ‎+64 9 555 0100",
+      secondary: "קו חירום 24/7: ‎+64 (21) 513-258",
       note: "לפידבק מוצרי או בקשות נגישות, פנו ל‑help.guidew.com ונפנה אתכם לצוות הרלוונטי."
     },
     sections: [
@@ -1262,7 +1261,7 @@ const termsCopy: Record<TermsLocale, TermsCopy> = {
     support: {
       heading: "Kei te hiahia te tautoko ture, whakahaere ranei?",
       contact: "Email: legal@guidew.com",
-      secondary: "Hotline (24/7): +64 9 555 0100",
+      secondary: "Hotline (24/7): +64 (21) 513-258",
       note: "Mo nga urupare hua, nga tono urunga ranei, toro atu ma te help.guidew.com kia taea ai e matou te neke ki te roopu tika."
     },
     sections: [
@@ -1393,9 +1392,6 @@ const Terms = () => {
   const { i18n } = useTranslation();
   const activeLocale = getTermsLocale(i18n.language);
   const content = termsCopy[activeLocale];
-  const handleLanguageSelect = (locale: TermsLocale) => {
-    i18n.changeLanguage(locale);
-  };
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-lightGray">
@@ -1408,24 +1404,6 @@ const Terms = () => {
             <p className="text-lg text-gray-600 leading-relaxed">
               {content.description}
             </p>
-            <p className="text-sm text-gray-500 mt-4 italic">
-              {content.languagePrompt}
-            </p>
-            <div className="flex flex-wrap gap-3 mt-4">
-              {termsLocales.map(locale => {
-                const isActive = activeLocale === locale;
-                return (
-                  <Button
-                    key={locale}
-                    size="sm"
-                    variant={isActive ? "default" : "outline"}
-                    onClick={() => handleLanguageSelect(locale)}
-                  >
-                    {locale.toUpperCase()}
-                  </Button>
-                );
-              })}
-            </div>
           </div>
         </section>
 

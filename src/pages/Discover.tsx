@@ -2408,11 +2408,22 @@ const Discover: React.FC = () => {
     });
   }, [locale]);
 
+  // Normalize strings so searches ignore case and accent differences across locales.
+  const normalizeText = (text: string) =>
+    (text ?? "")
+      .toLocaleLowerCase(locale)
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim();
+
+  const normalizedQuery = normalizeText(searchQuery);
+
   const filteredServices = services.filter(service => {
     const matchesSearch =
-      service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.location.toLowerCase().includes(searchQuery.toLowerCase());
+      !normalizedQuery ||
+      [service.title, service.description, service.location]
+        .map(field => normalizeText(field))
+        .some(field => field.includes(normalizedQuery));
     const matchesCategory = selectedCategory === "all" || service.categoryKey === selectedCategory;
     return matchesSearch && matchesCategory;
   });
