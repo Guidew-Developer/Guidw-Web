@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -10,9 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
-import { useGuidew } from "@/state/GuidewProvider";
 import type { CityLocation, UserRole } from "@/types/guidew";
-import { createId } from "@/utils/id";
 import { CheckCircle2, MapPin, ShieldCheck, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 
@@ -37,6 +35,7 @@ type AuthCopy = {
   cardTitle: string;
   cardDescription: string;
   cardTags: string[];
+  restrictionMessage: string;
   login: {
     trigger: string;
     emailLabel: string;
@@ -118,6 +117,7 @@ const authCopy: Record<AuthLocale, AuthCopy> = {
     cardTitle: "Guidew Access",
     cardDescription: "Log in or register in one portal to manage bookings, VIP requests, and cross-city journeys.",
     cardTags: ["Last-mile concierge", "Auckland · Wellington exclusive", "VIP response < 5 min"],
+    restrictionMessage: "Registration and login are currently limited to whitelist members only.",
     login: {
       trigger: "Login",
       emailLabel: "Email",
@@ -193,6 +193,7 @@ const authCopy: Record<AuthLocale, AuthCopy> = {
     cardTitle: "Guidew Access 门户",
     cardDescription: "在同一入口完成登录 / 注册，集中管理预约、VIP 礼遇与跨城体验。",
     cardTags: ["最后一公里礼宾", "奥克兰 · 惠灵顿专属", "VIP 响应 < 5 分钟"],
+    restrictionMessage: "目前仅支持白名单用户进行注册和登录。",
     login: {
       trigger: "登录",
       emailLabel: "邮箱",
@@ -269,6 +270,7 @@ const authCopy: Record<AuthLocale, AuthCopy> = {
     cardTitle: "Guidew Access",
     cardDescription: "Faça login ou cadastre-se em um único portal para gerenciar reservas, pedidos VIP e jornadas multicidade.",
     cardTags: ["Concierge last-mile", "Exclusivo Auckland · Wellington", "Resposta VIP < 5 min"],
+    restrictionMessage: "No momento, apenas usuários na whitelist podem se registrar ou fazer login.",
     login: {
       trigger: "Entrar",
       emailLabel: "Email",
@@ -344,7 +346,8 @@ const authCopy: Record<AuthLocale, AuthCopy> = {
     },
     cardTitle: "Guidew Access",
     cardDescription: "Inicia sesión o regístrate en un único portal para gestionar reservas, solicitudes VIP y viajes multicidad.",
-    cardTags: ["Concierge last-mile", "Exclusivo Auckland · Wellington", "Respuesta VIP < 5 min"],
+   cardTags: ["Concierge last-mile", "Exclusivo Auckland · Wellington", "Respuesta VIP < 5 min"],
+    restrictionMessage: "Por ahora solo los usuarios en la lista blanca pueden registrarse o iniciar sesión.",
     login: {
       trigger: "Iniciar sesión",
       emailLabel: "Corlanguages electrónico",
@@ -421,6 +424,7 @@ const authCopy: Record<AuthLocale, AuthCopy> = {
     cardTitle: "Guidew Access",
     cardDescription: "Connectez-vous ou créez un compte pour gérer réservations, demandes VIP et trajets multi-villes.",
     cardTags: ["Conciergerie last-mile", "Exclusif Auckland · Wellington", "Réponse VIP < 5 min"],
+    restrictionMessage: "Pour le moment, seuls les membres en liste blanche peuvent s'inscrire ou se connecter.",
     login: {
       trigger: "Connexion",
       emailLabel: "Email",
@@ -497,6 +501,7 @@ const authCopy: Record<AuthLocale, AuthCopy> = {
     cardTitle: "Guidew Access",
     cardDescription: "התחברו או הירשמו במקום אחד כדי לנהל הזמנות, בקשות VIP וטראקים בין ערים.",
     cardTags: ["קונסיירז' קילומטר אחרון", "ייחודי לאוקלנד · וולינגטון", "תגובה ל‑VIP < 5 דק׳"],
+    restrictionMessage: "כרגע רק משתמשים שנמצאים ברשימת ההיתרים יכולים להירשם או להתחבר.",
     login: {
       trigger: "התחברות",
       emailLabel: "אימייל",
@@ -574,6 +579,7 @@ const authCopy: Record<AuthLocale, AuthCopy> = {
     cardTitle: "Te uru kaha",
     cardDescription: "Takiuru ki te rehita ranei i tetahi raarangi hei whakahaere i nga pukapuka, nga tono VIP, me nga haerenga whakawhiti-taone.",
     cardTags: ["Ko te Whakataetae Tuarua", "Auckland · Wellington motuhake", "Whakautu VIP <5 min"],
+    restrictionMessage: "I tēnei wā mā te hunga kei te rārangi mā anake e āhei te rēhita me te takiuru.",
     login: {
       trigger: "Takiuru",
       emailLabel: "Aiea",
@@ -632,12 +638,10 @@ const otherCity: CityLocation = {
 };
 
 const Auth = () => {
-  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const activeTab = searchParams.get("tab") === "register" ? "register" : "login";
   const { i18n } = useTranslation();
   const content = authCopy[getAuthLocale(i18n.language)];
-  const { registerUser, signIn, upgradeVip } = useGuidew();
   const [role, setRole] = useState<UserRole>("user");
   const [city, setCity] = useState<CityLocation>(defaultCity);
   const [name, setName] = useState("");
@@ -646,66 +650,20 @@ const Auth = () => {
   const [subscribeVip, setSubscribeVip] = useState(false);
   const [loginEmail, setLoginEmail] = useState("");
 
+  const showRestrictionNotice = () => {
+    toast.error(content.restrictionMessage);
+  };
+
   const handleRegister = () => {
-    if (!name || !email) {
-      toast.error("Please provide name and email");
-      return;
-    }
-
-    const userId = createId("user");
-
-    const createdId = registerUser({
-      id: userId,
-      name,
-      email,
-      role,
-      lastKnownLocation: city,
-      preferredLanguages: languages
-        .split(",")
-        .map(value => value.trim())
-        .filter(Boolean),
-      verifiedLevels: ["basic"]
-    });
-
-    if (subscribeVip) {
-      upgradeVip(createdId);
-    }
-
-    toast.success("Account created. Welcome to Guidew!");
-    navigate(role === "provider" ? "/provider" : "/app");
+    showRestrictionNotice();
   };
 
   const handleLogin = () => {
-    if (!loginEmail) {
-      toast.error("Please enter your email");
-      return;
-    }
-    const success = signIn(loginEmail);
-    if (success) {
-      toast.success("Welcome back");
-      navigate("/app");
-    } else {
-      toast.error("Account not found, please register");
-    }
+    showRestrictionNotice();
   };
 
-  const handleSocial = (provider: "google" | "apple") => {
-    const pseudoEmail = `${provider}_${Math.random().toString(36).slice(2, 8)}@example.com`;
-    const pseudoName = provider === "google" ? "Google User" : "Apple User";
-    const userId = createId("user");
-
-    registerUser({
-      id: userId,
-      name: pseudoName,
-      email: pseudoEmail,
-      role: "user",
-      lastKnownLocation: defaultCity,
-      preferredLanguages: ["English"],
-      verifiedLevels: ["basic"]
-    });
-
-    toast.success(`Signed in with ${provider === "google" ? "Google" : "Apple"}`);
-    navigate("/app");
+  const handleSocial = (_provider: "google" | "apple") => {
+    showRestrictionNotice();
   };
 
   const handleTabChange = (value: string) => {
