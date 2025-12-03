@@ -184,7 +184,7 @@ const copy: Record<PressKitLocale, PressKitCopy> = {
       {
         icon: FileText,
         title: "Fiche produit",
-        description: "Mission, modèle économique, plan d’expansion et aperçu des fonctionnalités.",
+        description: "Mission, modèle économique et aperçu des fonctionnalités clés.",
         link: "#"
       },
       {

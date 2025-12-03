@@ -11,7 +11,7 @@ const copy = {
       badge: "Press & Media",
       title: "Guidew news and media materials",
       description:
-        "Guidew is building a global local-skill network. Learn about our mission, tech stack, and milestones."
+        "Guidew is building a trusted local-skill network in Aotearoa. Learn about our mission, tech stack, and milestones."
     },
     highlights: [
       { label: "15% platform fee", detail: "Transparent structure that rewards long-term collaboration." },
@@ -35,7 +35,7 @@ const copy = {
     cta: {
       title: "Media interviews & partnerships",
       description:
-        "Request city data, VIP growth plans, AI roadmap, or global expansion insights. We respond within 24 hours.",
+        "Request city data, VIP growth plans, or AI roadmap details. We respond within 24 hours.",
       email: "hello@guidew.com",
       kit: "Download media kit"
     }
@@ -44,7 +44,7 @@ const copy = {
     hero: {
       badge: "Press & Media",
       title: "Guidew 最新动态与媒体资料",
-      description: "Guidew 正在搭建全球化本地技能网络，欢迎了解我们的使命、技术路线与阶段性成果。"
+      description: "Guidew 正在新西兰搭建可信赖的本地技能网络，欢迎了解我们的使命、技术路线与阶段性成果。"
     },
     highlights: [
       { label: "15% 平台佣金", detail: "透明的交易结构，鼓励服务者和用户长期合作。" },
@@ -58,7 +58,7 @@ const copy = {
     ],
     cta: {
       title: "媒体采访与合作",
-      description: "欢迎索取城市运营数据、VIP 计划、AI 赋能方案与全球扩张路线，我们将在 24 小时内响应。",
+      description: "欢迎索取城市运营数据、VIP 计划与 AI 赋能方案，我们将在 24 小时内响应。",
       email: "hello@guidew.com",
       kit: "下载媒体资料"
     }
@@ -67,7 +67,7 @@ const copy = {
     hero: {
       badge: "Imprensa & Mídia",
       title: "Materiais e novidades da Guidew",
-      description: "A Guidew está construindo uma rede global de talentos locais. Conheça nossa missão, tecnologia e marcos de crescimento."
+      description: "A Guidew está construindo uma rede confiável de talentos locais na Nova Zelândia. Conheça nossa missão, tecnologia e marcos de crescimento."
     },
     highlights: [
       { label: "15% de comissão", detail: "Estrutura transparente que premia parcerias de longo prazo." },
@@ -90,7 +90,7 @@ const copy = {
     ],
     cta: {
       title: "Entrevistas e parcerias",
-      description: "Solicite dados das cidades, roadmap de VIP, planos de IA ou visão de expansão global. Respondemos em até 24 horas.",
+      description: "Solicite dados das cidades, roadmap de VIP ou planos de IA. Respondemos em até 24 horas.",
       email: "hello@guidew.com",
       kit: "Baixar press kit"
     }
@@ -99,7 +99,7 @@ const copy = {
     hero: {
       badge: "Prensa y medios",
       title: "Noticias y materiales de Guidew",
-      description: "Guidew construye una red global de talentos locales. Conoce nuestra misión, tecnología y próximos hitos."
+      description: "Guidew construye en Nueva Zelanda una red confiable de talentos locales. Conoce nuestra misión, tecnología y próximos hitos."
     },
     highlights: [
       { label: "15% de comisión", detail: "Estructura transparente que recompensa la colaboración a largo plazo." },
@@ -122,7 +122,7 @@ const copy = {
     ],
     cta: {
       title: "Entrevistas y alianzas",
-      description: "Solicita datos de ciudades, planes VIP, roadmap de IA o expansión internacional. Respondemos en 24 h.",
+      description: "Solicita datos de ciudades, planes VIP o roadmap de IA. Respondemos en 24 h.",
       email: "hello@guidew.com",
       kit: "Descargar media kit"
     }
@@ -131,7 +131,7 @@ const copy = {
     hero: {
       badge: "Presse & Médias",
       title: "Actualités et dossiers Guidew",
-      description: "Guidew bâtit un réseau mondial d’experts locaux. Découvrez notre mission, notre pile technologique et nos jalons."
+      description: "Guidew bâtit en Nouvelle-Zélande un réseau fiable d’experts locaux. Découvrez notre mission, notre pile technologique et nos jalons."
     },
     highlights: [
       { label: "15 % de commission", detail: "Modèle transparent qui favorise les collaborations durables." },
@@ -154,7 +154,7 @@ const copy = {
     ],
     cta: {
       title: "Interviews et partenariats",
-      description: "Demandez des données ville, plans VIP, feuille de route IA ou insights d’expansion. Réponse sous 24 h.",
+      description: "Demandez des données ville, plans VIP ou feuille de route IA. Réponse sous 24 h.",
       email: "hello@guidew.com",
       kit: "Télécharger le kit média"
     }
@@ -163,7 +163,7 @@ const copy = {
     hero: {
       badge: "תקשורת ועיתונות",
       title: "חדשות וחומרי מדיה של Guidew",
-      description: "Guidew בונה רשת כישורים מקומית ברחבי העולם. קבלו מידע על החזון, הטכנולוגיה והיעדים שלנו."
+      description: "Guidew בונה רשת כישורים מקומית בניו זילנד. קבלו מידע על החזון, הטכנולוגיה והיעדים שלנו."
     },
     highlights: [
       { label: "15% עמלת פלטפורמה", detail: "מודל שקוף שמתגמל שיתופי פעולה מתמשכים." },
@@ -186,7 +186,7 @@ const copy = {
     ],
     cta: {
       title: "ראיונות ושותפויות מדיה",
-      description: "בקשו נתוני עיר, תכניות VIP, מפת דרכים של AI או תובנות התרחבות. נשיב בתוך 24 שעות.",
+      description: "בקשו נתוני עיר, תכניות VIP או מפת דרכים של AI. נשיב בתוך 24 שעות.",
       email: "hello@guidew.com",
       kit: "הורד ערכת מדיה"
     }
@@ -221,7 +221,7 @@ const copy = {
     cta: {
       title: "He uiui me nga whakahoahoa",
       description:
-        "Tono raraunga City, mahere tipu tipu, ai te ara rori, i nga tirohanga nui o te ao. Ka whakautu matou i roto i nga haora 24.",
+        "Tono raraunga City, mahere tipu tipu, ai te ara rori. Ka whakautu matou i roto i nga haora 24.",
       email: "hello@guidew.com",
       kit: "Tangohia te kete pāpāho"
     }

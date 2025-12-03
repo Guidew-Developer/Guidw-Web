@@ -361,7 +361,7 @@
         "description": "Choisissez vos horaires et zones d'intervention. Fixez un rayon, des heures minimales et la disponibilité instantanée."
       },
       {
-        "title": "Demande globale",
+        "title": "Demande locale",
         "description": "Servez voyageurs arrivant à Auckland/Wellington et habitants recherchant ateliers privés ou aide urgente."
       },
       {
@@ -550,7 +550,7 @@
           "description": "50 prestations réussies."
         },
         "user-3-cities": {
-          "title": "Explorateur global",
+          "title": "Explorateur local",
           "description": "Services réservés dans 3 villes différentes."
         }
       }
@@ -558,7 +558,7 @@
     "review": {
       "title": "Laisser un avis",
       "empty": "Sélectionnez une mission terminée pour laisser un avis.",
-      "overallLabel": "Expérience globale",
+      "overallLabel": "Expérience locale",
       "worth": "Ça en vaut la peine",
       "notWorth": "Pas satisfaisant",
       "detailsLabel": "Partagez des détails",

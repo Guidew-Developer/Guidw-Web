@@ -149,7 +149,7 @@
         "detailBody": "Defina o idioma, escolha modo viajante ou provedor e use mapa, coleções e filtros salvos para montar uma lista de especialistas.",
         "bullets": [
           "Login com e-mail ou toque único Google/Apple",
-          "Visualização em mapa para especialistas próximos e lista para buscar cidades globais",
+          "Visualização em mapa para especialistas próximos e lista para buscar outras cidades",
           "Salve favoritos e ative alertas para novos serviços"
         ]
       },
@@ -361,7 +361,7 @@
         "description": "Escolha quando e onde atender. Defina raio de atuação, horas mínimas e disponibilidade instantânea."
       },
       {
-        "title": "Demanda global",
+        "title": "Demanda local",
         "description": "Atenda viajantes que chegam a Auckland ou Wellington e também moradores em busca de aulas privadas e ajuda urgente."
       },
       {
@@ -555,7 +555,7 @@
           "description": "50 serviços concluídos com sucesso."
         },
         "user-3-cities": {
-          "title": "Explorador global",
+          "title": "Explorador local",
           "description": "Reservou serviços em 3 cidades diferentes."
         }
       }

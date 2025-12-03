@@ -104,7 +104,7 @@ const visionCopy = {
     },
     arcs: {
       title: "Momentum arcs",
-      subtitle: "Guidew expands like a constellation—one radiant city activates the next.",
+    subtitle: "Guidew connects like a constellation—one radiant city activates the next.",
       steps: [
         {
           name: "Aurora launchpads",
@@ -506,7 +506,7 @@ const visionCopy = {
     },
     arcs: {
       title: "Arcos de momentum",
-      subtitle: "Guidew se expande como una constelación: una ciudad radiante activa la siguiente.",
+      subtitle: "Guidew se conecta como una constelación: una ciudad radiante activa la siguiente.",
       steps: [
         {
           name: "Aurora launchpads",
@@ -521,7 +521,7 @@ const visionCopy = {
         {
           name: "Continental alliances",
           headline: "Europa, Medio Oriente y África",
-          copy: "Nos aliamos con distritos culturales y festivales para que Guidew sea el pase backstage de los creadores globales."
+          copy: "Nos aliamos con distritos culturales y festivales para que Guidew sea el pase backstage de los creadores invitados."
         },
         {
           name: "Planetary residency",
@@ -1087,33 +1087,6 @@ const AboutVision = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section className="relative overflow-hidden py-24 bg-[#030b1f] text-white">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/20 via-transparent to-brand-orange/30" />
-            <div className="absolute left-1/3 top-10 h-48 w-48 bg-brand-gold/20 blur-3xl opacity-70" />
-          </div>
-          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <p className="text-sm uppercase tracking-[0.3em] text-brand-gold mb-3">{content.arcs.title}</p>
-              <h2 className="text-3xl font-bold mb-4">{content.arcs.subtitle}</h2>
-            </div>
-            <div className="mt-12 space-y-12 relative">
-              <div className="hidden md:block absolute left-4 top-0 bottom-0 w-px bg-white/20" aria-hidden />
-              {content.arcs.steps.map(step => (
-                <div key={step.name} className="relative md:pl-14">
-                  <div className="hidden md:flex absolute left-2 top-2 h-3 w-3 rounded-full bg-brand-gold shadow-lg shadow-brand-gold/50" />
-                  <div className="rounded-3xl border border-white/15 bg-white/5 p-6 backdrop-blur">
-                    <p className="text-xs uppercase tracking-[0.25em] text-brand-gold">{step.name}</p>
-                    <h3 className="text-2xl font-semibold mt-2 mb-3">{step.headline}</h3>
-                    <p className="text-white/80 leading-relaxed text-sm">{step.copy}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p className="mt-12 text-white/80 max-w-3xl text-lg">{content.arcs.closing}</p>
           </div>
         </section>
 

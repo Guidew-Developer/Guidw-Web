@@ -103,7 +103,7 @@ const cookieCopy: Record<CookieLocale, CookieCopy> = {
       {
         title: "7. Updates and contact",
         description:
-          "We update this policy when we launch new functionality, expand to new regions, or adopt new measurement technology.",
+          "We update this policy when we launch new functionality or adopt new measurement technology.",
         bullets: [
           "When changes are significant we notify affected users in-product or via email.",
           "Questions about cookies can be sent to privacy@guidew.app or submitted through the Guidew help center."
@@ -422,7 +422,7 @@ const cookieCopy: Record<CookieLocale, CookieCopy> = {
       {
         title: "7. Mises à jour et contact",
         description:
-          "Cette politique est mise à jour lors du lancement de nouvelles fonctionnalités, de l’expansion dans d’autres régions ou de l’adoption de nouvelles technologies de mesure.",
+          "Cette politique est mise à jour lors du lancement de nouvelles fonctionnalités ou de l’adoption de nouvelles technologies de mesure.",
         bullets: [
           "En cas de changements importants, nous avertissons les utilisateurs concernés dans l’application ou par e-mail.",
           "Pour toute question, écrivez à privacy@guidew.app ou contactez le centre d’assistance Guidew."

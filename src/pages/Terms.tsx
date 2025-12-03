@@ -151,7 +151,7 @@ const termsCopy: Record<TermsLocale, TermsCopy> = {
         content: [
           "Guidew provides technology tools that connect users seeking local experiences, travel support, or in-person skills with independent providers. We enable matching, messaging, scheduling, payments, and safety tooling—but we do not create, control, or deliver the services themselves.",
           "Unless we explicitly state otherwise in writing, Guidew does not employ, manage, or assume responsibility for providers' conduct; every reservation represents a separate agreement between user and provider.",
-          "The first release of Guidew focuses on Auckland and Wellington. Phase-by-phase, we target 1,000 MVP testers in the first six months, 5,000–10,000 users by month 12, 100,000 New Zealand users by month 24, expansion into Australia with a cumulative 200,000 users after month 25, and multilingual global coverage beginning in year five."
+          "The first release of Guidew focuses on Auckland and Wellington, with carefully staged cohorts of early testers. We will widen availability inside New Zealand only after reliability, safety, and community benchmarks are met."
         ]
       },
       {
@@ -525,7 +525,7 @@ const termsCopy: Record<TermsLocale, TermsCopy> = {
         content: [
           "Guidew ofrece herramientas tecnológicas que conectan a usuarios que buscan experiencias locales, apoyo de viaje o habilidades presenciales con proveedores independientes; facilitamos el emparejamiento, la mensajería, la programación, los pagos y las funciones de seguridad, pero no creamos ni prestamos los servicios.",
           "Salvo que lo indiquemos expresamente por escrito, Guidew no emplea ni dirige a los proveedores ni asume responsabilidad por su conducta; cada reserva es un acuerdo independiente entre usuario y proveedor.",
-          "La primera versión pública se centra en Auckland y Wellington: aspiramos a 1.000 testers en los primeros seis meses, 5.000‑10.000 usuarios antes de cumplir 12 meses, 100.000 usuarios neozelandeses antes de los 24 meses, expansión a Australia con 200.000 usuarios acumulados a partir del mes 25 y, en el quinto año, despliegues globales multilingües."
+          "La primera versión pública se centra en Auckland y Wellington, con cohortes controladas de testers en Nueva Zelanda. Solo ampliaremos el acceso local cuando cumplamos estándares de fiabilidad, seguridad y comunidad."
         ]
       },
       {
@@ -712,7 +712,7 @@ const termsCopy: Record<TermsLocale, TermsCopy> = {
         content: [
           "A Guidew fornece ferramentas tecnológicas que conectam usuários em busca de experiências locais, apoio de viagem ou habilidades presenciais a prestadores independentes; disponibilizamos recursos de correspondência, mensagens, agendamento, pagamentos e segurança, mas não criamos nem executamos os serviços.",
           "Salvo indicação escrita em contrário, a Guidew não emprega, não gerencia nem assume responsabilidade pela conduta dos prestadores; cada reserva constitui um acordo independente entre usuário e prestador.",
-          "O roadmap prevê: 1.000 usuários beta em seis meses para o MVP em Auckland e Wellington; 5-10 mil usuários até o 12º mês; 100 mil usuários neozelandeses até o mês 24; expansão para a Austrália com 200 mil usuários acumulados após o mês 25; e, a partir do quinto ano, rollout internacional com suporte multilíngue."
+          "O MVP se concentra em Auckland e Wellington com grupos de teste controlados na Nova Zelândia. Só ampliaremos a cobertura local após validar confiabilidade, segurança e impacto comunitário."
         ]
       },
       {
@@ -899,7 +899,7 @@ const termsCopy: Record<TermsLocale, TermsCopy> = {
         content: [
           "Guidew fournit des outils technologiques qui mettent en relation les utilisateurs recherchant des expériences locales, une assistance voyage ou des compétences en présentiel avec des prestataires indépendants. Nous facilitons la mise en relation, la messagerie, la planification, les paiements et les dispositifs de sécurité, mais nous ne créons ni n'exécutons les services.",
           "Sauf indication écrite contraire, Guidew n'emploie pas, ne dirige pas et n'assume pas la responsabilité de la conduite des prestataires ; chaque réservation constitue un accord distinct entre l'utilisateur et le prestataire.",
-          "Notre feuille de route prévoit 1 000 bêta‑testeurs à Auckland/Wellington dans les six premiers mois, 5 000 à 10 000 utilisateurs avant le douzième mois, 100 000 utilisateurs néo‑zélandais avant le vingt‑quatrième mois, une expansion en Australie avec 200 000 utilisateurs cumulés après le mois 25, puis un déploiement international multilingue à partir de la cinquième année."
+          "Notre feuille de route se concentre sur Auckland/Wellington avec des cohortes restreintes en Nouvelle-Zélande. Nous n'élargirons l'accès local qu'après validation de la fiabilité, de la sécurité et de l'adhésion des communautés."
         ]
       },
       {

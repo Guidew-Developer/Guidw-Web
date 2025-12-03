@@ -154,7 +154,7 @@ const authCopy: Record<AuthLocale, AuthCopy> = {
       blockHeading: "Unlock the Guidew private network",
       blockDescription: "Complete your profile to receive curated itineraries plus a complimentary VIP trial.",
       highlights: [
-        "One registration unlocks our global network of vetted locals.",
+        "One registration unlocks our New Zealand network of vetted locals.",
         "VIP trial waives booking fees and delivers proactive AI matching.",
         "Finishing your dossier unlocks black-card style concierge priority."
       ]
@@ -307,7 +307,7 @@ const authCopy: Record<AuthLocale, AuthCopy> = {
       blockHeading: "Desbloqueie a rede privada Guidew",
       blockDescription: "Complete o perfil para receber roteiros curados e um teste VIP de cortesia.",
       highlights: [
-        "Um cadastro libera acesso à nossa rede global de locais verificados.",
+        "Um cadastro libera acesso à nossa rede verificada na Nova Zelândia.",
         "Teste VIP oferece zero taxas e matching proativo com IA.",
         "Dossiê completo garante prioridade tipo cartão black."
       ]
@@ -384,7 +384,7 @@ const authCopy: Record<AuthLocale, AuthCopy> = {
       blockHeading: "Desbloquea la red privada de Guidew",
       blockDescription: "Completa tu perfil y recibe las primeras ideas de itinerario más una prueba VIP.",
       highlights: [
-        "Un solo registro abre la red global de locales verificados.",
+        "Un solo registro abre la red neozelandesa de locales verificados.",
         "La prueba VIP elimina comisiones y activa matching proactivo.",
         "Perfil completo desbloquea prioridad tipo tarjeta negra."
       ]

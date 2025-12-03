@@ -10,7 +10,7 @@ import { resolveLocale } from "@/utils/locale";
 const copy = {
   en: {
     missingTitle: "City not launched",
-    missingDescription: "We are expanding to more destinations soon.",
+    missingDescription: "This destination is not available yet.",
     back: "Back to Locations",
     allCities: "All cities",
     why: "Why travelers choose this city",
@@ -22,7 +22,7 @@ const copy = {
   },
   zh: {
     missingTitle: "尚未上线的城市",
-    missingDescription: "我们正在扩展更多目的地，敬请期待。",
+    missingDescription: "该目的地尚未开放，敬请期待。",
     back: "返回 Locations",
     allCities: "所有城市",
     why: "为什么用户选择这里",
@@ -34,7 +34,7 @@ const copy = {
   },
   pt: {
     missingTitle: "Cidade ainda não disponível",
-    missingDescription: "Estamos expandindo para novos destinos em breve.",
+    missingDescription: "Este destino ainda não está disponível.",
     back: "Voltar para Locations",
     allCities: "Todas as cidades",
     why: "Por que viajantes escolhem esta cidade",
@@ -46,7 +46,7 @@ const copy = {
   },
   es: {
     missingTitle: "Ciudad aún no disponible",
-    missingDescription: "Pronto abriremos más destinos.",
+    missingDescription: "Este destino aún no está disponible.",
     back: "Volver a Locations",
     allCities: "Todas las ciudades",
     why: "Por qué los viajeros eligen esta ciudad",
@@ -58,7 +58,7 @@ const copy = {
   },
   fr: {
     missingTitle: "Ville pas encore disponible",
-    missingDescription: "De nouvelles destinations arrivent bientôt.",
+    missingDescription: "Cette destination n’est pas encore disponible.",
     back: "Retour vers Locations",
     allCities: "Toutes les villes",
     why: "Pourquoi les voyageurs choisissent cette ville",
@@ -70,7 +70,7 @@ const copy = {
   },
   he: {
     missingTitle: "העיר עדיין לא הושקה",
-    missingDescription: "אנחנו מרחיבים ליעדים נוספים ממש בקרוב.",
+    missingDescription: "היעד הזה עדיין לא פעיל.",
     back: "חזרה לרשימת הערים",
     allCities: "כל הערים",
     why: "למה מטיילים בוחרים בעיר הזו",
@@ -83,7 +83,7 @@ const copy = {
 
   mi: {
     missingTitle: "Kaore i whakarewahia te pa",
-    missingDescription: "Kei te whakawhānui atu matou ki etahi atu haerenga mai.",
+    missingDescription: "Kaore tenei haerenga i te wātea ināianei.",
     back: "Hoki ki nga waahi",
     allCities: "Nga taone katoa",
     why: "He aha te hunga e haereere ana i tenei taone",

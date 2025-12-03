@@ -69,7 +69,7 @@ const cityProfiles: Partial<Record<SupportedLocale, CityProfile[]>> = {
       description:
         "The cultural and film capital of New Zealand that spotlights specialty coffee, creative workshops, and professional meeting support.",
       stats: ["Cultural curation", "Conference support", "Outdoor guiding"],
-      focus: "First expansion city",
+      focus: "Second launch city",
       hero: {
         headline: "Experience art, film, and nature in the windy city—without losing momentum.",
         subtext:
@@ -117,7 +117,7 @@ const cityProfiles: Partial<Record<SupportedLocale, CityProfile[]>> = {
       description:
         "A capital cultural e cinematográfica da Nova Zelândia, com destaque para cafés especiais, workshops criativos e suporte profissional a eventos.",
       stats: ["Curadoria cultural", "Suporte para conferências", "Guias outdoor"],
-      focus: "Primeira cidade de expansão",
+      focus: "Segundo corredor de lançamento",
       hero: {
         headline: "Viva arte, cinema e natureza na windy city sem perder o ritmo.",
         subtext:
@@ -165,7 +165,7 @@ const cityProfiles: Partial<Record<SupportedLocale, CityProfile[]>> = {
       description:
         "La capital cultural y cinematográfica del país resalta café de especialidad, talleres creativos y soporte profesional para reuniones.",
       stats: ["Curaduría cultural", "Soporte para conferencias", "Guía al aire libre"],
-      focus: "Primera ciudad de expansión",
+      focus: "Segundo corredor de lanzamiento",
       hero: {
         headline: "Experimenta arte, cine y naturaleza en la ciudad ventosa sin perder ritmo.",
         subtext:
@@ -213,7 +213,7 @@ const cityProfiles: Partial<Record<SupportedLocale, CityProfile[]>> = {
       description:
         "Capitale culturelle et cinématographique du pays, mettant en avant cafés de spécialité, ateliers créatifs et support professionnel aux réunions.",
       stats: ["Curations culturelles", "Support conférence", "Guides plein air"],
-      focus: "Première ville d’expansion",
+      focus: "Deuxième corridor de lancement",
       hero: {
         headline: "Vivez art, cinéma et nature dans la ville du vent sans perdre votre rythme.",
         subtext:
@@ -443,7 +443,7 @@ const careerOpenings: Partial<Record<SupportedLocale, CareerOpening[]>> = {
       perks: [
         "Co-build the city operations model with the founders",
         "Flexible working plus city exploration stipend",
-        "Pathways to global expansion opportunities"
+        "Progression into corridor leadership roles"
       ]
     }
   ],
@@ -514,7 +514,7 @@ const careerOpenings: Partial<Record<SupportedLocale, CareerOpening[]>> = {
       perks: [
         "Cocriar o modelo operacional com os fundadores",
         "Trabalho flexível com subsídio para explorar a cidade",
-        "Caminhos abertos para oportunidades de expansão global"
+        "Trilhas de crescimento para liderar corredores locais"
       ]
     }
   ],
@@ -585,7 +585,7 @@ const careerOpenings: Partial<Record<SupportedLocale, CareerOpening[]>> = {
       perks: [
         "Cocrear el modelo operativo de la ciudad junto a los fundadores",
         "Trabajo flexible más stipend para explorar la ciudad",
-        "Ruta hacia oportunidades de expansión global"
+        "Ruta hacia liderazgo de corredores locales"
       ]
     }
   ],
@@ -838,7 +838,7 @@ const blogPosts: Partial<Record<SupportedLocale, BlogPost[]>> = {
         {
           heading: "Where We're Taking It Next",
           content:
-            "The same playbook expands to Sydney, Singapore, and Osaka. We are shipping multilingual AI intake forms, deeper insurance coverage, and API hooks for airlines, real-estate agents, and relocation firms so a traveler can land anywhere in APAC and ping the nearest Guidew squad for instant human logistics."
+            "We are shipping multilingual AI intake forms, deeper insurance coverage, and API hooks for airlines, real-estate agents, and relocation firms so a traveler can land in New Zealand and ping the nearest Guidew squad for instant human logistics."
         }
       ]
     },
@@ -884,7 +884,7 @@ const blogPosts: Partial<Record<SupportedLocale, BlogPost[]>> = {
         {
           heading: "Roadmap: Beyond Translation",
           content:
-            "Next up: instant voice cloning for outbound calls, shared glossaries for corporate teams, and bundled mobility services so the same translator can book rides or check in at embassies. VIP tiers will expand to cover relocation and legal concierge support."
+            "Next up: instant voice cloning for outbound calls, shared glossaries for corporate teams, and bundled mobility services so the same translator can book rides or check in at embassies. VIP tiers will include relocation and legal concierge support."
         }
       ]
     },
@@ -976,7 +976,7 @@ const blogPosts: Partial<Record<SupportedLocale, BlogPost[]>> = {
         {
           heading: "Growth Roadmap",
           content:
-            "Upcoming drops include video consultations, templated marketing pages, and partner campaigns with tourism boards. Providers can opt into co-branded experiences or retail collabs to expand beyond single bookings."
+            "Upcoming drops include video consultations, templated marketing pages, and partner campaigns with tourism boards. Providers can opt into co-branded experiences or retail collabs to grow beyond single bookings."
         }
       ]
     }
@@ -1210,7 +1210,7 @@ const blogPosts: Partial<Record<SupportedLocale, BlogPost[]>> = {
         {
           heading: "Hacia dónde vamos",
           content:
-            "El mismo playbook se expande a Sídney, Singapur y Osaka. Estamos lanzando formularios de intake con IA, coberturas de seguro más profundas e integraciones con aerolíneas, inmobiliarias y firmas de relocación para que cualquier viajero en APAC pueda contactar al escuadrón Guidew más cercano y coordinar logística humana al instante."
+            "Estamos lanzando formularios de intake con IA, coberturas de seguro más profundas e integraciones con aerolíneas, inmobiliarias y firmas de relocación para que cualquier viajero en Nueva Zelanda pueda contactar al escuadrón Guidew más cercano y coordinar logística humana al instante."
         }
       ]
     },

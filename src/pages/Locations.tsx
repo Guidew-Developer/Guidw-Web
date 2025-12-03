@@ -92,7 +92,7 @@ const copy = {
         }
       ]
     },
-    roadmapHeading: "Service expansion roadmap",
+    roadmapHeading: "Service roadmap",
     roadmap: [
       {
         title: "Phase 1 · MVP runway",
@@ -111,8 +111,8 @@ const copy = {
         detail: "Launch Sydney, Melbourne, and Brisbane corridors while compounding the combined user base."
       },
       {
-        title: "Phase 5 · Global horizons",
-        detail: "Deploy multilingual operations across Asia-Pacific, Europe, and the Americas."
+        title: "Phase 5 · Future corridors",
+        detail: "Deploy additional multilingual operations once New Zealand coverage is mature."
       }
     ]
   },
@@ -196,7 +196,7 @@ const copy = {
         }
       ]
     },
-    roadmapHeading: "服务扩张路线图",
+    roadmapHeading: "服务路线图",
     roadmap: [
       { title: "阶段 1 · MVP 启动", detail: "完善奥克兰与惠灵顿的双城运营，迎来首批走廊用户。" },
       { title: "阶段 2 · 城市深化", detail: "提升两城密度，扩充接机休息室与技能标签体系，带动口碑增长。" },
@@ -289,7 +289,7 @@ const copy = {
         }
       ]
     },
-    roadmapHeading: "Roteiro de expansão",
+    roadmapHeading: "Roteiro de serviço",
     roadmap: [
       {
         title: "Fase 1 · MVP",
@@ -308,8 +308,8 @@ const copy = {
         detail: "Ativar Sydney, Melbourne e Brisbane enquanto ampliamos a base combinada."
       },
       {
-        title: "Fase 5 · Horizonte global",
-        detail: "Operar de forma multilíngue na Ásia-Pacífico, Europa e Américas."
+        title: "Fase 5 · Próximos corredores",
+        detail: "Ampliar a cobertura multilíngue na Nova Zelândia e preparar rotas regionais conforme a operação amadurece."
       }
     ]
   },
@@ -397,7 +397,7 @@ const copy = {
         }
       ]
     },
-    roadmapHeading: "Hoja de ruta de expansión",
+    roadmapHeading: "Hoja de ruta de servicio",
     roadmap: [
       {
         title: "Fase 1 · MVP runway",
@@ -416,8 +416,8 @@ const copy = {
         detail: "Lanzar corredores en Sydney, Melbourne y Brisbane mientras consolida la base combinada."
       },
       {
-        title: "Fase 5 · Horizonte global",
-        detail: "Operar de forma multilingüe en Asia-Pacífico, Europa y las Américas."
+        title: "Fase 5 · Próximos corredores",
+        detail: "Ampliar cobertura multilingüe dentro de Nueva Zelanda y sumar rutas regionales cuando la operación esté lista."
       }
     ]
   },
@@ -505,7 +505,7 @@ const copy = {
         }
       ]
     },
-    roadmapHeading: "Feuille de route d’expansion",
+    roadmapHeading: "Feuille de route du service",
     roadmap: [
       {
         title: "Phase 1 · Runway MVP",
@@ -613,7 +613,7 @@ const copy = {
         }
       ]
     },
-    roadmapHeading: "מפת דרכים להתרחבות השירות",
+    roadmapHeading: "מפת דרכים לשירות",
     roadmap: [
       {
         title: "שלב 1 · מסלול MVP",
@@ -722,7 +722,7 @@ const copy = {
         }
       ]
     },
-    roadmapHeading: "Ratonga Whakawhanake Ratonga",
+    roadmapHeading: "Mahere Ratonga",
     roadmap: [
       {
         title: "Wāhanga 1 · MVP Runway",
@@ -892,22 +892,6 @@ const Locations = () => {
           </div>
         </section>
 
-        <section className="py-16 bg-gradient-to-r from-brand-teal via-brand-gold to-brand-orange text-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-3 mb-6">
-              <Globe2 className="h-6 w-6" />
-              <h2 className="text-3xl font-bold">{content.roadmapHeading}</h2>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              {content.roadmap.map(step => (
-                <div key={step.title} className="bg-white/10 rounded-xl p-6 border border-white/20">
-                  <p className="text-sm uppercase tracking-wider text-white/80 mb-2">{step.title}</p>
-                  <p className="text-white/90">{step.detail}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>

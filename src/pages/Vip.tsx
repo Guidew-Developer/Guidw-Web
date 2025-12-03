@@ -7,11 +7,7 @@ import { useDownloadDialog } from "@/components/DownloadDialogProvider";
 import {
   Sparkles,
   ShieldCheck,
-  CalendarClock,
-  Zap,
   Languages,
-  MessageCircle,
-  CheckCircle2,
   type LucideIcon
 } from "lucide-react";
 
@@ -20,12 +16,6 @@ type VipLocale = (typeof vipLocales)[number];
 
 type VipBenefit = {
   title: string;
-  detail: string;
-};
-
-type VipMilestone = {
-  phase: string;
-  target: string;
   detail: string;
 };
 
@@ -49,7 +39,6 @@ type VipCopy = {
     title: string;
     description: string;
     cta: string;
-    secondaryCta: string;
     note: string;
     languagesLabel: string;
     stackLabel: string;
@@ -59,11 +48,6 @@ type VipCopy = {
   };
   traveler: VipProductDetail;
   provider: VipProductDetail;
-  timeline: {
-    title: string;
-    description: string;
-    milestones: VipMilestone[];
-  };
   faqs: VipFaq[];
   legal: string;
   faqLabel: string;
@@ -89,7 +73,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
       description:
         "Guidew collects a 15% commission on standard bookings. Traveler VIP ($9.9/mo) removes it and adds AI matching, while Provider VIP ($99/mo) unlocks automation, itinerary planning, and AI chat support.",
       cta: "Download Guidew",
-      secondaryCta: "See roadmap",
       note: "Traveler VIP $9.9/mo · Provider VIP $99/mo · Cancel anytime.",
       languagesLabel: "Available in 6 languages",
       stackLabel: "VIP stack",
@@ -123,17 +106,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
         { title: "Travel buffer alerts", detail: "VIP tools warn you when the next job is too far so you keep a perfect reliability score." }
       ]
     },
-    timeline: {
-      title: "Rollout roadmap",
-      description: "Guidew ships VIP in waves so trust, liquidity, and multilingual tooling scale together.",
-      milestones: [
-        { phase: "Phase 1 · Early runway", target: "First wave in Auckland & Wellington", detail: "Hundreds of pioneers use AI concierge and fee waivers to validate the model." },
-        { phase: "Phase 2 · Momentum", target: "Several thousand testers", detail: "Broader pilots unlock advanced filters, chat automations, and richer calendars." },
-        { phase: "Phase 3 · Nationwide", target: "Tens of thousands across NZ", detail: "Full-country coverage with proactive protection and elite creator tiers." },
-        { phase: "Phase 4 · Across the Tasman", target: "Australian creative capitals", detail: "Cities like Sydney, Melbourne, and Brisbane adopt the same VIP fabric." },
-        { phase: "Phase 5 · Global era", target: "Additional continents", detail: "International rollout with localized payments and cultural playbooks." }
-      ]
-    },
     faqs: [
       { question: "Is VIP required to book?", answer: "No. Any registered user can book services, but VIP removes the 15% fee, unlocks AI requests, and offers priority matching." },
       { question: "Does VIP also help providers?", answer: "Yes. Providers use auto-accept, AI itinerary drafting, and buffer alerts—features reserved for VIP creators." },
@@ -149,7 +121,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
       title: "用户 VIP 与 服务者 VIP 分别进阶",
       description: "Guidew 普通订单需收取 15% 佣金。用户 VIP（$9.9/月）免佣并支持 AI 对话下单；服务者 VIP（$99/月）解锁自动接单、AI 行程与 AI 客户服务。",
       cta: "下载 Guidew",
-      secondaryCta: "查看路线图",
       note: "用户 VIP $9.9/月 · 服务者 VIP $99/月 · 随时可退。",
       languagesLabel: "支持 6 种语言",
       stackLabel: "VIP 组合",
@@ -183,17 +154,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
         { title: "行程缓冲提醒", detail: "当下一单距离过远时提前提醒，保持完美履约率。" }
       ]
     },
-    timeline: {
-      title: "分阶段路线图",
-      description: "Guidew 以波次形式推出 VIP，平衡信任、供给与多语言工具。",
-      milestones: [
-        { phase: "阶段一 · 启动期", target: "奥克兰与惠灵顿首批种子用户", detail: "数百名先锋体验 AI 管家与免佣机制。" },
-        { phase: "阶段二 · 扩张期", target: "数千名测试者", detail: "逐步开放高级筛选、聊天自动化与更多日历能力。" },
-        { phase: "阶段三 · 全国期", target: "遍布新西兰的用户群", detail: "全国覆盖并加强风控与高阶创作者体系。" },
-        { phase: "阶段四 · 跨海期", target: "澳大利亚主要城市", detail: "悉尼、墨尔本、布里斯班等城市同步继承 VIP 能力。" },
-        { phase: "阶段五 · 全球期", target: "更多国家与语种", detail: "进入国际市场并适配本地支付与文化指南。" }
-      ]
-    },
     faqs: [
       { question: "不买 VIP 也能下单吗？", answer: "可以。所有注册用户都能下单，但 VIP 免佣、支持 AI 描述需求，并享受优先匹配。" },
       { question: "VIP 对服务者有用吗？", answer: "有。VIP 服务者可使用自动接单、AI 行程、缓冲提醒等高级工具。" },
@@ -209,7 +169,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
       title: "Dois planos VIP sob medida",
       description: "A Guidew cobra 15% nos pedidos padrão. VIP viajante (US$ 9,9/mês) remove a taxa e libera pedidos via IA; VIP provedor (US$ 99/mês) ativa aceite automático, roteiros e suporte com IA.",
       cta: "Baixar Guidew",
-      secondaryCta: "Ver roadmap",
       note: "VIP viajante US$ 9,9/mês · VIP provedor US$ 99/mês · cancele quando quiser.",
       languagesLabel: "Disponível em 6 idiomas",
       stackLabel: "Pacote VIP",
@@ -243,17 +202,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
         { title: "Alertas de deslocamento", detail: "Receba avisos quando o próximo serviço estiver longe demais para chegar no horário." }
       ]
     },
-    timeline: {
-      title: "Roteiro de expansão",
-      description: "Implementamos o VIP em ondas para equilibrar confiança, oferta e idiomas.",
-      milestones: [
-        { phase: "Fase 1 · Lançamento", target: "Primeira leva em Auckland/Wellington", detail: "Centenas de pioneiros validam concierge bilíngue e pedidos sem taxa." },
-        { phase: "Fase 2 · Tração", target: "Alguns milhares de testers", detail: "Pilotos maiores liberam filtros avançados e automações de chat." },
-        { phase: "Fase 3 · Nacional", target: "Dezenas de milhares na Nova Zelândia", detail: "Cobertura ampla com proteção proativa e níveis de criadores." },
-        { phase: "Fase 4 · Ponte do Tasmânia", target: "Principais cidades australianas", detail: "Sydney, Melbourne e Brisbane recebem a mesma camada VIP." },
-        { phase: "Fase 5 · Global", target: "Novos continentes", detail: "Expansão internacional com pagamentos locais e playbooks culturais." }
-      ]
-    },
     faqs: [
       { question: "Preciso ser VIP para usar?", answer: "Não, mas VIP remove a taxa de 15%, libera pedidos por IA e prioridade." },
       { question: "Provedor também ganha?", answer: "Sim. Ferramentas de autoaceite, itinerários por IA e alertas são exclusivas do VIP." },
@@ -269,7 +217,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
       title: "Dos VIP distintos para viajeros y proveedores",
       description: "Guidew cobra 15% en pedidos estándar. El VIP de viajeros (US$ 9,9/mes) elimina la comisión y agrega pedidos por IA; el VIP de proveedores (US$ 99/mes) ofrece autoaceptación, itinerarios IA y soporte automatizado.",
       cta: "Descargar Guidew",
-      secondaryCta: "Ver hoja de ruta",
       note: "Viajeros VIP US$ 9,9/mes · Proveedores VIP US$ 99/mes · cancela cuando quieras.",
       languagesLabel: "Disponible en 6 idiomas",
       stackLabel: "Paquete VIP",
@@ -303,17 +250,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
         { title: "Alertas de traslado", detail: "Recibe avisos si el siguiente servicio queda demasiado lejos para llegar a tiempo." }
       ]
     },
-    timeline: {
-      title: "Hoja de ruta",
-      description: "El VIP avanza por oleadas para sostener confianza, liquidez y soporte multilingüe.",
-      milestones: [
-        { phase: "Fase 1 · Lanzamiento", target: "Primera ola en Auckland/Wellington", detail: "Cientos de pioneros prueban el concierge bilingüe y las órdenes sin comisión." },
-        { phase: "Fase 2 · Impulso", target: "Varios miles de testers", detail: "Pilotos más amplios habilitan filtros nuevos y automatizaciones." },
-        { phase: "Fase 3 · Nacional", target: "Decenas de miles en Nueva Zelanda", detail: "Cobertura total con protección proactiva y niveles élite." },
-        { phase: "Fase 4 · Cruce del Tasman", target: "Principales ciudades australianas", detail: "Sydney, Melbourne y Brisbane heredan la misma infraestructura VIP." },
-        { phase: "Fase 5 · Global", target: "Más continentes", detail: "Despliegue internacional con pagos locales y manuales culturales." }
-      ]
-    },
     faqs: [
       { question: "¿Es obligatorio VIP?", answer: "No, pero elimina el 15%, habilita pedidos por IA y da prioridad." },
       { question: "¿Los proveedores ganan algo?", answer: "Sí, las herramientas de autoaceptación y planes con IA son exclusivas del VIP." },
@@ -329,7 +265,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
       title: "Deux offres VIP distinctes",
       description: "Guidew facture 15 % sur les commandes classiques. Le VIP voyageurs (9,9 $US/mois) supprime ces frais et ajoute les demandes IA ; le VIP prestataires (99 $US/mois) offre acceptation auto, itinéraires IA et support automatisé.",
       cta: "Télécharger Guidew",
-      secondaryCta: "Voir la feuille de route",
       note: "VIP voyageurs 9,9 $US/mois · VIP prestataires 99 $US/mois · résiliable à tout moment.",
       languagesLabel: "Disponible en 6 langues",
       stackLabel: "Pack VIP",
@@ -363,17 +298,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
         { title: "Alertes trajet", detail: "Soyez averti si le prochain service est trop éloigné pour arriver à l'heure." }
       ]
     },
-    timeline: {
-      title: "Feuille de route",
-      description: "Le VIP se déploie par vagues pour équilibrer confiance, offre et support multilingue.",
-      milestones: [
-        { phase: "Phase 1 · Lancement", target: "Première vague à Auckland/Wellington", detail: "Quelques centaines de pionniers valident le concierge bilingue et les commandes sans commission." },
-        { phase: "Phase 2 · Accélération", target: "Plusieurs milliers de testeurs", detail: "Pilotes élargis débloquent filtres avancés et automatisations." },
-        { phase: "Phase 3 · National", target: "Dizaines de milliers en Nouvelle-Zélande", detail: "Couverture totale avec protection proactive et niveaux créateurs." },
-        { phase: "Phase 4 · Pont trans-Tasman", target: "Grandes villes australiennes", detail: "Sydney, Melbourne et Brisbane reprennent la même infrastructure VIP." },
-        { phase: "Phase 5 · Global", target: "Nouveaux continents", detail: "Déploiement international avec paiements locaux et guides culturels." }
-      ]
-    },
     faqs: [
       { question: "Le VIP est-il obligatoire ?", answer: "Non, mais il supprime les 15 %, débloque les demandes IA et la priorité." },
       { question: "Les prestataires en profitent-ils ?", answer: "Oui, l'auto-acceptation et les plans IA sont réservés aux VIP." },
@@ -389,7 +313,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
       title: "שני מסלולי VIP נפרדים",
       description: "ב‑Guidew נגבית עמלת 15% בהזמנות רגילות. VIP למטיילים (‏$9.9 לחודש) מבטל את העמלה ומוסיף התאמות AI; VIP לספקים (‏$99 לחודש) מספק קבלה אוטומטית, מסלולי AI ותמיכת צ'אט אוטומטית.",
       cta: "הורידו את Guidew",
-      secondaryCta: "צפו במפת הדרכים",
       note: "VIP למטיילים $9.9 לחודש · VIP לספקים $99 לחודש · ניתן לבטל בכל עת.",
       languagesLabel: "זמין ב‑6 שפות",
       stackLabel: "חבילת VIP",
@@ -423,17 +346,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
         { title: "התראות מרחק", detail: "קבלו התרעה אם השירות הבא רחוק מדי כדי להגיע בזמן." }
       ]
     },
-    timeline: {
-      title: "מפת דרכים",
-      description: "השקה מדורגת מאפשרת איזון בין אמון, היצע ותמיכה רב־לשונית.",
-      milestones: [
-        { phase: "שלב 1 · השקה", target: "הגל הראשון באוקלנד ווולינגטון", detail: "כמה מאות חלוצים בודקים קונסיירז' דו־לשוני והזמנות ללא עמלה." },
-        { phase: "שלב 2 · האצה", target: "אלפי נסיינים", detail: "פיילוטים רחבים מוסיפים מסננים מתקדמים ואוטומציה בצ'אט." },
-        { phase: "שלב 3 · ארצי", target: "עשרות אלפים ברחבי ניו זילנד", detail: "כיסוי מלא עם הגנות פרואקטיביות ומסלולי יוצרים." },
-        { phase: "שלב 4 · מעבר לטסמן", target: "ערי מפתח באוסטרליה", detail: "סידני, מלבורן ובריסביין מאמצות את אותה שכבת VIP." },
-        { phase: "שלב 5 · גלובלי", target: "יבשות נוספות", detail: "פריסה בינלאומית עם תשלומים מקומיים ומדריכי תרבות." }
-      ]
-    },
     faqs: [
       { question: "האם חייבים VIP?", answer: "לא, אך הוא מבטל את ה‑15%, פותח בקשות AI וקדימות." },
       { question: "גם נותני שירות נהנים?", answer: "כן, קבלה אוטומטית ותכנון ב‑AI מיועדים רק לחברי VIP." },
@@ -451,7 +363,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
       description:
         "Ko te kaiarahi i te Komihana 15% mo nga pukapuka paerewa. Ko te Vip Theaw ($ 9.9 / Mo) Tango me te taapiri i te AI e rite ana ki te kaiwhakarato AI, $ 99 / Momathery, whakamaherea papaaho, me te tautoko i nga korero.",
       cta: "Tikiake Aratohu",
-      secondaryCta: "Tirohia te RoadMap",
       note: "Rererangi Vip $ 9.9 / Mo · kaiwhakarato VIP $ 99 / Mo · Whakakore i nga wa katoa.",
       languagesLabel: "E waatea ana i roto i nga reo 6",
       stackLabel: "Whakaputanga VIP",
@@ -485,17 +396,6 @@ const vipCopy: Record<VipLocale, VipCopy> = {
         { title: "Ko nga tohu tohu a te haerenga", detail: "Ka whakatupato koe i nga taputapu VIP i te wa e pa ana te mahi i muri mai kia mau tonu ai koe i te tatauranga tika." }
       ]
     },
-    timeline: {
-      title: "Hurihuri Roadmap",
-      description: "Ka tukuna e nga Kaipupuri nga kaipuke i roto i nga ngaru kia whakawhirinaki, te wai, me te tauine reanga maha.",
-      milestones: [
-        { phase: "Wāhanga 1 · Te huarahi tuatahi", target: "Te ngaru tuatahi i Akarana me te Whanganui-a-Tara", detail: "Nga rau o nga paionia e whakamahi ana i te hononga AI AID me te utu mo te whakamana i te tauira." },
-        { phase: "Wahanga 2 · Momentum", target: "Maha mano nga kai", detail: "Ka taea e nga kaiwhaiwhai te iriti i nga whiriwhiringa Advance, korerorero, me nga maramataka Richher." },
-        { phase: "Wāhanga 3 · Motu", target: "Tekau mano mano nga mano puta noa i te NZ", detail: "Kapinga whenua katoa me te tiaki kaha me nga kai kaihoahoa elite." },
-        { phase: "Wahanga 4 · Tuhinga o mua", target: "Ahitereiria Australia", detail: "Ko nga taone penei i Poihakena, me Melbourne, me Brisbane te whakamahi i te papanga VIP ano." },
-        { phase: "Wahanga 5 000", target: "Nga Moananui Taapiri", detail: "Huringa International me nga utu kua whakaritea me nga pukapuka taakaro ahurea." }
-      ]
-    },
     faqs: [
       { question: "Kei te hiahiatia te VIP ki te pukapuka?", answer: "Kaore. Ko tetahi kaiwhakamahi kua rēhitatia ka taea e ia nga pukapuka pukapuka, engari ka tangohia e te VIP te utu 15%, ka tono i nga tono AI, me te tuku i nga tohu matua." },
       { question: "Ka awhina ano a VIP ki nga kaiwhakarato?", answer: "Ae. Ka whakamahia e nga kaiwhakarato te tango-aunoa, te waihanga i te wa whakarite, me nga tohu matohera-i rahuitia mo nga kaihanga Vip." },
@@ -512,8 +412,6 @@ const Vip = () => {
   const locale = getVipLocale(i18n.language);
   const content = vipCopy[locale];
 
-  const travelerIconMap = useMemo(() => [Sparkles, MessageCircle, Zap, CheckCircle2], []);
-  const providerIconMap = useMemo(() => [ShieldCheck, Zap, CalendarClock, CheckCircle2], []);
   const heroProducts = useMemo(
     () =>
       [
@@ -549,9 +447,6 @@ const Vip = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <Button onClick={openDownloadDialog} className="h-12 px-6 bg-brand-teal hover:bg-brand-teal/90 text-base">
                 {content.hero.cta}
-              </Button>
-              <Button variant="secondary" className="h-12 px-6" asChild>
-                <a href="#timeline">{content.hero.secondaryCta}</a>
               </Button>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-3 text-sm text-gray-600">
@@ -599,22 +494,6 @@ const Vip = () => {
                 );
               })}
             </div>
-          </div>
-        </section>
-
-        <section id="timeline" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-          <div className="flex flex-col gap-4 text-center max-w-3xl mx-auto mb-12">
-            <p className="text-sm uppercase tracking-[0.3em] text-brand-teal">{content.timeline.title}</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-darkBlue">{content.timeline.description}</h2>
-          </div>
-          <div className="grid lg:grid-cols-3 gap-6">
-            {content.timeline.milestones.map(milestone => (
-              <div key={milestone.phase} className="bg-white rounded-3xl border border-slate-200 shadow-md p-6 space-y-3">
-                <p className="text-xs uppercase tracking-[0.3em] text-brand-orange">{milestone.phase}</p>
-                <h3 className="text-xl font-semibold text-brand-darkBlue">{milestone.target}</h3>
-                <p className="text-sm text-gray-600">{milestone.detail}</p>
-              </div>
-            ))}
           </div>
         </section>
 

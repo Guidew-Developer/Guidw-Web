@@ -234,7 +234,7 @@ const copy: Partial<Record<SupportedLocale, CareersCopy>> = {
       badge: "Junte-se à missão",
       title: "Redefina o compartilhamento de habilidades offline",
       description:
-        "Convidamos designers, pessoas de produto, engenheiros e operadores locais para servir os primeiros 1.000+ usuários em Auckland e Wellington e preparar nossa expansão global."
+        "Convidamos designers, pessoas de produto, engenheiros e operadores locais para servir os primeiros 1.000+ usuários em Auckland e Wellington e consolidar a operação na Nova Zelândia."
     },
     values: [
       {

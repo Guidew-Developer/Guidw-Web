@@ -3,7 +3,6 @@ import { Users, Shield, Sparkles, Layers, CheckCircle2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import GlobalExpansionGlobe from "@/components/GlobalExpansionGlobe";
 
 const aboutLocales = ["en", "zh", "pt", "es", "fr", "he", "mi"] as const;
 type AboutLocale = (typeof aboutLocales)[number];
@@ -91,46 +90,9 @@ const copy: Record<AboutLocale, AboutCopy> = {
       ]
     },
     growth: {
-      title: "Global expansion map",
-      description: "We launch in Aotearoa and sweep outward, installing elite local teams country by country until Guidew feels native everywhere.",
-      destinations: [
-        {
-          label: "Launch wave",
-          region: "Aotearoa launchpad",
-          description: "Auckland and Wellington prove how fast trusted humans mobilize when Guidew is in their pockets.",
-          coords: { top: "74%", left: "86%" }
-        },
-        {
-          label: "Tasman bridge",
-          region: "Australia's creative capitals",
-          description: "Sydney, Melbourne, and Brisbane join next, forming a seamless bridge for travelers crossing the Tasman.",
-          coords: { top: "67%", left: "80%" }
-        },
-        {
-          label: "Pacific ribbon",
-          region: "Asia-Pacific icons",
-          description: "Singapore, Auckland, Seoul, and Bali bring nonstop bilingual talent for premium journeys along the Pacific Rim.",
-          coords: { top: "55%", left: "66%" }
-        },
-        {
-          label: "Continental gateways",
-          region: "Europe & Middle East",
-          description: "London, Paris, Berlin, and Dubai host flagship squads that connect heritage cities with bold new service.",
-          coords: { top: "42%", left: "50%" }
-        },
-        {
-          label: "Americas crescendo",
-          region: "North & South America",
-          description: "From Vancouver to São Paulo we light up creative capitals so every arrival is greeted by local legends.",
-          coords: { top: "58%", left: "30%" }
-        },
-        {
-          label: "Global fabric",
-          region: "Every major city next",
-          description: "The map keeps glowing, one more country at a time, until Guidew belongs on every continent.",
-          coords: { top: "35%", left: "45%" }
-        }
-      ]
+      title: "Local corridors",
+      description: "Our focus is depth in Aotearoa: reliable teams in Auckland and Wellington delivering trusted in-person help.",
+      destinations: []
     }
   },
   pt: {
@@ -171,40 +133,9 @@ const copy: Record<AboutLocale, AboutCopy> = {
       ]
     },
     growth: {
-      title: "Mapa de expansão global",
-      description: "Lançamos em Aotearoa e avançamos gradualmente, instalando equipes locais de elite até que a Guidew soe nativa em todo lugar.",
-      destinations: [
-        {
-          label: "Onda de lançamento",
-          region: "Base em Aotearoa",
-          description: "Auckland e Wellington provam quão rápido humanos confiáveis se mobilizam com a Guidew no bolso.",
-          coords: { top: "74%", left: "86%" }
-        },
-        {
-          label: "Ponte Tasman",
-          region: "Capitais criativas da Austrália",
-          description: "Sydney, Melbourne e Brisbane recebem corredores que conectam as duas margens do Mar da Tasmânia.",
-          coords: { top: "67%", left: "80%" }
-        },
-        {
-          label: "Faixa do Pacífico",
-          region: "Marcos do APAC",
-          description: "Singapura, Tóquio, Seul e Bali somam experts bilíngues que acompanham viagens longas.",
-          coords: { top: "55%", left: "66%" }
-        },
-        {
-          label: "Portais continentais",
-          region: "Europa e Oriente Médio",
-          description: "Londres, Paris, Berlim e Dubai sediarão equipes-âncora até que possamos iluminar cada continente.",
-          coords: { top: "42%", left: "50%" }
-        },
-        {
-          label: "Próximas rotas",
-          region: "As próximas megacidades",
-          description: "O mapa continua acendendo, país após país, até que a Guidew faça parte do cotidiano global.",
-          coords: { top: "35%", left: "45%" }
-        }
-      ]
+      title: "Corredores locais",
+      description: "Focamos em equipes confiáveis em Auckland e Wellington, entregando apoio presencial com qualidade consistente.",
+      destinations: []
     }
   },
   zh: {
@@ -245,46 +176,9 @@ const copy: Record<AboutLocale, AboutCopy> = {
       ]
     },
     growth: {
-      title: "全球扩张蓝图",
-      description: "从新西兰启航，有节奏地铺设本地专家网络，一国接一国，直到地球上每座城市都能即时响应。",
-      destinations: [
-        {
-          label: "启航波段",
-          region: "新西兰起点",
-          description: "以奥克兰、惠灵顿为样板，真实的本地专家随时待命。",
-          coords: { top: "74%", left: "86%" }
-        },
-        {
-          label: "跨塔斯曼桥",
-          region: "澳大利亚创意城市",
-          description: "悉尼、墨尔本、布里斯班陆续上线，打造横跨塔斯曼海的无缝体验。",
-          coords: { top: "67%", left: "80%" }
-        },
-        {
-          label: "太平洋光带",
-          region: "亚太标志城市",
-          description: "新加坡、东京、首尔、巴厘等地汇聚双语达人，点亮长程旅途。",
-          coords: { top: "55%", left: "66%" }
-        },
-        {
-          label: "大陆门户",
-          region: "欧洲与中东",
-          description: "伦敦、巴黎、柏林、迪拜设立旗舰团队，连结传统与新灵感。",
-          coords: { top: "42%", left: "50%" }
-        },
-        {
-          label: "美洲共振",
-          region: "南北美洲",
-          description: "从温哥华到圣保罗，处处都有带着当地魅力的主理人接待来访者。",
-          coords: { top: "58%", left: "30%" }
-        },
-        {
-          label: "全球织网",
-          region: "下一座城市永远在路上",
-          description: "地图不断点亮，Guidew 以一国接一国的节奏覆盖全球。",
-          coords: { top: "35%", left: "45%" }
-        }
-      ]
+      title: "本地走廊",
+      description: "我们专注于奥克兰与惠灵顿的可靠团队，提供稳妥的线下陪伴与在地支持。",
+      destinations: []
     }
   },
   es: {
@@ -325,47 +219,9 @@ const copy: Record<AboutLocale, AboutCopy> = {
       ]
     },
     growth: {
-      title: "Mapa de expansión global",
-      description:
-        "Despegamos en Aotearoa y avanzamos hacia afuera, instalando equipos locales de élite país por país hasta que Guidew se sienta nativa en todas partes.",
-      destinations: [
-        {
-          label: "Ola de lanzamiento",
-          region: "Plataforma Aotearoa",
-          description: "Auckland y Wellington demuestran lo rápido que los expertos confiables se movilizan cuando llevan Guidew en el bolsillo.",
-          coords: { top: "74%", left: "86%" }
-        },
-        {
-          label: "Puente de Tasmania",
-          region: "Capitales creativas de Australia",
-          description: "Sídney, Melbourne y Brisbane se suman después, formando un puente fluido para quienes cruzan el Mar de Tasmania.",
-          coords: { top: "67%", left: "80%" }
-        },
-        {
-          label: "Cinta del Pacífico",
-          region: "Íconos de Asia-Pacífico",
-          description: "Singapur, Auckland, Seúl y Bali aportan talento bilingüe constante para viajes premium a lo largo del Pacífico.",
-          coords: { top: "55%", left: "66%" }
-        },
-        {
-          label: "Puertas continentales",
-          region: "Europa y Medio Oriente",
-          description: "Londres, París, Berlín y Dubái albergan escuadrones insignia que conectan ciudades patrimoniales con servicios audaces.",
-          coords: { top: "42%", left: "50%" }
-        },
-        {
-          label: "Crescendo americano",
-          region: "América del Norte y del Sur",
-          description: "De Vancouver a São Paulo iluminamos capitales creativas para que cada llegada sea recibida por leyendas locales.",
-          coords: { top: "58%", left: "30%" }
-        },
-        {
-          label: "Tejido global",
-          region: "Cada gran ciudad que sigue",
-          description: "El mapa continúa encendiéndose, país tras país, hasta que Guidew pertenezca a todos los continentes.",
-          coords: { top: "35%", left: "45%" }
-        }
-      ]
+      title: "Corredores locales",
+      description: "Nos enfocamos en equipos confiables en Auckland y Wellington para ofrecer ayuda presencial segura.",
+      destinations: []
     }
   },
   fr: {
@@ -406,47 +262,9 @@ const copy: Record<AboutLocale, AboutCopy> = {
       ]
     },
     growth: {
-      title: "Carte d'expansion mondiale",
-      description:
-        "Nous décollons en Aotearoa et avançons vers l'extérieur, en installant des équipes locales d'élite pays après pays jusqu'à ce que Guidew paraisse native partout.",
-      destinations: [
-        {
-          label: "Vague de lancement",
-          region: "Rampe de lancement Aotearoa",
-          description: "Auckland et Wellington prouvent la rapidité avec laquelle des experts de confiance se mobilisent lorsqu'ils ont Guidew en poche.",
-          coords: { top: "74%", left: "86%" }
-        },
-        {
-          label: "Pont tasmanien",
-          region: "Capitales créatives d'Australie",
-          description: "Sydney, Melbourne et Brisbane suivent, créant un pont fluide pour les voyageurs qui traversent la mer de Tasmanie.",
-          coords: { top: "67%", left: "80%" }
-        },
-        {
-          label: "Ruban pacifique",
-          region: "Icônes Asie-Pacifique",
-          description: "Singapour, Auckland, Séoul et Bali apportent un talent bilingue continu pour des voyages premium le long du Pacifique.",
-          coords: { top: "55%", left: "66%" }
-        },
-        {
-          label: "Portes continentales",
-          region: "Europe & Moyen-Orient",
-          description: "Londres, Paris, Berlin et Dubaï accueillent des équipes phares qui relient villes patrimoniales et services innovants.",
-          coords: { top: "42%", left: "50%" }
-        },
-        {
-          label: "Crescendo des Amériques",
-          region: "Amérique du Nord et du Sud",
-          description: "De Vancouver à São Paulo nous illuminons les capitales créatives pour que chaque arrivée soit accueillie par des légendes locales.",
-          coords: { top: "58%", left: "30%" }
-        },
-        {
-          label: "Tissu mondial",
-          region: "Chaque grande ville suivante",
-          description: "La carte continue de s'illuminer, pays après pays, jusqu'à ce que Guidew appartienne à tous les continents.",
-          coords: { top: "35%", left: "45%" }
-        }
-      ]
+      title: "Corridors locaux",
+      description: "Nous nous concentrons sur des équipes fiables à Auckland et Wellington pour offrir un accompagnement présentiel serein.",
+      destinations: []
     }
   },
   he: {
@@ -487,47 +305,9 @@ const copy: Record<AboutLocale, AboutCopy> = {
       ]
     },
     growth: {
-      title: "מפת ההתרחבות הגלובלית",
-      description:
-        "אנחנו יוצאים לדרך באיים של אוטארואה וממשיכים החוצה, מקימים צוותים מקומיים מובחרים מדינה אחר מדינה עד ש-Guidew תרגיש מקומית בכל מקום.",
-      destinations: [
-        {
-          label: "גל ההשקה",
-          region: "בסיס Aotearoa",
-          description: "אוקלנד ווילינגטון מראות כמה מהר מומחים אמינים מתגייסים כאשר Guidew בכיס שלהם.",
-          coords: { top: "74%", left: "86%" }
-        },
-        {
-          label: "גשר טסמן",
-          region: "הבירות היצירתיות של אוסטרליה",
-          description: "סידני, מלבורן ובריסביין מצטרפות ויוצרות גשר רציף לנוסעים החוצים את ים טסמן.",
-          coords: { top: "67%", left: "80%" }
-        },
-        {
-          label: "סרט הפסיפיק",
-          region: "איקוני אסיה-פסיפיק",
-          description: "סינגפור, אוקלנד, סיאול ובאלי מספקות כישרון דו-לשוני ללא הפסקה למסעות פרימיום לאורך הפסיפיק.",
-          coords: { top: "55%", left: "66%" }
-        },
-        {
-          label: "שערים יבשתיים",
-          region: "אירופה והמזרח התיכון",
-          description: "לונדון, פריז, ברלין ודובאי מארחות צוותי דגל שמחברים ערי מורשת לשירות חדשני ונועז.",
-          coords: { top: "42%", left: "50%" }
-        },
-        {
-          label: "קרשנדו האמריקות",
-          region: "אמריקה הצפונית והדרומית",
-          description: "מוונקובר ועד סאו פאולו אנו מאירים בירות יצירתיות כך שכל הגעה תתקבל על ידי אגדות מקומיות.",
-          coords: { top: "58%", left: "30%" }
-        },
-        {
-          label: "אריג גלובלי",
-          region: "כל עיר מרכזית הבאה",
-          description: "המפה ממשיכה לזהור, מדינה אחר מדינה, עד ש-Guidew תהיה שייכת לכל היבשות.",
-          coords: { top: "35%", left: "45%" }
-        }
-      ]
+      title: "מסדרונות מקומיים",
+      description: "אנחנו מתמקדים בצוותים אמינים באוקלנד ובוולינגטון כדי לספק ליווי אנושי אמין.",
+      destinations: []
     }
   },
 
@@ -569,46 +349,9 @@ const copy: Record<AboutLocale, AboutCopy> = {
       ]
     },
     growth: {
-      title: "Mahere Whakawhanaketanga Ao",
-      description: "Ka whakarewahia e matou a Aotearoa, ka huri ki waho, ka whakauru i nga roopu roopu a rohe e te whenua tae noa ki te ahua o te Arataki i nga waahi katoa.",
-      destinations: [
-        {
-          label: "Whakarewa ngaru",
-          region: "Awauma Alaunpad",
-          description: "Akarana me Te Whanganui-a-Tara e whakaatu ana he pehea te tere o te hunga pono i te wa e piki ana te aratohu i a raatau peke.",
-          coords: { top: "74%", left: "86%" }
-        },
-        {
-          label: "Piripiri Tasman",
-          region: "Ko nga upoko auaha a Ahitereiria",
-          description: "Poihakena, Melbourne, me Brisbane Hono ki te taha o muri, e hanga ana i te piriti kaore e pai ana mo nga tangata haereere e whakawhiti ana i te Tasman.",
-          coords: { top: "67%", left: "80%" }
-        },
-        {
-          label: "Tekau Mori",
-          region: "Ataata Ahia-Kiwa",
-          description: "Singapore, Auckland, Seoul, me Bali Ka kawe mai i nga taranata reorua kore mo nga haerenga o te Moana-nui-a-Kiwa.",
-          coords: { top: "55%", left: "66%" }
-        },
-        {
-          label: "Gateways",
-          region: "Europe & Middle East",
-          description: "London, Paris, Berlin, me Dubai Hoster Flagship Blagship Squads e hono ana i nga taone nui me te ratonga hou.",
-          coords: { top: "42%", left: "50%" }
-        },
-        {
-          label: "Amerika crescendo",
-          region: "Te Taitokerau & Amerika ki te Tonga",
-          description: "Mai i a Vancouver ki São Paulo e whakamarama ana i nga upoko auaha na nga taenga mai o nga korero a te rohe.",
-          coords: { top: "58%", left: "30%" }
-        },
-        {
-          label: "Papanga o te ao",
-          region: "Nga taone nui katoa i muri",
-          description: "Ko te mahere e mau tonu ana, kotahi ano te whenua i te wa kotahi, tae noa ki nga kawanatanga katoa.",
-          coords: { top: "35%", left: "45%" }
-        }
-      ]
+      title: "Ngā ara ā-rohe",
+      description: "E arotahi ana mātou ki ngā tīma whakawhirinaki ki Tāmaki Makaurau me Pōneke kia noho haumaru te tautoko ā-tangata.",
+      destinations: []
     }
   },} satisfies Record<AboutLocale, AboutCopy>;
 
@@ -712,33 +455,6 @@ const About = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden py-16 bg-[#030b1f] text-white">
-          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-            <GlobalExpansionGlobe className="h-full w-full" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#030b1f]/90 via-[#030b1f]/65 to-transparent" />
-          </div>
-          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl w-full md:w-[70%] space-y-6">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-brand-gold">{content.badge}</p>
-                <h2 className="text-3xl font-bold mt-3 mb-4">{content.growth.title}</h2>
-                <p className="text-white/80 text-lg leading-relaxed">{content.growth.description}</p>
-              </div>
-              <div className="space-y-4">
-                {content.growth.destinations.map(destination => (
-                  <div
-                    key={destination.label}
-                    className="rounded-2xl border border-white/15 bg-white/5 p-4 backdrop-blur"
-                  >
-                    <p className="text-xs uppercase tracking-[0.3em] text-brand-gold">{destination.label}</p>
-                    <p className="text-xl font-semibold mt-1">{destination.region}</p>
-                    <p className="text-white/80 mt-2 text-sm leading-relaxed">{destination.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>

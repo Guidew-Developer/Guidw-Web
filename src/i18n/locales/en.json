@@ -149,7 +149,7 @@
         "detailBody": "Set your language preference, choose traveler or provider mode, and use map view, curated collections, and saved filters to build a shortlist of experts.",
         "bullets": [
           "Email or Google/Apple one-tap sign-in",
-          "Map view for nearby experts, list view for global browsing",
+          "Map view for nearby experts, list view for browsing more cities",
           "Save favorites and enable alerts for new services"
         ]
       },
@@ -361,7 +361,7 @@
         "description": "Choose when and where you take orders. Set travel radius, minimum hours, and instant availability toggles."
       },
       {
-        "title": "Global demand",
+        "title": "Local demand",
         "description": "Access travelers landing in Auckland or Wellington, plus locals booking private workshops and urgent help."
       },
       {

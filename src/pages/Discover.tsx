@@ -1035,7 +1035,7 @@ const serviceCopy: Partial<Record<SupportedLocale, Record<string, { title: strin
     },
     "10": {
       title: "Workshop de estratégia",
-      description: "Mentor executivo para revisar pitch e planos de expansão.",
+      description: "Mentor executivo para revisar pitch e priorizar próximos passos operacionais.",
       location: "Auckland, Nova Zelândia"
     },
     "11": {
@@ -1267,7 +1267,7 @@ const serviceCopy: Partial<Record<SupportedLocale, Record<string, { title: strin
     },
     "3": {
       title: "Traducción para reuniones de negocios",
-      description: "Intérprete certificado para conversaciones críticas con socios globales.",
+      description: "Intérprete certificado para conversaciones críticas con socios internacionales.",
       location: "Auckland, Nueva Zelanda"
     },
     "4": {
@@ -1491,7 +1491,7 @@ const serviceCopy: Partial<Record<SupportedLocale, Record<string, { title: strin
       location: "Auckland, Nueva Zelanda"
     },
     "48": {
-      title: "Logística para nómadas globales",
+      title: "Logística para nómadas digitales",
       description: "Conserje gestiona visados, seguros y reservas multi-ciudad.",
       location: "Auckland, Nueva Zelanda"
     },

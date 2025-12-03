@@ -338,11 +338,11 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
     },
     {
       id: "elite-advisors",
-      kicker: "Mesa directiva global",
+      kicker: "Mesa directiva local",
       title: "Expertos top en cada disciplina,",
       highlight: "tu board personal",
       description:
-        "Activa sesiones de estrategia, cultura o expansión con coaches ejecutivos, mentores VC y fixers locales que se conectan en minutos.",
+        "Activa sesiones de estrategia, cultura u operaciones con coaches ejecutivos, mentores VC y fixers locales que se conectan en minutos.",
       image:
         "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=2070&q=80",
       imageAlt: "Asesores en reunión virtual",
@@ -454,7 +454,7 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
       id: "creator-network",
       kicker: "Hazte experto Guidew",
       title: "Diseña tu ritmo laboral,",
-      highlight: "entra a la red global",
+      highlight: "entra a la red local",
       description:
         "Ofrece traducción, city escort o coaching creativo y administra pedidos con IA, pagos transparentes y badges de reputación.",
       image:
@@ -525,11 +525,11 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
     },
     {
       id: "elite-advisors",
-      kicker: "Conselho global",
+      kicker: "Conselho local",
       title: "Top experts de várias áreas,",
       highlight: "no seu board pessoal",
       description:
-        "Inicie sessões de estratégia, cultura ou crescimento com executivos, mentores de VC e fixers locais que entram na sua call em minutos.",
+        "Inicie sessões de estratégia, cultura ou operações com executivos, mentores de VC e fixers locais que entram na sua call em minutos.",
       image:
         "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=2070&q=80",
       imageAlt: "Consultores em reunião virtual",
@@ -641,7 +641,7 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
       id: "creator-network",
       kicker: "Torne-se especialista Guidew",
       title: "Desenhe seu ritmo de trabalho,",
-      highlight: "entre na rede global",
+      highlight: "entre na rede local",
       description:
         "Ofereça dança, tradução ou city escort e administre pedidos com IA, pagamentos transparentes e badges de reputação.",
       image:
@@ -651,7 +651,7 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
       cta: "button",
       button: { label: "Começar agora", to: "/become-expert" },
       badges: [
-        { id: "badge-impact-pt", type: "info", title: "1000+ criadores", subtitle: "Rede global 2026", position: "-left-6 top-1/3", delay: "0.5s" },
+        { id: "badge-impact-pt", type: "info", title: "1000+ criadores", subtitle: "Rede NZ 2026", position: "-left-6 top-1/3", delay: "0.5s" },
         { id: "badge-earning-pt", type: "info", title: "Comissão alta", subtitle: "Liquidação transparente", position: "right-2 bottom-1/3", delay: "2s" }
       ]
     },
@@ -712,11 +712,11 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
     },
     {
       id: "elite-advisors",
-      kicker: "Conseil global",
+      kicker: "Conseil local",
       title: "Experts de haut niveau,",
       highlight: "votre board personnel",
       description:
-        "Activez des sessions de stratégie, culture ou expansion avec coaches exécutifs, mentors VC et fixers locaux connectés en quelques minutes.",
+        "Activez des sessions de stratégie, culture ou opérations avec coaches exécutifs, mentors VC et fixers locaux connectés en quelques minutes.",
       image:
         "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=2070&q=80",
       imageAlt: "Conseillers en réunion virtuelle",
