@@ -216,7 +216,7 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
       id: "creator-network",
       kicker: "Become a Guidew Expert",
       title: "Create Your Own Work,",
-      highlight: "Join 1M+ Job Creators",
+      highlight: "Join 1000+ Job Creators",
       description:
         "Design your schedule and offer dance lessons, translation, or city buddies. Earn higher payouts and automate bookings with AI tools.",
       image:
@@ -232,7 +232,7 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
         {
           id: "badge-impact",
           type: "info",
-          title: "1M+ creators",
+          title: "1000+ creators",
           subtitle: "Global network by 2026",
           position: "-left-6 top-1/3",
           delay: "0.5s"
@@ -464,7 +464,7 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
       cta: "button",
       button: { label: "Comenzar ahora", to: "/become-expert" },
       badges: [
-        { id: "badge-impact-es", type: "info", title: "1M+ creadores", subtitle: "Red 2026", position: "-left-6 top-1/3", delay: "0.5s" },
+        { id: "badge-impact-es", type: "info", title: "1000+ creadores", subtitle: "Red 2026", position: "-left-6 top-1/3", delay: "0.5s" },
         { id: "badge-earning-es", type: "info", title: "Altas comisiones", subtitle: "Pagos claros", position: "right-2 bottom-1/3", delay: "2s" }
       ]
     },
@@ -651,7 +651,7 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
       cta: "button",
       button: { label: "Começar agora", to: "/become-expert" },
       badges: [
-        { id: "badge-impact-pt", type: "info", title: "1M+ criadores", subtitle: "Rede global 2026", position: "-left-6 top-1/3", delay: "0.5s" },
+        { id: "badge-impact-pt", type: "info", title: "1000+ criadores", subtitle: "Rede global 2026", position: "-left-6 top-1/3", delay: "0.5s" },
         { id: "badge-earning-pt", type: "info", title: "Comissão alta", subtitle: "Liquidação transparente", position: "right-2 bottom-1/3", delay: "2s" }
       ]
     },
@@ -786,7 +786,7 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
       id: "creator-network",
       kicker: "Devenir expert Guidew",
       title: "Créez votre travail,",
-      highlight: "rejoignez 1M+ créateurs",
+      highlight: "rejoignez 1000+ créateurs",
       description:
         "Choisissez votre planning et proposez danse, traduction ou city buddy. Maximisez vos revenus et automatisez vos réservations avec les outils IA.",
       image:
@@ -796,7 +796,7 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
       cta: "button",
       button: { label: "Commencer maintenant", to: "/become-expert" },
       badges: [
-        { id: "badge-impact-fr", type: "info", title: "1M+ créateurs", subtitle: "Réseau mondial 2026", position: "-left-6 top-1/3", delay: "0.5s" },
+        { id: "badge-impact-fr", type: "info", title: "1000+ créateurs", subtitle: "Réseau mondial 2026", position: "-left-6 top-1/3", delay: "0.5s" },
         { id: "badge-earning-fr", type: "info", title: "Commissions élevées", subtitle: "Payouts transparents", position: "right-2 bottom-1/3", delay: "2s" }
       ]
     },
@@ -981,7 +981,7 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
       cta: "button",
       button: { label: "开始打造", to: "/become-expert" },
       badges: [
-        { id: "badge-impact", type: "info", title: "1M+ Creators", subtitle: "2026 全球网络", position: "-left-6 top-1/3", delay: "0.5s" },
+        { id: "badge-impact", type: "info", title: "1000+ Creators", subtitle: "2026 全球网络", position: "-left-6 top-1/3", delay: "0.5s" },
         { id: "badge-earning", type: "info", title: "高佣金回报", subtitle: "透明结算", position: "right-2 bottom-1/3", delay: "2s" }
       ]
     },
@@ -1184,7 +1184,7 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
         {
           id: "badge-impact-he",
           type: "info",
-          title: "1M+ יוצרים",
+          title: "1000+ יוצרים",
           subtitle: "רשת עולמית עד 2026",
           position: "-left-6 top-1/3",
           delay: "0.5s"
@@ -1437,7 +1437,7 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
       id: "kaihanga-whatunga",
       kicker: "Riro hei tohunga Guidew",
       title: "Hangaia tāu ake mahi,",
-      highlight: "Hono ki te 1M+ kaihanga",
+      highlight: "Hono ki te 1000+ kaihanga",
       description:
         "Hoahoa tō maramataka, tuku akoranga kanikani, whakamaoritanga, hoa taone rānei. Whiwhi utu nui ake, ka whakamahi i ngā taputapu AI hei whakahaere ota.",
       image:
@@ -1453,7 +1453,7 @@ const heroSlides: Partial<Record<SupportedLocale, HeroSlide[]>> = {
         {
           id: "badge-impact-mi",
           type: "info",
-          title: "1M+ kaihanga",
+          title: "1000+ kaihanga",
           subtitle: "Rōpū ao i te 2026",
           position: "-left-6 top-1/3",
           delay: "0.5s"
